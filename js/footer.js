@@ -61,32 +61,24 @@ function browserResize() {
       (xbeforeResize < (732 + 14) && afterResize >= (732 + 14)) || (xbeforeResize >= (732 + 14) && afterResize < (732 + 14)) ||
       (xbeforeResize < (512 + 17) && afterResize >= (512 + 17)) ||(xbeforeResize >= (512 + 17) && afterResize < (512 + 17))) {
       xbeforeResize = afterResize;
-      googletag.cmd.push(function() {
-        googletag.pubads().refresh([gptAdSlots[0]]);
-      });
+      
     }
     if ((ybeforeResize < (1683 + 14) && afterResize >= (1683 + 14)) || (ybeforeResize >= (1683 + 14) && afterResize < (1683 + 14)) ||
       (ybeforeResize < (1108 + 14) && afterResize >= (1108 + 14)) || (ybeforeResize >= (1108 + 14) && afterResize < (1108 + 14)) ||
       (ybeforeResize < (983 + 17) && afterResize >= (983 + 17)) || (ybeforeResize >= (983 + 17) && afterResize < (983 + 17))) {
       ybeforeResize = afterResize;
         skyscraperResize()
-      googletag.cmd.push(function() {
-        googletag.pubads().refresh([gptAdSlots[1]]);
-      });
+      
     }
     if ((zbeforeResize < (1272 + 14) && afterResize >= (1272 + 14)) || (zbeforeResize >= (1272 + 14) && afterResize < (1272 + 14))) {
       zbeforeResize = afterResize;
-      googletag.cmd.push(function() {
-        googletag.pubads().refresh([gptAdSlots[2], gptAdSlots[3]]);
-      });
+      
     }
     if ((sbeforeResize < (1683 + 14) && afterResize >= (1683 + 14)) || (sbeforeResize >= (1683 + 14) && afterResize < (1683 + 14)) ||
       (sbeforeResize < (1108 + 14) && afterResize >= (1108 + 14)) || (sbeforeResize >= (1108 + 14) && afterResize < (1108 + 14)) ||
       (sbeforeResize < (983 + 17) && afterResize >= (983 + 17)) || (sbeforeResize >= (983 + 17) && afterResize < (983 + 17))) {
       sbeforeResize = afterResize;
-      googletag.cmd.push(function() {
-        googletag.pubads().refresh([gptAdSlots[4]]);
-      });
+      
     }
     if ((abeforeResize < (1472 + 14) && afterResize >= (1472 + 14)) || (abeforeResize >= (1472 + 14) && afterResize < (1472 + 14)) ||
       (abeforeResize < (1167 + 14) && afterResize >= (1167 + 14)) || (abeforeResize >= (1167 + 14) && afterResize < (1167 + 14)) ||
@@ -94,9 +86,7 @@ function browserResize() {
       (abeforeResize < (782 + 14) && afterResize >= (782 + 14)) || (abeforeResize >= (782 + 14) && afterResize < (782 + 14)) ||
       (abeforeResize < (522 + 17) && afterResize >= (522 + 17)) || (abeforeResize >= (522 + 17) && afterResize < (522 + 17))) {
       abeforeResize = afterResize;
-      googletag.cmd.push(function() {
-        googletag.pubads().refresh([gptAdSlots[5]]);
-      });
+      
     }
   }
 }
@@ -172,17 +162,11 @@ function fix_sidemenu() {
       document.getElementById("belowtopnav").style.paddingTop = "44px";    
       document.getElementById("topnav").style.position = "fixed";    
       document.getElementById("topnav").style.top = "0";
-      document.getElementById("googleSearch").style.position = "fixed";
-      document.getElementById("googleSearch").style.top = "0";
-      document.getElementById("google_translate_element").style.position = "fixed";
-      document.getElementById("google_translate_element").style.top = "0";
+      
     } else {
       document.getElementById("belowtopnav").style.paddingTop = "0";
       document.getElementById("topnav").style.position = "relative";
-      document.getElementById("googleSearch").style.position = "absolute";
-      document.getElementById("googleSearch").style.top = "";
-      document.getElementById("google_translate_element").style.position = "absolute";
-      document.getElementById("google_translate_element").style.top = "";
+      
     }
     document.getElementById("leftmenuinner").style.paddingTop = "0"; //SCROLLNYTT
   } else {
@@ -198,18 +182,12 @@ function fix_sidemenu() {
       document.getElementById("belowtopnav").style.paddingTop = "44px";    
       document.getElementById("topnav").style.position = "fixed";
       document.getElementById("topnav").style.top = "0";
-      document.getElementById("googleSearch").style.position = "fixed";
-      document.getElementById("googleSearch").style.top = "0";
-      document.getElementById("google_translate_element").style.position = "fixed";
-      document.getElementById("google_translate_element").style.top = "0";
+      
     } else {
       if (w > 992) { document.getElementById("leftmenuinner").style.paddingTop = (112 - top) + "px";} //SCROLLNYTT
       document.getElementById("belowtopnav").style.paddingTop = "0";
       document.getElementById("topnav").style.position = "relative";
-      document.getElementById("googleSearch").style.position = "absolute";
-      document.getElementById("googleSearch").style.top = "";
-      document.getElementById("google_translate_element").style.position = "absolute";
-      document.getElementById("google_translate_element").style.top = "";
+      
     }
   }
 }
