@@ -1,0 +1,1682 @@
+@charset "UTF-8";
+/*
+====================================
+file: vars-and-mixins.scss
+
+    # VARIABLES
+    # MIXINS
+
+*/
+/* @license
+ * MyFonts Webfont Build ID 2337855, 2012-08-02T12:19:58-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: Proxima Nova A Extrabold Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-extrabld-it/
+ * Licensed pageviews: 10,000
+ *
+ * Webfont: Proxima Nova S Extrabold Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-extrabld-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova A Thin by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-thin/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova S Thin by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-thin/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova A Extrabold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-extrabld/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova S Extrabold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-extrabld/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova S Black Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-black-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova A Bold Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-bold-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova S Semibold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-semibold/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova S Thin Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-thin-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova A Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-regular-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova S Black by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-black/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova S Semibold Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-semibold-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova A Regular by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-regular/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova A Light Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-light-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova S Light Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-light-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova S Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-regular-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova A Thin Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-thin-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova S Bold Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-bold-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova A Black by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-black/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova S Light by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-light/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova A Light by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-light/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova S Bold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-bold/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova A Bold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-bold/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova A Black Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-black-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova A Semibold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-semibold/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova S Regular by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/s-regular/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova A Semibold Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/a-semibold-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova Extrabold Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/extrabld-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova Thin by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/thin/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova Extrabold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/extrabld/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova Regular by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/regular/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova Thin Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/thin-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova Black Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/black-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova Semibold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/semibold/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova Bold Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/bold-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova Light Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/light-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova Black by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/black/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova Semibold Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/semibold-it/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova Light by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/light/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova Bold by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/bold/
+ * Licensed pageviews: unspecified
+ *
+ * Webfont: Proxima Nova Italic by Mark Simonson
+ * URL: http://www.myfonts.com/fonts/marksimonson/proxima-nova/regular-it/
+ * Licensed pageviews: unspecified
+ *
+ *
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=2337855
+ * Webfonts copyright: Copyright (c) Mark Simonson, 2005. All rights reserved.
+ *
+ * © 2012 Bitstream Inc
+*/
+@font-face {
+  font-family: 'ProximaNovaA-ExtrabldIt';
+  src: url('../fonts/23AC3F_0_0.eot');
+  src: url('../fonts/23AC3F_0_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_0_0.woff') format("woff"), url('../fonts/23AC3F_0_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaS-ExtrabldIt';
+  src: url('../fonts/23AC3F_1_0.eot');
+  src: url('../fonts/23AC3F_1_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_1_0.woff') format("woff"), url('../fonts/23AC3F_1_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaA-Thin';
+  src: url('../fonts/23AC3F_2_0.eot');
+  src: url('../fonts/23AC3F_2_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_2_0.woff') format("woff"), url('../fonts/23AC3F_2_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaS-Thin';
+  src: url('../fonts/23AC3F_3_0.eot');
+  src: url('../fonts/23AC3F_3_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_3_0.woff') format("woff"), url('../fonts/23AC3F_3_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaA-Extrabld';
+  src: url('../fonts/23AC3F_4_0.eot');
+  src: url('../fonts/23AC3F_4_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_4_0.woff') format("woff"), url('../fonts/23AC3F_4_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaS-Extrabld';
+  src: url('../fonts/23AC3F_5_0.eot');
+  src: url('../fonts/23AC3F_5_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_5_0.woff') format("woff"), url('../fonts/23AC3F_5_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaS-BlackIt';
+  src: url('../fonts/23AC3F_6_0.eot');
+  src: url('../fonts/23AC3F_6_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_6_0.woff') format("woff"), url('../fonts/23AC3F_6_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaA-BoldIt';
+  src: url('../fonts/23AC3F_7_0.eot');
+  src: url('../fonts/23AC3F_7_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_7_0.woff') format("woff"), url('../fonts/23AC3F_7_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaS-Semibold';
+  src: url('../fonts/23AC3F_8_0.eot');
+  src: url('../fonts/23AC3F_8_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_8_0.woff') format("woff"), url('../fonts/23AC3F_8_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaS-ThinIt';
+  src: url('../fonts/23AC3F_9_0.eot');
+  src: url('../fonts/23AC3F_9_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_9_0.woff') format("woff"), url('../fonts/23AC3F_9_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaA-RegularIt';
+  src: url('../fonts/23AC3F_A_0.eot');
+  src: url('../fonts/23AC3F_A_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_A_0.woff') format("woff"), url('../fonts/23AC3F_A_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaS-Black';
+  src: url('../fonts/23AC3F_B_0.eot');
+  src: url('../fonts/23AC3F_B_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_B_0.woff') format("woff"), url('../fonts/23AC3F_B_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaS-SemiboldIt';
+  src: url('../fonts/23AC3F_C_0.eot');
+  src: url('../fonts/23AC3F_C_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_C_0.woff') format("woff"), url('../fonts/23AC3F_C_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaA-Regular';
+  src: url('../fonts/23AC3F_D_0.eot');
+  src: url('../fonts/23AC3F_D_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_D_0.woff') format("woff"), url('../fonts/23AC3F_D_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaA-LightIt';
+  src: url('../fonts/23AC3F_E_0.eot');
+  src: url('../fonts/23AC3F_E_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_E_0.woff') format("woff"), url('../fonts/23AC3F_E_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaS-LightIt';
+  src: url('../fonts/23AC3F_F_0.eot');
+  src: url('../fonts/23AC3F_F_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_F_0.woff') format("woff"), url('../fonts/23AC3F_F_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaS-RegularIt';
+  src: url('../fonts/23AC3F_10_0.eot');
+  src: url('../fonts/23AC3F_10_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_10_0.woff') format("woff"), url('../fonts/23AC3F_10_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaA-ThinIt';
+  src: url('../fonts/23AC3F_11_0.eot');
+  src: url('../fonts/23AC3F_11_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_11_0.woff') format("woff"), url('../fonts/23AC3F_11_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaS-BoldIt';
+  src: url('../fonts/23AC3F_12_0.eot');
+  src: url('../fonts/23AC3F_12_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_12_0.woff') format("woff"), url('../fonts/23AC3F_12_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaA-Black';
+  src: url('../fonts/23AC3F_13_0.eot');
+  src: url('../fonts/23AC3F_13_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_13_0.woff') format("woff"), url('../fonts/23AC3F_13_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaS-Light';
+  src: url('../fonts/23AC3F_14_0.eot');
+  src: url('../fonts/23AC3F_14_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_14_0.woff') format("woff"), url('../fonts/23AC3F_14_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaA-Light';
+  src: url('../fonts/23AC3F_15_0.eot');
+  src: url('../fonts/23AC3F_15_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_15_0.woff') format("woff"), url('../fonts/23AC3F_15_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaS-Bold';
+  src: url('../fonts/23AC3F_16_0.eot');
+  src: url('../fonts/23AC3F_16_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_16_0.woff') format("woff"), url('../fonts/23AC3F_16_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaA-Bold';
+  src: url('../fonts/23AC3F_17_0.eot');
+  src: url('../fonts/23AC3F_17_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_17_0.woff') format("woff"), url('../fonts/23AC3F_17_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaA-BlackIt';
+  src: url('../fonts/23AC3F_18_0.eot');
+  src: url('../fonts/23AC3F_18_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_18_0.woff') format("woff"), url('../fonts/23AC3F_18_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaA-Semibold';
+  src: url('../fonts/23AC3F_19_0.eot');
+  src: url('../fonts/23AC3F_19_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_19_0.woff') format("woff"), url('../fonts/23AC3F_19_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaS-Regular';
+  src: url('../fonts/23AC3F_1A_0.eot');
+  src: url('../fonts/23AC3F_1A_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_1A_0.woff') format("woff"), url('../fonts/23AC3F_1A_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaA-SemiboldIt';
+  src: url('../fonts/23AC3F_1B_0.eot');
+  src: url('../fonts/23AC3F_1B_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_1B_0.woff') format("woff"), url('../fonts/23AC3F_1B_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNova-ExtrabldIt';
+  src: url('../fonts/23AC3F_1C_0.eot');
+  src: url('../fonts/23AC3F_1C_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_1C_0.woff') format("woff"), url('../fonts/23AC3F_1C_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNovaT-Thin';
+  src: url('../fonts/23AC3F_1D_0.eot');
+  src: url('../fonts/23AC3F_1D_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_1D_0.woff') format("woff"), url('../fonts/23AC3F_1D_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNova-Extrabld';
+  src: url('../fonts/23AC3F_1E_0.eot');
+  src: url('../fonts/23AC3F_1E_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_1E_0.woff') format("woff"), url('../fonts/23AC3F_1E_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNova-Regular';
+  src: url('../fonts/23AC3F_1F_0.eot');
+  src: url('../fonts/23AC3F_1F_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_1F_0.woff') format("woff"), url('../fonts/23AC3F_1F_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNova-ThinIt';
+  src: url('../fonts/23AC3F_20_0.eot');
+  src: url('../fonts/23AC3F_20_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_20_0.woff') format("woff"), url('../fonts/23AC3F_20_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNova-BlackIt';
+  src: url('../fonts/23AC3F_21_0.eot');
+  src: url('../fonts/23AC3F_21_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_21_0.woff') format("woff"), url('../fonts/23AC3F_21_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNova-Semibold';
+  src: url('../fonts/23AC3F_22_0.eot');
+  src: url('../fonts/23AC3F_22_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_22_0.woff') format("woff"), url('../fonts/23AC3F_22_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNova-BoldIt';
+  src: url('../fonts/23AC3F_23_0.eot');
+  src: url('../fonts/23AC3F_23_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_23_0.woff') format("woff"), url('../fonts/23AC3F_23_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNova-LightIt';
+  src: url('../fonts/23AC3F_24_0.eot');
+  src: url('../fonts/23AC3F_24_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_24_0.woff') format("woff"), url('../fonts/23AC3F_24_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNova-Black';
+  src: url('../fonts/23AC3F_25_0.eot');
+  src: url('../fonts/23AC3F_25_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_25_0.woff') format("woff"), url('../fonts/23AC3F_25_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNova-SemiboldIt';
+  src: url('../fonts/23AC3F_26_0.eot');
+  src: url('../fonts/23AC3F_26_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_26_0.woff') format("woff"), url('../fonts/23AC3F_26_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNova-Light';
+  src: url('../fonts/23AC3F_27_0.eot');
+  src: url('../fonts/23AC3F_27_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_27_0.woff') format("woff"), url('../fonts/23AC3F_27_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNova-Bold';
+  src: url('../fonts/23AC3F_28_0.eot');
+  src: url('../fonts/23AC3F_28_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_28_0.woff') format("woff"), url('../fonts/23AC3F_28_0.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'ProximaNova-RegularIt';
+  src: url('../fonts/23AC3F_29_0.eot');
+  src: url('../fonts/23AC3F_29_0.eot?#iefix') format("embedded-opentype"), url('../fonts/23AC3F_29_0.woff') format("woff"), url('../fonts/23AC3F_29_0.ttf') format("truetype"); }
+
+/*
+    Source Code Pro by Paul D. Hunt
+    https://www.google.com/fonts/specimen/Source+Code+Pro
+    https://github.com/adobe-fonts/source-code-pro
+    SIL Open Font License, 1.1 (http://scripts.sil.org/OFL)
+*/
+@font-face {
+  font-family: 'Source Code Pro';
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  src: url('../fonts/SourceCodePro-Regular.eot') format("embedded-opentype"), url('../fonts/SourceCodePro-Regular.ttf.woff2') format("woff2"), url('../fonts/SourceCodePro-Regular.otf.woff') format("woff"), url('../fonts/SourceCodePro-Regular.otf') format("opentype"), url('../fonts/SourceCodePro-Regular.ttf') format("truetype"); }
+
+@font-face {
+  font-family: 'Source Code Pro';
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  src: url('../fonts/SourceCodePro-Bold.eot') format("embedded-opentype"), url('../fonts/SourceCodePro-Bold.ttf.woff2') format("woff2"), url('../fonts/SourceCodePro-Bold.otf.woff') format("woff"), url('../fonts/SourceCodePro-Bold.otf') format("opentype"), url('../fonts/SourceCodePro-Bold.ttf') format("truetype"); }
+
+.codesplit {
+  font-size: 7pt;
+  line-height: 1.5;
+  margin: 1.5em 0em; }
+  .codesplit .pair {
+    background: #e9e9e9;
+    padding: .2em 1em;
+    margin: 0 0 2px 0;
+    position: relative; }
+    .codesplit .pair:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .codesplit .pair .code {
+      float: left;
+      width: 55%; }
+    .codesplit .pair .comment {
+      float: right;
+      width: 43%;
+      padding: .2em 0 0 0; }
+      .codesplit .pair .comment p {
+        margin: 0;
+        font-size: 7pt; }
+  .codesplit .code-wide .code {
+    width: 60%; }
+  .codesplit .code-wide .comment {
+    width: 38%; }
+  .codesplit .no-comment {
+    background: transparent; }
+    .codesplit .no-comment .code {
+      width: 100%; }
+  .codesplit .line-through {
+    text-decoration: none; }
+    .codesplit .line-through .code {
+      text-decoration: line-through; }
+  .codesplit .bold .code {
+    font-weight: bold; }
+  .codesplit .bold .comment {
+    font-family: "ProximaNova-Semibold"; }
+  .codesplit .comment-header {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    height: 0;
+    overflow: visible;
+    position: relative; }
+    .codesplit .comment-header .comment {
+      padding: .75em 0 .5em 1em;
+      background: #e9e9e9;
+      font-family: "ProximaNova-Semibold";
+      position: absolute;
+      bottom: 100%;
+      right: 0; }
+    .codesplit .comment-header + .no-comment {
+      display: none; }
+  .codesplit [class^="offset"] .code, .codesplit [class*=" offset"] .code {
+    width: 100%; }
+  .codesplit [class^="offset"] .comment, .codesplit [class*=" offset"] .comment {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    right: 0;
+    float: none;
+    padding: .5em;
+    background: #e9e9e9; }
+  .codesplit .offset-top .comment {
+    top: auto;
+    bottom: 100%; }
+
+.katex-html {
+  display: none; }
+
+/*
+  F8E419
+  9F1046
+  1299B8
+  08839F
+*/
+/* Skeleton
+_____________________________________________________________________________ */
+body {
+  font-size: 13px;
+  font-family: "Georgia", serif;
+  margin: 0;
+  padding: 0; }
+
+a {
+  color: #1299B8; }
+
+#top {
+  background-color: #008ae6;
+  color: #ffffff;
+  padding: 3em 0 3em;
+  position: relative;
+  z-index: 3; }
+
+#bottom {
+  margin-top: 4em; }
+
+#header, #footer {
+  clear: both;
+  overflow-y: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px; }
+
+#header {
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase; }
+
+#top #header h1 {
+  font-family: "ProximaNova-Regular";
+  font-size: 48px;
+  letter-spacing: 0.271em;
+  margin-bottom: 0.25em; }
+
+#top #header h1 strong {
+  font-family: 'ProximaNova-Bold'; }
+
+#top #header h1 a {
+  color: #fff;
+  text-decoration: none; }
+
+#top #header h2 {
+  font-family: "ProximaNova-Regular";
+  color: #ffffff;
+  font-size: 29.666px;
+  letter-spacing: 0.271em;
+  margin: 0;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em; }
+
+#middle {
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  z-index: 1; }
+
+/* NAVIGATOR BLOCK LEVEL
+_____________________________________________________________________________*/
+#navigator {
+  margin: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+#navigator-inner {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  margin: 0 auto; }
+
+#mask {
+  position: absolute;
+  top: -10px;
+  left: -8px;
+  right: -8px;
+  background-color: #fff;
+  height: 30px;
+  display: block; }
+
+#nav-bar {
+  background-color: #008ae6;
+  position: relative;
+  width: 100%;
+  -webkit-box-shadow: 0 5px 10px #fff;
+  -moz-box-shadow: 0 5px 10px #fff;
+  box-shadow: 0 5px 10px #fff;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+#nav-bar-wrap {
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 3; }
+
+#toc-holder {
+  clear: both;
+  display: block;
+  margin: 160px auto 0;
+  position: relative; }
+
+#toc-list {
+  padding-top: 46px;
+  z-index: 2; }
+
+/* NAVIGATOR STYLE
+_____________________________________________________________________________*/
+#navigator,
+#navigator h1,
+#navigator h2 {
+  font-family: "ProximaNova-Regular"; }
+
+#navigator h1 {
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+  padding: 8px 0;
+  position: relative;
+  text-align: center;
+  width: 210px; }
+
+#navigator h1 a {
+  color: #fff;
+  text-decoration: none; }
+
+#navigator h2 {
+  font-size: 16px;
+  margin: 10px 4px 10px; }
+
+#nav-bar h1, #nav-bar h2 {
+  display: inline-block; }
+
+#navigator strong {
+  font-family: "ProximaNova-Bold"; }
+
+#table-of-contents {
+  float: left; }
+
+#toc-holder a {
+  color: #000;
+  /*display: block;*/
+  text-decoration: none; }
+
+#toc-holder a:hover {
+  color: #008ae6; }
+
+#toc-list ul {
+  list-style: none;
+  width: 220px;
+  float: left;
+  min-width: 220px; }
+
+#toc-list ul > li .expand {
+  font-family: "Pictos";
+  float: right;
+  text-transform: lowercase;
+  display: none; }
+
+#toc-list > ul {
+  clear: both;
+  display: block;
+  margin: 0;
+  padding: 0 0 0 5px;
+  position: relative; }
+
+#toc-list ul > li:hover .expand {
+  cursor: pointer;
+  visibility: visible; }
+
+#toc-list ul > li .expand:hover {
+  color: #08839F; }
+
+/* Chapter Titles*/
+#toc-list > ul > li {
+  font-family: "ProximaNova-Bold";
+  font-size: 13px;
+  margin: 10px 0 8px;
+  text-transform: uppercase; }
+
+/* Chapter Section lists*/
+#toc-list ul > ul {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: none; }
+
+#toc-list ul > ul a {
+  color: #777; }
+
+/* Chapter Section */
+#toc-list ul > ul li {
+  margin: 0 0 1px;
+  padding: 0; }
+
+a#purchase-link {
+  color: #fff;
+  display: inline-block;
+  float: right;
+  padding: 10px;
+  position: relative; }
+
+/* END NAVIGATOR
+_____________________________________________________________________________*/
+#footer {
+  background-color: #f6f6f6;
+  color: #ababab;
+  font-size: 13px;
+  overflow-y: auto;
+  width: 800px; }
+
+#footer a {
+  color: #777777; }
+
+#footer h4 {
+  color: #000000;
+  font-size: 15px;
+  font-family: "ProximaNova-Regular";
+  margin-bottom: 0.8em; }
+
+#footer .one-third {
+  float: left;
+  font-size: 13px;
+  margin: 0 1%;
+  margin: 0 -webkit-calc(10px);
+  margin: 0 -moz-calc(10x);
+  margin: 0 calc(10px);
+  width: 31%;
+  width: -webkit-calc(33% - 20px);
+  width: -moz-calc(33% - 20px);
+  width: calc(33% - 20px); }
+
+#footer p {
+  font-size: 13px;
+  line-height: 16px; }
+
+#footer img {
+  width: auto; }
+
+#container {
+  padding-top: 2.5em;
+  width: 800px;
+  margin: 0 auto;
+  line-height: 1.317em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /*  background-image: url('../imgs/vertical_grid.jpg');*/ }
+
+h1 {
+  font-size: 320%;
+  line-height: 1em;
+  font-style: normal;
+  margin-bottom: 1.3em;
+  margin-top: 0.4em; }
+
+h2 {
+  font-size: 360%;
+  line-height: 1em;
+  font-style: normal;
+  margin-top: 0px;
+  margin-bottom: 0.3em;
+  color: #202020; }
+
+/* To squash extra h2 element on title page */
+body > h2:nth-child(2) {
+  display: none; }
+
+h3 {
+  font-size: 240%;
+  color: #404040;
+  margin-top: 2em; }
+
+h4, h5 {
+  font-size: 180%; }
+
+h1, h2, h3, h4, h5 {
+  font-family: 'ProximaNova-Bold';
+  color: #222;
+  font-weight: normal; }
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both; }
+
+h3, h4, h5, h6 {
+  line-height: 1.317em;
+  margin: 1.6em 0 0.5em; }
+
+p {
+  font-size: 18.2px;
+  line-height: 1.618em;
+  letter-spacing: 0.03em; }
+
+li {
+  font-size: 18.2px; }
+
+/* Tables
+_____________________________________________________________________________ */
+table {
+  font-size: 8pt;
+  font-family: "ProximaNova-Regular";
+  color: #606060;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  margin: 3em 0;
+  table-layout: fixed;
+  border: 1px solid #D1D1D1; }
+
+table td, table th {
+  padding: 0.5em; }
+
+/* weird fix. setting font size 1pt up in header to make it look the same size */
+table th {
+  color: #404040;
+  font-size: 9pt;
+  border: 1px solid #D1D1D1;
+  background-color: #ebebeb;
+  font-family: "ProximaNova-Bold";
+  font-style: normal; }
+
+table td {
+  border: 1px solid #D1D1D1; }
+
+table td p {
+  margin: 0; }
+
+table.code pre {
+  font-size: 0.9em; }
+
+table.code td {
+  text-align: left; }
+
+/* Styles
+_____________________________________________________________________________ */
+.line-through {
+  text-decoration: line-through; }
+
+.underline {
+  text-decoration: underline; }
+
+/* Definition Lists
+_____________________________________________________________________________ */
+.list h4, .table h4 {
+  clear: none; }
+
+dl {
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0; }
+
+dt, dd {
+  font-family: "ProximaNova-Regular";
+  font-size: 16px;
+  float: left;
+  line-height: 1em;
+  margin: 0 0 0.5em 0; }
+
+dt {
+  width: 30%; }
+
+dd {
+  width: 70%; }
+
+dd p {
+  line-height: 1em;
+  margin: 0;
+  padding: 0; }
+
+/* Quote
+_____________________________________________________________________________ */
+h2 + blockquote {
+  font-family: "Georgia";
+  font-style: italic;
+  margin: 2em 0 2em 0;
+  font-size: 16pt;
+  line-height: 20pt;
+  color: #000000;
+  /*#808080;*/ }
+
+h2 + blockquote span.attribution {
+  display: block;
+  font-style: normal;
+  font-size: 16pt;
+  margin-left: 24px;
+  margin-top: 4px; }
+
+blockquote {
+  font-family: "ProximaNova-Regular";
+  font-style: italic;
+  margin: 12px 40px 12px 40px;
+  font-size: 12pt;
+  line-height: 14pt;
+  color: #000000;
+  /*#808080;*/ }
+
+blockquote span.attribution {
+  display: block;
+  font-style: italic;
+  font-size: 12pt;
+  margin-left: 24px;
+  margin-top: 12px; }
+
+/* Default Elements
+_____________________________________________________________________________ */
+canvas {
+  border: 1px solid gray; }
+
+canvas:focus {
+  outline: none; }
+
+.sketch-controls {
+  color: #000000;
+  margin: 5px 0 15px; }
+
+.sketch-controls button {
+  border: 0;
+  color: white;
+  padding: 5px 8px;
+  font-size: 100%;
+  font-family: "ProximaNova-Regular"; }
+
+.sketch-controls button:hover {
+  cursor: pointer;
+  background-color: #000; }
+
+.sketch-controls .reset {
+  background-color: #404383; }
+
+.sketch-controls .pause {
+  background-color: #408448; }
+
+/* Span Classes Styling
+_____________________________________________________________________________ */
+span.highlight {
+  background-color: #E9E9E9;
+  font-family: "ProximaNova-SemiBold";
+  font-size: 16pt;
+  display: block;
+  padding: 0.8em;
+  text-align: center; }
+
+/* .example = exercises
+   .tip = projects
+   .note = breakout boxes
+*/
+.note h2, .tip, .example h2,
+.note h3, .tip h3, .example h3,
+.note h4, .tip h4, .example h4 {
+  color: #191919;
+  margin-bottom: 0.3em;
+  font-style: normal;
+  font-family: 'ProximaNova-Bold'; }
+
+/* == BREAKOUT BOXES */
+.note {
+  color: #191919;
+  padding: 1.4em 1.5em;
+  margin: 1.15em 0;
+  background-color: #E9E9E9; }
+
+.note p {
+  font-size: 12pt; }
+
+/* == EXERCISES */
+div.example {
+  background-color: #E9E9E9;
+  color: #000;
+  padding: 3em 1.5em 1em;
+  position: relative;
+  margin: 1.15em 0;
+  overflow-y: auto;
+  font-style: none; }
+
+div.example h3[id],
+div.example h4[id],
+div.example h5[id],
+div.example h6[id] {
+  font-family: "ProximaNova-Regular";
+  text-align: right;
+  margin: 1em 0.9em;
+  position: absolute;
+  right: 0;
+  top: 0; }
+
+/* == PROJECTS */
+.tip {
+  padding: 0.7em 1.5em;
+  margin: 1.15em 0;
+  background-color: #E9E9E9;
+  font-family: "Georgia"; }
+
+.note h2:first-child, .tip h2:first-child, .example h2:first-child,
+.note h3:first-child, .tip h3:first-child, .example h3:first-child,
+.note h4:first-child, .tip h4:first-child, .example h4:first-child,
+.note p:first-child, .tip p:first-child, .example p:first-child {
+  margin-top: 0; }
+
+.note p:last-child, .tip p:last-child, .example p:last-child {
+  margin-bottom: 0; }
+
+/* Style functions */
+.function, .klass, .var, .mono, .formula {
+  font-family: Menlo, Monaco, Consolas, "Lucida Console", monospace;
+  font-size: 16px;
+  color: #000000; }
+
+.mono, .formula {
+  font-weight: bold; }
+
+.formula {
+  margin-left: 2em; }
+
+/* Style note to self */
+.notetoself {
+  color: #FF0000;
+  font-weight: bold; }
+
+/* Style example heading */
+span.example {
+  font-family: "ProximaNova-Bold";
+  background-color: #CACCCB;
+  clear: both;
+  display: block;
+  font-size: 1em;
+  padding: 0.7em 1em; }
+
+/* For the welcome page */
+.block-link {
+  background-color: #1ed4ed;
+  color: #fff;
+  border: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 0.7em auto 0;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none; }
+
+/* Image Classes
+_____________________________________________________________________________ */
+img {
+  width: 100%;
+  margin: 0; }
+
+.image-container {
+  position: relative;
+  margin: 16px 0 16px 0; }
+
+.image-container img {
+  max-width: 100%; }
+
+.bella img {
+  width: 25%; }
+
+.screenshot img {
+  width: 100%;
+  margin: 0px;
+  border: 1px solid gray; }
+
+.image-container .caption {
+  color: #222;
+  font-family: "ProximaNova-Regular";
+  font-size: 100%;
+  /* 100% == 13px when not inside a p tag */
+  border: 0; }
+
+.half-width,
+.half-width-right,
+.half-width-right-border {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  position: relative;
+  width: 48%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.half-width {
+  float: left;
+  margin-right: 2em; }
+
+.half-width-right,
+.half-width-right-border {
+  float: right;
+  margin-left: 2em; }
+
+.half-width-right-border img {
+  border: 1px solid gray; }
+
+.two-col,
+.two-col-borderless,
+.three-col {
+  width: 50%;
+  box-sizing: border-box;
+  padding-right: 1em;
+  float: left; }
+
+.two-col img,
+.two-col canvas,
+.two-col-borderless canvas,
+.three-col img,
+.three-col canvas {
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid gray; }
+
+.two-col-borderless img {
+  border: 0px solid gray; }
+
+.three-col {
+  width: 33%; }
+
+/* Code Formatting
+_____________________________________________________________________________ */
+pre {
+  width: 100%;
+  white-space: pre-wrap;
+  /* css-3 */
+  white-space: -moz-pre-wrap !important;
+  /* Mozilla, since 1999 */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */ }
+
+.source-code {
+  border: 1px solid #E4E4E4;
+  margin-bottom: 2em;
+  padding: 0.7em 1.5em;
+  background-color: #F8F8F8;
+  position: relative;
+  clear: both; }
+
+.source-code a.toggle {
+  font-family: 'Helvetica', Arial, sans-serif;
+  position: absolute;
+  right: 0.8em;
+  bottom: -1.8em;
+  margin: 0;
+  font-size: 0.8em;
+  color: #656565;
+  z-index: 1; }
+
+.note .source-code,
+.example .source-code,
+.tip .source-code {
+  border-left: none; }
+
+/* Div wrapper for code blocks */
+.code-block {
+  font-size: 90%;
+  line-height: 1.4em;
+  overflow: auto;
+  position: relative; }
+
+pre {
+  /*line-height: 1.4em;*/ }
+
+.code-block * {
+  position: relative; }
+
+/* Wrapper for every pairing of code and comment.
+Used to catch the .code-comment-line inside of
+a relatively positioned parent. */
+.code-comment-pair {
+  clear: both;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden; }
+
+.code-comment-line {
+  border-top: 1px dashed #C7C7C7;
+  display: block;
+  height: 2px;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%; }
+
+/* Div wrapper for code comments */
+.code-comment {
+  clear: right;
+  color: #444;
+  font-style: bold;
+  display: block;
+  float: right;
+  font-family: sans-serif;
+  width: 300px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 0.0em; }
+
+/* The code goes in here. */
+.code-block code {
+  clear: left;
+  display: block; }
+
+.source-code textarea {
+  background-color: #f0f0f0;
+  display: none;
+  width: 100%; }
+
+/* CSS for some lists */
+.list h4, .table h4 {
+  clear: none; }
+
+@media screen and (max-width: 1240px) {
+  #container {
+    margin-left: 220px;
+    margin-right: 0; } }
+
+@media all and (min-width: 1020px) {
+  #nav-bar-wrap {
+    max-width: 1240px;
+    min-width: 1020px; }
+  #navigator-inner {
+    min-width: 1020px;
+    max-width: 1240px; }
+  #toc-holder {
+    min-width: 1020px;
+    max-width: 1240px; }
+  #middle {
+    min-width: 1020px; } }
+
+/* iPad non-retina */
+@media all and (max-width: 1020px) {
+  #top {
+    display: none; }
+  #navigator {
+    position: relative;
+    margin: 0; }
+  #nav-bar-wrap {
+    position: relative; }
+  #middle {
+    min-width: auto; }
+  #toc-holder {
+    margin: 0;
+    padding: 0; }
+  #toc-list {
+    padding: 0;
+    position: relative; }
+  #toc-list > ul {
+    font-size: 16px;
+    margin: 1em 0 1.6em;
+    text-align: center;
+    width: 100%; }
+  #toc-list > ul li {
+    display: inline-block;
+    margin: 0.5em 0.8em; }
+  #container {
+    margin: 0;
+    max-width: 100%;
+    padding: 0 1em; }
+  #header, #footer {
+    width: 100%; } }
+
+@media all and (max-width: 640px) {
+  #nav-bar {
+    overflow-y: auto; }
+  #nav-bar h1, #nav-bar h2 {
+    display: block;
+    float: none;
+    position: relative;
+    text-align: center;
+    width: auto; }
+  a#purchase-link {
+    display: block;
+    float: none;
+    position: relative;
+    text-align: center;
+    width: auto; }
+  #nav-bar h1 {
+    font-size: 22px; }
+  #footer .one-third {
+    width: 100%; }
+  blockquote {
+    margin: 0 1.5em 2em; } }
+
+/*--------------------- Layout and Typography ----------------------------*/
+pre, tt, code {
+  font-family: Menlo, Monaco, Consolas, "Lucida Console", monospace;
+  margin: 0;
+  padding: 0; }
+
+/*---------------------- Syntax Highlighting -----------------------------*/
+td.linenos {
+  background-color: #f0f0f0;
+  padding-right: 10px; }
+
+span.lineno {
+  background-color: #f0f0f0;
+  padding: 0 5px 0 5px; }
+
+body .hll {
+  background-color: #ffffcc; }
+
+body .c {
+  color: #408080; }
+
+/* Comment */
+body .err {
+  border: 1px solid #FF0000; }
+
+/* Error */
+body .k {
+  color: #954121; }
+
+/* Keyword */
+body .o {
+  color: #666666; }
+
+/* Operator */
+body .cm {
+  color: #408080; }
+
+/* Comment.Multiline */
+body .cp {
+  color: #BC7A00; }
+
+/* Comment.Preproc */
+body .c1 {
+  color: #408080; }
+
+/* Comment.Single */
+body .cs {
+  color: #408080; }
+
+/* Comment.Special */
+body .gd {
+  color: #A00000; }
+
+/* Generic.Deleted */
+/* Generic.Emph */
+body .gr {
+  color: #FF0000; }
+
+/* Generic.Error */
+body .gh {
+  color: #000080; }
+
+/* Generic.Heading */
+body .gi {
+  color: #00A000; }
+
+/* Generic.Inserted */
+body .go {
+  color: #808080; }
+
+/* Generic.Output */
+body .gp {
+  color: #000080; }
+
+/* Generic.Prompt */
+/* Generic.Strong */
+body .gu {
+  color: #800080; }
+
+/* Generic.Subheading */
+body .gt {
+  color: #0040D0; }
+
+/* Generic.Traceback */
+body .kc {
+  color: #954121; }
+
+/* Keyword.Constant */
+body .kd {
+  color: #954121; }
+
+/* Keyword.Declaration */
+body .kn {
+  color: #954121; }
+
+/* Keyword.Namespace */
+body .kp {
+  color: #954121; }
+
+/* Keyword.Pseudo */
+body .kr {
+  color: #954121; }
+
+/* Keyword.Reserved */
+body .kt {
+  color: #B00040; }
+
+/* Keyword.Type */
+body .m {
+  color: #666666; }
+
+/* Literal.Number */
+body .s {
+  color: #219161; }
+
+/* Literal.String */
+body .na {
+  color: #7D9029; }
+
+/* Name.Attribute */
+body .nb {
+  color: #954121; }
+
+/* Name.Builtin */
+body .nc {
+  color: #0000FF; }
+
+/* Name.Class */
+body .no {
+  color: #880000; }
+
+/* Name.Constant */
+body .nd {
+  color: #AA22FF; }
+
+/* Name.Decorator */
+body .ni {
+  color: #999999; }
+
+/* Name.Entity */
+body .ne {
+  color: #D2413A; }
+
+/* Name.Exception */
+body .nf {
+  color: #0000FF; }
+
+/* Name.Function */
+body .nl {
+  color: #A0A000; }
+
+/* Name.Label */
+body .nn {
+  color: #0000FF; }
+
+/* Name.Namespace */
+body .nt {
+  color: #954121; }
+
+/* Name.Tag */
+body .nv {
+  color: #19469D; }
+
+/* Name.Variable */
+body .ow {
+  color: #AA22FF; }
+
+/* Operator.Word */
+body .w {
+  color: #bbbbbb; }
+
+/* Text.Whitespace */
+body .mf {
+  color: #666666; }
+
+/* Literal.Number.Float */
+body .mh {
+  color: #666666; }
+
+/* Literal.Number.Hex */
+body .mi {
+  color: #000; }
+
+/* Literal.Number.Integer */
+body .mo {
+  color: #000; }
+
+/* Literal.Number.Oct */
+body .sb {
+  color: #219161; }
+
+/* Literal.String.Backtick */
+body .sc {
+  color: #219161; }
+
+/* Literal.String.Char */
+body .sd {
+  color: #219161; }
+
+/* Literal.String.Doc */
+body .s2 {
+  color: #219161; }
+
+/* Literal.String.Double */
+body .se {
+  color: #BB6622; }
+
+/* Literal.String.Escape */
+body .sh {
+  color: #219161; }
+
+/* Literal.String.Heredoc */
+body .si {
+  color: #BB6688; }
+
+/* Literal.String.Interpol */
+body .sx {
+  color: #954121; }
+
+/* Literal.String.Other */
+body .sr {
+  color: #BB6688; }
+
+/* Literal.String.Regex */
+body .s1 {
+  color: #219161; }
+
+/* Literal.String.Single */
+body .ss {
+  color: #19469D; }
+
+/* Literal.String.Symbol */
+body .bp {
+  color: #954121; }
+
+/* Name.Builtin.Pseudo */
+body .vc {
+  color: #19469D; }
+
+/* Name.Variable.Class */
+body .vg {
+  color: #19469D; }
+
+/* Name.Variable.Global */
+body .vi {
+  color: #19469D; }
+
+/* Name.Variable.Instance */
+body .il {
+  color: #666666; }
+
+/* Literal.Number.Integer.Long */
+/* Div wrapper for code blocks */
+.code-block {
+  font-size: 90%;
+  line-height: 1.4em;
+  overflow: auto;
+  position: relative; }
+
+.code-comment-pair code pre {
+  width: 100%; }
+
+.one-line:first-child,
+.code-comment {
+  display: inline-block;
+  background-color: #e5e5e5;
+  padding: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.one-line:first-child {
+  width: 60%; }
+
+.no-comment .one-line:first-child {
+  background-color: transparent;
+  padding-top: 0;
+  padding-bottom: 0; }
+
+.no-comment .one-line:first-child {
+  margin-bottom: 0;
+  width: 100%; }
+
+.one-line {
+  padding-left: 4px; }
+
+/* Wrapper for every pairing of code and comment.
+Used to catch the .code-comment-line inside of
+a relatively positioned parent. */
+.code-comment-pair {
+  display: block;
+  position: relative;
+  clear: both;
+  margin: 0 0 2px 0;
+  padding: 0;
+  overflow-y: auto;
+  overflow-x: hidden; }
+
+/* Div wrapper for code comments */
+.code-comment {
+  clear: right;
+  color: #444;
+  display: block;
+  float: right;
+  font-family: sans-serif;
+  font-style: bold;
+  margin-top: 0.0em;
+  position: relative;
+  width: 40%;
+  padding-left: 1.0em;
+  /* hack to remove 1px white space in Safari on Lion */
+  /*left: -1px;*/ }
+
+/* The code goes in here. */
+.code-block code {
+  clear: left;
+  display: block;
+  position: relative; }
+
+/* Stretch class for comments that point to multiple lines of code */
+.stretch {
+  background-color: #e5e5e5;
+  padding: 4px; }
+
+.stretch .code-comment,
+.stretch .one-line:first-child,
+.stretch span.one-line {
+  background: transparent;
+  padding-top: 0;
+  padding-bottom: 0; }
+
+.stretch span.one-line {
+  padding-right: 4px;
+  padding-left: 0; }
+
+.stretch .code-comment {
+  padding-left: 1.0em; }
+
+.offset-up code {
+  clear: both; }
+
+.offset-up span.one-line,
+.offset-down span.one-line {
+  width: 100%; }
+
+.offset-down span.one-line {
+  width: 200%; }
+
+.offset-down code {
+  float: left; }
+
+.offset-up .code-comment {
+  position: absolute;
+  /*float: right;*/
+  right: 0;
+  top: -10px;
+  z-index: 1; }
+
+.offset-down .code-comment {
+  float: right;
+  clear: none;
+  position: relative;
+  margin-top: 2.1em;
+  right: 0; }
+
+div.example code pre span[class],
+div.example .code-comment {
+  color: #fff; }
+
+div.example .toggle {
+  color: #000; }
+
+div.example .source-code {
+  background: transparent;
+  background-color: #666; }
+
+div.example .one-line:first-child,
+div.example .code-comment,
+div.example .stretch {
+  background-color: #88808a; }
+
+div.example .no-comment .one-line:first-child {
+  background: transparent; }
+
+.offset-up {
+  overflow-y: visible;
+  overflow-x: visible; }
