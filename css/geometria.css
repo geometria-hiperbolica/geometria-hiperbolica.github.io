@@ -22,6 +22,11 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline; }
 
+  /*
+  Colors for this book Hyperbolic Geometry
+  https://coolors.co/0068ad-006db6-0072be-007dd1-008ae6-43a6e7-54aee9-64b5eb-72bced
+  */
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
