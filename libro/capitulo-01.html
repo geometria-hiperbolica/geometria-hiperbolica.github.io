@@ -1,10 +1,114 @@
-<section data-type="chapter" id="_capitulo_1_espacios">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Geometría Hiperbólica</title>
+
+
+  <!--MathJax starts-->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+                       TeX: { equationNumbers: { autoNumber: "AMS" } },
+                       });
+    </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+
+  <!--<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>-->
+  
+  
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="../javascripts/codeprocessing.js"></script> -->
+  <!-- <script type="text/javascript" src="../processingjs/processing.js"></script> -->
+  <!-- <script type="text/javascript" src="../processingjs/lazyloading.js"></script> -->
+  <script type="text/javascript" src="javascripts/sketchControls.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.fixed.js"></script>
+  <script type="text/javascript" src="javascripts/jquery.lazyloadxt.extra.min.js"></script>
+  <script type="text/javascript" src="javascripts/size-iframes.js"></script>
+
+  <script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+      $('#toc-list').fixed({'top':'8'});
+      $('#nav-bar-wrap').fixed({'top':'8'});
+
+      $('span.c1').each(function(){ addStylesToCodeLines($(this)); });
+      // $('code').each(function(){ inlineComments($(this)); });
+      $('div.source-code').each(function(){ setRawCodeHeight($(this)); });
+      $('a.toggle').click(function(){ toggleCodeDisplay($(this)); return false; });
+    });
+  </script>
+  <!--<link rel="stylesheet" href="stylesheets/fonts.css" type="text/css">
+  <link rel="stylesheet" href="stylesheets/code-html.css" type="text/css">-->
+  <link rel="stylesheet" href="stylesheets/html.css" type="text/css">
+  <link rel="icon" type="image/png" href="imgs/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="imgs/infinity16.png" sizes="16x16">
+  
+
+
+<script>
+
+    window.onload= function() {
+      offsetUps = document.getElementsByClassName('offset-up');
+      for(var i=0; i < offsetUps.length; i++) {
+        var element = offsetUps[i];
+        var comment = element.getElementsByClassName('code-comment')[0];
+        var height = comment.offsetHeight;
+        comment.style.top = '-' + (height) +  'px';
+      }
+    };
+</script>
+
+</head>
+<body>
+
+  <div id="navigator">
+    <div id="navigator-inner">
+      <div id='nav-bar-wrap'>
+        <div id="mask"></div>
+        <div id="nav-bar">
+          <h1><a href="/">GEOMETRÍA <strong>HIPERBÓLICA</strong></a></h1>
+          <h2>Camilo Ramírez Maluendas</h2>
+          <h2>Juan Carlos Ponce Campuzano</h2>
+          <!--<a id="purchase-link" href="/">Buy this book in print</a> <a id="purchase-link" href="/">Buy this book as PDF</a>-->
+        </div>
+      </div>
+      <div class="w3-hide-medium w3-hide-small"><br><br><br><br><br></div>
+      <div id="toc-holder">
+        <div id="toc-list">
+          <ul>
+            <li><a href="#">Presentación</a></li>
+            <li><a href="#">Dedicación</a></li>
+            <li><a href="/libro/capitulo-01.html">1.  Esfera de Riemann $\hat{\mathbb{C}}$</a></li>
+            <li><a href="#">Further Reading</a></li>
+            <li><a href="#">Index</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="top">
+    <div id="header">
+      <h1><a href="/">Geometría <strong>Hiperbólica</strong></a></h1>
+      <h2>Camilo Ramírez Maluendas</h2>
+      <h2>Juan Carlos Ponce Campuzano</h2>
+    </div>
+  </div>
+
+  <div id="middle">
+    <div id="container">
+      <section data-type="chapter" id="_capitulo_1_espacios">
   <h1>Esfera de Riemann $\overline{\mathbb{C}}$</h1>
 
   <blockquote data-type="epigraph">
-    <p>“An interesting thing to say here”</p>
+    <p>&#x201C;An interesting thing to say here&#x201D;</p>
 
-    <p data-type="attribution">— Somebody</p>
+    <p data-type="attribution">&#x2014; Somebody</p>
   </blockquote>
 
   <a data-primary="vectors" data-type="indexterm"></a>
@@ -12,17 +116,17 @@
   <p>
     El estudio de las funciones meromorfas en variable compleja nos induce naturalmente
     a introducir un nuevo punto en el plano complejo, el cual llamamos <em>infinito</em> y
-    denotamos con el símbolo $\infty$. Este nuevo objeto matemático nos conduce a
+    denotamos con el s&#xED;mbolo $\infty$. Este nuevo objeto matem&#xE1;tico nos conduce a
     definir el conjunto $\mathbb{C}\cup\{\infty\}$, el cual es posible dotarlo de una
-    topología usando el Teorema de Alexandroff.
+    topolog&#xED;a usando el Teorema de Alexandroff.
   </p>
 
   <div class="w3-card w3-container w3-light-gray w3-border-left w3-responsive" style="padding:8px 16px 8px 16px;">
-    <p><strong>Teorema:</strong> Si $X$ es un espacio topológico localmente compacto y Hausdorff y, $\infty$ es
+    <p><strong>Teorema:</strong> Si $X$ es un espacio topol&#xF3;gico localmente compacto y Hausdorff y, $\infty$ es
       un punto tal que $\infty\notin X$, entonces:
-      <ol>
+      </p><ol>
         <li>
-          La pareja $(\overline{X}, \tau_{\infty})$ es un espacio topológico compacto y
+          La pareja $(\overline{X}, \tau_{\infty})$ es un espacio topol&#xF3;gico compacto y
           Hausdorff, donde $\oveline{X}:=X\cup\{\infty\}$ y $\tau_{\infty}$ es la familia
           definida mediante
           \[
@@ -31,10 +135,10 @@
           \]
         </li>
         <li>
-          La topología inducida en $X$ por $\hat{X}$ es la de partida de $X$.
+          La topolog&#xED;a inducida en $X$ por $\hat{X}$ es la de partida de $X$.
         </li>
       </ol>
-    </p>
+    <p></p>
   </div>
 
   <a data-primary="Euclid" data-type="indexterm"></a>
@@ -52,26 +156,25 @@
     </figcaption>
   </figure>-->
 
-  <br/><br/>
+  <br><br>
   
   <div class="w3-hide-small w3-hide-medium">
-    <iframe name="Electrostatics" src="https://editor.p5js.org/jcponce/embed/LLrFO3dqo" width="800px" height="500px" 
-    style="border:none;" style="overflow:hidden;" scrolling="no"></iframe>
+    <iframe name="Electrostatics" src="https://editor.p5js.org/jcponce/embed/LLrFO3dqo" width="800px" height="500px" style="border:none;" scrolling="no"></iframe>
     <br>
     <div class="w3-container w3-center">
-      <button onclick="var ifr=document.getElementsByName('Electrostatics')[0]; ifr.src=ifr.src;" class="w3-btn w3-ripple w3-light-grey">Reset</button>
+      <button onclick="var ifr=document.getElementsByName(&apos;Electrostatics&apos;)[0]; ifr.src=ifr.src;" class="w3-btn w3-ripple w3-light-grey">Reset</button>
   
       
     </div>
   </div>
     
     <div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
-      <p><i class="fas fa-sad-tear"></i> Lo sentimos, este applet no funciona en pantallas pequeñas 📱 Rota tu 
-        dispositivo horizontalmente. 🖥️ O cambia las dimensiones de tu ventana.</p>
+      <p><i class="fas fa-sad-tear"></i> Lo sentimos, este applet no funciona en pantallas peque&#xF1;as &#x1F4F1; Rota tu 
+        dispositivo horizontalmente. &#x1F5A5;&#xFE0F; O cambia las dimensiones de tu ventana.</p>
     </div>
 
 
-    <br/><br/>
+    <br><br>
     
   <!--<figure class="screenshot" data-p5-sketch="https://editor.p5js.org/jcponce/embed/LLrFO3dqo">
     <img alt="" src="chapter01/ch01_ex01.png" />
@@ -85,20 +188,76 @@
   </figure>-->
 
   <div class="w3-card w3-container w3-light-gray w3-border-left w3-responsive" style="padding:8px 16px 8px 16px;">
-  <p><strong>Definición:</strong> La <strong>esfera de Riemann o plano complejo extendido</strong> es el 
-    conjunto $\hat{\mathbb{C}}=\mathbb{C}\cup\{\infty\}$ con la topología $\tau_{\infty}$.</p>
+  <p><strong>Definici&#xF3;n:</strong> La <strong>esfera de Riemann o plano complejo extendido</strong> es el 
+    conjunto $\hat{\mathbb{C}}=\mathbb{C}\cup\{\infty\}$ con la topolog&#xED;a $\tau_{\infty}$.</p>
   </div>
 
-  <p>De nuestra definición del plano complejo extendido, se sigue que para cada valor real $r\geq 0$ el conjunto
+  <p>De nuestra definici&#xF3;n del plano complejo extendido, se sigue que para cada valor real $r\geq 0$ el conjunto
     \[
-    B(\infty,r)=\{z\in\mathbb{C}: |z|>r\}\cup\{\infty\}
+    B(\infty,r)=\{z\in\mathbb{C}: |z|&gt;r\}\cup\{\infty\}
     \]
-    es una vecindad del punto $\infty$. Ahora bien, si $(z_n)_{n\in\mathbb{N}}$ es una sucesión 
-    conformada por números complejos convergente al punto $\infty$, si y solo si para cada real 
-    $r\geq 0$ debe de existir un número natural $N_r$ tal que $z_n\in B(\infty,r)$, para todo 
-    $n\geq N_r$. Más precisamente, la sucesión $(z_n)_{n\in\mathbb{N}}$ converge a $\infty$ si y 
-    solo si para cada real $r\geq 0$ existe un número natural $N_r$ tal que $|z_n|>r$, para todo 
-    $n\geq N_r$. Observemos que esta última condición es quivalente a decir que la sucesión 
+    es una vecindad del punto $\infty$. Ahora bien, si $(z_n)_{n\in\mathbb{N}}$ es una sucesi&#xF3;n 
+    conformada por n&#xFA;meros complejos convergente al punto $\infty$, si y solo si para cada real 
+    $r\geq 0$ debe de existir un n&#xFA;mero natural $N_r$ tal que $z_n\in B(\infty,r)$, para todo 
+    $n\geq N_r$. M&#xE1;s precisamente, la sucesi&#xF3;n $(z_n)_{n\in\mathbb{N}}$ converge a $\infty$ si y 
+    solo si para cada real $r\geq 0$ existe un n&#xFA;mero natural $N_r$ tal que $|z_n|&gt;r$, para todo 
+    $n\geq N_r$. Observemos que esta &#xFA;ltima condici&#xF3;n es quivalente a decir que la sucesi&#xF3;n 
     $(z_n)_{n\in\mathbb{N}}$ diverge. Este hecho lo podemos escribir como sigue.</p>
   
 </section>
+    </div>
+  </div>
+
+  <div id="bottom">
+    <div id="footer">
+      <div class="one-third" id="licenses">
+        <h4>Licencia</h4>
+        <p>
+          <a class="license-badge" rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/3.0/88x31.png" /></a>
+          <a class="license-badge" rel="license" href="http://creativecommons.org/licenses/LGPL/2.1/"><img alt="LGPL License" style="border-width:0" src="http://www.gnu.org/graphics/lgplv3-88x31.png" /></a>
+        </p>
+
+        <p>
+          El contenido de este libro están bajo la licencia <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons Attribution-NonCommercial 3.0 Unported License</a>.
+        </p>
+
+        <p>
+          El código fuente de este libro está bajo licencia <a rel="license" href="http://creativecommons.org/licenses/LGPL/2.1/">GNU Lesser General Public License</a> 
+          según lo publicado por la Free Software Foundation; ya sea la versión 2.1 de la Licencia o (a su elección) cualquier versión posterior.
+        </p>
+
+        
+
+      </div>
+
+      <div class="one-third">
+        <h4>Colofón</h4>
+
+        <p>El diseño del libro está inspirado por el trabajo <a href="https://natureofcode.com/">The Nature of Code</a>, 
+          escrito por <a href="https://shiffman.net/"></a>Daniel Shiffman</p>
+
+        <p>Este libro fue generado con <a href="https://github.com/magicbookproject/magicbook">The Magic Book Project</a>.
+
+        <p>Este libro no hubiera sido posible sin el soporte de ...</p>
+
+        <p>Este libro está compuesto en la web en Georgia, con encabezados en Proxima Nova.</p>
+
+        <p>Informa cualquier error en el libro o errores en el código fuente con un <a href="#">github issue</a> 
+          o contáctame a <span class="eml">¿¿??</span>.</p>
+      </div>
+
+      <div class="one-third">
+        <h4>Autores</h4>
+        <p>Camilo Ramírez Maluendas</p>
+
+        <p>Juan Carlos Ponce Campuzano</p>
+
+        <p>Más info ...</p>
+
+        <p><a href="#">Twitter</a> <a href="#">Github</a></p>
+      </div>
+
+    </div>
+  </div>
+  </body>
+</html>
