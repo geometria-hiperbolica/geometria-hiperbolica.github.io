@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Geometría Hiperbólica</title>
+  <title>Topología</title>
 
 
   <!--MathJax starts-->
@@ -69,9 +69,8 @@
       <div id='nav-bar-wrap'>
         <div id="mask"></div>
         <div id="nav-bar">
-          <h1><a href="/">GEOMETRÍA <strong>HIPERBÓLICA</strong></a></h1>
-          <h2>Juan Carlos Ponce Campuzano</h2>
-          <h2>Camilo Ramírez Maluendas</h2>
+          <h1><a href="/">INTRO A LA <strong>TOPOLOGÍA</strong></a></h1>
+          <h2>by Miguel Ángel Máldonado Aguilar</h2>
           <!--<a id="purchase-link" href="/">Buy this book in print</a> <a id="purchase-link" href="/">Buy this book as PDF</a>-->
         </div>
       </div>
@@ -79,9 +78,10 @@
       <div id="toc-holder">
         <div id="toc-list">
           <ul>
-            <li><a href="/libro/">Presentación</a></li>
-            <li><a href="/libro/dedication">Dedicación</a></li>
-            <li><a href="/libro/capitulo-01.html">1.  Esfera de Riemann $\hat{\mathbb{C}}$</a></li>
+            <li><a href="/book/">Presentación</a></li>
+            <li><a href="/book/acknowledgments">Acknowledgments</a></li>
+            <li><a href="/book/dedication">Dedication</a></li>
+            <li><a href="/book/capitulo-01">1.  Espacios topológicos y continuidad</a></li>
             <li><a href="/book/further-reading">Further Reading</a></li>
             <li><a href="/book/index">Index</a></li>
           </ul>
@@ -92,57 +92,40 @@
 
   <div id="top">
     <div id="header">
-      <h1><a href="/">Geometría <strong>Hiperbólica</strong></a></h1>
-      <h2>Juan Carlos Ponce Campuzano</h2>
-      <h2>Camilo Ramírez Maluendas</h2>
+      <h1><a href="/">Introducción a la <strong>Topología</strong></a></h1>
+      <h2>Miguel Ángel Maldonado Aguilar</h2>
     </div>
   </div>
 
   <div id="middle">
     <div id="container">
       <section data-type="chapter" id="_capitulo_1_espacios">
-  <h1>Esfera de Riemann $\hat{\mathbb{C}}$</h1>
+  <h1>Cap&#xED;tulo 1. Espacios topol&#xF3;gicos y continuidad</h1>
 
   <blockquote data-type="epigraph">
-    <p>&#x201C;An interesting thing to say here&#x201D;</p>
+    <p>&#x201C;Understanding &quot;invisible&quot; mathematical spaces is nothing but deep
+      understanding of mathematics that we believe to know well.&#x201D;</p>
 
-    <p data-type="attribution">&#x2014; Somebody</p>
+    <p data-type="attribution">&#x2014; Dorde Baralic</p>
   </blockquote>
 
   <a data-primary="vectors" data-type="indexterm"></a>
 
   <p>
-    El estudio de las funciones meromorfas en variable compleja nos induce naturalmente
-    a introducir un nuevo punto en el plano complejo, el cual llamamos <em>infinito</em> y
-    denotamos con el s&#xED;mbolo $\infty$. Este nuevo objeto matem&#xE1;tico nos conduce a
-    definir el conjunto $\mathbb{C}\cup\{\infty\}$, el cual es posible dotarlo de una
-    topolog&#xED;a usando el Teorema de Alexandroff.
+    El &#xE1;rea de la Topolog&#xED;a surge con la intenci&#xF3;n de generalizar el concepto
+de distancia en &#xE1;mbitos m&#xE1;s generales a espacios m&#xE9;tricos. As&#xED;, el concepto
+general de un espacio topol&#xF3;gico surge a principios del s. XIX por el trabajo
+de F. Hausdorff (1868-1942).
+El astr&#xF3;nomo alem&#xE1;n J.B. Listing publica en 1847 Vorstudien zur
+Topologie, considerada la primera obra que usa el t&#xE9;rmino topolog&#xED;a.
   </p>
-
-  <p><strong>Teorema: </strong>Si $X$ es un espacio topol&#xF3;gico localmente compacto y Hausdorff y, $\infty$ es
-    un punto tal que $\infty\notin X$, entonces:
-    </p><ol>
-      <li>
-        La pareja $(\hat{X}, \tau_{\infty})$ es un espacio topol&#xF3;gico compacto y
-        Hausdorff, donde $\hat{X}:=X\cup\{\infty\}$ y $\tau_{\infty}$ es la familia
-        definida mediante
-        \[
-        \tau_{\infty}:=\{U: U \text{ abierto en } X\}\cup\{V\subset \hat{X}: X-V
-        \text{ es compacto}\}.
-        \]
-      </li>
-      <li>
-        La topolog&#xED;a inducida en $X$ por $\hat{X}$ es la de partida de $X$.
-      </li>
-    </ol>
-  <p></p>
 
   <a data-primary="Euclid" data-type="indexterm"></a>
   <a data-primary="Euclidean vector" data-type="indexterm"></a>
   <a data-primary="geometric vector" data-type="indexterm"></a>
   <a data-primary="vectors" data-secondary="defined" data-type="indexterm"></a>
 
-
+  
 
   <figure id="chapter01_figure1">
     <img alt="Figure 1.1" src="imgs/chapter01/ch01_01.png">
@@ -152,30 +135,93 @@
     </figcaption>
   </figure>
 
-  <div class="one-col-wrapper"><iframe data-src="https://editor.p5js.org/jcponce/embed/9Zrq9NkY" width="640" height="360" frameborder="0" allowfullscreen></iframe><p class="caption">
-      If you are reading this book as a PDF or in print, then you will only
-      see screenshots of the canvas. Motion, of course, is a key element of the
-      discussion, so to the extent possible, the static screenshots will
-      include trails to give a sense of the behavior. For more about how to
-      draw trails, see the code examples linked from the website.
-    </p></div>
+  <section data-type="sect1" id="capitulo01_section1">
+    <h2>1.1 Topolog&#xED;as y bases</h2>
 
-  <p><strong>Definici&#xF3;n:</strong> La <strong>esfera de Riemann o plano complejo extendido</strong> es el 
-    conjunto $\hat{\mathbb{C}}=\mathbb{C}\cup\{\infty\}$ con la topolog&#xED;a $\tau_{\infty}$.</p>
+    <a data-primary="bouncing ball sketch" data-type="indexterm"></a>
+    <a data-primary="vectors" data-secondary="bouncing ball sketch" data-type="indexterm"></a>
 
-  <p>De nuestra definici&#xF3;n del plano complejo extendido, se sigue que para cada valor real $r\geq 0$ el conjunto
-    \[
-    B(\infty,r)=\{z\in\mathbb{C}: |z|&gt;r\}\cup\{\infty\}
-    \]
-    es una vecindad del punto $\infty$. Ahora bien, si $(z_n)_{n\in\mathbb{N}}$ es una sucesi&#xF3;n 
-    conformada por n&#xFA;meros complejos convergente al punto $\infty$, si y solo si para cada real 
-    $r\geq 0$ debe de existir un n&#xFA;mero natural $N_r$ tal que $z_n\in B(\infty,r)$, para todo 
-    $n\geq N_r$. M&#xE1;s precisamente, la sucesi&#xF3;n $(z_n)_{n\in\mathbb{N}}$ converge a $\infty$ si y 
-    solo si para cada real $r\geq 0$ existe un n&#xFA;mero natural $N_r$ tal que $|z_n|&gt;r$, para todo 
-    $n\geq N_r$. Observemos que esta &#xFA;ltima condici&#xF3;n es quivalente a decir que la sucesi&#xF3;n 
-    $(z_n)_{n\in\mathbb{N}}$ diverge. Este hecho lo podemos escribir como sigue.</p>
-  
+    <p>
+      Una topolog&#xED;a en un conjunto $X$ es una familia $\tau\subset P(X)$, cuyos elementos son
+      llamados abiertos, tal que cumple lo siguiente:
+      </p><ul>
+        <li>\(\emptyset, X\in \tau\)</li>
+        <li>La uni&#xF3;n de una cantidad arbitraria de abiertos es abierto.</li>
+          <li>La intersecci&#xF3;n de dos abiertos es abierto.</li>
+      </ul>
+    <p></p>
+    <p>Ahora $F_d = - \dfrac{1}{2}\rho\nu^2 A C_d\hat{\nu}$.
+      $$F_d = - \dfrac{1}{2}\rho\nu^2 A C_d\hat{\nu}$$
+    </p>
+
+   
+    
+
+    <div class="one-col-wrapper"><iframe data-src="https://editor.p5js.org/jcponce/embed/9Zrq9NkY" width="640" height="360" frameborder="0" allowfullscreen></iframe><p class="caption">
+        If you are reading this book as a PDF or in print, then you will only
+        see screenshots of the canvas. Motion, of course, is a key element of the
+        discussion, so to the extent possible, the static screenshots will
+        include trails to give a sense of the behavior. For more about how to
+        draw trails, see the code examples linked from the website.
+      </p></div>
+
+    <div data-type="example" id="example-11-bouncing-ball-with-no-vectors-d6J1hRV">
+      <h5>Example 1.1: Bouncing ball with no vectors</h5>
+    </div>
+
+    <div class="codesplit"><div class="pairs"><div class="pair"><div class="comment"><p>Variables for position and speed of ball.</p></div><div class="code">
+
+<pre><code>let x = 100;
+let y = 100;
+let xspeed = 1;
+let yspeed = 3.3;
+</code></pre></div></div><div class="pair no-comment"><div class="code">
+
+<pre><code>
+</code></pre></div></div><div class="pair"><div class="comment"><p>Remember how p5 works? setup() is executed once when the sketch starts and draw() loops forever and ever (until you quit).</p></div><div class="code">
+
+<pre><code>function setup() {
+  createCanvas(640, 360);
+  background(255);
+}
+</code></pre></div></div><div class="pair no-comment"><div class="code">
+
+<pre><code>
+function draw() {
+  background(255);
+
+</code></pre></div></div><div class="pair"><div class="comment"><p>Move the ball according to its speed.</p></div><div class="code">
+
+<pre><code>  x = x + xspeed;
+  y = y + yspeed;
+</code></pre></div></div><div class="pair no-comment"><div class="code">
+
+<pre><code>
+</code></pre></div></div><div class="pair"><div class="comment"><p>Check for bouncing.</p></div><div class="code">
+
+<pre><code>  if ((x &gt; width)  || (x &lt; 0)) {
+    xspeed = xspeed * -1;
+  }
+  if ((y &gt; height) || (y &lt; 0)) {
+    yspeed = yspeed * -1;
+  }
+</code></pre></div></div><div class="pair no-comment"><div class="code">
+
+<pre><code>
+  stroke(0);
+  fill(175);
+</code></pre></div></div><div class="pair"><div class="comment"><p>Display the ball at the position (x,y).</p></div><div class="code">
+
+<pre><code>  ellipse(x, y, 16, 16);
+</code></pre></div></div><div class="pair no-comment"><div class="code">
+
+<pre><code>}
+</code></pre></div></div></div></div>
+
+   
+  </section>
 </section>
+
     </div>
   </div>
 
@@ -203,18 +249,18 @@
 
         <p>This book was generated with <a href="https://github.com/runemadsen/Magic-Book-Project">The Magic Book Project</a>.
 
-        <p>This book would not have been possible without the generous support of .</p> 
+        <p>This book would not have been possible without the generous support of <a href="http://www.kickstarter.com/projects/shiffman/the-nature-of-code-book-project">Kickstarter</a> backers.</p> 
 
         <p>This book is typeset on the web in Georgia with headers in Proxima Nova.</p>
 
-        <p>Please report any mistakes in the book or bugs in the source with a <a href="#">GitHub issue</a> or contact me .</p>
+        <p>Please report any mistakes in the book or bugs in the source with a <a href="https://github.com/shiffman/The-Nature-of-Code/issues?sort=created&state=open">GitHub issue</a> or contact me at <span class="eml">daniel at shiffman dot net</span>.</p>
       </div>
 
       <div class="one-third">
-        <h4>Autores</h4>
-        <p>Juan Carlos Ponce Campuzano</p>
+        <h4>Author</h4>
+        <p>Miguel trabaja en...</p>
 
-        <p>Camilo Ramírez Maluendas</p>
+        <p>Además hace otras cosas como...</p>
 
         <p><a href="#">Twitter</a> <a href="#">GitHub</a></p>
       </div>
