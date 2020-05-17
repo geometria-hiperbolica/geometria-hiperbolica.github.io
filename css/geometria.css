@@ -220,7 +220,7 @@ h3 #display-percent {
     cursor: pointer; }
 
 .block-link {
-  background-color: #1ed4ed;
+  background-color: #0068AD;
   color: #fff;
   border: none;
   display: inline-block;
@@ -231,7 +231,7 @@ h3 #display-percent {
   text-decoration: none; }
 
 .block-link:hover {
-  background-color: #0000ba; }
+  background-color: #72BCED; }
 
 .description {
   font-size: 14px;
