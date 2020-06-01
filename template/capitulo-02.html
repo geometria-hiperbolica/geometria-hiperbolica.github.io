@@ -26,6 +26,32 @@ Los valores $a,b,c,d$ son llamados los \emph{coeficientes de la transformación}
 \emph{el determinante de la transformación}, el cual se denota mediante ${\rm det}(T)$. En la regla de asignación de la 
  transformación $T$ se establecen las siguientes consideraciones:
   </p>
+  <ol>
+    <li>
+      Si $c=0$, entonces la regla de correspondencia de $T$ está definida mediante 
+\[
+T(z)= \left\{
+\begin{array}{ ll }
+\dfrac{az+b}{d};  & \forall z\in\mathbb{C}, \\
+\infty; & \text{ si } z=\infty.\\
+\end{array}
+\right.
+\]
+    </li>
+    
+    <li>
+      Contrariamente, si $c\neq 0$,  entonces la regla de correspondencia de $T$ está definida mediante 
+\[
+      T(z)= \left\{
+\begin{array}{ ll }
+\dfrac{az+b}{cz+d};  & \forall z\in\mathbb{C}-\left\{\dfrac{-d}{c}\right\}, \\
+\infty; & \text{ si } z=\dfrac{-d}{c},\\
+\dfrac{a}{c}; & \text{ si } z=\infty.\\
+\end{array}
+\right.
+\]
+    </li>
+   </ol>
   
   <p>
     Este es es un ejemplo de párrafo
