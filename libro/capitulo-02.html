@@ -83,7 +83,7 @@
           <ul>
             <li><a href="/libro/">Presentación</a></li>
             <li><a href="#">Dedicación</a></li>
-            <li><a href="/libro/capitulo-01.html">1.  Esfera de Riemann $\overline{\mathbb{C}}$</a></li>
+            <li><a href="/libro/capitulo-01.html">1.  Esfera de Riemann $\hat{\mathbb{C}}$</a></li>
             <li><a href="/libro/capitulo-02.html">2.  Transformaciones de Möbius</a></li>
             <li><a href="#">Further Reading</a></li>
             <li><a href="#">Index</a></li>
@@ -115,6 +115,50 @@
   <a data-primary="vectors" data-type="indexterm"></a>
 
   <p>
+  Del estudio del an&#xE1;lisis complejo sabemos que las funciones meromorfas e inyectivas en $\mathbb{C}$ 
+  son las transformaciones fraccionarias lineales o transformaciones de M&#xF6;bius (preserva orientaci&#xF3;n). 
+   Estas funciones las podemos extender a la esfera Riemann.
+  </p>  
+  
+  <p>
+ Una \textbf{transformaci&#xF3;n fraccionaria lineal} o \textbf{transformaci&#xF3;n de M&#xF6;bius (preserva orientaci&#xF3;n)} $T$ 
+ es una funci&#xF3;n de la esfera de Riemann $\hat{\mathbb{C}}$ sobre s&#xED; misma, cuya regla de asiganci&#xF3;n es de la forma:
+\begin{equation}\label{eq:trans_fracc_lineal}
+T(z)=\frac{az+b}{cz+d},
+\end{equation}
+siendo $a,b,c$ y $d$ n&#xFA;meros complejos que satisface la relaci&#xF3;n $ad-cd\neq 0$.  
+Los valores $a,b,c,d$ son llamados los \emph{coeficientes de la transformaci&#xF3;n} y la expresi&#xF3;n $ad-cb$ es el 
+\emph{el determinante de la transformaci&#xF3;n}, el cual se denota mediante ${\rm det}(T)$. En la regla de asignaci&#xF3;n de la 
+ transformaci&#xF3;n $T$ se establecen las siguientes consideraciones:
+  </p>
+  <ol>
+    <li>
+      Si $c=0$, entonces la regla de correspondencia de $T$ est&#xE1; definida mediante 
+\[
+T(z)= \left\{
+\begin{array}{ ll }
+\dfrac{az+b}{d};  &amp; \forall z\in\mathbb{C}, \\
+\infty; &amp; \text{ si } z=\infty.\\
+\end{array}
+\right.
+\]
+    </li>
+    
+    <li>
+      Contrariamente, si $c\neq 0$,  entonces la regla de correspondencia de $T$ est&#xE1; definida mediante 
+\[
+      T(z)= \left\{
+\begin{array}{ ll }
+\dfrac{az+b}{cz+d};  &amp; \forall z\in\mathbb{C}-\left\{\dfrac{-d}{c}\right\}, \\
+\infty; &amp; \text{ si } z=\dfrac{-d}{c},\\
+\dfrac{a}{c}; &amp; \text{ si } z=\infty.\\
+\end{array}
+\right.
+\]
+    </li>
+   </ol>
+  
+  <p>
     Este es es un ejemplo de p&#xE1;rrafo
     \begin{eqnarray}\label{eq1}
     F(z)=Uz+\frac{U}{z}-\frac{i C}{2\pi}\log z.
@@ -126,7 +170,7 @@
     <p><strong>Teorema:</strong> Este es un ejemplo de teorema con lista
       </p><ol>
         <li>
-          La pareja $(\overline{X}, \tau_{\infty})$ es un espacio topol&#xF3;gico compacto y
+          La pareja $(\hat{X}, \tau_{\infty})$ es un espacio topol&#xF3;gico compacto y
           Hausdorff, donde $\overline{X}:=X\cup\{\infty\}$ y $\tau_{\infty}$ es la familia
           definida mediante
           \[
@@ -172,6 +216,7 @@
 
 
 </section>
+
     </div>
   </div>
 
