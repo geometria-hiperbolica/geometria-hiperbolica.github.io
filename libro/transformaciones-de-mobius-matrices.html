@@ -88,12 +88,12 @@
                 \end{matrix}\right)
                 \]
                 con $a,b,c,d\in\mathbb{C}$, lo identificamos naturalmente con $\mathbb{C}^4.$
-                 Más precisamente, a la
+                Más precisamente, a la
                 matriz $A=\left (\begin{matrix}
                 a &amp; b \\
                 c &amp; d
                 \end{matrix}\right)
-                $ en $\mathfrak{M}$ le correspondemos la $4$-upla $(a,b,c,d).$ 
+                $ en $\mathfrak{M}$ le correspondemos la $4$-upla $(a,b,c,d).$
                 Esta idenfiticación nos permite dotar a
                 $\mathfrak{M}$ con la topología $\tau_{\mu}$, la cual está inducida por la norma
                 \[
@@ -108,12 +108,12 @@
                 \end{equation}
                 es una aplicación, entonces la imagen inversa del subconjunto abierto
                 $\mathbb{C}^{\ast}=\mathbb{C}-\{0\}$ bajo $det$ es un abierto en $\mathfrak{M}.$
-                 Adicionalmente, el
+                Adicionalmente, el
                 abierto $det^{-1}(\mathbb{C}^{\ast})$ tiene estructura de grupo.
             </p>
 
             <div class="definition">
-                El \textbf{Grupo Lineal General} ${\rm GL}(2,\mathbb{C})$ es el conjunto conformado por las matrices de
+                El <strong>Grupo Lineal General</strong> ${\rm GL}(2,\mathbb{C})$ es el conjunto conformado por las matrices de
                 $2\times 2$
                 \[
                 A=\left (\begin{matrix}
@@ -133,7 +133,7 @@
                 c &amp; d
                 \end{matrix}\right)\in {\rm GL}(2,\mathbb{C})
                 \]
-                le podemos asociar naturalmente la transformación de Möbius 
+                le podemos asociar naturalmente la transformación de Möbius
                 $T(z)=\dfrac{az+b}{cz+d}.$ Esta
                 correspondencia nos define un homomorfismos de grupos. En otras palabras.
             </p>
@@ -150,7 +150,7 @@
             </div>
 
             <div class="proof">
-                Primero verificaremos que $\psi$ es un homeomorfismo. 
+                Primero verificaremos que $\psi$ es un homeomorfismo.
                 Consideremos las matrices
                 \[
                 A_1=\left(\begin{matrix}
@@ -176,32 +176,33 @@
                     \begin{equation}\label{eq:psi_1}
                     z\mapsto \frac{(a_1a_2+b_1c_2)z+(a_1b_2+b_1d_2)}{(c_1a_2+d_1c_2)z+(c_1b_2+d_1d_2)}.
                     \end{equation}
-                    Por otro lado, $\psi$ asigna a las matrices $A_1$ y $A_2$ las transformaciones de Möbius $T_{A_1}$
+                    Por otro lado, $\psi$ asigna a las matrices $A_1$ y $A_2$ las transformaciones de Möbius
+                    $T_{A_1}$
                     y $T_{A_2}$, respectivamente, tal que
                     \begin{equation*}
                     T_{A_1}(z)=\dfrac{a_1z+b_1}{c_1z+d_1} \quad \text{ y } \quad T_{A_2}(z)=\frac{a_2z+b_2}{c_2z+d_2},
                     \end{equation*}
                     entonces la función composición $\psi(A_1)\circ \psi(A_2)=T_{A_1}\circ T_{A_2}$ satisface
-                    </p><div class="scroll-wrapper">
-                        \begin{equation}\label{eq:psi_2}
+                </p><div class="scroll-wrapper">
+                    \begin{equation}\label{eq:psi_2}
                     z\mapsto
                     \dfrac{a_1\left(\dfrac{a_2z+b_2}{c_2z+d_2}\right)+b_1}{c_1\left(\dfrac{a_2z+b_2}{c_2z+d_2}\right)+d_1}=
                     \frac{(a_1a_2+b_1c_2)z+(a_1b_2+b_1d_2) }{(c_1a_2+d_1c_2)z+(c_1b_2+d_1d_2)}.
                     \end{equation}
-                    </div>
-                    De las relaciones (\ref{eq:psi_1}) y (\ref{eq:psi_2}) se que
-                    \[
-                    \psi(A_1\cdot A_2)=T_{A_1\cdot A_2}=T_{A_1}\circ T_{A_2}=\psi(A_1)\circ \psi(A_2).
-                    \]
-                    Por lo tanto $\psi$ es un homomorfismo de grupos. El hecho que $\psi$ es sobreyectivo es una
-                    consecuencia inmediata de la definión de $\psi.$
+                </div>
+                De las relaciones (\ref{eq:psi_1}) y (\ref{eq:psi_2}) se que
+                \[
+                \psi(A_1\cdot A_2)=T_{A_1\cdot A_2}=T_{A_1}\circ T_{A_2}=\psi(A_1)\circ \psi(A_2).
+                \]
+                Por lo tanto $\psi$ es un homomorfismo de grupos. El hecho que $\psi$ es sobreyectivo es una
+                consecuencia inmediata de la definión de $\psi.$
                 <p></p>
             </div>
 
             <p>
                 Del Primer Teorema de Isomorfismos de grupos, se sigue el grupo cociente ${\rm GL}(2,\mathbb{C})/{\rm
-                ker}(\psi)$ es isomorfo a $\mathbb{M}$. Este cociente es conocido como el \textbf{Grupo Lineal
-                Proyectivo} y es denotado mediante ${\rm PGL}(2,\mathbb{C}).$ Como consecuencia de la notación
+                ker}(\psi)$ es isomorfo a $\mathbb{M}$. Este cociente es conocido como el 
+                <strong>Grupo Lineal Proyectivo</strong> y es denotado mediante ${\rm PGL}(2,\mathbb{C}).$ Como consecuencia de la notación
                 introducida, tenemos que ${\rm PGL}(2,\mathbb{R})$ y $\mathbb{M}$ son isomorfos, es decir,
                 \[
                 {\rm PGL}(2,\mathbb{C})\cong \mathbb{M}.
@@ -224,6 +225,142 @@
                 está conformado por la matriz identidad y menos la identidad. Más precisamente, ${\rm ker}(\psi)=\{Id,
                 -Id\}$.
             </p>
+
+            <hr>
+
+            <h2 id="el-grupo-cociente">El grupo cociente $PSL(2,\mathbb{C})$</h2>
+
+            <p>
+                A partir de un complejo $\lambda\in\mathbb{C}^{\ast}=\mathbb{C}-\{0\}$ y una transformación de Möius $T$
+                tal que
+                \[
+                z\mapsto \dfrac{az+b}{cz+d},
+                \]
+                podemos obtener una nueva transformación de Möius $\lambda T$, tal que
+                \[
+                z\mapsto \dfrac{\lambda az+\lambda b}{\lambda cz+\lambda d},
+                \]
+                Este par de transformaciones $T$ y $\lambda T$ tienen la particularidad que las imágenes $T(z)$ y
+                $\lambda T (z)$ coinciden \emph{i.e.}, $T(z)=\lambda T(z)$ para todo $z\in\hat{\mathbb{C}}$. Este
+                fenómeno nos motiva a introducir la noción de transformaciones idénticas.
+            </p>
+
+            <div class="definition">
+                Las transformaciones de Möbius $T_1$ y $T_2$ son <strong>idénticas</strong> si y solo si $T_1(z)=T_2(z)$, para
+                cada $z\in\hat{\mathbb{C}}$.
+            </div>
+
+            <div class="theorem">
+                Las transformaciones de Möbius
+                \[
+                T_1(z)=\dfrac{a_1z+b_1}{c_1z+d_1} \quad \text{y} \quad T_2(z)=\dfrac{a_2z+b_2}{c_2z+d_2}
+                \]
+                son idénticas si y solo si existe un número complejo $\lambda\in\mathbb{C}^{\ast}$ tal que $a_1=\lambda
+                a_2$, $b_1=\lambda b_2$, $c_1=\lambda c_2$ y $d_1=\lambda d_2$.
+            </div>
+
+            <div class="proof">
+                La condición necesaria es trivial. Vamos a probar la condición suficiente. Tomemos dos transformaciones
+                de Möbius idénticas
+                \[
+                T_1(z)=\dfrac{a_1z+b_1}{c_1z+d_1}\quad \text{y} \quad T_2(z)=\dfrac{a_2z+b_2}{c_2z+d_2},
+                \]
+                cuyos coeficientes son diferentes de cero, (la prueba para el caso en que algunos de los coeficientes
+                toma el valor cero es similar). Entonces para los valores $0$, $1$ e $\infty$ se cumplen las igualdades
+                <div class="scroll-wrapper">
+                    \begin{align}
+                    T_1(0) = T_{2}(0) &amp; =\frac{b_1}{d_1}=\frac{b_2}{d_2}=u,\label{eq:T0}\\
+                    T_{1}(1)=T_{2}(1) &amp;=\frac{a_1+b_1}{c_1+d_1}=\frac{a_2+b_2}{c_2+d_2}\label{eq:T1},\\
+                    T_{1}(\infty)=T_{2}(\infty)&amp; =\frac{a_1}{c_1}=\frac{a_2}{c_2}=v\label{eq:Tinfinito},
+                    \end{align}
+                </div>
+                para algunos valores complejos $u,v\in\mathbb{C}$. Ahora, tomamos las siguientes igualdades que
+                provienen de las relaciones (\ref{eq:T0}) y (\ref{eq:Tinfinito})
+                \[
+                b_1=ud_1, \quad b_2=ud_2,\quad a_1=vc_1, \quad a_2=vc_2,
+                \]
+                las sustituimos en la ecuación (\ref{eq:T1}). Así, obtenemos
+                <div class="scroll-wrapper">
+                    \begin{align*}
+                    \frac{vc_1+ud_1}{c_1+d_1} &amp; =\frac{vc_2+ud_2}{c_2+d_2},\\
+                    (vc_1+ud_1)(c_2+d_2) &amp; =(vc_2+ud_2)(c_1+d_1),\\
+                    vc_1c_2+vc_1d_2+ud_1c_2+ud_1d_2 &amp; = vc_1c_2+vd_1c_2+uc_1d_2+ud_1d_2,\\
+                    vc_1d_2+ ud_1c_2&amp; =vd_1c_2+uc_1d_2,\\
+                    v(c_1d_2-d_1c_2)-u(c_1d_2-d_1c_2) &amp;=0,\\
+                    (v-u)(c_1d_2-d_1c_2)&amp; =0.\\
+                    \end{align*}
+                </div>
+
+                <p>
+                    se debe de satisfacer $c_1d_2-d_1c_2=0$. Supongamos que $v-u=0$, entonces de las ecuaciones
+                    (\ref{eq:T0}) y (\ref{eq:T1}) se sigue
+                </p>
+                <div class="scroll-wrapper">
+                    \[
+                    u-v=\dfrac{a_1}{c_1}-\dfrac{b_1}{d_1}=\dfrac{a_1d_1-b_1c_1}{c_1d_1}=0,
+                    \]
+                </div>
+                lo cual implica que el determinante de la transformación de Möbius $T_1$ es $0$. Por lo tanto, se
+                debe
+                de satisfacer $v-u\neq 0$ y $c_1d_2-d_1c_2=0$, de esta última igualdad obtenemos
+                <div class="scroll-wrapper">
+                    \begin{equation}\label{eq:ultima}
+                    \frac{c_1}{c_2}=\frac{d_1}{d_2}.
+                    \end{equation}
+                </div>
+                <p>
+                    Finalmente, de las ecuaciones (\ref{eq:T0}), (\ref{eq:T1}) y (\ref{eq:ultima}) se sigue que
+                </p><div class="scroll-wrapper">
+                    \[
+                    \frac{a_1}{a_2}=\frac{b_1}{b_2}=\frac{c_1}{c_2}=\frac{d_1}{d_2}=\lambda.
+                    \]
+                </div>
+                <p></p>
+            </div>
+
+            <p>
+                Toda transformación de Möbius $T$, tal que
+                \[
+                z\mapsto \dfrac{az+b}{cz+d},
+                \]
+                es idéntica a la transformación $\lambda T$, la cual tiene determinante $1$ y satisface
+                \[
+                z\mapsto \frac{\lambda az+\lambda b}{\lambda cz+\lambda d},
+                \]
+                siendo $\lambda=\frac{1}{\sqrt{det (T)}}\neq 0$. Aún más, cada transformación de Möbius $T$ es idéntica
+                a la transformación $\lambda T$, para cada $\lambda \in\mathbb{C}^{\ast}$. Esto quiere decir que
+                $\mathbb{C}^{\ast}$ actúa sobre $\mathbb{M}\cong {\rm PGL}(2,\mathbb{C})$ por multiplicación. Así
+                identificamos el subgrupo de la transformaciones de Möbius de determinante $1$ con el grupo cociente
+                \[
+                {\rm PSL}(2,\mathbb{C})={\rm PGL}(2,\mathbb{C})/\mathbb{C}^{\ast},
+                \]
+                el cual es llamado el <strong>Grupo Lineal Especial Proyectivo</strong>.
+            </p>
+
+            <div class="practice">
+                <strong>Problema 1.</strong> El <strong>grupo Lineal Especial</strong> 
+                (<strong>Grupo Unimodular</strong>), denotado mediante ${\rm
+                SL}(2,\mathbb{C}),$ es el conjunto conformado por las matrices de $2\times 2$
+                \[
+                A= \left (\begin{matrix}
+                a &amp; b \\
+                c &amp; d
+                \end{matrix}\right)
+                \]
+                tal que $a,b,c,d\in\mathbb{C}$ y el determinante $det(A)=1$,
+                junto con la operación multiplicación usual de matrices. Prueba las siguientes afirmaciones:
+                <ol>
+                    <li>
+                        ${\rm SL}(2,\mathbb{C})$ es un subgrupo de ${\rm GL}(2,\mathbb{C}).$
+                    </li>
+                    <li>
+                        ${\rm SL}(2,\mathbb{C})$ es un subconjunto cerrado de $\mathfrak{M}.$
+                    </li>
+                    <li>
+                        ${\rm SL}(2,\mathbb{C})/\{Id,-Id\}$ y ${\rm PGL}(2,\mathbb{C})/\mathbb{C}^{\ast}$ son isomorfos.
+                    </li>
+                </ol>
+            </div>
 
 
             <br>
