@@ -206,7 +206,7 @@ dd {
   margin: 0;
 }
 
-/* Make default font-size 1rem and add smooth scrolling to anchors */
+/* Make default font-size 1.2rem and add smooth scrolling to anchors */
 html {
   font-size: 1.2rem;
 }
@@ -220,7 +220,7 @@ html {
 /* Media query for smaller screens - Top bar */
 @media only screen and (max-width: 500px) {
   html {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 
