@@ -14,13 +14,13 @@
   <meta property="og:description" content="" />
   <meta property="og:type" content="website" />
 
-  <link rel="icon" type="image/png" href="content/imgs/infinity32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="content/imgs/infinity16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="libro/imgs/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="libro/imgs/infinity16.png" sizes="16x16">
 
-  <link rel="stylesheet" href="content/css/es.css">
-<link rel="stylesheet" href="content/css/extra-style.css">
-<link rel="stylesheet" href="content/css/style.css">
-<link rel="stylesheet" href="content/css/prism/prism.css">
+  <link rel="stylesheet" href="libro/css/es.css">
+<link rel="stylesheet" href="libro/css/extra-style.css">
+<link rel="stylesheet" href="libro/css/style.css">
+<link rel="stylesheet" href="libro/css/prism/prism.css">
 
 
 </head>
@@ -35,7 +35,7 @@
 
     <header>
 
-        <div class="" style="height: 100vh;">
+        <div class="">
 
 
             <div class="hide-small">
@@ -53,7 +53,7 @@
 
                 <h1 class="hide-small"><b>Geometría Hiperbólica</b></h1>
 
-                <p class="hide-large hide-medium" style="font-size:34px;text-align:center;"><b>Geometría <br/> Hiperbólica</b></p>
+                <p class="hide-large hide-medium" style="font-size:34px;text-align:center;"><b>Geometría <br>Hiperbólica</b></p>
 
                 <p class="hide-small author">Camilo Ramírez Maluendas<br>Juan Carlos Ponce Campuzano <br>
                     <script>document.write(new Date().getFullYear());</script>
@@ -63,8 +63,6 @@
                     <br>
                     <script>document.write(new Date().getFullYear());</script>
                 </p>
-
-
 
             </div>
 
@@ -76,14 +74,28 @@
 
     <hr>
 
+    <nav role="navigation" class="toc">
+        <h4 style="font-size: 1.5em;" id="tabla-de-contenidos">Contenidos</h4>
 
+        <ol>
+            <!--<li><a href="../index.html">Introduction</a></li>-->
+            <li><a href="libro/esfera-de-riemann.html">Esfera de Riemann $\hat{\mathbb{C}}$</a></li>
+            <li><a href="libro/transformaciones-de-mobius.html">Transformaciones de Möbius</a></li>
+            <li><a href="libro/propiedades-transformaciones-de-mobius.html">Propiedades de las Transformaciones de Möbius</a></li>
+            <li><a href="libro/transformaciones-de-mobius-matrices.html">Transformaciones de Möbius como matrices</a></li>
+        </ol>
+        
+    </nav>
+
+
+    <hr>
 
     <main>
         <article>
             <h4 id="intro" style="font-size: 1.5em;">Introdución</h4>
 
             <p>
-                Notas de Geometría Hiperbólica
+                Notas de Geometría Hiperbólica. 
             </p>
             
             <blockquote>
@@ -96,23 +108,12 @@
         </article>
     </main>
 
-
-    <hr>
-    <h4 style="font-size: 1.5em;" id="table-of-contents">Contenidos</h4>
-
-    <nav role="navigation" class="toc">
-
-      <ol>
-          <!--<li><a href="../index.html">Introduction</a></li>-->
-          <li><a href="content/esfera-de-riemann.html">Esfera de Riemann $\hat{\mathbb{C}}$</a></li>
-          <li><a href="content/transformaciones-de-mobius.html">Transformaciones de Möbius</a></li>
-          <li><a href="content/propiedades-transformaciones-de-mobius.html">Propiedades de las Transformaciones de Möbius</a></li>
-      </ol>
-      
-    </nav>
     <br>
 
-    <a href="content/esfera-de-riemann.html" style="text-decoration: none;">
+
+    
+
+    <a href="libro/esfera-de-riemann.html" style="text-decoration: none;">
         <p class="nextPage">NEXT: Esfera de Riemann</p>
     </a>
 
@@ -199,13 +200,21 @@
 
     <span class="hide-small" id="footer-elements">
       <span style="font-weight: bold;">[</span>
-      
+      <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
       <a href="https://github.com/geometria-hiperbolica"><i class="fa-solid fa-code"></i> Source</a>,
       <a href="https://github.com/geometria-hiperbolica/geometria-hiperbolica.github.io/issues"><i
           class="fa-solid fa-lightbulb"></i> Issues</a>,
+      <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+        <i class="fa-regular fa-heart"></i> Apoyo</span>
       <span style="font-weight: bold;">]</span>
     </span>
-    
+    <span class="hide-medium hide-large" style="font-size: 0.85em;">
+      <span style="font-weight: bold;">[</span>
+      <a href="../"><i class="fa-solid fa-house"></i> Home</a> -
+      <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+        <i class="fa-regular fa-heart"></i> Apoyo</span>
+      <span style="font-weight: bold;">]</span>
+    </span>
 
     <br />
 
@@ -231,11 +240,11 @@
 
   </footer>
 
-  <script src="content/js/mathjax.js"></script>
+  <script src="libro/js/mathjax.js"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-  <script src="content/js/scripts.js"></script>
-  <script async src="content/js/prism.js"></script>
+  <script src="jlibro/s/scripts.js"></script>
+  <script async src="libro/js/prism.js"></script>
 </body>
 
 </html>

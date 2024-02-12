@@ -518,7 +518,7 @@ h1:first-child {
 
 /* Nested ordered list for ToC */
 nav ol {
-  /*counter-reset: item;*/
+  counter-reset: item;
   padding-left: 2rem;
 }
 
@@ -527,9 +527,10 @@ nav li {
 }
 
 nav li:before {
-  font-weight: bold;
-  content: '•';
-  /*counter-increment: item;*/
+  /*font-weight: bold;*/
+  /*content: '•';*/
+  content: counters(item, '.') ' ';
+  counter-increment: item;
   padding-right: 0.35rem;
 }
 
