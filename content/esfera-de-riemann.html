@@ -34,7 +34,7 @@
   <!-- Starts main content -->
 
   <p class="callout hide-large hide-medium"><strong>⚠️ ¡Advertencia!</strong>
-    
+
     Si puedes ver este mensaje es porque tu pantalla es demasiado pequeña.
     Por lo tanto, algunos applets no se mostrarán correctamente.
     Puedes girar tu dispositivo a horizontal.
@@ -103,7 +103,7 @@
 
       <div class="definition" style="padding:8px 16px 8px 16px;">
         La <strong>esfera de Riemann o plano complejo extendido</strong> es el
-          conjunto $\hat{\mathbb{C}}=\mathbb{C}\cup\{\infty\}$ con la topología $\tau_{\infty}$.
+        conjunto $\hat{\mathbb{C}}=\mathbb{C}\cup\{\infty\}$ con la topología $\tau_{\infty}$.
       </div>
 
       <p>De nuestra definición del plano complejo extendido, se sigue que para cada valor real $r\geq 0$ el
@@ -146,10 +146,13 @@
         entonces la línea recta $l_x$ está conformada por las tripletas
         $(\overline{x}_1,\overline{x}_2,\overline{x}_3)$
         tal que
+      </p><div class="scroll-wrapper">
         \[
         (\overline{x}_1,\overline{x}_2,\overline{x}_3)=t(x_1,x_2,x_3-1)+(0,0,1), \text{ para cada } t\in\mathbb{R},
         \]
-        equivalentemente, para cada $t\in \mathbb{R}$ se cumplen (ecuaciones paramétricas):
+      </div>
+      equivalentemente, para cada $t\in \mathbb{R}$ se cumplen (ecuaciones paramétricas):
+      <div class="scroll-wrapper">
         \begin{equation}
         \begin{split}
         \overline{x}_1 &amp;=tx_1, \\
@@ -157,32 +160,33 @@
         \overline{x}_3 &amp;=t(x_3-1)+1.
         \end{split}\label{eq:valor_t}
         \end{equation}
-        Notemos que encontrar el punto $(\overline{x}_1,\overline{x}_2,\overline{x}_3)$
-        en la intersección $l_{\textbf{x}}\cap P_{xy}$, es obtener el valor $t$ tal
-        que $\overline{x}_3=0$. Si nos fijamos en la tercera relación descrita en
-        la ecuación (\ref{eq:valor_t}), podemos deducir fácilamente que la igualdad
-        $\overline{x}_3=0$ sucede cuando $t=\dfrac{1}{1-x_3}$. Si sustituimos el valor
-        encontrado para $t$ en las dos primeras igualdades de la ecuación (\ref{eq:valor_t}) tenemos:
-        \[
-        \overline{x}_1=\frac{x_1}{1-x_3}, \quad \overline{x}_2=\frac{x_2}{1-x_3}.
-        \]
-        Entonces el punto de intersección entre la línea $l_{\textbf{x}}$ y el plano
-        $P_{xy}$ es el complejo $\dfrac{x_1}{1-x_3}+i\dfrac{x_2}{1-x_3}$.</p>
+      </div>
+      Notemos que encontrar el punto $(\overline{x}_1,\overline{x}_2,\overline{x}_3)$
+      en la intersección $l_{\textbf{x}}\cap P_{xy}$, es obtener el valor $t$ tal
+      que $\overline{x}_3=0$. Si nos fijamos en la tercera relación descrita en
+      la ecuación (\ref{eq:valor_t}), podemos deducir fácilamente que la igualdad
+      $\overline{x}_3=0$ sucede cuando $t=\dfrac{1}{1-x_3}$. Si sustituimos el valor
+      encontrado para $t$ en las dos primeras igualdades de la ecuación (\ref{eq:valor_t}) tenemos:
+      \[
+      \overline{x}_1=\frac{x_1}{1-x_3}, \quad \overline{x}_2=\frac{x_2}{1-x_3}.
+      \]
+      Entonces el punto de intersección entre la línea $l_{\textbf{x}}$ y el plano
+      $P_{xy}$ es el complejo $\dfrac{x_1}{1-x_3}+i\dfrac{x_2}{1-x_3}$.<p></p>
 
       <p>Podemos introducir la proyección esterografica como sigue.</p>
 
       <div class="definition">
         La función $\Pi: \mathbb{S}^{2}\to \hat{\mathbb{C}}$,
-          defnida mediante
-          \[
-          \Pi(x_1,x_2,x_3)= \left\{
-          \begin{array}{ ll }
-          \dfrac{x_1}{1-x_3}+i\dfrac{x_2}{1-x_3}; &amp; \text{ si } (x_1,x_2,x_3)\neq (0,0,1); \\
-          \infty; &amp; \text{ si } (x_1,x_2,x_3)=(0,0,1).\\
-          \end{array}
-          \right.
-          \]
-          es llamada la <strong>proyección estereográfica</strong>.
+        defnida mediante
+        \[
+        \Pi(x_1,x_2,x_3)= \left\{
+        \begin{array}{ ll }
+        \dfrac{x_1}{1-x_3}+i\dfrac{x_2}{1-x_3}; &amp; \text{ si } (x_1,x_2,x_3)\neq (0,0,1); \\
+        \infty; &amp; \text{ si } (x_1,x_2,x_3)=(0,0,1).\\
+        \end{array}
+        \right.
+        \]
+        es llamada la <strong>proyección estereográfica</strong>.
       </div>
 
       <p>Una pregunta natural que surge es: ¿quién es la función inversa $\Pi^{-1}$? ¡Vamos a
@@ -193,15 +197,18 @@
         existe una única línea recta $l_{z}$ atravezando por los puntos $\textbf{x}$ y $N=(0,0,1)$. La recta
         $l_z$ está
         conformada por las tripletas $(\overline{x}_1,\overline{x}_2,\overline{x}_3)$ tal que
+      </p><div class="scroll-wrapper">
         \begin{equation}\label{eq:linea_recta}
         \overline{x}_1=tx_1, \quad \overline{x}_2=tx_2, \quad \overline{x}_3=1-t, \text{ para cada } t\in\mathbb{R}.
         \end{equation}
-      </p>
+      </div>
+      <p></p>
 
       <p>Dado que $l_z$ intersecta a $\mathbb{S}^{2}-\{N\}$ en exactamente un punto, entonces existe un único valor
         $t$ para
         el
         cual se satisface $(tx_1)^2+(tx_2)^2+(1-t)^2 =1$. Resolvemos la ecuación de segundo grado,
+      </p><div class="scroll-wrapper">
         \begin{equation*}
         \begin{split}
         (tx_1)^2+(tx_2)^2+(1-t)^2 &amp; =1,\\
@@ -209,14 +216,19 @@
         t \left[ t(x_1^2+x_2^2+1)-2\right] &amp; =0.\\
         \end{split}
         \end{equation*}
-      </p>
+      </div>
+      <p></p>
 
       <p>Así, obtenemos $t=\dfrac{2}{x_1^2+x_2^2+1}$. Al reemplazar este valor real en la ecuación
         (\ref{eq:linea_recta})
         tenemos que el punto de intersección entre la recta $l_{z}$ y $\mathbb{S}^{2}-\{N\}$ es la tripleta
-        $$\left(\frac{2x_1}{x_2^2+x_2^2+1},\frac{2x_2}{x_2^2+x_2^2+1},\frac{x_1^2+x_2^2-1}{x_2^2+x_2^2+1}\right).$$ La
-        función inversa de la proyección estereográfica es el mapeo $\Pi^{-1}:\hat{\mathbb{C}}\to
-        \mathbb{S}^{2}$ tal que
+      </p><div class="scroll-wrapper">
+        $$\left(\frac{2x_1}{x_2^2+x_2^2+1},\frac{2x_2}{x_2^2+x_2^2+1},\frac{x_1^2+x_2^2-1}{x_2^2+x_2^2+1}\right).$$
+      </div>
+      La
+      función inversa de la proyección estereográfica es el mapeo $\Pi^{-1}:\hat{\mathbb{C}}\to
+      \mathbb{S}^{2}$ tal que
+      <div class="scroll-wrapper">
         \begin{equation}\label{eq:proyeccion_estereografica_inversa}
         \Pi^{-1}(z)= \left\{
         \begin{array}{ ll }
@@ -228,17 +240,18 @@
         \end{array}
         \right.
         \end{equation}
-      </p>
+      </div>
+      <p></p>
 
       <p>Vamos a introducir algunos conceptos básicos y luego enunciaremos algunas de la propiedades de la
         proyección
         estereográfica</p>
 
       <div class="definition">
-         Un <strong>círculo generalizado sobre la esfera de Riemann</strong>
-          $\overline{\mathbb{C}}$}
-          es un círculo euclidiano sobre $\mathbb{C}$ o, una línea recta euclidiana sobre $\mathbb{C}$
-          junto con el punto $\infty$.
+        Un <strong>círculo generalizado sobre la esfera de Riemann</strong>
+        $\overline{\mathbb{C}}$}
+        es un círculo euclidiano sobre $\mathbb{C}$ o, una línea recta euclidiana sobre $\mathbb{C}$
+        junto con el punto $\infty$.
       </div>
 
 
@@ -246,13 +259,13 @@
 
       <div class="theorem">
         La proyección esterográfica envía círculos de la esfera
-          unitaria sobre círculos
-          generalizados de la esfera de Riemann.
-          Además, la imagen inversa de círculos generalizados de 
-          $\overline{\mathbb{C}}$ bajo $\Pi$ son
-          círculos en
-          $\mathbb{S}^{2}$.
-        
+        unitaria sobre círculos
+        generalizados de la esfera de Riemann.
+        Además, la imagen inversa de círculos generalizados de
+        $\overline{\mathbb{C}}$ bajo $\Pi$ son
+        círculos en
+        $\mathbb{S}^{2}$.
+
       </div>
 
 
@@ -265,6 +278,7 @@
         De la ecuación (\ref{eq:proyeccion_estereografica_inversa}) se sigue que la imagen de $C$ bajo la
         proyección
         estereográfica $\Pi$ es el conjunto de complejos $z=\overline{x}_1+i\overline{x}_2$ tal que
+      </p><div class="scroll-wrapper">
         \begin{equation}
         \begin{split}
         a\left(\frac{2\overline{x}_1}{\overline{x}_2^2+\overline{x}_2^2+1}\right)
@@ -275,9 +289,12 @@
         (c-d)\overline{x}_1^2+(c-d)\overline{x}^2_2 +2a\overline{x}_1 +2b\overline{x}_2&amp;=d+c.\\
         \end{split}
         \end{equation}
-        Si $c-d=0$, entonces la anterior ecuación representa una línea recta euclidiana. Contrariamente si
-        $c-d\neq 0$,
-        entonces completamos cuadrados en la anterior expresión y obenemos.
+      </div>
+
+      Si $c-d=0$, entonces la anterior ecuación representa una línea recta euclidiana. Contrariamente si
+      $c-d\neq 0$,
+      entonces completamos cuadrados en la anterior expresión y obenemos.
+      <div class="scroll-wrapper">
         \begin{equation}
         \begin{split}
         \overline{x}_1^2+\frac{2a}{(c-d)}\overline{x}_1 +\frac{a^2}{(c-d)^2}
@@ -286,14 +303,16 @@
         +\left(\overline{x}_2^2+\frac{b}{c-d}\right)&amp;=\frac{a^2+b^2+c^2-d^2}{(c-d)^2}.\\
         \end{split}\label{eq:proyeccion_circulos_en_circulos}
         \end{equation}
-        Como la intersección del plano $\beta$, cuya ecuación es $ax_1+b_2+cx_3=d$, con la esfera
-        $\mathbb{S}^2$ es un
-        conjunto con más de un punto, entonces existe una tripleta $(x_1,x_2,x_3)\in \beta$ tal que
-        $x_1^2+x_2^2+x_3^2&lt;
-        1$,
-        esta última desigualdad implica que $a^2+b^2+c^2&gt;d^2$. Así, podemos concluir que la expresión
-        descrita en la
-        ecuación (\ref{eq:proyeccion_circulos_en_circulos}) corresponde a un círculo euclidiano.</p>
+      </div>
+
+      Como la intersección del plano $\beta$, cuya ecuación es $ax_1+b_2+cx_3=d$, con la esfera
+      $\mathbb{S}^2$ es un
+      conjunto con más de un punto, entonces existe una tripleta $(x_1,x_2,x_3)\in \beta$ tal que
+      $x_1^2+x_2^2+x_3^2&lt;
+      1$,
+      esta última desigualdad implica que $a^2+b^2+c^2&gt;d^2$. Así, podemos concluir que la expresión
+      descrita en la
+      ecuación (\ref{eq:proyeccion_circulos_en_circulos}) corresponde a un círculo euclidiano.<p></p>
 
       <p>Ahora, tomemos un círculo $C$ sobre la esfera de Riemann $\hat{\mathbb{C}}$, el cual lo podemos
         representar
@@ -321,8 +340,8 @@
 
 
       <div class="theorem">
-         La proyección esterográfica $\Pi$ es un homeomorfismo.
-        
+        La proyección esterográfica $\Pi$ es un homeomorfismo.
+
       </div>
 
       <p>Debemos probar la continuidad de $\Pi$ en el punto $\infty$. Consideremos el abierto $B:=\{z\in\mathbb{C}:
@@ -350,6 +369,7 @@
         complejo extendido
         $\hat{\mathbb{C}}$ la función distancia $d_c : \hat{\mathbb{C}}\times \hat{\mathbb{C}} \to \mathbb{R}$ tal
         que
+      </p><div class="scroll-wrapper">
         \[
         d_c(z,w)=\left|\Pi^{-1}(z)-\Pi^{-1}(w)\right|= \left\{
         \begin{array}{ ll }
@@ -358,11 +378,14 @@
         \end{array}
         \right.
         \]
-        A esta función distancia se le llama <strong>la métrica cordal -cuerdas-</strong>, pues geométricamente
-        esta distancia
-        representa la longitud del segmento en $\mathbb{R}^3$ con puntos extremos $\Pi^{-1}(z)$ y $\Pi^{-1}(w)$.
-        Adicionalmente, la topología inducida por la métrica cordal es equivalente a la topología
-        $\tau_{\infty}$.</p>
+      </div>
+
+      A esta función distancia se le llama <strong>la métrica cordal -cuerdas-</strong>, pues
+      geométricamente
+      esta distancia
+      representa la longitud del segmento en $\mathbb{R}^3$ con puntos extremos $\Pi^{-1}(z)$ y $\Pi^{-1}(w)$.
+      Adicionalmente, la topología inducida por la métrica cordal es equivalente a la topología
+      $\tau_{\infty}$.<p></p>
 
       <p>Ahora vamos a introducir el espacio proyectivo complejo $1$ dimensional, también homeomorfo a la esfera
         unitaria.
@@ -376,17 +399,17 @@
         introducir como sigue.</p>
 
       <div class="definition">
-         El <strong>espacio proyectivo complejo $1$ dimensional</strong> es espacio
-          \[
-          \mathbb{C}P^{1}:=\{(z,w)\in\mathbb{C}^{2}-\{0\}\}/\sim,
-          \]
-          donde $\sim$ es la relación de equivalencia $(z_1,w_1)\sim (z_2,w_2)$ si y solo si existe $\lambda
-          \in\mathbb{C}^{\ast}$ tal que $(z_1,w_1)=(\lambda z_2,\lambda w_2)$. El espacio $\mathbb{C}P^{1}$ tiene la
-          topología
-          identificación, es decir la topología que hace a la función proyección
-          $p:\mathbb{C}^{2}-\{0\}\to
-          \mathbb{C}P^{1}$,
-          tal que $(z,w)\mapsto [z,w]$, continua.
+        El <strong>espacio proyectivo complejo $1$ dimensional</strong> es espacio
+        \[
+        \mathbb{C}P^{1}:=\{(z,w)\in\mathbb{C}^{2}-\{0\}\}/\sim,
+        \]
+        donde $\sim$ es la relación de equivalencia $(z_1,w_1)\sim (z_2,w_2)$ si y solo si existe $\lambda
+        \in\mathbb{C}^{\ast}$ tal que $(z_1,w_1)=(\lambda z_2,\lambda w_2)$. El espacio $\mathbb{C}P^{1}$ tiene la
+        topología
+        identificación, es decir la topología que hace a la función proyección
+        $p:\mathbb{C}^{2}-\{0\}\to
+        \mathbb{C}P^{1}$,
+        tal que $(z,w)\mapsto [z,w]$, continua.
       </div>
 
 
@@ -396,7 +419,7 @@
 
       <div class="theorem">
         El plano proyectivo complejo $1$-dimensional $\mathbb{C}P^1$ es compacto, conexo y
-          Hausdorff.
+        Hausdorff.
         <p></p>
       </div>
 
@@ -425,7 +448,7 @@
         la intersección $U\cap V=\emptyset$. Notemos que los subconjuntos $p(U)$ y $p(V)$ contienen a las clases
         $[z_1,w_1]$
         y $[z_2,w_2]$, respectivamente. Además, se cumple:</p>
-      
+
       <ul>
         <li>
           Los conjuntos $p(U)$ y $p(V)$ son abiertos pues $p^{-1}(p(U))=\cup_{\lambda\in\mathbb{C}^{\ast}}

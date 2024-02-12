@@ -413,6 +413,7 @@ caption::before {
 
 /* allow scroll on the x-axis */
 .scroll-wrapper {
+  overflow-y: hidden;
   overflow-x: auto;
 }
 
