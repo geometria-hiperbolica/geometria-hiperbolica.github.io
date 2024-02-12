@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Geometría Hiperbólica</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <meta property="og:title" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/png" href="imgs/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="imgs/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/es.css">
+<link rel="stylesheet" href="css/extra-style.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/prism/prism.css">
+
+
+</head>
+
+<body data-type="book" id="top">
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="transformaciones-de-mobius">
+
+  <!-- Starts main content -->
+
+  <p class="callout hide-large hide-medium"><strong>⚠️ ¡Advertencia!</strong>
+    
+    Si puedes ver este mensaje es porque tu pantalla es demasiado pequeña.
+    Por lo tanto, algunos applets no se mostrarán correctamente.
+    Puedes girar tu dispositivo a horizontal.
+    O cambia el tamaño de tu ventana para que sea más ancha que alta.
+  </p>
+
+  <div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+      <a href="esfera-de-riemann.html" class="link" id="left-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+      </a>
+      <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
+      <span class="support-top-button" id="donate" onclick="document.getElementById('myModal').style.display='block'">
+        <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+      <a href="../#table-of-contents" class="link" id="center-link">
+        <span class="content-hover-previous">Esfera de Riemann</span>
+        <span class="content-hover">Tabla de Contenidos</span>
+        <span class="content-original">Geometría Hiperbólica</span>
+        <span class="content-hover-next">Coming soon!</span>
+      </a>
+    </div>
+    <a href="#" class="link" id="right-link">
+      <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+  </div>
+
+  <br><br><br>
+
+  <header>
+    <h1>Transformaciones de Möbius</h1>
+
+  </header>
+
+  <main>
+    <article>
+
+      <p>
+        Del estudio del análisis complejo sabemos que las funciones meromorfas e inyectivas en $\mathbb{C}$
+        son las transformaciones fraccionarias lineales o transformaciones de Möbius (preserva orientación).
+        Estas funciones las podemos extender a la esfera Riemann.
+      </p>
+
+      <p>
+        Una <strong>transformación fraccionaria lineal</strong> o
+        <strong>transformación de Möbius</strong> (preserva orientación) $T$
+        es una función de la esfera de Riemann $\hat{\mathbb{C}}$ sobre sí misma, cuya regla de
+        asiganción es de la forma:
+        \begin{equation}\label{eq:trans_fracc_lineal}
+        T(z)=\frac{az+b}{cz+d},
+        \end{equation}
+        siendo $a,b,c$ y $d$ números complejos que satisface la relación $ad-cd\neq 0$.
+        Los valores $a,b,c,d$ son llamados los <em>coeficientes de la transformación</em> y la expresión
+        $ad-cb$
+        es el
+        <em>el determinante de la transformación</em>, el cual se denota mediante ${\rm det}(T)$. En la regla de
+        asignación de la
+        transformación $T$ se establecen las siguientes consideraciones:
+      </p>
+      <ol>
+        <li>
+          Si $c=0$, entonces la regla de correspondencia de $T$ está definida mediante
+          \[
+          T(z)= \left\{
+          \begin{array}{ ll }
+          \dfrac{az+b}{d}; &amp; \forall z\in\mathbb{C}, \\
+          \infty; &amp; \text{ si } z=\infty.\\
+          \end{array}
+          \right.
+          \]
+        </li>
+
+        <li>
+          Contrariamente, si $c\neq 0$, entonces la regla de correspondencia de $T$ está definida mediante
+          <div class="scroll-wrapper">
+            \[
+            T(z)= \left\{
+            \begin{array}{ ll }
+            \dfrac{az+b}{cz+d}; &amp; \forall z\in\mathbb{C}-\left\{\dfrac{-d}{c}\right\}, \\
+            \infty; &amp; \text{ si } z=\dfrac{-d}{c},\\
+            \dfrac{a}{c}; &amp; \text{ si } z=\infty.\\
+            \end{array}
+            \right.
+            \]
+          </div>
+        </li>
+      </ol>
+
+
+      <p>
+        Cada transformación de Möbius es una biyección holomorfa de la esfera de Riemann sobre la esfera de Riemann,
+        con inversa holomorfa. El conjunto conformado por todas las transformaciones de Möbius $\mathbb{M}$ es un
+        grupo con la operación composición de funciones. El elemento neutro es la tranformación identidad $Id$ y, si
+        $T(z)=\dfrac{az+b}{cz+d}\in \mathbb{M}$, entonces la transformación inversa
+      </p><div class="scroll-wrapper">
+        $$T^{-1}(z)=\dfrac{\dfrac{d}{k}z-\dfrac{b}{k}}{-\dfrac{c}{k}z+\dfrac{a}{k}}\in \mathbb{M},$$
+      </div>
+      siendo
+      $k=\sqrt{\text{ det}(T)}$.
+      <p></p>
+
+      <div class="example">
+        La función <strong>translación</strong> con respecto al complejo $b\in \mathbb{C}^{\ast}$
+        \[
+        T_b(z)=z+b,
+        \]
+        es una transformación de Möbius, cuya inversa es $T_b^{-1}(z)=z-b$.
+      </div>
+
+      <div class="example">
+        La función <strong>homotecia</strong> con respecto al real positivo $r&gt;0$
+        \[
+        H_r(z)=rz.
+        \]
+        es una transformación de Möbius, la cual tiene como inversa la transformación $H_r^{-1}(z)=\frac{z}{r}$.
+      </div>
+
+      <div class="example">
+        La función <strong>rotación</strong> con respecto al ángulo $\theta\in (0, 2\pi)$,
+        \[
+        R_{\theta}=e^{i\theta}z
+        \]
+        es una transformación de Möbius, la cual tiene como inversa $R_{-\theta}$.
+      </div>
+
+      <div class="example">
+        La función
+        \[
+        f(z)=\frac{1}{z}
+        \]
+        es una transformación de Möbius, la cual es una involución, es decir,
+        $f^2=Id$. Además, deja invariante el
+        círculo unitario. También, envía el conjunto
+        $\{z\in\mathbb{C}:|z|\lt 1\}$ en el conjunto $\{z\in\mathbb{C}:|z|\gt
+        1\}\cup\{\infty\}$.
+        Conversamente, la inversión $g$ mapea el conjunto $\{z\in\mathbb{C}:|z|&gt;1\}\cup\{\infty\}$
+        sobre el conjunto $\{z\in\mathbb{C}:|z|\lt1\}$.
+      </div>
+
+      <p>
+        El grupo $\mathbb{M}$ no es conmutativo, pues si consideramos las tranformaciones $T_1(z)=z+1$ y
+        $T_2(z)=\dfrac{-1}{z}$, entonces las composiciones
+        \begin{equation*}
+        \begin{split}
+        T_1 \circ T_2(z)&amp;=T_1\left(\dfrac{-1}{z}\right)=\dfrac{-1}{z}+1=\dfrac{z-1}{z},\\
+        &amp;\\
+        T_2\circ T_1(z) &amp; =T_2(z+1)=\dfrac{-1}{z+1},\\
+        \end{split}
+        \end{equation*}
+        satisfacen $T_1 \circ T_2(z)\neq T_2 \circ T_1 (z)$ para algunos $z\in\hat{\mathbb{C}}$.
+      </p>
+
+      <div class="theorem">
+        Toda tranformación de Möbius puede ser escrita como la composición finita de translaciones, rotaciones,
+        homotecias y la función $f(z)=\frac{1}{z}$.
+      </div>
+
+      <div class="proof">
+        Tomemos una transformación de Möbius $T(z)=\dfrac{az+b}{cz+d}$.
+
+        <ul>
+          <li>
+            Si $c=0$, entonce la tranformación $T(z)=\dfrac{az}{d}+\dfrac{b}{d}$ es una composición de una rotación
+            seguida de una homotecia y una translación.
+          </li>
+          <li>
+            Contrariamente, si $c\neq 0$, entonces podemos reescribir la regla de correspondencia de $T$ como sigue
+            <div class="scroll-wrapper">
+              \begin{equation}\label{eq:detnocero}
+              \begin{split}
+              T(z)
+              &amp;=\frac{az+b}{cz+d}=\frac{az+b+\dfrac{ad}{c}-\dfrac{ad}{c}}{cz+d}=\frac{\dfrac{a}{c}(cz+d)+b-\dfrac{ad}{c}}{cz+d},\\
+              &amp;=\dfrac{a}{c}+\frac{\dfrac{bc-ad}{c}}{cz+d}.
+              \end{split}
+              \end{equation}
+            </div>
+          </li>
+        </ul>
+
+        Esta última ecuación implica que la transformación de Möbius es una composición fiinita de translaciones,
+        rotaciones, homotecias y la función $\dfrac{1}{z}$.
+      </div>
+
+
+      <p>
+        De la ecuación (\ref{eq:detnocero}) deducimos fácilmente el siguiente corolario.
+      </p>
+
+      <div class="corollary">
+        Si el determinante de la transformación de Möbius $T$ es
+        igual a cero, entonces $T$ es una función constante.
+      </div>
+
+      <p>
+        El grupo conformado por las transformaciones fraccionarias lineales $\mathbb{M}$ puede ser visto como un
+        subgrupo del grupo conocido como el grupo General de transformaciones de Möbius. Este grupo está generado por
+        las reflexiones con respecto a los círculos generalizados sobre la esfera de Riemann. Vamos a definir desde un
+        punto de vista geométrico dichas reflexiones.
+      </p>
+
+      <p>
+        Un <strong>círculo generalizado sobre la esfera de Riemann $\hat{\mathbb{C}}$</strong> es un círculo euclidiano
+        sobre
+        $\mathbb{C}$ o, una línea recta euclidiana sobre $\mathbb{C}$ agregando el punto $\infty$. Cada círculo
+        euclidiano $C(a,r)$ está determinado por su centro $a\in\mathbb{C}$ y su radio $r&gt;0$, es decir,
+        $C(a,r)=\{z\in\mathbb{C}:|z-a|=r\}$. El círculo euclidiano $C(a,r)$ nos permite definir dos nuevos subconjuntos
+        abiertos y connexos de $\hat{\mathbb{C}}$.
+        El <strong>interior del círculo euclidiano $C(a,r)$</strong> está definido
+        mediante
+      </p><div class="scroll-wrapper">
+        \[
+        {\rm Int}\left(C(a,r)\right):=\{z\in\mathbb{C}:|z-a|\lt r\}.
+        \]
+      </div>
+      El<strong>exterior del círculo euclidiano $C(a,r)$</strong> es el conjunto
+      <div class="scroll-wrapper">
+        \[
+        {\rm Ext}\left(C(a,r)\right):=\{z\in\mathbb{C}: |z-a|&gt;r\}\cup\{\infty\}.
+        \]
+      </div>
+      <p></p>
+
+      <p>
+        Basándonos en las ideas geométricas de reflexiones euclidianas, podemos pensar la reflexión con respecto a un
+        círculo euclidiano $C$ como una transformación $g_C: \hat{\mathbb{C}}\to \hat{\mathbb{C}}$ con las siguientes
+        propiedades (otras).
+      </p>
+
+      <ol>
+        <li>
+          Deje fijo el círculo $C$.
+        </li>
+        <li>
+          Envie el interior ${\rm Int}(C)$ en el exterior ${\rm Ext}(C)$.
+        </li>
+        <li>
+          Mapee el exterior ${\rm Ext}(C)$ en el interior ${\rm Int}(C)$.
+        </li>
+      </ol>
+
+      <p>
+        Para el caso particular del círculo unitario $C(0,1)$, la transformación
+        \[
+        g(z)=\dfrac{1}{\overline{z}},
+        \]
+        lo deja fijo. Además, envía el interior de $C(0,1)$ en su respectivo exterior. Conversamente, $g$ mapea el
+        exterior del círculo $C(0,1)$ sobre su interior. La función $g$ se llama la
+        <strong>reflexión o inversión con respecto al círculo unitario</strong>.
+      </p>
+
+      <p>
+        Ahora bien, si tomamos un círculo euclidiano arbitrario $C$, haciendo uso de las algunas transformaciones de
+        Móbius y la reflexión $g$, definimos la función composición $ T_a\circ H_r\circ \frac{1}{\overline{z}} \circ
+        H_{\frac{1}{r}}\circ T_{-a}$, la cual satisface nuestros requerimentos descritos anteriormente, donde
+        $T_{a}(z)=z+a$ y $H_r(z)=rz$
+      </p>
+
+      <div class="definition">
+        La <strong>reflexión (o inversión) con respecto al círculo euclidiano $C$</strong>, el cual tiene centro en
+        $a\in\mathbb{C}$ y radio $r&gt;0$, es la involución $g_C:\hat{\mathbb{C}}\to \hat{\mathbb{C}}$, definida mediante
+        \[
+        g_C(z)= \left\{
+        \begin{array}{ ll }
+        a+\left(\dfrac{r}{|z-a|}\right)^2(z-a); &amp; \forall z\in\mathbb{C}-\{a,\infty\}, \\
+        \infty; &amp; \text{ si } z=a,\\
+        a; &amp; \text{ si } z=\infty,\\
+        \end{array}
+        \right.
+        \]
+      </div>
+
+      <p>
+        La reflexión o inversión con respecto al eje real está dada por la función conjugación $z\to\overline{z}.$
+        Ahora, si $L(\theta,a)$ denota la línea recta euclidiana con dirección $\theta$ que pasa por el punto
+        $a\in\mathbb{C}$, entonces la reflexión con respecto a $L(\theta,a)$ la obtenemos con la siguiente composición:
+        \[
+        T_{a}\circ R_{\theta}\circ \overline{z}\circ R_{-\theta}\circ T_{-a}(z),
+        \]
+        donde $R_{\theta}$ es la rotación con respecto a $\theta$ y $\overline{z}$ es la función conjugado.
+      </p>
+
+      <div class="definition">
+        La <strong>reflexión (o inversión) con respecto a la recta euclidiana $L(\theta,a)$</strong> es la involución
+        $g_L:\hat{\mathbb{C}}\to \hat{\mathbb{C}}$, definida mediante
+        \[
+        g_L(z)= \left\{
+        \begin{array}{ ll }
+        e^{2\theta i}(\overline{z}-\overline{a})+a; &amp; \forall z\in\mathbb{C}, \\
+        \infty; &amp; \text{ si } z=\infty.\\
+        \end{array}
+        \right.
+        \]
+      </div>
+
+      <div class="lemma">
+        La homotecia $H_r(z)= rz$ es la composición de la reflexión con respecto al círculo unitario seguida de la
+        reflexión con respecto al círculo $C(0,\sqrt{r})$.
+      </div>
+
+      <div class="proof">
+        La reflexión con respecto al círculo unitario está dada mediante $g_1(z)=\frac{1}{\overline{z}}$ y, la reflexión
+        con respecto al círculo $C(0,\sqrt{|1|})$ tiene regla de asignación $g_2(z)=\frac{r}{|z|^2}z$. Entonces
+        \[
+        g_2(z)\circ
+        g_1(z)=\frac{r}{\left|\frac{1}{\overline{z}}\right|^2}\frac{1}{\overline{z}}=\frac{r|\overline{z}|^2}{\overline{z}}=\frac{r|z|^2}{\overline{z}}=\frac{r\overline{z}z}{\overline{z}}=rz.
+        \]
+      </div>
+
+      <p>
+        La transformación $z\mapsto\frac{1}{z}$ es la composición de la reflexión con respecto al eje real $z\mapsto
+        \overline{z}$ seguida de la reflexión con respecto al círculo unitario.
+      </p>
+
+      <div class="lemma">
+        La composición de las reflexiones $g_1$ y $g_2$ con respecto a líneas rectas que pasan por el origen, es una
+        rotación por el doble del ángulo entre las líneas.
+      </div>
+
+      <div class="proof">
+        Tomemos las líneas rectas $L_1$ y $L_2$ que pasan por el origen con direcciones $\theta_1$ y $\theta_2$,
+        respectivamente. Las reflexiones con respecto a dichas líneas rectas son $g_1(z)=e^{2\theta_1 i}\overline{z}$ y
+        $g_2(z)=e^{2\theta_2 i}\overline{z}$, respectivamente. Entonces
+        \[
+        g_2\circ g_1(z)=g_2(e^{2\theta_1 i}\overline{z})=e^{2\theta_1 i}e^{-2\theta_2 i}z=e^{2(\theta_1-\theta_2)i}z.
+        \]
+      </div>
+
+      <div class="lemma">
+        Toda rotación es la composición de dos reflexiones.
+      </div>
+
+      <div class="proof">
+        Dado el complejo $a\in \mathbb{C}$ tal que $|a|=1$, basta considerar los valores $\theta_1$ y $\theta_2$ tal que
+        <div class="scroll-wrapper">
+          $$\frac{\arg(a)}{2}=\theta_1-\theta_2.$$
+        </div>
+        Entonces la composición de las reflexiones con respecto a las líneas
+        rectas $L(\theta_1,0)$ y $L(\theta_2,0)$ es la rotación $R(z)=az$.
+      </div>
+
+      <div class="lemma">
+        La composición de dos reflexiones con respecto a líneas rectas paraleleas es una translación.
+      </div>
+
+      <div class="proof">
+        Consideremos las líneas rectas paralelas $L_1$ y $L_2$, las cuales tienen dirección $\theta$ y pasan por los
+        puntos $a$ y $b$, respectivamente. Si $g_1(z)=e^{2\theta i}(\overline{z}-\overline{a})+a$ y $g_2(z)=e^{2\theta
+        i}\left(\overline{z}-\overline{b}\right)+b$ son las reflexiones con respecto a las líneas rectas $L_1$ y $L_2$
+        respectivamente, entonces
+        <div class="scroll-wrapper">
+          \[
+          \begin{split}
+          g_1\circ g_2(z)=&amp; g_1\left(e^{2\theta i}\left(\overline{z}-\overline{b}\right)+b\right),\\
+          &amp; = e^{2\theta i}\left(\overline{e^{2\theta i}\left(\overline{z}-\overline{b}\right)+b} -\overline{a}
+          \right)+a,\\
+          &amp;=e^{2\theta i}\left( e^{-2\theta i}(z-b)+\overline{b}-\overline{a}\right)+a,\\
+          &amp;=z +(a-b)+e^{2\theta i}\left(\overline{b}-\overline{a}\right).
+          \end{split}
+          \]
+        </div>
+      </div>
+
+      <p>
+        Dejamos como ejercicio para el lector la prueba de la siguiente afirmación.
+      </p>
+
+      <div class="lemma">
+        La translación $z\mapsto z+b$ es la composición de dos reflexiones.
+      </div>
+
+
+      <div class="definition">
+        El subgrupo del grupo de homeomorfismos de $\hat{\mathbb{C}}$
+        generado por las reflexiones de $\hat{\mathbb{C}}$ es llamado
+        el <strong>Grupo General de transformaciones de Möbius de</strong>
+        $\hat{\mathbb{C}}$ y lo denotamos mediante $\text{ Möb}(\hat{\mathbb{C}})$.
+      </div>
+
+      <p>
+        De los lemas enunciados previamente se sigue que el grupo de transformaciones fraccionarias o transformaciones
+        de Möbius (preservan orientación) $\mathbb{M}$ es un subgrupo del Grupo General de transformaciones de Möbius
+        $\text{ Möb}(\hat{\mathbb{C}})$. El lector puede verificar fácilmente que $\text{ Möb}(\hat{\mathbb{C}})$ está
+        generado por
+        $\mathbb{M}$ y la función conjugado $z\mapsto \overline{z}$.
+      </p>
+
+      <br>
+
+
+    </article>
+  </main>
+
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <a href="#" style="text-decoration: none;">
+    <p class="nextPage">NEXT: Page</p>
+  </a>
+  <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal -->
+
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 ¡Hola!</strong>
+      </div>
+      <div class="modal-body">
+        <p>
+          Si este libro de texto interactivo le resultó útil, considera volverte un miembro de:
+        </p>
+        <div style="text-align: center;margin-top: 10px;">
+          <a class="modal-link" href="https://www.patreon.com/bePatron?u=10515025"><i class="fa-brands fa-patreon"></i>
+            <strong>Patreon</strong></a>
+          <script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
+        </div>
+        <p>
+          Este proyecto es posible gracias a la amabilidad de seguidores como usted.
+          Sus contribuciones me permiten mantener el sitio, mantener los
+          applets y, lo que es más importante,
+          <strong>garantizar que siga siendo de libre acceso</strong>
+          para cualquiera que desee explorar este
+          cautivador campo de las matemáticas, <strong>sin anuncios que distraigan</strong>.
+        </p>
+
+        <p>Si prefieres donar una sola vez, no mensualmente
+          puedes utilizar estos enlaces:
+        </p>
+
+        <div style="text-align: center;margin-top: 10px;" class="hide-small">
+          <a class="modal-link" target="_blank"
+            href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
+            <strong>❤️ <i class="fa-brands fa-paypal"></i> PayPal Me</strong>
+          </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+
+          <a class="modal-link" target="_blank" href="https://jcponcemath.secure-decoration.com/">
+            <strong>❤️ Buy a T-shirt</strong>
+          </a>
+        </div>
+        <div style="text-align: center;margin-top: 10px;" class="hide-medium hide-large">
+
+          <a class="modal-link" target="_blank"
+            href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
+            <strong>❤️ <i class="fa-brands fa-paypal"></i> PayPal Me</strong>
+          </a>
+          <br /><br />
+
+          <a class="modal-link" target="_blank" href="https://jcponcemath.secure-decoration.com/">
+            <strong>❤️ Buy a T-shirt</strong>
+          </a>
+        </div>
+        <p>
+          No puedes contribuir esta vez, ¡no te preocupes! Tal vez solo quieras:
+        </p>
+        <div style="text-align: center;margin-top: 10px;">
+          <a class="modal-link" href="mailto:jcponcemath@gmail.com"><strong>Enviar un comentario</strong></a>
+        </div>
+        <br />
+      </div>
+      <div class="modal-footer">
+        ¡Muchas gracias! 🙏 ¡Aprecio mucho tu apoyo! 🤗
+      </div>
+    </div>
+
+  </div>
+  <!-- The Modal ends -->
+
+  <hr>
+
+  <footer>
+
+    <span class="hide-small" id="footer-elements">
+      <span style="font-weight: bold;">[</span>
+      <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+      <a href="https://github.com/geometria-hiperbolica"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/geometria-hiperbolica/geometria-hiperbolica.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+      <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+        <i class="fa-regular fa-heart"></i> Apoyo</span>
+      <span style="font-weight: bold;">]</span>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.85em;">
+      <span style="font-weight: bold;">[</span>
+      <a href="../"><i class="fa-solid fa-house"></i> Home</a> -
+      <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+        <i class="fa-regular fa-heart"></i> Apoyo</span>
+      <span style="font-weight: bold;">]</span>
+    </span>
+
+    <br />
+
+    <a id="licence-link" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+      target="_blank">
+      <i class="fa-brands fa-creative-commons"></i>
+      <i class="fa-brands fa-creative-commons-by"></i>
+      <i class="fa-brands fa-creative-commons-nc"></i>
+      <i class="fa-brands fa-creative-commons-sa"></i>
+    </a>
+
+    <br />
+
+    <strong>
+      <span class="hide-small" style="font-size: 18px">&copy; C. Ramírez Maluendas, J.C. Ponce Campuzano
+        <script>document.write(new Date().getFullYear());</script>
+      </span>
+      <span class="hide-medium hide-large" style="font-size: 15px">&copy; C. Ramírez Maluendas, <br /> J.C. Ponce
+        Campuzano
+        <script>document.write(new Date().getFullYear());</script>
+      </span>
+    </strong>
+
+  </footer>
+
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>
