@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Geometría Hiperbólica</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <meta property="og:title" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/png" href="imgs/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="imgs/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/es.css">
+<link rel="stylesheet" href="css/extra-style.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/prism/prism.css">
+
+
+</head>
+
+<body data-type="book" id="top">
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="propiedades-transformaciones-de-mobius">
+
+    <!-- Starts main content -->
+
+    <p class="callout hide-large hide-medium"><strong>⚠️ ¡Advertencia!</strong>
+
+        Si puedes ver este mensaje es porque tu pantalla es demasiado pequeña.
+        Por lo tanto, algunos applets no se mostrarán correctamente.
+        Puedes girar tu dispositivo a horizontal.
+        O cambia el tamaño de tu ventana para que sea más ancha que alta.
+    </p>
+
+    <div class="fixed-bar" id="fixed-bar">
+        <div class="link-container">
+            <a href="transformaciones-de-mobius-matrices.html" class="link" id="left-link">
+                <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+            </a>
+            <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
+            <span class="support-top-button" id="donate" onclick="document.getElementById('myModal').style.display='block'">
+                <i class="fa-regular fa-heart"></i></span>
+        </div>
+        <div class="link">
+            <a href="../#tabla-de-contenidos" class="link" id="center-link">
+                <span class="content-hover-previous">Trans. de Möbius matrices</span>
+                <span class="content-hover">Tabla de Contenidos</span>
+                <span class="content-original">Geometría Hiperbólica</span>
+                <span class="content-hover-next">Coming soon!</span>
+            </a>
+        </div>
+        <a href="#" class="link" id="right-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+    </div>
+
+    <br><br><br>
+
+    <header>
+        <h1>Clasificación de las Transformaciones de Möbius</h1>
+
+    </header>
+
+    <main>
+        <article>
+
+
+            <p>
+                Las transformaciones de Möbius las podemos clasificar por sus puntos
+                fijos y su traza. Sin embargo, estas dos maneras de clasificarlas
+                mantienen una relación.
+            </p>
+
+            <p>
+                Un <strong>punto fijo</strong> de la transformación de Möbius $T,$
+                es un elemento $z\in\hat{\mathbb{C}}$ tal que $T(z)=z.$
+            </p>
+
+            <p>
+                Si la transformación de Möbius $T$, está dada por
+                \[
+                z\mapsto \frac{az+b}{cz+d}
+                \]
+                y queremos estudiar sus puntos fijos, debemos examinar los siguientes dos casos.
+            </p>
+
+            <ol>
+                <li>
+                    \item Si $c=0$, entonces los puntos fijos de $T$ satisface la igualdad
+                    \[
+                    \frac{az+b}{d}=z.
+                    \]
+                    Sin embargo, el único número complejos que satisface esta igualdad es
+                    \[
+                    z=\frac{b}{a-d}.
+                    \]
+                    En este caso, la transformación de Möbius posee un único punto fijo.
+                </li>
+                <li>
+                    Contrariamente, si $c\neq 0$, entonces los puntos fijos de la transformación $T$ deben satisfacer
+                    <div class="scroll-wrapper">
+                        \begin{equation*}
+                        \begin{split}
+                        \frac{az+b}{cz+d}&amp;=z,\\
+                        az+b &amp; =cz^2+zd,\\
+                        cz^2+z(d-a)-b&amp;=0.\
+                        \end{split}
+                        \end{equation*}
+                    </div>
+                    Las soluciones para esta última ecuación son
+                    <div class="scroll-wrapper">
+                        \[
+                        z=\dfrac{-(d-a)\pm\sqrt{(d-a)^2+4cb}}{2c}.
+                        \]
+                    </div>
+                    Para este caso, la transformación de Móbius tiene dos puntos fijo.
+                </li>
+            </ol>
+
+            <div class="example">
+                El único punto fijo la transformación de Möbius $T(z)=iz+8$ es
+                \[
+                z=\frac{8}{i-1}.
+                \]
+                Los puntos fijos de la transformación de Móbius $T(z)=\frac{z+1}{z-1}$ son
+                <div class="scroll-wrapper">
+                    \[
+                    z=\dfrac{-(-1-1)\pm\sqrt{(-1-1)^2+4}}{2}=1\pm\sqrt{2}.%=\frac{2\pm\sqrt{8}}{2}
+                    \]
+                </div>
+
+            </div>
+
+            <p>
+                Del anterior análisis es natural preguntarnos a cerca de la existencia de transformaciones de Möbius con
+                almenos tres puntos fijo. Si embargo, si una transformación fija tres puntos fijos, esta debe ser la
+                identidad.
+            </p>
+
+
+
+
+            <div class="theorem">
+                Si la transformación de Möbius $T$ fija tres puntos distintos, entonces $T$ es la identidad.
+            </div>
+
+            <div class="proof">
+                Denotemos mediante $z_1,z_2,z_3$ los tres puntos que fija la transformación $T$. De los resultados
+                previos (véase Teorema \ref{t:mapeo_tres_puntos}) podemos construir una transformación de Möbius
+                $\tilde{T}$, la cual envía las puntos $z_1,z_2,z_3$ en $0,1,\infty$, respectivamente. Entonces la
+                función composición
+                \begin{equation}\label{eq:teorema_tres_fijos_puntos}
+                \tilde{T}\circ T\circ \tilde{T}^{-1}
+                \end{equation}
+                es una transformación de Möbius que fija los puntos $0,1,\infty$. Sin embargo, la única Möbius que fija
+                dichos puntos es la identidad (véase Teorema \ref{t:identidad_fija_1}). Así, de la relación
+                (\ref{eq:teorema_tres_fijos_puntos}) concluimos la transformación $T$ es la identidad.
+            </div>
+
+            <p>
+                Los siguientes dos resultados son las herramientas que nos permitirán clasificar a las transformación de
+                Möbius con respecto a sus puntos fijos.
+            </p>
+
+
+
+            <div class="theorem" id="l:puntos_fijos">
+                Dadas las transformaciones de Möbius $T$ y $\tilde{T}$. El punto $z_0$ es un punto fijo de
+                $\tilde{T}^{-1}\circ T\circ \tilde{T}$ si y solo si el punto $\tilde{T}(z_0)$ es un punto fijo de $T$.
+            </div>
+
+            <div class="proof">
+                El elemento $z_0$ es un punto fijo de la composición $\tilde{T}^{-1}\circ T\circ \tilde{T}$ si y solo si
+                $\tilde{T}^{-1}\circ T\circ \tilde{T}(z_0)=z_0$ si y solo si $T\circ \tilde{T}(z_0)=\tilde{T}(z_0)$ si y
+                solo si $\tilde{M}(z_0)$ es un punto fijo de $T$.
+            </div>
+
+            <div class="lemma" id="l:puntos_fijos">
+                Si la transformación de Möbius $T$ fija un punto, entonces es conjugada en $PSL(2,\mathbb{C})$ a una
+                translación. Contrariamente, si la transformación de Möbius $T$ fija exactamente dos puntos, entonces
+                $T$ es conjugada en $PSL(2,\mathbb{C})$ a una transformación de la forma $z\mapsto \alpha z$, para algún
+                $\alpha\in\mathbb{C}^{\ast}$.
+            </div>
+
+            <div class="proof">
+                Consideremos la transformacioón de Möbius $T$ con exactamente uno punto fijo $z_0\neq \infty$. Entonces
+                definimos la transformación de Möbius $\varphi: \hat{\mathbb{C}}\to \hat{\mathbb{C}}$ tal que
+                \[
+                z\mapsto \frac{1}{z-z_0},
+                \]
+                Nótemos que $\varphi$ envía a $z_0$ en $\infty$. Además, la función composición $\varphi ^{-1}\circ
+                T\circ \varphi$ fija al punto $\infty$, entonces debe suceder que
+                \[
+                \varphi^{-1}\circ T\circ \varphi(z)=\alpha z+\beta,
+                \]
+                para algunos $\alpha,\beta\in\mathbb{C}$. Como la transformación $T$ solo tiene un punto fijo, del Lemma
+                \ref{l:puntos_fijos} se sigue que
+                \[
+                \varphi^{-1}\circ T\circ\varphi (z)=z+\beta.
+                \]
+                Esto prueba que toda transformación de Möbius parabólica es conjugada en $PSL(2,\mathbb{C})$ a una
+                translación.
+
+                <p>
+                    Ahora supongamos que la transformación de Möbius $T$ tiene dos puntos fijos distintos $z_0$ y $z_1.$
+                    Entonces definimos la transformación de Möbius $\varphi: \hat{\mathbb{C}}\to \hat{\mathbb{C}}$ tal
+                    que
+                    \[
+                    z\mapsto \frac{z-z_0}{z-z_1},
+                    \]
+                    la cual envía a $z_0$ y $z_1$ en $0$ y $\infty$, respectivamente. Del Lema \ref{l:puntos_fijos} se
+                    sigue que la transformación de Möbius dada por la composición $\varphi^{-1} \circ T \circ \varphi$
+                    tiene puntos fijos $0$ y $\infty$. Entonces se debe satisfacer que
+                    \[
+                    \varphi^{-1} \circ T \circ \varphi(z)=\alpha z,
+                    \]
+                    para algún $\alpha\in\mathbb{C}^{\ast}$.
+                </p>
+            </div>
+
+
+            <div class="definition">
+                Una transformación de Möbius $T$ es <strong>parabólica</strong> si fija exactamente un punto. Supongamos
+                que la
+                transformación $T$ es conjugada en $PSL(2,\mathbb{C})$ a la transformación $z\mapsto \alpha z$, para
+                algún $\alpha\in\mathbb{C}^{\ast}$.
+                <ol>
+                    <li>
+                        Si $|\alpha|=1$ y $\alpha \neq 1$ (rotación),
+                        entonces llamaremos a $T$ una transformación <strong>elíptica</strong>.
+                    </li>
+                    <li>
+                        Si $\alpha \in \mathbb{R}$ (dilatación), entonces
+                        llamaremos a $T$ una transformación <strong>hiperbólica</strong>.
+                    </li>
+                    <li>
+                        Si $|\alpha|\neq 1$ y $\alpha\notin \mathbb{R}$, entonces
+                        llamaremos a $T$ una transformación <strong>loxodrómica</strong>.
+                    </li>
+                </ol>
+            </div>
+
+            <h2 id="clasificacion-traza">Clasificación por la traza</h2>
+
+            <p>
+                La traza de una matriz cuadrada $A,$ la cual es denotado por ${\rm tr} (A)$ es la suma de los términos
+                que se encuentran sobre su diagonal principal. Vamos a extender este concepto a las transformaciones de
+                Möbius con el objetivo de clasificar las Möbius mediante su traza.
+            </p>
+
+            <p>
+                Antes de introducir el concepto de traza asociado a una transformación de Möbius vamos a probar la
+                siguiente propiedad que poseen las matrices en $GL(2,\mathbb{C}),$ la cual nos será de utilidad en el
+                desarrollo de la teoría.
+            </p>
+
+            <div class="lemma">
+                La traza es invariante bajo conjugaciones en $GL(2,\mathbb{C}).$
+            </div>
+
+            <div class="proof">
+                Nos basta probar que ${\rm tr}(AB)={\rm tr}(BA)$, para cada matriz $A,B\in\mathbb{C}$, pues esta
+                relación implica
+                <div class="scroll-wrapper">
+                    \[
+                    {\rm tr}(ABA^{-1})={\rm tr}(BAA^{-1})={\rm tr}(B).
+                    \]
+                </div>
+                Si consideramos las matrices $A$ y $B$ en $GL(2,\mathbb{C})$, tal que
+                <div class="scroll-wrapper">
+                    \[
+                    A=\left(\begin{array}{cc}
+                    a_1&amp; b_1\\
+                    c_1&amp; d_1\\
+                    \end{array}
+                    \right) \quad \text{y} \quad B=\left(\begin{array}{cc}
+                    a_2&amp;b_2\\
+                    c_2&amp;d_2\\
+                    \end{array}\right).
+                    \]
+                </div>
+
+                Entonces la traza de la matriz producto $AB$ es
+                <div class="scroll-wrapper">
+                    \[
+                    {\rm tr}(AB)=a_1a_2+b_1c_2+c_1b_2+d_1d_2,
+                    \]
+                </div>
+                pues
+                <div class="scroll-wrapper">
+                    \begin{equation}
+                    AB=\left(\begin{array}{cc}
+                    a_1a_2+b_1c_2&amp; a_1b_2+b_1d_2\\
+                    c_1a_2+d_1c_2&amp; c_1b_2+d_1d_2\\
+                    \end{array}
+                    \right).
+                    \end{equation}
+                </div>
+
+                Asimismo, la traza de la matriz producto $BA$ es
+                <div class="scroll-wrapper">
+                    \[
+                    {\rm tr}(BA)=a_1a_2+c_1b_2+b_1c_2+d_1d_2,
+                    \]
+                </div>
+                ya que
+                <div class="scroll-wrapper">
+                    \begin{equation}
+                    BA=\left(\begin{array}{cc}
+                    a_2a_1+b_2c_1&amp; a_2b_1+b_2d_1\\
+                    c_2a_1+d_2c_1&amp; c_2b_1+d_2d_1\\
+                    \end{array}
+                    \right).
+                    \end{equation}
+                </div>
+
+                De las anteriores relaciones concluimos que las trazas de las matrices producto $AB$ y $BA$ coinciden.
+
+            </div>
+
+            <p>
+                Dada la transformación de Möbius $T$, tal que
+                \[
+                z\mapsto \frac{az+b}{cz+d}
+                \]
+                es natural definir la traza de $T$, mediante ${\rm tr}(T)=a+d$. Ahora, si tomamos una transformación de
+                Möbius $\overline{T}$ idéntica a $T$, nos gustaría que el valor de sus trazas coincidiera, es decir,
+                ${\rm tr}(T)={\rm tr}(\overline{T})$. Sin embargo, esta igualdad no siempre es cierta, pues como $T$ y
+                $\overline{T}$ son idénticas, del teorema \ref{t:identicas} existe un complejo no nulo $\lambda$ tal que
+                ${\rm }(T)=\lambda {\rm tr}(\overline{T})$. Para evitar este tipo de eventualidades vamos a suponer que
+                la transformación de Möbius $T$, como sigue.
+            </p>
+
+            <div class="definition">
+                Dada la transformación de Möbius $T$ dada por
+                \[
+                z\mapsto \frac{az+b}{cz+d}
+                \]
+                tal que su determinante ${\rm det}(T)=ad-bc=1,$ entonces la <strong>traza al cuadrado de $T$</strong> es
+                \[
+                {\rm tr}^2(T)=(a+d)^2.
+                \]
+            </div>
+
+            <p>
+                Nótese que del Lema \ref{l:traza_invariante} se sigue que las traza al cuadrado es invariante bajo
+                conjugaciones en $PSL(2,\mathbb{C}).$
+            </p>
+
+            <div class="example">
+                Para translación $T(z)= z+b$ tenemos ${\rm tr}^2(T)=4.$
+
+                <br>
+                Para la rotación $T(z)= e^{i\theta}z$
+                tenemos ${\rm tr}^2(T)=(e^{i\theta}+1)^2.$
+            </div>
+
+
+            <p>
+                Las cónicas están clasificadas por su excentricidad.
+                ¿Qué es la excentridad? Todos los puntos de una
+                cónica $Q$ satisfacen que el cociente entre sus distancias a un punto fijo (llamado foco) y a una recta
+                fija (llamada directriz) es siempre el mismo número, ese número es la
+                <strong>excentricidad de la cónica</strong> $Q$ y se le denota
+                mediante $\varepsilon.$ Si la cónica $Q$ tiene excentriciad $\varepsilon$ tal
+                que se satisface
+            </p>
+            <ol>
+                <li>
+                    $\varepsilon\lt 1,$ entonces la cónica $Q$ es una elipse.
+                </li>
+                <li>
+                    $\varepsilon=1,$ entonces la cónica $Q$ es una parábola.
+                </li>
+                <li>
+                    $\varepsilon&gt;1,$ entonces la cónica $Q$ es una hipérbola.
+                </li>
+            </ol>
+
+            <p>
+                Esta manera de clasificar las cónicas nos permite dar una relación entre la traza de una transformación
+                de Möbius y sus respectivos puntos fijos.
+            </p>
+
+            <div class="theorem">
+                Consideremos la transformación de Möbius $T$ con traza ${\rm tr}(T).$
+                Entonces
+                <ol>
+                    <li>
+                        $T$ es parabólica si y solo si ${\rm tr}^2(T)=4.$
+                    </li>
+                    <li>
+                        $T$ es elíptica si y solo si ${\rm tr}^2(T)\lt 4.$
+                    </li>
+                    <li>
+                        $T$ es hiperbólica si y solo si ${\rm tr}^2(T) &gt;4.$
+                    </li>
+                    <li>
+                        $T$ es loxodrómica si y solo si ${\rm tr}^2(T) \notin [0,\infty].$
+                    </li>
+                </ol>
+            </div>
+
+
+            <br>
+
+
+        </article>
+    </main>
+
+    <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <a href="#" style="text-decoration: none;">
+        <p class="nextPage">NEXT: Coming soon!</p>
+    </a>
+    <!-- Ends main content -->
+
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal -->
+
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 ¡Hola!</strong>
+      </div>
+      <div class="modal-body">
+        <p>
+          Si este libro de texto interactivo le resultó útil, considera volverte un miembro de:
+        </p>
+        <div style="text-align: center;margin-top: 10px;">
+          <a class="modal-link" href="https://www.patreon.com/bePatron?u=10515025"><i class="fa-brands fa-patreon"></i>
+            <strong>Patreon</strong></a>
+          <script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
+        </div>
+        <p>
+          Este proyecto es posible gracias a la amabilidad de seguidores como usted.
+          Sus contribuciones me permiten mantener el sitio, mantener los
+          applets y, lo que es más importante,
+          <strong>garantizar que siga siendo de libre acceso</strong>
+          para cualquiera que desee explorar este
+          cautivador campo de las matemáticas, <strong>sin anuncios que distraigan</strong>.
+        </p>
+
+        <p>Si prefieres donar una sola vez, no mensualmente
+          puedes utilizar estos enlaces:
+        </p>
+
+        <div style="text-align: center;margin-top: 10px;" class="hide-small">
+          <a class="modal-link" target="_blank"
+            href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
+            <strong>❤️ <i class="fa-brands fa-paypal"></i> PayPal Me</strong>
+          </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+
+          <a class="modal-link" target="_blank" href="https://jcponcemath.secure-decoration.com/">
+            <strong>❤️ Buy a T-shirt</strong>
+          </a>
+        </div>
+        <div style="text-align: center;margin-top: 10px;" class="hide-medium hide-large">
+
+          <a class="modal-link" target="_blank"
+            href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
+            <strong>❤️ <i class="fa-brands fa-paypal"></i> PayPal Me</strong>
+          </a>
+          <br /><br />
+
+          <a class="modal-link" target="_blank" href="https://jcponcemath.secure-decoration.com/">
+            <strong>❤️ Buy a T-shirt</strong>
+          </a>
+        </div>
+        <p>
+          No puedes contribuir esta vez, ¡no te preocupes! Tal vez solo quieras:
+        </p>
+        <div style="text-align: center;margin-top: 10px;">
+          <a class="modal-link" href="mailto:jcponcemath@gmail.com"><strong>Enviar un comentario</strong></a>
+        </div>
+        <br />
+      </div>
+      <div class="modal-footer">
+        ¡Muchas gracias! 🙏 ¡Aprecio mucho tu apoyo! 🤗
+      </div>
+    </div>
+
+  </div>
+  <!-- The Modal ends -->
+
+  <hr>
+
+  <footer>
+
+    <span class="hide-small" id="footer-elements">
+      <span style="font-weight: bold;">[</span>
+      <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+      <a href="https://github.com/geometria-hiperbolica"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/geometria-hiperbolica/geometria-hiperbolica.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+      <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+        <i class="fa-regular fa-heart"></i> Apoyo</span>
+      <span style="font-weight: bold;">]</span>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.85em;">
+      <span style="font-weight: bold;">[</span>
+      <a href="../"><i class="fa-solid fa-house"></i> Home</a> -
+      <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+        <i class="fa-regular fa-heart"></i> Apoyo</span>
+      <span style="font-weight: bold;">]</span>
+    </span>
+
+    <br />
+
+    <a id="licence-link" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+      target="_blank">
+      <i class="fa-brands fa-creative-commons"></i>
+      <i class="fa-brands fa-creative-commons-by"></i>
+      <i class="fa-brands fa-creative-commons-nc"></i>
+      <i class="fa-brands fa-creative-commons-sa"></i>
+    </a>
+
+    <br />
+
+    <strong>
+      <span class="hide-small" style="font-size: 18px">&copy; C. Ramírez Maluendas, J.C. Ponce Campuzano
+        <script>document.write(new Date().getFullYear());</script>
+      </span>
+      <span class="hide-medium hide-large" style="font-size: 15px">&copy; C. Ramírez Maluendas, <br /> J.C. Ponce
+        Campuzano
+        <script>document.write(new Date().getFullYear());</script>
+      </span>
+    </strong>
+
+  </footer>
+
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>
