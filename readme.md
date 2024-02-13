@@ -1,10 +1,10 @@
 # Notas de Geometría Hiperbólica
 
-En colaboración con Camilo Ramírez Maluendas
+En colaboración con [Camilo Ramírez Maluendas](https://sites.google.com/view/camilo-ramirez-maluendas/p%C3%A1gina-principal)
 
 ## Diseño
 
-Juan Carlos Ponce Campuzano
+[Juan Carlos Ponce Campuzano](https://www.jcponce.com/)
 
 ## Créditos
 
