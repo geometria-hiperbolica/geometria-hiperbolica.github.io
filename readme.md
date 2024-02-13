@@ -8,7 +8,7 @@ Juan Carlos Ponce Campuzano
 
 ## Créditos
 
-This project is based on the following projects:
+Este proyecto está basado en los siguientes proyectos:
 
 - [LaTeX.CSS](https://github.com/vincentdoerig/latex-css) by Vincent Dörig
 - [LatexCSS](https://github.com/davidrzs/latexcss) by David Zollikofer
