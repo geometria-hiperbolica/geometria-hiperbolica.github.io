@@ -160,26 +160,6 @@ footer {
     }
 }
 
-/* next page link in footer */
-.nextPage {
-    text-align: center;
-    text-decoration: none !important;
-    color: black !important;
-    background-color: rgb(245, 245, 245);
-    border: 1px solid rgb(200, 200, 200);
-    padding: 1em;
-    margin: 1.6em 0 1.3em 0;
-    text-align: center;
-    font-size: 1em;
-    font-weight: bold;
-    margin-bottom: 2em;
-}
-
-.nextPage:hover {
-    background-color: rgb(230, 230, 230) !important;
-    cursor: pointer;
-}
-
 /* The following is for the Modal */
 /* The Modal (background) */
 .modal {
@@ -374,6 +354,7 @@ footer {
     text-decoration: none;
     font-size: 0.9em;
 }
+
 
 /*
  https://benfrain.com/create-print-styles-using-css3-media-queries/

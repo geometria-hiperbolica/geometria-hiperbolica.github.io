@@ -127,6 +127,8 @@
   /* Adde color for call out box */
   --tooltip: hsl(0, 0%, 28%);
   /* Added color for tooltip text */
+  --nextPage: rgb(245, 245, 245);
+  /* Next page color button */
   --pre-bg-color: hsl(210, 28%, 93%);
   --kbd-bg-color: hsl(210, 5%, 100%);
   --kbd-border-color: hsl(210, 5%, 70%);
@@ -156,6 +158,8 @@
   /* Added color for call out box */
   --tooltip: hsl(0, 0%, 95%);
   /* Added color for tooltip text */
+  --nextPage: rgba(245, 245, 245, 0.333);
+  /* Next page color button */
   --pre-bg-color: hsl(0, 1%, 25%);
   --kbd-bg-color: hsl(0, 0%, 16%);
   --kbd-border-color: hsl(210, 5%, 70%);
@@ -179,6 +183,8 @@
     /* Added colos for call out box */
     --tooltip: hsl(0, 0%, 95%);
     /* Added color for tooltip text */
+    --nextPage: rgba(245, 245, 245, 0.333);
+    /* Next page color button */
     --pre-bg-color: hsl(0, 1%, 25%);
     --kbd-bg-color: hsl(0, 0%, 16%);
     --kbd-border-color: hsl(210, 5%, 70%);
@@ -873,7 +879,10 @@ input.sidenote-toggle {
 }
 
 /* Heading typography */
-/* I added also numbered headers */
+/* 
+ I added also numbered headers 
+ https://2ality.com/2012/01/numbering-headingshtml.html
+*/
 h1 {
   font-size: 2.5rem;
   line-height: 3.25rem;
@@ -1011,4 +1020,24 @@ iframe {
   text-align: left;
   visibility: visible !important;
   /* ios hack? */
+}
+
+/* Next page link in footer */
+.nextPage {
+  text-align: center;
+  text-decoration: none !important;
+  color: var(--body-color) !important;
+  background-color: var(--nextPage);
+  border: 1px solid rgb(200, 200, 200);
+  padding: 1em;
+  margin: 1.6em 0 1.3em 0;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 2em;
+}
+
+.nextPage:hover {
+  background-color: rgb(230, 230, 230) !important;
+  cursor: pointer;
 }
