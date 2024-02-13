@@ -78,10 +78,10 @@
                 definen la estructura geométrica de las transformaciones de Möbius.
             </p>
 
-            <div class="theorem">
+            <div class="theorem" id="t:circulos_fundamentales">
                 Las translaciones, rotaciones, homotecias y la función $f(z)=\frac{1}{z}$ preservan los círculos en el
                 plano
-                complejo extendido $\hat{\mathbb{C}}$.
+                complejo extendido $\hat{\mathbb{C}}.$
             </div>
 
             <div class="proof">
@@ -104,7 +104,7 @@
                 Exploremos los siguientes casos.
 
                 <br>
-                <em>Caso 1. La translación $T_b$.</em> La imagen del círculo euclidiano $C=C(a,r)$ bajo $T_b$ es
+                <em>Caso 1. La translación $T_b.$</em> La imagen del círculo euclidiano $C=C(a,r)$ bajo $T_b$ es
                 <div class="scroll-wrapper">
                     \[
                     T_b(C)=\{re^{it}+a+b: t\in[-\pi,\pi) \}=C(a+b,r),
@@ -198,18 +198,19 @@
                     D(u^2+v^2)-2Bu+2Cv-A =0.
                     \end{equation}
                 </div>
-                Basándonos en esta última relación vamos a probar que efectivamente $f(C)$ es un círculo $C$. Debemos
+                Basándonos en esta última relación vamos a probar 
+                que efectivamente $f(C)$ es un círculo $C.$ Debemos
                 estudiar
                 los siguientes casos.
 
                 <br>
                 <em>$\ast$ El círculo $C$ es un recta euclidiana que no atraviesa el origen.</em> Entonces su ecuación
                 asociada
-                (véase (\ref{eq:general_circulo}) es de la forma
+                (véase (\ref{eq:general_circulo})) es de la forma
                 \[
                 2Bx+2Cy+D=0,
                 \]
-                tal que $D\neq 0$ y almenos uno de los términos $B$ o $C$ es diferentes de $0$. De la ecuación
+                tal que $D\neq 0$ y al menos uno de los términos $B$ o $C$ es diferentes de $0.$ De la ecuación
                 (\ref{eq:ecuacion_general_2}) se sigue que las parejas $(u,v)$ en $f(C)$ satisfacen la igualdad
                 \[
                 D(u^2+v^2)-2Bu+2Cv=0,
@@ -270,13 +271,15 @@
                 Este
                 hecho pueba que $f(C)$ es un círculo euclidiano.
 
-                {\color{red} Applets J.C.}
+                
             </div>
+
+            <iframe scrolling="no" title="The mapping 1/z" src="https://www.geogebra.org/material/iframe/id/kv8u2q3x/width/800/height/445/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false" width="800px" height="445px" style="border:0px;" allowfullscreen=""> </iframe>
 
             <p>
                 Dado que toda transformación de Möbius es una composición finita de translaciones, rotaciones,
                 homotecias y la
-                función $z\mapsto \frac{1}{z}$ (véase teorema <a href="#t:escriturafinita">??</a>) y, además, estas
+                función $z\mapsto \dfrac{1}{z}$ (véase teorema <a href="#t:escriturafinita">Teorema 1, Sección 2</a>) y, además, estas
                 últimas
                 transformaciones
                 preservan los círculos en $\hat{\mathbb{C}}$, entonces podemos concluir que las transformaciones de
@@ -355,7 +358,7 @@
             la cual envía $z_2$, $z_3$ y $z_4$ sobre $\infty$, $0$ y $1$, respectivamente.
             <p></p>
 
-            <div class="theorem">
+            <div class="theorem" id="t:identidad_fija_1">
                 La única transformación de Möbius que fija los puntos $0$, $1$ y $\infty$ es la función identidad.
             </div>
 
@@ -368,13 +371,13 @@
                 cual implica que $a=d.$ Por lo tanto, $T$ es la función identidad.
             </div>
 
-            <div class="theorem">
+            <div class="theorem" id="t:mapeo_tres_puntos">
                 Consideremos dos tripletas $(z_1,z_2,z_3)$ y $(w_1,w_2,w_3)$ conformado por puntos del plano complejo
                 extendido $\hat{\mathbb{C}}$ y además, los puntos que conforman cada tripleta son diferentes, entonces
-                existe una única transformación de M\" {o}bius $T$ tal que $T(z_i)=w_i$, para cada $i\in\{1,2,3\}$.
+                existe una única transformación de Möbius $T$ tal que $T(z_i)=w_i$, para cada $i\in\{1,2,3\}$.
             </div>
 
-            <div>
+            <div class="proof">
                 Bajo la consideración que ninguno de los puntos que conforman la tripleta $(z_1,z_2,z_3)$ es $\infty$,
                 tomemos la transformación de Möbius asociada a la tripleta $(z_1,z_2,z_3)$, la cual está definida como
                 sigue (véase ecuación (\ref{eq:Mob_razon}))
