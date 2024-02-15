@@ -18,7 +18,7 @@
     left: 50%;
     transform: translateX(-50%);
     width: 95%;
-    max-width: 85ch;
+    max-width: 89ch;
     height: 50px;
     background-color: hsla(210, 20%, 98%, 0.9);
     /* White with 30% transparency */
@@ -111,7 +111,7 @@
     }
 
     .link {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 
     #dark-mode-toggle {

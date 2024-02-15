@@ -224,7 +224,7 @@ html {
 }
 
 /* Media query for smaller screens - Top bar */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 520px) {
   html {
     font-size: 0.9rem;
   }
@@ -238,7 +238,7 @@ body {
   font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
   line-height: 1.8;
 
-  max-width: 85ch;
+  max-width: 89ch;
   min-height: 100vh;
   overflow-x: hidden;
   margin: 0 auto;
