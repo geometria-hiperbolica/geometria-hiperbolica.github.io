@@ -224,7 +224,7 @@ html {
 }
 
 /* Media query for smaller screens - Top bar */
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 500px) {
   html {
     font-size: 0.9rem;
   }
@@ -238,13 +238,13 @@ body {
   font-family: 'Latin Modern', Georgia, Cambria, 'Times New Roman', Times, serif;
   line-height: 1.8;
 
-  max-width: 89ch;
+  max-width: 85ch;
   min-height: 100vh;
   overflow-x: hidden;
   margin: 0 auto;
   padding: 2rem 1.25rem;
 
-  counter-reset: theorem corollary definition example sidenote-counter h2counter figure-counter;
+  counter-reset: theorem corollary definition example sidenote-counter h2counter figure-counter section-1 subsection-1 subsubsection-1 section-2 subsection-2 subsubsection-2 section-3 subsection-3 subsubsection-3;
 
   color: var(--body-color);
   background-color: var(--body-bg-color);
@@ -1040,4 +1040,89 @@ iframe {
 .nextPage:hover {
   background-color: rgb(230, 230, 230) !important;
   cursor: pointer;
+}
+
+/* Numbered headers. Starts at 1 */
+.head-1 {
+  counter-increment: section-1;
+  font-weight: bold;
+  font-size: 2.125rem;
+}
+
+.head-1::before {
+  content: counter(section-1) ". ";
+}
+
+.head-1.head-1-level2 {
+  counter-increment: subsection-1;
+  font-size: 1.775rem;
+}
+
+.head-1.head-1-level2::before {
+  content: counter(section-1) "." counter(subsection-1) ". ";
+}
+
+.head-1.head-1-level3 {
+  counter-increment: subsubsection-1;
+  font-size: 1.4rem;
+}
+
+.head-1.head-1-level3::before {
+  content: counter(section-1) "." counter(subsection-1) "." counter(subsubsection-1) ". ";
+}
+/* Numbered headers. Starts at 2 */
+.head-2 {
+  counter-increment: section-2 2;
+  font-weight: bold;
+  font-size: 2.125rem;
+}
+
+.head-2::before {
+  content: counter(section-2) ". ";
+}
+
+.head-2.head-2-level2 {
+  counter-increment: subsection-2;
+  font-size: 1.875rem;
+}
+
+.head-2.head-2-level2::before {
+  content: counter(section-2) "." counter(subsection-2) ". ";
+}
+
+.head-2.head-2-level3 {
+  counter-increment: subsubsection-2;
+  font-size: 1.5rem;
+}
+
+.head-2.head-2-level3::before {
+  content: counter(section-2) "." counter(subsection-2) "." counter(subsubsection-2) ". ";
+}
+/* Numbered headers. Starts at 3 */
+.head-3 {
+  counter-increment: section-3 3;
+  font-weight: bold;
+  font-size: 2.125rem;
+}
+
+.head-3::before {
+  content: counter(section-3) ". ";
+}
+
+.head-3.head-3-level2 {
+  counter-increment: subsection-3;
+  font-size: 1.875rem;
+}
+
+.head-3.head-3-level2::before {
+  content: counter(section-3) "." counter(subsection-3) ". ";
+}
+
+.head-3.head-3-level3 {
+  counter-increment: subsubsection-3;
+  font-size: 1.5rem;
+}
+
+.head-3.head-3-level3::before {
+  content: counter(section-3) "." counter(subsection-3) "." counter(subsubsection-3) ". ";
 }
