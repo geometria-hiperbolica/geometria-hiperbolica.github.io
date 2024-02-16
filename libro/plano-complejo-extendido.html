@@ -111,8 +111,8 @@
         <p>
           El espacio topológico $\widehat{\mathbb{C}}$ es llamado:
         </p>
-        <p class="callout" style="text-align: center;">
-          <strong>Plano Complejo Extendido</strong> o <strong>Esfera de Riemann</strong>
+        <p style="text-align: center;">
+          <span class="red-txt">Plano Complejo Extendido</span> o <span class="red-txt">Esfera de Riemann</span>
         </p>
 
       </div>
@@ -124,7 +124,7 @@
         <span class="red-txt">espacios topológico</span>.
 
         <p>
-          <strong>Propiedad 1.</strong> Evidentemente, $\emptyset \in \tau_{\mu}\subset \tau_{\infty}.$ 
+          <strong>Propiedad 1.</strong> Evidentemente, $\emptyset \in \tau_{\mu}\subset \tau_{\infty}.$
           Por otro lado,
           $\emptyset=\widehat{\mathbb{C}}\setminus \widehat{\mathbb{C}}$ es compacto en $\mathbb{C},$ por lo tanto
           $\widehat{\mathbb{C}}\in \tau_{\infty}.$
@@ -325,105 +325,105 @@
         Desde el punto de vista histórico, los griegos entendieron el
         plano complejo extendido como un objeto
         geométrico, más precisamente como la esfera unitaria
-        </p><div class="scroll-wrapper">
-          \[
+      </p><div class="scroll-wrapper">
+        \[
         \mathbb{S}^{2}:=\left\{(x_1,x_2,x_3)\in\mathbb{R}^3: x_1^2+x_2^2+x_3^2=1\right\}.
         \]
-        </div>
-       
-        En la obra <em>Planisphaerium</em>, su autor, Claudio Ptolomeo,
-        describió una función proyección
-        (<em>proyección estereográfica</em>)
-        desde la esfera celestial hasta el plano euclidiano,
-        la cual envía la parte
-        celestial del polo norte (cuya frontera es el gran cíarculo invisible)
-        sobre el interior de una circunferencia
-        del plano euclidiano (véase Berggren). ¡Vamos a introducir esta proyección!
+      </div>
+
+      En la obra <em>Planisphaerium</em>, su autor, Claudio Ptolomeo,
+      describió una función proyección
+      (<em>proyección estereográfica</em>)
+      desde la esfera celestial hasta el plano euclidiano,
+      la cual envía la parte
+      celestial del polo norte (cuya frontera es el gran cíarculo invisible)
+      sobre el interior de una circunferencia
+      del plano euclidiano (véase Berggren). ¡Vamos a introducir esta proyección!
       <p></p>
 
       <p>El número complejo $z=x_{1}+ix_{2}$ lo identificamos con la tripleta $(x_{1},x_{2},0),$ esta asociación nos
         permite pensar el plano complejo $\mathbb{C}$ como el plano
-        </p><div class="scroll-wrapper">
+      </p><div class="scroll-wrapper">
         $$P=\{(x_1,x_2,x_3)\in\mathbb{R}^3: x_3=0\}.$$
-        </div>
-        La tripleta ${\rm N}=(0,0,1)$ sobre la esfera $\mathbb{S}^{2}$ es llamada el
-        <span class="red-txt">polo norte</span>.
-        Entonces para todo un punto
-        $\textbf{x}=(x_1,x_2,x_3)$ sobre
-        $\mathbb{S}^{2}-\{\rm N\},$
-        existe una única
-        línea recta $\ell_{\textbf{x}}$ que pasa por los puntos $\textbf{x}$ y ${\rm N}.$ La línea recta
-        $\ell_{\textbf{x}}$ intersecta al plano $ P$ en un único punto $z$ (véase Figura
-        \ref{dib:proyeccion_estereografica}).
-        Entonces definimos la correspondencia $\Pi,$ la cual asocia al punto
-        $\textbf{x}\in \mathbb{S}^2-\{\rm N\}$ el complejo $z$ que está en la intersección de la línea recta
-        $\ell_{\textbf{x}}$ y el plano $ P.$ Además, $\Pi$ envía el polo norte ${\rm N}$ sobre el punto infinito
-        $\infty.$
+      </div>
+      La tripleta ${\rm N}=(0,0,1)$ sobre la esfera $\mathbb{S}^{2}$ es llamada el
+      <span class="red-txt">polo norte</span>.
+      Entonces para todo un punto
+      $\textbf{x}=(x_1,x_2,x_3)$ sobre
+      $\mathbb{S}^{2}-\{\rm N\},$
+      existe una única
+      línea recta $\ell_{\textbf{x}}$ que pasa por los puntos $\textbf{x}$ y ${\rm N}.$ La línea recta
+      $\ell_{\textbf{x}}$ intersecta al plano $ P$ en un único punto $z$ (véase Figura
+      \ref{dib:proyeccion_estereografica}).
+      Entonces definimos la correspondencia $\Pi,$ la cual asocia al punto
+      $\textbf{x}\in \mathbb{S}^2-\{\rm N\}$ el complejo $z$ que está en la intersección de la línea recta
+      $\ell_{\textbf{x}}$ y el plano $ P.$ Además, $\Pi$ envía el polo norte ${\rm N}$ sobre el punto infinito
+      $\infty.$
       <p></p>
 
       <div class="definition">
         La función $\Pi: \mathbb{S}^{2}\to \widehat{\mathbb{C}},$ tal que
         <div class="scroll-wrapper">
           \begin{equation}\label{eq:proyeccion_esterografica}
-        \Pi(\textbf{x})= \left\{
-        \begin{array}{ ll }
-        \ell_{\textbf{x}}\cap P; &amp; \text{ si } \textbf{x}\neq {\rm N}; \\
-        \infty; &amp; \text{ si } \textbf{x}={\rm N};\\
-        \end{array}
-        \right.
-        \end{equation}
+          \Pi(\textbf{x})= \left\{
+          \begin{array}{ ll }
+          \ell_{\textbf{x}}\cap P; &amp; \text{ si } \textbf{x}\neq {\rm N}; \\
+          \infty; &amp; \text{ si } \textbf{x}={\rm N};\\
+          \end{array}
+          \right.
+          \end{equation}
         </div>
-        
+
         es llamada
         <span class="red-txt">la proyección estereográfica</span>.
       </div>
 
       <p>
-        Ahora vamos a dar un descripción más precisa de la regla de asignación 
-        $\Pi(\textbf{x}).$ 
-        Si fijamos la tripleta 
-        $\textbf{x}=(x_1,x_2,x_3)$ sobre $\mathbb{S}^2-\{ {\rm N}\},$ 
+        Ahora vamos a dar un descripción más precisa de la regla de asignación
+        $\Pi(\textbf{x}).$
+        Si fijamos la tripleta
+        $\textbf{x}=(x_1,x_2,x_3)$ sobre $\mathbb{S}^2-\{ {\rm N}\},$
         entonces queremos encontrar
         explícitamente el complejo $z$ en l
         a intersección $\ell_{\textbf{x}}\cap P.$ La línea recta
         $\ell_{\textbf{x}}$ está conformada por las tripletas
-        $(\overline{x}_1,\overline{x}_2,\overline{x}_3)\in\mathbb{R}^2$ 
+        $(\overline{x}_1,\overline{x}_2,\overline{x}_3)\in\mathbb{R}^2$
         que satisfacen la ecuación
-        </p><div class="scroll-wrapper">
-          \[
+      </p><div class="scroll-wrapper">
+        \[
         (\overline{x}_1,\overline{x}_2,\overline{x}_3)=t(x_1,x_2,x_3-1)+(0,0,1), \text{ para cada } t\in\mathbb{R}.
         \]
-        </div>
-        
-        Equivalentemente, para cada $t\in \mathbb{R}$ se cumplen las siguientes ecuaciones paramétricas
-        \begin{equation}\label{eq:valor_t}
-        \overline{x}_1=tx_1, \quad \overline{x}_2 =tx_2, \quad \overline{x}_3 =t(x_3-1)+1.
-        \end{equation}
-        Nuestro objetivo es encontrar la tripleta $(\overline{x}_1,\overline{x}_2,\overline{x}_3)$ sobre la línea
-        recta $\ell_{\textbf{x}}$ tal que $\overline{x}_{3}=0,$ lo cual significa obtener el real $t\in\mathbb{R}$ tal
-        que $\overline{x}_3=0.$ De la tercera relación descrita en la ecuación \eqref{eq:valor_t}, deducimos
-        fácilamente que la igualdad $\overline{x}_3=0$ sucede cuando
-        $$
-        t=\dfrac{1}{1-x_3}.
-        $$
-        Sustituimos el valor encontrado de $t$ en las dos primeras igualdades de la ecuación (\ref{eq:valor_t}) y
-        obtenemos
-        <div class="scroll-wrapper">
-          \[
+      </div>
+
+      Equivalentemente, para cada $t\in \mathbb{R}$ se cumplen las siguientes ecuaciones paramétricas
+      \begin{equation}\label{eq:valor_t}
+      \overline{x}_1=tx_1, \quad \overline{x}_2 =tx_2, \quad \overline{x}_3 =t(x_3-1)+1.
+      \end{equation}
+      Nuestro objetivo es encontrar la tripleta $(\overline{x}_1,\overline{x}_2,\overline{x}_3)$ sobre la línea
+      recta $\ell_{\textbf{x}}$ tal que $\overline{x}_{3}=0,$ lo cual significa obtener el real $t\in\mathbb{R}$ tal
+      que $\overline{x}_3=0.$ De la tercera relación descrita en la ecuación \eqref{eq:valor_t}, deducimos
+      fácilamente que la igualdad $\overline{x}_3=0$ sucede cuando
+      $$
+      t=\dfrac{1}{1-x_3}.
+      $$
+      Sustituimos el valor encontrado de $t$ en las dos primeras igualdades de la ecuación (\ref{eq:valor_t}) y
+      obtenemos
+      <div class="scroll-wrapper">
+        \[
         \overline{x}_1=\frac{x_1}{1-x_3}, \quad \overline{x}_2=\frac{x_2}{1-x_3}.
         \]
-        </div>
-        Entonces el punto de intersección entre la línea $\ell_{\textbf{x}}$ y el plano $P$ es el complejo
-        <div class="scroll-wrapper">
-          $$
+      </div>
+      Entonces el punto de intersección entre la línea $\ell_{\textbf{x}}$ y el plano $P$ es el complejo
+      <div class="scroll-wrapper">
+        $$
         \dfrac{x_1}{1-x_3}+i\dfrac{x_2}{1-x_3}.
         $$
-        </div>
-        
-        Entonces la proyección estereográfica (\ref{eq:proyeccion_esterografica}) 
-        está definida mediante
-        <div class="scroll-wrapper">
-          \begin{equation}\label{eq:proyeccion_esteregrafica_2}
+      </div>
+
+      Entonces la proyección estereográfica (\ref{eq:proyeccion_esterografica})
+      está definida mediante
+      <div class="scroll-wrapper">
+        \begin{equation}\label{eq:proyeccion_esteregrafica_2}
         \Pi(x_1,x_2,x_3)= \left\{
         \begin{array}{ cl }
         \dfrac{x_1}{1-x_3}+i\dfrac{x_2}{1-x_3}; &amp; \text{ si } (x_1,x_2,x_3)\neq {\rm N}; \\
@@ -431,8 +431,8 @@
         \end{array}
         \right.
         \end{equation}
-        </div>
-        
+      </div>
+
       <p></p>
 
       <p>
@@ -441,45 +441,45 @@
         línea recta $\ell_{z}$ que pasa por $(x_1,x_2,0)$ y el polo norte ${\rm N}.$ La recta $\ell_z$ está
         conformada por las tripletas $(\overline{x}_1,\overline{x}_2,\overline{x}_3)\in\mathbb{R}$ que satisfacen la
         ecuación
-        </p><div class="scroll-wrapper">
-          \begin{equation}\label{eq:linea_recta}
+      </p><div class="scroll-wrapper">
+        \begin{equation}\label{eq:linea_recta}
         \overline{x}_1=tx_1, \quad \overline{x}_2=tx_2, \quad \overline{x}_3=1-t, \text{ para cada } t\in\mathbb{R}.
         \end{equation}
-        </div>
-        
-        Queremos encontrar las tripletas $(\overline{x}_1,\overline{x}_2,\overline{x}_3)$ que están sobre la línea
-        recta $\ell_{z}$ tal que $\overline{x}_{1}^2+\overline{x}_{2}^2+\overline{x}_{3}^2=1.$ Reemplazamos en la
-        igualdad anterior las relaciones descritas en (\ref{eq:linea_recta}) y obtenemos
-        \[
-        (tx_1)^2+(tx_2)^2+(1-t)^2 =1.
-        \]
-        Resolvemos la ecuación de segundo grado,
-        <div class="scroll-wrapper">
-          \begin{equation*}
+      </div>
+
+      Queremos encontrar las tripletas $(\overline{x}_1,\overline{x}_2,\overline{x}_3)$ que están sobre la línea
+      recta $\ell_{z}$ tal que $\overline{x}_{1}^2+\overline{x}_{2}^2+\overline{x}_{3}^2=1.$ Reemplazamos en la
+      igualdad anterior las relaciones descritas en (\ref{eq:linea_recta}) y obtenemos
+      \[
+      (tx_1)^2+(tx_2)^2+(1-t)^2 =1.
+      \]
+      Resolvemos la ecuación de segundo grado,
+      <div class="scroll-wrapper">
+        \begin{equation*}
         \begin{split}
         (tx_1)^2+(tx_2)^2+(1-t)^2 &amp; =1,\\
         t^2 (x_1^2+x_2^2+1)-2t &amp; =0,\\
         t \left[ t(x_1^2+x_2^2+1)-2\right] &amp; =0.\\
         \end{split}
         \end{equation*}
-        </div>
-        Así, obtenemos 
-        <div class="scroll-wrapper">
-          $$t=\dfrac{2}{x_1^2+x_2^2+1}$$
-        </div>
-        o $t=0.$
-         Al reemplazar este valor real en la ecuación
-        (\ref{eq:linea_recta}) tenemos que el punto en la intersección de la 
-        recta $\ell_{z}$ y el conjunto
-        $\mathbb{S}^{2}-\{\rm N\}$ es la tripleta
-        <div class="scroll-wrapper">
-          \[
+      </div>
+      Así, obtenemos
+      <div class="scroll-wrapper">
+        $$t=\dfrac{2}{x_1^2+x_2^2+1}$$
+      </div>
+      o $t=0.$
+      Al reemplazar este valor real en la ecuación
+      (\ref{eq:linea_recta}) tenemos que el punto en la intersección de la
+      recta $\ell_{z}$ y el conjunto
+      $\mathbb{S}^{2}-\{\rm N\}$ es la tripleta
+      <div class="scroll-wrapper">
+        \[
         \left(\frac{2x_1}{x_2^2+x_2^2+1},\frac{2x_2}{x_2^2+x_2^2+1},\frac{x_1^2+x_2^2-1}{x_2^2+x_2^2+1}\right).
         \]
-        </div>
-        <br>
-        La función inversa $\Pi^{-1}$ de la proyección estereográfica está dada por
-        <div class="scroll-wrapper">
+      </div>
+      <br>
+      La función inversa $\Pi^{-1}$ de la proyección estereográfica está dada por
+      <div class="scroll-wrapper">
         \begin{equation}\label{eq:proyeccion_estereografica_inversa}
         \Pi^{-1}(z)= \left\{
         \begin{array}{ cl }
@@ -489,31 +489,31 @@
         \end{array}
         \right.
         \end{equation}
-        </div>
-        
+      </div>
+
       <p></p>
 
       <p>
-        El lector puede verificar que efectivamente se satisfacen las 
+        El lector puede verificar que efectivamente se satisfacen las
         siguientes igualdades de funciones $\Pi^{-1}\circ
-        \Pi={\rm Id}_{\mathbb{S}^2}$ y $\Pi\circ\Pi^{-1}={\rm Id}_{\hat{\mathbb{C}}}.$ 
+        \Pi={\rm Id}_{\mathbb{S}^2}$ y $\Pi\circ\Pi^{-1}={\rm Id}_{\hat{\mathbb{C}}}.$
         Estas dos relaciones implican que
-        ambas funciones $\Pi$ y $\Pi^{-1}$ son biyectivas. 
+        ambas funciones $\Pi$ y $\Pi^{-1}$ son biyectivas.
         Adicionalmente, puede convencerse fácilmente que la
-        proyección estereográfica envía el círculo ecuatorial 
+        proyección estereográfica envía el círculo ecuatorial
         de $\mathbb{S}^2$ (la intersección de
-        $\mathbb{S}^2$ con el plano $xy$) en la circunferencia 
+        $\mathbb{S}^2$ con el plano $xy$) en la circunferencia
         euclidiana con centro en $\textbf{0}$ y radio $1$
-        (véase Figura \ref{dib:proyeccion_estereografica}). 
+        (véase Figura \ref{dib:proyeccion_estereografica}).
         Incluso más, la proyección $\Pi$ envía círculos de
-        las esfera sobre  círculos 
+        las esfera sobre círculos
         del plano complejo extendido. Este hecho es
-        conocidos desde hace tiempo, en la obra <em>De plana spera</em> 
+        conocidos desde hace tiempo, en la obra <em>De plana spera</em>
         escrita por Jordanus Nemorarius, el autor trató
-        los principios de la proyección esterográfica y probó que 
+        los principios de la proyección esterográfica y probó que
         la proyección envía círculos de la esfera
-        $\mathbb{S}^2$ en  círculos del plano complejo extendido
-        \cite{Folkerts}*{pág. 6}. Vamos a introducir el concepto 
+        $\mathbb{S}^2$ en círculos del plano complejo extendido
+        \cite{Folkerts}*{pág. 6}. Vamos a introducir el concepto
         de círculo en el plano complejo extendido y probar
         esta propiedad de la proyección estereográfica.
       </p>
@@ -529,7 +529,7 @@
         junto con el punto $\infty$ (véase Figura \ref{fig:circunferencias}-b).
       </div>
 
-      <br>
+
 
       <div class="theorem">
         La proyección esterográfica envía círculos de la esfera unitaria $\mathbb{S}^2$ sobre círculos
@@ -542,19 +542,19 @@
         $\mathbb{S}^{2},$ donde
         <div class="scroll-wrapper">
           \begin{equation}\label{eq:plano_circunferencia}
-        C=\left\{(\overline{x}_1,\overline{x}_2,\overline{x}_3)\in \mathbb{S}^{2}:
-        a\overline{x}_1+b\overline{x}_2+c\overline{x}_3=d\right\}.
-        \end{equation}
+          C=\left\{(\overline{x}_1,\overline{x}_2,\overline{x}_3)\in \mathbb{S}^{2}:
+          a\overline{x}_1+b\overline{x}_2+c\overline{x}_3=d\right\}.
+          \end{equation}
         </div>
         Veamos que la imagen $\Pi(C)$ es un círculo generalizado sobre el plano complejo extendido
         $\widehat{\mathbb{C}},$ es decir,
         <div class="scroll-wrapper">
           \[
-        \Pi(C)=\left\{x_{1}+ix_{2}\in\mathbb{C}: \tilde{a}(x_1^2+x_2^{2})+2\tilde{b}x_1+2\tilde{c}x_2+\tilde{d}=0
-        \right\},
-        \]
+          \Pi(C)=\left\{x_{1}+ix_{2}\in\mathbb{C}: \tilde{a}(x_1^2+x_2^{2})+2\tilde{b}x_1+2\tilde{c}x_2+\tilde{d}=0
+          \right\},
+          \]
         </div>
-        
+
         para reales adecuados $\tilde{a},\tilde{b},\tilde{c},\tilde{d}\in\mathbb{R}.$ Al conjunto anterior le agregamos
         el punto $\infty,$ si el círculo $C$ pasa por el polo norte ${\rm N}.$
 
@@ -562,36 +562,36 @@
           Como la proyección estereográfica $\Pi$ es una biyección y $C$ tiene más de un punto, entonces de la
           relación \eqref{eq:proyeccion_estereografica_inversa} se sigue que existe un número complejo $x_{1}+i
           x_{2}$ tal que
-          </p><div class="scroll-wrapper">
-            \[
+        </p><div class="scroll-wrapper">
+          \[
           (\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})=\left(\dfrac{2 x_1}{x_1^2+x_2^2+1},\dfrac{2
           x_2}{x_1^2+x_2^2+1},\dfrac{x_1^2+x_2^2-1}{x_2^2+x_2^2+1}\right).
           \]
-          </div>
-          
-          Reemplazamos la anterior igualdad en la ecuación (\ref{eq:plano_circunferencia}) y obtenemos
-          <div class="scroll-wrapper">
-            \[
+        </div>
+
+        Reemplazamos la anterior igualdad en la ecuación (\ref{eq:plano_circunferencia}) y obtenemos
+        <div class="scroll-wrapper">
+          \[
           a\left(\frac{2x_1}{x_2^2+x_2^2+1}\right)
           +b\left(\frac{2x_2}{x_1^2+x_2^2+1}\right)+c\left(\frac{x_1^2+x_2^2-1}{x_1^2+x_2^2+1}\right) =d.
           \]
-          </div>
-          
-          Finalmente, realizamos operaciones básicas y llegamos a la expresión
-          <div class="scroll-wrapper">
-            \begin{equation}\label{eq:final_circunferencia_bajo_proyeccion}
+        </div>
+
+        Finalmente, realizamos operaciones básicas y llegamos a la expresión
+        <div class="scroll-wrapper">
+          \begin{equation}\label{eq:final_circunferencia_bajo_proyeccion}
           \begin{split}
           2ax_1 +2bx_2+c\left(x_1^2+x_2^2-1\right)&amp; =d(x_1^2+x_2^2+1),\\
           (c-d)x_1^2+(c-d)x^2_2 +2ax_1 +2bx_2&amp;=d+c.\\
           \end{split}
           \end{equation}
-          </div>
-          
-          Entonces la imagen $\Pi(C)$ está descrita de la forma
-          \begin{equation}\label{eq:imagen_circulo_proyeccion_estereografica}
-          \Pi(C)=\left\{x_{1}+ix_{2}\in\mathbb{C}: (c-d)x_1^2+(c-d)x^2_2 +2ax_1 +2bx_2=d+c\right\}.
-          \end{equation}
-          Debemos estudiar los siguientes dos casos.
+        </div>
+
+        Entonces la imagen $\Pi(C)$ está descrita de la forma
+        \begin{equation}\label{eq:imagen_circulo_proyeccion_estereografica}
+        \Pi(C)=\left\{x_{1}+ix_{2}\in\mathbb{C}: (c-d)x_1^2+(c-d)x^2_2 +2ax_1 +2bx_2=d+c\right\}.
+        \end{equation}
+        Debemos estudiar los siguientes dos casos.
         <p></p>
 
         <p>
@@ -601,33 +601,33 @@
           2ax_{1}+2bx_{2}=d+c.
           \]
           Esta última expresión representa una línea recta euclidiana. Entonces la imagen
-          </p><div class="scroll-wrapper">
-            \[
+        </p><div class="scroll-wrapper">
+          \[
           \Pi(C)=\left\{(x_{1},x_{2})\in\mathbb{R}^2: 2ax_1+2bx_2=d+c \right\}\cup\{\infty\},
           \]
-          </div>
-          es un círculo generalizado.
+        </div>
+        es un círculo generalizado.
         <p></p>
         <p>
           <strong>Caso 2.</strong>
           Contrariamente, si $c-d\neq 0,$ entonces dividimos entre $c-d$ la ecuación
           \eqref{eq:final_circunferencia_bajo_proyeccion}, luego completamos cuadrados y obtenemos
-          </p><div class="scroll-wrapper">
-            \begin{equation}\label{eq:proyeccion_circulos_en_circulos}
+        </p><div class="scroll-wrapper">
+          \begin{equation}\label{eq:proyeccion_circulos_en_circulos}
           \small{\begin{split}
           x_1^2+\frac{2a}{(c-d)}x_1 +\frac{a^2}{(c-d)^2}
           +x_2^2+\frac{2b}{(c-d)}x_2^2+\frac{b^2}{(c-d)^2}&amp;=\frac{d+c}{c-d}+\frac{a^2}{(c-d)^2}+\frac{b^2}{(c-d)^2}\\
           \left(x_1^2+\frac{a}{c-d}\right) +\left(x_2^2+\frac{b}{c-d}\right)&amp;=\frac{a^2+b^2+c^2-d^2}{(c-d)^2}.\\
           \end{split}}
           \end{equation}
-          </div>
-          
-          Debemos verificar que $a^{2}+b^{2}+c^{2}-d^{2}&gt;0.$ Si el plano $P$ dado por la fórmula
-          \[
-          a\overline{x}_1+b\overline{x}_2+c\overline{x}_3=d,
-          \]
-          pasa por el origen $\textbf{0},$ entonces $d=0$ y así, el miembro derecho de la expresión en
-          \eqref{eq:proyeccion_circulos_en_circulos} debe ser un real positivo.
+        </div>
+
+        Debemos verificar que $a^{2}+b^{2}+c^{2}-d^{2}&gt;0.$ Si el plano $P$ dado por la fórmula
+        \[
+        a\overline{x}_1+b\overline{x}_2+c\overline{x}_3=d,
+        \]
+        pasa por el origen $\textbf{0},$ entonces $d=0$ y así, el miembro derecho de la expresión en
+        \eqref{eq:proyeccion_circulos_en_circulos} debe ser un real positivo.
         <p></p>
 
         <p>
@@ -648,49 +648,49 @@
           Ahora, vamos a demostrar la segunda afirmación del teorema. Tomemos un círculo generalizado $C$ sobre el
           plano complejo extendido $\widehat{\mathbb{C}}.$ Probemos que la imagen inversa $\Pi^{-1}(C)$ es una
           circunferencia sobre $\mathbb{S}^2,$ es decir,
-          </p><div class="scroll-wrapper">
-            \[
+        </p><div class="scroll-wrapper">
+          \[
           \Pi^{-1}(C)=\left\{(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})\in\mathbb{S}^2:
           a\overline{x}_{1}+b\overline{x}_{2}+c\overline{x}_{3}=d\right\},
           \]
-          </div>
-          
-          para algunos reales $a,b,c,d\in\mathbb{R}.$
+        </div>
+
+        para algunos reales $a,b,c,d\in\mathbb{R}.$
         <p></p>
 
         <p>
           La circunferencia generalizada $C$ en el plano complejo extendido $\hat{\mathbb{C}}$ está dada por
-          </p><div class="scroll-wrapper">
-            \begin{equation}\label{eq:general_circulo_1}
+        </p><div class="scroll-wrapper">
+          \begin{equation}\label{eq:general_circulo_1}
           C=\left\{ x_{1}+ix_{2}\in\mathbb{C}:
           a(x_{1}^{2}+x_{2}^{2})+2bx_{1}+2cx_{2}+d=0\right\},
           \end{equation}
-          </div>
-          siendo $a,b,c,d$ reales adecuados. De la relación \eqref{eq:proyeccion_esteregrafica_2} existe una tripleta
-          $(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})\in \Pi^{-1}(C)$ tal que
-          <div class="scroll-wrapper">
-            \[
+        </div>
+        siendo $a,b,c,d$ reales adecuados. De la relación \eqref{eq:proyeccion_esteregrafica_2} existe una tripleta
+        $(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})\in \Pi^{-1}(C)$ tal que
+        <div class="scroll-wrapper">
+          \[
           x_{1}=\frac{\overline{x}_{1}}{1-\overline{x}_{3}} \text{ y }
           x_{2}=\frac{\overline{x}_{2}}{1-\overline{x}_{3}}.
           \]
-          </div>
-          Sustituimos las anteriores relaciones en la igualdad \eqref{eq:general_circulo_1} y obtenemos
-          <div class="scroll-wrapper">
-            \begin{equation}\label{eq:plano_esfera_unitaria}
+        </div>
+        Sustituimos las anteriores relaciones en la igualdad \eqref{eq:general_circulo_1} y obtenemos
+        <div class="scroll-wrapper">
+          \begin{equation}\label{eq:plano_esfera_unitaria}
           \Pi^{-1}(C)=\left\{(\overline{x}_{1},\overline{x}_{2},\overline{x}_{2})\in\mathbb{S}^{2}:a\frac{(\overline{x}_{1}^{2}+\overline{x}_{2}^{2})}{(1-\overline{x}_{3})^2}+2b\frac{\overline{x}_{1}}{1-\overline{x}_{3}}+2c\frac{\overline{x}_{2}}{1-\overline{x}_{3}}+d=0\right\}.
           \end{equation}
-          </div>
-          Recordemos que la tripleta $(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})\in\mathbb{S}^2$ satisface la
-          relación $\overline{x}_{1}^{2}+\overline{x}_{2}^{2}+\overline{x}_{3}^{2}=1.$ Equivalentemente, se cumple la
-          igualdad $\overline{x}_{1}^{2}+\overline{x}_{2}^{2}=1-\overline{x}_{3}^{2}.$ Reemplazamos esta última
-          igualdad en la ecuación \eqref{eq:plano_esfera_unitaria}, computamos y obtenemos
-          <div class="scroll-wrapper">
-            \[
+        </div>
+        Recordemos que la tripleta $(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})\in\mathbb{S}^2$ satisface la
+        relación $\overline{x}_{1}^{2}+\overline{x}_{2}^{2}+\overline{x}_{3}^{2}=1.$ Equivalentemente, se cumple la
+        igualdad $\overline{x}_{1}^{2}+\overline{x}_{2}^{2}=1-\overline{x}_{3}^{2}.$ Reemplazamos esta última
+        igualdad en la ecuación \eqref{eq:plano_esfera_unitaria}, computamos y obtenemos
+        <div class="scroll-wrapper">
+          \[
           \Pi^{-1}(C)=\left\{(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})\in\mathbb{S}^2:
           a(1+\overline{x}_3)+2b\overline{x}_1+2c\overline{x}_{2}+d(1-\overline{x}_{3})=0\right\}.
           \]
-          </div>
-          
+        </div>
+
         <p></p>
       </div>
 
@@ -706,7 +706,7 @@
         $$
         p_{i}\circ \Pi(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})=\frac{\overline{x}_{i}}{1-\overline{x}_{3}},
         $$
-        es continua en cada tripleta 
+        es continua en cada tripleta
         $(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})\in\mathbb{S}^2-\{\rm N\}.$
         Usando la Proposición en \cite{MaxRo}*{pág. 77} concluimos que la proyección estereográfica $\Pi$ es
         continua en $\mathbb{S}^2\setminus\{\rm N\}.$ Ahora, probemos la continuidad de $\Pi$ en el punto $\infty.$
@@ -714,17 +714,17 @@
         que existe un abierto $W$ que contiene al polo norte ${\rm N}$ tal que $\Pi(W)\subset V.$ Por la manera en que
         se definió la topología $\tau_{\infty}$ para $\widehat{\mathbb{C}}$ (véase Teorema
         \ref{the:plano_complejo_extendido}), se sigue que $\widehat{\mathbb{C}}-V$ es un subconjunto compacto de
-        $\mathbb{C}.$ 
+        $\mathbb{C}.$
         Entonces existe un real positivo $r&gt;0,$ el compacto $(\widehat{\mathbb{C}}-V)$ se queda contenido
         en la bola euclidiana $B_{r}(\textbf{0}).$ Nótemos que la frontera $\partial B_{r}(\textbf{0})$ de la bola
         $B_{r}(\textbf{0})$ es una circunferencia generalizada del plano complejo extendido $\widehat{\mathbb{C}}.$ Del
         Teorema \ref{t:circunferencias-circunferencias}, existe una circunferencia $C$ sobre la esfera $\mathbb{S}^2$
-        cuya imagen bajo $\Pi$ es la frontera $\partial B_{r}(\textbf{0}).$ 
+        cuya imagen bajo $\Pi$ es la frontera $\partial B_{r}(\textbf{0}).$
         Por construcción, la esfera $\mathbb{S}$
         menos la circunferencia $C$ es la unión disjunta de dos abiertos conexos, tal que uno de ellos contiene el
-        polo norte ${\rm N}.$ 
+        polo norte ${\rm N}.$
         Denotemos mediante $W$ a dicha componente conexa que contine a ${\rm N}.$
-         Dado que $\Pi$
+        Dado que $\Pi$
         es continua en $\mathbb{S}^{2}-\{\rm N\},$ entonces debe suceder que $\Pi(W)\subset V.$ Esto prueba que la
         proyección estereográfica $\Pi$ es continua en ${\rm N}.$ Por lo tanto, la proyección estereográfica es
         continua en $\mathbb{S}^{2}.$
@@ -736,7 +736,7 @@
           una función biyectiva, continua y cerrada, entonces concluimos que en efecto es un homeomorfismo.
         </p>
 
-        
+
       </div>
 
       <p>
@@ -756,8 +756,9 @@
         \end{array}
         \right.
         \]
-        A esta función distancia se le conoce como 
-        <span class="red-txt">métrica cordal -cuerdas-</span>, pues geométricamente esta distancia representa la longitud del segmento en $\mathbb{R}^3$ con puntos
+        A esta función distancia se le conoce como
+        <span class="red-txt">métrica cordal -cuerdas-</span>, pues geométricamente esta distancia representa la
+        longitud del segmento en $\mathbb{R}^3$ con puntos
         extremos $\Pi^{-1}(z)$ y $\Pi^{-1}(w).$ Adicionalmente, la topología inducida por la métrica cordal es
         equivalente a la topología $\tau_{\infty}.$
       </p>
@@ -798,14 +799,177 @@
       \mathbb{C}^{2}-\{(0,0)\}/\mathbb{C}^{\ast},
       \]
       es llamado
-      <span style="color: rgb(210, 11, 11);"><em>espacio proyectivo complejo $1$-dimensional</em></span>. Formalmente,
+      <span class="red-txt">espacio proyectivo complejo $1$-dimensional</span>. Formalmente,
       lo podemos introducir
       como sigue.
       <p></p>
 
+      <div class="definition">
+        El <span class="red-txt">espacio proyectivo complejo $1$-dimensional</span>
+        es el espacio
+        <div class="scroll-wrapper">
+          \[
+          \mathbb{C}P^{1}:=\mathbb{C}^{2}-\{(0,0)\}/\mathbb{C}^{\ast}=\left\{(z,w)\in\mathbb{C}^{2}-\{(0,0)\}\right\}/\sim,
+          \]
+        </div>
+        donde $\sim$ es la relación de equivalencia: $(z_1,w_1)\sim (z_2,w_2)$ si y solo si existe $\lambda
+        \in\mathbb{C}^{\ast}$ tal que $(z_1,w_1)=(\lambda \cdot z_2,\lambda \cdot w_2).$ El espacio $\mathbb{C}P^{1}$
+        está dotado con la la topología identificación, es decir, la topología que hace a la función
+        proyección $p:\mathbb{C}^{2}-\{(0,0)\}\to \mathbb{C}P^{1},$ tal que
+        \[
+        (z,w)\mapsto [z,w],
+        \]
+        continua.
+      </div>
+
+      <p>
+        Notemos que $\mathbb{C}P^{1}$ está conformado por todos los subespacios
+        vectoriales complejos de dimensión
+        $1$ en $\mathbb{C}^2.$ El siguiente resultado describe algunas
+        de las propiedades topológicas de este plano
+        proyectivo complejo.
+      </p>
 
 
+      <div class="theorem">
+        El plano proyectivo complejo $1$-dimensional $\mathbb{C}P^1$ es un espacio compacto, conexo y Hausdorff.
+      </div>
 
+      <div>
+        Notemos que la esfera compleja
+        <span class="scroll-wrapper">
+          \[
+          \mathbb{S}^{3}:=\left\{(z,w)\in\mathbb{C}^2: |z|^2+|w|^2=1\right\}\subset \mathbb{C}^2-\{(0,0)\},
+          \]
+        </span>
+
+        es un espacio compacto y conexo. Dado que la función inclusión $i:\mathbb{S}^3\hookrightarrow
+        \mathbb{C}^2-\{(0,0)\}$ es continua y la composición de funciones continuas es continuas, entonces la
+        función composición $p\circ i:\mathbb{S}^3\to\mathbb{C}P^{1}$ es continua. Si probamos que $i\circ p$ es
+        <span class="blue-txt">sobreyectiva</span>, podremos concluir que $\mathbb{C}P^{1}$ es un
+        espacio <span class="red-txt">compacto</span> y
+        <span class="red-txt">conexo</span>, pues estas dos propiedades son invariantes bajo
+        continuidad. Tomemos la clase $[z,w]\in \mathbb{C}P^{1},$ como alguna de sus entradas es no nula, entonces
+        definimos el número complejo no nulo
+        \[
+        \lambda =|z|^2+|w|^2\neq 0.
+        \]
+        Notemos que la pareja $(z/\lambda,w/\lambda)$ pertenece a la esfera compleja $\mathbb{S}^3$ y es equivalente a
+        la pareja $(z,w)\in \mathbb{C}^{2}\setminus\{(0,0)\}.$ Esto implica que $p\circ i (z/\lambda,w/\lambda)=[z,w].$
+
+        <p>
+          Finalmente, vamos a probar que $\mathbb{C}P^{1}$ es un espacio
+          <span class="red-txt">Hausdorff</span>. El siguiente conjunto es necesario para la prueba.
+          Dado el subconjunto abierto $U\subset \mathbb{C}^{2}\setminus \{(0,0)\}$ y el complejo no nulo
+          $\lambda\in\mathbb{C}^{\ast},$ definimos el
+          <span class="red-txt">transladado de $U$ con respecto a $\lambda$</span>
+          como el abierto
+          <span class="scroll-wrapper">
+            \begin{equation}\label{eq:transladado_abierto}
+            \lambda \cdot U=\left\{(\lambda\cdot z,\lambda \cdot w): (z,w)\in U\right\}.
+            \end{equation}
+          </span>
+
+          Ahora, tomemos dos puntos diferentes $[z_1,w_1]\neq [z_2,w_2]\in\mathbb{C}P^{1}.$ Podemos suponer sin
+          pérdida de generalidad que $(z_1,w_1),$$(z_2,w_2)\in \mathbb{S}^{3}.$ Dado que $\mathbb{S}^{3}$ es un
+          espacio Hausdorff, entonces existen abiertos $U$ y $V$ en $\mathbb{S}^{3}$ tal que se satisfacen las
+          siguientes propiedades
+        </p>
+        <ol class="roman-list">
+          <li>
+            El punto $(z_1,w_1)$ está en $U$ y el punto $(z_2,w_2)$ está en $V.$
+          </li>
+          <li>
+            La intersección $U\cap V=\emptyset.$
+          </li>
+        </ol>
+        <p>
+          Por otro lado, tenemos que las imágenes $p\circ i(U)$ y $p\circ i(V)$ satisfacen:
+        </p>
+        <ol>
+          <li>
+            La clase $[z_1,w_1]$ está en $p\circ i(U)$ y la clase $[z_2,w_2]$ está en $p\circ i(V).$
+          </li>
+          <li>
+            Los subconjuntos $p\circ i(U)$ y $p\circ i(V)$ son abiertos en $\mathbb{C}P^{1},$ dado que
+            <span class="scroll-wrapper">
+              \[
+              p^{-1}(p(U))=\bigcup_{\lambda\in\{1,-1\}} \lambda \cdot U \text{ y }
+              p^{-1}(p(V))=\bigcup_{\lambda\in\{1,-1\}} \lambda \cdot V.
+              \]
+            </span>
+
+          </li>
+          <li>
+            La intersección $p\circ i(U)\cap p\circ i(V)\neq \emptyset.$
+          </li>
+        </ol>
+        <p>
+          Esto prueba que el espacio $\mathbb{C}P^{1}$ es Hausdorff.
+        </p>
+      </div>
+
+      <p>
+        Para finalizar esta sección el lector tendrá la tarea de probar que la función
+        $f:\mathbb{C}P^{1}\to\mathbb{S}^2,$ definida mediante
+        <span class="scroll-wrapper">
+          \begin{equation}\label{eq:homeo_esfera_plano_proyectivo}
+          [z,w]\mapsto
+          \left(\frac{2Re(z\overline{w})}{|z|^2+|w|^2},\frac{2Im(z\overline{w})}{|z|^2+|w|^2},\frac{|z|^2-|w|^2}{|z|^2+|w|^2}\right),
+          \end{equation}
+        </span>
+
+        es un homeomorfismo.
+      </p>
+
+
+      <div class="head-1 head-1-level2">
+        Problemas
+      </div>
+
+      <ol>
+        <li>
+          Probar la afirmación \textbf{(2)} descrita en el Teorema \ref{the:plano_complejo_extendido}.
+        </li>
+        <li>
+          Demostrar que la esfera de Riemann $\widehat{\mathbb{C}}$ es un espacio conexo, segundo numerable y normal.
+        </li>
+        <li>
+          Verificar que la distancia $D$ desde un punto arbitrario $(x_{0},y_{0},z_{0})\in\mathbb{R}^{3}$ hasta el plano
+          $P$ con ecuación $ax_{1}+bx_{2}+cx_{3}=d,$ está dada por la fórmula
+          \[
+          D=\dfrac{|ax_{0}+by_{0}+cz_{0}-d|}{\sqrt{a^{2}+b^{2}+c^{2}}}.
+          \]
+        </li>
+        <li>
+          Probar que la función que define la métrica cordal, es en efecto una función distancia. Verifica que la
+          topología inducida por la métrica cordal es equivalente a la topología $\tau_{\infty}.$
+        </li>
+        <li>
+          Para todo $n\in\mathbb{N},$ demostrar que el espacio $\mathbb{R}^n\cup\{\infty\}$ con la topología
+          $\tau_{\infty}$ es homeomorfo a $\mathbb{S}^{n}:=\left\{(x_1,\ldots,x_{n+1})\in \mathbb{R}^{n+1}:
+          \sqrt{\sum\limits_{i=1}^{n+1}x_i^2}=1\right\}.$
+        </li>
+        <li>
+          Verificar que la función $\alpha$ definida en la ecuación \eqref{eq:accion_plano_proyectivo_complejo} es
+          una acción.
+        </li>
+        <li>
+          Probar que el abierto transladado $\lambda \cdot U$ definido en la ecuación \eqref{eq:transladado_abierto}
+          es un abierto.
+        </li>
+        <li>
+          Demostrar que la función $f:\mathbb{C}P^{1}\to\mathbb{S}^2,$ definida mediante
+          <span class="scroll-wrapper">
+            \[
+            [z,w]\mapsto
+            \left(\frac{2Re(z\overline{w})}{|z|^2+|w|^2},\frac{2Im(z\overline{w})}{|z|^2+|w|^2},\frac{|z|^2-|w|^2}{|z|^2+|w|^2}\right),
+            \]
+            es un homeomorfismo.
+          </span>
+
+        </li>
+      </ol>
 
 
       <br>
