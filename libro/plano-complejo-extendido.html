@@ -115,10 +115,10 @@
         conjunto $\mathbb{C}\cup\{\infty\}$ lo podemos dotar con una topología, a partir del proceso conocido como la
         <span class="red-txt">compactación de Alexadrov</span>.
         Para una descripción del caso general invitamos al lector a
-        consultar
+        consultar <a href="bibliografia.html#Dugundji" target="_blank">Dugundji, 8.4 Theorem, pág. 246</a>.
       </p>
 
-      <div class="theorem">
+      <div class="theorem" id="plano-complejo-extendido">
         Consideremos el plano complejo $\mathbb{C}$ con su topologia usual $\tau_{\mu}$ y el infinito $\infty\notin
         \mathbb{C}.$ Definimos el conjunto $\widehat{\mathbb{C}}:=\mathbb{C}\cup\{\infty\}$ y la familia
         \[
@@ -750,8 +750,9 @@
           Consideremos el subconjunto abierto $V\subset \widehat{\mathbb{C}}$ que contiene a $\Pi({\rm N})=\infty.$
           Veamos
           que existe un abierto $W$ que contiene al polo norte ${\rm N}$ tal que $\Pi(W)\subset V.$ Por la manera en que
-          se definió la topología $\tau_{\infty}$ para $\widehat{\mathbb{C}}$ (véase Teorema
-          \ref{the:plano_complejo_extendido}), se sigue que $\widehat{\mathbb{C}}-V$ es un subconjunto compacto de
+          se definió la topología $\tau_{\infty}$ para $\widehat{\mathbb{C}}$ (véase 
+          <a href="#plano-complejo-extendido">Teorema 1</a>), 
+          se sigue que $\widehat{\mathbb{C}}-V$ es un subconjunto compacto de
           $\mathbb{C}.$
           Entonces existe un real positivo $r&gt;0,$ el compacto $(\widehat{\mathbb{C}}-V)$ se queda contenido
           en la bola euclidiana $B_{r}(\textbf{0}).$ Nótemos que la frontera $\partial B_{r}(\textbf{0})$ de la bola
@@ -771,7 +772,8 @@
 
         <p>
           Recordemos que toda función continua definida desde un espacio compacto hasta un espacio Hausdorff es
-          cerrada (véase \cite{Dugu}*{2.1 Theorem, pág. 226}). Usando el anterio hecho, concluimos que la
+          cerrada (véase 
+          <a href="bibliografia.html#Dugundji" target="_blank">Dugundji, 2.1 Theorem, pág. 226</a>). Usando el anterio hecho, concluimos que la
           proyección estereográfica $\Pi$ es una función cerrada. Como la proyección estereográfica $\Pi$ es
           una función biyectiva, continua y cerrada, entonces concluimos que en efecto es un homeomorfismo.
         </p>
@@ -889,20 +891,26 @@
           \mathbb{S}^{3}:=\left\{(z,w)\in\mathbb{C}^2: |z|^2+|w|^2=1\right\}\subset \mathbb{C}^2-\{(0,0)\},
           \]
         </span>
+        es un espacio compacto y conexo.
 
-        es un espacio compacto y conexo. Dado que la función inclusión $i:\mathbb{S}^3\hookrightarrow
-        \mathbb{C}^2-\{(0,0)\}$ es continua y la composición de funciones continuas es continuas, entonces la
-        función composición $p\circ i:\mathbb{S}^3\to\mathbb{C}P^{1}$ es continua. Si probamos que $i\circ p$ es
-        <span class="blue-txt">sobreyectiva</span>, podremos concluir que $\mathbb{C}P^{1}$ es un
-        espacio <span class="red-txt">compacto</span> y
-        <span class="red-txt">conexo</span>, pues estas dos propiedades son invariantes bajo
-        continuidad. Tomemos la clase $[z,w]\in \mathbb{C}P^{1},$ como alguna de sus entradas es no nula, entonces
-        definimos el número complejo no nulo
-        \[
-        \lambda =|z|^2+|w|^2\neq 0.
-        \]
-        Notemos que la pareja $(z/\lambda,w/\lambda)$ pertenece a la esfera compleja $\mathbb{S}^3$ y es equivalente a
-        la pareja $(z,w)\in \mathbb{C}^{2}\setminus\{(0,0)\}.$ Esto implica que $p\circ i (z/\lambda,w/\lambda)=[z,w].$
+        <p>
+          Dado que la función inclusión $i:\mathbb{S}^3\hookrightarrow
+          \mathbb{C}^2-\{(0,0)\}$ es continua y la composición de funciones continuas es continuas, entonces la
+          función composición $p\circ i:\mathbb{S}^3\to\mathbb{C}P^{1}$ es continua. Si probamos que $i\circ p$ es
+          <span class="blue-txt">sobreyectiva</span>, podremos concluir que $\mathbb{C}P^{1}$ es un
+          espacio <span class="red-txt">compacto</span> y
+          <span class="red-txt">conexo</span>, pues estas dos propiedades son invariantes bajo
+          continuidad. Tomemos la clase $[z,w]\in \mathbb{C}P^{1},$ como alguna de sus entradas es no nula, entonces
+          definimos el número complejo no nulo
+          \[
+          \lambda =|z|^2+|w|^2\neq 0.
+          \]
+          Notemos que la pareja $(z/\lambda,w/\lambda)$ pertenece a la esfera compleja $\mathbb{S}^3$ y es equivalente a
+          la pareja $(z,w)\in \mathbb{C}^{2}\setminus\{(0,0)\}.$ Esto implica que $p\circ i
+          (z/\lambda,w/\lambda)=[z,w].$
+        </p>
+
+
 
         <p>
           Finalmente, vamos a probar que $\mathbb{C}P^{1}$ es un espacio
@@ -976,7 +984,7 @@
 
       <ol>
         <li>
-          Probar la afirmación (ii) descrita en el Teorema \ref{the:plano_complejo_extendido}.
+          Probar la afirmación (ii) descrita en el <a href="#plano-complejo-extendido">Teorema 1</a>.
         </li>
         <li>
           Demostrar que la esfera de Riemann $\widehat{\mathbb{C}}$ es un espacio conexo, segundo numerable y normal.
