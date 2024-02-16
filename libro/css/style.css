@@ -647,6 +647,7 @@ overflow-x: auto;
   padding: 8px 16px 8px 16px;
   border-left: 5px solid #3b87f9 !important;
   display: block;
+  overflow-y: hidden;
   overflow-x: auto;
 }
 

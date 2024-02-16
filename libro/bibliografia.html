@@ -14,13 +14,13 @@
   <meta property="og:description" content="" />
   <meta property="og:type" content="website" />
 
-  <link rel="icon" type="image/png" href="libro/imgs/infinity32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="libro/imgs/infinity16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="imgs/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="imgs/infinity16.png" sizes="16x16">
 
-  <link rel="stylesheet" href="libro/css/es.css">
-<link rel="stylesheet" href="libro/css/extra-style.css">
-<link rel="stylesheet" href="libro/css/style.css">
-<link rel="stylesheet" href="libro/css/prism/prism.css">
+  <link rel="stylesheet" href="css/es.css">
+<link rel="stylesheet" href="css/extra-style.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/prism/prism.css">
 
 
 </head>
@@ -29,119 +29,96 @@
 
   <!-- Main DIV Starts here -->
   <div class="container">
-    <section data-type="chapter" id="index">
+    <section data-type="chapter" id="esfera-de-riemann">
 
     <!-- Starts main content -->
-
+  
+    <p class="callout hide-large hide-medium"><strong>⚠️ ¡Advertencia!</strong>
+  
+      Si puedes ver este mensaje es porque tu pantalla es demasiado pequeña.
+      Por lo tanto, algunos applets no se mostrarán correctamente.
+      Puedes girar tu dispositivo a horizontal.
+      O cambia el tamaño de tu ventana para que sea más ancha que alta.
+    </p>
+  
+    <div class="fixed-bar" id="fixed-bar">
+      <div class="link-container">
+        <a href="plano-complejo-extendido.html" class="link" id="left-link">
+          <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
+        <span class="support-top-button" id="donate" onclick="document.getElementById('myModal').style.display='block'">
+          <i class="fa-regular fa-heart"></i></span>
+      </div>
+      <div class="link">
+        <a href="../#tabla-de-contenidos" class="link" id="center-link">
+          <span class="content-hover-previous">Plano Complejo</span>
+          <span class="content-hover">Tabla de Contenidos</span>
+          <span class="content-original">Geometría Hiperbólica</span>
+          <span class="content-hover-next">En construcción</span>
+        </a>
+      </div>
+      <a href="#" class="link" id="right-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+    </div>
+  
+    <br><br><br>
+  
     <header>
-
-        <div class="">
-
-
-            <div class="hide-small">
-                <br><br>
-                <iframe frameborder="0" width="100%" height="400px" scrolling="no" src="https://www.dynamicmath.xyz/math2400/sketches/hypersphere/" style="border: 1px solid black; overflow: hidden;">
-                </iframe>
-            </div>
-
-            <div class="hide-large hide-medium">
-                <iframe frameborder="0" width="100%" height="200px" scrolling="no" src="https://www.dynamicmath.xyz/math2400/sketches/hypersphere/" style="border: 1px solid black; overflow: hidden;">
-                </iframe>
-            </div>
-            <div class="">
-
-
-                <h1 class="hide-small"><b>Geometría Hiperbólica</b></h1>
-
-                <p class="hide-large hide-medium" style="font-size:34px;text-align:center;"><b>Geometría
-                        <br>Hiperbólica</b></p>
-
-                <p class="hide-small author">Juan Carlos Ponce Campuzano<br> Camilo Ramírez Maluendas<br>
-                    <script>document.write(new Date().getFullYear());</script>
-                </p>
-
-                <p class="hide-large hide-medium author" style="font-size:16px">J. C. Ponce Campuzano <br> C. Ramírez
-                    Maluendas
-                    <br>
-                    <script>document.write(new Date().getFullYear());</script>
-                </p>
-
-            </div>
-
-        </div>
-
-
-
+      <h1>Bibliografía</h1>
+  
     </header>
-
-    <br>
-
-
-    <hr>
-
-    <nav role="navigation" class="toc">
-        <h4 style="font-size: 1.5em;" id="tabla-de-contenidos">Contenidos</h4>
-
-        <ol>
-            <!--<li><a href="../index.html">Introduction</a></li>-->
-            <li><a href="libro/plano-complejo-extendido.html">Plano Complejo Extendido $\hat{\mathbb{C}}$</a>
-                <ol>
-                    <li>
-                        <a href="libro/plano-complejo-extendido.html#proyeccion-estereografica">Proyección
-                            Estereográfica</a>
-                    </li>
-                    <li>
-                        <a href="libro/plano-complejo-extendido.html#plano-proyectivo">Plano Proyectivo Complejo
-                            $\mathbb{C}P^{1}$</a>
-                    </li>
-                </ol>
-            </li>
-            <li><a href="libro/bibliografia.html">Bibliografía</a></li>
-            
-        </ol>
-
-    </nav>
-
-
-    <hr>
-
+  
     <main>
-        <article>
-            <h4 id="intro" style="font-size: 1.5em;">Introdución</h4>
+      <article>
+  
+        <ol class="bbtex-list">
+            <li>
+                J. L. Berggren, <em>Ptolemy's Maps of Earth and the Heavens: A New Interpretation</em>, Archive for History
+                of Exact Sciences 43 (1991), no. 2, 133-144.
+            </li>
+            <li>
+                James Dugundji, <em>Topology</em>, Allyn and Bacon, Inc., Boston, Mass.-London-Sydney, 1978. Reprinting
+                of the 1966 original; Allyn and Bacon Series in Advanced Mathematics.
+            </li>
+            <li>
+                Menso and Lorch Folkerts Richard, <em>The arabic sources of Jordanus de Nemore</em>, Foundation for Science,
+                Technology, and Civilization (2007), 1-15.
+            </li>
+            <li>
+                Frank Raymond, <em>The end point compactification of manifolds</em>, Pacific J. Math. 10 (1960), 947-963.
+            </li>
+            <li>
+                Maxwell Rosenlicht, <em>Introduction to analysis</em>, Dover Publications, Inc., 1986.
+            </li>
+            <li>
+                John Wallis, <em>A treatise of algebra, both historical and practical</em>, 
+                ETH-Bibliothek Zürich., 1685. Caswell
+                John, Playford.
+            </li>
+        </ol>
+  
 
-            <p>
-                Notas de Geometría Hiperbólica.
-            </p>
-
-            <blockquote>
-                
-                «Lo cierto es que fueron años de arduo<br>
-                aprendizaje, con lapsos de desaliento en los que estuvo a<br>
-                punto de desistir. Pero al fin triunfó la preseverancia y<br>
-                Raimundo aprendió a ladrar.»
-                
-                <br>
-                
-                <cite>- Mario Benedetti, <br>El hombre que aprendió a ladrar</cite>
-            </blockquote>
-
-
-
-        </article>
+  
+  
+        <br>
+  
+  
+      </article>
     </main>
-
-    <br>
-
-
-
-
-    <a href="libro/plano-complejo-extendido.html" style="text-decoration: none;">
-        <p class="nextPage">Plano Complejo Extendido <i class="fa-solid fa-hand-point-right"></i></p>
+  
+    <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+  
+    <a href="#" style="text-decoration: none;">
+      <p class="nextPage">Más próximamente <img src="imgs/loadcat.gif" style="width:25px; display: inline;"></p>
     </a>
-
     <!-- Ends main content -->
+  
+  </section>
 
-</section>
+
+
   </div>
   <!-- Main DIV Ends here -->
 
@@ -222,13 +199,21 @@
 
     <span class="hide-small" id="footer-elements">
       <span style="font-weight: bold;">[</span>
-      
+      <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
       <a href="https://github.com/geometria-hiperbolica"><i class="fa-solid fa-code"></i> Source</a>,
       <a href="https://github.com/geometria-hiperbolica/geometria-hiperbolica.github.io/issues"><i
-          class="fa-solid fa-lightbulb"></i> Issues</a>
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+      <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+        <i class="fa-regular fa-heart"></i> Apoyo</span>
       <span style="font-weight: bold;">]</span>
     </span>
-    
+    <span class="hide-medium hide-large" style="font-size: 0.85em;">
+      <span style="font-weight: bold;">[</span>
+      <a href="../"><i class="fa-solid fa-house"></i> Home</a> -
+      <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+        <i class="fa-regular fa-heart"></i> Apoyo</span>
+      <span style="font-weight: bold;">]</span>
+    </span>
 
     <br />
 
@@ -254,11 +239,11 @@
 
   </footer>
 
-  <script src="libro/js/mathjax.js"></script>
+  <script src="js/mathjax.js"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-  <script src="libro/js/scripts.js"></script>
-  <script async src="libro/js/prism.js"></script>
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
 </body>
 
 </html>

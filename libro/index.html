@@ -14,13 +14,13 @@
   <meta property="og:description" content="" />
   <meta property="og:type" content="website" />
 
-  <link rel="icon" type="image/png" href="libro/imgs/infinity32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="libro/imgs/infinity16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="imgs/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="imgs/infinity16.png" sizes="16x16">
 
-  <link rel="stylesheet" href="libro/css/es.css">
-<link rel="stylesheet" href="libro/css/extra-style.css">
-<link rel="stylesheet" href="libro/css/style.css">
-<link rel="stylesheet" href="libro/css/prism/prism.css">
+  <link rel="stylesheet" href="css/es.css">
+<link rel="stylesheet" href="css/extra-style.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/prism/prism.css">
 
 
 </head>
@@ -96,8 +96,6 @@
                     </li>
                 </ol>
             </li>
-            <li><a href="libro/bibliografia.html">Bibliografía</a></li>
-            
         </ol>
 
     </nav>
@@ -135,7 +133,7 @@
 
 
 
-    <a href="libro/plano-complejo-extendido.html" style="text-decoration: none;">
+    <a href="libro/esfera-de-riemann.html" style="text-decoration: none;">
         <p class="nextPage">Plano Complejo Extendido <i class="fa-solid fa-hand-point-right"></i></p>
     </a>
 
@@ -222,13 +220,21 @@
 
     <span class="hide-small" id="footer-elements">
       <span style="font-weight: bold;">[</span>
-      
+      <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
       <a href="https://github.com/geometria-hiperbolica"><i class="fa-solid fa-code"></i> Source</a>,
       <a href="https://github.com/geometria-hiperbolica/geometria-hiperbolica.github.io/issues"><i
-          class="fa-solid fa-lightbulb"></i> Issues</a>
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+      <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+        <i class="fa-regular fa-heart"></i> Apoyo</span>
       <span style="font-weight: bold;">]</span>
     </span>
-    
+    <span class="hide-medium hide-large" style="font-size: 0.85em;">
+      <span style="font-weight: bold;">[</span>
+      <a href="../"><i class="fa-solid fa-house"></i> Home</a> -
+      <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+        <i class="fa-regular fa-heart"></i> Apoyo</span>
+      <span style="font-weight: bold;">]</span>
+    </span>
 
     <br />
 
@@ -254,11 +260,11 @@
 
   </footer>
 
-  <script src="libro/js/mathjax.js"></script>
+  <script src="js/mathjax.js"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-  <script src="libro/js/scripts.js"></script>
-  <script async src="libro/js/prism.js"></script>
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
 </body>
 
 </html>
