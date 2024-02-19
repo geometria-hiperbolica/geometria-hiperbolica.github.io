@@ -797,6 +797,9 @@ label.sidenote-toggle:not(.sidenote-number) {
 }
 
 /* sidenotes inside blockquotes are indented more */
+blockquote {
+  font-size: 0.8em;
+}
 blockquote .sidenote {
   margin-right: -24vw;
   width: 18vw;
