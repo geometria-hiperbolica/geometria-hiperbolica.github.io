@@ -555,6 +555,7 @@ overflow-x: auto;
 
 /* Theorem */
 .theorem {
+  text-align: justify;
   counter-increment: theorem;
   display: block;
   margin: 12px 0;
@@ -577,6 +578,7 @@ overflow-x: auto;
 
 /* Corollary */
 .corollary {
+  text-align: justify;
   counter-increment: corollary;
   display: block;
   margin: 12px 0;
@@ -595,6 +597,7 @@ overflow-x: auto;
 
 /* Lemma */
 .lemma {
+  text-align: justify;
   counter-increment: theorem;
   display: block;
   margin: 12px 0;
@@ -636,6 +639,7 @@ overflow-x: auto;
 
 /* Definition */
 .definition {
+  text-align: justify;
   counter-increment: definition;
   display: block;
   margin: 12px 0;
