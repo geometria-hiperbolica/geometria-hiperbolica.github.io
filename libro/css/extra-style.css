@@ -361,6 +361,7 @@ footer {
 }
 
 .bbtex-list li {
+    text-align: justify;
     counter-increment: list-counter;
     display: block;
     margin-left: 3.5em; 
