@@ -423,6 +423,10 @@ footer {
   .toc-chapter li {
     margin-left: 5px;
   }
+
+  .toc-chapter a {
+    outline: none;
+  }
  
    /* Highlighting active section */
 .active {
