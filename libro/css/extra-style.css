@@ -417,7 +417,7 @@ footer {
     padding: 0;
   }
   .toc-chapter li {
-    margin-left: 10px;
+    margin-left: 5px;
   }
  
    /* Highlighting active section */
@@ -426,7 +426,7 @@ footer {
   }
   .highlight {
     text-decoration: none;
-    border-left: 3px solid #8cb5e768;
+    border-left: 3px solid #8cb5e785;
     padding: 2px 2px;
   }
 
