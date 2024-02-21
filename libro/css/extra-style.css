@@ -405,6 +405,7 @@ footer {
     padding: 5px 20px 10px 10px;
     max-height: calc(100vh - 40px); /* Adjust height as needed */
     overflow-y: auto;
+    max-width: 235px;
   }
   .toc-chapter p {
     margin-top: 0;
@@ -419,16 +420,21 @@ footer {
     margin-left: 10px;
   }
  
-
-  
    /* Highlighting active section */
 .active {
     font-weight: bold;
   }
   .highlight {
     text-decoration: none;
+    border-left: 3px solid #8cb5e768;
+    padding: 2px 2px;
   }
 
+@media (max-width: 1240px) {
+    .toc-chapter {
+        display: none !important;
+    }
+}
 
 /*
  https://benfrain.com/create-print-styles-using-css3-media-queries/

@@ -205,7 +205,7 @@ centerLink.addEventListener('mouseleave', (event) => {
 
 window.addEventListener('scroll', function() {
   let sections = document.querySelectorAll('div[id^="section"]');
-  let tocLinks = document.querySelectorAll('.toc a');
+  let tocLinks = document.querySelectorAll('.toc-chapter a');
   let scrollPosition = window.scrollY;
 
   sections.forEach((section, index) => {
