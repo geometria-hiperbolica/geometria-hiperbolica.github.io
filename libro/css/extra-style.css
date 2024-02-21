@@ -405,7 +405,9 @@ footer {
     padding: 5px 20px 10px 10px;
     max-height: calc(100vh - 40px); /* Adjust height as needed */
     overflow-y: auto;
-    max-width: 235px;
+    width: 245px;
+    max-width: 245px;
+    z-index: 10;
   }
   .toc-chapter p {
     margin-top: 0;
@@ -430,7 +432,7 @@ footer {
     padding: 2px 2px;
   }
 
-@media (max-width: 1240px) {
+@media (max-width: 1350px) {
     .toc-chapter {
         display: none !important;
     }
