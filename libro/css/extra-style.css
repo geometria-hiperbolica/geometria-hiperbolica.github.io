@@ -396,7 +396,7 @@ footer {
 /* Styles for the table of contents */
 .toc-chapter {
     font-size: 0.7em;
-    line-height: 1.5em;
+    line-height: 1.7em;
     position: fixed;
     top: 10px;
     right: 10px;
@@ -428,7 +428,7 @@ footer {
   }
   .highlight {
     text-decoration: none;
-    border-left: 3px solid #8cb5e785;
+    border-left: 3px solid #4b93ecca;
     padding: 2px 2px;
   }
 
