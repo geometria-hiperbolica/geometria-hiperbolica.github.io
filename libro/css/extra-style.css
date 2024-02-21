@@ -393,6 +393,42 @@ footer {
     font-weight: bold;
 }
 
+/* Styles for the table of contents */
+.toc {
+    font-size: 0.7em;
+
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 5px 20px 10px 10px;
+    max-height: calc(100vh - 40px); /* Adjust height as needed */
+    overflow-y: auto;
+  }
+  .toc p {
+    margin-top: 0;
+    margin-bottom: -15px;
+  }
+  
+  .toc ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .toc li {
+    margin-left: 10px;
+  }
+ 
+
+  
+   /* Highlighting active section */
+   .active {
+    font-weight: bold;
+  }
+  .highlight {
+    text-decoration: none;
+  }
+
 
 /*
  https://benfrain.com/create-print-styles-using-css3-media-queries/

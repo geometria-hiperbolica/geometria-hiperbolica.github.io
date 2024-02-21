@@ -203,5 +203,25 @@ centerLink.addEventListener('mouseleave', (event) => {
   handleLinkHover(event, '.content-original', '.content-hover');
 });
 
+window.addEventListener('scroll', function() {
+  let sections = document.querySelectorAll('div[id^="section"]');
+  let tocLinks = document.querySelectorAll('.toc a');
+  let scrollPosition = window.scrollY;
+
+  sections.forEach((section, index) => {
+    let sectionTop = section.offsetTop - 100; // Adjust as needed
+    let sectionBottom = sectionTop + section.clientHeight;
+
+    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+      tocLinks.forEach((link) => {
+        link.classList.remove('active');
+        link.classList.remove('highlight');
+      });
+      tocLinks[index].classList.add('active');
+      tocLinks[index].classList.add('highlight');
+    }
+  });
+});
+
 // Finally call this funciton to include HTML
 includeHTML(); 
