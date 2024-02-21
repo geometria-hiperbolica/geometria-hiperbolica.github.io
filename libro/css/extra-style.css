@@ -394,7 +394,7 @@ footer {
 }
 
 /* Styles for the table of contents */
-.toc {
+.toc-chapter {
     font-size: 0.7em;
     line-height: 1.5em;
     position: fixed;
@@ -406,23 +406,23 @@ footer {
     max-height: calc(100vh - 40px); /* Adjust height as needed */
     overflow-y: auto;
   }
-  .toc p {
+  .toc-chapter p {
     margin-top: 0;
     margin-bottom: -10px;
   }
   
-  .toc ul {
+  .toc-chapter ul {
     list-style-type: none;
     padding: 0;
   }
-  .toc li {
+  .toc-chapter li {
     margin-left: 10px;
   }
  
 
   
    /* Highlighting active section */
-   .active {
+.active {
     font-weight: bold;
   }
   .highlight {
