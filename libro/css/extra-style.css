@@ -442,7 +442,7 @@ footer {
     padding: 2px 2px;
   }
 
-@media (max-width: 1350px) {
+@media (max-width: 1325px) {
     .toc-chapter {
         display: none !important;
     }
