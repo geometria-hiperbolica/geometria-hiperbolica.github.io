@@ -1006,6 +1006,7 @@ iframe {
 
 .nextPage:hover {
   background-color: rgb(230, 230, 230) !important;
+  color: black !important;
   cursor: pointer;
 }
 
