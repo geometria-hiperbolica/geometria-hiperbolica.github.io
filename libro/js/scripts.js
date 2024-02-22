@@ -34,6 +34,10 @@ function toggleText() {
   }
 }
 
+// Add event listener for mouse click
+document.getElementById("dark-mode-toggle").addEventListener("click", toggleText);
+
+
 /* 
  I need the following code to show 
  modal for the "support message"
