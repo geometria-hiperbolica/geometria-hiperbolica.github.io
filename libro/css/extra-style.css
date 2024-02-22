@@ -19,8 +19,8 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 95%;
-    max-width: 85ch;
+    width: 100%;
+    max-width: 87ch;
     height: 50px;
     background-color: hsla(210, 20%, 98%, 0.9);
     /* White with 30% transparency */
