@@ -27,8 +27,8 @@
   <meta name="twitter:type" content="website" />
   <meta name="twitter:creator" content="@jcponcemath" />
 
-  <link rel="icon" type="image/png" href="libro/imgs/infinity32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="libro/imgs/infinity16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="content/imgs/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="content/imgs/infinity16.png" sizes="16x16">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-16JHH28EVY"></script>
@@ -40,10 +40,10 @@
     gtag('config', 'G-16JHH28EVY');
   </script>
 
-  <link rel="stylesheet" href="libro/css/es.css">
-<link rel="stylesheet" href="libro/css/main.css">
-<link rel="stylesheet" href="libro/css/x-style.css">
-<link rel="stylesheet" href="libro/css/prism/prism.css">
+  <link rel="stylesheet" href="content/css/es.css">
+<link rel="stylesheet" href="content/css/main.css">
+<link rel="stylesheet" href="content/css/x-style.css">
+<link rel="stylesheet" href="content/css/prism/prism.css">
 
 
 </head>
@@ -236,11 +236,15 @@
         <p>
           Si este libro de texto interactivo te ha sido útil, considera unirte a mi:
         </p>
-        <div style="text-align: center;margin-top: 10px;">
-          <a class="modal-link" href="https://www.patreon.com/bePatron?u=10515025"><i class="fa-brands fa-patreon"></i>
-            <strong>Patreon</strong></a>
-          <script async src="https://c6.patreon.com/becomePatronButton.bundle.js"></script>
+
+        <div class="button-container">
+          <button id="modal-link" >
+            <a href="https://www.patreon.com/jcponce"><i class="fa-brands fa-patreon"></i>
+              <strong>Patreon</strong></a>
+          </button>
         </div>
+        
+        
         <p>
           Este proyecto es posible gracias a la amabilidad de seguidores como tú.
           Sus contribuciones me permiten mantener el sitio, los
@@ -256,35 +260,31 @@
           puedes utilizar estos enlaces:
         </p>
 
-        <div style="text-align: center;margin-top: 10px;" class="hide-small">
-          <a class="modal-link" target="_blank"
+        <div class="button-container">
+          <button id="modal-link" >
+            <a  target="_blank"
             href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
-            <strong>❤️ <i class="fa-brands fa-paypal"></i> PayPal</strong>
+            <strong>❤️ <i class="fa-brands fa-paypal"></i> PayPal Me</strong>
           </a>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-
-          <a class="modal-link" target="_blank" href="https://jcponcemath.secure-decoration.com/">
-            <strong>❤️ Adquiere una camiseta</strong>
-          </a>
+          </button>
+          <button id="modal-link" >
+            <a  target="_blank" href="https://jcponcemath.secure-decoration.com/">
+              <strong>❤️ Adquiere una camiseta</strong>
+            </a>
+          </button>
         </div>
-        <div style="text-align: center;margin-top: 10px;" class="hide-medium hide-large">
+        
 
-          <a class="modal-link" target="_blank"
-            href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
-            <strong>❤️ <i class="fa-brands fa-paypal"></i> PayPal</strong>
-          </a>
-          <br /><br />
-
-          <a class="modal-link" target="_blank" href="https://jcponcemath.secure-decoration.com/">
-            <strong>❤️ Adquiere una camiseta</strong>
-          </a>
-        </div>
         <p>
           No puedes contribuir esta vez, ¡no te preocupes! Tal vez solo quieras:
         </p>
-        <div style="text-align: center;margin-top: 10px;">
-          <a class="modal-link" href="mailto:jcponcemath@gmail.com"><strong>Enviar un comentario</strong></a>
+        <div class="button-container">
+          <button id="modal-link" >
+            <a href="mailto:jcponcemath@gmail.com"><strong><i class="fa-solid fa-envelope"></i> Enviar un comentario</strong></a>
+          </button>
+          
         </div>
+        
         <br />
       </div>
       <div class="modal-footer">
@@ -341,11 +341,11 @@
 
   </footer>
 
-  <script src="libro/js/mathjax.js"></script>
+  <script src="content/js/mathjax.js"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-  <script src="libro/js/scripts.js"></script>
-  <script async src="libro/js/prism.js"></script>
+  <script src="content/js/scripts.js"></script>
+  <script async src="content/js/prism.js"></script>
 </body>
 
 </html>
