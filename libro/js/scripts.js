@@ -22,7 +22,7 @@ darkModeToggle.addEventListener('click', () => {
 })
 
 // Function to replace text for Dark mode
-function toggleText() {
+function toggleMode() {
   // Get the element containing the text
   var element = document.getElementById("dark-mode-toggle");
   
@@ -35,7 +35,7 @@ function toggleText() {
 }
 
 // Add event listener for mouse click
-document.getElementById("dark-mode-toggle").addEventListener("click", toggleText);
+document.getElementById("dark-mode-toggle").addEventListener("click", toggleMode);
 
 
 /* 
@@ -166,6 +166,11 @@ function scrollFunction() {
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
+  let tocLinks = document.querySelectorAll('.toc-chapter a');
+  tocLinks.forEach((link) => {
+    link.classList.remove('active');
+    link.classList.remove('highlight');
+  });
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
