@@ -21,6 +21,19 @@ darkModeToggle.addEventListener('click', () => {
   document.body.classList.toggle('latex-dark')
 })
 
+// Function to replace text for Dark mode
+function toggleText() {
+  // Get the element containing the text
+  var element = document.getElementById("dark-mode-toggle");
+  
+  // Toggle between "text01" and "text02"
+  if (element.innerHTML.trim() === '<i class="fa-solid fa-moon"></i>') {
+      element.innerHTML = '<i class="fa-solid fa-circle-half-stroke"></i>';
+  } else {
+      element.innerHTML = '<i class="fa-solid fa-moon"></i>';
+  }
+}
+
 /* 
  I need the following code to show 
  modal for the "support message"

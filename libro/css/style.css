@@ -59,54 +59,6 @@
     url('./fonts/LM-bold-italic.ttf') format('truetype');
 }
 
-@font-face {
-  font-family: 'Libertinus';
-  font-style: normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('./fonts/Libertinus-regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Libertinus';
-  font-style: italic;
-  font-weight: normal;
-  font-display: swap;
-  src: url('./fonts/Libertinus-italic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Libertinus';
-  font-style: normal;
-  font-weight: bold;
-  font-display: swap;
-  src: url('./fonts/Libertinus-bold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Libertinus';
-  font-style: italic;
-  font-weight: bold;
-  font-display: swap;
-  src: url('./fonts/Libertinus-bold-italic.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Libertinus';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('./fonts/Libertinus-semibold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Libertinus';
-  font-style: italic;
-  font-weight: 600;
-  font-display: swap;
-  src: url('./fonts/Libertinus-semibold-italic.woff2') format('woff2');
-}
-
 /* Box sizing rules */
 *,
 *::before,
@@ -161,6 +113,10 @@
   /* Added color for tooltip text */
   --nextPage: rgba(245, 245, 245, 0.333);
   /* Next page color button */
+  --toc-chapter: rgb(249, 249, 249);
+  /* ToC chapter */
+  --toc-chapter: hsl(0, 0%, 16%);
+  /* ToC chapter */
   --pre-bg-color: hsl(0, 1%, 25%);
   --kbd-bg-color: hsl(0, 0%, 16%);
   --kbd-border-color: hsl(210, 5%, 70%);
@@ -186,6 +142,8 @@
     /* Added color for tooltip text */
     --nextPage: rgba(245, 245, 245, 0.333);
     /* Next page color button */
+    --toc-chapter: hsl(0, 0%, 16%);
+    /* ToC chapter */
     --pre-bg-color: hsl(0, 1%, 25%);
     --kbd-bg-color: hsl(0, 0%, 16%);
     --kbd-border-color: hsl(210, 5%, 70%);
@@ -1134,4 +1092,53 @@ iframe {
 
 .head-3.head-3-level3::before {
   content: counter(section-3) "." counter(subsection-3) "." counter(subsubsection-3) ". ";
+}
+
+/* Styles for the table of contents */
+.toc-chapter {
+  font-size: 0.75em;
+  line-height: 1.7em;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: var(--toc-chapter);
+  border: 1px solid #ddd;
+  padding: 10px 20px 5px 10px;
+  max-height: calc(100vh - 40px); /* Adjust height as needed */
+  overflow-y: auto;
+  width: 245px;
+  max-width: 245px;
+  z-index: 10;
+}
+.toc-chapter p {
+  margin-top: 0;
+  margin-bottom: -10px;
+}
+
+.toc-chapter ul {
+  list-style-type: none;
+  padding: 0;
+  
+}
+.toc-chapter li {
+  margin-left: 5px;
+}
+.toc-chapter a {
+  outline: none;
+}
+
+ /* Highlighting active section */
+.active {
+  font-weight: bold;
+}
+.highlight {
+  text-decoration: none;
+  border-left: 3px solid #4b93ecca;
+  padding: 2px 2px;
+}
+
+@media (max-width: 1325px) {
+  .toc-chapter {
+      display: none !important;
+  }
 }
