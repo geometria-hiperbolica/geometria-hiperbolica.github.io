@@ -170,7 +170,8 @@
           <li>
             Contrariamente, si el coeficiente $c\neq 0,$ entonces la regla de correspondencia de $T$ está definida
             mediante
-            \[T(z)= \left\{
+            <div class="scroll-wrapper">
+              \[T(z)= \left\{
             \begin{array}{ cl }
             \dfrac{az+b}{cz+d}; &amp; \text{ para cada } z\in\mathbb{C}-\left\{\dfrac{-d}{c}\right\}, \\
             \infty; &amp; \text{ si } z=\dfrac{-d}{c},\\
@@ -178,6 +179,8 @@
             \end{array}
             \right.
             \]
+            </div>
+            
           </li>
         </ol>
 
@@ -260,15 +263,18 @@
           T_1(z)=z+1 \quad \text{ y } \quad T_2(z)=\dfrac{-1}{z},
           \]
           entonces las composiciones
-          \begin{equation*}
+          </p><div class="scroll-wrapper">
+            \begin{equation*}
           \begin{split}
           T_1 \circ T_2(z)&amp;=T_1\left(\dfrac{-1}{z}\right)=\dfrac{-1}{z}+1=\dfrac{z-1}{z},\\
           &amp;\\
           T_2\circ T_1(z) &amp; =T_2(z+1)=\dfrac{-1}{z+1},\\
           \end{split}
           \end{equation*}
+          </div>
+          
           satisfacen $T_1 \circ T_2(z)\neq T_2 \circ T_1 (z)$ para algunos $z\in\widehat{\mathbb{C}}.$
-        </p>
+        <p></p>
 
         <h3>Transformaciones idénticas</h3>
 
@@ -312,16 +318,21 @@
           \]
           cuyos coeficientes son diferentes de cero, (la prueba para el caso en que algunos de los coeficientes toma
           el valor cero es similar). Evaluamos los valores $0,$ $1$ e $\infty$ en las transformaciones y obtenemos
-          \begin{align}
+          <div class="scroll-wrapper">
+            \begin{align}
           T_1(0) = T_{2}(0) &amp; =\frac{b_1}{d_1}=\frac{b_2}{d_2}=u,\label{eq:T0}\\
           T_{1}(1)=T_{2}(1) &amp;=\frac{a_1+b_1}{c_1+d_1}=\frac{a_2+b_2}{c_2+d_2}\label{eq:T1},\\
           T_{1}(\infty)=T_{2}(\infty)&amp; =\frac{a_1}{c_1}=\frac{a_2}{c_2}=v\label{eq:Tinfinito},
           \end{align}
+          </div>
           para algunos valores complejos $u,v\in\mathbb{C}.$ Ahora, en las ecuaciones \eqref{eq:T0} y
           \eqref{eq:Tinfinito} despejamos adecuadamente y obtenemos las igualdades
-          \[
+          <div class="scroll-wrapper">
+            \[
           b_1=ud_1, \quad b_2=ud_2,\quad a_1=vc_1, \quad a_2=vc_2.
           \]
+          </div>
+          
 
           <p>
             Estas últmas cuatro relaciones las sustituimos en la ecuación \eqref{eq:T1}.
@@ -548,7 +559,11 @@
             T(z)=z+z_{0}=u+vi
             \]
             los valores reales $u$ y $v$ también satisfacen una ecuación general como la que se describe en
-            \eqref{eq:linea_recta_prueba_teorema}. Dado que $T(z)=z+z_{0}= (x+x_{0})+(y+y_{0})i=u+vi,$ entonces
+            \eqref{eq:linea_recta_prueba_teorema}. Dado que 
+            </p><div class="scroll-wrapper">
+              #$T(z)=z+z_{0}= (x+x_{0})+(y+y_{0})i=u+vi,$#
+            </div>
+             entonces
             \[
             u=x+x_{0} \quad \text{ y } \quad v=y+y_{0}.
             \]
@@ -562,7 +577,7 @@
             \end{equation*}
             De la anterior igualdad, podemos concluir que la imagen $T(\mathcal{C})$ es también una línea recta
             euclidiana.
-          </p>
+          <p></p>
 
           <p>
             <span class="blue-txt">Si $\mathcal{C}$ es un circunferencia euclidiana</span>.
@@ -597,15 +612,17 @@
             y un círculo generalizado $\mathcal{C}$ sobre el plano complejo extendido $\hat{\mathbb{C}}.$ Veamos que
             la imagen $T(\mathcal{C})$ es también un círculo generalizado. Recordemos que $\mathcal{C}$ puede ser
             representado mediante la ecuación general
-            \begin{equation}\label{eq:circulo_generalizado}
+            </p><div class="scroll-wrapper">
+              \begin{equation}\label{eq:circulo_generalizado}
             A(x^2+y^{2})+2Bx+2Cy+D=0,
             \end{equation}
+            </div>
             siendo $A,B,C$ y $D$ valores reales. Si $A=0$ y al menos uno de los términos $B$ o $C$ es no nulo,
             entonces $\mathcal{C}$ es una
             <span class="blue-txt">línea recta euclidiana</span>. Contrariamente, si $A\neq 0$ y
             $B^{2}+C^2-AD&gt;0,$ entonces $\mathcal{C}$ es un
             <span class="blue-txt">circunferencia euclidiana</span>.
-          </p>
+          <p></p>
 
           <p>
             Ahora, consideremos el complejo no nulo $z=x+yi$ tal que $x$ y $y$ satisfacen la ecuación definida en
@@ -629,9 +646,11 @@
             \]
             </div>
             Al simplificar la expresión anterior obtenemos la nueva expresión
-            \begin{equation}\label{eq:circulo_generalizado_aplicar_inmersion}
+            <div class="scroll-wrapper">
+              \begin{equation}\label{eq:circulo_generalizado_aplicar_inmersion}
             D(u^2+v^2)-2Bu+2Cv-A =0.
             \end{equation}
+            </div>
             Debemos explorar los siguientes casos.
           <p></p>
 
@@ -860,11 +879,14 @@
           <p>
             Usando las ideas previas en la construcción de la transformación $S,$ podemos definir una
             transformación de Möbius $M$ tal que
-            \[
+            </p><div class="scroll-wrapper">
+              \[
             M(w_1)=0,\quad M(w_2)=1 \quad \text{ y } \quad
             M(w_3)=\infty.
             \]
-          </p>
+            </div>
+            
+          <p></p>
 
           <p>
             Finalmente, consideramos la función composición $M^{-1}\circ S,$ la cual es también es una
@@ -1588,14 +1610,15 @@
         <div class="proof">
           Notemos que la igualdad ${\rm tr}(A_{2}^{-1}A_{1}A_{2})={\rm tr}(A_{1})$ es cierta, si y solo si, es cierta la
           igualdad
-          \begin{equation}
+          <div class="scroll-wrapper">
+            \begin{equation}
           \begin{split}
           {\rm tr}(A_{2}){\rm tr}(A_{2}^{-1}A_{1}A_{2})&amp;={\rm tr}(A_{2}){\rm tr}(A_{1}),\\
           {\rm tr}(A_{2}A_{2}^{-1}A_{1}A_{2})&amp;={\rm tr}(A_{2}A_{1}),\\
           {\rm tr}(A_{1}A_{2})&amp;={\rm tr}(A_{2}A_{1}).
           \end{split}
           \end{equation}
-
+          </div>
           <p>
             Para probar el resultado, basta verificar que las trazas de los productos matriciales $A_{1}A_{2}$ y
             $A_{2}A_{1}$ coinciden. Si $A_{1}=\left (\begin{matrix}
@@ -1645,9 +1668,12 @@
           [A]=\{A,-A\},
           \]
           donde
-          \[
+          </p><div class="scroll-wrapper">
+            \[
           {\rm tr}(A)=a+d \quad \text{ y } \quad {\rm tr }(-A)=-(a+d)=-{\rm tr}(A).
           \]
+          </div>
+          
           Esto significa que la traza de la clase $[A]$ toma dos valores
           \[
           {\rm tr}[A]=\pm (a+d),
@@ -1656,7 +1682,7 @@
           \[
           {\color{blue}\rm Tr}[A]=({\rm tr}(A))^{2}=(a+d)^{2}.
           \]
-        </p>
+        <p></p>
 
         <div class="definition">
           La
@@ -2053,6 +2079,7 @@
 
 
       </div>
+
 
 
 
