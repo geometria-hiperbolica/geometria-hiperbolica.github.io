@@ -2,10 +2,12 @@
 <html lang="es">
 
 <head>
-  <title>Geometría Hiperbólica</title>
+  <title>  Plano Complejo Extendido
+</title>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <meta name="description" content="Notas de Geometría Hiperbólica" />
   <meta name="author" content="Juan Carlos Ponce Campuzano, Camilo Ramírez Maluendas">
   <meta name="keywords" content="geometría,hiperbólica,funciones,complejo" />
@@ -40,10 +42,7 @@
     gtag('config', 'G-16JHH28EVY');
   </script>
 
-  <link rel="stylesheet" href="css/es.css">
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/x-style.css">
-<link rel="stylesheet" href="css/prism/prism.css">
+  <link rel="stylesheet" href="css/style.css">
 
 
 </head>
@@ -51,6 +50,29 @@
 <body data-type="book" id="top">
 
 
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="tabla-de-contenidos.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="tabla-de-contenidos.html" class="link" id="center-link">
+            <span class="content-hover-previous">Tabla de Contenidos</span>
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Geometría Hiperbólica</span>
+            <span class="content-hover-next">Transformaciones fraccionarias
+      lineales</span>
+        </a>
+    </div>
+    <a href="transformaciones-fraccionarias-lineales.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
 
 
   <!-- Main DIV Starts here -->
@@ -76,27 +98,7 @@
     </ul>
   </div>
 
-  <div class="fixed-bar" id="fixed-bar">
-    <div class="link-container">
-      <a href="../" class="link" id="left-link">
-        <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
-      </a>
-      <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
-      <span class="support-top-button" id="donate" onclick="document.getElementById('myModal').style.display='block'">
-        <i class="fa-regular fa-heart"></i></span>
-    </div>
-    <div class="link">
-      <a href="../#tabla-de-contenidos" class="link" id="center-link">
-        <span class="content-hover-previous">Inicio</span>
-        <span class="content-hover">Tabla de Contenidos</span>
-        <span class="content-original">Plano Complejo Extendido</span>
-        <span class="content-hover-next">Bibliografía</span>
-      </a>
-    </div>
-    <a href="bibliografia.html" class="link" id="right-link">
-      <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
-    </a>
-  </div>
+  <div class="hide-large hide-medium hide-small"><h1>Plano Complejo Extendido</h1></div>
 
   <br><br><br>
 
@@ -397,8 +399,6 @@
         </div>
       </div>
 
-
-
       <hr>
 
 
@@ -648,7 +648,7 @@
           esta propiedad de la proyección estereográfica.
         </p>
 
-        <div class="definition">
+        <div class="definition" id="def_circulo_generalizado">
           Un
           <span class="red-txt">círculo</span> sobre la esfera $\mathbb{S}^2$ es el conjunto con más
           de un punto que se obtiene de la intersección de un plano $P'$ y la esfera $\mathbb{S}^{2}$ (véase Figura
@@ -828,9 +828,14 @@
           Sustituimos las anteriores relaciones en la igualdad \eqref{eq:general_circulo_1} y obtenemos
           <div class="scroll-wrapper">
             \begin{equation}\label{eq:plano_esfera_unitaria}
-            \Pi^{-1}(C)=\left\{(\overline{x}_{1},\overline{x}_{2},\overline{x}_{2})\in\mathbb{S}^{2}:a\frac{(\overline{x}_{1}^{2}+\overline{x}_{2}^{2})}{(1-\overline{x}_{3})^2}+2b\frac{\overline{x}_{1}}{1-\overline{x}_{3}}+2c\frac{\overline{x}_{2}}{1-\overline{x}_{3}}+d=0\right\}.
+            \Pi^{-1}(C)=\left\{(\overline{x}_{1},\overline{x}_{2},\overline{x}_{2})\in\mathbb{S}^{2}: F(\overline{x}_{1},\overline{x}_{2},\overline{x}_{2})=0\right\}.
             \end{equation}
           </div>
+          donde
+          \[
+          F(\overline{x}_{1},\overline{x}_{2},\overline{x}_{2})=a\frac{(\overline{x}_{1}^{2}+\overline{x}_{2}^{2})}{(1-\overline{x}_{3})^2}+2b\frac{\overline{x}_{1}}{1-\overline{x}_{3}}+2c\frac{\overline{x}_{2}}{1-\overline{x}_{3}}+d.
+          \]
+
           Recordemos que la tripleta $(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})\in\mathbb{S}^2$ satisface
           la
           relación $\overline{x}_{1}^{2}+\overline{x}_{2}^{2}+\overline{x}_{3}^{2}=1.$ Equivalentemente, se cumple
@@ -846,104 +851,106 @@
 
           <p></p>
         </div>
-      </div>
 
 
-      <div class="theorem">
-        La proyección esterográfica $\Pi$ es un homeomorfismo.
-      </div>
-
-      <div class="proof">
-        Verificar que la proyección estereográfica es una biyección es rutina, se deja como ejercicio al lector.
-        Comenzaremos probando que la proyección estereográfica $\Pi$ es continua. Recordemos que la $i$-ésima
-        proyección $p_{i}:\mathbb{C}\to\mathbb{R},$ es continua, para cada $i\in\{1,2\}.$ Nótemos que la
-        composición
-        $$
-        p_{i}\circ
-        \Pi(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})=\frac{\overline{x}_{i}}{1-\overline{x}_{3}},
-        $$
-        es continua en cada tripleta
-        $(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})\in\mathbb{S}^2-\{\rm N\}.$
-
+        <div class="theorem">
+          La proyección esterográfica $\Pi$ es un homeomorfismo.
+        </div>
+  
+        <div class="proof">
+          Verificar que la proyección estereográfica es una biyección es rutina, se deja como ejercicio al lector.
+          Comenzaremos probando que la proyección estereográfica $\Pi$ es continua. Recordemos que la $i$-ésima
+          proyección $p_{i}:\mathbb{C}\to\mathbb{R},$ es continua, para cada $i\in\{1,2\}.$ Nótemos que la
+          composición
+          $$
+          p_{i}\circ
+          \Pi(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})=\frac{\overline{x}_{i}}{1-\overline{x}_{3}},
+          $$
+          es continua en cada tripleta
+          $(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})\in\mathbb{S}^2-\{\rm N\}.$
+  
+          <p>
+            Usando la Proposición en
+            <a href="bibliografia.html#Rosenlicht" target="_blank">Rosenlicht, (1986, pág. 77)</a> concluimos que la
+            proyección estereográfica $\Pi$ es
+            continua en $\mathbb{S}^2\setminus\{\rm N\}.$ Ahora, probemos la continuidad de $\Pi$ en el punto
+            $\infty.$
+            Consideremos el subconjunto abierto $V\subset \widehat{\mathbb{C}}$ que contiene a $\Pi({\rm N})=\infty.$
+            Veamos
+            que existe un abierto $W$ que contiene al polo norte ${\rm N}$ tal que $\Pi(W)\subset V.$ Por la manera en
+            que
+            se definió la topología $\tau_{\infty}$ para $\widehat{\mathbb{C}}$ (véase
+            <a href="#plano-complejo-extendido">Teorema 1</a>),
+            se sigue que $\widehat{\mathbb{C}}-V$ es un subconjunto compacto de
+            $\mathbb{C}.$
+            Entonces existe un real positivo $r&gt;0,$ el compacto $(\widehat{\mathbb{C}}-V)$ se queda contenido
+            en la bola euclidiana $B_{r}(\textbf{0}).$ Nótemos que la frontera $\partial B_{r}(\textbf{0})$ de la bola
+            $B_{r}(\textbf{0})$ es una circunferencia generalizada del plano complejo extendido
+            $\widehat{\mathbb{C}}.$
+            Del
+            <a href="#circunferencias-circunferencias">Teorema 2</a>, existe una circunferencia $C$ sobre la esfera
+            $\mathbb{S}^2$
+            cuya imagen bajo $\Pi$ es la frontera $\partial B_{r}(\textbf{0}).$
+            Por construcción, la esfera $\mathbb{S}$
+            menos la circunferencia $C$ es la unión disjunta de dos abiertos conexos, tal que uno de ellos contiene el
+            polo norte ${\rm N}.$
+            Denotemos mediante $W$ a dicha componente conexa que contine a ${\rm N}.$
+            Dado que $\Pi$
+            es continua en $\mathbb{S}^{2}-\{\rm N\},$ entonces debe suceder que $\Pi(W)\subset V.$ Esto prueba que la
+            proyección estereográfica $\Pi$ es continua en ${\rm N}.$ Por lo tanto, la proyección estereográfica es
+            continua en $\mathbb{S}^{2}.$
+          </p>
+  
+          <p>
+            Recordemos que toda función continua definida desde un espacio compacto hasta un espacio Hausdorff es
+            cerrada (véase
+            <a href="bibliografia.html#Dugundji" target="_blank">Dugundji, 2.1 Theorem, pág. 226</a>). Usando el
+            anterio
+            hecho, concluimos que la
+            proyección estereográfica $\Pi$ es una función cerrada. Como la proyección estereográfica $\Pi$ es
+            una función biyectiva, continua y cerrada, entonces concluimos que en efecto es un homeomorfismo.
+          </p>
+  
+  
+        </div>
+  
         <p>
-          Usando la Proposición en
-          <a href="bibliografia.html#Rosenlicht" target="_blank">Rosenlicht, (1986, pág. 77)</a> concluimos que la
-          proyección estereográfica $\Pi$ es
-          continua en $\mathbb{S}^2\setminus\{\rm N\}.$ Ahora, probemos la continuidad de $\Pi$ en el punto
-          $\infty.$
-          Consideremos el subconjunto abierto $V\subset \widehat{\mathbb{C}}$ que contiene a $\Pi({\rm N})=\infty.$
-          Veamos
-          que existe un abierto $W$ que contiene al polo norte ${\rm N}$ tal que $\Pi(W)\subset V.$ Por la manera en
-          que
-          se definió la topología $\tau_{\infty}$ para $\widehat{\mathbb{C}}$ (véase
-          <a href="#plano-complejo-extendido">Teorema 1</a>),
-          se sigue que $\widehat{\mathbb{C}}-V$ es un subconjunto compacto de
-          $\mathbb{C}.$
-          Entonces existe un real positivo $r&gt;0,$ el compacto $(\widehat{\mathbb{C}}-V)$ se queda contenido
-          en la bola euclidiana $B_{r}(\textbf{0}).$ Nótemos que la frontera $\partial B_{r}(\textbf{0})$ de la bola
-          $B_{r}(\textbf{0})$ es una circunferencia generalizada del plano complejo extendido
-          $\widehat{\mathbb{C}}.$
-          Del
-          <a href="#circunferencias-circunferencias">Teorema 2</a>, existe una circunferencia $C$ sobre la esfera
-          $\mathbb{S}^2$
-          cuya imagen bajo $\Pi$ es la frontera $\partial B_{r}(\textbf{0}).$
-          Por construcción, la esfera $\mathbb{S}$
-          menos la circunferencia $C$ es la unión disjunta de dos abiertos conexos, tal que uno de ellos contiene el
-          polo norte ${\rm N}.$
-          Denotemos mediante $W$ a dicha componente conexa que contine a ${\rm N}.$
-          Dado que $\Pi$
-          es continua en $\mathbb{S}^{2}-\{\rm N\},$ entonces debe suceder que $\Pi(W)\subset V.$ Esto prueba que la
-          proyección estereográfica $\Pi$ es continua en ${\rm N}.$ Por lo tanto, la proyección estereográfica es
-          continua en $\mathbb{S}^{2}.$
+          La métrica usual de $\mathbb{R}^3,$ la cual está dada mediante
+        </p>
+        <div class="scroll-wrapper">
+          \[
+          \left|(x_1,x_2,x_3)-(y_1,y_2,y_3)\right|:=\sqrt{\sum\limits_{i=1}^3(x_i-y_i)^2},
+          \]
+        </div>
+        <p></p>
+        <p>
+          para cualesquiera elementos $(x_1,x_2,x_3),(y_1,y_2,y_3)\in \mathbb{R}^3$ la podemos restringir a la esfera
+          de
+          Riemann $\mathbb{S}^2.$ Mediante la proyección estereogr'afica $\Pi$ podemos definir en el plano complejo
+          extendido $\hat{\mathbb{C}}$ la función distancia $d_c : \hat{\mathbb{C}}\times \hat{\mathbb{C}} \to
+          \mathbb{R}$ tal que
+        </p>
+        <div class="scroll-wrapper">
+          \[
+          d_c(z,w)=\left|\Pi^{-1}(z)-\Pi^{-1}(w)\right|= \left\{
+          \begin{array}{ ll }
+          \dfrac{2|z-w|}{\sqrt{1+|z|^2}\sqrt{1+|w|^2}}; &amp; \text{ si } z,w\neq \infty; \\
+          \dfrac{2}{\sqrt{1+|z|^2}}; &amp; \text{ si } w=\infty.\\
+          \end{array}
+          \right.
+          \]
+        </div>
+        
+        <p>
+          A esta función distancia se le conoce como
+          <span class="red-txt">métrica cordal -cuerdas-</span>, pues geométricamente esta distancia representa la
+          longitud del segmento en $\mathbb{R}^3$ con puntos
+          extremos $\Pi^{-1}(z)$ y $\Pi^{-1}(w).$ Adicionalmente, la topología inducida por la métrica cordal es
+          equivalente a la topología $\tau_{\infty}.$
         </p>
 
-        <p>
-          Recordemos que toda función continua definida desde un espacio compacto hasta un espacio Hausdorff es
-          cerrada (véase
-          <a href="bibliografia.html#Dugundji" target="_blank">Dugundji, 2.1 Theorem, pág. 226</a>). Usando el
-          anterio
-          hecho, concluimos que la
-          proyección estereográfica $\Pi$ es una función cerrada. Como la proyección estereográfica $\Pi$ es
-          una función biyectiva, continua y cerrada, entonces concluimos que en efecto es un homeomorfismo.
-        </p>
-
-
       </div>
 
-      <p>
-        La métrica usual de $\mathbb{R}^3,$ la cual está dada mediante
-      </p>
-      <div class="scroll-wrapper">
-        \[
-        \left|(x_1,x_2,x_3)-(y_1,y_2,y_3)\right|:=\sqrt{\sum\limits_{i=1}^3(x_i-y_i)^2},
-        \]
-      </div>
-      <p></p>
-      <p>
-        para cualesquiera elementos $(x_1,x_2,x_3),(y_1,y_2,y_3)\in \mathbb{R}^3$ la podemos restringir a la esfera
-        de
-        Riemann $\mathbb{S}^2.$ Mediante la proyección estereogr'afica $\Pi$ podemos definir en el plano complejo
-        extendido $\hat{\mathbb{C}}$ la función distancia $d_c : \hat{\mathbb{C}}\times \hat{\mathbb{C}} \to
-        \mathbb{R}$ tal que
-      </p>
-      <div class="scroll-wrapper">
-        \[
-        d_c(z,w)=\left|\Pi^{-1}(z)-\Pi^{-1}(w)\right|= \left\{
-        \begin{array}{ ll }
-        \dfrac{2|z-w|}{\sqrt{1+|z|^2}\sqrt{1+|w|^2}}; &amp; \text{ si } z,w\neq \infty; \\
-        \dfrac{2}{\sqrt{1+|z|^2}}; &amp; \text{ si } w=\infty.\\
-        \end{array}
-        \right.
-        \]
-      </div>
-      <p></p>
-      <p>
-        A esta función distancia se le conoce como
-        <span class="red-txt">métrica cordal -cuerdas-</span>, pues geométricamente esta distancia representa la
-        longitud del segmento en $\mathbb{R}^3$ con puntos
-        extremos $\Pi^{-1}(z)$ y $\Pi^{-1}(w).$ Adicionalmente, la topología inducida por la métrica cordal es
-        equivalente a la topología $\tau_{\infty}.$
-      </p>
 
       <hr>
 
@@ -1124,7 +1131,7 @@
 
 
       <div id="section4">
-        <div class="head-1 head-1-level2">
+        <div class="head-1 head-1-level2" id="problemas">
           Problemas
         </div>
 
@@ -1188,8 +1195,6 @@
 
   <script src="https://www.geogebra.org/apps/deployggb.js"></script>
 
-  <script src="https://www.geogebra.org/apps/deployggb.js"></script>
-
   <script>
     let paramsProj = {
       "width": 762,
@@ -1207,10 +1212,9 @@
     });
   </script>
 
-  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
 
-  <a href="bibliografia.html" style="text-decoration: none;">
-    <p class="nextPage">Bibliografía <i class="fa-solid fa-angles-right"></i></p>
+  <a href="transformaciones-fraccionarias-lineales.html" style="text-decoration: none;">
+    <p class="nextPage">Transformaciones fraccionarias lineales <i class="fa-solid fa-angles-right"></i></p>
   </a>
   <!-- Ends main content -->
 
@@ -1219,127 +1223,115 @@
   <!-- Main DIV Ends here -->
 
 
-
-
   <!-- The Modal -->
+<div id="myModal" class="modal">
 
-  <div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span><br />
+      <strong>👋 ¡Hola!</strong>
+    </div>
+    <div class="modal-body">
 
-    <!-- Modal content -->
-    <div class="modal-content">
-      <div class="modal-header">
-        <span class="close">&times;</span><br />
-        <strong>👋 ¡Hola!</strong>
-      </div>
-      <div class="modal-body">
-        <p>
-          Si este libro de texto interactivo te ha sido útil, considera unirte a mi:
-        </p>
+      <p>
+        Este libro interactivo es <strong>gratis para todo el mundo</strong>,
+        porque tengo la firme creencia de que 
+        cualquier persona debería tener accesso 
+        a recursos de aprendizaje de alta calidad para explorar y aprender 
+        matemáticas.
+        Es por esta razón que muchos usuarios han elegido contribuir
+        a mis esfuerzos. Si tú crees en lo que hago y deseas ayudarme
+        en mi jornada, puedes hacerlo ahora con los siguientes enlaces:
+      </p>
 
-        <div class="button-container">
-          <button id="modal-link" >
-            <a href="https://www.patreon.com/jcponce"><i class="fa-brands fa-patreon"></i>
-              <strong>Patreon</strong></a>
-          </button>
-        </div>
-        
-        
-        <p>
-          Este proyecto es posible gracias a la amabilidad de seguidores como tú.
-          Sus contribuciones me permiten mantener el sitio, los
-          applets y, lo que es más importante,
-          <strong>garantizar que siga siendo de libre acceso</strong>
-          para cualquiera que desee explorar este
-          cautivador campo de las matemáticas,
-          <strong>sin anuncios que distraigan</strong>.
-        </p>
-
-        <p>
-          Si prefieres donar una sola vez, no mensualmente
-          puedes utilizar estos enlaces:
-        </p>
-
-        <div class="button-container">
-          <button id="modal-link" >
-            <a  target="_blank"
+      <div class="button-container">
+        <button id="modal-link">
+          <a href="https://www.patreon.com/jcponce"><i class="fa-brands fa-patreon"></i>
+            <strong>Patreon</strong></a>
+        </button>
+        <button id="modal-link">
+          <a target="_blank"
             href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
-            <strong>❤️ <i class="fa-brands fa-paypal"></i> PayPal Me</strong>
+            <strong><i class="fa-brands fa-paypal"></i> PayPal</strong>
           </a>
-          </button>
-          <button id="modal-link" >
-            <a  target="_blank" href="https://jcponcemath.secure-decoration.com/">
-              <strong>❤️ Adquiere una camiseta</strong>
-            </a>
-          </button>
-        </div>
-        
+        </button>
+        <button id="modal-link">
+          <a target="_blank" href="https://jcponcemath.secure-decoration.com/">
+            <strong>Comprar <i class="fa-solid fa-shirt"></i></strong>
+          </a>
+        </button>
+      </div>
 
-        <p>
-          No puedes contribuir esta vez, ¡no te preocupes! Tal vez solo quieras:
-        </p>
-        <div class="button-container">
-          <button id="modal-link" >
-            <a href="mailto:jcponcemath@gmail.com"><strong><i class="fa-solid fa-envelope"></i> Enviar un comentario</strong></a>
-          </button>
-          
-        </div>
-        
-        <br />
-      </div>
-      <div class="modal-footer">
-        ¡Muchas gracias! 🙏 ¡Aprecio mucho tu apoyo! 🤗
-      </div>
+
+      <p>
+        Tu ayuda me permite mantener este sitio
+        y crucialmente, <strong>garantizar que permanezca de acceso libre</strong>
+        para toda persona interesada en explorar esta cautivadora rama de las 
+        matemáticas <strong>- sin anuncios que te distraigan</strong>.
+      </p>
+
+      <p>
+        No puedes contribuir en esta ocasión, ¡no hay problema! Quizá sólo quieras
+        <i class="fa-solid fa-envelope"></i> <a href="mailto:jcponcemath@gmail.com"><strong> Mandar un comentario</strong></a>
+      </p>
+      <br />
     </div>
 
+    <div class="modal-footer">
+      ¡Gracias! 🙏 !Realmente aprecio tu apoyo! 🤗
+    </div>
   </div>
-  <!-- The Modal ends -->
+
+</div>
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
 
   <hr>
 
-  <footer>
+<footer>
 
-    <span class="hide-small" id="footer-elements">
-      <span style="font-weight: bold;">[</span>
-      <a href="../"><i class="fa-solid fa-house"></i> Inicio</a>,
-      <a href="https://github.com/geometria-hiperbolica"><i class="fa-solid fa-code"></i> Código</a>,
-      <a href="https://github.com/geometria-hiperbolica/geometria-hiperbolica.github.io/issues"><i
-          class="fa-solid fa-lightbulb"></i> Reporta</a>,
-      <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
-        <i class="fa-regular fa-heart"></i> Apoyar</span>
-      <span style="font-weight: bold;">]</span>
+  <span class="hide-small" id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Inicio</a>,
+    <a href="https://github.com/geometria-hiperbolica"><i class="fa-solid fa-code"></i> Código</a>,
+    <a href="https://github.com/geometria-hiperbolica/geometria-hiperbolica.github.io/issues"><i
+        class="fa-solid fa-lightbulb"></i> Reporta</a>,
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-regular fa-heart"></i> Apoyar</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  <span class="hide-medium hide-large" style="font-size: 0.85em;">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Inico</a> -
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-regular fa-heart"></i> Apoyar</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+
+  <br />
+
+  <a id="licence-link" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+    target="_blank">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong>
+    <span class="hide-small" style="font-size: 18px">&copy; J.C. Ponce Campuzano, C. Ramírez Maluendas
+      <script>document.write(new Date().getFullYear());</script>
     </span>
-    <span class="hide-medium hide-large" style="font-size: 0.85em;">
-      <span style="font-weight: bold;">[</span>
-      <a href="../"><i class="fa-solid fa-house"></i> Inico</a> -
-      <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
-        <i class="fa-regular fa-heart"></i> Apoyar</span>
-      <span style="font-weight: bold;">]</span>
+    <span class="hide-medium hide-large" style="font-size: 15px">&copy; J.C. Ponce Campuzano <br /> C. Ramírez
+      Maluendas,
+      <script>document.write(new Date().getFullYear());</script>
     </span>
+  </strong>
 
-    <br />
-
-    <a id="licence-link" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
-      target="_blank">
-      <i class="fa-brands fa-creative-commons"></i>
-      <i class="fa-brands fa-creative-commons-by"></i>
-      <i class="fa-brands fa-creative-commons-nc"></i>
-      <i class="fa-brands fa-creative-commons-sa"></i>
-    </a>
-
-    <br />
-
-    <strong>
-      <span class="hide-small" style="font-size: 18px">&copy; J.C. Ponce Campuzano, C. Ramírez Maluendas
-        <script>document.write(new Date().getFullYear());</script>
-      </span>
-      <span class="hide-medium hide-large" style="font-size: 15px">&copy; J.C. Ponce Campuzano <br /> C. Ramírez
-        Maluendas,
-        <script>document.write(new Date().getFullYear());</script>
-      </span>
-    </strong>
-
-  </footer>
-
+</footer>
   <script src="js/mathjax.js"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 

@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-  <title>  Geometría Hiperbólica
+  <title>  Tabla de Contenidos
 </title>
 
   <meta charset="UTF-8" />
@@ -29,8 +29,8 @@
   <meta name="twitter:type" content="website" />
   <meta name="twitter:creator" content="@jcponcemath" />
 
-  <link rel="icon" type="image/png" href="libro/imgs/infinity32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="libro/imgs/infinity16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="imgs/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="imgs/infinity16.png" sizes="16x16">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-16JHH28EVY"></script>
@@ -42,7 +42,7 @@
     gtag('config', 'G-16JHH28EVY');
   </script>
 
-  <link rel="stylesheet" href="libro/css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 
 
 </head>
@@ -52,6 +52,9 @@
 
 <div class="fixed-bar" id="fixed-bar">
     <div class="link-container">
+        <a href="index.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
         <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
         <span class="support-top-button" id="donate"
             onclick="document.getElementById('myModal').style.display='block'">
@@ -59,12 +62,13 @@
     </div>
     <div class="link">
         <a href="tabla-de-contenidos.html" class="link" id="center-link">
+            <span class="content-hover-previous">Geometría Hiperbólica</span>
             <span class="content-hover">Table of Contents</span>
             <span class="content-original">Geometría Hiperbólica</span>
-            <span class="content-hover-next">Tabla de Contenidos</span>
+            <span class="content-hover-next">Plano Complejo Extendido</span>
         </a>
     </div>
-    <a href="tabla-de-contenidos.html" class="link" id="next-link">
+    <a href="plano-complejo-extendido.html" class="link" id="next-link">
         <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
     </a>
 </div>
@@ -72,138 +76,81 @@
 
   <!-- Main DIV Starts here -->
   <div class="container">
-    <section data-type="chapter" id="index">
+    <section data-type="chapter" id="tabla-de-contenidos-3RvqFkA">
 
     <!-- Starts main content -->
 
-    <header>
-
-        <div class="">
-
-
-            <div class="hide-small">
-                <br><br>
-                <iframe frameborder="0" width="100%" height="400px" scrolling="no" src="https://www.dynamicmath.xyz/math2400/sketches/hypersphere/" style="border: 1px solid black; overflow: hidden;">
-                </iframe>
-            </div>
-
-            <div class="hide-large hide-medium">
-                <iframe frameborder="0" width="100%" height="200px" scrolling="no" src="https://www.dynamicmath.xyz/math2400/sketches/hypersphere/" style="border: 1px solid black; overflow: hidden;">
-                </iframe>
-            </div>
-            <div class="">
-
-
-                <div style="text-align: center !important;" class="hide-small">
-                    <h1>Geometría Hiperbólica</h1>
-                </div>
-
-                <p class="hide-large hide-medium" style="font-size:34px;text-align:center;"><b>Geometría
-                        <br>Hiperbólica</b></p>
-
-                <p class="hide-small author">Juan Carlos Ponce Campuzano<br> Camilo Ramírez Maluendas<br>
-                    <script>document.write(new Date().getFullYear());</script>
-                </p>
-
-                <p class="hide-large hide-medium author" style="font-size:16px">J. C. Ponce Campuzano <br> C. Ramírez
-                    Maluendas
-                    <br>
-                    <script>document.write(new Date().getFullYear());</script>
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-    </header>
+   <br>
 
     <br>
 
-    <hr>
+    <header>
+        <h1>Tabla de Contenidos</h1>
+
+    </header>
 
     <main>
         <article>
-            <h4 id="intro" style="font-size: 1.5em;">Introdución</h4>
 
-            <p>
-                La Geometría Hiperbólica es una rama fascinante de las matemáticas
-                que se desarrolla en un espacio no euclidiano donde la geometría
-                de un plano hiperbólico difiere de la geometría euclidiana tradicional.
-                En este espacio, los postulados de Euclides no se cumplen, lo que
-                lleva a propiedades geométricas únicas y a resultados sorprendentes.
-                A través del estudio de líneas, ángulos y figuras en este contexto,
-                la Geometría Hiperbólica nos ofrece una perspectiva alternativa y
-                enriquecedora sobre la estructura del espacio.
-            </p>
+            <nav role="navigation" class="toc">
+                <p>
+                    <a href="../index.html">Introduction</a>
+                </p>
+                <ol>
+                    
+                    <li><a href="plano-complejo-extendido.html">Plano Complejo Extendido $\hat{\mathbb{C}}$</a>
+                        <ol>
+                            <li>
+                                <a href="plano-complejo-extendido.html#proyeccion-estereografica">Proyección
+                                    Estereográfica</a>
+                            </li>
+                            <li>
+                                <a href="plano-complejo-extendido.html#plano-proyectivo">Plano Proyectivo Complejo
+                                    $\mathbb{C}P^{1}$</a>
+                            </li>
+                            <li>
+                                <a href="plano-complejo-extendido.html#problemas">Problemas</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li><a href="transformaciones-fraccionarias-lineales.html">Transformaciones fraccionarias lineales</a>
+                        <ol>
+                            <li>
+                                <a href="transformaciones-fraccionarias-lineales.html#propiedades">Propiedades</a>
+                            </li>
+                            <li>
+                                <a href="transformaciones-fraccionarias-lineales.html#transformaciones-de-mobius">Propiedades</a>
+                            </li>
+                            <li>
+                                <a href="transformaciones-fraccionarias-lineales.html#clasificacion-de-mobius">Clasificación de las tranformaciones de Möbius</a>
+                            </li>
+                            <li>
+                                <a href="transformaciones-fraccionarias-lineales.html#clasificacion-mediante-conjugacion">Clasificación mediante conjugación</a>
+                                <ol>
+                                    <li>
+                                        <a href="transformaciones-fraccionarias-lineales.html#clasificacion-mediante-traza">Clasificación mediante la traza</a>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <a href="transformaciones-fraccionarias-lineales.html#problemas">Problemas</a>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+        
+            </nav>
 
-            <p>
-                El presente material ha sido diseñado con el proposito
-                de servir como notas para
-                un curso de Geometría Hiperbólica. En algunas secciones
-                hemos includido algunos applets
-                interactivos para explorar esta fascinante rama de las matemáticas.
-                Este enfoque dinámico nos permitirá visualizar conceptos abstractos
-                y comprender intuitivamente las peculiaridades de la Geometría
-                Hiperbólica.
-            </p>
 
-            <p>
-                ¡Prepárense para una emocionante exploración de
-                un universo geométrico alternativo donde la curiosidad y la
-                experimentación serán nuestros guías!
-            </p>
+            <br><br>
 
-            <blockquote>
-
-                «Lo cierto es que fueron años de arduo<br>
-                aprendizaje, con lapsos de desaliento en los que estuvo a<br>
-                punto de desistir. Pero al fin triunfó la preseverancia y<br>
-                Raimundo aprendió a ladrar.»
-
-                <br>
-
-                <cite>- Mario Benedetti, <br>El hombre que aprendió a ladrar</cite>
-            </blockquote>
-
-            <br>
-
-            <hr>
-
-            <h4 style="font-size: 1.5em;">Créditos</h4>
-
-            <p>
-                El diseño de este sitio está basado en los siguientes proyectos:
-            </p>
-            <ul>
-                <li>
-                    <a href="https://github.com/vincentdoerig/latex-css" target="_blank">LaTeX.CSS</a> por Vincent Dörig
-                </li>
-                <li>
-                    <a href="https://github.com/davidrzs/latexcss" target="_blank">LatexCSS</a> por David Zollikofer
-                </li>
-                <li>
-                    <a href="https://complex-analysis.com/" target="_blank">Complex Analysis</a> por Juan Carlos Ponce
-                    Campuzano
-                </li>
-            </ul>
-
-            <p>
-                La construcción del sitio fue hecho gracias al proyecto
-                <a href="https://github.com/magicbookproject" target="_blank">Magic Book</a>.
-            </p>
 
         </article>
     </main>
 
-    <br>
 
-
-
-
-    <a href="libro/tabla-de-contenidos.html" style="text-decoration: none;">
-        <p class="nextPage">Tabla de Contenidos <i class="fa-solid fa-angles-right"></i></p>
+    <a href="libro/plano-complejo-extendido.html" style="text-decoration: none;">
+        <p class="nextPage">Plano Complejo Extendido  $\widehat{\mathbb{C}}$ <i class="fa-solid fa-angles-right"></i></p>
     </a>
 
     <!-- Ends main content -->
@@ -322,11 +269,11 @@
   </strong>
 
 </footer>
-  <script src="libro/js/mathjax.js"></script>
+  <script src="js/mathjax.js"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-  <script src="libro/js/scripts.js"></script>
-  <script async src="libro/js/prism.js"></script>
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
 </body>
 
 </html>

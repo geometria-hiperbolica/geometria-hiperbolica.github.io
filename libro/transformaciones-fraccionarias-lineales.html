@@ -1,0 +1,2126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>  Transformaciones fraccionarias
+      lineales
+</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Notas de Geometría Hiperbólica" />
+  <meta name="author" content="Juan Carlos Ponce Campuzano, Camilo Ramírez Maluendas">
+  <meta name="keywords" content="geometría,hiperbólica,funciones,complejo" />
+
+  <!--
+    https://www.everywheremarketer.com/blog/ultimate-guide-to-social-meta-tags-open-graph-and-twitter-cards
+  -->
+  <!--Facebook-->
+  <meta property="og:title" content="Geometría Hiperbólica" />
+  <meta property="og:url" content="https://geometria-hiperbolica.github.io/" />
+  <meta property="og:description" content="Notas de Geometría Hiperbólica" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Geometría Hiperbólica">
+
+  <!--Twitter/X-->
+  <meta name="twitter:title" content="Geometría Hiperbólica" />
+  <meta name="twitter:site" content="https://geometria-hiperbolica.github.io/" />
+  <meta name="twitter:description" content="Notas de Geometría Hiperbólica" />
+  <meta name="twitter:type" content="website" />
+  <meta name="twitter:creator" content="@jcponcemath" />
+
+  <link rel="icon" type="image/png" href="imgs/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="imgs/infinity16.png" sizes="16x16">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-16JHH28EVY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-16JHH28EVY');
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body data-type="book" id="top">
+
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="plano-complejo-extendido.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="tabla-de-contenidos.html" class="link" id="center-link">
+            <span class="content-hover-previous">Plano Complejo Extendido</span>
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Geometría Hiperbólica</span>
+            <span class="content-hover-next">Bibliografía</span>
+        </a>
+    </div>
+    <a href="bibliografia.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="transformaciones-fraccionarias-lineales">
+
+  <p class="callout hide-large hide-medium"><strong>⚠️ ¡Advertencia!</strong>
+
+    Si puedes ver este mensaje es porque tu pantalla es demasiado pequeña.
+    Por lo tanto, algunos applets no se mostrarán correctamente.
+    Puedes girar tu dispositivo a horizontal.
+    O cambia el tamaño de tu ventana para que sea más ancha que alta.
+  </p>
+
+  <div class="toc-chapter" id="toc-chapter">
+    <p><i class="fa-solid fa-list"></i>Contenido</p>
+    <ul>
+      <li><a href="#section1">Transformaciones fracc...</a></li>
+      <li><a href="#section2">Propiedades</a></li>
+      <li><a href="#section3">Transformaciones de Möbius</a></li>
+      <li><a href="#section4">Clasificación de las trans...</a></li>
+      <li><a href="#section5">Clasificación mediante...</a></li>
+      <li><a href="#section6">Problemas</a></li>
+
+      <!-- Add more sections as needed -->
+    </ul>
+  </div>
+
+  <div class="hide-large hide-medium hide-small">
+    <h1>Transformaciones fraccionarias
+      lineales</h1>
+  </div>
+
+  <br><br><br>
+
+
+  <main>
+    <article>
+      <div id="section1">
+        <div class="head-2">Transformaciones fraccionarias lineales</div>
+        <p>
+
+          En el año de 1855, el matemático aleman August Ferdinand Möbius (1790-1868)
+          publicó su libro titulado
+          <em>Die Theorie der Kreisverwandschaft in rein geometrischer
+            Darstellung</em> [5], en el cual desarrolló la teoría de transformaciones circulares del plano.
+          Estas transformaciones consisten por aquellas que son generadas por inversiones con respecto
+          a circunferencias (para enriquecer esta información histórica recomendamos al lector
+          dirigirse a [4, pág. 107]). Desde el punto de vista analítico, estas transformaciones pueden
+          ser interpretadas como transformaiones fraccionarias lineales.
+          De aquí la razón por la
+          cual el uso de transformaiones de Möbius para acuñar a las transformaciones fracionarias
+          lineales
+        </p>
+
+        <div class="definition">
+          Una
+          <p style="text-align: center;">
+            <span class="red-txt">transformación fraccionaria lineal</span> o <span class="red-txt">transformación de
+              Möbius</span>
+          </p>
+          <p>
+            es una función $T$ de la esfera de Riemann $\widehat{\mathbb{C}}$ sobre sí misma, cuya regla de
+            asiganción es de la forma:
+            \begin{equation}\label{eq:trans_fracc_lineal}
+            T(z)=\frac{az+b}{cz+d},
+            \end{equation}
+            siendo los <span class="red-txt">coeficientes de la transformación</span>
+            $a,b,c$ y $d$ números complejos, tal que el
+            <span class="red-txt">determinante de la transformación</span> satisface la relación ${\rm
+            det}(T)=ad-cd\neq 0.$
+          </p>
+        </div>
+
+        <p>
+          Sobre la regla de asignación de la transformación $T$
+          (véase ecuación \eqref{eq:trans_fracc_lineal})
+          se establecen las siguientes consideraciones:
+        </p>
+
+        <ol>
+          <li>
+            Si el coeficiente $c=0,$ entonces la regla de correspondencia de $T$ está definida mediante
+            \[
+            T(z)= \left\{
+            \begin{array}{ cl }
+            \dfrac{az+b}{d}; &amp; \text{ para cada } z\in\mathbb{C}, \\
+            \infty; &amp; \text{ si } z=\infty.\\
+            \end{array}
+            \right.
+            \]
+          </li>
+          <li>
+            Contrariamente, si el coeficiente $c\neq 0,$ entonces la regla de correspondencia de $T$ está definida
+            mediante
+            \[T(z)= \left\{
+            \begin{array}{ cl }
+            \dfrac{az+b}{cz+d}; &amp; \text{ para cada } z\in\mathbb{C}-\left\{\dfrac{-d}{c}\right\}, \\
+            \infty; &amp; \text{ si } z=\dfrac{-d}{c},\\
+            \dfrac{a}{c}; &amp; \text{ si } z=\infty.\\
+            \end{array}
+            \right.
+            \]
+          </li>
+        </ol>
+
+        <p>
+          Nótese que cada transformación de Möbius $T$ es una biyección continua de la esfera de Riemann
+          $\widehat{\mathbb{C}}$ sobre la esfera de Riemann $\widehat{\mathbb{C}},$ con inversa continua. Más
+          precisamente, para la transformación de Möbius $T$ cuya regla de asignación está descrita en la
+          ecuación \eqref{eq:trans_fracc_lineal}, su inversa $T^{-1}$ es también una transformación de Möbius y,
+          su respectiva regla de asignación está dada por
+          \[
+          T^{-1}(z)=\dfrac{\dfrac{d}{k}z-\dfrac{b}{k}}{-\dfrac{c}{k}z+\dfrac{a}{k}},
+          \]
+          siendo $k=\sqrt{det(T)}.$ Por otro lado, la regla de asignación de la transformación identidad ${\rm
+          Id}:\widehat{\mathbb{C}}\to\widehat{\mathbb{C}}$
+          puede ser escrita como
+          \[
+          {\rm Id}(z)=\frac{1\, z+0}{0\, z+1},
+          \]
+          es decir, que ${\rm Id}$ también es una transformación de Möbius. Lo anterior implica que el conjunto de
+          todas las transformaciones de Möbius
+          \begin{equation}\label{eq:grupo_transformaciones_de_Mobius_notacion}
+          \mathcal{M}:=\left\{T:\widehat{\mathbb{C}}\to \widehat{\mathbb{C}}\mid T
+          \text{ es una transformación de Möbius}\right\},
+          \end{equation}
+          es un grupo de los homeomorfismo de la esfera de Riemann ${\rm Homeo}(\widehat{\mathbb{C}}).$
+        </p>
+
+        <p>
+          Vamos a introducir cuatro transformaciones de Möbius canónicas.
+        </p>
+
+        <ol>
+          <li>
+            La función <span class="red-txt">translación</span> con
+            respecto al complejo $b\in \mathbb{C}^{\ast},$ es aquella Möbius cuya regla de asignación está dada
+            por
+            \[
+            T_b(z)=z+b,
+            \]
+            Su inversa está dada por $T_b^{-1}(z)=z-b.$
+          </li>
+          <li>
+            La función <span class="red-txt">homotecia</span>
+            con respecto al real positivo $r&gt;0,$ es la transformación de Möbius con regla de asignación
+            \[
+            H_r(z)=rz.
+            \]
+            Su respectiva transformación inversa está dada por $H_r^{-1}(z)=\dfrac{z}{r}.$
+          </li>
+          <li>
+            La función <span class="red-txt">rotación</span>
+            con respecto al ángulo $\theta\in (0, 2\pi),$ es la transformación de Möbius con regla de asignación
+            \[
+            R_{\theta}(z)=e^{i\theta}z.
+            \]
+            Su respectiva transformación inversa está dada por $R_{-\theta}(z)=e^{-i\theta}z.$
+          </li>
+          <li>
+            La transformación de Möbius cuya regla de asignación está dada por
+            \[
+            T(z)=\frac{1}{z},
+            \]
+            es llamada <span class="red-txt">involución</span>.
+            Notemos que la inmersión es una involución, es decir, $g\circ g=Id.$ Además, la inmersión $T$ deja
+            invariante el círculo unitario $\mathbb{S}^{1}:=\{z\in\mathbb{C}: |z|=1\}.$ También, envía el conjunto
+            $\{z\in\mathbb{C}:|z|\lt 1\}$ en el conjunto $\{z\in\mathbb{C}:|z|&gt;1\}\cup\{\infty\}.$ Conversamente, la
+            inversión $T$ mapea el conjunto $\{z\in\mathbb{C}:|z|&gt;1\}\cup\{\infty\}$ sobre el conjunto
+            $\{z\in\mathbb{C}:|z|\lt 1\}.$
+          </li>
+
+        </ol>
+
+        <p>
+          Usando algunas de las transformaciones canónicas podemos convencernos que el grupo $\mathcal{M}$ no es
+          conmutativo. Basta considerar las transformaciones dadas por las reglas de asignación
+          \[
+          T_1(z)=z+1 \quad \text{ y } \quad T_2(z)=\dfrac{-1}{z},
+          \]
+          entonces las composiciones
+          \begin{equation*}
+          \begin{split}
+          T_1 \circ T_2(z)&amp;=T_1\left(\dfrac{-1}{z}\right)=\dfrac{-1}{z}+1=\dfrac{z-1}{z},\\
+          &amp;\\
+          T_2\circ T_1(z) &amp; =T_2(z+1)=\dfrac{-1}{z+1},\\
+          \end{split}
+          \end{equation*}
+          satisfacen $T_1 \circ T_2(z)\neq T_2 \circ T_1 (z)$ para algunos $z\in\widehat{\mathbb{C}}.$
+        </p>
+
+        <h3>Transformaciones idénticas</h3>
+
+        <p>
+          Del curso de Cálculo en una Variable sabemos que las funciones real valuadas $f$ y $g$ dadas por
+          \[
+          f(x)=2x^2 \quad \text{ y } \quad g(x)=\frac{4x^{2}}{2},
+          \]
+          son la "misma función", salvo que sus reglas de asignación son
+          diferentes. Para el caso de la transformaciones de Möbius tenemos el mismo fenómeno. Vamos a introducir
+          una definición sencilla que nos permita identificar
+          <span class="red-txt"><em>idénticas</em></span> entre dos o más
+          transformaciones de Möbius.
+        </p>
+
+        <div class="definition">
+          Las transformaciones de Möbius $T_1$ y $T_2$ son
+          <span>idénticas</span>, si y solo si, $T_1(z)=T_2(z),$ para cada $z\in\hat{\mathbb{C}}.$
+        </div>
+
+        <p>
+          El siguiente resultado, describe condiciones necesarias y suficientes para garantizar cuando dos
+          transformaciones de Möbius son idénticas.
+        </p>
+
+        <div class="theorem" id="t_transformaciones_de_Mobius_identicas_condiciones_necesarias_suficientes">
+          Las transformaciones de Möbius $T_{1}$ y $T_{2}$ dadas por
+          \[
+          T_1(z)=\dfrac{a_1z+b_1}{c_1z+d_1} \quad \text{y} \quad T_2(z)=\dfrac{a_2z+b_2}{c_2z+d_2},
+          \]
+          son idénticas, si y solo si, existe un número complejo no nulo $\lambda\in\mathbb{C}^{\ast}$ tal que
+          $a_1=\lambda a_2,$ $b_1=\lambda b_2,$ $c_1=\lambda c_2$ y $d_1=\lambda d_2.$
+        </div>
+
+        <div class="proof">
+          La condición <span class="blue-txt">necesaria</span> es inmediata. Probemos la
+          condición <span class="blue-txt">suficiente</span>. Tomemos las transformaciones de Möbius $T_{1}$ y
+          $T_{2}$ idénticas, dadas por las reglas de asignación
+          \[
+          T_1(z)=\dfrac{a_1z+b_1}{c_1z+d_1}\quad \text{y} \quad T_2(z)=\dfrac{a_2z+b_2}{c_2z+d_2},
+          \]
+          cuyos coeficientes son diferentes de cero, (la prueba para el caso en que algunos de los coeficientes toma
+          el valor cero es similar). Evaluamos los valores $0,$ $1$ e $\infty$ en las transformaciones y obtenemos
+          \begin{align}
+          T_1(0) = T_{2}(0) &amp; =\frac{b_1}{d_1}=\frac{b_2}{d_2}=u,\label{eq:T0}\\
+          T_{1}(1)=T_{2}(1) &amp;=\frac{a_1+b_1}{c_1+d_1}=\frac{a_2+b_2}{c_2+d_2}\label{eq:T1},\\
+          T_{1}(\infty)=T_{2}(\infty)&amp; =\frac{a_1}{c_1}=\frac{a_2}{c_2}=v\label{eq:Tinfinito},
+          \end{align}
+          para algunos valores complejos $u,v\in\mathbb{C}.$ Ahora, en las ecuaciones \eqref{eq:T0} y
+          \eqref{eq:Tinfinito} despejamos adecuadamente y obtenemos las igualdades
+          \[
+          b_1=ud_1, \quad b_2=ud_2,\quad a_1=vc_1, \quad a_2=vc_2.
+          \]
+
+          <p>
+            Estas últmas cuatro relaciones las sustituimos en la ecuación \eqref{eq:T1}.
+            \[
+            \frac{vc_1+ud_1}{c_1+d_1} =\frac{vc_2+ud_2}{c_2+d_2}.
+            \]
+          </p>
+
+          <p>
+            Luego, computamos y así, obtenemos
+            \begin{align*}
+            (vc_1+ud_1)(c_2+d_2) &amp; =(vc_2+ud_2)(c_1+d_1),\\
+            vc_1c_2+vc_1d_2+ud_1c_2+ud_1d_2 &amp; = vc_1c_2+vd_1c_2+uc_1d_2+ud_1d_2,\\
+            vc_1d_2+ ud_1c_2&amp; =vd_1c_2+uc_1d_2,\\
+            v(c_1d_2-d_1c_2)-u(c_1d_2-d_1c_2) &amp;=0,\\
+            (v-u)(c_1d_2-d_1c_2)&amp; =0.\\
+            \end{align*}
+            Ahora, argumentaremos que no es posible la condición $v-u=0$ y se debe de satisfacer
+            \[
+            c_1d_2-d_1c_2=0.
+            \]
+          </p>
+
+          <p>
+            Supongamos que $v-u=0,$ entonces de las ecuaciones (\ref{eq:T0}) y (\ref{eq:T1}) se sigue que
+            \[
+            u-v=\dfrac{a_1}{c_1}-\dfrac{b_1}{d_1}=\dfrac{a_1d_1-b_1c_1}{c_1d_1}=0.
+            \]
+            Esta última igualdad implica que el determinante de la transformación de Möbius $T_1$ es ${\rm
+            det}(T_{1})=0.$ Por lo tanto, se debe de satisfacer
+            \begin{equation}\label{eq:Mobius_identicas_igualdad_cero}
+            v-u\neq 0 \quad \text{ y } \quad c_1d_2-d_1c_2=0.
+            \end{equation}
+          </p>
+
+          <p>
+            Seguidamente, despejamos en la segunda igualdad descrita en \eqref{eq:Mobius_identicas_igualdad_cero} y
+            obtenemos
+            \begin{equation}\label{eq:ultima}
+            \frac{c_1}{c_2}=\frac{d_1}{d_2}.
+            \end{equation}
+            Finalmente, de las ecuaciones \eqref{eq:T0} y \eqref{eq:T1} pueden ser reescritas de la forma
+            \[
+            \dfrac{b_{1}}{b_{2}}=\dfrac{d_{1}}{d_{2}}\quad \text{ y } \quad \dfrac{a_{1}}{a_{2}}=\dfrac{c_{1}}{c_{2}},
+            \]
+            respectivamente. De la ecuación \eqref{eq:ultima} se sigue que
+            \[
+            \frac{a_1}{a_2}=\frac{b_1}{b_2}=\frac{c_1}{c_2}=\frac{d_1}{d_2}=\lambda.
+            \]
+          </p>
+        </div>
+
+
+        <p>
+          Sería útil y optimizaría el estudio de las transformaciones de Möbius, si cada una de ellas fuese
+          idéntica a una, cuyo determinante es cierto valor real, ¡tal vez el $1$! Efectivamente, toda
+          transformación de Möbius es idéntica a otra transformación de Möbius, cuyo determinante es igual a
+          $1.$ La construcción de dicha transformación es sencilla. Comenzamos por consideramos una transformación
+          de Möbius $T,$ donde su regla de asignación está dada por
+          \[
+          T(z)= \dfrac{az+b}{cz+d}.
+          \]
+        </p>
+
+        <p>
+          Como el determinante ${\rm det}(T)\neq 0,$ entonces definimos el complejo no nulo
+          \[
+          \lambda=\frac{1}{\sqrt{det (T)}}\in\mathbb{C}^{\ast}.
+          \]
+        </p>
+
+        <p>
+          Así, construimos la transformación de Möbius $\lambda T,$ dada por la regla de asignación
+          \[
+          \lambda T(z)= \dfrac{\lambda az+\lambda b}{\lambda cz+\lambda d},
+          \]
+          la cual tiene determinante ${\rm det}(\lambda T)=1$ y es idéntica a la transformación de Möbius $T.$
+        </p>
+
+
+        <p>
+          Una de las implicaciones del hecho anterior es que cada elemento del grupo transformaciones de Möbius
+          $\mathcal{M}$ (véase ecuación \eqref{eq:grupo_transformaciones_de_Mobius_notacion})
+          tiene determinante igual a $1,$ es decir,
+          \begin{equation}\label{definicion:mobius_determinante_1}
+          \mathcal{M}=\left\{[T] : T \text{ es una transformación de Möbius tal que } {\rm det}(T)=1\right\}.
+          \end{equation}
+        </p>
+
+        <p>
+          <span class="red-txt">¡Para recordar!</span> La clase $[T]$ está conformada por las transformaciones de
+          Möbius $T$ y $-T.$ Si $T(z)=\dfrac{az+b}{cz+d},$ entonces $-T(z)=\dfrac{-az-b}{-cz-d}.$
+
+        </p>
+
+        <p>
+          <span class="red-txt">¡Importante!</span> Abusaremos del lenguaje y a lo largo del texto nos referiremos la
+          clase de equivalencia $[T]\in \mathcal{M}$ como la transformación de Möbius $T.$ De ser necesario
+          precisaremos que nos estamos refiriendo a las transformaciones $T$ y $-T,$ las cuales son idénticas.
+        </p>
+
+        <br>
+
+
+
+      </div>
+
+
+
+      <hr>
+
+
+      <div id="section2">
+        <div style="color: rgba(255, 255, 255, 0);" id="propiedades">
+          <p>Propiedades</p>
+        </div>
+
+
+        <div class="head-2 head-2-level2">
+          Propiedades
+        </div>
+
+        <p>
+          Curiosamente, cualquier transformación de Möbius puede ser escrita como la composición finita de las
+          transformaciones canónicas.
+        </p>
+
+        <div class="theorem" id="t_escriturafinita">
+          Toda tranformación de Möbius se puede escribir como la composición finita de translaciones, rotaciones,
+          homotecias y la involución.
+        </div>
+
+        <div class="proof">
+          Tomemos una transformación de Möbius $T$ dada por la regla de asignación
+          \[
+          T(z)=\dfrac{az+b}{cz+d}.
+          \]
+          Debemos estudiar los siguientes dos casos.
+
+          <p>
+            <span class="blue-txt">Caso 1.</span> Si el coeficiente $c=0,$ entonce la regla de asignación de la
+            tranformación $T$ puede ser reescrita como sigue
+            \[
+            T(z)=\dfrac{az}{d}+\dfrac{b}{d}.
+            \]
+            Así, concluimos que $T$ es una composición de una rotación seguida de una homotecia y una
+            translación.
+          </p>
+
+          <p>
+            <span class="blue-txt">Caso 2.</span> Contrariamente, si el coeficiente $c\neq 0,$ entonces podemos
+            reescribir la regla de
+            correspondencia de $T$ como sigue
+            \begin{equation}\label{eq:det_no_cero}
+            \begin{split}
+            T(z)
+            &amp;=\frac{az+b}{cz+d}=\frac{az+b+\dfrac{ad}{c}-\dfrac{ad}{c}}{cz+d}=\frac{\dfrac{a}{c}(cz+d)+b-\dfrac{ad}{c}}{cz+d},\\
+            &amp;=\dfrac{a}{c}+\frac{\dfrac{bc-ad}{c}}{cz+d}.
+            \end{split}
+            \end{equation}
+            Esta última ecuación implica que la transformación de Möbius $T$ es una composición finita de
+            translaciones, rotaciones, homotecias y la inmersión.
+          </p>
+        </div>
+
+        <p>
+          De la ecuación \eqref{eq:det_no_cero} deducimos fácilmente que si el determinante de una transformación
+          de Möbius es igual a cero, entonces esta es una transformación constante. Más precisamente:
+        </p>
+
+        <div class="corollary">
+          Si el determinante ${\rm det}(T)$ de una transformación de Möbius $T$ es igual a cero, entonces $T$ es una
+          función constante.
+        </div>
+
+        <p>
+          Al igual que la proyección estereográfica, las transformaciones de Möbius también preservan los
+          círculos generalizados del plano complejo extendido $\widehat{\mathbb{C}}.$ Recordemos que un
+          <span class="red-txt"><em>círculo generalizado</em></span> sobre el plano complejo extendido
+          $\widehat{\mathbb{C}}$ es una circunferencia euclidiana en $\mathbb{C}$ o, una línea recta euclidiana en
+          $\mathbb{C}$
+          junto con el punto $\infty$ (véase <a target="_blank" href="plano-complejo-extendido.html#def_circulo_generalizado">Definición 3, Cáp. 1</a>).
+        </p>
+
+        <div class="theorem" id="t:circulos_fundamentales">
+          Las translaciones, rotaciones, dilataciones y la involución preservan los círculos generalizados sobre el
+          plano complejo extendido $\hat{\mathbb{C}}.$
+        </div>
+
+        <div class="proof">
+          Verificaremos el teorema para las translaciones y la inmersión, los casos restantes quedan en manos del
+          lector para su verificación.
+
+          <p>
+            <span class="blue-txt">La transformación $T$ es una translación</span>. Consideremos el círculo
+            generalizado $\mathcal{C}$ sobre el plano complejo extendido $\widehat{\mathbb{C}}$ y la translación dada
+            por
+            \[
+            T(z)=z+z_{0},
+            \]
+            para algún $z_{0}=x_{0}+y_{0}i\in\mathbb{C}^{\ast}.$ Estudiamos los siguientes dos casos sobre
+            $\mathcal{C}.$
+          </p>
+
+          <p>
+            <span class="blue-txt">Si $\mathcal{C}$ es una línea recta euclidiana</span>.
+            Supongamos que el complejo $z=x+yi$ está en $\mathcal{C},$ entonces los reales $x$ y $y$ satisfacen la
+            ecuación
+            \begin{equation}\label{eq:linea_recta_prueba_teorema}
+            Bx+Cy+D=0,
+            \end{equation}
+            para algunos reales $B,C,D\in\mathbb{R},$ tal que $B$ o $C$ es no nulo.
+            Veamos que para el complejo
+            \[
+            T(z)=z+z_{0}=u+vi
+            \]
+            los valores reales $u$ y $v$ también satisfacen una ecuación general como la que se describe en
+            \eqref{eq:linea_recta_prueba_teorema}. Dado que $T(z)=z+z_{0}= (x+x_{0})+(y+y_{0})i=u+vi,$ entonces
+            \[
+            u=x+x_{0} \quad \text{ y } \quad v=y+y_{0}.
+            \]
+            Ahora, sustituimos estos términos en la ecuación \eqref{eq:linea_recta_prueba_teorema}, realizamos
+            operaciones y obtenemos
+            \begin{equation*}
+            \begin{split}
+            B(u-x_{0})+C(v-y_{0})+D&amp;=0,\\
+            Bu+Cv+(D-Bx_{0}-Cy_{0})&amp;=0.
+            \end{split}
+            \end{equation*}
+            De la anterior igualdad, podemos concluir que la imagen $T(\mathcal{C})$ es también una línea recta
+            euclidiana.
+          </p>
+
+          <p>
+            <span class="blue-txt">Si $\mathcal{C}$ es un circunferencia euclidiana</span>.
+            Supongamos que el complejo $z$ está sobre $\mathcal{C},$ es decir, satisface la ecuación
+            \begin{equation}\label{eq:circunferencia_euclidiana_prueba_teorema}
+            |z-w_{0}|=r,
+            \end{equation}
+            para algún complejo $w_{0}\in\mathbb{R}$ y un real $r&gt;0.$ Veamos que el complejo
+            \[
+            w=T(z)=z+z_{0},
+            \]
+            satisface una ecuación como la que se describe en \eqref{eq:circunferencia_euclidiana_prueba_teorema}.
+            Despejamos $z$ en la igualdad anterior, reemplazamos en la ecuación de la circunferencia euclidiana
+            $\mathcal{C}$ y obtenemos
+            \begin{equation*}
+            \begin{split}
+            |z-w_{0}| &amp; =r,\\
+            |w-z_{0}-w_{0}|&amp;=r,\\
+            |w-(z_{0}+w_{0})|&amp;=r.
+            \end{split}
+            \end{equation*}
+            De la anterior relación, se concluye que la imagen $T(\mathcal{C})$ consiste de una circunferencia
+            euclidiana con centro $(z_{0}+w_{0})$ y radio $r.$
+          </p>
+
+          <p>
+            <span class="blue-txt">Si $T$ es la involución</span>.
+            Tomemos la inmersión dada por
+            \[
+            T(z)=\frac{1}{z},
+            \]
+            y un círculo generalizado $\mathcal{C}$ sobre el plano complejo extendido $\hat{\mathbb{C}}.$ Veamos que
+            la imagen $T(\mathcal{C})$ es también un círculo generalizado. Recordemos que $\mathcal{C}$ puede ser
+            representado mediante la ecuación general
+            \begin{equation}\label{eq:circulo_generalizado}
+            A(x^2+y^{2})+2Bx+2Cy+D=0,
+            \end{equation}
+            siendo $A,B,C$ y $D$ valores reales. Si $A=0$ y al menos uno de los términos $B$ o $C$ es no nulo,
+            entonces $\mathcal{C}$ es una
+            <span class="blue-txt">línea recta euclidiana</span>. Contrariamente, si $A\neq 0$ y
+            $B^{2}+C^2-AD&gt;0,$ entonces $\mathcal{C}$ es un
+            <span class="blue-txt">circunferencia euclidiana</span>.
+          </p>
+
+          <p>
+            Ahora, consideremos el complejo no nulo $z=x+yi$ tal que $x$ y $y$ satisfacen la ecuación definida en
+            \eqref{eq:circulo_generalizado}. Veamos que para el complejo
+            \[
+            T(z)=\dfrac{1}{z}=u+vi
+            \]
+            los valores reales $u$ y $v$ también satisfacen una ecuación general como la que se describe en
+            \eqref{eq:circulo_generalizado}. Dado que $T(z)=\dfrac{1}{z}=\dfrac{\overline{z}}{|z|^2},$ entonces
+            \begin{equation}
+            u=\frac{x}{x^2+y^2}, \quad v=\frac{-y}{x^2+y^2}\quad \text{y} \quad
+            \left|\frac{1}{z}\right|^2=u^2+v^2=\dfrac{1}{x^2+y^2}.
+            \end{equation}
+            Ahora, sustituimos estos términos en la ecuación \eqref{eq:circulo_generalizado} y obtenemos
+            \[
+            A\left(\frac{1}{u^2+v^2}\right)+2B\left(\frac{u}{u^2+v^2}\right)+2C\left(\frac{-v}{u^2+v^2}\right)-D=0.
+            \]
+            Al simplificar la expresión anterior obtenemos la nueva expresión
+            \begin{equation}\label{eq:circulo_generalizado_aplicar_inmersion}
+            D(u^2+v^2)-2Bu+2Cv-A =0.
+            \end{equation}
+            Debemos explorar los siguientes casos.
+          </p>
+
+          <p>
+            <span class="blue-txt">Caso 1</span>. Si $A=0,$ entones el círculo generalizado $\mathcal{C}$
+            es un recta y su ecuación es de la forma
+            \[
+            2Bx+2Cy+D=0,
+            \]
+            tal que al menos uno de los términos $B$ o $C$ es no nulo. De la ecuación
+            \eqref{eq:circulo_generalizado_aplicar_inmersion} se sigue que las parejas $(u,v)$ en $T(\mathcal{C})$
+            satisfacen la igualdad
+            \[
+            D(u^2+v^2)-2Bu+2Cv=0.
+            \]
+            Si $D=0,$ entonces la imagen $T(\mathcal{C})$ es una línea recta euclidiana. Contrariamente, si $D\neq 0,$
+            entonces en esta última expresión completamos cuadrados, computamos y obtenemos
+            \begin{equation*}
+            \begin{split}
+            u^2-\frac{2Bu}{D}+\frac{B^2}{D^2} +v^2+\frac{2Cv}{D}+\frac{C^2}{D^2}&amp;=\frac{B^{2}}{D^{2}}+\frac{C^2}{D^2},\\
+            \left(u-\frac{B}{D}\right)^2+\left(v+\frac{C}{D}\right)^2&amp;=\frac{B^2+C^2}{D^2}\\
+            \end{split}
+            \end{equation*}
+            De la anterior igualdad, podemos concluir que la imagen $T(\mathcal{C})$ es una circunferencia euclidiana.
+          </p>
+
+          <p>
+            <span class="blue-txt">Caso 2</span>.
+            Si $A\neq 0,$ entonces el circulo generalizado $\mathcal{C}$ es una circunferencia euclidiana, cuya
+            ecuación está dada por
+            \[
+            A(x^2+y^2)+2Bx+2Cy+D=0,
+            \]
+            tal que $B ^2+C^2-AD&gt;0.$ Entonces las parejas $(u,v)$ en la imagen $T(\mathcal{C})$ satisfacen la igualdad
+            \[
+            D(u^2+v^2)-2Bu+2Cv-A =0.
+            \]
+            Si $D=0,$ entonces la imagen $T(\mathcal{C})$ es una línea recta euclidiana. Contrariamente, si $D\neq 0,$
+            dividmos entre $D$ ambos miembros de la igualdad, completamos cuadrados, realizamos operaciones y obtenemos
+            \begin{equation*}
+            \begin{split}
+            D(u^2+v^2)-2Bu+2Cv-A &amp;=0,\\
+            u^2-\frac{2Bu}{D}+\frac{B^2}{D^2}
+            +v^2+\frac{2Cv}{D}+\frac{C^2}{D^2}&amp;=\frac{B^{2}}{D^{2}}+\frac{C^2}{D^2}+\frac{A}{D},\\
+            \left(u-\frac{B}{2D}\right)^2+\left(v+\frac{C}{2D}\right)^2&amp;=\frac{B^2+C^2+AD}{D^2}.\\
+            \end{split}
+            \end{equation*}
+            De esta última expresión, podemos concluir que $T(\mathcal{C})$ es una circunferencia euclidiana, pues
+            $B^2+C^2+AD&gt;0.$ Los anteriores argumentos, prueban que la inmersión envía círculos generalizados sobre
+            círculos generalizados.
+          </p>
+        </div>
+
+
+        <p>
+          Como consecuencia del anterior resultado y el <a href="#t_escriturafinita">Teorema 2</a>, la imagen de
+          cualquier
+          círculo generalizado bajo cualquier transformación de Möbius es nuevamente un círculo generalizado,
+          <em>i.e.</em>, $T(\mathcal{C})$ es un círculo generalizado del plano Complejo Extendido
+          $\widehat{\mathbb{C}}.$
+        </p>
+
+        <div class="theorem" id="t_accion_mobius_sobre_circulos_generalizados">
+          El grupo de transformaciones de Möbius $\mathcal{M}$ actúa sobre el conjunto de todos los círculos
+          generalizados del plano Complejo Extendido $\widehat{\mathbb{C}}.$
+        </div>
+
+
+
+        <h3>Puntos fijos</h3>
+
+        <p>
+          Durante el estudio del análisis real, nos planteamos interrogantes sobre los puntos fijos de las funciones
+          real valuadas. Esta es nuestra motivación para estudiar los puntos fijos de las transformaciones de
+          Möbius. Recordemos que $z\in \widehat{\mathbb{C}}$ es un <span class="red-txt">punto fijo</span> de la
+          transformación de Möbius $T,$ si $T(z)=z.$
+        </p>
+
+        <p>
+          El primer interrogante a abordar es: ¿cuántos y cuáles son los puntos fijos de una transformación de
+          Möbius diferente de la indentidad? La siguiente exploración nos conducirá a la conlusión de que cada
+          transformación de Möbius diferente de la identidad tiene a lo más dos puntos fijos.
+        </p>
+
+        <p>
+          Si tomamos una transformación de Möbius $T\neq {\rm Id},$ dada por la regla de asignación
+          \[
+          T(z)=\dfrac{az+b}{cz+d},
+          \]
+          y suponemos que $z\in\widehat{\mathbb{C}}$ es un punto fijo de $T,$ entonces debemos estudiar la igualdad
+          $T(z)=z.$
+        </p>
+
+        <ol>
+          <li>
+            Si el coeficiente $c=0,$ entonces $T(\infty)=\infty.$ Esto significa que $z=\infty$ es un punto fijo de $T.$
+            Adicionalmente, al considerar $T(z)=z$ con $z\neq\infty,$ debemos despejamor $z$ en la igualdad
+            \[
+            \dfrac{az+b}{d}=z.
+            \]
+            Así, concluimos que otro punto de la transformación de Möbius es número complejo
+            \[
+            z=\dfrac{b}{a-d}.
+            \]
+          </li>
+          <li>
+            Contrariamente, si el coeficiente $c\neq 0,$ entonces despejamos $z$ en la ecuación $T(z)=z$ y obtenemos
+            \begin{equation*}
+            \begin{split}
+            \frac{az+b}{cz+d}&amp;=z,\\
+            az+b &amp; =cz^2+zd,\\
+            cz^2+z(d-a)-b&amp;=0.\
+            \end{split}
+            \end{equation*}
+            Las soluciones para esta última ecuación cuadrática corresponden a los puntos fijos de $T,$ es decir,
+            \[
+            z=\dfrac{-(d-a)\pm\sqrt{(d-a)^2+4cb}}{2c}.
+            \]
+          </li>
+        </ol>
+
+        <div class="theorem" id="t_identidad_fija_1">
+          La única transformación de Möbius que fija los puntos
+          $\textbf{0}, 1$ e $\infty$ es la identidad.
+        </div>
+
+        <div class="proof">
+          Supongamos que existe una de transformación de Möbius $T$ con regla de asignación
+          \[
+          T(z)=\dfrac{az+b}{cz+d},
+          \]
+          tal que $T$ fija a $\textbf{0}, 1$ e $\infty,$ es decir
+          \[
+          T(\textbf{0})=\textbf{0}, \quad T(1)=1 \quad \text{ y } \quad T(\infty)=\infty.
+          \]
+
+          <p>
+            Dado que la transformación $T$ fija al elemento $\infty,$ entonces el coeficiente $c=\textbf{0}.$ Por lo
+            tanto la regla de asignación se reescribe como
+            \[
+            T(z)=\dfrac{a}{d}z+\dfrac{b}{d}.
+            \]
+            Ahora, como $T$ fija a $\textbf{0},$ entonces
+            \[
+            T(\textbf{0})=\textbf{0}=\dfrac{b}{d}.
+            \]
+            Esta última igualdad implica que $b=0.$ Así, la regla de asignación de $T$ se reescribe de la
+            siguiente manera
+            \[
+            T(z)=\dfrac{az}{d}.
+            \]
+          </p>
+
+          <p>
+            Finalmente, como la transformación $T$ fija al $1,$ es decir
+            \[
+            T(1)=\dfrac{a}{d}=1,
+            \]
+            lo cual implica la iguadad entre coeficientes $a=d.$ De allí, se concluye que la regla de asignación de
+            $T$ está dada por $T(z)=z,$ para cada $z\in\widehat{\mathbb{C}}.$
+          </p>
+        </div>
+
+        <p>
+          Como consecuencia del anterior resultado, siempre nos es posible construir una transformación de Möbius
+          $T$ que envíe tres puntos diferentes $z_{1},z_{2},z_{3}\in\widehat{\mathbb{C}}$ en tres puntos diferentes
+          $w_{1},w_{2},w_{3}\in\widehat{\mathbb{C}},$ satisfaciendo $T(z_{i})=w_{i},$ para cada $i\in\{1,2,3\}.$
+
+        </p>
+
+        <div class="theorem" id="theo_mobius_envia_tres_puntos_en_tres_puntos">
+          Consideremos dos tripletas $(z_1,z_2,z_3)$ y $(w_1,w_2,w_3)$ conformado por puntos del plano complejo
+          extendido $\hat{\mathbb{C}}$ y además, los puntos que conforman cada tripleta son diferentes, entonces
+          existe una única transformación de Möbius $T$ tal que $T(z_i)=w_i,$ para cada $i\in\{1,2,3\}.$
+        </div>
+
+        <div class="proof">
+          Para construcción de la transformación de Möbius mencionada en el teorema seguiremos una estrategia
+          que consiste por dos pasos.
+
+          <p>
+            <span class="blue-txt">Paso 1</span>.
+            Construiremos dos transformaciones de Möbius $S$ y $M,$ con las siguientes propiedades:
+            \begin{equation}
+            \begin{array}{ccc}
+            S(z_1)=\textbf{0},&amp;S(z_2)=1, &amp; S(z_3)=\infty;\\
+            M(w_1)=\textbf{0}, &amp; M(w_2)=1,&amp; M(w_3)=\infty.
+            \end{array}
+            \end{equation}
+            Así, obtendremos la transformación de Möbius dada por la composición $M^{-1}\circ S,$ la cual
+            satisface
+            \[
+            M^{-1}\circ S(z_{i})=w_{i},\, \text{para cada}\, i\in\{1,2,3\}.
+            \]
+          </p>
+
+          <p>
+            Consideremos el caso en que ninguno de los puntos que conforma la tripleta $(z_1,z_2,z_3)$ es $\infty,$
+            entonces definimos la transformación de Möbius $S$ dada por la regla de asignación
+            \begin{equation}\label{eq:Mobius_S}
+            S(z)=\frac{(z_2-z_3)}{(z_2-z_1)}\frac{(z-z_1)}{(z-z_3)}.
+            \end{equation}
+            Notemos que la transformación de Möbius $S$ envía a los puntos $z_1,$ $z_2$ y $z_3$ en los puntos
+            $0,$ $1$ e $\infty,$ respectivamente, <em>i.e.</em>,
+            \[
+            S(z_1)=0,\quad (z_2)=1 \quad \text{ y } \quad S(z_3)=\infty.
+            \]
+            Contrariamente, si alguno de los puntos de la tripleta $(z_1,z_2,z_3)$ es $z_{i}=\infty,$ para algún
+            $i\in\{1,2,3\},$ entonces definimos la transformación $S$ como está descrita en la ecuación
+            \eqref{eq:Mobius_S}, pero suprimirmos los dos paréntesis en los que aparece este término $z_{i}.$ En el
+            caso particular, si $z_1=\infty,$ entonces
+            \[
+            S(z)=\frac{(z_2-z_3)}{(z-z_3)}.
+            \]
+          </p>
+
+          <p>
+            Usando las ideas previas en la construcción de la transformación $S,$ podemos definir una
+            transformación de Möbius $M$ tal que
+            \[
+            M(w_1)=0,\quad M(w_2)=1 \quad \text{ y } \quad
+            M(w_3)=\infty.
+            \]
+          </p>
+
+          <p>
+            Finalmente, consideramos la función composición $M^{-1}\circ S,$ la cual es también es una
+            transformación de Möbius que satisface
+            \[
+            M^{-1}\circ S(z_i)=w_i, \, \text{para cada} \, i\in\{1,2,3\}.
+            \]
+          </p>
+
+          <p>
+            <span class="blue-txt">Paso 2</span>.
+            Probaremos que la única función que satisface las condiciones del teorema es la composición
+            \begin{equation}
+            T=M^{-1}\circ S.
+            \end{equation}
+          </p>
+
+          <p>
+            Supongamos que existe otra transformación de Möbius $\overline{T}$ tal que
+            \[
+            \overline{T}(z_i)=w_i, \, \text{para cada} \, i\in\{1,2,3\}.
+            \]
+            Entonces la composición $\overline{T} \circ M\circ S^{-1}$ es una transformación de Möbius que fija
+            a los puntos $\textbf{0},$ $1$ e $\infty.$ Del Teorema (<a href="#t_identidad_fija_1">5</a>), se sigue que
+            la
+            transformación $T\circ M \circ S^{-1}$ es la función identidad $Id,$ es decir, $T\circ M \circ
+            S^{-1}(z)=Id(z)$ para cada $z\in\widehat{\mathbb{C}}.$ Por lo tanto, $\overline{T}=M^{-1}\circ S.$
+          </p>
+        </div>
+
+
+        <p>
+          De la geometría euclidiana sabemos que tres puntos distintos $z_{1},z_{2},z_{3}$ del plano Complejo
+          $\mathbb{C}$ define una circunferencia euclidiana. Incluso más, dados cualesquiera tres puntos distintos
+          $z_{1},z_{2},z_{2}$ en el plano Complejo Extendido $\widehat{\mathbb{C}}$ podemos trazar un círculo
+          extendido que pasa por los mencionados tres puntos. Ahora, si consideramos dos círculos generalizados
+          $\mathcal{C}_{1}$ y $\mathcal{C}_{2}$ del plano Complejo Extendido $\widehat{\mathbb{C}},$ entonces el Teorema
+          anterior y el Teorema \ref{t:accion_mobius_sobre_circulos_generalizados}, nos garantiza la existencia de una
+          transformación de Möbius $T$ que envía al círculo generalizado $\mathcal{C}_{1}$ sobre el círculo
+          generalizado $\mathcal{C}_{2}.$ El siguiente teorema, enuncia esta afirmación.
+        </p>
+
+        <div class="theorem" id="t_tres_puntos">
+          El grupo de transformaciones de Möbius $\mathcal{M}$ actúa transitivamente sobre el conjunto de todos
+          los círculos generalizados del plano Complejo Extendido $\widehat{\mathbb{C}}.$ En otras palabras, dados los
+          círculos generalizados $\mathcal{C}_1$ y $\mathcal{C}_2$ sobre $\widehat{\mathbb{C}},$ entonces existe una
+          transformación de Möbius $T$ que envía al círculo generalizado $\mathcal{C}_1$ sobre el círculo
+          generalizado $\mathcal{C}_2.$
+        </div>
+
+        <div class="proof">
+          Consideremos las tripletas
+          $$(z_1,z_2,z_3) \quad \text{y} \quad (w_1,w_2,w_3)$$
+          <p>
+            conformadas por puntos diferentes, tales se
+            encuentran sobre los círculos generalizados $\mathcal{C}_1$ y $\mathcal{C}_2,$ respectivamente.
+          </p>
+          <p>
+            Del <a href="#theo_mobius_envia_tres_puntos_en_tres_puntos">Teorema 6</a>, existe una transformación Möbius
+            $T$ tal que $T(z_i)=w_i$ para cada
+            $i\in\{1,2,3\}.$ Dado que las transformaciones Möbius envían círculo generalizados sobre círculos
+            generalizados
+            (véase Teorema
+            <a href="#t_accion_mobius_sobre_circulos_generalizados">Teorema 4</a>) y, como $\mathcal{C}_1$ y
+            $\mathcal{C}_2$ están determinados por las tripletas $(z_1,z_2,z_3)$ y $(w_1,w_2,w_3),$ respectivamente,
+            entonces $T(\mathcal{C}_1)=\mathcal{C}_2.$
+          </p>
+        </div>
+
+
+        <h3>La razón cruzada</h3>
+
+        <p>
+          En el estudio de la geometría euclidiana es natural preguntarse sobre aquellas relaciones que son
+          invariantes bajo transformaciones afines. Esta clase interrogantes también los podemos extiender al área
+          de las transformaciones de Möbius. En el contexto de la geometría proyectiva aparece el concepto de
+          <span class="red-txt"><em>razón cruzada o razón doble</em></span> (véase <em>e.g.</em> \cite[p.
+          77]{CoxEucli} \cite[p.
+          265]{Ceber}), el cual es un variante bajo transformaciones de Möbius.
+        </p>
+
+        <div class="definition">
+          La <span class="red-txt">razón cruzada o razón doble</span> asociada a cuatro puntos distintos $z_1,$
+          $z_2,$ $z_3$ y $z_4$ en $\widehat{\mathbb{C}},$ es
+          \begin{equation}\label{eq:razon_cruzada}
+          (z_1,z_2;z_3,z_4):=\frac{(z_1-z_3)(z_2-z_4)}{(z_1-z_2)(z_3-z_4)}.
+          \end{equation}
+          Si algún $z_j$ es $\infty,$ entonces la razón cruzada está dada mediante
+          \begin{equation*}
+          \begin{split}
+          (\infty,z_2;z_3,z_4)=&amp; \frac{(z_3-z_4)}{(z_2-z_3)},\\
+          (z_1,\infty;z_3,z_4)=&amp;-\frac{(z_3-z_4)}{(z_4-z_1)},\\
+          (z_1,z_2;\infty,z_4)=&amp;-\frac{(z_1-z_2)}{(z_4-z_1)},\\
+          (z_1,z_2;z_3,\infty)=&amp;\frac{(z_1-z_2)}{(z_2-z_3)}.\\
+          \end{split}
+          \end{equation*}
+        </div>
+
+        <p>
+          Al fijar los trez puntos $z_2,$ $z_3$ y $z_4$ de la razón cruzada podemos definir la transformación de
+          Mobius
+          \[
+          T(z)=(z,z_2;z_3,z_4)=\frac{(z-z_3)(z_2-z_4)}{(z-z_2)(z_3-z_4)},
+          \]
+          la cual envía $z_2,$ $z_3$ y $z_4$ sobre $\infty,$ $0$ y $1,$ respectivamente.
+        </p>
+
+        <div class="theorem">
+          Las transformaciones de Möbius preservan la razón cruzada, es decir si, dada la transformación de
+          Möbius $T$ y los cuatros puntos distintos $z_{1},z_{2},z_{3},z_{4}\in\widehat{\mathbb{C}},$ entonces se
+          satisface la igualdad
+          \[
+          (z_1,z_2,z_3,z_4)=(T(z_1),T(z_2);T(z_3),T(z_4)).
+          \]
+        </div>
+
+        <div class="proof">
+          El siguiente computo es necesario para la verificación de la igualdad. Tomemos transformación de Möbius
+          $T$ dada por
+          \[
+          T(z)=\dfrac{az+b}{cz+d},
+          \]
+          entonces para cualesquiera $i\neq j\in\{1,2,3,4\}$ se tiene que
+          \begin{equation}\label{t:cuentas_razon_cruzada}
+          \begin{split}
+          T(z_{i})-T(z_{j}) &amp;=\dfrac{az_{i}+b}{cz_{i}+d}-\frac{az_{j}+b}{cz_{j}+d},\\
+          &amp;\\
+          &amp;= \frac{(az_{i}+b)(cz_{j}+d)-(az_{j}+b)(cz_{i}+d)}{(cz_{i}+d)(cz_{j}+d)},\\
+          &amp;\\
+          &amp;=\frac{\cancel{\color{red}acz_{i}z_{j}}+adz_{i}+bcz_{j}+\cancel{\color{blue}bd}\cancel{-\color{red}acz_{i}z_{j}}-adz_{j}-bcz_{i}\cancel{\color{blue}-bd}}{(cz_{i}+d)(cz_{j}+d)},\\
+          &amp;\\
+          &amp;=\frac{z_{i}(ad-bc)-z_{j}(ad-bc)}{(cz_{i}+d)(cz_{j}+d)},\\
+          &amp;\\
+          &amp;=\frac{z_{i}-z_{j}}{(cz_{i}+d)(cz_{j}+d)}.\\
+          \end{split}
+          \end{equation}
+
+          <p>
+            Sustituyendo la relación anterior en la definición de razón cruzada se tiene que
+            \begin{equation}
+            \begin{split}
+            (T(z_1),T(z_2);T(z_3),T(z_4))&amp;= \dfrac{(T(z_1)-T(z_3))(T(z_2)-T(z_4))}{(T(z_1)-T(z_2))(T(z_3)-T(z_4))},\\
+            &amp;\\
+            &amp;=\dfrac{\dfrac{(z_{1}-z_{3})}{\cancel{\color{red}(cz_{1}+d)}\cancel{\color{blue}(cz_{3}+d)}}\dfrac{(z_{2}-z_{4})}{\cancel{\color{orange}(cz_{2}+d)}\cancel{\color{pink}(cz_{4}+d)}}}{\dfrac{(z_{1}-z_{2})}{\cancel{\color{red}(cz_{1}+d)}\cancel{\color{orange}(cz_{2}+d)}}\dfrac{(z_{3}-z_{4})}{\cancel{\color{blue}(cz_{3}+d)}\cancel{\color{pink}(cz_{4}+d)}}},\\
+            &amp;\\
+            &amp;=\dfrac{(z_{1}-z_{3})(z_{2}-z_{4})}{(z_{1}-z_{2})(z_{3}-z_{4})},\\
+            &amp;\\
+            &amp;=(z_{1},z_{2};z_{3},z_{4}).
+            \end{split}
+            \end{equation}
+          </p>
+        </div>
+
+        <br>
+
+      </div>
+
+      <hr>
+
+
+      <div id="section3">
+        <div style="color: rgba(255, 255, 255, 0);" id="transformaciones-de-mobius">
+          <p>Transformaciones de Mobius como matrices</p>
+        </div>
+
+
+        <div class="head-2 head-2-level2">
+          Transformaciones de Mobius como matrices
+        </div>
+
+        <p>
+          En algunos casos es dificil tratar los grupos de funciones y, para sortear las incomodidades el álgebra
+          nos indica que tal vez podamos entender este grupo desde otra perspectiva o, una mejor representación. Vamos
+          a identificar el grupo de las transformaciones de Möbius $\mathcal{M}$ (véase ecuación
+          \eqref{definicion:mobius_determinante_1}) con un grupo cociente de matrices conocido como el
+          <span class="red-txt"><em>Grupo Proyectivo Lineal Especial</em></span> ${\rm PSL}(2,\mathbb{C}).$ Recordemos
+          que el conjunto
+          $\mathfrak{M}$ conformado por las matrices de $2\times 2$
+          \[
+          A=\left (\begin{matrix}
+          a &amp; b \\
+          c &amp; d
+          \end{matrix}\right),
+          \]
+          con coeficientes $a,b,c,d\in\mathbb{C},$ tiene estructura de $\mathbb{R}$-espacio vectorial. Naturalmente,
+          identificamos a $\mathfrak{M}$ con $\mathbb{C}^4.$ Más precisamente, la matriz $A=\left (\begin{matrix}
+          a &amp; b \\
+          c &amp; d
+          \end{matrix}\right)
+          $ le correspondemos la $4$-upla $(a,b,c,d).$ Asi, $\mathfrak{M}$ está dotado con la topologia inducida
+          por la norma
+          \[
+          |A|:=\sqrt{|a|^2+|b|^2+|c|^2+|d|^2}.
+          \]
+        </p>
+
+
+        <p>
+          Por otro lado, la función determinante ${\rm det}: \mathfrak{M}\to \mathbb{C},$ definida mediante
+          \begin{equation}\label{eq:funcion_determinante}
+          {\rm det}\left (\begin{matrix}
+          a &amp; b \\
+          c &amp; d
+          \end{matrix}\right)=ad-bc,
+          \end{equation}
+          es una aplicación continua; pues es una función polinomial compleja de cuatro variables. La imagen inversa
+          del subconjunto abierto $\mathbb{C}^{\ast}$ bajo ${\rm det}$
+          \[
+          {\rm det}^{-1}(\mathbb{C}^{\ast})=\{A\in \mathfrak{M}:{\rm det}(A)\neq 0\},
+          \]
+          es un subconjunto abierto de $\mathfrak{M},$ conocido como
+          <span class="red-txt">Grupo Lineal General</span>.
+        </p>
+
+        <div class="definition">
+          El <span class="red-txt">Grupo Lineal General</span> ${\rm
+          GL}(2,\mathbb{C})$ es el conjunto conformado por las matrices de $2\times 2$
+          \[
+          A=\left (\begin{matrix}
+          a &amp; b \\
+          c &amp; d
+          \end{matrix}\right),
+          \]
+          con coeficientes $a,b,c,d\in\mathbb{C}$ y determinante ${\rm det}(A)=ad-bc\neq \textbf{0},$ junto con la
+          operación usual de multiplicación de matrices.
+        </div>
+
+        <p>
+          Recordemos que el subconjunto abierto $\mathbb{C}^{\ast}$ de $\mathbb{C}$ con el producto complejo es un
+          grupo. Usando las propiedades del determinante de matrices se verifica que la función determinante
+          \begin{equation}\label{eq:funcion_determinante_homomorfismo}
+          {\rm det}:{\rm GL}(2,\mathbb{C})\to \mathbb{C}^{\ast},
+          \end{equation}
+          es un homomorfismo sobreyectivo de grupos. Del Primer Teorema de Isomorfismos de grupo, se sigue que el kernel
+          del determinante es un subgrupo
+          \[
+          {\rm ker}({\rm det})=\left\{A\in {\rm GL}(2,\mathbb{C}): {\rm det}(A)=1\right\}\lt{\rm GL}(2,\mathbb{C}), \] y
+          es como conocido como <span class="red-txt">Grupo Lineal Especial</span>.
+
+        </p>
+
+        <div class="definition" id="definicion_SL">
+          El <span class="red-txt">Grupo Lineal Especial</span> ${\rm
+          SL}(2,\mathbb{C})$ es el conjunto conformado por las matrices de $2\times 2$
+          \[
+          A=\left (\begin{matrix}
+          a &amp; b \\
+          c &amp; d
+          \end{matrix}\right),
+          \]
+          con coeficientes $a,b,c,d\in\mathbb{C}$ y determinante ${\rm det}(A)=ad-bc=1,$ junto con la operación usual
+          de multiplicación de matrices.
+        </div>
+
+        <p>
+          Ahora, consideramos el grupo multiplicativo $\{1,-1\},$ el cual actúa sobre ${\rm SL}(2,\mathbb{C})$ por
+          multiplicación escalar. Más precisamente, la función $\alpha:\{1,-1\}\times {\rm SL}(2,\mathbb{C})\to
+          {\rm SL}(2\mathbb{C}),$ dada por
+          \[
+          \alpha(\pm 1,A)=\pm 1A
+          \]
+          es una acción. El espcio cociente
+          \[
+          {\rm PSL}(2,\mathbb{C}):={\rm SL}(2,\mathbb{C})/\{1,-1\},
+          \]
+          tiene estructura de grupo con la operación multiplicación matricial usual entre los representantes de las
+          clases, <em>i.e.</em>,
+          \begin{equation*}
+          [A][B]:=[AB],
+          \end{equation*}
+          para cualesquiera dos clases $[A],[B]\in {\rm PSL}(2,\mathbb{C}).$ Este nuevo grupo es conocido como
+          <span class="red-txt">Grupo Proyectivo Lineal Especial</span>.
+        </p>
+
+        <div class="definition" id="definicion_PSL">
+          El
+          <span class="red-txt">Grupo Proyectivo Lineal Especial</span> es el espacio cociente
+          \[
+          {\rm PSL}(2,\mathbb{C}):={\rm SL}(2,\mathbb{C})/\{1,-1\}
+          \]
+          con la operación binaria dada por
+          \begin{equation}\label{eq:proyectivo_lineal_especial}
+          [A][B]:=[AB],
+          \end{equation}
+          para cualesquiera dos clases $[A],[B]\in {\rm PSL}(2,\mathbb{C}).$
+        </div>
+
+        <p>
+          Nótese que la clase $[A]\in{\rm PSL}(2,\mathbb{C})$ está conformada por las dos matrices
+          \[
+          [A]=\{A,-A\}.
+          \]
+        </p>
+
+        <p>
+          Ya estamos preparados para identificar el grupo de transformaciones de Möbius $\mathcal{M}$ como un Grupo
+          Proyectivo Lineal Especial ${\rm PSL}(2,\mathbb{C}).$ Naturalemente, dada la clase $[A]\in{\rm
+          PSL}(2,\mathbb{C}),$ los coeficientes de una matriz $A$ pueden ser pensados como los coeficientes una
+          transformación de Möbius $T_{A}.$ Más precisamente, la matriz
+          \[
+          A=\left (\begin{matrix}
+          a &amp; b \\
+          c &amp; d
+          \end{matrix}\right),
+          \]
+          define la transformación de Möbius $T_{A}$ dada por la regla de asignación
+          \[
+          T_{A}(z)=\dfrac{az+b}{cz+d}.
+          \]
+          Notemos que la matriz
+          \[
+          -A=\left (\begin{matrix}
+          -a &amp; -b \\
+          -c &amp; -d
+          \end{matrix}\right),
+          \]
+          define la transformación de Möbius $T_{-A}$ dada por
+          \[
+          T_{-A}(z)=\dfrac{-az-b}{-cz-d}=\dfrac{-(az+b)}{-(cz+d)}=T_{A}(z).
+          \]
+        </p>
+
+        <p>
+
+          Sin embargo, ambas matrices $A,-A$ pertenecientes a la clase $[A]$ definen transformaciones de Möbius
+          $T_{A}$ y $T_{-A},$ respectivamente, que son idénticas y, a esta clase la denotamos mediante $T_{[A]}.$ Por
+          lo tanto, la clase $[A]\in{\rm PSL}(2,\mathbb{C})$ define la transformación de Möbius $T_{[A]}.$ Asi,
+          tenemos la función $\psi: {\rm PSL}(2,\mathbb{C})\to \mathcal{M},$ dada por
+          \[
+          \psi([A])=T_{[A]}.
+          \]
+        </p>
+
+        <div class="theorem">
+          La función $\psi : {\rm PSL}(2,\mathbb{C}) \to \mathcal{M}$ es un isomorfismo de grupos.
+        </div>
+
+        <div class="proof">
+          Primero verificaremos que $\psi$ es un
+          <span class="blue-txt">homeomofismo de grupos</span>. Consideremos las clases de matrices
+          \[
+          [A_{1}]=\left[\begin{matrix}
+          a_1 &amp; b_1 \\
+          c_1 &amp; d_1
+          \end{matrix}\right] \quad \text{y } \quad [A_{2}]=\left[\begin{matrix}
+          a_2 &amp; b_2 \\
+          c_2 &amp; d_2
+          \end{matrix}\right]
+          \]
+          en ${\rm PSL}(2,\mathbb{C})$ y veamos que se tiene la igualdad
+          \[
+          \psi([A_{1}][A_{2}])=\psi([A_{1}A_{2}])=\psi([A_1])\circ \psi ([A_2]).
+          \]
+
+          <p>
+            Dado que el producto de clases de matrices $[A_{1}][A_{2}]=[A_{1} A_{2}]$ está dado por
+            \[
+            [A_{1} A_{2}]=\left[\begin{matrix}
+            a_1a_2+b_1c_2 &amp; a_1b_2+b_1d_2 \\
+            c_1a_2+d_1c_2&amp; c_1b_2+d_1d_2
+            \end{matrix}\right],
+            \]
+            entonces $\psi$ asigna a la clase $[A_{1} A_{2}]$ la clase de la transformación de Möbius $\psi([A_{1}
+            A_{2}])=T_{[A_{1} A_{2}]},$ la cual está definida mediante
+            \begin{equation}\label{eq:psi_1}
+            T_{[A_{1} A_{2}]}(z)=\dfrac{(a_1a_2+b_1c_2)z+(a_1b_2+b_1d_2)}{(c_1a_2+d_1c_2)z+(c_1b_2+d_1d_2)}.
+            \end{equation}
+            Por otro lado, $\psi$ asigna a las clases de matrices $[A_{1}]$ y $[A_{2}]$ las transformaciones de Möbius
+            $T_{[A_1]}$ y $T_{[A_2]},$ respectivamente, donde
+            \begin{equation*}
+            T_{[A_{1}]}(z)=\dfrac{a_1z+b_1}{c_1z+d_1} \quad \text{ y } \quad T_{[A_{2}]}(z)=\dfrac{a_2z+b_2}{c_2z+d_2}.
+            \end{equation*}
+            Entonces, la función composición $\psi([A_{1}])\circ \psi([A_{2}])=T_{[A_{1}]}\circ T_{[A_{2}]},$ donde
+            \begin{equation}\label{eq:psi_2}
+            \begin{split}
+            T_{[A_{1}]}\circ T_{[A_{2}]}(z)&amp;=
+            \dfrac{a_1\left(\dfrac{a_2z+b_2}{c_2z+d_2}\right)+b_1}{c_1\left(\dfrac{a_2z+b_2}{c_2z+d_2}\right)+d_1},\\
+            &amp;\\
+            &amp;=\dfrac{\dfrac{a_{1}(a_2z+b_2)+b_{1}(c_2z+d_2)}{\cancel{\color{red}c_2z+d_2}}}{\dfrac{c_{1}(a_2z+b_2)+d_{1(c_2z+d_2)}}{\cancel{\color{red}c_2z+d_2}}},\\
+            &amp;\\
+            &amp;= \frac{(a_1a_2+b_1c_2)z+(a_1b_2+b_1d_2) }{(c_1a_2+d_1c_2)z+(c_1b_2+d_1d_2)}.
+            \end{split}
+            \end{equation}
+            Comparando las ecuaciones \eqref{eq:psi_1} y \eqref{eq:psi_2} se concluye que
+            \[
+            \psi([A_{1} A_{2}])=T_{[A_{1} A_{2}]}=T_{[A_1]}\circ T_{[A_2]}=\psi([A_1])\circ \psi([A_2]).
+            \]
+            En otras palabras, la función $\psi$ es un homomorfismo de grupos.
+          </p>
+
+          <p>
+            <span class="blue-txt">Sobreyectividad</span>. Es muy sencilla de verificar. Si consideramos
+            transformación de Möbius $T\in \mathcal{M},$ donde $T$ está dada por la regla de asignación
+            \[
+            T(z)=\dfrac{az+b}{cz+d},
+            \]
+            basta tomar la clase de matrices dada por los coeficientes de la transformación, es decir
+            \[
+            [A]=\left[\begin{matrix}
+            a &amp; b \\
+            c &amp; d
+            \end{matrix}\right].
+            \]
+            Para esta clase se tiene $\psi([A])=[T].$
+          </p>
+
+          <p>
+            <span class="blue-txt">Inyectividad</span>. Probaremos que el kernel de $\psi$ está
+            conformado solo por la clase de la matriz identidad <em>i.e.</em>,
+            $\rm Ker(\psi)=\{[\rm Id]=\{\rm Id,-\rm Id\}\}.$ Tomemos la clase de matrices
+            \[
+            [A]=\left[\begin{matrix}
+            a &amp; b \\
+            c &amp; d
+            \end{matrix}\right]\in {\rm Ker}(\psi),
+            \]
+            entonces $\psi([A])=T_{[A]}$ es la clase conformada por la transformación identidad y menos identidad, es
+            decir
+            \[
+            T_{A}(z)={\rm Id}(z)=\dfrac{az +b}{ cz+d}=\dfrac{\pm 1z+0}{0z+\pm 1}.
+            \]
+            De esta última relación se deduce que los coeficienes de la transformación de Möbius $T$ satisfacen
+            las igualdades
+            \[
+            b=c=0 \quad \text{ y } \quad a=d=\pm 1.
+            \]
+            Por lo tanto, el kernel ${\rm Ker}(\psi)$ está conformado por la clase de la matriz identidad $[\rm Id],$
+            es decir ${\rm Ker}(\psi)=\{[\rm Id]\}.$
+          </p>
+        </div>
+
+        <br>
+
+      </div>
+
+      <hr>
+
+      <div id="section4">
+        <div style="color: rgba(255, 255, 255, 0);" id="clasificacion-de-mobius">
+          <p>Clasificación de las transformaciones de Möbius</p>
+        </div>
+
+
+        <div class="head-2 head-2-level2">
+          Clasificación de las transformaciones de Möbius
+        </div>
+
+        <p>
+          En adelante abusaremos del lenguaje y nos referiremos la clase de equivalencia $[T]\in \mathcal{M}$ como la
+          transformación de Möbius $T.$
+        </p>
+
+        <p>
+          Las transformaciones de Möbius las podemos clasificar mediante conjugación y
+          <span class="red-txt">traza</span>.
+          Desde alguno de estos puntos de vista, cada transformación se sitúa como
+          <span class="red-txt">parabólica</span>,
+          <span class="red-txt">eliptica</span>,
+          <span class="red-txt">hiperbólica</span> o
+          <span class="red-txt">loxodrómica</span>. Esta asignación
+          viene motivada por la clasificación de la cónicas.
+        </p>
+
+        <div class="theorem">
+          Para la cónica $Q$ con excentriciad $\varepsilon$ se satisface:
+          <ol>
+            <li>
+              Si $\varepsilon\lt 1,$ entonces la cónica $Q$ es una elipse.
+            </li>
+            <li>
+              $\varepsilon=1,$ entonces la cónica $Q$ es una parábola.
+            </li>
+            <li>
+              $\varepsilon]\gt 1,$ entonces la cónica $Q$ es una hipérbola.
+            </li>
+          </ol>
+
+        </div>
+
+        <p>
+          Recordemos que todos los puntos de una
+          <span class="red-txt">cónica</span> $Q\subset\mathbb{R}^{2}$ satisfacen que el
+          cociente entre sus distancias a un punto fijo (foco) y a una recta fija (directriz) es siempre el mismo
+          número $\varepsilon.$ A este número lo conocemos como la
+          <span class="red-txt">excentricidad de la cónica</span>.
+        </p>
+
+
+      </div>
+
+      <hr>
+
+      <div id="section5">
+        <div style="color: rgba(255, 255, 255, 0);" id="clasificacion-mediante-conjugacion">
+          <p>Clasificación mediante conjugación</p>
+        </div>
+
+
+        <div class="head-2 head-2-level2">
+          Clasificación mediante conjugación
+        </div>
+
+        <p>
+          Recordemos que cualquier transformación de Möbius $T$ diferente de la identidad tiene a lo más dos
+          puntos fijo. Vamos a conjugar a $T$ para entenderla como una translación o una homotecia. Más
+          precisamente, vamos a construir adecuandamente otra transformación de Möbius $M$ tal que $M^{-1} \circ
+          T\circ M$ es una translación o una homotecia.
+        </p>
+
+        <div class="definition">
+          Consideremos las transformaciones de Möbius $T$ y $M.$ Diremos que $T$ es
+          <span class="red-txt">conjugada</span>
+          a $M$ en ${\rm
+          PSL}(2,\mathbb{C}),$ si existe una transformación $\varphi \in{\rm PSL}(2,\mathbb{C})$ tal que
+          $\varphi^{-1}\circ T \circ \varphi=M.$
+        </div>
+
+        <p>
+          Para iniciar vamos a introducir un resultado que relaciona los puntos fijos de una transformación de
+          Möbius y su conjugada.
+        </p>
+
+        <div class="lemma" id="l_puntos_fijos">
+          Consideremos las transformaciones de Möbius $T$ y $\varphi.$ El punto $z_0\in\widehat{\mathbb{C}}$ es un
+          punto fijo de la transformación de Möbius $\varphi^{-1}\circ T\circ \varphi,$ si y solo si,
+          $\varphi(z_0)$ es un punto fijo de $T.$
+        </div>
+
+        <div class="proof">
+          El elemento $z_0\in\widehat{\mathbb{C}}$ es un punto fijo de la composición $\varphi^{-1}\circ T\circ
+          \varphi,$ si y solo si, $\varphi^{-1}\circ T\circ \varphi(z_0)=z_0,$ si y solo si, $T\circ
+          \varphi(z_0)=\varphi(z_0),$ si y solo si, $\varphi(z_0)$ es un punto fijo de $T.$
+        </div>
+
+        <div class="theorem">
+          Si $T$ es una transformación de Möbius diferente de la identidad, entonces se satisface:
+
+          <ol>
+            <li>
+              Si $T$ fija exactamente un punto, entonces $T$ es conjugada en ${\rm PSL}(2,\mathbb{C})$ a una
+              translación. En otras palabras, existe un elemento $\varphi\in{\rm PSL}(2,\mathbb{C})$ tal que
+              $\varphi^{-1}\circ T\circ \varphi$ está dada por
+              \[
+              \varphi^{-1}\circ T\circ \varphi(z)=z+b,
+              \]
+              para algún $b\in\mathbb{C}^{\ast}.$
+            </li>
+            <li>
+              Contrariamente, si $T$ fija exactamente dos puntos, entonces existe un elemento $\varphi\in{\rm
+              PSL}(2,\mathbb{C})$ tal que la conjugación
+              $\varphi^{-1}\circ T\circ \varphi$ está dada por la fórmula
+              \[
+              \varphi^{-1}\circ T\circ \varphi(z)= \alpha z,
+              \]
+              para algún $\alpha\in\mathbb{C}^{\ast}.$
+            </li>
+          </ol>
+        </div>
+
+
+        <div class="proof">
+          Consideremos la transformacionón de Möbius $T$ y supongamos que $T$ tiene exactamente
+          <span class="blue-txt">uno punto fijo</span>
+          $z_0\neq \infty.$ Entonces consideramos la
+          transformación de Möbius $\varphi$ dada por
+          \[
+          \varphi(z)=\frac{1}{z-z_0},
+          \]
+          la cual envía a $z_0$ en $\infty.$ Como $\varphi^{-1}(\infty)=z_{0}$ es un punto fijo de $T,$ del
+          <a href="#l_puntos_fijos">Lema 4</a> se sigue que $\infty$ es un punto fijo de la composición
+          \[
+          \varphi\circ T \circ \varphi^{-1}.
+          \]
+
+          <p>
+            Este hecho implica que la composición anterior es de la forma \[
+            \varphi\circ T\circ \varphi^{-1}(z)=a z+b,
+            \]
+            para algunos $a,b\in\mathbb{C}^{\ast}.$ Como la transformación $T$ solo tiene un punto fijo, entonces
+            $\varphi\circ T \circ \varphi^{-1}$ también tiene un único punto fijo, ello implica que su regla de
+            asignación está dada por
+            \[
+            \varphi^{-1}\circ T\circ\varphi (z)=z+b.
+            \]
+          </p>
+
+          <p>
+            Contrariamente, supongamos que la transformación de Möbius $T$ tiene
+            exactamente
+            <span class="blue-txt">dos puntos fijos</span>
+            $z_0\neq z_1\in \widehat{\mathbb{C}}.$ Entonces
+            consideramos la transformación de Möbius $\varphi$ dada por
+            \[
+            \varphi(z)= \frac{z-z_0}{z-z_1},
+            \]
+            la cual envía a $z_0$ en $\textbf{0}$ y, a $z_1$ en $\infty,$ respectivamente. Dada que
+            $\varphi^{-1}(\textbf{0})=z_{1}$ y $\varphi^{-1}(\infty)=z_{1}$ son puntos fijos de $T,$ del
+            <a href="#l_puntos_fijos">Lema 4</a> se sigue que la transformación de Möbius $\varphi^{-1} \circ T \circ
+            \varphi$
+            tiene a $\textbf{0}$ y $1$ como puntos fijos. Ello implica que la regla de asignación de esta
+            composición está dada por
+            \[
+            \varphi^{-1} \circ T \circ \varphi(z)=\alpha z,
+            \]
+            para algún $\alpha\in\mathbb{C}^{\ast}.$
+          </p>
+        </div>
+
+
+        <div class="definition">
+          La transformación de Möbius $T\neq {\rm Id}$ es llamada
+          <span class="red-txt">parabólica</span>
+          si es conjugada en ${\rm PSL}(2,\mathbb{C})$ a una translación. Contrariamente, si la
+          transformación de Möbius $T\neq {\rm Id}$ es conjugada en $PSL(2,\mathbb{C})$ a una transformación $M$
+          dada por
+          \[
+          M(z)= \alpha z,
+          \]
+          para algún $\alpha\in\mathbb{C}^{\ast}.$ Entonces:
+
+          <ol>
+            <li>
+              Si $|\alpha|=1$ y $\alpha \neq 1,$ diremos que $T$ es
+              <span class="red-txt">elíptica</span>.
+            </li>
+            <li>
+              Si $\alpha \in \mathbb{R},$ llamaremos a $T$
+              <span class="red-txt">hiperbólica</span>.
+            </li>
+            <li>
+              Si $|\alpha|\neq 1$ y $\alpha\notin \mathbb{R},$ diremos que $T$ es
+              <span class="red-txt">loxodrómica</span>.
+            </li>
+          </ol>
+        </div>
+
+        <br>
+
+        <div class="head-2 head-2-level3" id="clasificacion-mediante-conjugacion">
+          Clasificación mediante la traza
+        </div>
+
+        <p>
+          <span class="red-txt">¡Importante!</span> A lo largo de esta sección, a menos que lo especifiquemos,
+          identificaremos el grupo de
+          transformación de Möbius $\mathcal{M}$ con el grupo ${\rm PSL}(2,\mathbb{C}).$
+        </p>
+
+        <p>
+          La
+          <span class="red-txt">traza</span> de la matriz
+          \[
+          A=\left (\begin{matrix}
+          a &amp; b \\
+          c &amp; d
+          \end{matrix}\right),
+          \]
+          en $\mathfrak{M}$ es la suma de los términos sobre su diagonal principal, es decir,
+          \[
+          {\rm tr}(A)=a+d.
+          \]
+          Algunas de las propiedades básicas de la traza son enunciadas a continuación. Invitamos al lector a
+          verificarlas.
+        </p>
+
+        <div class="theorem" id="t_propiedades_traza_una_matriz">
+          Dadas las matrices $A$ y $B$ en ${\rm GL}(2,\mathbb{C}),$ entonces se satisfacen las siguientes propiedades de
+          la traza:
+
+          <ol>
+            <li>
+              ${\rm tr}(A+B)={\rm tr}(A)+{\rm tra}(B).$
+            </li>
+            <li>
+              ${\rm tr}(\alpha A)=\alpha{\rm tr}(A),$ siendo $\alpha$ cualquier complejo no nulo.
+            </li>
+            <li>
+              ${\rm tr}(AB)={\rm tra}(A){\rm tr}(B).$
+            </li>
+          </ol>
+        </div>
+
+        <p>
+          Usando la propiedad 3. enunciada anteriormente y computando, podemos probar que la traza es
+          invariante bajo conjugación en ${\rm GL}(2,\mathbb{C}).$ Más precisamente:
+
+        </p>
+
+        <div class="theorem">
+          Dadas las matrices $A_{1}$ y $A_{2}$ en ${\rm GL}(2,\mathbb{C}),$ entonces
+          \[
+          {\rm tr}(A_{2}^{-1}A_{1}A_{2})={\rm tr }(A_{1}).
+          \]
+        </div>
+
+        <div class="proof">
+          Notemos que la igualdad ${\rm tr}(A_{2}^{-1}A_{1}A_{2})={\rm tr}(A_{1})$ es cierta, si y solo si, es cierta la
+          igualdad
+          \begin{equation}
+          \begin{split}
+          {\rm tr}(A_{2}){\rm tr}(A_{2}^{-1}A_{1}A_{2})&amp;={\rm tr}(A_{2}){\rm tr}(A_{1}),\\
+          {\rm tr}(A_{2}A_{2}^{-1}A_{1}A_{2})&amp;={\rm tr}(A_{2}A_{1}),\\
+          {\rm tr}(A_{1}A_{2})&amp;={\rm tr}(A_{2}A_{1}).
+          \end{split}
+          \end{equation}
+
+          <p>
+            Para probar el resultado, basta verificar que las trazas de los productos matriciales $A_{1}A_{2}$ y
+            $A_{2}A_{1}$ coinciden. Si $A_{1}=\left (\begin{matrix}
+            a_{1} &amp; b_{1} \\
+            c_{1} &amp; d_{1}
+            \end{matrix}\right)$ y $A_{2}=\left (\begin{matrix}
+            a_{2} &amp; b_{2} \\
+            c_{2} &amp; d_{2}
+            \end{matrix}\right)
+            ,$ entonces
+            \[
+            A_{1} A_{2}=\left[\begin{matrix}
+            {\color{red}a_{1}a_{2}}+{\color{blue}b_{1}c_{2}} &amp; a_{1}b_{2}+b_{1}d_{2} \\
+            c_{1}a_{2}+d_{1}c_{2}&amp; {\color{orange}c_{1}b_{2}}+{\color{green}d_{1}d_{2}}
+            \end{matrix}\right] \quad \text{ y } \quad
+            A_{2} A_{1}=\left[\begin{matrix}
+            {\color{red} a_{2}a_{1}}+{\color{orange}b_{2}c_{1}} &amp; a_{2}b_{1}+b_{2}d_{1} \\
+            c_{2}a_{1}+d_{2}c_{1}&amp; {\color{blue}c_{2}b_{1}}+{\color{green}d_{2}d_{1}}
+            \end{matrix}\right].
+            \]
+          </p>
+          <p>
+            Del computo anterior, se sigue que la traza de los productos matriciales $A_{1}A_{2}$ y $A_{2}A_{1}$
+            satisfacen que
+            \[
+            {\rm
+            tr}(A_{1}A_{2})={\color{red}a_{1}a_{2}}+{\color{blue}b_{1}c_{2}}+{\color{orange}c_{1}b_{2}}+{\color{green}d_{1}d_{2}}={\rm
+            tr}(A_{2}A_{1}).
+            \]
+          </p>
+        </div>
+
+        <br>
+
+        <p>
+          No es posible extender naturalmente el concepto de traza a una clase de matrices $[A]$ de ${\rm
+          PSL}(2,\mathbb{R}),$ porque los valores de las trazas de las matrices en dichas clases no coinciden. Más
+          precisamente,
+          la clase $[A]\in{\rm PSL}(2,\mathbb{C})$ está conformada por las dos matrices
+          \[
+          [A]=\{A,-A\},
+          \]
+          donde
+          \[
+          {\rm tr}(A)=a+d \quad \text{ y } \quad {\rm tr }(-A)=-(a+d)=-{\rm tr}(A).
+          \]
+          Esto significa que la traza de la clase $[A]$ toma dos valores
+          \[
+          {\rm tr}[A]=\pm (a+d),
+          \]
+          y por lo tanto, no está bien definida. Sin embargo, para evitar este inconveniente, podemos definir el valor
+          \[
+          {\color{blue}\rm Tr}[A]=({\rm tr}(A))^{2}=(a+d)^{2}.
+          \]
+        </p>
+
+        <div class="definition">
+          La
+          <span class="red-txt">traza</span>
+          de la clase $[A]\in {\rm
+          PSL}(2,\mathbb{C})$ es el valor
+          \[
+          {\color{blue} \rm Tr}[A]=({\rm tr}(A))^{2}.
+          \]
+        </div>
+
+        <p>
+          Vamos a entender la traza de una transformación Möbius a partir de sus <em>multiplicadores</em>.
+          Recordemos que una transformación de Möbius $T$ parabólica es conjugada a una translación $M,$ dada
+          por
+          \[
+          M(z)=z+b,
+          \]
+          para algún complejo no nulo $b.$ Dicha transformación $M$ está determinada por la clase de la matriz
+          \begin{equation}\label{ec:multiplicadores_parabolicas}
+          \left (\begin{matrix}
+          1 &amp; b \\
+          0 &amp; 1
+          \end{matrix}\right).
+          \end{equation}
+          en ${\rm PSL}(2,\mathbb{C}).$
+          Contrariamente, si la transformación de Möbius $T$ tiene dos puntos fijos, entonces es conjugada a una
+          tranformación de Möbius $M,$ dada por
+          \[
+          M(z)=\alpha z,
+          \]
+          para algún complejo no nulo $\alpha\neq 1.$ Dicha transformación $M$ está determinada por la clase de la
+          matriz
+          \begin{equation}\label{ec:multiplicadores_no_parabolicas}
+          \left (\begin{matrix}
+          \sqrt{\alpha} &amp; 0 \\
+          0 &amp; \dfrac{1}{\sqrt{\alpha}}
+          \end{matrix}\right).
+          \end{equation}
+          en ${\rm PSL}(2,\mathbb{C}).$ Los términos al cuadrado que aparecen sobre la diagonal principal de las
+          matrices que representan a las diferentes transformaciones de Möbius (véase ecucaciones
+          \eqref{ec:multiplicadores_parabolicas} y \eqref{ec:multiplicadores_no_parabolicas}) se les conoce como
+          <span class="red-txt">multiplicadores</span>.
+        </p>
+
+        <div class="definition">
+          Dada la transformación de Möbius $T$ diferente de la identididad. Entonces
+
+          <ol>
+            <li>
+              Si $T$ es parabólica, entonces se define su
+              <span class="red-txt">multiplicador</span>
+              como $\alpha=1.$
+            </li>
+            <li>
+              Si $T$ es conjugada a la transformación $M(z)=\alpha z,$ para algún complejo no nulo $\alpha\neq 1,$
+              entonces los valores $\alpha$ y $\dfrac{1}{\alpha}$ son los
+              <span class="red-txt">multiplicadores</span>
+              de $T.$
+            </li>
+          </ol>
+        </div>
+
+        <p>
+          Dado que la traza de una matriz es invariante bajo conjugación, entonces
+          \begin{equation}\label{ec:relacion_multiplicadores_traza}
+          \begin{split}
+          {\color{blue}\rm Tr}(T)={\color{blue}\rm Tr}(M)=({\rm
+          tr}(M))^{2}&amp;=\left(\sqrt{\alpha}+\frac{1}{\sqrt{\alpha}}\right)^{2},\\
+          &amp;=\alpha+2+\frac{1}{\alpha}.\\
+          \end{split}
+          \end{equation}
+        </p>
+
+        <div class="theorem">
+          Consideremos la transformación de Möbius $T$ con traza ${\color{blue}\rm Tr}[T].$ Entonces
+          <ol>
+            <li>
+              $T$ es parabólica, si y solo si, ${\color{blue}\rm Tr}[T]=({\rm tr}(T))^{2}=4.$
+            </li>
+            <li>
+              $T$ es hiperbólica, si y solo si, ${\color{blue}\rm Tr}[T]=({\rm tr}(T))^{2}&gt;4.$
+            </li>
+            <li>
+              $T$ es elíptica, si y solo si, ${\color{blue}\rm Tr}[T]=({\rm tr}(T))^{2}\lt4.$
+            </li>
+            <li>
+              $T$ es loxodrómica, si y solo si, ${\color{blue}\rm Tr}[T]=({\rm tr}(T))^{2} \notin [0,\infty].$
+            </li>
+          </ol>
+        </div>
+
+        <div class="proof">
+          Iniciaremos probando la condición
+          <span class="blue-txt">suficiente</span>
+          de cada inciso.
+          <ol>
+            <li>
+              Supongamos que $T$ es
+              <span class="blue-txt">parabólica</span>, dado que el multiplicador de $T$ es $\alpha=1,$
+              entonces de la ecuación \eqref{ec:relacion_multiplicadores_traza} se sigue que
+              \[
+              {\color{blue}\rm Tr}(T)=1+2+\frac{1}{1}=4.
+              \]
+            </li>
+            <li>
+              Supongamos que $T$ es
+              <span class="blue-txt">hiperbólica</span>, entonces es conjugada a una transformación de
+              $M$ dada por
+              \[
+              M(z)=\alpha z=\dfrac{\sqrt{r} z+0}{0z+1/\sqrt{r}},
+              \]
+              donde $r$ es un real positivo. Notemos que la transformación $M$ está determinada por la clase de la
+              matriz
+              \[
+              \left (\begin{matrix}
+              \sqrt{r} &amp; 0 \\
+              0 &amp; 1/\sqrt{r}
+              \end{matrix}\right).
+              \]
+              en ${\rm PSL}(2,\mathbb{C}).$ Así, los multiplicadores de $T$ son $\sqrt{r}$ y $\dfrac{1}{\sqrt{r}}.$ De
+              la ecuación \eqref{ec:relacion_multiplicadores_traza} se sigue que
+              \begin{equation*}
+              {\color{blue}\rm Tr}(T)=r+2+\frac{1}{r}.
+              \end{equation*}
+              Ahora, vamos a verificar la desigualdad
+              \[
+              r+2+\frac{1}{r}&gt;4,
+              \]
+              usando la relación $\left(\sqrt{r}-\dfrac{1}{\sqrt{r}}\right)^{2}&gt;0.$ Entonces
+
+              \begin{align}
+              \left(\sqrt{r}-\frac{1}{\sqrt{r}}\right)^{2}&amp;&gt;0,\notag\\
+              r-2+\frac{1}{r}&amp;&gt;0,\label{ec:diferencia_multiplicadores}\\
+              r-2+\frac{1}{r}+{\color{red}4}&amp;&gt;{\color{red}4},\notag\\
+              r+2+\frac{1}{r}&amp;&gt;4.\notag
+              \end{align}
+            </li>
+            <li>
+              Supongamos que $T$ es
+              <span class="blue-txt">elíptica</span>, entonces es conjugada a una transformación de
+              Möbius $M,$ dada por
+              \[
+              M(z)={\rm e}^{i\theta} z= \dfrac{ \rm e^{i\theta/2}z+0 }{ 0z+\rm e^{-i\theta/2} } ,
+              \]
+              para algún $\theta\in (0,2\pi).$ Notemos que la transformación $M$ está determinada por la clase de
+              la matriz
+              \[
+              \left (\begin{matrix}
+              {\rm e}^{i\theta/2} &amp; 0 \\
+              0 &amp; {\rm e}^{-i\theta/2}
+              \end{matrix}\right).
+              \]
+              en ${\rm PSL}(2,\mathbb{C}).$ Dado que la traza de una matriz es invariante bajo conjugación, entonces
+              \begin{equation*}
+              \begin{split}
+              {\color{blue}\rm Tr}(T)={\color{blue}\rm Tr}(M)=({\rm tr}(M))^{2}&amp;=({\rm e}^{i\theta/2}+{\rm
+              e}^{-i\theta/2})^{2},\\
+              &amp;=(\cos (\theta/2)+i\sin (\theta/2)+\cos (-\theta/2)+i\sin (-\theta/2))^{2},\\
+              &amp;=(\cos (\theta/2)+\cancel{\color{red}i\sin (\theta/2)}+\cos (\theta/2)-\cancel{\color{red}i\sin
+              (\theta/2)})^{2},\\
+              &amp;=(2\cos(\theta/2))^{2}.
+              \end{split}
+              \end{equation*}
+              Dado que $2\cos(\theta/2)\in (-2,2),$ para $\theta \in (0,2\pi),$ entonces ${\color{blue}\rm Tr}(T)&lt; 4.$
+                </li>
+            <li>
+              Supongamos que $T$ es
+              <span class="blue-txt">loxodrómica</span>, entonces es conjugada a una translación $M$
+              dada por
+              \[
+              M(z)=r{\rm e}^{i\theta}z=\dfrac{\sqrt{r} \rm e ^{i\theta/2}z+0}{0z+\dfrac{\rm
+              e^{-i\theta/2}}{\sqrt{r}}},
+              \]
+              para algún real positivo $r\neq 1$ y algún $\theta\in(0,2\pi).$ Notemos que la transformación $M$
+              está determinada por la clase de la matriz
+              \[
+              \left (\begin{matrix}
+              \sqrt{r}\rm e^{i\theta/2} &amp; 0 \\
+              0 &amp; \dfrac{\rm e^{-i\theta/2}}{\sqrt{r}}
+              \end{matrix}\right).
+              \]
+              en ${\rm PSL}(2,\mathbb{C}).$ Así, los multiplicadores de $T$ son $r{\rm e}^{i\theta}$ y
+              $\dfrac{1}{r}e^{-i\theta}.$ De la ecuación \eqref{ec:relacion_multiplicadores_traza} se sigue que
+              \begin{equation*}
+              \begin{split}
+              {\color{blue}\rm Tr}(T)&amp;=r{\rm e}^{i\theta}+2+\frac{1}{r}e^{-i\theta},\\
+              &amp;=r\left(\cos\theta+i\sin\theta\right)+2+\frac{1}{r}\left(\cos\theta-i\sin\theta\right),\\
+              &amp;=\left(r+\frac{1}{r}\right)\cos\theta+2+i\left(r-\frac{1}{r}\right)\sen\theta.
+              \end{split}
+              \end{equation*}
+              Vamos a argumentar que $\left(r-\dfrac{1}{r}\right)\sen\theta\neq 0.$ Supongamos que
+              $\left(r-\dfrac{1}{r}\right)\sen\theta= 0$ y $\left(r+\dfrac{1}{r}\right)\cos\theta+2$ es un real no
+              negativo. Entonces
+              \[
+              r-\dfrac{1}{r}=0 \quad \text{ o } \quad \sen\theta= 0.
+              \]
+              Para el primer caso, tendríamos que $r=1,$ pero para las transformaciones loxodrómicas se satisface
+              que $r\neq 1.$ Ahora, para el siguiente caso se tiene que $\sen \theta=0$ y $\theta=\pi.$ Esta última
+              igualdad implica que
+              \begin{equation}\label{ec:desigualdad_caso_loxodromico_traza}
+              \left(1+\frac{1}{r}\right)\cos\pi+2=-\left(r+\frac{1}{r}\right)+2,
+              \end{equation}
+              el cual es no negativo. Sin embargo, de la ecuación \eqref{ec:diferencia_multiplicadores} se tiene que
+              \[
+              r+\frac{1}{r}&gt;2,
+              \]
+              esta última desigualdad implica que el término descrito en la ecuación
+              \eqref{ec:desigualdad_caso_loxodromico_traza} es negativo.
+            </li>
+          </ol>
+
+          <p>
+            Finalmente, probaremos la condición
+            <span class="blue-txt">necesaria</span>
+            de los incisos.
+          </p>
+
+          <ol>
+            <li>
+              Supongamos que ${\color{blue}\rm Tr}(T)=4.$ Usando la relación descrita en
+              \eqref{ec:relacion_multiplicadores_traza} se sigue que los multiplicadores de $T$ satisfacen
+              \begin{equation}
+              \begin{split}
+              {\color{blue}\rm Tr}(T)&amp;=\alpha+2+\frac{1}{\alpha}=4.
+              \end{split}
+              \end{equation}
+              Esto implica que $\alpha$ satisface la ecuación
+              \begin{equation}
+              \begin{split}
+              \alpha^{2}+2\alpha+1&amp;=4\alpha,\\
+              \alpha^{2}-2\alpha +1&amp;=0,\\
+              (\alpha-1)^{2}&amp;=0.\\
+              \end{split}
+              \end{equation}
+              Por lo tanto, los multiplicadores de $T$ son $1$ y $\dfrac{1}{1},$ respectivamente. Dado que las
+              transformaciones elípticas, hiperbólicas y loxodrómicas no tienen estos valores como
+              multiplicadores, entonces $T$ debe ser parabólica.
+            </li>
+            <li>
+              Asumamos que ${\color{blue}\rm Tr}(T)&gt;4.$ Usando la relación descrita en
+              \eqref{ec:relacion_multiplicadores_traza} se sigue que los multiplicadores de $T$ satisfacen
+              \begin{equation}
+              \begin{split}
+              {\color{blue}\rm Tr}(T)&amp;=\alpha+2+\frac{1}{\alpha}&gt;4.
+              \end{split}
+              \end{equation}
+              Esto implica que $\alpha$ el un complejo que satisface la inecuación
+              \begin{equation}
+              \begin{split}
+              \alpha^{2}+2\alpha+1&amp;&gt;4\alpha,\\
+              \alpha^{2}-2\alpha +1&amp;&gt;0,\\
+              (\alpha-1)^{2}&amp;&gt;0.\\
+              \end{split}
+              \end{equation}
+              Por lo tanto, $\alpha$ es un real tal que $\alpha \in (-\infty,1)\cup (1,\infty).$ Dado que las
+              transformaciones elípticas y loxodrómicas no tienen reales como multiplicadores, entonces $T$ debe ser
+              una transformación hiperbólica.
+            </li>
+            <li>
+              Supongamos que ${\color{blue}\rm Tr}(T)\lt 4,$ entonces los multiplicadores de la transformación de
+              Möbius $T$ deben de satisfacer la desigualdad \[ \alpha +2 +\dfrac{1}{\alpha}\lt4. \] De los incisos
+              $\textbf{1.}$ y $\textbf{2.}$ ya demostrados se sigue que $\alpha=r{\rm e}^{i\theta},$ para alún $r&gt;0$
+              y algún $\theta\in (0,2\pi).$ Si $r\neq1,$ es decir $T$ es loxodrómica, entonces de la condició
+              suficiente del inciso \textbf{(4)}, se sigue que $\alpha +2 +\dfrac{1}{\alpha}$ es un complejo que no
+              pertene al intervalo $[0,\infty].$ Este hecho es una contradicción, por lo tanto, $T$ es elíptica.
+            </li>
+            <li>
+              Asumamos que ${\color{blue}\rm Tr}(T)\notin [0,\infty].$ Como consecuencia de la prueba de los tres
+              incisos anteriores ya demostrados, se concluye que $T$ no es ningua de las siguientes: paraboólica,
+              hiperbólica y elíptica. Por lo tanto, $T$ debe ser loxodrómica.
+            </li>
+          </ol>
+        </div>
+
+        <br>
+
+      </div>
+
+      <hr>
+
+
+      <div id="section6">
+        <div style="color: rgba(255, 255, 255, 0);" id="problemas">
+          <p>Problemas</p>
+        </div>
+
+
+        <div class="head-2 head-2-level2">
+          Problemas
+        </div>
+
+
+        <ol>
+          <li>
+            Prueba que el conjunto ${\rm Homeo}(\widehat{\mathbb{C}})$
+            de todos los homeomorfismos desde el plano Complejo Extendido
+            hasta simismo con la operación composici\'on de funciones es un grupo.
+          </li>
+          <li>
+            Probar las transformaciones de Möbius son homeomorfismos del plano complejo extendido
+            $\widehat{\mathbb{C}}$ en si mismo.
+          </li>
+          <li>
+            Prueba el <a href="#t_transformaciones_de_Mobius_identicas_condiciones_necesarias_suficientes">Teorema 1</a>, para el
+            caso en el que alguno de los coeficientes toma el valor de cero.
+          </li>
+          <li>
+            Probar que las homotecias y las rotaciones envían círculos generalizados en círculos generalizados.
+          </li>
+          <li>
+            Dados los reales $A,B,C,D\in\mathbb{R}$ tal que $B^{2}+C^{2}-AD&gt;0,$ probar la desigualdad $B^{2}+C^{2}+AD.$
+          </li>
+          <li>
+            Recordemos que el grupo $G$
+            <span class="red-txt">actúa</span> sobre el conjunto $X,$ si existe una función
+            $\alpha:G\times X \to X$ tal que
+            <ol class="roman-list">
+              <li>
+                Para todo $x\in X,$ se cumple $\alpha({\rm Id},x)=x.$
+              </li>
+              <li>
+                Dados cualesquiera dos elementos $g_{1},g_{2}\in G$ y cualquier elemento $x\in X,$ se cumple
+                $\alpha(g_{1},\alpha(g_{2},x))=\alpha(g_{1}g_{2},x).$
+              </li>
+            </ol>
+          </li>
+          <li>
+            Verificar que la función desde el grupo de transformaciones de Möbius $\mathcal{M}$ actúa sobre el
+            conjunto de todos los círculos generalizados del plano Complejo Extendido $\widehat{\mathbb{C}},$ donde la
+            acción $\alpha$ envía la pareja $(T,\mathcal{C})$ es envía al círculo generalizado $T(\mathcal{C}),$
+            siendo $T$ una transformación de Möbius y $\mathcal{C}$ un círculo generalizado.
+          </li>
+          <li>
+            Probar que la funcón determinante (véase \eqref{eq:funcion_determinante_homomorfismo}) es un
+            homomorfismo sobreyectivo de grupos.
+          </li>
+          <li>
+            Recordemos que <span class="red-txt">Grupo Lineal Especial</span>
+            (también llamado <span class="red-txt">Grupo Unimodular</span>),
+            denotado mediante ${\rm SL}(2,\mathbb{C}),$ es el conjunto conformado por las matrices de $2\times 2$
+            \[
+            A= \left (\begin{matrix}
+            a &amp; b \\
+            c &amp; d
+            \end{matrix}\right),
+            \]
+            tal que $a,b,c,d\in\mathbb{C}$ y el determinante $det(A)=1,$
+            junto con la operación multiplicación usual de matrices 
+            (véase <a href="#definicion_SL">Definición 5</a>).
+            Prueba las siguientes afirmaciones:
+            <ol class="roman-list">
+              <li>
+                ${\rm SL}(2,\mathbb{C})$ es un subgrupo de ${\rm GL}(2,\mathbb{C}).$
+              </li>
+              <li>
+                ${\rm SL}(2,\mathbb{C})$ es un subconjunto cerrado de $\mathfrak{M}.$
+              </li>
+            </ol>
+          </li>
+          <li>
+            Probar que el
+            <span class="red-txt">Grupo Proyectivo Lineal Especial</span>
+            ${\rm PSL}(2,\mathbb{C})$ es un grupo
+            (véase <a href="#definicion_PSL">Definición 6</a>). Verifiquese primero que la operación definida en la
+            ecuación \eqref{eq:proyectivo_lineal_especial} no depende del representante de la clase de equivalencia.
+            Adicionalmente, verifica que ${\rm PSL}(2,\mathbb{C})$ y ${\rm PGL}(2,\mathbb{C})/\mathbb{C}^{\ast}$ son
+            isomorfos.
+          </li>
+          <li>
+            Prueba que $\mathbb{C}^4$ y $\mathcal{M}$ son homeomorfos.
+          </li>
+
+          <li>
+            Verifica las propiedades de la traza de una matriz descritas en el 
+            <a href="#t_propiedades_traza_una_matriz">Teorema 13</a>.
+          </li>
+
+        </ol>
+
+
+
+
+      </div>
+
+
+
+      <hr>
+
+
+      <br>
+
+
+    </article>
+  </main>
+
+
+
+
+  <a href="bibliografia.html" style="text-decoration: none;">
+    <p class="nextPage">Bibliografía <i class="fa-solid fa-angles-right"></i></p>
+  </a>
+  <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span><br />
+      <strong>👋 ¡Hola!</strong>
+    </div>
+    <div class="modal-body">
+
+      <p>
+        Este libro interactivo es <strong>gratis para todo el mundo</strong>,
+        porque tengo la firme creencia de que 
+        cualquier persona debería tener accesso 
+        a recursos de aprendizaje de alta calidad para explorar y aprender 
+        matemáticas.
+        Es por esta razón que muchos usuarios han elegido contribuir
+        a mis esfuerzos. Si tú crees en lo que hago y deseas ayudarme
+        en mi jornada, puedes hacerlo ahora con los siguientes enlaces:
+      </p>
+
+      <div class="button-container">
+        <button id="modal-link">
+          <a href="https://www.patreon.com/jcponce"><i class="fa-brands fa-patreon"></i>
+            <strong>Patreon</strong></a>
+        </button>
+        <button id="modal-link">
+          <a target="_blank"
+            href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
+            <strong><i class="fa-brands fa-paypal"></i> PayPal</strong>
+          </a>
+        </button>
+        <button id="modal-link">
+          <a target="_blank" href="https://jcponcemath.secure-decoration.com/">
+            <strong>Comprar <i class="fa-solid fa-shirt"></i></strong>
+          </a>
+        </button>
+      </div>
+
+
+      <p>
+        Tu ayuda me permite mantener este sitio
+        y crucialmente, <strong>garantizar que permanezca de acceso libre</strong>
+        para toda persona interesada en explorar esta cautivadora rama de las 
+        matemáticas <strong>- sin anuncios que te distraigan</strong>.
+      </p>
+
+      <p>
+        No puedes contribuir en esta ocasión, ¡no hay problema! Quizá sólo quieras
+        <i class="fa-solid fa-envelope"></i> <a href="mailto:jcponcemath@gmail.com"><strong> Mandar un comentario</strong></a>
+      </p>
+      <br />
+    </div>
+
+    <div class="modal-footer">
+      ¡Gracias! 🙏 !Realmente aprecio tu apoyo! 🤗
+    </div>
+  </div>
+
+</div>
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span class="hide-small" id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Inicio</a>,
+    <a href="https://github.com/geometria-hiperbolica"><i class="fa-solid fa-code"></i> Código</a>,
+    <a href="https://github.com/geometria-hiperbolica/geometria-hiperbolica.github.io/issues"><i
+        class="fa-solid fa-lightbulb"></i> Reporta</a>,
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-regular fa-heart"></i> Apoyar</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  <span class="hide-medium hide-large" style="font-size: 0.85em;">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Inico</a> -
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-regular fa-heart"></i> Apoyar</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+
+  <br />
+
+  <a id="licence-link" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+    target="_blank">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong>
+    <span class="hide-small" style="font-size: 18px">&copy; J.C. Ponce Campuzano, C. Ramírez Maluendas
+      <script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 15px">&copy; J.C. Ponce Campuzano <br /> C. Ramírez
+      Maluendas,
+      <script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>
