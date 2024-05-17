@@ -284,6 +284,9 @@
 
             control_points = [p2(1.0, -2.0), p2(1.5, 0.0), p2(1.0, 0.0), p2(0.5, -2.0)];
 
+
+            
+
             origin_screen = p2(canvas.width / 2, canvas.height / 2);
             scale = Math.min(canvas.width, canvas.height) / 6;
 
@@ -419,7 +422,7 @@
 
             // draw the axes
             var extent = 6;
-            ctx.strokeStyle = "rgba(0,0,0,0.3)";
+            ctx.strokeStyle = "rgba(0,0,0,0.6)";
             ctx.beginPath();
             for (var i = -extent; i <= extent - 1; i++) {
                 drawSmoothTransformedLine(p2(i, 0), p2(i + 1, 0), null, false);
@@ -459,7 +462,7 @@
                     min_x = canvas_rect.x + spacing / 2; max_x = canvas_rect.x + canvas_rect.width;
                     min_y = canvas_rect.y + spacing / 2; max_y = canvas_rect.y + canvas_rect.height;
                 }
-                ctx.strokeStyle = "rgba(102, 0, 204, 0.5)";
+                ctx.strokeStyle = "rgba(51, 51, 204, 0.5)";
                 ctx.lineWidth = 2;
                 ctx.beginPath();
                 for (var x = min_x; x < max_x; x += spacing) {
@@ -571,13 +574,13 @@
                 }
 
                 var a_plus_d = add(control_points[0], control_points[3]);
-                ctx.fillStyle = ctx.strokeStyle = "rgb(0,0,0)";
+                ctx.fillStyle = ctx.strokeStyle = "rgb(0,103,0)";
                 drawPoint(toScreen(a_plus_d), 2, "a+d", p2(0, 0));
             }
 
             if (show_ad_minus_bc) {
                 var ad_minus_bc = sub(mul_complex(control_points[0], control_points[3]), mul_complex(control_points[1], control_points[2]));
-                ctx.fillStyle = ctx.strokeStyle = "rgb(0,0,0)";
+                ctx.fillStyle = ctx.strokeStyle = "rgb(0,103,0)";
                 drawPoint(toScreen(ad_minus_bc), 2, "ad-bc", p2(0, 0));
             }
 
@@ -601,7 +604,44 @@
                 t = get_mobius_composed(t, control_points);
                 ti = get_mobius_composed(ti, inverse_mobius);
             }
+
+            // I need to display values on the html doc
+
+            let nax = control_points[0].x;
+            val_ax = nax.toFixed(2);
+            let nay = control_points[0].y;
+            val_ay = nay.toFixed(2);
+
+            let nbx = control_points[1].x;
+            val_bx = nbx.toFixed(2);
+            let nby = control_points[1].y;
+            val_by = nby.toFixed(2);
+
+            let ncx = control_points[2].x;
+            val_cx = ncx.toFixed(2);
+            let ncy = control_points[2].y;
+            val_cy = ncy.toFixed(2);
+
+            let ndx = control_points[3].x;
+            val_dx = ndx.toFixed(2);
+            let ndy = control_points[3].y;
+            val_dy = ndy.toFixed(2);
+
+            // Get the HTML element by its ID
+            let displayElement = document.getElementById('display');
+
+            // Set the text content of the element to the formatted number
+            displayElement.innerHTML = "<strong>a</strong> = " + val_ax + " + ί (" + val_ay + ");&nbsp;" +
+                                       "<strong>b</strong> = " + val_bx + " + ί (" + val_by + ");&nbsp;" +
+                                       "<strong>c</strong> = " + val_cx + " + ί (" + val_cy + ");&nbsp;" +
+                                       "<strong>d</strong> = " + val_dx + " + ί (" + val_dy + ") ";
+            //console.log(val_ax)
         }
+
+        let val_ax, val_ay;
+        let val_bx, val_by;
+        let val_cx, val_cy;
+        let val_dx, val_dy;
 
         function drawSketch(mobius_transform) {
             ctx.beginPath();
@@ -744,6 +784,7 @@
     <style>
         html,
         body {
+            background: rgb(208, 208, 208);
             overflow: hidden;
             margin: 0;
             width: 100%;
@@ -751,6 +792,7 @@
         }
 
         canvas {
+            background: white;
             position: absolute;
             top: 0;
             left: 0;
@@ -793,6 +835,8 @@
 
 
     </div>
+
+    <div id="display" style="font-size: 1.2em; padding-left: 10px; padding-top: 10px; margin-left: 0px; margin-top: 500px;"></div>
 
 
 
