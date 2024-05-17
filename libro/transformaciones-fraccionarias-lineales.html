@@ -276,6 +276,25 @@
           satisfacen $T_1 \circ T_2(z)\neq T_2 \circ T_1 (z)$ para algunos $z\in\widehat{\mathbb{C}}.$
         <p></p>
 
+        <p>
+          Geométricamente, una transfomación de Möbius se puede obtener
+          por medio de una proyección esteriográfica del plano complejo 
+          a una esfera admisible en $\R^3,$ seguida de un movimiento rigido 
+          de la esferea en  $\R^3$ (el cual se mapea a otra esfera admisible),
+          seguido de una proyección estereográfica de vuelta al plano.
+          Esto se puede apreciar en el siguiente applet. Mueve los deslizadores
+          para observar las differentes transformaciones y sus correspondientes
+          projecciones.
+        </p>
+        
+        <figure>
+          <div id="ggb-element-projection"></div>
+          <figcaption>
+            Proyección estereográfica: Transformaciones de Möbius
+          </figcaption>
+        </figure>
+        
+
         <h3>Transformaciones idénticas</h3>
 
         <p>
@@ -2089,8 +2108,25 @@
     </article>
   </main>
 
+  <script src="https://www.geogebra.org/apps/deployggb.js"></script>
 
-
+  <script>
+    let paramsProj = {
+      "width": 764,
+      "height": 445,
+      "material_id": "ubqwhc83",
+      "borderColor": "888888",
+      "playButton": false,
+      "showFullscreenButton": true,
+      "enableShiftDragZoom": true,
+      "showResetIcon": true
+    };
+    let appletProj = new GGBApplet(paramsProj, true);
+    window.addEventListener("load", function () {
+      appletProj.inject('ggb-element-projection');
+    });
+  </script>
+ 
 
   <a href="bibliografia.html" style="text-decoration: none;">
     <p class="nextPage">Bibliografía <i class="fa-solid fa-angles-right"></i></p>
