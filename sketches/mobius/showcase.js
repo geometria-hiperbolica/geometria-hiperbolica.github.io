@@ -63,7 +63,7 @@ void main() {
         vec2 gridUV;
 
         // 2. Apply Mode (State Machine)
-        float speed = 0.09;
+        float speed = 0.07;
         if (uMode == 0) { // Elliptic: Pure Rotation
             gridUV = vec2(log(length(z) + 0.0001), atan(z.y, z.x) * (2.0 / PI) + iTime * speed * 2.2);
         } 
