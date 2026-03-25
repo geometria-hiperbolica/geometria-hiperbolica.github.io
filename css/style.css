@@ -1,21 +1,1815 @@
-@charset "UTF-8";/*!
+@charset "UTF-8";
+/*!
  * LaTeX.css (https://latex.now.sh/)
  * Source: https://github.com/vincentdoerig/latex-css
  * Licensed under MIT (https://github.com/vincentdoerig/latex-css/blob/master/LICENSE)
  * This version has a few extra styling features
  * by Juan Carlos Ponce Campuzano, 7/Feb/2024
  * Updated: 22/Feb/2024
-*/@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css);@font-face{font-family:"Latin Modern";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/LM-regular.woff2) format("woff2"),url(fonts/LM-regular.woff) format("woff"),url(fonts/LM-regular.ttf) format("truetype")}@font-face{font-family:"Latin Modern";font-style:italic;font-weight:400;font-display:swap;src:url(fonts/LM-italic.woff2) format("woff2"),url(fonts/LM-italic.woff) format("woff"),url(fonts/LM-italic.ttf) format("truetype")}@font-face{font-family:"Latin Modern";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/LM-bold.woff2) format("woff2"),url(fonts/LM-bold.woff) format("woff"),url(fonts/LM-bold.ttf) format("truetype")}@font-face{font-family:"Latin Modern";font-style:italic;font-weight:700;font-display:swap;src:url(fonts/LM-bold-italic.woff2) format("woff2"),url(fonts/LM-bold-italic.woff) format("woff"),url(fonts/LM-bold-italic.ttf) format("truetype")}*,::after,::before{box-sizing:border-box}:root{--body-color:hsl(0, 5%, 10%);--body-bg-color:hsl(210, 20%, 98%);--link-visited:hsl(194, 100%, 26%);--link-focus-outline:hsl(220, 90%, 52%);--link-hover:hsl(220, 90%, 52%);--summary:rgb(245, 245, 245);--callout:rgb(217, 239, 255);--tooltip:hsl(0, 0%, 28%);--nextPage:rgb(245, 245, 245);--toc-chapter:rgb(249, 249, 249);--smallbox:rgb(240, 240, 240);--pre-bg-color:hsl(210, 28%, 93%);--kbd-bg-color:hsl(210, 5%, 100%);--kbd-border-color:hsl(210, 5%, 70%);--table-border-color:black;--border-width-thin:1.36px;--border-width-thick:2.27px;--sidenote-target-border-color:hsl(55, 55%, 70%);--footnotes-border-color:hsl(0, 0%, 39%);--text-indent-size:1.463rem}.latex-dark{--body-color:hsl(0, 0%, 86%);--body-bg-color:hsl(0, 0%, 16%);--link-visited:hsl(196 80% 77%);--link-focus-outline:hsl(215, 63%, 73%);--link-hover:hsl(220, 88%, 63%);--summary:hsla(0, 0%, 40%, 0.83);--callout:rgba(217, 239, 255, 0.303);--tooltip:hsl(0, 0%, 95%);--nextPage:rgba(245, 245, 245, 0.333);--toc-chapter:hsl(0, 0%, 16%);--smallbox:rgb(138, 138, 138);--pre-bg-color:hsl(0, 1%, 25%);--kbd-bg-color:hsl(0, 0%, 16%);--kbd-border-color:hsl(210, 5%, 70%);--table-border-color:white;--sidenote-target-border-color:hsl(0, 0%, 59%);--footnotes-border-color:hsl(0, 0%, 59%);--proof-symbol-filter:invert(80%)}@media (prefers-color-scheme:dark){.latex-dark-auto{--body-color:hsl(0, 0%, 86%);--body-bg-color:hsl(0, 0%, 16%);--link-visited:hsl(196 80% 77%);--link-focus-outline:hsl(215, 63%, 73%);--link-hover:hsl(220, 88%, 63%);--summary:hsla(0, 0%, 40%, 0.83);--callout:rgba(217, 239, 255, 0.303);--tooltip:hsl(0, 0%, 95%);--nextPage:rgba(245, 245, 245, 0.333);--toc-chapter:hsl(0, 0%, 16%);--smallbox:rgb(138, 138, 138);--pre-bg-color:hsl(0, 1%, 25%);--kbd-bg-color:hsl(0, 0%, 16%);--kbd-border-color:hsl(210, 5%, 70%);--table-border-color:white;--sidenote-target-border-color:hsl(0, 0%, 59%);--footnotes-border-color:hsl(0, 0%, 59%);--proof-symbol-filter:invert(80%)}}body,dd,dl,figcaption,figure,h1,h2,h3,h4,li,ol[class],p,ul[class]{margin:0}html{font-size:1.2rem}@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}@media only screen and (max-width:500px){html{font-size:.9rem}}body.libertinus{font-family:Libertinus,Georgia,Cambria,"Times New Roman",Times,serif}body{font-family:"Latin Modern",Georgia,Cambria,"Times New Roman",Times,serif;line-height:1.8;max-width:86ch;min-height:100vh;overflow-x:hidden;margin:0 auto;padding:2rem 1.25rem;counter-reset:theorem corollary definition example sidenote-counter figure-counter section-1 subsection-1 subsubsection-1 section-2 subsection-2 subsubsection-2 section-3 subsection-3 subsubsection-3;color:var(--body-color);background-color:var(--body-bg-color);text-rendering:optimizeLegibility}p{text-align:justify;hyphens:auto;-webkit-hyphens:auto;-moz-hyphens:auto;margin-top:1rem}.indent-pars p{text-indent:var(--text-indent-size)}.indent-pars p.no-indent,p.no-indent{text-indent:0}.indent-pars ol p,.indent-pars ul p{text-indent:0}.indent-pars h2+p,.indent-pars h3+p,.indent-pars h4+p{text-indent:0}a:not([class]){text-decoration-skip-ink:auto}a,a:visited{color:var(--link-visited)}a:focus{outline-offset:2px;outline:2px solid var(--link-focus-outline)}a:hover{color:var(--link-hover)}img{max-width:100%;height:auto;display:block}button,input,select,textarea{font:inherit}textarea{width:100%}article>*+*{margin-top:1em}code,kbd,pre{font-family:Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;font-size:85%}pre{padding:1rem 1.4rem;max-width:100%;overflow:auto;border-radius:4px;background:var(--pre-bg-color)}pre code{font-size:95%;position:relative}kbd{background:var(--kbd-bg-color);border:1px solid var(--kbd-border-color);border-radius:2px;padding:2px 4px;font-size:75%}table:not(.borders-custom){border-collapse:collapse;border-spacing:0;width:auto;max-width:100%;border-top:var(--border-width-thick) solid var(--table-border-color);border-bottom:var(--border-width-thick) solid var(--table-border-color);overflow-x:auto;counter-increment:caption}table:not(.borders-custom) tr>th[scope=col]{border-bottom:var(--border-width-thin) solid var(--table-border-color)}table:not(.borders-custom) tr>th[scope=row]{border-right:var(--border-width-thin) solid var(--table-border-color)}table:not(.borders-custom)>tbody>tr:first-child>td,table:not(.borders-custom)>tbody>tr:first-child>th{border-top:var(--border-width-thin) solid var(--table-border-color)}table:not(.borders-custom)>tbody>tr:last-child>td,table:not(.borders-custom)>tbody>tr:last-child>th{border-bottom:var(--border-width-thin) solid var(--table-border-color)}td,th{text-align:left;padding:.5rem;line-height:1.1}caption{text-align:left;font-size:.923em;padding:0 .25em .25em;width:100%;margin-left:0}caption::before{content:"Table " counter(caption) ". ";font-weight:700}.scroll-wrapper{overflow-y:hidden;overflow-x:auto}.scroll-wrapper>table td{white-space:nowrap}table.borders-custom{border-collapse:collapse;border-spacing:0;width:auto;max-width:100%;overflow-x:auto;counter-increment:caption}.border-top-thick{border-top:var(--border-width-thick) solid var(--table-border-color)}.border-right-thick{border-right:var(--border-width-thick) solid var(--table-border-color)}.border-bottom-thick{border-bottom:var(--border-width-thick) solid var(--table-border-color)}.border-left-thick{border-left:var(--border-width-thick) solid var(--table-border-color)}.border-top-thin{border-top:var(--border-width-thin) solid var(--table-border-color)}.border-right-thin{border-right:var(--border-width-thin) solid var(--table-border-color)}.border-bottom-thin{border-bottom:var(--border-width-thin) solid var(--table-border-color)}.border-left-thin{border-left:var(--border-width-thin) solid var(--table-border-color)}.col-1-l tr>:nth-child(1),.col-10-l tr>:nth-child(10),.col-11-l tr>:nth-child(11),.col-12-l tr>:nth-child(12),.col-2-l tr>:nth-child(2),.col-3-l tr>:nth-child(3),.col-4-l tr>:nth-child(4),.col-5-l tr>:nth-child(5),.col-6-l tr>:nth-child(6),.col-7-l tr>:nth-child(7),.col-8-l tr>:nth-child(8),.col-9-l tr>:nth-child(9){text-align:left}.col-1-c tr>:nth-child(1),.col-10-c tr>:nth-child(10),.col-11-c tr>:nth-child(11),.col-12-c tr>:nth-child(12),.col-2-c tr>:nth-child(2),.col-3-c tr>:nth-child(3),.col-4-c tr>:nth-child(4),.col-5-c tr>:nth-child(5),.col-6-c tr>:nth-child(6),.col-7-c tr>:nth-child(7),.col-8-c tr>:nth-child(8),.col-9-c tr>:nth-child(9){text-align:center}.col-1-r tr>:nth-child(1),.col-10-r tr>:nth-child(10),.col-11-r tr>:nth-child(11),.col-12-r tr>:nth-child(12),.col-2-r tr>:nth-child(2),.col-3-r tr>:nth-child(3),.col-4-r tr>:nth-child(4),.col-5-r tr>:nth-child(5),.col-6-r tr>:nth-child(6),.col-7-r tr>:nth-child(7),.col-8-r tr>:nth-child(8),.col-9-r tr>:nth-child(9){text-align:right}h1:first-child{text-align:center}nav ol{counter-reset:item;padding-left:2rem}nav li{display:block}nav li:before{content:counters(item, ".") " ";counter-increment:item;padding-right:.35rem}dl dd{text-align:center}.theorem{text-align:justify;counter-increment:theorem;display:block;margin:12px 0;font-style:italic;box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);content:"";display:table;clear:both;padding:8px 16px 8px 16px;border-left:5px solid #16b190!important;display:block;overflow-x:auto}.theorem::before{content:"Theorem " counter(theorem) ". ";font-weight:700;font-style:normal}.corollary{text-align:justify;counter-increment:corollary;display:block;margin:12px 0;font-style:italic;padding:8px 16px 8px 16px;border-left:5px solid #3b87f9!important;display:block;overflow-x:auto}.corollary::before{content:"Corollary " counter(corollary) ". ";font-weight:700;font-style:normal}.lemma{text-align:justify;counter-increment:theorem;display:block;margin:12px 0;font-style:italic;padding:8px 16px 8px 16px;border-left:5px solid #3b87f9!important;display:block;overflow-x:auto}.lemma::before{content:"Lemma " counter(theorem) ". ";font-weight:700;font-style:normal}.proof{display:block;margin:12px 0;font-style:normal;position:relative}.proof::before{content:"Proof. " attr(title);font-style:italic}.proof:after{content:"◾️";filter:var(--proof-symbol-filter);position:absolute;right:-12px;bottom:-2px}.definition{text-align:justify;counter-increment:definition;display:block;margin:12px 0;font-style:normal;box-shadow:0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);content:"";display:table;clear:both;padding:8px 16px 8px 16px;border-left:5px solid #3b87f9!important;display:block;overflow-y:hidden;overflow-x:auto}.definition::before{content:"Definition " counter(definition) ". ";font-weight:700;font-style:normal}.example{counter-increment:example;display:block;margin:25px 0;font-style:normal;padding:8px 16px 8px 16px;border-left:5px solid #6106d7!important;margin-left:10px;display:block}.example::before{content:"Example " counter(example) ". ";font-weight:700;font-style:normal}.practice{padding:0 20px 8px 20px!important}figure{counter-increment:figure-counter;display:flex;flex-direction:column;align-items:center}figcaption{text-align:center;font-style:italic}figcaption:before{content:"Figure " counter(figure-counter);font-style:normal;font-weight:700;margin-bottom:5px}.author{margin:.85rem 0;font-variant-caps:small-caps;text-align:center}summary{background-color:var(--summary)}summary:hover{cursor:pointer;color:#7993c4}#donate-footer{text-decoration:underline;color:var(--link-visited)}#donate-footer:hover{cursor:pointer;color:var(--link-focus-outline)}.sidenote{font-size:.8rem;float:right;clear:right;width:15vw;margin-right:-17vw;margin-bottom:1em;text-indent:0;line-height:1.2em;text-align:justify}.sidenote.left{float:left;margin-left:-17vw;margin-bottom:1em;text-indent:0}.sidenote:target{border:var(--sidenote-target-border-color) 1.5px solid;padding:0 .5rem;scroll-margin-block-start:10rem}.sidenote-number{counter-increment:sidenote-counter}.sidenote-number::after,.sidenote::before{position:relative;vertical-align:baseline}.sidenote-number::after{content:counter(sidenote-counter);font-size:.7rem;top:-.5rem;left:.1rem}.sidenote-number~.sidenote::before{content:counter(sidenote-counter) " ";font-size:.7rem;top:-.5rem}label.sidenote-toggle:not(.sidenote-number){display:none}blockquote{font-size:.8em}blockquote .sidenote{margin-right:-24vw;width:18vw}label.sidenote-toggle{display:inline;cursor:pointer}input.sidenote-toggle{display:none}@media (max-width:1220px){label.sidenote-toggle:not(.sidenote-number){display:inline}.sidenote{display:none}.sidenote-toggle:checked+.sidenote{display:block;margin:.5rem 1.25rem 1rem .5rem;float:left;left:1rem;clear:both;width:95%}blockquote .sidenote{margin-right:-25vw;width:16vw}}.footnotes p{text-align:left;line-height:1.5;font-size:85%;margin-bottom:.4rem}.footnotes{border-top:1px solid var(--footnotes-border-color)}.abstract,.abstract p{text-align:center;margin-top:0}.abstract{margin:2.25rem 0}.abstract>h2{font-size:1rem;margin-bottom:-.2rem}.latex span:nth-child(1){text-transform:uppercase;font-size:.75em;vertical-align:.28em;margin-left:-.48em;margin-right:-.15em;line-height:1ex}.latex span:nth-child(2){text-transform:uppercase;vertical-align:-.5ex;margin-left:-.1667em;margin-right:-.125em;line-height:1ex}h1{font-size:2.5rem;line-height:3.25rem;margin-bottom:1.625rem}h2{font-size:1.7rem;line-height:2rem;margin-top:3rem}h3{font-size:1.4rem;margin-top:2.5rem}h4{font-size:1.2rem;margin-top:2rem}h5{font-size:1rem;margin-top:1.8rem}h6{font-size:1rem;font-style:italic;font-weight:400;margin-top:2.5rem}h3,h4,h5,h6{line-height:1.625rem}h1+h2{margin-top:1.625rem}h2+h3,h3+h4,h4+h5{margin-top:.8rem}h5+h6{margin-top:-.8rem}h2,h3,h4,h5,h6{margin-bottom:.8rem}iframe{background-color:var(--body-bg-color);max-width:100%;max-height:100%}.display-container,.tooltip{position:relative;cursor:pointer;color:var(--tooltip)}.tooltip .box-text{display:none}.tooltip:hover .box-text{display:inline-block}.tooltip:hover{color:rgba(4,112,162,.976)}.smallBox{margin:0 auto -20px;width:27%;position:relative;background-color:var(--smallbox);text-align:center;margin-top:0}#mytooltip{position:fixed;bottom:22px;text-align:left;padding:.9em;background-color:#ddd;color:#000;font-size:medium;width:100%;min-width:20em;z-index:100;left:0;right:0;margin-left:auto;margin-right:auto;max-width:calc(100% - 40px);border-radius:8px}.callout{background-color:var(--callout);border:1px solid #c8c8c8;padding:1em;margin-bottom:1.3em;text-align:left;visibility:visible!important}.nextPage{text-align:center;text-decoration:none!important;color:var(--body-color)!important;background-color:var(--nextPage);border:1px solid #c8c8c8;padding:1em;margin:1.6em 0 1.3em 0;text-align:center;font-size:1em;font-weight:700;margin-bottom:2em}.nextPage:hover{background-color:#e6e6e6!important;color:#000!important;cursor:pointer}.toc-chapter{font-size:.75em;line-height:1.7em;position:fixed;top:0;right:0;background-color:var(--toc-chapter);border-left:1px solid #ddd;border-bottom:0 solid #ddd;padding:10px 10px 5px 10px;max-height:calc(100vh - 40px);overflow-y:auto;width:calc(50vw - 410px);z-index:101}.toc-chapter p{margin-top:0;margin-bottom:-10px}.toc-chapter ul{list-style-type:none;padding:0}.toc-chapter li{display:block;margin-left:3px}.toc-chapter a{outline:0}.active{font-weight:700}.highlight{text-decoration:none;border-left:3px solid rgba(75,147,236,.7921568627);padding:2px 2px}@media (max-width:1200px){.toc-chapter{display:none!important}}.head-1{counter-increment:section-1;font-weight:700;font-size:2.125rem}.head-1::before{content:counter(section-1) ". "}.head-1.head-1-level2{counter-increment:subsection-1;font-size:1.775rem}.head-1.head-1-level2::before{content:counter(section-1) "." counter(subsection-1) ". "}.head-1.head-1-level3{counter-increment:subsubsection-1;font-size:1.4rem}.head-1.head-1-level3::before{content:counter(section-1) "." counter(subsection-1) "." counter(subsubsection-1) ". "}.head-2{counter-increment:section-2 2;font-weight:700;font-size:2.125rem}.head-2::before{content:counter(section-2) ". "}.head-2.head-2-level2{counter-increment:subsection-2;font-size:1.875rem}.head-2.head-2-level2::before{content:counter(section-2) "." counter(subsection-2) ". "}.head-2.head-2-level3{counter-increment:subsubsection-2;font-size:1.5rem}.head-2.head-2-level3::before{content:counter(section-2) "." counter(subsection-2) "." counter(subsubsection-2) ". "}.head-3{counter-increment:section-3 3;font-weight:700;font-size:2.125rem}.head-3::before{content:counter(section-3) ". "}.head-3.head-3-level2{counter-increment:subsection-3;font-size:1.875rem}.head-3.head-3-level2::before{content:counter(section-3) "." counter(subsection-3) ". "}.head-3.head-3-level3{counter-increment:subsubsection-3;font-size:1.5rem}.head-3.head-3-level3::before{content:counter(section-3) "." counter(subsection-3) "." counter(subsubsection-3) ". "}:lang(es) .theorem::before{content:"Teorema " counter(theorem) ". "!important}:lang(es) .lemma::before{content:"Lema " counter(theorem) ". "!important}:lang(es) .corollary::before{content:"Corolario " counter(corollary) ". "!important}:lang(es) .proof::before{content:"Demostración. " attr(title)!important}:lang(es) .definition::before{content:"Definición " counter(definition) ". "!important}:lang(es) .example::before{content:"Ejemplo " counter(example) ". "!important}:lang(es) figcaption:before{content:"Figura " counter(figure-counter) ": "!important}:lang(es) .indent-pars h2+p,:lang(es) .indent-pars h3+p,:lang(es) .indent-pars h4+p{text-indent:var(--text-indent-size)}/*!
+*/
+/* 
+ Added Features:
+ - Added font awesome
+ - Numbered examples with left colored bar
+ - A callout box for important messages
+ - Responsive iframes (so far, it works for GeoGebra iframes)
+ - Numbered figures with centred captions
+ - Left colored bars and border for definitions, theorems and lemmas
+ - A tooltip for displaying extra info on hover
+ - Numbered headers up to 3
+*/
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css");
+@font-face {
+  font-family: "Latin Modern";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("./fonts/LM-regular.woff2") format("woff2"), url("./fonts/LM-regular.woff") format("woff"), url("./fonts/LM-regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Latin Modern";
+  font-style: italic;
+  font-weight: normal;
+  font-display: swap;
+  src: url("./fonts/LM-italic.woff2") format("woff2"), url("./fonts/LM-italic.woff") format("woff"), url("./fonts/LM-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Latin Modern";
+  font-style: normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url("./fonts/LM-bold.woff2") format("woff2"), url("./fonts/LM-bold.woff") format("woff"), url("./fonts/LM-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Latin Modern";
+  font-style: italic;
+  font-weight: bold;
+  font-display: swap;
+  src: url("./fonts/LM-bold-italic.woff2") format("woff2"), url("./fonts/LM-bold-italic.woff") format("woff"), url("./fonts/LM-bold-italic.ttf") format("truetype");
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --body-color: hsl(0, 5%, 10%);
+  --body-bg-color: hsl(210, 20%, 98%);
+  /* Changed color link visited */
+  --link-visited: hsl(194, 100%, 26%);
+  --link-focus-outline: hsl(220, 90%, 52%);
+  --link-hover: hsl(220, 90%, 52%);
+  /* Added hover color */
+  --summary: rgb(245, 245, 245);
+  /* Added summary color */
+  --callout: rgb(217, 239, 255);
+  /* Adde color for call out box */
+  --tooltip: hsl(0, 0%, 28%);
+  /* Added color for tooltip text */
+  --nextPage: rgb(245, 245, 245);
+  /* Next page color button */
+  --toc-chapter: rgb(249, 249, 249);
+  /* ToC chapter */
+  --smallbox: rgb(240, 240, 240);
+  --pre-bg-color: hsl(210, 28%, 93%);
+  --kbd-bg-color: hsl(210, 5%, 100%);
+  --kbd-border-color: hsl(210, 5%, 70%);
+  --table-border-color: black;
+  --border-width-thin: 1.36px;
+  --border-width-thick: 2.27px;
+  --sidenote-target-border-color: hsl(55, 55%, 70%);
+  --footnotes-border-color: hsl(0, 0%, 39%);
+  --text-indent-size: 1.463rem;
+  /* In 12pt [Latin Modern font] LaTeX article
+  \parindent =~ 17.625pt; taking also into account the ratio
+  1pt[LaTeX] = (72 / 72.27) * 1pt[HTML], with default 12pt/1rem LaTeX.css font
+  size, the identation value in rem CSS units is: 
+  \parindent =~ 17.625 * (72 / 72.27) / 12 = 1.463rem. */
+}
+
+.latex-dark {
+  --body-color: hsl(0, 0%, 86%);
+  --body-bg-color: hsl(0, 0%, 16%);
+  --link-visited: hsl(196 80% 77%);
+  --link-focus-outline: hsl(215, 63%, 73%);
+  --link-hover: hsl(220, 88%, 63%);
+  /* Added color hover */
+  --summary: hsla(0, 0%, 40%, 0.83);
+  /* Added summary color */
+  --callout: rgba(217, 239, 255, 0.303);
+  /* Added color for call out box */
+  --tooltip: hsl(0, 0%, 95%);
+  /* Added color for tooltip text */
+  --nextPage: rgba(245, 245, 245, 0.333);
+  /* Next page color button */
+  --toc-chapter: hsl(0, 0%, 16%);
+  /* ToC chapter */
+  --smallbox: rgb(138, 138, 138);
+  --pre-bg-color: hsl(0, 1%, 25%);
+  --kbd-bg-color: hsl(0, 0%, 16%);
+  --kbd-border-color: hsl(210, 5%, 70%);
+  --table-border-color: white;
+  --sidenote-target-border-color: hsl(0, 0%, 59%);
+  --footnotes-border-color: hsl(0, 0%, 59%);
+  --proof-symbol-filter: invert(80%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .latex-dark-auto {
+    --body-color: hsl(0, 0%, 86%);
+    --body-bg-color: hsl(0, 0%, 16%);
+    --link-visited: hsl(196 80% 77%);
+    --link-focus-outline: hsl(215, 63%, 73%);
+    --link-hover: hsl(220, 88%, 63%);
+    /* Added link color for hover */
+    --summary: hsla(0, 0%, 40%, 0.83);
+    /* Added summary color */
+    --callout: rgba(217, 239, 255, 0.303);
+    /* Added colos for call out box */
+    --tooltip: hsl(0, 0%, 95%);
+    /* Added color for tooltip text */
+    --nextPage: rgba(245, 245, 245, 0.333);
+    /* Next page color button */
+    --toc-chapter: hsl(0, 0%, 16%);
+    /* ToC chapter */
+    --smallbox: rgb(138, 138, 138);
+    --pre-bg-color: hsl(0, 1%, 25%);
+    --kbd-bg-color: hsl(0, 0%, 16%);
+    --kbd-border-color: hsl(210, 5%, 70%);
+    --table-border-color: white;
+    --sidenote-target-border-color: hsl(0, 0%, 59%);
+    --footnotes-border-color: hsl(0, 0%, 59%);
+    --proof-symbol-filter: invert(80%);
+  }
+}
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Make default font-size 1.2rem and add smooth scrolling to anchors */
+html {
+  font-size: 1.2rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+/* Media query for smaller screens - Top bar */
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 0.9rem;
+  }
+}
+body.libertinus {
+  font-family: "Libertinus", Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+  font-family: "Latin Modern", Georgia, Cambria, "Times New Roman", Times, serif;
+  line-height: 1.8;
+  max-width: 86ch;
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+  counter-reset: theorem corollary definition example sidenote-counter figure-counter section-1 subsection-1 subsubsection-1 section-2 subsection-2 subsubsection-2 section-3 subsection-3 subsubsection-3;
+  color: var(--body-color);
+  background-color: var(--body-bg-color);
+  text-rendering: optimizeLegibility;
+}
+
+/* Justify and hyphenate all paragraphs */
+p {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  margin-top: 1rem;
+}
+
+/* Indents paragraphs like in LaTeX documents*/
+.indent-pars p {
+  text-indent: var(--text-indent-size);
+}
+
+.indent-pars p.no-indent,
+p.no-indent {
+  text-indent: 0;
+}
+
+.indent-pars ol p,
+.indent-pars ul p {
+  text-indent: 0;
+}
+
+.indent-pars h2 + p,
+.indent-pars h3 + p,
+.indent-pars h4 + p {
+  text-indent: 0;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make links blue */
+a,
+a:visited {
+  color: var(--link-visited);
+}
+
+a:focus {
+  outline-offset: 2px;
+  outline: 2px solid var(--link-focus-outline);
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Prevent textarea from overflowing */
+textarea {
+  width: 100%;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Styles for inline code or code snippets */
+code,
+pre,
+kbd {
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 85%;
+}
+
+pre {
+  padding: 1rem 1.4rem;
+  max-width: 100%;
+  overflow: auto;
+  border-radius: 4px;
+  background: var(--pre-bg-color);
+}
+
+pre code {
+  font-size: 95%;
+  position: relative;
+}
+
+kbd {
+  background: var(--kbd-bg-color);
+  border: 1px solid var(--kbd-border-color);
+  border-radius: 2px;
+  padding: 2px 4px;
+  font-size: 75%;
+}
+
+/* Better tables */
+table:not(.borders-custom) {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: auto;
+  max-width: 100%;
+  border-top: var(--border-width-thick) solid var(--table-border-color);
+  border-bottom: var(--border-width-thick) solid var(--table-border-color);
+  /* display: block; */
+  overflow-x: auto;
+  /* does not work because element is not block */
+  /* white-space: nowrap; */
+  counter-increment: caption;
+}
+
+/* add bottom border on column table headings  */
+table:not(.borders-custom) tr > th[scope=col] {
+  border-bottom: var(--border-width-thin) solid var(--table-border-color);
+}
+
+/* add right border on row table headings  */
+table:not(.borders-custom) tr > th[scope=row] {
+  border-right: var(--border-width-thin) solid var(--table-border-color);
+}
+
+table:not(.borders-custom) > tbody > tr:first-child > td,
+table:not(.borders-custom) > tbody > tr:first-child > th {
+  border-top: var(--border-width-thin) solid var(--table-border-color);
+}
+
+table:not(.borders-custom) > tbody > tr:last-child > td,
+table:not(.borders-custom) > tbody > tr:last-child > th {
+  border-bottom: var(--border-width-thin) solid var(--table-border-color);
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5rem;
+  line-height: 1.1;
+}
+
+/* Table caption */
+caption {
+  text-align: left;
+  font-size: 0.923em;
+  /* border-bottom: 2pt solid #000; */
+  padding: 0 0.25em 0.25em;
+  width: 100%;
+  margin-left: 0;
+}
+
+caption::before {
+  content: "Table " counter(caption) ". ";
+  font-weight: bold;
+}
+
+/* allow scroll on the x-axis */
+.scroll-wrapper {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+/* if a table is wrapped in a scroll wrapper,
+  the table cells shouldn't wrap */
+.scroll-wrapper > table td {
+  white-space: nowrap;
+}
+
+/* Table custom borders */
+table.borders-custom {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: auto;
+  max-width: 100%;
+  overflow-x: auto;
+  counter-increment: caption;
+}
+
+.border-top-thick {
+  border-top: var(--border-width-thick) solid var(--table-border-color);
+}
+
+.border-right-thick {
+  border-right: var(--border-width-thick) solid var(--table-border-color);
+}
+
+.border-bottom-thick {
+  border-bottom: var(--border-width-thick) solid var(--table-border-color);
+}
+
+.border-left-thick {
+  border-left: var(--border-width-thick) solid var(--table-border-color);
+}
+
+.border-top-thin {
+  border-top: var(--border-width-thin) solid var(--table-border-color);
+}
+
+.border-right-thin {
+  border-right: var(--border-width-thin) solid var(--table-border-color);
+}
+
+.border-bottom-thin {
+  border-bottom: var(--border-width-thin) solid var(--table-border-color);
+}
+
+.border-left-thin {
+  border-left: var(--border-width-thin) solid var(--table-border-color);
+}
+
+/* Table column alignment */
+.col-1-l tr > :nth-child(1),
+.col-2-l tr > :nth-child(2),
+.col-3-l tr > :nth-child(3),
+.col-4-l tr > :nth-child(4),
+.col-5-l tr > :nth-child(5),
+.col-6-l tr > :nth-child(6),
+.col-7-l tr > :nth-child(7),
+.col-8-l tr > :nth-child(8),
+.col-9-l tr > :nth-child(9),
+.col-10-l tr > :nth-child(10),
+.col-11-l tr > :nth-child(11),
+.col-12-l tr > :nth-child(12) {
+  text-align: left;
+}
+
+.col-1-c tr > :nth-child(1),
+.col-2-c tr > :nth-child(2),
+.col-3-c tr > :nth-child(3),
+.col-4-c tr > :nth-child(4),
+.col-5-c tr > :nth-child(5),
+.col-6-c tr > :nth-child(6),
+.col-7-c tr > :nth-child(7),
+.col-8-c tr > :nth-child(8),
+.col-9-c tr > :nth-child(9),
+.col-10-c tr > :nth-child(10),
+.col-11-c tr > :nth-child(11),
+.col-12-c tr > :nth-child(12) {
+  text-align: center;
+}
+
+.col-1-r tr > :nth-child(1),
+.col-2-r tr > :nth-child(2),
+.col-3-r tr > :nth-child(3),
+.col-4-r tr > :nth-child(4),
+.col-5-r tr > :nth-child(5),
+.col-6-r tr > :nth-child(6),
+.col-7-r tr > :nth-child(7),
+.col-8-r tr > :nth-child(8),
+.col-9-r tr > :nth-child(9),
+.col-10-r tr > :nth-child(10),
+.col-11-r tr > :nth-child(11),
+.col-12-r tr > :nth-child(12) {
+  text-align: right;
+}
+
+/* Center align the title */
+h1:first-child {
+  text-align: center;
+}
+
+/* Nested ordered list for ToC */
+nav ol {
+  counter-reset: item;
+  padding-left: 2rem;
+}
+
+nav li {
+  display: block;
+}
+
+nav li:before {
+  /*font-weight: bold;*/
+  /*content: '•';*/
+  content: counters(item, ".") " ";
+  counter-increment: item;
+  padding-right: 0.35rem;
+}
+
+/* Center definitions (most useful for display equations) */
+dl dd {
+  text-align: center;
+}
+
+/*
+I had to add extra style for the left side bar with colors
+padding: 8px 16px 8px 16px;
+border-left: 5px solid #3b87f9 !important;
+display: block;
+overflow-x: auto;
+*/
+/* Theorem */
+.theorem {
+  text-align: justify;
+  counter-increment: theorem;
+  display: block;
+  margin: 12px 0;
+  font-style: italic;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  content: "";
+  display: table;
+  clear: both;
+  padding: 8px 16px 8px 16px;
+  border-left: 5px solid #16b190 !important;
+  display: block;
+  overflow-x: auto;
+}
+
+.theorem::before {
+  content: "Theorem " counter(theorem) ". ";
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Corollary */
+.corollary {
+  text-align: justify;
+  counter-increment: corollary;
+  display: block;
+  margin: 12px 0;
+  font-style: italic;
+  padding: 8px 16px 8px 16px;
+  border-left: 5px solid #3b87f9 !important;
+  display: block;
+  overflow-x: auto;
+}
+
+.corollary::before {
+  content: "Corollary " counter(corollary) ". ";
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Lemma */
+.lemma {
+  text-align: justify;
+  counter-increment: theorem;
+  display: block;
+  margin: 12px 0;
+  font-style: italic;
+  padding: 8px 16px 8px 16px;
+  border-left: 5px solid #3b87f9 !important;
+  display: block;
+  overflow-x: auto;
+}
+
+.lemma::before {
+  content: "Lemma " counter(theorem) ". ";
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Proof */
+.proof {
+  display: block;
+  margin: 12px 0;
+  font-style: normal;
+  position: relative;
+}
+
+.proof::before {
+  content: "Proof. " attr(title);
+  font-style: italic;
+}
+
+.proof:after {
+  content: "◾️";
+  filter: var(--proof-symbol-filter);
+  position: absolute;
+  right: -12px;
+  bottom: -2px;
+}
+
+/* Definition */
+.definition {
+  text-align: justify;
+  counter-increment: definition;
+  display: block;
+  margin: 12px 0;
+  font-style: normal;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  content: "";
+  display: table;
+  clear: both;
+  padding: 8px 16px 8px 16px;
+  border-left: 5px solid #3b87f9 !important;
+  display: block;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.definition::before {
+  content: "Definition " counter(definition) ". ";
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Example: I added this class */
+.example {
+  counter-increment: example;
+  display: block;
+  margin: 25px 0;
+  font-style: normal;
+  padding: 8px 16px 8px 16px;
+  border-left: 5px solid #6106d7 !important;
+  margin-left: 10px;
+  display: block;
+}
+
+.example::before {
+  content: "Example " counter(example) ". ";
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* This is for add a little exercise */
+.practice {
+  padding: 0px 20px 8px 20px !important;
+}
+
+/* Resetting default list-style-type for figure */
+figure {
+  counter-increment: figure-counter;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styling for the figure caption */
+figcaption {
+  text-align: center;
+  font-style: italic;
+}
+
+/* Numbering for the figure */
+/* Styling for the figure caption */
+figcaption:before {
+  content: "Figure " counter(figure-counter);
+  font-style: normal;
+  font-weight: bold;
+  margin-bottom: 5px;
+  /* Add some space between the image and the "Figure number" */
+}
+
+/* Center align author name, use small caps and add vertical spacing  */
+.author {
+  margin: 0.85rem 0;
+  font-variant-caps: small-caps;
+  text-align: center;
+}
+
+/* Summary for proof that might be read later */
+summary {
+  background-color: var(--summary);
+}
+
+summary:hover {
+  cursor: pointer;
+  color: rgb(121, 147, 196);
+}
+
+/* My donate footer style */
+#donate-footer {
+  text-decoration: underline;
+  color: var(--link-visited);
+}
+
+#donate-footer:hover {
+  cursor: pointer;
+  color: var(--link-focus-outline);
+}
+
+/* Sidenotes */
+.sidenote {
+  font-size: 0.8rem;
+  float: right;
+  clear: right;
+  width: 15vw;
+  margin-right: -17vw;
+  margin-bottom: 1em;
+  text-indent: 0;
+  line-height: 1.2em;
+  text-align: justify;
+}
+
+.sidenote.left {
+  float: left;
+  margin-left: -17vw;
+  margin-bottom: 1em;
+  text-indent: 0;
+}
+
+/* (WIP) add border when a sidenote is clicked on */
+.sidenote:target {
+  border: var(--sidenote-target-border-color) 1.5px solid;
+  padding: 0 0.5rem;
+  scroll-margin-block-start: 10rem;
+}
+
+/* sidenote counter */
+.sidenote-number {
+  counter-increment: sidenote-counter;
+}
+
+.sidenote-number::after,
+.sidenote::before {
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* add number in main content */
+.sidenote-number::after {
+  content: counter(sidenote-counter);
+  font-size: 0.7rem;
+  top: -0.5rem;
+  left: 0.1rem;
+}
+
+/* add number in front of the sidenote */
+.sidenote-number ~ .sidenote::before {
+  content: counter(sidenote-counter) " ";
+  font-size: 0.7rem;
+  top: -0.5rem;
+}
+
+label.sidenote-toggle:not(.sidenote-number) {
+  display: none;
+}
+
+/* sidenotes inside blockquotes are indented more */
+blockquote {
+  font-size: 0.8em;
+}
+
+blockquote .sidenote {
+  margin-right: -24vw;
+  width: 18vw;
+}
+
+label.sidenote-toggle {
+  display: inline;
+  cursor: pointer;
+}
+
+input.sidenote-toggle {
+  display: none;
+}
+
+@media (max-width: 1220px) {
+  label.sidenote-toggle:not(.sidenote-number) {
+    display: inline;
+  }
+  .sidenote {
+    display: none;
+  }
+  .sidenote-toggle:checked + .sidenote {
+    display: block;
+    margin: 0.5rem 1.25rem 1rem 0.5rem;
+    float: left;
+    left: 1rem;
+    clear: both;
+    width: 95%;
+  }
+  /* tweak indentation of sidenote inside a blockquote */
+  blockquote .sidenote {
+    margin-right: -25vw;
+    width: 16vw;
+  }
+}
+/* Make footnote text smaller and left align it (looks bad with long URLs) */
+.footnotes p {
+  text-align: left;
+  line-height: 1.5;
+  font-size: 85%;
+  margin-bottom: 0.4rem;
+}
+
+.footnotes {
+  border-top: 1px solid var(--footnotes-border-color);
+}
+
+/* Center title and paragraph */
+.abstract,
+.abstract p {
+  text-align: center;
+  margin-top: 0;
+}
+
+.abstract {
+  margin: 2.25rem 0;
+}
+
+.abstract > h2 {
+  font-size: 1rem;
+  margin-bottom: -0.2rem;
+}
+
+/* Format the LaTeX symbol correctly (a higher up, e lower) */
+.latex span:nth-child(1) {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  vertical-align: 0.28em;
+  margin-left: -0.48em;
+  margin-right: -0.15em;
+  line-height: 1ex;
+}
+
+.latex span:nth-child(2) {
+  text-transform: uppercase;
+  vertical-align: -0.5ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+  line-height: 1ex;
+}
+
+/* Heading typography */
+/* 
+ I added also numbered headers 
+ https://2ality.com/2012/01/numbering-headingshtml.html
+*/
+h1 {
+  font-size: 2.5rem;
+  line-height: 3.25rem;
+  margin-bottom: 1.625rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+  line-height: 2rem;
+  margin-top: 3rem;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-top: 2.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+h5 {
+  font-size: 1rem;
+  margin-top: 1.8rem;
+}
+
+h6 {
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: normal;
+  margin-top: 2.5rem;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.625rem;
+}
+
+h1 + h2 {
+  margin-top: 1.625rem;
+}
+
+h2 + h3,
+h3 + h4,
+h4 + h5 {
+  margin-top: 0.8rem;
+}
+
+h5 + h6 {
+  margin-top: -0.8rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.8rem;
+}
+
+/* Responsive iFrame for GeoGebra applet with fixed size */
+iframe {
+  background-color: var(--body-bg-color);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.tooltip,
+.display-container {
+  position: relative;
+  cursor: pointer;
+  color: var(--tooltip);
+}
+
+.tooltip .box-text {
+  display: none;
+}
+
+.tooltip:hover .box-text {
+  display: inline-block;
+}
+
+.tooltip:hover {
+  color: rgba(4, 112, 162, 0.976);
+}
+
+.smallBox {
+  margin: 0 auto -20px;
+  width: 27%;
+  position: relative;
+  background-color: var(--smallbox);
+  text-align: center;
+  margin-top: 0px;
+}
+
+/* It shows info if needed on hover text*/
+#mytooltip {
+  position: fixed;
+  bottom: 22px;
+  text-align: left;
+  padding: 0.9em;
+  background-color: #dddddd;
+  color: #000;
+  font-size: medium;
+  width: 100%;
+  min-width: 20em;
+  z-index: 100;
+  left: 0;
+  /* Align with left side of the viewport */
+  right: 0;
+  /* Align with right side of the viewport */
+  margin-left: auto;
+  /* Center horizontally */
+  margin-right: auto;
+  /* Center horizontally */
+  max-width: calc(100% - 40px);
+  /* Limit maximum width to ensure it fits within the viewport */
+  border-radius: 8px;
+}
+
+/* UPDATE CALLOUT BOX */
+.callout {
+  background-color: var(--callout);
+  border: 1px solid rgb(200, 200, 200);
+  padding: 1em;
+  margin-bottom: 1.3em;
+  text-align: left;
+  visibility: visible !important;
+  /* ios hack? */
+}
+
+/* Next page link in footer */
+.nextPage {
+  text-align: center;
+  text-decoration: none !important;
+  color: var(--body-color) !important;
+  background-color: var(--nextPage);
+  border: 1px solid rgb(200, 200, 200);
+  padding: 1em;
+  margin: 1.6em 0 1.3em 0;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 2em;
+}
+
+.nextPage:hover {
+  background-color: rgb(230, 230, 230) !important;
+  color: black !important;
+  cursor: pointer;
+}
+
+/* Styles for the table of contents */
+.toc-chapter {
+  font-size: 0.75em;
+  line-height: 1.7em;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  background-color: var(--toc-chapter);
+  border-left: 1px solid #ddd;
+  border-bottom: 0px solid #ddd;
+  padding: 10px 10px 5px 10px;
+  max-height: calc(100vh - 40px); /* Adjust height as needed */
+  overflow-y: auto;
+  width: calc(50vw - 410px);
+  z-index: 101;
+}
+
+.toc-chapter p {
+  margin-top: 0;
+  margin-bottom: -10px;
+}
+
+.toc-chapter ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.toc-chapter li {
+  display: block;
+  margin-left: 3px;
+}
+
+.toc-chapter a {
+  outline: none;
+}
+
+/* Highlighting active section */
+.active {
+  font-weight: bold;
+}
+
+.highlight {
+  text-decoration: none;
+  border-left: 3px solid rgba(75, 147, 236, 0.7921568627);
+  padding: 2px 2px;
+}
+
+@media (max-width: 1200px) {
+  .toc-chapter {
+    display: none !important;
+  }
+}
+/* Numbered headers. Starts at 1 */
+.head-1 {
+  counter-increment: section-1;
+  font-weight: bold;
+  font-size: 2.125rem;
+}
+
+.head-1::before {
+  content: counter(section-1) ". ";
+}
+
+.head-1.head-1-level2 {
+  counter-increment: subsection-1;
+  font-size: 1.775rem;
+}
+
+.head-1.head-1-level2::before {
+  content: counter(section-1) "." counter(subsection-1) ". ";
+}
+
+.head-1.head-1-level3 {
+  counter-increment: subsubsection-1;
+  font-size: 1.4rem;
+}
+
+.head-1.head-1-level3::before {
+  content: counter(section-1) "." counter(subsection-1) "." counter(subsubsection-1) ". ";
+}
+
+/* Numbered headers. Starts at 2 */
+.head-2 {
+  counter-increment: section-2 2;
+  font-weight: bold;
+  font-size: 2.125rem;
+}
+
+.head-2::before {
+  content: counter(section-2) ". ";
+}
+
+.head-2.head-2-level2 {
+  counter-increment: subsection-2;
+  font-size: 1.875rem;
+}
+
+.head-2.head-2-level2::before {
+  content: counter(section-2) "." counter(subsection-2) ". ";
+}
+
+.head-2.head-2-level3 {
+  counter-increment: subsubsection-2;
+  font-size: 1.5rem;
+}
+
+.head-2.head-2-level3::before {
+  content: counter(section-2) "." counter(subsection-2) "." counter(subsubsection-2) ". ";
+}
+
+/* Numbered headers. Starts at 3 */
+.head-3 {
+  counter-increment: section-3 3;
+  font-weight: bold;
+  font-size: 2.125rem;
+}
+
+.head-3::before {
+  content: counter(section-3) ". ";
+}
+
+.head-3.head-3-level2 {
+  counter-increment: subsection-3;
+  font-size: 1.875rem;
+}
+
+.head-3.head-3-level2::before {
+  content: counter(section-3) "." counter(subsection-3) ". ";
+}
+
+.head-3.head-3-level3 {
+  counter-increment: subsubsection-3;
+  font-size: 1.5rem;
+}
+
+.head-3.head-3-level3::before {
+  content: counter(section-3) "." counter(subsection-3) "." counter(subsubsection-3) ". ";
+}
+
+:lang(es) .theorem::before {
+  content: "Teorema " counter(theorem) ". " !important;
+}
+
+:lang(es) .lemma::before {
+  content: "Lema " counter(theorem) ". " !important;
+}
+
+:lang(es) .corollary::before {
+  content: "Corolario " counter(corollary) ". " !important;
+}
+
+:lang(es) .proof::before {
+  content: "Demostración. " attr(title) !important;
+}
+
+:lang(es) .definition::before {
+  content: "Definición " counter(definition) ". " !important;
+}
+
+:lang(es) .example::before {
+  content: "Ejemplo " counter(example) ". " !important;
+}
+
+:lang(es) figcaption:before {
+  content: "Figura " counter(figure-counter) ": " !important;
+}
+
+:lang(es) .indent-pars h2 + p,
+:lang(es) .indent-pars h3 + p,
+:lang(es) .indent-pars h4 + p {
+  text-indent: var(--text-indent-size);
+}
+
+/*!
  * A few extra features for LaTeX.css
  * by Juan Carlos Ponce Campuzano 7/Feb/2024
  * Updated: 22/Feb/2024
  * License: CC BY-NC-SA 4.0 DEED
  * Attribution-NonCommercial-ShareAlike 4.0 International
  * https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1
-*/.fixed-bar{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:86ch;height:50px;background-color:hsla(210,20%,98%,.9);color:#000;display:flex;justify-content:space-between;align-items:center;padding:10px;box-sizing:border-box;z-index:100}.fixed-bar a{outline:0}.link-container{display:flex;align-items:center}.link{text-decoration:none;color:#000!important;margin:0 10px;font-size:1.005em;font-weight:700;display:flex;align-items:center;border-radius:10px}.arrow{margin-right:8px;margin-left:8px;padding:0 5px}.arrow:hover{background-color:rgba(222,222,222,.8);border-radius:10px}.content-original{display:inline;border-radius:10px;padding:0 5px}.content-hover,.content-hover-next,.content-hover-previous{display:none;background-color:rgba(222,222,222,.8);border-radius:10px;padding:0 5px}.dark-mode-button,.support-top-button{position:relative;left:0;margin-left:0}.extra-text-container{display:flex;align-items:center}#dark-mode-toggle{cursor:pointer;padding:5px}#dark-mode-toggle:hover{color:rgba(4,112,162,.976)}#donate{cursor:pointer;padding:5px}#donate:hover{color:rgba(4,112,162,.976)}@media only screen and (max-width:500px){.fixed-bar{width:100%;height:40px}.link{font-size:.8em}#dark-mode-toggle{font-size:.8em}#donate{font-size:.8em}.dark-mode-button{display:none}}footer{text-align:center;padding:20px}.myFrame{overflow-x:auto;text-align:center}.responsive{display:block;overflow-x:auto}@media (min-width:993px){.hide-large{display:none!important}}@media (max-width:992px) and (min-width:501px){.hide-medium{display:none!important}}@media (max-width:500px){.hide-small{display:none!important}}.modal{display:none;position:fixed;z-index:9998;padding-top:70px;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:#000;background-color:rgba(0,0,0,.4)}.modal-content{position:relative;background-color:#f2f2f2;margin:auto;padding:0;border:1px solid #888;width:80%;box-shadow:0 4px 8px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);-webkit-animation-name:animatetop;-webkit-animation-duration:.4s;animation-name:animatetop;animation-duration:.4s;font-size:18px;line-height:normal;color:#262626}.button-container{position:relative;display:flex;flex-wrap:wrap;justify-content:center;align-items:center}.button-container button{margin-top:10px;margin-left:7px;margin-right:7px;margin-bottom:3px}#modal-link{padding:9px;background-color:#d8d8d8;border:1px #d8d8d8;border-radius:8px;font-weight:700;text-decoration:none!important}#modal-link a{text-decoration:none!important;color:#000!important}#modal-link a:hover{color:rgba(4,112,162,.976)!important}.modal a{text-decoration:none!important;color:#000!important}.modal a:hover{color:rgba(4,112,162,.976)!important}@-webkit-keyframes animatetop{from{top:-300px;opacity:0}to{top:0;opacity:1}}@keyframes animatetop{from{top:-300px;opacity:0}to{top:0;opacity:1}}.close{color:#fff;float:right;font-size:48px;font-weight:700}.close:focus,.close:hover{color:#000;text-decoration:none;cursor:pointer}.modal-header{padding:2px 16px;background-color:#595959;color:rgba(247,247,247,.9529411765);text-align:center;font-size:1.5em}.modal-body{padding:2px 16px}.modal-footer{padding:20px 20px 20px 20px;background-color:#595959;color:rgba(247,247,247,.9529411765);text-align:center!important;font-weight:700}#toTop{display:none;position:fixed;bottom:20px;right:30px;z-index:99;font-size:1.2em;font-weight:700;border:none;outline:0;background-color:rgba(145,145,145,.567);color:#ededed;cursor:pointer;width:50px;height:50px;line-height:40px;text-align:center;padding:0;border-radius:50%}#toTop:hover{background-color:#747474}.alpha-list{list-style-type:none;counter-reset:list-counter}.alpha-list li{counter-increment:list-counter}.alpha-list li:before{content:"(" counter(list-counter,lower-alpha) ") "}.roman-list{list-style-type:none;counter-reset:list-counter}.roman-list li{counter-increment:list-counter}.roman-list li:before{content:"(" counter(list-counter,lower-roman) ") "}.bbtex-list{list-style-type:none;counter-reset:list-counter;margin-left:0;padding-left:0}.bbtex-list li{text-align:justify;counter-increment:list-counter;display:block;margin-left:3.5em}.bbtex-list li:before{content:"[" counter(list-counter,decimal) "]. ";display:inline-block;text-align:right;width:3em;padding-right:.5em;margin-left:-3.5em}#licence-link{text-decoration:none;font-size:.9em}.red-txt{color:#ca0909;font-weight:700}.blue-txt{color:#0670d2;font-weight:700}.purple-text{color:purple;font-style:italic}.blue-text{color:#00f;font-style:italic}.postulate{margin:12px 0}.no-indent{margin-left:0;padding-left:0}.myquotes{width:90%;margin:0 auto;padding:5px 0}.myquotes .quote-content{font-style:italic;text-align:left}.myquotes .quote-author{text-align:right;margin-top:4px}@media print{*{color:#000;background-color:#fff}#center-link,#dark-mode-toggle,#donate,#fixed-bar,#footer-elements,#left-link,#right-link,.nextPage{display:none}#toTop{display:none!important}body{width:95%;margin:0;padding:10px 10px 20px 50px}label.sidenote-toggle:not(.sidenote-number){display:inline}.sidenote{display:none}.sidenote-toggle+.sidenote{display:block;margin:.5rem 1.25rem 1rem .5rem;float:left;left:1rem;clear:both;width:95%}}/*!
+*/
+/*
+ Extra features:
+ - Fixed top bar for navigation (*)
+ - Fixed right-bottom corner to go to the top (*)
+ - A modal to show extra info (*)
+ - A table of contents for each chapter (*)
+ (*) Requires JS
+*/
+/* Fixed bar styles */
+.fixed-bar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 86ch;
+  height: 50px;
+  background-color: hsla(210, 20%, 98%, 0.9);
+  /* White with 30% transparency */
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 100;
+  /* Ensuring the bar is above other content */
+}
+
+.fixed-bar a {
+  outline: none;
+}
+
+.link-container {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: black !important;
+  margin: 0 10px;
+  font-size: 1.005em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.arrow {
+  margin-right: 8px;
+  margin-left: 8px;
+  padding: 0px 5px;
+}
+
+.arrow:hover {
+  background-color: rgba(222, 222, 222, 0.8);
+  border-radius: 10px;
+}
+
+.content-original {
+  display: inline;
+  border-radius: 10px;
+  padding: 0px 5px;
+}
+
+.content-hover,
+.content-hover-previous,
+.content-hover-next {
+  display: none;
+  background-color: rgba(222, 222, 222, 0.8);
+  border-radius: 10px;
+  padding: 0px 5px;
+}
+
+.dark-mode-button,
+.support-top-button {
+  position: relative;
+  left: 0px;
+  margin-left: 0px;
+}
+
+.extra-text-container {
+  display: flex;
+  align-items: center;
+}
+
+#dark-mode-toggle {
+  cursor: pointer;
+  padding: 5px;
+}
+
+#dark-mode-toggle:hover {
+  color: rgba(4, 112, 162, 0.976);
+}
+
+#donate {
+  cursor: pointer;
+  padding: 5px;
+}
+
+#donate:hover {
+  color: rgba(4, 112, 162, 0.976);
+}
+
+/* Media query for smaller screens - Top bar */
+@media only screen and (max-width: 500px) {
+  .fixed-bar {
+    width: 100%;
+    height: 40px;
+  }
+  .link {
+    font-size: 0.8em;
+  }
+  #dark-mode-toggle {
+    font-size: 0.8em;
+  }
+  #donate {
+    font-size: 0.8em;
+  }
+  .dark-mode-button {
+    display: none;
+  }
+}
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+.myFrame {
+  overflow-x: auto;
+  text-align: center;
+}
+
+.responsive {
+  display: block;
+  overflow-x: auto;
+}
+
+@media (min-width: 993px) {
+  .hide-large {
+    display: none !important;
+  }
+}
+@media (max-width: 992px) and (min-width: 501px) {
+  .hide-medium {
+    display: none !important;
+  }
+}
+@media (max-width: 500px) {
+  .hide-small {
+    display: none !important;
+  }
+}
+/* The following is for the Modal */
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 9998;
+  /* Sit on top */
+  padding-top: 70px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #f2f2f2;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  /* fonts */
+  font-size: 18px;
+  line-height: normal;
+  color: #262626;
+}
+
+.button-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-container button {
+  margin-top: 10px;
+  margin-left: 7px;
+  margin-right: 7px;
+  margin-bottom: 3px;
+}
+
+#modal-link {
+  padding: 9px;
+  background-color: #d8d8d8;
+  border: 1px #d8d8d8;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none !important;
+}
+
+#modal-link a {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+#modal-link a:hover {
+  color: rgba(4, 112, 162, 0.976) !important;
+}
+
+.modal a {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.modal a:hover {
+  color: rgba(4, 112, 162, 0.976) !important;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #595959;
+  color: rgba(247, 247, 247, 0.9529411765);
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.modal-body {
+  padding: 2px 16px;
+}
+
+.modal-footer {
+  padding: 20px 20px 20px 20px;
+  background-color: #595959;
+  color: rgba(247, 247, 247, 0.9529411765);
+  text-align: center !important;
+  font-weight: bold;
+}
+
+/* The modal setup ends here */
+#toTop {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  background-color: rgba(145, 145, 145, 0.567);
+  color: rgb(237, 237, 237);
+  cursor: pointer;
+  width: 50px;
+  /* Adjust button width */
+  height: 50px;
+  /* Adjust button height */
+  line-height: 40px;
+  /* Adjust line-height to center text vertically */
+  text-align: center;
+  /* Center text horizontally */
+  padding: 0;
+  /* Remove padding */
+  border-radius: 50%;
+  /* Make it circular */
+}
+
+#toTop:hover {
+  background-color: #747474;
+}
+
+/* Custom lists for "ol" tag */
+/* Alphabetical small caps */
+.alpha-list {
+  list-style-type: none;
+  /* Remove default numbering */
+  counter-reset: list-counter;
+  /* Reset the counter */
+}
+
+.alpha-list li {
+  counter-increment: list-counter;
+  /* Increment the counter */
+}
+
+.alpha-list li:before {
+  content: "(" counter(list-counter, lower-alpha) ") ";
+  /* Use lowercase letters with parentheses */
+}
+
+/* Roman small caps */
+.roman-list {
+  list-style-type: none;
+  /* Remove default numbering */
+  counter-reset: list-counter;
+  /* Reset the counter */
+}
+
+.roman-list li {
+  counter-increment: list-counter;
+  /* Increment the counter */
+}
+
+.roman-list li:before {
+  content: "(" counter(list-counter, lower-roman) ") ";
+  /* Use lowercase letters with parentheses */
+}
+
+/* Biblio LaTeX */
+.bbtex-list {
+  list-style-type: none;
+  /* Remove default numbering */
+  counter-reset: list-counter;
+  margin-left: 0;
+  padding-left: 0;
+  /* Reset the counter */
+}
+
+.bbtex-list li {
+  text-align: justify;
+  counter-increment: list-counter;
+  display: block;
+  margin-left: 3.5em;
+  /* Increment the counter */
+}
+
+.bbtex-list li:before {
+  content: "[" counter(list-counter, decimal) "]. ";
+  display: inline-block;
+  text-align: right;
+  width: 3em;
+  /* Must be the maximum width of your list's numbers, including the ')', for compatability (in case you use a fixed-width font, for example).  Will have to beef up if using roman. */
+  padding-right: 0.5em;
+  margin-left: -3.5em;
+  /* Use lowercase letters with parentheses */
+}
+
+#licence-link {
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.red-txt {
+  color: rgb(202, 9, 9);
+  font-weight: bold;
+}
+
+.blue-txt {
+  color: rgb(6, 112, 210);
+  font-weight: bold;
+}
+
+.purple-text {
+  color: #800080;
+  font-style: italic;
+}
+
+.blue-text {
+  color: #0000ff;
+  font-style: italic;
+}
+
+.orange-txt {
+  color: #ff6f00;
+  font-style: italic;
+}
+
+.postulate {
+  margin: 12px 0;
+}
+
+.no-indent {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.myquotes {
+  width: 90%;
+  margin: 0 auto;
+  padding: 5px 0;
+}
+
+.myquotes .quote-content {
+  font-style: italic;
+  text-align: left;
+}
+
+.myquotes .quote-author {
+  text-align: right;
+  margin-top: 4px;
+}
+
+/*
+ https://benfrain.com/create-print-styles-using-css3-media-queries/
+*/
+@media print {
+  * {
+    color: #000;
+    background-color: #fff;
+  }
+  #fixed-bar,
+  #left-link,
+  #right-link,
+  #center-link,
+  #dark-mode-toggle,
+  #donate,
+  #footer-elements,
+  .nextPage {
+    display: none;
+  }
+  #toTop {
+    display: none !important;
+  }
+  body {
+    width: 95%;
+    margin: 0px;
+    padding: 10px 10px 20px 50px;
+  }
+  label.sidenote-toggle:not(.sidenote-number) {
+    display: inline;
+  }
+  .sidenote {
+    display: none;
+  }
+  .sidenote-toggle + .sidenote {
+    display: block;
+    margin: 0.5rem 1.25rem 1rem 0.5rem;
+    float: left;
+    left: 1rem;
+    clear: both;
+    width: 95%;
+  }
+}
+/*!
  * LaTeX prism.css (https://latex.now.sh/#syntax-highlighting)
  * Based on the default prism.js theme for JavaScript, CSS and HTML by Lea Verou
  *
  * Source: https://github.com/vincentdoerig/latex-css/tree/master/prism
  * Licensed under MIT (https://github.com/vincentdoerig/latex-css/blob/master/LICENSE)
-*/:root{--bg-color:#F0F0F0;--color:black;--token-teal:#407f80;--token-black:#000000;--token-grey:#666666;--token-green:#007f00;--token-lime:#7d8f29;--token-brown:#9a6e3a;--token-red:#ba2121;--token-fuchsia:#dd4a68;--token-orange:#e90;--token-pink:#BA6687}.latex-dark{--bg-color:#2d2d2d;--color:#ccc;--token-teal:#90D0D0;--token-black:#ccc;--token-grey:#999;--token-green:#51B53F;--token-lime:#B4C55D;--token-brown:#D3A26B;--token-red:#FA5E4F;--token-fuchsia:#FF839B;--token-orange:#FFCF4C;--token-pink:#F49BBC}@media (prefers-color-scheme:dark){.latex-dark-auto{--bg-color:#2d2d2d;--color:#ccc;--token-teal:#90D0D0;--token-black:#ccc;--token-grey:#999;--token-green:#51B53F;--token-lime:#B4C55D;--token-brown:#D3A26B;--token-red:#FA5E4F;--token-fuchsia:#FF839B;--token-orange:#FFCF4C;--token-pink:#F49BBC}}code[class*=language-],pre[class*=language-]{color:var(--color);background:0 0;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:1em;overflow:auto}pre[class*=language-]{background:var(--bg-color)}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:var(--token-teal)}.token.constant,.token.punctuation{color:var(--token-black)}.token.number,.token.operator,.token.punctuation.attr-equals{color:var(--token-grey)}.token.namespace{opacity:.7}.token.boolean,.token.deleted,.token.keyword,.token.property,.token.symbol,.token.tag{color:var(--token-green)}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector{color:var(--token-lime)}.language-css .token.string,.style .token.string,.token.entity,.token.url{color:var(--token-brown)}.token.atrule,.token.attr-value,.token.attr-value .punctuation:not(.attr-equals),.token.string{color:var(--token-red)}.token.class-name{color:var(--token-fuchsia)}.token.important,.token.variable{color:var(--token-orange)}.token.regex{color:var(--token-pink)}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+*/
+:root {
+  --bg-color: #F0F0F0;
+  --color: black;
+  --token-teal: #407f80;
+  --token-black: #000000;
+  --token-grey: #666666;
+  --token-green: #007f00;
+  --token-lime: #7d8f29;
+  --token-brown: #9a6e3a;
+  --token-red: #ba2121;
+  --token-fuchsia: #dd4a68;
+  --token-orange: #e90;
+  --token-pink: #BA6687;
+}
+
+.latex-dark {
+  --bg-color: #2d2d2d;
+  --color: #ccc;
+  --token-teal: #90D0D0;
+  --token-black: #ccc;
+  --token-grey: #999;
+  --token-green: #51B53F;
+  --token-lime: #B4C55D;
+  --token-brown: #D3A26B;
+  --token-red: #FA5E4F;
+  --token-fuchsia: #FF839B;
+  --token-orange: #FFCF4C;
+  --token-pink: #F49BBC;
+}
+
+@media (prefers-color-scheme: dark) {
+  .latex-dark-auto {
+    --bg-color: #2d2d2d;
+    --color: #ccc;
+    --token-teal: #90D0D0;
+    --token-black: #ccc;
+    --token-grey: #999;
+    --token-green: #51B53F;
+    --token-lime: #B4C55D;
+    --token-brown: #D3A26B;
+    --token-red: #FA5E4F;
+    --token-fuchsia: #FF839B;
+    --token-orange: #FFCF4C;
+    --token-pink: #F49BBC;
+  }
+}
+code[class*=language-],
+pre[class*=language-] {
+  color: var(--color);
+  background: none;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*=language-] {
+  padding: 1em;
+  overflow: auto;
+}
+
+pre[class*=language-] {
+  background: var(--bg-color);
+}
+
+/* Inline code */
+:not(pre) > code[class*=language-] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--token-teal);
+}
+
+.token.punctuation,
+.token.constant {
+  color: var(--token-black);
+}
+
+.token.punctuation.attr-equals,
+.token.number,
+.token.operator {
+  color: var(--token-grey);
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.symbol,
+.token.deleted,
+.token.keyword {
+  color: var(--token-green);
+}
+
+.token.selector,
+.token.attr-name,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--token-lime);
+}
+
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--token-brown);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.string,
+.token.attr-value .punctuation:not(.attr-equals) {
+  color: var(--token-red);
+}
+
+.token.class-name {
+  color: var(--token-fuchsia);
+}
+
+.token.important,
+.token.variable {
+  color: var(--token-orange);
+}
+
+.token.regex {
+  color: var(--token-pink);
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
