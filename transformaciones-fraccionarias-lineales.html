@@ -66,10 +66,10 @@
             <span class="content-hover-previous">Plano Complejo Extendido</span>
             <span class="content-hover">Tabla de Contenidos</span>
             <span class="content-original">Geometría Hiperbólica</span>
-            <span class="content-hover-next">Bibliografía</span>
+            <span class="content-hover-next">Plano Hiperbólico</span>
         </a>
     </div>
-    <a href="bibliografia.html" class="link" id="next-link">
+    <a href="plano-hiperbolico.html" class="link" id="next-link">
         <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
     </a>
 </div>
@@ -117,10 +117,12 @@
           En el año de 1855, el matemático aleman August Ferdinand Möbius (1790-1868)
           publicó su libro titulado
           <em>Die Theorie der Kreisverwandschaft in rein geometrischer
-            Darstellung</em> (<a href="bibliografia.html#Mobius" target="_blank">Möbius 1855</a>), en el cual desarrolló la teoría de transformaciones circulares del plano.
+            Darstellung</em> (<a href="bibliografia.html#Mobius" target="_blank">Möbius 1855</a>), en el cual desarrolló
+          la teoría de transformaciones circulares del plano.
           Estas transformaciones consisten por aquellas que son generadas por inversiones con respecto
           a circunferencias (para enriquecer esta información histórica recomendamos al lector
-          dirigirse a <a target="_blank" href="bibliografia.html#Kolmogorov-Yushkevich">Kolmogorov &amp; Yushkevich pág. 107</a>). Desde el punto de vista analítico, estas transformaciones pueden
+          dirigirse a <a target="_blank" href="bibliografia.html#Kolmogorov-Yushkevich">Kolmogorov &amp; Yushkevich pág.
+            107</a>). Desde el punto de vista analítico, estas transformaciones pueden
           ser interpretadas como transformaiones fraccionarias lineales.
           De aquí la razón por la
           cual el uso de transformaiones de Möbius para acuñar a las transformaciones fracionarias
@@ -171,15 +173,15 @@
             mediante
             <div class="scroll-wrapper">
               \[T(z)= \left\{
-            \begin{array}{ cl }
-            \dfrac{az+b}{cz+d}; &amp; \text{ para cada } z\in\mathbb{C}-\left\{\dfrac{-d}{c}\right\}, \\
-            \infty; &amp; \text{ si } z=\dfrac{-d}{c},\\
-            \dfrac{a}{c}; &amp; \text{ si } z=\infty.\\
-            \end{array}
-            \right.
-            \]
+              \begin{array}{ cl }
+              \dfrac{az+b}{cz+d}; &amp; \text{ para cada } z\in\mathbb{C}-\left\{\dfrac{-d}{c}\right\}, \\
+              \infty; &amp; \text{ si } z=\dfrac{-d}{c},\\
+              \dfrac{a}{c}; &amp; \text{ si } z=\infty.\\
+              \end{array}
+              \right.
+              \]
             </div>
-            
+
           </li>
         </ol>
 
@@ -200,14 +202,14 @@
           \]
           es decir, que ${\rm Id}$ también es una transformación de Möbius. Lo anterior implica que el conjunto de
           todas las transformaciones de Möbius
-          </p><div class="scroll-wrapper">
+        </p><div class="scroll-wrapper">
           \begin{equation}\label{eq:grupo_transformaciones_de_Mobius_notacion}
           \mathcal{M}:=\left\{T:\widehat{\mathbb{C}}\to \widehat{\mathbb{C}}\mid T
           \text{ es una transformación de Möbius}\right\},
           \end{equation}
-          </div>
-          
-          es un grupo de los homeomorfismo de la esfera de Riemann ${\rm Homeo}(\widehat{\mathbb{C}}).$
+        </div>
+
+        es un grupo de los homeomorfismo de la esfera de Riemann ${\rm Homeo}(\widehat{\mathbb{C}}).$
         <p></p>
 
         <p>
@@ -261,29 +263,29 @@
           T_1(z)=z+1 \quad \text{ y } \quad T_2(z)=\dfrac{-1}{z},
           \]
           entonces las composiciones
-          </p><div class="scroll-wrapper">
-            \begin{equation*}
+        </p><div class="scroll-wrapper">
+          \begin{equation*}
           \begin{split}
           T_1 \circ T_2(z)&amp;=T_1\left(\dfrac{-1}{z}\right)=\dfrac{-1}{z}+1=\dfrac{z-1}{z},\\
           &amp;\\
           T_2\circ T_1(z) &amp; =T_2(z+1)=\dfrac{-1}{z+1},\\
           \end{split}
           \end{equation*}
-          </div>
-          satisfacen $T_1 \circ T_2(z)\neq T_2 \circ T_1 (z)$ para algunos $z\in\widehat{\mathbb{C}}.$
+        </div>
+        satisfacen $T_1 \circ T_2(z)\neq T_2 \circ T_1 (z)$ para algunos $z\in\widehat{\mathbb{C}}.$
         <p></p>
 
         <p>
           Geométricamente, una transfomación de Möbius se puede obtener
-          por medio de una proyección esteriográfica del plano complejo 
-          a una esfera admisible en $\R^3,$ seguida de un movimiento rigido 
-          de la esferea en  $\R^3$ (el cual se mapea a otra esfera admisible),
+          por medio de una proyección esteriográfica del plano complejo
+          a una esfera admisible en $\R^3,$ seguida de un movimiento rigido
+          de la esferea en $\R^3$ (el cual se mapea a otra esfera admisible),
           seguido de una proyección estereográfica de vuelta al plano.
           Esto se puede apreciar en el siguiente applet. Mueve los deslizadores
           para observar las differentes transformaciones y sus correspondientes
           projecciones.
         </p>
-        
+
         <figure>
           <div id="ggb-element-projection"></div>
           <figcaption>
@@ -335,19 +337,19 @@
           el valor cero es similar). Evaluamos los valores $0,$ $1$ e $\infty$ en las transformaciones y obtenemos
           <div class="scroll-wrapper">
             \begin{align}
-          T_1(0) = T_{2}(0) &amp; =\frac{b_1}{d_1}=\frac{b_2}{d_2}=u,\label{eq:T0}\\
-          T_{1}(1)=T_{2}(1) &amp;=\frac{a_1+b_1}{c_1+d_1}=\frac{a_2+b_2}{c_2+d_2}\label{eq:T1},\\
-          T_{1}(\infty)=T_{2}(\infty)&amp; =\frac{a_1}{c_1}=\frac{a_2}{c_2}=v\label{eq:Tinfinito},
-          \end{align}
+            T_1(0) = T_{2}(0) &amp; =\frac{b_1}{d_1}=\frac{b_2}{d_2}=u,\label{eq:T0}\\
+            T_{1}(1)=T_{2}(1) &amp;=\frac{a_1+b_1}{c_1+d_1}=\frac{a_2+b_2}{c_2+d_2}\label{eq:T1},\\
+            T_{1}(\infty)=T_{2}(\infty)&amp; =\frac{a_1}{c_1}=\frac{a_2}{c_2}=v\label{eq:Tinfinito},
+            \end{align}
           </div>
           para algunos valores complejos $u,v\in\mathbb{C}.$ Ahora, en las ecuaciones \eqref{eq:T0} y
           \eqref{eq:Tinfinito} despejamos adecuadamente y obtenemos las igualdades
           <div class="scroll-wrapper">
             \[
-          b_1=ud_1, \quad b_2=ud_2,\quad a_1=vc_1, \quad a_2=vc_2.
-          \]
+            b_1=ud_1, \quad b_2=ud_2,\quad a_1=vc_1, \quad a_2=vc_2.
+            \]
           </div>
-          
+
 
           <p>
             Estas últmas cuatro relaciones las sustituimos en la ecuación \eqref{eq:T1}.
@@ -358,20 +360,20 @@
 
           <p>
             Luego, computamos y así, obtenemos
-            </p><div class="scroll-wrapper">
-              \begin{align*}
+          </p><div class="scroll-wrapper">
+            \begin{align*}
             (vc_1+ud_1)(c_2+d_2) &amp; =(vc_2+ud_2)(c_1+d_1),\\
             vc_1c_2+vc_1d_2+ud_1c_2+ud_1d_2 &amp; = vc_1c_2+vd_1c_2+uc_1d_2+ud_1d_2,\\
             vc_1d_2+ ud_1c_2&amp; =vd_1c_2+uc_1d_2,\\
             v(c_1d_2-d_1c_2)-u(c_1d_2-d_1c_2) &amp;=0,\\
             (v-u)(c_1d_2-d_1c_2)&amp; =0.\\
             \end{align*}
-            </div>
-            
-            Ahora, argumentaremos que no es posible la condición $v-u=0$ y se debe de satisfacer
-            \[
-            c_1d_2-d_1c_2=0.
-            \]
+          </div>
+
+          Ahora, argumentaremos que no es posible la condición $v-u=0$ y se debe de satisfacer
+          \[
+          c_1d_2-d_1c_2=0.
+          \]
           <p></p>
 
           <p>
@@ -435,12 +437,12 @@
           Una de las implicaciones del hecho anterior es que cada elemento del grupo transformaciones de Möbius
           $\mathcal{M}$ (véase ecuación \eqref{eq:grupo_transformaciones_de_Mobius_notacion})
           tiene determinante igual a $1,$ es decir,
-          </p><div class="scroll-wrapper">
-            \begin{equation}\label{definicion:mobius_determinante_1}
+        </p><div class="scroll-wrapper">
+          \begin{equation}\label{definicion:mobius_determinante_1}
           \mathcal{M}=\left\{[T] : T \text{ es una transformación de Möbius tal que } {\rm det}(T)=1\right\}.
           \end{equation}
-          </div>
-          
+        </div>
+
         <p></p>
 
         <p>
@@ -507,18 +509,18 @@
             <span class="blue-txt">Caso 2.</span> Contrariamente, si el coeficiente $c\neq 0,$ entonces podemos
             reescribir la regla de
             correspondencia de $T$ como sigue
-            </p><div class="scroll-wrapper">
-              \begin{equation}\label{eq:det_no_cero}
+          </p><div class="scroll-wrapper">
+            \begin{equation}\label{eq:det_no_cero}
             \begin{split}
             T(z)
             &amp;=\frac{az+b}{cz+d}=\frac{az+b+\dfrac{ad}{c}-\dfrac{ad}{c}}{cz+d}=\frac{\dfrac{a}{c}(cz+d)+b-\dfrac{ad}{c}}{cz+d},\\
             &amp;=\dfrac{a}{c}+\frac{\dfrac{bc-ad}{c}}{cz+d}.
             \end{split}
             \end{equation}
-            </div>
-            
-            Esta última ecuación implica que la transformación de Möbius $T$ es una composición finita de
-            translaciones, rotaciones, homotecias y la inmersión.
+          </div>
+
+          Esta última ecuación implica que la transformación de Möbius $T$ es una composición finita de
+          translaciones, rotaciones, homotecias y la inmersión.
           <p></p>
         </div>
 
@@ -574,24 +576,24 @@
             T(z)=z+z_{0}=u+vi
             \]
             los valores reales $u$ y $v$ también satisfacen una ecuación general como la que se describe en
-            \eqref{eq:linea_recta_prueba_teorema}. Dado que 
-            </p><div class="scroll-wrapper">
-              #$T(z)=z+z_{0}= (x+x_{0})+(y+y_{0})i=u+vi,$#
-            </div>
-             entonces
-            \[
-            u=x+x_{0} \quad \text{ y } \quad v=y+y_{0}.
-            \]
-            Ahora, sustituimos estos términos en la ecuación \eqref{eq:linea_recta_prueba_teorema}, realizamos
-            operaciones y obtenemos
-            \begin{equation*}
-            \begin{split}
-            B(u-x_{0})+C(v-y_{0})+D&amp;=0,\\
-            Bu+Cv+(D-Bx_{0}-Cy_{0})&amp;=0.
-            \end{split}
-            \end{equation*}
-            De la anterior igualdad, podemos concluir que la imagen $T(\mathcal{C})$ es también una línea recta
-            euclidiana.
+            \eqref{eq:linea_recta_prueba_teorema}. Dado que
+          </p><div class="scroll-wrapper">
+            #$T(z)=z+z_{0}= (x+x_{0})+(y+y_{0})i=u+vi,$#
+          </div>
+          entonces
+          \[
+          u=x+x_{0} \quad \text{ y } \quad v=y+y_{0}.
+          \]
+          Ahora, sustituimos estos términos en la ecuación \eqref{eq:linea_recta_prueba_teorema}, realizamos
+          operaciones y obtenemos
+          \begin{equation*}
+          \begin{split}
+          B(u-x_{0})+C(v-y_{0})+D&amp;=0,\\
+          Bu+Cv+(D-Bx_{0}-Cy_{0})&amp;=0.
+          \end{split}
+          \end{equation*}
+          De la anterior igualdad, podemos concluir que la imagen $T(\mathcal{C})$ es también una línea recta
+          euclidiana.
           <p></p>
 
           <p>
@@ -627,16 +629,16 @@
             y un círculo generalizado $\mathcal{C}$ sobre el plano complejo extendido $\hat{\mathbb{C}}.$ Veamos que
             la imagen $T(\mathcal{C})$ es también un círculo generalizado. Recordemos que $\mathcal{C}$ puede ser
             representado mediante la ecuación general
-            </p><div class="scroll-wrapper">
-              \begin{equation}\label{eq:circulo_generalizado}
+          </p><div class="scroll-wrapper">
+            \begin{equation}\label{eq:circulo_generalizado}
             A(x^2+y^{2})+2Bx+2Cy+D=0,
             \end{equation}
-            </div>
-            siendo $A,B,C$ y $D$ valores reales. Si $A=0$ y al menos uno de los términos $B$ o $C$ es no nulo,
-            entonces $\mathcal{C}$ es una
-            <span class="blue-txt">línea recta euclidiana</span>. Contrariamente, si $A\neq 0$ y
-            $B^{2}+C^2-AD&gt;0,$ entonces $\mathcal{C}$ es un
-            <span class="blue-txt">circunferencia euclidiana</span>.
+          </div>
+          siendo $A,B,C$ y $D$ valores reales. Si $A=0$ y al menos uno de los términos $B$ o $C$ es no nulo,
+          entonces $\mathcal{C}$ es una
+          <span class="blue-txt">línea recta euclidiana</span>. Contrariamente, si $A\neq 0$ y
+          $B^{2}+C^2-AD&gt;0,$ entonces $\mathcal{C}$ es un
+          <span class="blue-txt">circunferencia euclidiana</span>.
           <p></p>
 
           <p>
@@ -647,26 +649,26 @@
             \]
             los valores reales $u$ y $v$ también satisfacen una ecuación general como la que se describe en
             \eqref{eq:circulo_generalizado}. Dado que $T(z)=\dfrac{1}{z}=\dfrac{\overline{z}}{|z|^2},$ entonces
-            </p><div class="scroll-wrapper">
-              \begin{equation}
+          </p><div class="scroll-wrapper">
+            \begin{equation}
             u=\frac{x}{x^2+y^2}, \quad v=\frac{-y}{x^2+y^2}\quad \text{y} \quad
             \left|\frac{1}{z}\right|^2=u^2+v^2=\dfrac{1}{x^2+y^2}.
             \end{equation}
-            </div>
-            
-            Ahora, sustituimos estos términos en la ecuación \eqref{eq:circulo_generalizado} y obtenemos
-            <div class="scroll-wrapper">
-              \[
+          </div>
+
+          Ahora, sustituimos estos términos en la ecuación \eqref{eq:circulo_generalizado} y obtenemos
+          <div class="scroll-wrapper">
+            \[
             A\left(\frac{1}{u^2+v^2}\right)+2B\left(\frac{u}{u^2+v^2}\right)+2C\left(\frac{-v}{u^2+v^2}\right)-D=0.
             \]
-            </div>
-            Al simplificar la expresión anterior obtenemos la nueva expresión
-            <div class="scroll-wrapper">
-              \begin{equation}\label{eq:circulo_generalizado_aplicar_inmersion}
+          </div>
+          Al simplificar la expresión anterior obtenemos la nueva expresión
+          <div class="scroll-wrapper">
+            \begin{equation}\label{eq:circulo_generalizado_aplicar_inmersion}
             D(u^2+v^2)-2Bu+2Cv-A =0.
             \end{equation}
-            </div>
-            Debemos explorar los siguientes casos.
+          </div>
+          Debemos explorar los siguientes casos.
           <p></p>
 
           <p>
@@ -683,16 +685,16 @@
             \]
             Si $D=0,$ entonces la imagen $T(\mathcal{C})$ es una línea recta euclidiana. Contrariamente, si $D\neq 0,$
             entonces en esta última expresión completamos cuadrados, computamos y obtenemos
-            </p><div class="scroll-wrapper">
-              \begin{equation*}
+          </p><div class="scroll-wrapper">
+            \begin{equation*}
             \begin{split}
             u^2-\frac{2Bu}{D}+\frac{B^2}{D^2} +v^2+\frac{2Cv}{D}+\frac{C^2}{D^2}&amp;=\frac{B^{2}}{D^{2}}+\frac{C^2}{D^2},\\
             \left(u-\frac{B}{D}\right)^2+\left(v+\frac{C}{D}\right)^2&amp;=\frac{B^2+C^2}{D^2}\\
             \end{split}
             \end{equation*}
-            </div>
-            
-            De la anterior igualdad, podemos concluir que la imagen $T(\mathcal{C})$ es una circunferencia euclidiana.
+          </div>
+
+          De la anterior igualdad, podemos concluir que la imagen $T(\mathcal{C})$ es una circunferencia euclidiana.
           <p></p>
 
           <p>
@@ -708,8 +710,8 @@
             \]
             Si $D=0,$ entonces la imagen $T(\mathcal{C})$ es una línea recta euclidiana. Contrariamente, si $D\neq 0,$
             dividmos entre $D$ ambos miembros de la igualdad, completamos cuadrados, realizamos operaciones y obtenemos
-            </p><div class="scroll-wrapper">
-              \begin{equation*}
+          </p><div class="scroll-wrapper">
+            \begin{equation*}
             \begin{split}
             D(u^2+v^2)-2Bu+2Cv-A &amp;=0,\\
             u^2-\frac{2Bu}{D}+\frac{B^2}{D^2}
@@ -717,11 +719,11 @@
             \left(u-\frac{B}{2D}\right)^2+\left(v+\frac{C}{2D}\right)^2&amp;=\frac{B^2+C^2+AD}{D^2}.\\
             \end{split}
             \end{equation*}
-            </div>
-            
-            De esta última expresión, podemos concluir que $T(\mathcal{C})$ es una circunferencia euclidiana, pues
-            $B^2+C^2+AD&gt;0.$ Los anteriores argumentos, prueban que la inmersión envía círculos generalizados sobre
-            círculos generalizados.
+          </div>
+
+          De esta última expresión, podemos concluir que $T(\mathcal{C})$ es una circunferencia euclidiana, pues
+          $B^2+C^2+AD&gt;0.$ Los anteriores argumentos, prueban que la inmersión envía círculos generalizados sobre
+          círculos generalizados.
           <p></p>
         </div>
 
@@ -855,20 +857,20 @@
           <p>
             <span class="blue-txt">Paso 1</span>.
             Construiremos dos transformaciones de Möbius $S$ y $M,$ con las siguientes propiedades:
-            </p><div class="scroll-wrapper">
-              \begin{equation}
+          </p><div class="scroll-wrapper">
+            \begin{equation}
             \begin{array}{ccc}
             S(z_1)=\textbf{0},&amp;S(z_2)=1, &amp; S(z_3)=\infty;\\
             M(w_1)=\textbf{0}, &amp; M(w_2)=1,&amp; M(w_3)=\infty.
             \end{array}
             \end{equation}
-            </div>
-            
-            Así, obtendremos la transformación de Möbius dada por la composición $M^{-1}\circ S,$ la cual
-            satisface
-            \[
-            M^{-1}\circ S(z_{i})=w_{i},\, \text{para cada}\, i\in\{1,2,3\}.
-            \]
+          </div>
+
+          Así, obtendremos la transformación de Möbius dada por la composición $M^{-1}\circ S,$ la cual
+          satisface
+          \[
+          M^{-1}\circ S(z_{i})=w_{i},\, \text{para cada}\, i\in\{1,2,3\}.
+          \]
           <p></p>
 
           <p>
@@ -894,13 +896,13 @@
           <p>
             Usando las ideas previas en la construcción de la transformación $S,$ podemos definir una
             transformación de Möbius $M$ tal que
-            </p><div class="scroll-wrapper">
-              \[
+          </p><div class="scroll-wrapper">
+            \[
             M(w_1)=0,\quad M(w_2)=1 \quad \text{ y } \quad
             M(w_3)=\infty.
             \]
-            </div>
-            
+          </div>
+
           <p></p>
 
           <p>
@@ -1027,25 +1029,25 @@
           entonces para cualesquiera $i\neq j\in\{1,2,3,4\}$ se tiene que
           <div class="scroll-wrapper">
             \begin{equation}\label{t:cuentas_razon_cruzada}
-          \begin{split}
-          T(z_{i})-T(z_{j}) &amp;=\dfrac{az_{i}+b}{cz_{i}+d}-\frac{az_{j}+b}{cz_{j}+d},\\
-          &amp;\\
-          &amp;= \frac{(az_{i}+b)(cz_{j}+d)-(az_{j}+b)(cz_{i}+d)}{(cz_{i}+d)(cz_{j}+d)},\\
-          &amp;\\
-          &amp;=\frac{\cancel{\color{red}acz_{i}z_{j}}+adz_{i}+bcz_{j}+\cancel{\color{blue}bd}\cancel{-\color{red}acz_{i}z_{j}}-adz_{j}-bcz_{i}\cancel{\color{blue}-bd}}{(cz_{i}+d)(cz_{j}+d)},\\
-          &amp;\\
-          &amp;=\frac{z_{i}(ad-bc)-z_{j}(ad-bc)}{(cz_{i}+d)(cz_{j}+d)},\\
-          &amp;\\
-          &amp;=\frac{z_{i}-z_{j}}{(cz_{i}+d)(cz_{j}+d)}.\\
-          \end{split}
-          \end{equation}
+            \begin{split}
+            T(z_{i})-T(z_{j}) &amp;=\dfrac{az_{i}+b}{cz_{i}+d}-\frac{az_{j}+b}{cz_{j}+d},\\
+            &amp;\\
+            &amp;= \frac{(az_{i}+b)(cz_{j}+d)-(az_{j}+b)(cz_{i}+d)}{(cz_{i}+d)(cz_{j}+d)},\\
+            &amp;\\
+            &amp;=\frac{\cancel{\color{red}acz_{i}z_{j}}+adz_{i}+bcz_{j}+\cancel{\color{blue}bd}\cancel{-\color{red}acz_{i}z_{j}}-adz_{j}-bcz_{i}\cancel{\color{blue}-bd}}{(cz_{i}+d)(cz_{j}+d)},\\
+            &amp;\\
+            &amp;=\frac{z_{i}(ad-bc)-z_{j}(ad-bc)}{(cz_{i}+d)(cz_{j}+d)},\\
+            &amp;\\
+            &amp;=\frac{z_{i}-z_{j}}{(cz_{i}+d)(cz_{j}+d)}.\\
+            \end{split}
+            \end{equation}
           </div>
-          
+
 
           <p>
             Sustituyendo la relación anterior en la definición de razón cruzada se tiene que
-            </p><div class="scroll-wrapper">
-              \begin{equation}
+          </p><div class="scroll-wrapper">
+            \begin{equation}
             \begin{split}
             (T(z_1),T(z_2);T(z_3),T(z_4))&amp;= \dfrac{(T(z_1)-T(z_3))(T(z_2)-T(z_4))}{(T(z_1)-T(z_2))(T(z_3)-T(z_4))},\\
             &amp;\\
@@ -1056,8 +1058,8 @@
             &amp;=(z_{1},z_{2};z_{3},z_{4}).
             \end{split}
             \end{equation}
-            </div>
-            
+          </div>
+
           <p></p>
         </div>
 
@@ -1143,13 +1145,13 @@
           \end{equation}
           es un homomorfismo sobreyectivo de grupos. Del Primer Teorema de Isomorfismos de grupo, se sigue que el kernel
           del determinante es un subgrupo
-          </p><div class="scroll-wrapper">
-            \[
-          {\rm ker}({\rm det})=\left\{A\in {\rm GL}(2,\mathbb{C}): {\rm det}(A)=1\right\}\lt{\rm GL}(2,\mathbb{C}), 
+        </p><div class="scroll-wrapper">
+          \[
+          {\rm ker}({\rm det})=\left\{A\in {\rm GL}(2,\mathbb{C}): {\rm det}(A)=1\right\}\lt{\rm GL}(2,\mathbb{C}),
           \]
-          </div>
-          y
-          es como conocido como <span class="red-txt">Grupo Lineal Especial</span>.
+        </div>
+        y
+        es como conocido como <span class="red-txt">Grupo Lineal Especial</span>.
 
         <p></p>
 
@@ -1276,21 +1278,21 @@
             \]
             entonces $\psi$ asigna a la clase $[A_{1} A_{2}]$ la clase de la transformación de Möbius $\psi([A_{1}
             A_{2}])=T_{[A_{1} A_{2}]},$ la cual está definida mediante
-            </p><div class="scroll-wrapper">
-              \begin{equation}\label{eq:psi_1}
+          </p><div class="scroll-wrapper">
+            \begin{equation}\label{eq:psi_1}
             T_{[A_{1} A_{2}]}(z)=\dfrac{(a_1a_2+b_1c_2)z+(a_1b_2+b_1d_2)}{(c_1a_2+d_1c_2)z+(c_1b_2+d_1d_2)}.
             \end{equation}
-            </div>
-            
-            Por otro lado, $\psi$ asigna a las clases de matrices $[A_{1}]$ y $[A_{2}]$ las transformaciones de Möbius
-            $T_{[A_1]}$ y $T_{[A_2]},$ respectivamente, donde
-            <div class="scroll-wrapper">
-              \begin{equation*}
+          </div>
+
+          Por otro lado, $\psi$ asigna a las clases de matrices $[A_{1}]$ y $[A_{2}]$ las transformaciones de Möbius
+          $T_{[A_1]}$ y $T_{[A_2]},$ respectivamente, donde
+          <div class="scroll-wrapper">
+            \begin{equation*}
             T_{[A_{1}]}(z)=\dfrac{a_1z+b_1}{c_1z+d_1} \quad \text{ y } \quad T_{[A_{2}]}(z)=\dfrac{a_2z+b_2}{c_2z+d_2}.
             \end{equation*}
-            </div>
-            Entonces, la función composición $\psi([A_{1}])\circ \psi([A_{2}])=T_{[A_{1}]}\circ T_{[A_{2}]},$ donde
-            <div class="scroll-wrapper">
+          </div>
+          Entonces, la función composición $\psi([A_{1}])\circ \psi([A_{2}])=T_{[A_{1}]}\circ T_{[A_{2}]},$ donde
+          <div class="scroll-wrapper">
             \begin{equation}\label{eq:psi_2}
             \begin{split}
             T_{[A_{1}]}\circ T_{[A_{2}]}(z)&amp;=
@@ -1301,16 +1303,16 @@
             &amp;= \frac{(a_1a_2+b_1c_2)z+(a_1b_2+b_1d_2) }{(c_1a_2+d_1c_2)z+(c_1b_2+d_1d_2)}.
             \end{split}
             \end{equation}
-            </div>
-            
-            Comparando las ecuaciones \eqref{eq:psi_1} y \eqref{eq:psi_2} se concluye que
-            <div class="scroll-wrapper">
-              \[
+          </div>
+
+          Comparando las ecuaciones \eqref{eq:psi_1} y \eqref{eq:psi_2} se concluye que
+          <div class="scroll-wrapper">
+            \[
             \psi([A_{1} A_{2}])=T_{[A_{1} A_{2}]}=T_{[A_1]}\circ T_{[A_2]}=\psi([A_1])\circ \psi([A_2]).
             \]
-            </div>
-            
-            En otras palabras, la función $\psi$ es un homomorfismo de grupos.
+          </div>
+
+          En otras palabras, la función $\psi$ es un homomorfismo de grupos.
           <p></p>
 
           <p>
@@ -1627,12 +1629,12 @@
           igualdad
           <div class="scroll-wrapper">
             \begin{equation}
-          \begin{split}
-          {\rm tr}(A_{2}){\rm tr}(A_{2}^{-1}A_{1}A_{2})&amp;={\rm tr}(A_{2}){\rm tr}(A_{1}),\\
-          {\rm tr}(A_{2}A_{2}^{-1}A_{1}A_{2})&amp;={\rm tr}(A_{2}A_{1}),\\
-          {\rm tr}(A_{1}A_{2})&amp;={\rm tr}(A_{2}A_{1}).
-          \end{split}
-          \end{equation}
+            \begin{split}
+            {\rm tr}(A_{2}){\rm tr}(A_{2}^{-1}A_{1}A_{2})&amp;={\rm tr}(A_{2}){\rm tr}(A_{1}),\\
+            {\rm tr}(A_{2}A_{2}^{-1}A_{1}A_{2})&amp;={\rm tr}(A_{2}A_{1}),\\
+            {\rm tr}(A_{1}A_{2})&amp;={\rm tr}(A_{2}A_{1}).
+            \end{split}
+            \end{equation}
           </div>
           <p>
             Para probar el resultado, basta verificar que las trazas de los productos matriciales $A_{1}A_{2}$ y
@@ -1644,8 +1646,8 @@
             c_{2} &amp; d_{2}
             \end{matrix}\right)
             ,$ entonces
-            </p><div class="scroll-wrapper">
-               \[
+          </p><div class="scroll-wrapper">
+            \[
             A_{1} A_{2}=\left[\begin{matrix}
             {\color{red}a_{1}a_{2}}+{\color{blue}b_{1}c_{2}} &amp; a_{1}b_{2}+b_{1}d_{2} \\
             c_{1}a_{2}+d_{1}c_{2}&amp; {\color{orange}c_{1}b_{2}}+{\color{green}d_{1}d_{2}}
@@ -1655,20 +1657,20 @@
             c_{2}a_{1}+d_{2}c_{1}&amp; {\color{blue}c_{2}b_{1}}+{\color{green}d_{2}d_{1}}
             \end{matrix}\right].
             \]
-            </div>
-           
+          </div>
+
           <p></p>
           <p>
             Del computo anterior, se sigue que la traza de los productos matriciales $A_{1}A_{2}$ y $A_{2}A_{1}$
             satisfacen que
-            </p><div class="scroll-wrapper">
-              \[
+          </p><div class="scroll-wrapper">
+            \[
             {\rm
             tr}(A_{1}A_{2})={\color{red}a_{1}a_{2}}+{\color{blue}b_{1}c_{2}}+{\color{orange}c_{1}b_{2}}+{\color{green}d_{1}d_{2}}={\rm
             tr}(A_{2}A_{1}).
             \]
-            </div>
-            
+          </div>
+
           <p></p>
         </div>
 
@@ -1683,20 +1685,20 @@
           [A]=\{A,-A\},
           \]
           donde
-          </p><div class="scroll-wrapper">
-            \[
+        </p><div class="scroll-wrapper">
+          \[
           {\rm tr}(A)=a+d \quad \text{ y } \quad {\rm tr }(-A)=-(a+d)=-{\rm tr}(A).
           \]
-          </div>
-          
-          Esto significa que la traza de la clase $[A]$ toma dos valores
-          \[
-          {\rm tr}[A]=\pm (a+d),
-          \]
-          y por lo tanto, no está bien definida. Sin embargo, para evitar este inconveniente, podemos definir el valor
-          \[
-          {\color{blue}\rm Tr}[A]=({\rm tr}(A))^{2}=(a+d)^{2}.
-          \]
+        </div>
+
+        Esto significa que la traza de la clase $[A]$ toma dos valores
+        \[
+        {\rm tr}[A]=\pm (a+d),
+        \]
+        y por lo tanto, no está bien definida. Sin embargo, para evitar este inconveniente, podemos definir el valor
+        \[
+        {\color{blue}\rm Tr}[A]=({\rm tr}(A))^{2}=(a+d)^{2}.
+        \]
         <p></p>
 
         <div class="definition">
@@ -1763,16 +1765,16 @@
 
         <p>
           Dado que la traza de una matriz es invariante bajo conjugación, entonces
-          </p><div class="scroll-wrapper">
-            \begin{equation}\label{ec:relacion_multiplicadores_traza}
+        </p><div class="scroll-wrapper">
+          \begin{equation}\label{ec:relacion_multiplicadores_traza}
           \begin{split}
           {\color{blue}\rm Tr}(T)={\color{blue}\rm Tr}(M)=({\rm
           tr}(M))^{2}&amp;=\left(\sqrt{\alpha}+\frac{1}{\sqrt{\alpha}}\right)^{2},\\
           &amp;=\alpha+2+\frac{1}{\alpha}.\\
           \end{split}
           \end{equation}
-          </div>
-          
+        </div>
+
         <p></p>
 
         <div class="theorem">
@@ -1857,17 +1859,17 @@
               en ${\rm PSL}(2,\mathbb{C}).$ Dado que la traza de una matriz es invariante bajo conjugación, entonces
               <div class="scroll-wrapper">
                 \begin{equation*}
-              \begin{split}
-              {\color{blue}\rm Tr}(T)={\color{blue}\rm Tr}(M)=({\rm tr}(M))^{2}&amp;=({\rm e}^{i\theta/2}+{\rm
-              e}^{-i\theta/2})^{2},\\
-              &amp;=(\cos (\theta/2)+i\,\sen (\theta/2)+\cos (-\theta/2)+i\,\sen (-\theta/2))^{2},\\
-              &amp;=(\cos (\theta/2)+\cancel{\color{red}i\,\sen (\theta/2)}+\cos (\theta/2)-\cancel{\color{red}i\,\sen
-              (\theta/2)})^{2},\\
-              &amp;=(2\cos(\theta/2))^{2}.
-              \end{split}
-              \end{equation*}
+                \begin{split}
+                {\color{blue}\rm Tr}(T)={\color{blue}\rm Tr}(M)=({\rm tr}(M))^{2}&amp;=({\rm e}^{i\theta/2}+{\rm
+                e}^{-i\theta/2})^{2},\\
+                &amp;=(\cos (\theta/2)+i\,\sen (\theta/2)+\cos (-\theta/2)+i\,\sen (-\theta/2))^{2},\\
+                &amp;=(\cos (\theta/2)+\cancel{\color{red}i\,\sen (\theta/2)}+\cos (\theta/2)-\cancel{\color{red}i\,\sen
+                (\theta/2)})^{2},\\
+                &amp;=(2\cos(\theta/2))^{2}.
+                \end{split}
+                \end{equation*}
               </div>
-              
+
               Dado que $2\cos(\theta/2)\in (-2,2),$ para $\theta \in (0,2\pi),$ entonces ${\color{blue}\rm Tr}(T)\lt 4.$
             </li>
             <li>
@@ -1890,14 +1892,14 @@
               $\dfrac{1}{r}e^{-i\theta}.$ De la ecuación \eqref{ec:relacion_multiplicadores_traza} se sigue que
               <div class="scroll-wrapper">
                 \begin{equation*}
-              \begin{split}
-              {\color{blue}\rm Tr}(T)&amp;=r{\rm e}^{i\theta}+2+\frac{1}{r}e^{-i\theta},\\
-              &amp;=r\left(\cos\theta+i\,\sen\theta\right)+2+\frac{1}{r}\left(\cos\theta-i\,\sen\theta\right),\\
-              &amp;=\left(r+\frac{1}{r}\right)\cos\theta+2+i\left(r-\frac{1}{r}\right)\sen\theta.
-              \end{split}
-              \end{equation*}
+                \begin{split}
+                {\color{blue}\rm Tr}(T)&amp;=r{\rm e}^{i\theta}+2+\frac{1}{r}e^{-i\theta},\\
+                &amp;=r\left(\cos\theta+i\,\sen\theta\right)+2+\frac{1}{r}\left(\cos\theta-i\,\sen\theta\right),\\
+                &amp;=\left(r+\frac{1}{r}\right)\cos\theta+2+i\left(r-\frac{1}{r}\right)\sen\theta.
+                \end{split}
+                \end{equation*}
               </div>
-              
+
               Vamos a argumentar que $\left(r-\dfrac{1}{r}\right)\sen\theta\neq 0.$ Supongamos que
               $\left(r-\dfrac{1}{r}\right)\sen\theta= 0$ y $\left(r+\dfrac{1}{r}\right)\cos\theta+2$ es un real no
               negativo. Entonces
@@ -1909,8 +1911,8 @@
               igualdad implica que
               <div class="scroll-wrapper">
                 \begin{equation}\label{ec:desigualdad_caso_loxodromico_traza}
-              \left(1+\frac{1}{r}\right)\cos\pi+2=-\left(r+\frac{1}{r}\right)+2,
-              \end{equation}
+                \left(1+\frac{1}{r}\right)\cos\pi+2=-\left(r+\frac{1}{r}\right)+2,
+                \end{equation}
               </div>
               el cual es no negativo. Sin embargo, de la ecuación \eqref{ec:diferencia_multiplicadores} se tiene que
               \[
@@ -1973,7 +1975,7 @@
               Möbius $T$ deben de satisfacer la desigualdad \[ \alpha +2 +\dfrac{1}{\alpha}\lt4. \] De los incisos
               $\textbf{1.}$ y $\textbf{2.}$ ya demostrados se sigue que $\alpha=r{\rm e}^{i\theta},$ para alún $r&gt;0$
               y algún $\theta\in (0,2\pi).$ Si $r\neq1,$ es decir $T$ es loxodrómica, entonces de la condició
-              suficiente del inciso \textbf{(4)}, se sigue que $\alpha +2 +\dfrac{1}{\alpha}$ es un complejo que no
+              suficiente del inciso $\textbf{4.},$ se sigue que $\alpha +2 +\dfrac{1}{\alpha}$ es un complejo que no
               pertene al intervalo $[0,\infty].$ Este hecho es una contradicción, por lo tanto, $T$ es elíptica.
             </li>
             <li>
@@ -1985,6 +1987,25 @@
         </div>
 
         <br>
+
+        <p>
+          En la siguiente animación se puede apreciar
+          visualmente la clasificación de las tranformaciones de
+          Möbius.
+        </p>
+
+        <iframe style="width: 100%; height: 450px; border: none;" src="https://geometria-hiperbolica.github.io/sketches/mobius/showcase.html"></iframe>
+        <div style="margin-top: -20px;">
+          <p style="text-align: center;">
+            <b>Instrucciones:</b>
+            Selecciona la gráfica y presiona las teclas:
+            <tt style="font-size: 80%;">
+              1. Elíptica, 2. Hiperbólica, 3. Loxodrómica, 4. Parabólica,
+              5. Muestra/Esconde Esfera.
+            </tt>
+            <a href="https://geometria-hiperbolica.github.io/sketches/mobius/showcase.html" target="_blank">Pantalla completa <i class="fa fa-external-link-alt"></i></a>
+          </p>
+        </div>
 
       </div>
 

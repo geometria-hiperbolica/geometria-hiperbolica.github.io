@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>  Plano Hiperbólico
+</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Notas de Geometría Hiperbólica" />
+  <meta name="author" content="Juan Carlos Ponce Campuzano, Camilo Ramírez Maluendas">
+  <meta name="keywords" content="geometría,hiperbólica,funciones,complejo" />
+
+  <!--
+    https://www.everywheremarketer.com/blog/ultimate-guide-to-social-meta-tags-open-graph-and-twitter-cards
+  -->
+  <!--Facebook-->
+  <meta property="og:title" content="Geometría Hiperbólica" />
+  <meta property="og:url" content="https://geometria-hiperbolica.github.io/" />
+  <meta property="og:description" content="Notas de Geometría Hiperbólica" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Geometría Hiperbólica">
+
+  <!--Twitter/X-->
+  <meta name="twitter:title" content="Geometría Hiperbólica" />
+  <meta name="twitter:site" content="https://geometria-hiperbolica.github.io/" />
+  <meta name="twitter:description" content="Notas de Geometría Hiperbólica" />
+  <meta name="twitter:type" content="website" />
+  <meta name="twitter:creator" content="@jcponcemath" />
+
+  <link rel="icon" type="image/png" href="imgs/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="imgs/infinity16.png" sizes="16x16">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-16JHH28EVY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-16JHH28EVY');
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body data-type="book" id="top">
+
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="transformaciones-fraccionarias-lineales.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="tabla-de-contenidos.html" class="link" id="center-link">
+            <span class="content-hover-previous">Transformaciones fraccionarias
+      lineales</span>
+            <span class="content-hover">Tabla de Contenidos</span>
+            <span class="content-original">Geometría Hiperbólica</span>
+            <span class="content-hover-next">Bibliografía</span>
+        </a>
+    </div>
+    <a href="bibliografia.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="plano-hoperbolico">
+
+  <p class="callout hide-large hide-medium"><strong>⚠️ ¡Advertencia!</strong>
+
+    Si puedes ver este mensaje es porque tu pantalla es demasiado pequeña.
+    Por lo tanto, algunos applets no se mostrarán correctamente.
+    Puedes girar tu dispositivo a horizontal.
+    O cambia el tamaño de tu ventana para que sea más ancha que alta.
+  </p>
+
+  <div class="toc-chapter" id="toc-chapter">
+    <p><i class="fa-solid fa-list"></i>Contenido</p>
+    <ul>
+      <li><a href="#section1">Plano Hiperbólico</a></li>
+      <li><a href="#section2">Métrica Riemanniana hiperbólica</a></li>
+      <li><a href="#section3">Isometrías y geodésicas</a></li>
+      <li><a href="#section4">Postulados</a></li>
+      <li><a href="#section5">Propiedades de las iso...</a></li>
+      <li><a href="#section6">Topología inducida</a></li>
+      <!-- Add more sections as needed -->
+    </ul>
+  </div>
+
+  <div class="hide-large hide-medium hide-small">
+    <h1>Plano Hiperbólico</h1>
+  </div>
+
+  <!-- Starts main content -->
+
+  <br><br><br>
+
+  <main>
+    <article>
+
+      <div id="section1">
+        <div class="head-3">Plano Hiperbólico</div>
+
+        <p>
+          Los <span class="purple-text">Elementos</span> del griego Euclides (325 a. C. -265 a. C.) es el primer
+          registro escrito, con el que cuenta la humanidad, de un sistema axiomático (véase [8]).
+          Este escrito también ha sido una las obras más influyentes del pensamiento científico de la humanidad.
+          Concretamente, los Elementos está compuesto por 13 libros, en los cuales el autor desarrolló los fundamentos
+          de la geometría elemental, junto con algunos conceptos de la aritmética.
+          Para edificar la geometría, el autor griego definió los objetos principales de la teoría: <em>punto</em>,
+          <em>recta</em>, <em>plano</em> entre otros.
+          Luego, basándose en la lógica, Euclides desarrolló unas leyes fundamentales sobre estos objetos (postulados o
+          axiomas).
+          Recordemos los primeros cinco de estos postulados.
+        </p>
+
+        <div class="postulate no-indent">
+          <span class="blue-text">Postulado I</span>. Desde cualquier punto a cualquier otro punto se puede trazar una
+          recta.
+        </div>
+
+        <div class="postulate no-indent">
+          <span class="blue-text">Postulado II</span>. Toda recta limitada puede prolongarse indefinidamente en la misma
+          dirección.
+        </div>
+
+        <div class="postulate no-indent">
+          <span class="blue-text">Postulado III</span>. Con cualquier centro y cualquier radio se puede trazar una
+          circunferencia.
+        </div>
+
+        <div class="postulate no-indent">
+          <span class="blue-text">Postulado IV</span>. Todos los ángulos rectos son iguales entre sí.
+        </div>
+
+        <div class="postulate no-indent">
+          <span class="blue-text">Postulado V</span>. Si una recta al cortar a otras dos, forma de un mismo lado ángulos
+          internos menores que dos rectos, esas dos rectas prolongadas indefinidamente se cortan del lado en que están
+          los ángulos menores que dos rectos.
+        </div>
+
+
+        <p>
+          El quinto postulado de Euclides llama la atención, pues a simple vista no parece intuitivo a la intuición
+          geométrica; así que durante el siglo XIX se trató de demostrarlo a partir de los cuatro restantes.
+          No hubo éxito, sin embargo, aparecieron afirmaciones equivalentes al postulado V. Enunciaremos algunas de
+          ellas.
+        </p>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "Dos rectas paralelas son equidistantes."
+          </div>
+          <div class="quote-author">
+            Posido (I a. C.).
+          </div>
+        </div>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "Dos rectas paralelas a una tercera son siempre paralelas entre sí."
+          </div>
+          <div class="quote-author">
+            Proclo (412 - 485).
+          </div>
+        </div>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "Si tres puntos están de un mismo lado de una recta y equidistan de ella, los tres puntos pertenecen a una
+            misma recta."
+          </div>
+          <div class="quote-author">
+            C. Clavius (1537-1612).
+          </div>
+        </div>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "Por un punto exterior a una recta se puede trazar una y solo una paralela a dicha recta."
+          </div>
+          <div class="quote-author">
+            John Playfair (1748-1818).
+          </div>
+        </div>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "Por un punto cualquiera, tomado en el interior de un ángulo, se puede siempre trazar una recta que
+            encuentre a los lados del ángulo."
+          </div>
+          <div class="quote-author">
+            L. M. Legendre (1752-1833).
+          </div>
+        </div>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "Dado un triángulo cualquiera existe siempre uno semejante de magnitud arbitraria."
+          </div>
+          <div class="quote-author">
+            J. Wallis (1616-1703).
+          </div>
+        </div>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "La suma de los ángulos interiores de un triángulo es igual a dos rectos."
+          </div>
+          <div class="quote-author">
+            G. Saccheri (1667-1733), J. H. Lambert (1728-1777), A. M. Legendre (1752-1833).
+          </div>
+        </div>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "Existen triángulos de áreas tan grande como se quiera."
+          </div>
+          <div class="quote-author">
+            K. F. Gauss (1777-1855).
+          </div>
+        </div>
+
+        <p>Durante el siglo XIX floreció el siguiente razonamiento: Si el postulado V de Euclides es un <span class="red-text">"<em>verdadero</em>"</span> postulado, el hecho de negarlo, aceptando los otros cuatro, no
+          debería de conducir a contradicciones. Así, fue como el húngaro Johann Bolyai (1802-1860), el alemán Karl
+          Friedrich Gauss (1777-1855), el ruso Nikolai Lobachevsky (1793-1856) y otros, descubrieron las geometrías no
+          euclidianas.</p>
+
+        <p>Para construir la geometría <span class="red-text">hiperbólica</span> dada por Lobachevsky necesitamos de
+          <span class="red-text">cuatro</span> ingredientes:
+        </p>
+
+        <ol>
+          <li>
+            Un <span class="red-text">espacio ambiente</span> (<span class="purple-text">semiplano
+              superior</span>)
+            <div class="scroll-wrapper">
+              \[
+              U:=\left\{z\in\mathbb{C}: \operatorname{Im}(z)&gt;0\right\},
+              \]
+            </div>
+            donde ocurre la geometría. Al semiplano superior \(U\) lo dotaremos de una métrica (geométrica) <span class="purple-text">Riemanniana hiperbólica</span> \(\mu_{h}\) y, a partir de ella induciremos una función
+            distancia \(\rho\). El semiplano superior \(U\) junto con esta métrica hiperbólica \(\mu_{h}\) se le conoce
+            como <span class="purple-text">plano hiperbólico</span> o <span class="purple-text">plano de
+              Lobachevsky</span> \(\mathbb{H}\).
+          </li>
+
+          <li>
+            El grupo de <span class="red-text">isometrías</span> de \(\mathbb{H}\), aquel grupo
+            conformado de todas las biyecciones desde \(\mathbb{H}\) hasta sí mismo que preservan la distancia \(\rho\).
+          </li>
+
+          <li>
+            Los complejos que viven en \(\mathbb{H}\) son los <span class="red-text">puntos</span>
+            y, a partir de la métrica Riemanniana \(\mu_{h}\) descubriremos, para este caso, que las "líneas rectas"
+            (serán llamadas <span class="red-text">líneas hiperbólicas</span>) son las <span class="purple-text">circunferencias ortogonales al eje real</span>. <span class="red-text">Los postulados
+              acá</span>:
+          </li>
+
+          <li>
+            <span class="red-text">Postulados</span> sobre \(\mathbb{H}\). Veremos que los puntos y
+            las rectas están regidos bajo los primeros cuatro postulados de la geometría euclidiana. Además, es válida
+            la negación del quinto postulado, es decir, es válido: dada una "línea recta" \(\ell\) en \(\mathbb{H}\) y
+            un punto \(p\in\mathbb{H}\) exterior a ella, entonces por el punto \(p\) pasan infinitas "líneas rectas" de
+            \(\mathbb{H}\) que no intersectan a \(\ell\).
+          </li>
+        </ol>
+      </div>
+
+      <hr>
+
+      <div id="section2">
+
+        <div style="color: rgba(255, 255, 255, 0);" id="metrica-riemanniana-hiperbolica">
+          <p>Métrica Riemanniana hiperbolica</p>
+        </div>
+
+        <div class="head-3 head-3-level2">Métrica Riemanniana hiperbolica</div>
+
+        <p>
+          Dado el subconjunto abierto $U\subset \mathbb{C}$, el <span class="purple-text">plano tangente</span>
+          asociado al complejo
+          $z\in U$ es el espacio vectorial
+          \[
+          T_{z}U:=\{z\}\times \mathbb{C}.
+          \]
+        </p>
+
+
+        <p>
+          <span class="red-txt">¡Importante!</span> El espacio tangente \(T_{z}U\) es isomorfo a \(\mathbb{C}\) y, puede
+          pensarse geométricamente como una copia del plano complejo tal que su cero \(\mathbf{0}\) está pegado sobre el
+          complejo \(z\).
+        </p>
+
+
+        <div class="definition" id="def:metrica_riemanniana_mu">
+          Una <span class="red-txt"><strong>métrica Riemanniana</strong></span> \(\mu\) para el abierto
+          \(U\subset\mathbb{C}\) es una correspondencia, la cual asocia a cada complejo \(z\in U\) un producto interno
+          \(\langle\,\, , \,\rangle_{z}\) sobre el espacio tangente \(T_{z} U,\)
+          \[
+          \mu(z):=\langle \, \, , \, \rangle^{z} : T_{z}U \times T_{z}U \to \mathbb{C}.
+          \]
+          Además, esta asociación varía continua y diferenciablemente sobre los puntos de \(U\). Más precisamente, la
+          función \(g_{i,j} : U \to \mathbb{C}\), definida mediante
+          \[
+          g_{i,j}(z):=\langle e_i , e_j \rangle_{z},
+          \]
+          es diferenciable, para cada \(i,j\in\{1,2\}\), donde el conjunto \(\{ e_{1},e_{2}\}\) es la base usual
+          (canónica) para \(\mathbb{C}\). El abierto \(U\) dotado con esta métrica Riemanniana es llamado
+          <div class="centered">
+            <span class="red-txt"><strong>variedad Riemanniana</strong></span>.
+          </div>
+        </div>
+
+        <p>Uno de los ejemplos clásicos, es la <span class="purple-txt">métrica Riemanniana euclidiana</span>
+          \(\mu_{e}\) para el plano complejo \(\mathbb{C}\), la cual asigna a cada complejo \(z\) el producto punto
+          usual sobre el plano tangente \(T_{z}\mathbb{C}\),</p>
+        \[
+        \mu(z):=\langle \,\, , \, \rangle^{z}_{c} : T_{z}\mathbb{C}\times T_{z}\mathbb{C} \to \mathbb{C}.
+        \]
+        <p>Nótese que la función \(g_{i,j} : \mathbb{C} \to \mathbb{C}\), dada por</p>
+        \[
+        g_{i,j}(z)=\langle e_{i} , e_{j} \rangle^{z}_{c}=\delta_{i,j},
+        \]
+        <p>es diferenciable, para cada \(i,j\in\{1,2\}\), pues es la función constante.</p>
+
+        <p>Vamos a introducir la <span class="purple-txt">métrica Riemanniana hiperbólica</span>.</p>
+
+        <div class="theorem" id="theorem:metrica_riemanniana_hiperbolica">
+          La asignación \(\mu_{h}\) sobre el <span class="purple-txt">semiplano superior</span>
+          \[
+          U=\{z\in\mathbb{C} : \operatorname{Im}(z)&gt;0\},
+          \]
+          la cual corresponde a cada complejo \(z\in U\) el producto interno
+          \[
+          \mu_{h}(z):= \langle \, \, , \, \rangle_{h}^{z}= \dfrac{\langle \,\, , \,
+          \rangle^{z}_{e}}{\left(\operatorname{Im}(z)\right)^2},
+          \]
+          sobre el espacio tangente \(T_{z}U\), es una métrica Riemanniana. A dicha métrica Riemanniana se le conoce
+          como <span class="red-txt"><strong>hiperbólica</strong></span>.
+        </div>
+
+        <div class="proof">
+          Para completar la prueba debemos probar que satisfacen dos condiciones:
+
+          <ol style="list-style-type: none; padding-left: 0;">
+            <li><strong>(1)</strong> Para cada \(z\in U\) la función \(\mu_{h}(z)\) es un producto interno sobre el
+              espacio tangente \(T_{z}U.\)</li>
+            <li><strong>(2)</strong> La función \(g_{i,j}\) es diferenciable, para cada \(i,j\in\{1,2\}\).</li>
+          </ol>
+
+          <div class="red-txt"><strong>(1) <em>La función \(\mu_{h}(z)\) es un producto interno</em></strong></div>
+          <p>Recordemos que el espacio tangente \(T_{z}U\) es isomorfo al \(\mathbb{R}\) espacio vectorial
+            \(\mathbb{C}\) y, la función \(\langle \,\, , \, \rangle^{z}_{e}\) es un producto interno sobre \(T_{z}U\).
+            Del Problema \ref{ejer:producto_interno_cociente} se sigue que la función \(\langle \,\, ,\,\rangle_{h}^{z}:
+            T_{z}U\times T_{z}U\to\mathbb{C}\) dado por</p>
+          \[
+          \langle z_{1},z_{2}\rangle_{h}^{z}:=\dfrac{\langle z_{1} , z_{2} \rangle_{c}^{z}}{(\operatorname{Im}(z))^2},
+          \]
+          <p>es también un producto interno.</p>
+
+          <div class="red-txt"><strong>(2) <em>Diferenciabilidad de la función \(g_{i,j}\)</em></strong></div>
+          <p>Si consideramos la base canónica \(\{e_1,e_2\}\) para \(\mathbb{C}\), tenemos que para cualesquiera
+            \(i,j\in\{1,2\},\) la función \(g_{i,j}: U \to \mathbb{C}\) dada por</p>
+          \[
+          g_{i,j}(z)=\dfrac{\langle e_i , e_j
+          \rangle_{c}^{z}}{\left(\operatorname{Im}(z)\right)^2}=\dfrac{\delta_{i,j}}{\left(\operatorname{Im}(z)\right)^2},
+          \]
+          <p>es diferenciable. Esta afirmación es cierta, porque las entradas de la matriz Jacobiana</p>
+          \[
+          D_{z} g_{i,j}=\left(0, \frac{-2 \delta_{i,j}}{(\operatorname{Im}(z))^3}\right),
+          \]
+          <p>son continuas en \(U\), entonces el Teorema de la Condición suficiente de diferenciabilidad de una función
+            vectorial nos garantiza que \(g_{i,j}\) es diferenciable.</p>
+        </div>
+
+        <div class="definition" id="def:plano_hiperbolico">
+          El <span class="red-txt"><strong>plano hiperbólico</strong></span> o <span class="red-txt"><strong>plano de
+              Lobachevsky</strong></span> \(\mathbb{H}\), es el semiplano superior equipado con la métrica Riemanniana
+          hiperbólica \(\mu_{h}\). El plano tangente asociado a cada \(z\) sobre el plano hiperbólico será denotado
+          mediante \(T_{z}\mathbb{H}\).
+        </div>
+
+        <p>Recordemos que un producto interno proporciona una manera de medir vectores (norma), esto implica que, el
+          producto interno \(\mu_{z}\) nos proporciona una norma del vector \(w\) en el espacio tangente
+          \(T_z\mathbb{H}\), para cada \(z\in \mathbb{H}\).</p>
+
+        <div class="definition" id="definicion:norma_hiperbolica">
+          La <span class="red-txt"><strong>norma hiperbólica</strong></span> del vector \(w\) en el espacio tangente
+          \(T_{z}\mathbb{H}\) está dada mediante
+          \[
+          \Vert w \Vert_{h}:=\sqrt{\langle w,w \rangle_{h}}=\sqrt{\dfrac{\langle w,
+          w\rangle_{c}^{z}}{\left(\operatorname{Im}(z)\right)^{2}}}=\dfrac{\sqrt{\langle w,
+          w\rangle_{c}^{z}}}{\operatorname{Im}(z)}=\dfrac{\vert w \vert}{\operatorname{Im}(z)}.
+          \]
+        </div>
+
+
+        <p><span class="red-txt">Curiosidad</span> Si fijamos un vector \(w\) sobre espacios tangentes de puntos que se
+          acercan al eje real, entonces la norma
+          hiperbólica de dicho vector se hace tan grande como se quiera. Por ejemplo, consideremos los complejos en el
+          plano hiperbólico \(\mathbb{H}\) que se encuentran sobre el segmento de línea recta</p>
+        \[
+        I=\left\{z=it: t\in (0,1]\right\}.
+        \]
+        <p>Ahora, consideremos el vector \(w=i\) en el espacio tangente \(T_{z}\mathbb{H}\), para cada \(z\in I\).
+          Entonces la norma hiperbólica de \(w\) crece a medida que \(z\) se acerca al origen \(\mathbf{0}\). Estudiemos
+          esta afirmación con los siguientes casos:</p>
+
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li><strong>\(\ast\)</strong> Para \(t=1\), tomamos el complejo \(z=i\in I\), entonces la norma hiperbólica
+            del vector \(w=i\) en el espacio tangente \(T_{z}\mathbb{H}=T_{i}\mathbb{H}\) es
+            \[
+            \Vert i \Vert_{h}:=\sqrt{\langle i,i \rangle_{h}}=\sqrt{\dfrac{\langle i,
+            i\rangle_{c}^{i}}{\left(\operatorname{Im}(i)\right)^{2}}}=\dfrac{\sqrt{\langle i,
+            i\rangle_{c}^{i}}}{\operatorname{Im}(i)}=\dfrac{\vert i \vert}{\operatorname{Im}(i)}=\frac{1}{1}=1.
+            \]</li>
+
+          <li><strong>\(\ast\)</strong> Para \(t=1/2\), tomamos el complejo \(z=i/2\in I\), entonces la norma
+            hiperbólica del vector \(w=i\) en el espacio tangente \(T_{z}\mathbb{H}=T_{i/2}\mathbb{H}\) es
+            \[
+            \Vert i \Vert_{h}:=\sqrt{\langle i,i \rangle_{h}}=\sqrt{\dfrac{\langle i,
+            i\rangle_{c}^{i/2}}{\left(\operatorname{Im}(i/2)\right)^{2}}}=\dfrac{\sqrt{\langle i,
+            i\rangle_{c}^{i/2}}}{\operatorname{Im}(i/2)}=\dfrac{\vert i \vert}{\operatorname{Im}(i/2)}=\frac{1}{1/2}=2.
+            \]</li>
+
+          <li><strong>\(\ast\)</strong> Para \(t=1/n\), con \(n\in\mathbb{N}\), tomamos el complejo \(z=i/n\in I\),
+            entonces la norma hiperbólica del vector \(w=i\) en el espacio tangente
+            \(T_{z}\mathbb{H}=T_{i/n}\mathbb{H}\) es
+            \[
+            \Vert i \Vert_{h}:=\sqrt{\langle i,i \rangle_{h}}=\sqrt{\dfrac{\langle i,
+            i\rangle_{c}^{i/n}}{\left(\operatorname{Im}(i/n)\right)^{2}}}=\dfrac{\sqrt{\langle i,
+            i\rangle_{c}^{i/n}}}{\operatorname{Im}(i/n)}=\dfrac{\vert i \vert}{\operatorname{Im}(i/n)}=\frac{1}{1/n}=n.
+            \]</li>
+        </ul>
+
+        <p>A medida que \(n\) se acerca a \(\infty\) la norma hiperbólica del vector \(i\) también se acerca a
+          \(\infty\), es decir,</p>
+        \[
+        \lim\limits_{n\to \infty} \Vert i \Vert_{h}=\lim\limits_{n\to \infty} \sqrt{\dfrac{\langle i,
+        i\rangle_{c}^{i/n}}{\left(\operatorname{Im}(i/n)\right)^{2}}}=\lim\limits_{n\to \infty } n=\infty.
+        \]
+
+        <p><em>Nota:</em> Las figuras y referencias a ellas han sido omitidas según lo solicitado. Las referencias
+          cruzadas como \ref{ejer:producto_interno_cociente} se mantienen como están en el texto original.
+        </p>
+
+        <div class="head-3 head-3-level3">Curva y norma hiperbólica</div>
+
+        <p>A partir de la norma vamos a definir la <span class="purple-text">longitud hiperbólica</span> de una curva
+          derivable a trozos en \(\mathbb{H}\). Vamos a dar un corto paseo por el concepto de <span class="purple-text">curva</span>.</p>
+
+        <div class="definition" id="def:curva">
+          Una <span class="red-txt"><strong>curva</strong></span> en el abierto \(U\subset\mathbb{C}\) es una función
+          continua \(\gamma\) desde un intervalo cerrado \([a,b]\) (el intervalo puede también considerarse abierto)
+          hasta \(U\). Dicha curva \(\gamma\) está dada por
+          \[
+          \gamma(t)=x(t)+iy(t),
+          \]
+          donde \(x\) y \(y\) son funciones real valuadas. Los puntos \(\gamma(a)\) y \(\gamma(b)\) en \(U\) son
+          llamados los <span class="red-txt"><strong>extremos</strong></span> o <span class="red-txt"><strong>puntos
+              finales</strong></span> de la curva \(\gamma\). Si los extremos de la curva \(\gamma\) coinciden, es decir
+          \(\gamma(a)=\gamma(b)\) se dice que la curva \(\gamma\) es <span class="red-txt"><strong>cerrada</strong></span>. La imagen del intervalo cerrado \([a,b]\) bajo \(\gamma\)
+          se llama <span class="red-txt"><strong>curva imagen</strong></span> o <span class="red-txt"><strong>traza de
+              \(\gamma\)</strong></span> y será denotada mediante \(\gamma^{\ast}\).
+
+          <p>Además, diremos que la curva \(\gamma\) es <span class="red-txt"><strong>derivable en el punto \(t_0\in
+                (a,b)\)</strong></span> si existe el límite</p>
+          \[
+          \lim_{t\to t_0} \frac{\gamma(t)-\gamma(t_0)}{t-t_0} =\lim_{t\to t_0}\frac{x(t)-x(t_0)}{t-t_0}+i
+          \left(\lim_{t\to t_0}\frac{y(t)-y(t_0)}{t-t_0}\right).
+          \]
+          <p>En caso de existir dicho límite lo denotaremos mediante</p>
+          \[
+          \gamma'(t_0)=\lim_{t\to t_0}\frac{x(t)-x(t_0)}{t-t_0}+i\left( \lim_{t\to
+          t_0}\frac{y(t)-y(t_0)}{t-t_0}\right)=x'(t_0)+iy'(t_0)
+          \]
+          <p>y lo llamaremos la <span class="red-txt"><strong>derivada de \(\gamma\) en el punto
+                \(t_{0}\)</strong></span>.</p>
+
+          <p>Así mismo, la derivada \(\gamma'(a)\) y \(\gamma'(b)\) existe cuando el límite apropiado a un lado existe
+            <em>e.g.</em>,
+          </p>
+          \[
+          \gamma'(a)=\lim_{t\to a^{+}} \frac{\gamma(t)-\gamma(a)}{t-a} =\lim_{t\to a^{+}}\frac{x(t)-x(a)}{t-a}+i\left(
+          \lim_{t\to a^{+}}\frac{y(t)-y(a)}{t-a}\right).
+          \]
+          <p>Geométricamente, la derivada \(\gamma'(t_{0})\) es el <span class="red-txt"><strong>vector
+                tangente</strong></span> de la curva \(\gamma\) en el punto \(t_{0}\). Además, dicho vector tangente
+            \(\gamma'(t_{0})\) está en el espacio tangente \(T_{\gamma(t_{0})}U\).</p>
+
+          <p>Diremos que la curva \(\gamma\) es <span class="red-txt"><strong>derivable a trozos</strong></span> si
+            existe una cantidad finita de puntos \(a=t_1\lt t_2\lt \ldots\lt t_{n-1}\lt t_n=b\) en el intervalo
+            \([a,b]\) tal que
+            \(\gamma'(t_0)\) la derivada de \(\gamma\) en cada punto \(t_0\in (t_i,t_{i+1})\) existe, con
+            \(i\in\{1,\ldots,n-1\}\).
+          </p>
+        </div>
+
+        <p>
+          Estudiemos los siguientes dos ejemplos de
+          curvas en el plano hiperbólico $\mathbb{H}$.
+        </p>
+
+        <div class="example" id="ej:curva_gamma_segmento_eje_imaginario">
+          <p>Dados los reales positivos \(a,b\in \mathbb{R}\) tal que
+            \(0\lt a\lt b\), entonces la función \(\gamma: [a,b]\to
+            \mathbb{H}\), definida mediante</p>
+          \[
+          \gamma(t):=it,
+          \]
+          <p>satisface las siguientes propiedades:</p>
+
+          <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>(1)</strong> La función \(\gamma\) es una curva, porque las funciones real valuadas dadas
+              por \(x(t)=0\) y \(y(t)=t\) con \(t\in[a,b]\) son continuas.</li>
+
+            <li><strong>(2)</strong> La traza de \(\gamma\) es el segmento de línea recta euclidiano en
+              \(\mathbb{H}\) con extremos los puntos \(ai\) y \(bi\),
+              \[
+              \gamma^{\ast}=\left\{z\in\mathbb{H}: \operatorname{Re}(z)=0 \text{ y } a\leq \operatorname{Im}(z) \leq
+              b\right\}.
+              \]</li>
+
+            <li><strong>(3)</strong> Para todo \(t\in [a,b]\), el vector tangente a la curva \(\gamma\) en el punto
+              \(t\) es
+              \[
+              \gamma'(t)=i\in T_{\gamma(t)}\mathbb{H}=T_{it}\mathbb{H}.
+              \]
+              Su norma hiperbólica es
+              \[
+              \|\gamma'(t)\|_{h}=\sqrt{\langle \gamma'(t),\gamma'(t)\rangle}_{h}=\dfrac{\sqrt{\langle
+              \gamma'(t),\gamma'(t)\rangle_{c}^{\gamma(t)}}}{\operatorname{Im}(\gamma(t))}=\dfrac{\vert \gamma'(t)
+              \vert}{\operatorname{Im}(\gamma(t))}=\dfrac{\vert i \vert}{\operatorname{Im}(it)}=\frac{1}{t}.
+              \]</li>
+          </ul>
+        </div>
+
+        <div class="example">
+          <p>La función \(\gamma: (0,\pi)\to \mathbb{H}\), definida mediante</p>
+          \[
+          \gamma(t):=e^{it}=\cos(t)+i\operatorname{sen}(t),
+          \]
+          <p>satisface las siguientes propiedades.</p>
+
+          <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>(1)</strong> La función \(\gamma\) es una curva, porque las funciones real valuadas dadas por
+              \(\cos(t)\) y \(\operatorname{sen}(t)\) con \(t\in(0,\pi)\) son continuas.</li>
+
+            <li><strong>(2)</strong> La traza de \(\gamma\) es el segmento de curva (superior) de la circunferencia con
+              centro el origen y radio \(1\),
+              \[
+              \gamma^{\ast}=\left\{z\in\mathbb{H}: z=e^{it} \text{ y } 0 \leq t\leq \pi \right\}.
+              \]</li>
+
+            <li><strong>(3)</strong> Para todo \(t\in (0,\pi)\), el vector tangente a la curva \(\gamma\) en el punto
+              \(t\) es
+              \[
+              \gamma'(t)=i e^{it}\in T_{\gamma(t)}\mathbb{H}=T_{e^{it}}\mathbb{H}.
+              \]
+              Su norma hiperbólica es
+              \[
+              \|\gamma'(t)\|_{h}=\dfrac{\vert \gamma'(t) \vert}{\operatorname{Im}(\gamma(t))}=\dfrac{\vert i e^{it}
+              \vert}{\operatorname{Im}(e^{it})}=\frac{1}{\operatorname{sen}(t)}.
+              \]</li>
+          </ul>
+        </div>
+
+        <p><em>Nota:</em> Las figuras y referencias a ellas han sido omitidas según lo solicitado.</p>
+
+
+        <div class="head-3 head-3-level3">Longitud de curva y distancia hiperbólica</div>
+
+        <p>Una ventaja de esta norma, es que tenemos la posibilidad de definir una forma para determinar la <span class="purple-txt">longitud hiperbólica</span> de una curva derivable a trozos en el plano hiperbólico
+          \(\mathbb{H}\). A su vez, la longitud hiperbólica nos provee de una función distancia (métrica) para
+          \(\mathbb{H}\).</p>
+
+        <div class="definition" id="def:longitud_hiperbolica">
+          <p>Dada la curva derivable a trozos \(\gamma: [a,b]\to \mathbb{H}\), tal que</p>
+          \[
+          \gamma(t)=x(t)+iy(t),
+          \]
+          <p>la <span class="red-txt"><strong>longitud hiperbólica</strong></span> de \(\gamma\) está dada mediante</p>
+          \[
+          \ell_{h}(\gamma):=\int_{a}^{b} \Vert \gamma'(t) \Vert_{h} dt=\int_{a}^b
+          \dfrac{\sqrt{(x'(t))^2+(y'(t))^2}}{y(t)}dt=\int_{a}^{b} \dfrac{\vert \gamma '(t) \vert}{y(t)}dt.
+          \]
+          <p>La <span class="red-txt"><strong>distancia hiperbólica</strong></span> entre dos puntos \(z\) y \(w\) del
+            plano hiperbólico \(\mathbb{H}\), la cual denotaremos mediante</p>
+          \[
+          \rho(z,w)=\inf_{\gamma} \left\{\ell_h(\gamma)\right\},
+          \]
+          <p>es el ínfimo de las longitudes hiperbólicas de las curvas derivables a trozos en \(\mathbb{H}\) con puntos
+            finales \(z\) y \(w\).</p>
+        </div>
+
+        <div class="example" id="eje:calculo_longitud_hiperbolica_segmento_linea_recta">
+          <p>La <span class="purple-txt">longitud hiperbólica</span> de la curva \(\gamma: [a,b]\to \mathbb{H}\), véase
+            Ejemplo \ref{ej:curva_gamma_segmento_eje_imaginario}, definida mediante</p>
+          \[
+          \gamma(t):=it,
+          \]
+          <p>es</p>
+          \[
+          \begin{aligned}
+          \ell_h(\gamma)&amp;=\int_{a}^{b} \|\gamma'(t)\|_h dt=\int_{a}^{b}\dfrac{\vert \gamma'(t)
+          \vert}{\operatorname{Im}(\gamma(t))}dt=\int_{a}^{b}\dfrac{\vert i \vert}{\operatorname{Im}(it)},\\
+          &amp;=\int_{a}^{b} \frac{1}{t}dt=\ln (t) \biggm|_{a}^{b}=\ln \left(\frac{b}{a}\right).
+          \end{aligned}
+          \]
+        </div>
+
+        <div class="example" id="ej:geodesica_eje_imaginario">
+          <p>Consideremos los complejos puros \(ai\) y \(bi\) tal que \(0<a<b\), vamos="" a="" verificar="" que="" <span="" class="purple-txt">distancia hiperbólica entre dichos complejos es</a<b\),></p>
+          \[
+          \rho(ai,bi)=\ln\left(\frac{b}{a}\right).
+          \]
+          <p>El lector puede verificar que este logaritmo a la derecha en la igualdad anterior, corresponde a la
+            longitud hiperbólica de la curva \(\gamma\) dada en el Ejemplo
+            \ref{eje:calculo_longitud_hiperbolica_segmento_linea_recta}.</p>
+
+          <p>Ahora, consideremos una curva diferenciable a trozos \(\beta:[a_{1},b_{1}]\to \mathbb{H}\), definida
+            mediante</p>
+          \[
+          \beta(t)=x(t)+iy(t),
+          \]
+          <p>tal que sus extremos satisfacen \(\beta(a_{1})=ai\) y \(\beta(b_{1})=bi\). Probaremos que la longitud
+            hiperbólica de \(\beta\) es mayor o igual que el valor \(\ln\left(\dfrac{b}{a}\right)\) <em>i.e.</em>,</p>
+          \[
+          \ell_{h}(\gamma) = \ln\left(\frac{b}{a}\right)\leq \ell_{h}(\beta).
+          \]
+          <p>Como \(\beta\) es una curva arbitraria, entonces</p>
+          \[
+          \rho(ai,bi)\leq \ell_{h}(\beta).
+          \]
+          <p>Por otro lado, la longitud hiperbólica de la curva \(\beta\) está dada mediante</p>
+          \[
+          \ell_{h}(\beta)=\int_{a_1}^{b_1}\Vert \beta'(t)\Vert_{h}dt=\int_{a_1}^{b_1}
+          \dfrac{\sqrt{(x'(t))^2+(y'(t))^2}}{y(t)}dt.
+          \]
+          <p>Recordemos que para cualesquiera reales \(x,y\in \mathbb{R}\) se satisface la desigualdad</p>
+          \[
+          y \leq \sqrt{x^2+y^2}.
+          \]
+          <p>Dado que \(y(t)&gt;0\) para todo \(t\in [a_{1},b_{1}]\), entonces se satisface</p>
+          \[
+          \dfrac{y'(t)}{y(t)}\leq \dfrac{\sqrt{(x'(t))^2+(y'(t))^2}}{y(t)},
+          \]
+          <p>para cada \(t\in[a_{1},b_{1}]\). Usando las propiedades de la integral se sigue que</p>
+          \[
+          \begin{aligned}
+          \int_{a_{1}}^{b_{1}}\dfrac{y'(t)}{y(t)} &amp;\leq \int_{a_{1}}^{b_{1}}
+          \dfrac{\sqrt{(x'(t))^2+(y'(t))^2}}{y(t)}dt,\\
+          \ln(y(t))\biggm|^{b_{1}}_{a_{1}} &amp;\leq \ell_{h}(\beta),\\
+          \ln\left(\frac{y(b_{1})}{y(a_{1})}\right) &amp;\leq \ell_{h}(\beta),\\
+          \ln\left(\frac{b}{a}\right) &amp;\leq \ell_{h}(\beta).
+          \end{aligned}
+          \]
+          <p>Dado que la curva \(\beta\) fue arbitraria, entonces la anterior desigualdad implica que la longitud
+            hiperbólica de cualquier curva diferenciable a trozos \(\beta\) con extremos los complejos \(ai\) y \(bi\)
+            es mayor o igual a la longitud hiperbólica de \(\gamma\), es decir</p>
+          \[
+          \rho(ai,bi)=\ln\left(\frac{b}{a}\right)=\ell_{h}(\gamma)\leq \ell_{h}(\beta),
+          \]
+          <p>donde \(\gamma\) tiene como traza el segmento de línea recta en \(\mathbb{H}\) con extremos \(ai\) y
+            \(bi\).</p>
+        </div>
+
+        <div class="theorem">
+          <p>La función \(\rho: \mathbb{H}\times \mathbb{H}\to\mathbb{R}\), definida mediante</p>
+          \[
+          \rho(z,w)=\inf_{\gamma}\left\{\ell_h (\gamma)\right\}
+          \]
+          <p>es una métrica (función distancia), es decir, la función \(\rho\) satisface las siguientes propiedades:</p>
+          <ol style="list-style-type: none; padding-left: 0;">
+            <li><strong>(1)</strong> Para cada \(z,w\in\mathbb{H}\) se cumple \(0\leq \rho (z,w) &lt;\infty\) (Definida
+                positiva).</li>
+            <li><strong>(2)</strong> Dados los puntos \(z,w\in\mathbb{H}\), \(\rho(z,w)=0\) si y solo si \(z=w\).</li>
+            <li><strong>(3)</strong> Para cada \(z,w\in\mathbb{H}\) se cumple \(\rho(z,w)=\rho(w,z)\) (Simetría).</li>
+            <li><strong>(4)</strong> Para cada \(z,w,v\) se cumple \(\rho(z,w)\leq \rho(z,v)+\rho(v,w)\) (Desigualdad
+              triangular).</li>
+          </ol>
+          <p>La función \(\rho\) es llamada <span class="red-txt"><strong>distancia hiperbólica</strong></span> sobre
+            \(\mathbb{H}\).</p>
+        </div>
+
+        <div class="proof">
+          <p><span class="blue-txt"><strong>Definida positiva.</strong></span> Tomemos los complejos
+            \(z,w\in\mathbb{H}\) y veamos que se satisface la desigualdad</p>
+          \[
+          0\leq \rho (z,w) \lt \infty. \] <p>Basta considerar una curva derivable a trozos \(\gamma:[a,b]\to
+            \mathbb{H}\)
+            con extremos \(z\) y \(w\) y verificar la desigualdad \(0\leq \ell_h(\gamma)\lt \infty\). Asumamos que</p>
+          \[
+          \gamma(t)=x(t)+iy(t),
+          \]
+          <p>para algunas funciones continuas real valuadas \(x\) y \(y\).
+            De las propiedades de la norma
+            hiperbólica se sigue que</p>
+          \[
+          0\leq \Vert \gamma'(t)\Vert_h=\frac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}\lt \infty, \] <p>
+            para cada \(t\in [a,b]\). Aplicando las propiedades de la integral a la expresión anterior se sigue que
+          </p>
+          \[
+          0\leq \int_{a}^{b} \Vert \gamma'(t)\Vert_h
+          dt=\int_{a}^{b}\frac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}dt \lt \infty. \] <p><span class="blue-txt"><strong>Propiedad (2).</strong></span> Verifiquemos la <span class="blue-txt">condición
+              suficiente</span>. Tomemos los complejos \(z,w\in\mathbb{H}\) tal que
+            \(z=w\) y veamos que</p>
+          \[
+          \rho(z,w)=0.
+          \]
+          <p>Así, definimos la curva constante \(\gamma:[0,1]\to \mathbb{H}\), dada por</p>
+          \[
+          \gamma(t)=z,
+          \]
+          <p>la cual tiene las siguientes propiedades:</p>
+          <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>(a)</strong> Sus extremos son los complejos \(z\) y \(w\).</li>
+            <li><strong>(b)</strong> Es derivable.</li>
+            <li><strong>(c)</strong> Su longitud hiperbólica es \(\ell_{h}(\gamma)=0\).</li>
+          </ul>
+          <p>De la propiedad anterior se sigue que \(\rho(z,w)=0\).</p>
+
+          <p>Probemos la <span class="blue-txt">condición necesaria</span>. Procederemos por contradicción.
+            Supongamos que existen dos complejos distintos \(z\neq w\) en \(\mathbb{H}\) tal que
+            \(\rho(z,w)=0\). Como \(\mathbb{H}\) es un espacio Hausdorff con la topología del subespacio
+            inducida por \(\mathbb{C}\), entonces existe un real \(\varepsilon&gt;0\) tal que la cerradura de la
+            bola euclidiana \(B_{\varepsilon}(z)\) está contenida en \(\mathbb{H}\) y no contiene al punto
+            \(w\). La función \(f:\overline{B_{\varepsilon}(z)}\to \mathbb{R}\), definida mediante</p>
+          \[
+          f(z)=\frac{1}{\operatorname{Im}(z)},
+          \]
+          <p>es continua. Dado que \(f\) es una función continua definida desde un subespacio compacto de
+            \(\mathbb{H}\), entonces existe un valor real positivo no nulo \(m\) tal que</p>
+          \[
+          0\neq m\leq f(z),
+          \]
+          <p>para todo \(z\in \overline{B_{\varepsilon}(z)}\).</p>
+
+          <p>Por otro lado, consideremos \(\gamma:[a,b]\to \mathbb{H}\) una curva derivable a trozos con las
+            siguientes propiedades:</p>
+          <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>(a)</strong> Sus puntos finales son \(z\) y \(w\).</li>
+            <li><strong>(b)</strong> Existe un punto \(t_0\in(a,b)\) tal que \(\gamma(t_0)\) está en la frontera
+              de la bola \(B_{\varepsilon}(z)\).</li>
+            <li><strong>(c)</strong> La imagen \(\gamma([a,t_0))\) está contenida en la bola
+              \(B_{\varepsilon}(z)\).</li>
+          </ul>
+          <p>Al evaluar la función \(f\) en los puntos de la imagen \(\gamma([a,t_0))\), se sigue que</p>
+          \[
+          \begin{aligned}
+          m &amp;\leq \frac{1}{\operatorname{Im}(\gamma(t))},\\
+          m \vert \gamma'(t)\vert &amp;\leq \frac{\vert \gamma'(t)\vert}{\operatorname{Im}(\gamma(t))}=\Vert
+          \gamma'(t)\Vert_{h},
+          \end{aligned}
+          \]
+          <p>para todo \(t\in[a,t_0]\). Usando las propiedades de la integral y el hecho que la distancia
+            euclidiana entre los puntos \(z\) y \(v\) es \(\Vert z-v\Vert_{e}\), entonces obtenemos
+          </p>
+
+          \begin{equation}
+          \begin{split}
+          m\int\limits_{a}^{t_{0}} \vert \gamma'(t)\vert dt &amp;\leq \int\limits_{a}^{t_{0}} \frac{\vert
+          \gamma'(t)\vert}{Im(\gamma(t))}dt,\\
+          0 \lt m\varepsilon=m \vert z-\gamma(t_0)\vert \leq m\int\limits_{a}^{t_{0}} \vert \gamma'(t)\vert dt&amp;\leq
+          \int\limits_{a}^{t_{0}} \frac{\vert \gamma'(t)\vert}{Im(\gamma(t))}dt\leq \int\limits_{a}^{b}\Vert
+          \gamma'(t)\Vert_{h}dt=\ell_{h}(\gamma), \end{split} \end{equation}
+
+          <p>Dado que la curva \(\gamma\) la
+            tomamos
+            arbitrariamente, entonces
+          </p>
+          \[
+          0 \lt m\varepsilon \lt \rho(z,w)=\inf_{\gamma}\{\ell_h(\gamma)\}.
+          \]
+          <p>Sin embargo, este hecho es una
+            contradicción, pues asumimos que \(\rho(z,w)=0\).
+          </p>
+
+          <p><span class="blue-txt"><strong>Simetría.</strong></span> Consideramos la curva derivable a
+            trozos \(\gamma:[a,b]\to \mathbb{H}\) con puntos extremos \(z\) y \(w\), tal que</p>
+          \[
+          \gamma(t)=x(t)+iy(t).
+          \]
+          <p>Entonces definimos la <span class="purple-txt">curva opuesta de \(\gamma\)</span> como
+            \(-\gamma: [a,b]\to \mathbb{H}\), tal que</p>
+          \[
+          -\gamma(t):=\gamma(b+a-s)=x(b+a-s)+iy(b+a-s).
+          \]
+          <p>Notemos que la curva opuesta \(-\gamma\) tiene puntos finales \(w\) y \(z\). Ahora, tomamos la
+            igualdad \(t=b+a-s\) y aplicamos el Teorema Fundamental del Cálculo y la regla de la cadena para
+            obtener</p>
+          \[
+          \begin{aligned}
+          \ell_h(-\gamma)&amp;=\int_{a}^{b}\dfrac{\sqrt{\left(x'(b+a-s)\right)^2+\left(y'(a+b-s)\right)^2}}{y(a+b-s)}ds,\\
+          &amp;=\int_{s(b)=a}^{s(a)=b}\dfrac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}(-1)dt,\\
+          &amp;=\int_{b}^{a}\dfrac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}dt,\\
+          &amp;=\ell_h(\gamma).
+          \end{aligned}
+          \]
+          <p>De esta última igualdad se sigue</p>
+          \[
+          \rho(w,z)\leq \inf_{\gamma}\left\{\ell_h(-\gamma)\right\}=\rho(z,w).
+          \]
+          <p>Análogamente, si \(\sigma\) es una curva derivable a trozos en \(\mathbb{H}\) con puntos
+            finales \(w\) y \(z\), entonces</p>
+          \[
+          \rho(z,w)\leq \inf_{\sigma}\{\ell_h(-\sigma)\}=\rho(w,z).
+          \]
+          <p>De las ecuaciones anteriores se sigue que \(\rho(z,w)=\rho(w,z)\).</p>
+
+          <p><span class="blue-txt"><strong>Desigualdad triangular.</strong></span> Consideremos los
+            complejos \(z,w,v\in\mathbb{H}\) y veamos que se satisface la desigualdad</p>
+          \[
+          \rho(z,w)\leq \rho(z,v)+\rho(v,w).
+          \]
+          <p>De la definición de ínfimo se sigue el siguiente hecho: dado cualquier real positivo
+            \(\varepsilon&gt;0\), existen las curvas derivables a trozos \(\gamma:[a,b]\to \mathbb{H}\) y
+            \(\sigma:[c,d] \to\mathbb{H}\), con puntos finales \(z\) y \(v\); y \(v\) y \(w\),
+            respectivamente, tal que</p>
+          \[
+          \begin{array}{ccc}
+          \ell_h(\gamma)-\rho(z,v)\leq \dfrac{\varepsilon}{2} &amp; \text{ y }&amp; \ell_h(\sigma) -\rho (v,w)\leq
+          \dfrac{\varepsilon}{2},\\
+          &amp; &amp;\\
+          \ell_h(\gamma)\leq \rho(z,v)+\dfrac{\varepsilon}{2} &amp;\text{ y } &amp;\ell_h(\sigma) \leq \rho
+          (v,w)+\dfrac{\varepsilon}{2}.
+          \end{array}
+          \]
+          <p>Tomemos la curva <span class="purple-txt">suma</span> \(\gamma+\sigma:[a,b+d-c]\to
+            \mathbb{H}\), definida mediante</p>
+          \[
+          (\gamma+\sigma)(t)=
+          \begin{cases}
+          \gamma(t), &amp; \text{si } a\leq t\leq b,\\
+          \sigma(c-d+t),&amp; \text{si } b\leq t\leq b+d-c,
+          \end{cases}
+          \]
+          <p>la cual es derivable a trozos y tiene puntos finales \(z\) y \(w\). De la definición de la
+            función \(\rho\) se sigue que</p>
+          \[
+          \rho(z,w)\leq \ell_{h}(\gamma +\sigma)=\ell_h(\gamma)+\ell_h(\sigma)\leq
+          \rho(z,v)+\rho(v,w)+\varepsilon.
+          \]
+          <p>Como la anterior ecuación es válida para cualquier \(\varepsilon&gt;0\),
+            entonces se sigue que</p>
+          \[
+          \rho(z,w)\leq \rho(z,v)+\rho(v,w).
+          \]
+        </div>
+
+        <p>La función distancia \(\rho\) induce una topología para el plano
+          hiperbólico \(\mathbb{H}\). Dicha topología
+          coincide con la inducida por la topología del subespacio
+          \(\mathbb{H}\subset \mathbb{C}\). Sin embargo, aún no
+          contamos con la herramienta suficiente para probar esta
+          afirmación. Así que lo verificaremos más adelante.</p>
+
+
+      </div>
+
+      <hr>
+
+      <div id="section3">
+        <div class="head-3 head-3-level2">Isometrías y geodésicas</div>
+
+        <div style="text-align: center;">
+          <p><b>Under construction!</b></p>
+          <picture>
+            <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.webp" type="image/webp">
+            <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.gif" alt="🚧" width="190" height="190">
+          </picture>
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+
+      <hr>
+
+      <div id="section4">
+        <div class="head-3 head-3-level2">Postulados</div>
+
+        <div style="text-align: center;">
+          <p><b>Under construction!</b></p>
+          <picture>
+            <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.webp" type="image/webp">
+            <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.gif" alt="🚧" width="190" height="190">
+          </picture>
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+
+      <hr>
+
+      <div id="section5">
+        <div class="head-3 head-3-level2">Propiedades de las isometrías y geodésicas</div>
+
+
+        <div style="text-align: center;">
+          <p><b>Under construction!</b></p>
+          <picture>
+            <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.webp" type="image/webp">
+            <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.gif" alt="🚧" width="190" height="190">
+          </picture>
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+
+
+
+      <hr>
+
+      <div id="section6">
+        <div class="head-3 head-3-level2">Topología inducida</div>
+
+
+
+        <div style="text-align: center;">
+          <p><b>Under construction!</b></p>
+          <picture>
+            <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.webp" type="image/webp">
+            <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.gif" alt="🚧" width="190" height="190">
+          </picture>
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+
+
+
+
+
+    </article>
+  </main>
+
+  <button class="hide-small" onclick="topFunction()" id="toTop" title="Go to top">⇧</button>
+
+  <a href="#" style="text-decoration: none;">
+    <p class="nextPage">NEXT: Page</p>
+  </a>
+  <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 ¡Hola!</strong>
+      </div>
+      <div class="modal-body">
+  
+        <div w3-include-html="message-modal.html"></div>
+        <br />
+      </div>
+  
+      <div class="modal-footer">
+        ¡Gracias! 🙏 !Realmente aprecio tu apoyo! 🤗
+      </div>
+    </div>
+  
+  </div>
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span class="hide-small" id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Inicio</a>,
+    <a href="https://github.com/geometria-hiperbolica"><i class="fa-solid fa-code"></i> Código</a>,
+    <a href="https://github.com/geometria-hiperbolica/geometria-hiperbolica.github.io/issues"><i
+        class="fa-solid fa-lightbulb"></i> Reporta</a>,
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-regular fa-heart"></i> Apoyar</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  <span class="hide-medium hide-large" style="font-size: 0.85em;">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Inico</a> -
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-regular fa-heart"></i> Apoyar</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+
+  <br />
+
+  <a id="licence-link" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+    target="_blank">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong>
+    <span class="hide-small" style="font-size: 18px">&copy; J.C. Ponce Campuzano, C. Ramírez Maluendas
+      <script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 15px">&copy; J.C. Ponce Campuzano <br /> C. Ramírez
+      Maluendas,
+      <script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>
