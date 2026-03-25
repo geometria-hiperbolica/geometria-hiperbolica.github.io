@@ -483,7 +483,15 @@
           cruzadas como \ref{ejer:producto_interno_cociente} se mantienen como están en el texto original.
         </p>
 
-        <div class="head-3 head-3-level3">Curva y norma hiperbólica</div>
+        <div style="color: rgba(255, 255, 255, 0);" id="curva-norma-hiperbolica">
+          <p>Curva y norma hiperbólica</p>
+        </div>
+
+        <p style="font-size: 120%;">
+          <b>3.1.1. Curva y norma hiperbólica</b>
+        </p>
+
+       
 
         <p>A partir de la norma vamos a definir la <span class="purple-text">longitud hiperbólica</span> de una curva
           derivable a trozos en \(\mathbb{H}.\) Vamos a dar un corto paseo por el concepto de <span class="purple-text">curva</span>.</p>
@@ -629,8 +637,15 @@
 
         <p><em>Nota:</em> Las figuras y referencias a ellas han sido omitidas según lo solicitado.</p>
 
+        
+         <div style="color: rgba(255, 255, 255, 0);" id="longitud-curva-distancia-hiperbolica">
+          <p>Longitud de curva y distancia hiperbólica</p>
+        </div>
 
-        <div class="head-3 head-3-level3">Longitud de curva y distancia hiperbólica</div>
+        <p style="font-size: 120%;">
+          <b>3.1.2. Longitud de curva y distancia hiperbólica</b>
+        </p>
+
 
         <p>Una ventaja de esta norma, es que tenemos la posibilidad de definir una forma para determinar la <span class="purple-text">longitud hiperbólica</span> de una curva derivable a trozos en el plano hiperbólico
           \(\mathbb{H}.\) A su vez, la longitud hiperbólica nos provee de una función distancia (métrica) para
@@ -938,7 +953,7 @@
           <p>Isometrías del plano hiperbólico</p>
         </div>
 
-        <p style="margin-top: -30px;font-size: 120%;">
+        <p style="font-size: 120%;">
           <b>3.2.1. Isometrías del plano hiperbólico</b>
         </p>
 
@@ -1116,11 +1131,11 @@
 
         </p>
 
-        <div style="color: rgba(255, 255, 255, 0);" id="geodesicasplano-hyperbolico">
+        <div style="color: rgba(255, 255, 255, 0);" id="geodesicas-plano-hiperbolico">
           <p>Geodésicas del plano hiperbólico</p>
         </div>
 
-        <p style="margin-top: -30px;font-size: 120%;">
+        <p style="font-size: 120%;">
           <b>3.2.2. Geodésicas del plano hiperbólico</b>
         </p>
 
@@ -1245,7 +1260,7 @@
         <figure>
           <img alt="Líneas hiperbólicas atravezando por z." style="width: 90%;" loading="lazy" src="imgs/cap-03/lineas-hiper-euclidiano.png">
           <figcaption>
-          Líneas hiperbólicas atravezando por $z.$
+            Líneas hiperbólicas atravezando por $z.$
           </figcaption>
         </figure>
 
@@ -1262,24 +1277,552 @@
         </div>
         <div class="head-3 head-3-level2">Propiedades de las isometrías y geodésicas</div>
 
+        <p>Recordemos que las transformaciones de Möbius dejan invariantes los círculos generalizados. Vamos a
+          introducir ciertas transformaciones de Möbius actuando sobre algunas líneas hiperbólicas.</p>
 
-        <div style="text-align: center;">
-          <p><b>Under construction!</b></p>
-          <picture>
-            <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.webp" type="image/webp">
-            <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.gif" alt="🚧" width="190" height="190">
-          </picture>
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li><strong>(1)</strong> La <span class="red-txt">homotecia</span> dada por
+            \[
+            H_{r}(z)=rz,
+            \]
+            para algún \(r&gt;0\), envía la línea hiperbólica (semicircunferencia con centro \(\mathbf{0}\) y radio \(1\))
+            \[
+            C_{1}(\mathbf{0})=\left\{z\in\mathbb{H}: |z|=1\right\},
+            \]
+            en la línea hiperbólica (semicircunferencia con centro \(\mathbf{0}\) y radio \(r\))
+            \[
+            C_{r}(\mathbf{0})=\left\{z\in\mathbb{H}:|z|=r\right\}.
+            \]
+            Adicionalmente, esta homotecia deja invariante el eje imaginario.</li>
 
+          <li><strong>(2)</strong> La <span class="red-txt">traslación</span> dada por
+            \[
+            T_{b}(z)=z+b,
+            \]
+            para algún real no nulo \(b\neq 0\), envía la línea hiperbólica (semicircunferencia con centro
+            \(\mathbf{0}\) y radio \(1\))
+            \[
+            C_{1}(\mathbf{0})=\left\{z\in\mathbb{H}: |z|=1\right\},
+            \]
+            en la línea hiperbólica (semicircunferencia con centro \(b\) y radio \(1\))
+            \[
+            C_{1}(b)=\left\{z\in\mathbb{H}:|z-b|=1\right\}.
+            \]
+            Adicionalmente, esta traslación envía el eje imaginario sobre la línea hiperbólica (semirrecta euclidiana
+            perpendicular al eje real) que pasa por el punto \(b\in\mathbb{R}\).</li>
+
+          <li><strong>(3)</strong> La transformación de Möbius dada por la composición
+            \[
+            T_{b}\circ H_{r}(z)=rz+b,
+            \]
+            envía la línea hiperbólica (semicircunferencia con centro \(\mathbf{0}\) y radio \(1\))
+            \[
+            C_{1}(\mathbf{0})=\left\{z\in\mathbb{H}: |z|=1\right\},
+            \]
+            en la línea hiperbólica (semicircunferencia con centro \(b\) y radio \(r\))
+            \[
+            C_{r}(b)=\left\{z\in\mathbb{H}:|z-b|=r\right\}.
+            \]</li>
+
+          <li><strong>(4)</strong> Usando un resultado de transformaciones de Möbius podemos obtener la transformación
+            de Möbius \(T\in \operatorname{PSL}(2,\mathbb{R})\) dada por
+            \[
+            T(z)=\dfrac{z-1}{z+1},
+            \]
+            la cual envía el eje imaginario sobre la línea hiperbólica (semicircunferencia con centro \(\mathbf{0}\) y
+            radio \(1\))
+            \[
+            C_{1}(\mathbf{0})=\left\{z\in\mathbb{H}:|z|=1\right\}.
+            \]
+            Notemos que \(T(-1)=\infty\), \(T(i)=i\) y \(T(1)=\mathbf{0}\). Adicionalmente, \(T\) envía el primer y
+            segundo cuadrante del plano hiperbólico \(\mathbb{H}\) sobre los conjuntos conexos \(\{z\in\mathbb{H}: |z|
+            &lt;1\}\) y \(\{z\in\mathbb{H}: |z|&gt;1\}\), respectivamente.
+          </li>
+        </ul>
+
+        <p>Si tomamos cualesquiera dos líneas hiperbólicas \(C_{1}\) y \(C_{2}\), a partir de composiciones de las
+          cuatro transformaciones de Möbius descritas anteriormente podemos obtener un elemento \(T\in
+          \operatorname{PSL}(2,\mathbb{R})\) que envíe \(C_{1}\) sobre \(C_{2}\).</p>
+
+        <div class="theorem" id="the:invariancia">
+          El grupo \(\operatorname{PSL}(2, \mathbb{R})\) actúa transitivamente en la familia de todas las líneas
+          hiperbólicas. Más precisamente, si \(C_1\) y \(C_2\) son líneas hiperbólicas, entonces existe un elemento
+          \(T\in \operatorname{PSL}(2,\mathbb{R})\) que envía \(C_{1}\) sobre \(C_{2}\), <em>i.e.</em>,
+          \(T(C_{1})=C_{2}\).
         </div>
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <p>El siguiente resultado nos garantiza que los segmentos de líneas hiperbólicas son las geodésicas del plano
+          hiperbólico \(\mathbb{H}\).</p>
+
+        <div class="theorem" id="the:geodesicas">
+          Las geodésicas del plano hiperbólico \(\mathbb{H}\) corresponden a (trozos) segmentos de líneas
+          hiperbólicas, en otras palabras, las geodésicas son segmentos de semirrectas euclidianas en \(\mathbb{H}\)
+          ortogonales al eje real o, arcos (segmentos) de semicircunferencias con centro en el eje real.
+        </div>
+
+        <div class="proof">
+          Consideremos puntos distintos \(z\neq w\) sobre el plano hiperbólico \(\mathbb{H}\). Probemos que existe
+          una <span class="purple-text">geodésica</span> (curva diferenciable a trozos) \(\gamma:[a,b]\to\mathbb{H}\)
+          con las siguientes condiciones:
+          <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>(1)</strong> Sus extremos son los complejos \(z\) y \(w\).</li>
+            <li><strong>(2)</strong> Su longitud hiperbólica es tal que \(\ell_{h}(\gamma)=\rho(z,w)\).</li>
+            <li><strong>(3)</strong> La traza \(\gamma^{\ast}\) de la curva \(\gamma\) es un segmento de una línea
+              hiperbólica.</li>
+          </ul>
+          <p>Debemos estudiar los siguientes dos casos.</p>
+
+          <p><span class="blue-txt"><strong>Caso 1.</strong></span> Los complejos \(z\) y \(w\) están sobre el eje
+            imaginario, entonces son de la forma</p>
+          \[
+          z=ia \quad \text{ y } \quad w=ib,
+          \]
+          <p>tal que \(0\lt a\lt b\). De ejemplos anteriores se sigue que la curva \(\gamma:[a,b]\to\mathbb{H}\),
+            definida
+            mediante</p>
+          \[
+          \gamma(t)=it,
+          \]
+          <p>tiene como puntos finales a los complejos \(z\) y \(w\) y realiza la distancia hiperbólica entre dichos
+            puntos <em>i.e.</em>,</p>
+          \[
+          \rho(z,w)=\ell(\gamma)=\ln\left( \dfrac{b}{a}\right).
+          \]
+          <p>Siendo \(\gamma\) un segmento de línea hiperbólica (semirrecta euclidiana perpendicular al eje real).
+          </p>
+
+          <p><span class="blue-txt"><strong>Caso 2.</strong></span> Supongamos que los elementos \(z\) y \(w\) son
+            puntos arbitrarios sobre el plano hiperbólico \(\mathbb{H}\) tal que alguno de ellos no está sobre el
+            eje imaginario. Denotemos mediante \(C\) a la circunferencia ortogonal al eje real que pasa por los
+            puntos \(z\) y \(w\). El Teorema \ref{the:invariancia} garantiza la existencia de una transformación de
+            Möbius \(T\) en \(\operatorname{PSL}(2,\mathbb{R})\) que envía la línea hiperbólica \(C\) sobre el eje
+            imaginario (positivo). Así, las imágenes</p>
+          \[
+          T(z) \quad \text{ y } \quad T(w)
+          \]
+          <p>están sobre el eje imaginario (positivo). Podemos suponer sin pérdida de generalidad que \(T(z)=ai\) y
+            \(T(w)=bi\), para algunos reales positivos \(0\lt a\lt b\). Dado que los elementos de
+            \(\operatorname{PSL}(2,\mathbb{R})\) son isometrías de \(\mathbb{H}\), entonces</p>
+          \[
+          \rho(z,w)=\rho(T(z),T(w)). \tag{1}
+          \]
+          <p>Del <span class="blue-txt">Caso 1</span>, se sigue que la curva \(\gamma\) con extremos \(T(z)\) y
+            \(T(w)\) es una <span class="purple-text">geodésica</span>, es decir, \(\gamma\) realiza la distancia
+            hiperbólica entre dichos puntos</p>
+          \[
+          \rho(T(z),T(w))=\ell_h(\gamma). \tag{2}
+          \]
+          <p>Dado que la transformación de Möbius \(T\) preserva la norma hiperbólica, entonces</p>
+          \[
+          \ell_h(\gamma)=\ell_h(T^{-1}\circ \gamma). \tag{3}
+          \]
+          <p>Ahora, comparando las ecuaciones (1), (2) y (3) obtenemos</p>
+          \[
+          \rho(z,w)=\ell_h(T^{-1}\circ \gamma).
+          \]
+          <p>Esta última igualdad implica que la distancia hiperbólica entre \(z\) y \(w\) es realizada por la
+            curva \(T^{-1}\circ \gamma\). Dado que los elementos de \(\operatorname{PSL}(2,\mathbb{R})\) actúan
+            sobre las líneas hiperbólicas, entonces la traza \((T^{-1}\circ \gamma)\) es un segmento de arco de
+            una línea hiperbólica que pasa por los puntos \(z\) y \(w\).</p>
+        </div>
+
+        <p>El anterior resultado nos garantiza que dados dos complejos distintos \(z\neq w\) sobre el plano hiperbólico
+          \(\mathbb{H}\), existe una única geodésica que realiza la distancia hiperbólica entre \(z\) y \(w\). Para este
+          caso diremos que el plano hiperbólico es <span class="purple-text">geodésicamente completo</span>.
+          Adicionalmente, denotaremos mediante</p>
+        \[
+        [z,w]
+        \]
+        <p>a la única geodésica con extremos \(z\) y \(w\).</p>
+
+        <div class="theorem" id="t:punto_entre_z_w">
+          <p>Dados los complejos distintos \(z, w, v\in \mathbb{H}\), entonces \(\rho(z,w)=\rho(z,v)+\rho(v,w)\), si y
+            solo si, \(v\in[z,w]\).</p>
+        </div>
+
+        <div class="proof">
+          <span class="blue-txt"><strong>Condición suficiente.</strong></span> Procederemos por contradicción.
+          Asumamos que \(v\notin [z,w]\). Entonces las longitudes hiperbólicas de las geodésicas \([z,v]\) y \([v,w]\)
+          satisfacen la desigualdad:
+          \[
+          \begin{aligned}
+          \rho(z,w)=\ell_{h}([z,w])&amp;\lt \ell_{h}([z,v])+\ell_{h}([v,w]),\\ &amp;\lt \rho(z,v)+\rho(v,w). \end{aligned} \]
+          <p>
+            <span class="blue-txt"><strong>Condición necesaria.</strong></span>
+            Supongamos que \(v\in[z,w]\), usando las
+            propiedades de la integral se sigue que
+          </p>
+          \[
+          \begin{aligned}
+          \rho(z,w)&amp;=\ell_{h}([z,w]),\\
+          &amp;=\ell_{h}([z,v])+\ell_{h}([v,w]),\\
+          &amp;=\rho(z,v)+\rho(v,w).
+          \end{aligned}
+          \]
+        </div>
+
+        <div class="theorem" id="t:preservando_geodesicas">
+          Las isometrías del plano hiperbólico envían geodésicas (líneas hiperbólicas) en geodésicas (líneas
+          hiperbólicas).
+        </div>
+
+        <div class="proof">
+          Consideremos la isometría \(\phi\in \operatorname{Isom}(\mathbb{H})\) y los puntos distintos \(z\) y \(w\)
+          sobre el plano hiperbólico \(\mathbb{H}\). Veamos que
+          \[
+          \phi([z,w])=[\phi(z),\phi(w)].
+          \]
+          <p>Del Teorema \ref{t:punto_entre_z_w} se sigue que \(\rho(z,w)=\rho(z,v)+\rho(v,w)\), si y solo si,
+            \(v\in[z,w]\). Dado que \(\phi\) es una isometría, entonces
+            \(\rho(\phi(z),\phi(w))=\rho(\phi(z),\phi(v))+\rho(\phi(v),\phi(w))\), si y solo si, \(\phi(v)\in
+            [\phi(z),\phi(w)]\).</p>
+        </div>
+
+        <p>Como ejercicio, el lector puede verificar que la reflexión con respecto al eje imaginario</p>
+        \[
+        R_{\operatorname{Im}}(z)=-\overline{z},
+        \]
+        <p>también envía líneas hiperbólicas sobre líneas hiperbólicas.</p>
+
+        <div style="color: rgba(255, 255, 255, 0);" id="formulas-invariantes">
+          <p>Fórmulas invariantes</p>
+        </div>
+
+        <p style="font-size: 120%;">
+          <b>3.4.1. Fórmulas invariantes</b>
+        </p>
+
+        <p>Vamos a enunciar algunas de las fórmulas invariantes bajo los elementos del grupo
+          \(\operatorname{PSL}(2,\mathbb{R})\).</p>
+
+        <div class="lemma" id="lemma:primera_invairanza">
+          Para cualesquiera elementos \(z,w\in\mathbb{H}\), las siguientes expresiones son invariantes bajo elementos
+          de \(\operatorname{PSL}(2,\mathbb{R})\):
+          <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>(1)</strong> \(\dfrac{|z-w|}{|z-\overline{w}|}\).</li>
+            <li><strong>(2)</strong> \(\dfrac{|z-w|^2}{2\, \operatorname{Im}(z)\, \operatorname{Im}(w)}\).</li>
+            <li><strong>(3)</strong> \(\dfrac{|z-w|}{2\, (\operatorname{Im}(z)\,\operatorname{Im}(w))^{1/2}}\).</li>
+            <li><strong>(4)</strong>
+              \(\dfrac{|z-\overline{w}|}{2\,(\operatorname{Im}(z)\,\operatorname{Im}(w))^{1/2}}\).</li>
+          </ul>
+        </div>
+
+        <div class="proof">
+          Verificaremos los dos primeros incisos. Tomemos la transformación de Möbius \(T\in
+          \operatorname{PSL}(2,\mathbb{R})\) tal que
+          \[
+          T(z)=\dfrac{az+b}{cz+d}.
+          \]
+
+          <p><span class="blue-txt"><strong>Inciso (1).</strong></span> Veamos que se satisface la igualdad</p>
+          \[
+          \dfrac{|z-w|}{|z-\overline{w}|}=\dfrac{\left|T(z)-T(w)\right|}{\left|T(z)-\overline{T(w)}\right|},
+          \]
+          <p>para cualesquiera complejos \(z,w\in\mathbb{H}\). Evaluamos la transformación de Möbius \(T\) en los
+            complejos \(z\) y \(w\) y realizamos las operaciones adecuadas para obtener</p>
+          \[
+          \begin{aligned}
+          \frac{|T(z)-T(w)|}{\left|T(z)-\overline{T(w)}\right|} &amp; =
+          \dfrac{\left|\dfrac{az+b}{cz+d}-\dfrac{aw+b}{cw+d}\right|}{\left|\dfrac{az+b}{cz+d}-\dfrac{a\overline{w}+b}{c\overline{w}+d}\right|},\\
+          &amp;\\
+          &amp;=\frac{\dfrac{\left|(az+b)(cw+d)-(aw+b)(cz+d)\right|}{\cancel{\color{red}|cz+d|}\,\cancel{\color{blue}|cw+d|}}}{\dfrac{\left|(az+b)(c\overline{w}+d)-(a\overline{w}+b)(cz+d)\right|}{\cancel{\color{red}|cz+d|}\,\cancel{\color{blue}|c\overline{w}+d|}}},\\
+          &amp;\\
+          &amp;= \dfrac{\left|aczw+adz+bcw+bd - aczw - adw - bcz - bd\right|}{\left|acz\overline{w}+adz+bc\overline{w}+bd -
+          acz\overline{w} - ad\overline{w} - bcz - bd\right|},\\
+          &amp;\\
+          &amp;=\dfrac{\left|adz - bcz + bcw - adw \right|}{\left|adz - bcz + bc\overline{w} - ad\overline{w}
+          \right|}=\dfrac{\left|\cancelto{1}{\color{blue}(ad-bc)}z - \cancelto{1}{\color{blue}(ad-bc)}w
+          \right|}{\left|\cancelto{1}{\color{blue}(ad-bc)}z - \cancelto{1}{\color{blue}(ad-bc)}\overline{w} \right|},\\
+          &amp;\\
+          &amp;=\dfrac{|z-w|}{|z-\overline{w}|}.
+          \end{aligned}
+          \]
+
+          <p><span class="blue-txt"><strong>Inciso (2).</strong></span> Probaremos la igualdad</p>
+          \[
+          \frac{|z-w|^2}{2 \operatorname{Im}(z) \operatorname{Im}(w)}=\frac{|T(z)-T(w)|^2}{2 \,
+          \operatorname{Im}(T(z))\, \operatorname{Im}(T(w))},
+          \]
+          <p>para cualesquiera \(z,w\in\mathbb{H}\). Evaluamos la transformación de Möbius \(T\) en los complejos \(z\)
+            y \(w\), y usamos la ecuación \(\operatorname{Im}(T(z))=\dfrac{\operatorname{Im}(z)}{|cz+d|^2}\). Así, el
+            miembro derecho de la anterior expresión es igual a</p>
+          \[
+          \frac{|T(z)-T(w)|^2}{2 \, \operatorname{Im}(T(z))\, \operatorname{Im}(T(w))} =
+          \dfrac{\left|\dfrac{az+b}{cz+d}-\dfrac{aw+b}{cw+d} \right|^2}{2\dfrac{\operatorname{Im}(z)}{|cz+d|^2
+          }\dfrac{\operatorname{Im}(w)}{|cw+d|^2 }}.
+          \]
+          <p>Ahora, realizamos las operaciones adecuadas y obtenemos</p>
+          \[
+          \begin{aligned}
+          \frac{|T(z)-T(w)|^2}{2 \, \operatorname{Im}(T(z))\, \operatorname{Im}(T(w))}&amp; =
+          \dfrac{\left|\dfrac{az+b}{cz+d}-\dfrac{aw+b}{cw+d} \right|^2}{2\dfrac{\operatorname{Im}(z)}{|cz+d|^2
+          }\dfrac{\operatorname{Im}(w)}{|cw+d|^2 }}, \\
+          &amp;\\
+          &amp;=\frac{\dfrac{\left|(az+b)(cw+d)-(aw+b)(cz+d)\right|^{2}}{|cz+d|^{2}\,|cw+d|^{2}} \cdot
+          |cz+d|^{2}\,|cw+d|^{2}}{2\, \operatorname{Im}(z) \, \operatorname{Im}(w)}, \\
+          &amp;\\
+          &amp;=\dfrac{\left|aczw+adz+bcw+bd - aczw - adw - bcz - bd\right|^2}{2\, \operatorname{Im}(z)\,
+          \operatorname{Im}(w)},\\
+          &amp;\\
+          &amp;= \frac{\left|(ad-bc)z - (ad-bc)w\right|^{2}}{2 \, \operatorname{Im}(z) \, \operatorname{Im}(w)},\\
+          &amp;\\
+          &amp;=\dfrac{\left|z-w\right|^{2}}{2\, \operatorname{Im}(z)\, \operatorname{Im}(w)}.
+          \end{aligned}
+          \]
+        </div>
+
+        <p>Ahora, enunciaremos varias fórmulas relacionadas con la distancia hiperbólica \(\rho\) y las funciones
+          trigonométricas hiperbólicas. Recordemos que las funciones <span class="purple-txt">seno hiperbólico</span>,
+          <span class="purple-txt">coseno hiperbólico</span> y <span class="purple-txt">tangente hiperbólico</span>,
+          denotadas mediante \(\sinh, \cosh, \tanh\), respectivamente, están definidas mediante
+        </p>
+        \[
+        \sinh (x)=\frac{e^x-e^{-x}}{2}, \quad \cosh (x)=\frac{e^{x}+e^{-x}}{2}, \quad \tanh (x)=\frac{\sinh x}{\cosh
+        x}=\frac{e^x-e^{-x}}{e^x+e^{-x}},
+        \]
+        <p>donde \(x\) es cualquier real positivo.</p>
+
+        <div class="lemma" id="l:cosh">
+          Para cualesquiera dos puntos \(z,w\) sobre el plano hiperbólico \(\mathbb{H}\) se satisfacen las siguientes
+          igualdades
+          <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>(1)</strong> \(\cosh\rho(z,w)=1+\dfrac{|z-w|^2}{2\, \operatorname{Im}(z)\,
+              \operatorname{Im}(w)}\).</li>
+            <li><strong>(2)</strong> \(\sinh \left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-w|}{2\, (\operatorname{Im} (z)
+              \, \operatorname{Im}(w))^{1/2}}\).</li>
+            <li><strong>(3)</strong> \(\cosh
+              \left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-\overline{w}|}{2\,(\operatorname{Im}(z) \,
+              \operatorname{Im}(w))^{1/2}}\).</li>
+            <li><strong>(4)</strong> \(\tanh \left(\dfrac{1}{2} \rho(z,w)\right)=\dfrac{|z-w|}{|z-\overline{w}|}\).</li>
+          </ul>
+        </div>
+
+        <div class="proof">
+          Probaremos los incisos <strong>(1)</strong> y <strong>(4)</strong>, el lector probará los dos restantes.
+
+          <p>Tomemos los complejos \(z\) y \(w\) sobre el plano hiperbólico \(\mathbb{H}\). Las pruebas de cada fórmula
+          siguen la siguiente estrategia. Primero, verificamos cada una de las igualdades para el caso (particular)
+          \(z=i\) y \(w=it\), siendo \(t\gt 0\). Luego, suponemos el caso (general) en que los complejos \(z\) y \(w\)
+          son arbitrarios, entonces usamos resultados previos para garantizar la existencia de una transformación de
+          Möbius \(T\in\operatorname{PSL}(2,\mathbb{R})\) tal que \(T(z)=i\) y \(T(w)=it\), para algún \(t\gt 0\).
+          Así, la fórmula es escrita para complejos del caso particular. Como \(T\) es una isometría del plano
+          hiperbólico \(\mathbb{H}\), entonces cada fórmula debe ser válida para el caso general.</p>
+
+          <p><span class="blue-txt"><strong>Inciso (1).</strong></span> <span class="purple-txt">Caso particular.</span>
+            Si \(z=i\) y \(w=it\) tal que \(t\gt 1\). Usando resultados previos y computando, tenemos que</p>
+          \[
+          \begin{aligned}
+          \cosh\rho(z,w) &amp;= \cosh \rho(i,it) = \cosh (\ln t)=\dfrac{e^{\ln t}+e^{-\ln t}}{2},\\
+          &amp;\\
+          &amp;=\dfrac{t+\dfrac{1}{t}}{2}=\dfrac{t^2+1}{2t}= \dfrac{t^2-2t+1 +2t}{2t}=\dfrac{(t-1)^2+2t}{2t},\\
+          &amp;\\
+          &amp;=\dfrac{(t-1)^2}{2t}+1=\dfrac{|i|^2|1-t|^2}{2t}+1=\dfrac{|i(1-t)|^2}{2t}+1,\\
+          &amp;\\
+          &amp;=\dfrac{|i-it|^2}{2\,\operatorname{Im}(i)\,\operatorname{Im}(it)}+1=1+\dfrac{|z-w|^2}{2\,\operatorname{Im}(z)\,
+          \operatorname{Im}(w)}.
+          \end{aligned}
+          \]
+
+          <p><span class="purple-txt">Caso general.</span> Contrariamente, si los complejos \(z\) y \(w\) son
+            arbitrarios sobre el plano hiperbólico \(\mathbb{H}\), entonces resultados previos nos garantizan la
+            existencia de una transformación de Möbius \(T\in\operatorname{PSL}(2,\mathbb{R})\) que envía \(z\) y \(w\)
+            en \(i\) y \(it\) (respectivamente) para algún \(t\gt 0\). Usando el hecho que \(T\) es una isometría del
+            plano hiperbólico \(\mathbb{H}\) y el resultado del <span class="purple-txt">caso particular</span>, tenemos
+            la igualdad</p>
+          \[
+          \begin{aligned}
+          \cosh\rho (z,w) &amp;= \cosh\rho (T(z),T(w))=\cosh \rho (i,it),\\
+          &amp;\\
+          &amp;=1+\dfrac{|i-it|^2}{2\,\operatorname{Im}(i)\, \operatorname{Im}(it)}.
+          \end{aligned}
+          \]
+          <p>Del Lema \ref{lemma:primera_invairanza} inciso <strong>(2)</strong>, se sigue que</p>
+          \[
+          \dfrac{|i-it|^2}{2\,\operatorname{Im}(i)\,
+          \operatorname{Im}(it)}=\dfrac{\left|T^{-1}(i)-T^{-1}(it)\right|^2}{2\,\operatorname{Im}(T^{-1}(i))\,
+          \operatorname{Im}(T^{-1}(it))}=\dfrac{|z-w|^2}{2\, \operatorname{Im}(z)\, \operatorname{Im}(w)}.
+          \]
+          <p>Finalmente, reemplazamos este último término en la anterior igualdad y obtenemos el resultado esperado</p>
+          \[
+          \cosh\rho (z,w) = 1+\dfrac{|z-w|^2}{2\,\operatorname{Im}(z)\, \operatorname{Im}(w)}.
+          \]
+
+          <p><span class="blue-txt"><strong>Inciso (4).</strong></span> <span class="purple-txt">Caso particular.</span>
+            Si \(z=i\) y \(w=it\) tal que \(t\gt 1\). Usando resultados previos y computando, tenemos que</p>
+          \[
+          \begin{aligned}
+          \tanh\left(\dfrac{1}{2}\rho(z,w)\right) &amp;= \tanh\left(\dfrac{1}{2} \rho(i,it)\right) = \tanh
+          \left(\dfrac{1}{2}\ln t\right),\\
+          &amp;\\
+          &amp;=\dfrac{e^{\ln t^{1/2}}-e^{\ln t^{-1/2}}}{e^{\ln t^{1/2}}+e^{\ln
+          t^{-1/2}}}=\dfrac{t^{1/2}-t^{-1/2}}{t^{1/2}+t^{-1/2}}=\dfrac{t-1}{t+1},\\
+          &amp;\\
+          &amp;=\dfrac{|i-it|}{|i+it|}=\dfrac{|z-w|}{|z-\overline{w}|}.
+          \end{aligned}
+          \]
+
+          <p><span class="purple-txt">Caso general.</span> Contrariamente, si los complejos \(z\) y \(w\) son
+            arbitrarios sobre el plano hiperbólico \(\mathbb{H}\), entonces resultados previos nos garantizan la
+            existencia de una transformación de Möbius \(T\in\operatorname{PSL}(2,\mathbb{R})\) que envía \(z\) y \(w\)
+            en \(i\) y \(it\) (respectivamente) para algún \(t\gt 0\). Usando el hecho que \(T\) es una isometría del
+            plano hiperbólico \(\mathbb{H}\) y el resultado del <span class="purple-txt">caso particular</span>, tenemos
+            la igualdad:</p>
+          \[
+          \begin{aligned}
+          \tanh\left(\dfrac{1}{2}\rho (z,w)\right)&amp; = \tanh\left(\dfrac{1}{2}\rho
+          (T(z),T(w))\right)=\tanh\left(\dfrac{1}{2} \rho (i,it)\right),\\
+          &amp;\\
+          &amp;= \frac{|i-it|}{|i+it|}.
+          \end{aligned}
+          \]
+          <p>Del Lema \ref{lemma:primera_invairanza} inciso <strong>(1)</strong>, se sigue que</p>
+          \[
+          \dfrac{|i-it|}{|i-\overline{it}|}=\dfrac{\left|T^{-1}(i)-T^{-1}(it)\right|}{\left|
+          T^{-1}(i)-\overline{T^{-1}(it)}\right|}=\dfrac{|z-w|}{|z-\overline{w}|}.
+          \]
+          <p>Finalmente, reemplazamos este último término en la anterior igualdad y obtenemos el resultado esperado</p>
+          \[
+          \tanh\left(\dfrac{1}{2}\rho (z,w)\right) = \dfrac{|z-w|}{|z-\overline{w}|}.
+          \]
+        </div>
+
+        <p>Ahora, vamos a describir una fórmula para calcular la distancia hiperbólica entre dos complejos
+          \(z,w\in\mathbb{H}\). Para ello, evaluamos el valor de la ecuación descrita en el inciso <strong>(4)</strong>
+          del Lema \ref{l:cosh} en la función tangente hiperbólica inversa \(\tanh^{-1}\), la cual está dada por</p>
+        \[
+        \tanh^{-1} (x)=\dfrac{1}{2}\ln \left(\dfrac{1+x}{1-x}\right)
+        \]
+        <p>siempre que \(|x|\lt 1\) y, obtenemos</p>
+        \[
+        \begin{aligned}
+        \dfrac{1}{2}\rho(z,w)&amp;=\tanh^{-1}\left(\dfrac{|z-w|}{|z-\overline{w}|}\right),\\
+        &amp;\\
+        \dfrac{1}{2}\rho(z,w)&amp;=\dfrac{1}{2}\ln\left(\dfrac{1+
+        \dfrac{|z-w|}{|z-\overline{w}|}}{1-\dfrac{|z-w|}{|z-\overline{w}|}}\right),\\
+        &amp;\\
+        \rho(z,w)&amp;=\ln\left(\frac{|z-\overline{w}|+|z-w|}{|z-\overline{w}|-|z-w|}\right).
+        \end{aligned}
+        \]
+
+        <div class="theorem" id="th:formula_distancia_hiperbolica_entre_dos_puntos">
+          La distancia hiperbólica \(\rho\) entre dos complejos \(z,w\in\mathbb{H}\) está dada por
+          \[
+          \rho(z,w)=\ln\left(\dfrac{|z-\overline{w}|+|z-w|}{|z-\overline{w}|-|z-w|}\right).
+          \]
+        </div>
+
+
+
+        <div style="color: rgba(255, 255, 255, 0);" id="grupo-completo-isometrias">
+          <p>Grupo completo de Isómetrias</p>
+        </div>
+
+        <p style="font-size: 120%;">
+          <b>3.4.2. Grupo completo de Isómetrias</b>
+        </p>
+
+        <p>Estamos listos para enunciar el grupo completo de isometrías del plano hiperbólico \(\mathbb{H}\).</p>
+
+        <div class="theorem" id="t:grupo_isometrias_completo_plano_hiperbolico">
+          El grupo \(\operatorname{Isom}(\mathbb{H})\) está generado por los elementos de
+            \(\operatorname{PSL}(2,\mathbb{R})\) y la reflexión con respecto al eje imaginario
+            \(R_{\operatorname{Im}}(z)= -\overline{z}\). En otras palabras, cualquier isometría del plano hiperbólico es
+            un elemento de \(\operatorname{PSL}(2,\mathbb{R})\) o es de la forma
+          \[
+          \phi(z)=\dfrac{a(-\overline{z})+b}{c(-\overline{z})+d},
+          \]
+          tal que \(a,b,c,d\in\mathbb{R}\) y \(ad-bc=1\).
+        </div>
+
+        <div class="proof">
+          Consideremos \(\phi\) una isometría del plano hiperbólico \(\mathbb{H}\). Vamos a demostrar que
+          \[
+          \phi(z)=\dfrac{az+b}{cz+d} \quad \text{ o } \quad \phi(z)=\dfrac{a(-\overline{z})+b}{c(-\overline{z})+d},
+          \]
+          <p>tal que \(a,b,c,d\in\mathbb{R}\) y \(ad-bc=1\).</p>
+
+          <p>El Teorema \ref{t:preservando_geodesicas} nos garantiza que la isometría \(\phi\) preserva líneas
+            hiperbólicas, entonces la imagen del eje imaginario \(\operatorname{Im}\) bajo \(\phi\) es también una línea
+            hiperbólica. Dado que \(\operatorname{PSL}(2, \mathbb{R})\) actúa transitivamente sobre las líneas
+            hiperbólicas, entonces existe un elemento \(T\in \operatorname{PSL}(2,\mathbb{R})\) tal que</p>
+          \[
+          T\circ \phi (\operatorname{Im})=\operatorname{Im}.
+          \]
+
+          <p>Ahora, podemos considerar la homotecia</p>
+          \[
+          H(z)=kz,
+          \]
+          <p>para algún \(k\gt 0\), y si es necesario también tomamos la transformación de Möbius dada por</p>
+          \[
+          M(z)=\dfrac{-1}{z},
+          \]
+          <p>tal que la composición</p>
+          \[
+          T:=M\circ H
+          \]
+          <p>fije al complejo \(i\) y envíe los rayos \((i,\infty)\) y \((\mathbf{0},i)\) sobre ellos mismos y así,
+            concluir que \(T\circ \phi\) fija cada punto del eje imaginario \(\operatorname{Im}\).</p>
+
+          <p>Tomemos el complejo \(z=x+iy\in\mathbb{H}\) y denotemos al complejo \(T\circ \phi (z)\) mediante</p>
+          \[
+          T\circ \phi (z)=u+iv\in\mathbb{H}. \tag{1}
+          \]
+
+          <p>Como la composición \(T\circ \phi\) es una isometría, entonces para cada \(t\gt 0\) tenemos que</p>
+          \[
+          \rho(z,it)=\rho(T\circ\phi(z), T\circ\phi(it))=\rho(u+vi,it).
+          \]
+
+          <p>Del Lema \ref{l:cosh} inciso <strong>(2)</strong>, se sigue que</p>
+          \[
+          \dfrac{\left|it-(u+vi)\right|^{2}}{2\,
+          \operatorname{Im}(it)\,\operatorname{Im}(u+vi)}=\dfrac{\left|it-z\right|^{2}}{2\, \operatorname{Im}(it)\,
+          \operatorname{Im}(z)}.
+          \]
+
+          <p>Calculando normas y tomando la parte imaginaria obtenemos</p>
+          \[
+          \dfrac{x^{2}+(t-y)^{2}}{2ty}=\dfrac{u^2+(t-v)^{2}}{2tv}. \tag{2}
+          \]
+
+          <p>Equivalentemente,</p>
+          \[
+          y\left(u^2+(t-v)^2\right)=v\left(x^2+(t-y)^2\right).
+          \]
+
+          <p>Como \(t\gt 0\), dividimos en ambos lados de la anterior ecuación entre \(t^{2}\) y obtenemos</p>
+          \[
+          y\left(\dfrac{u^2}{t^{2}}+\left(1-\dfrac{v}{t}\right)^2\right)=v\left(\dfrac{x^2}{t^{2}}+\left(1-\dfrac{y}{t}\right)^2\right).
+          \]
+
+          <p>En la anterior igualdad tomamos el límite cuando \(t\) tiende a \(\infty\), entonces obtenemos</p>
+          \[
+          y=v.
+          \]
+
+          <p>Sustituimos la anterior igualdad en la ecuación (2) y obtenemos</p>
+          \[
+          u^2=x^2.
+          \]
+
+          <p>Así, la regla de asignación de la composición \(T\circ \phi\) (véase ecuación (1)) está dada por</p>
+          \[
+          T\circ \phi(z)=z \quad \text{ o } \quad T\circ \phi(z)=-\overline{z}.
+          \]
+
+          <p>Como las isometrías son funciones (biyectivas) continuas y las funciones continuas envían conexos en
+            conexos, entonces solo se satisface una de las anteriores reglas de asignación para \(T\circ \phi\). Si
+            \(T\circ \phi(z)=z\), entonces \(\phi=T^{-1}\) es un elemento de \(\operatorname{PSL}(2,\mathbb{R})\).
+            Contrariamente, si \(T\circ \phi(z)=-\overline{z}\), entonces \(\phi\) está dada por</p>
+          \[
+          \phi(z)=T^{-1}(-\overline{z})=\dfrac{a(-\overline{z})+b}{c(-\overline{z})+d},
+          \]
+          <p>tal que \(a,b,c,d\in\mathbb{R}\) y \(ad-bc=1\).</p>
+        </div>
+
+
+
       </div>
 
 
@@ -1291,7 +1834,7 @@
         <div style="color: rgba(255, 255, 255, 0);" id="topologia-inducida">
           <p>Topología inducida</p>
         </div>
-        
+
         <div class="head-3 head-3-level2">Topología inducida</div>
 
         <p>El plano hiperbólico \(\mathbb{H}\) al ser subconjunto del plano complejo \(\mathbb{C},\) este hereda la
