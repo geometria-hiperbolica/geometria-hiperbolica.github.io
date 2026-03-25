@@ -953,25 +953,106 @@
       <div id="section6">
         <div class="head-3 head-3-level2">Topología inducida</div>
 
+        <p>El plano hiperbólico \(\mathbb{H}\) al ser subconjunto del plano complejo \(\mathbb{C}\), este hereda la
+          topología del subespacio \(\tau\). Sin embargo, la distancia hiperbólica \(\rho\) induce una topología
+          \(\tau_{\rho}\) para \(\mathbb{H}\). Vamos a demostrar que estas dos topologías coinciden. Básicamente,
+          probaremos que las bolas hiperbólicas son también bolas euclidianas.</p>
+
+        <p>Recordemos que la <span class="purple-txt">bola hiperbólica</span> con centro \(z\in\mathbb{H}\) y radio
+          \(r\gt 0\) es el conjunto</p>
+        \begin{equation}
+        B_{h}(z,r)=\left\{w\in\mathbb{H}: \rho(w,z) \lt r\right\}.
+        \end{equation} 
+
+        <p>Del curso básico de Topología, sabemos que el
+          conjunto de todas las bolas
+        </p>
+          \[
+          \mathcal{B}=\left\{B_{d}(z,r): \text{ para cada } z\in \mathbb{H} \text{ y cada } r&gt; 0\right\},
+          \]
+          <p>es base para la topología \(\tau_{\rho}\) para \(\mathbb{H}\) inducida por la función distancia \(\rho\).
+          </p>
+
+          <p>El siguiente resultado nos garantiza la validación del</p>
+          <p class="no-indent"><span class="blue-txt"><em>Postulado III</em></span>, que dice: con cualquier centro y
+            cualquier radio se puede trazar una circunferencia hiperbólica (sobre el plano hiperbólico). Más
+            precisamente, las circunferencias hiperbólicas son también circunferencias euclidianas.</p>
+
+          <p>Recordemos que una <span class="purple-txt">circunferencia hiperbólica</span></p>
+          \[
+          C_{h}(z_{0},r)=\{z\in\mathbb{H}: \rho(z,z_{0})=r\},
+          \]
+          <p>es el conjunto de los puntos sobre el plano hiperbólico \(\mathbb{H}\) que equidistan \(r&gt;0\) a otro punto
+            \(z_{0}\in\mathbb{H}\) llamado <span class="purple-txt">centro</span>.</p>
+
+          <div class="theorem" id="t:bolas">
+            El conjunto de los puntos \(z = x + iy\) en \(\mathbb{H}\), que equidistan hiperbólicamente una distancia
+              \(r&gt;0\) de un punto \(z_0 = x_0 + i y_0\in\mathbb{H}\), están determinados por la siguiente ecuación
+            \[
+            (x-x_0)^2 + (y- y_0 \cosh r)^2 = y^2_0 \sinh^2 r,
+            \]
+            es decir, la circunferencia hiperbólica \(C_{h}(z_{0},r)\) con centro \(z_{0}\) y radio \(r\) es la
+              circunferencia euclidiana con centro \(x_{0}+iy_{0}\cosh r\) y radio \(y_{0}\sinh r\)<p></p>
+            \[
+            \begin{aligned}
+            C_{h}(z_{0},r)&amp;=\{z=x+iy\in\mathbb{H}:\rho(z,z_{0})=r\},\\
+            &amp;=\left\{z=x+iy\in\mathbb{H}: (x-x_0)^2 + (y- y_0 \cosh r)^2 = y^2_0 \sinh^2 r\right\}.
+            \end{aligned}
+            \]
+          </div>
+
+          <div class="proof">
+            Consideremos la circunferencia hiperbólica
+            \[
+            C_{h}(z_{0},r)=\{z=x+iy\in\mathbb{H}: \rho(z,z_0)=r\}
+            \]
+            para algún punto \(z_0=x_0+iy_0\) sobre el plano 
+              hiperbólico \(\mathbb{H}\) y algún valor real positivo
+              \(r&gt;0.\) Para cualquier \(z\in C_{h}(z_{0},r),\) 
+              tenemos que
+            \[
+            \begin{aligned}
+            \cosh \rho(z,z_0)&amp;=\cosh r =1+\frac{|z-z_0|^2}{2\,
+            \operatorname{Im}(z)\operatorname{Im}(z_0)}=1+\frac{(x-x_0)^2+(y-y_0)^2}{2y y_0},\\
+            &amp;\\
+            \cosh r&amp;= \frac{2yy_0 + (x-x_0)^2 +y^2 -2yy_0 + y_0^2}{2yy_0},\\
+            &amp;\\
+            \cosh r&amp;=\frac{(x-x_0)^2+y^2+y_0^2}{2yy_0}.\\
+            &amp;\\
+            2yy_0\cosh r&amp;= (x-x_0)^2+y^2+y_0^2. \qquad\qquad (*)
+            \end{aligned}
+            \]
+
+            <p>Ahora, sustituimos la relación \(\cosh^2 r -\sinh^2 r=1,\) 
+              en la ecuación (*), computamos y obtenemos</p>
+            \[
+            \begin{aligned}
+            2yy_0\cosh r&amp;= (x-x_0)^2+y^2+y_0^2(\cosh^2 r -\sinh^2 r),\\
+            &amp;\\
+            2yy_0\cosh r&amp;= (x-x_0)^2+y^2+y_0^2\cosh^2 r - y_0^2\sinh^2 r,\\
+            &amp;\\
+            y_0^2\sinh^2 r&amp;= (x-x_0)^2+y^2 - 2yy_0\cosh r + y_0^2\cosh^2 r,\\
+            &amp;\\
+            y_0^2\sinh^2 r&amp;= (x-x_0)^2+(y-y_0\cosh r)^2.
+            \end{aligned}
+            \]
+            <p>La anterior igualdad garantiza la descripción de los elementos que están en la circunferencia hiperbólica
+              \(C_{h}(z_{0},r)\).</p>
+          </div>
+
+          <p>El Teorema \ref{t:bolas} nos implica que la bola <span class="purple-txt">hiperbólica</span> \(B_{h}(z,r)\)
+            con centro \(z\in \mathbb{H}\) y radio \(r&gt;0\),</p>
+          \[
+          B_{h}(z,r)=\left\{x+iy\in\mathbb{H}: (x-x_0)^2 + (y- y_0 \cosh r)^2 &lt; y^2_0 \sinh^2 r\right\}, \] <p>el cual
+            coincide con la bola euclidiana con centro \((x_0,y_0\cosh r)\) y radio \(y_{0}^2\sinh^2 r\). Más
+            precisamente,</p>
+
+            <div class="corollary">
+              La topología en \(\mathbb{H}\) inducida por la métrica hiperbólica \(\rho\) es equivalente a la
+                topología del subespacio de \(\mathbb{H}\subset \mathbb{C}\).
+            </div>
 
 
-        <div style="text-align: center;">
-          <p><b>Under construction!</b></p>
-          <picture>
-            <source srcset="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.webp" type="image/webp">
-            <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f6a7/512.gif" alt="🚧" width="190" height="190">
-          </picture>
-
-        </div>
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
       </div>
 
 
@@ -981,10 +1062,9 @@
     </article>
   </main>
 
-  <button class="hide-small" onclick="topFunction()" id="toTop" title="Go to top">⇧</button>
-
-  <a href="#" style="text-decoration: none;">
-    <p class="nextPage">NEXT: Page</p>
+ 
+  <a href="bibliografia.html" style="text-decoration: none;">
+    <p class="nextPage">Bibliografía <i class="fa-solid fa-angles-right"></i></p>
   </a>
   <!-- Ends main content -->
 
