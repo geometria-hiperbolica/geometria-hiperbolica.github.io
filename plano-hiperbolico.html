@@ -306,6 +306,13 @@
           complejo \(z.\)
         </p>
 
+        <figure>
+          <img alt="Espacio tangente" style="width: 70%;" loading="lazy" src="imgs/cap-03/espacio-tangente.png">
+          <figcaption>
+            Espacio tangente $T_zU.$
+          </figcaption>
+        </figure>
+
 
         <div class="definition" id="def:metrica_riemanniana_mu">
           Una <span class="red-txt"><strong>métrica Riemanniana</strong></span> \(\mu\) para el abierto
@@ -436,7 +443,16 @@
             \Vert i \Vert_{h}:=\sqrt{\langle i,i \rangle_{h}}=\sqrt{\dfrac{\langle i,
             i\rangle_{c}^{i/2}}{\left(\operatorname{Im}(i/2)\right)^{2}}}=\dfrac{\sqrt{\langle i,
             i\rangle_{c}^{i/2}}}{\operatorname{Im}(i/2)}=\dfrac{\vert i \vert}{\operatorname{Im}(i/2)}=\frac{1}{1/2}=2.
-            \]</li>
+            \]
+
+            <figure>
+              <img alt="Norma hiperbolica" style="width: 70%;" loading="lazy" src="imgs/cap-03/norma-hiperbolica.png">
+              <figcaption>
+                Norma hiperbólica del vector $i\in T_{i}U.$
+              </figcaption>
+            </figure>
+
+          </li>
 
           <li><strong>\(\ast\)</strong> Para \(t=1/n,\) con \(n\in\mathbb{N},\) tomamos el complejo \(z=i/n\in I,\)
             entonces la norma hiperbólica del vector \(w=i\) en el espacio tangente
@@ -445,7 +461,15 @@
             \Vert i \Vert_{h}:=\sqrt{\langle i,i \rangle_{h}}=\sqrt{\dfrac{\langle i,
             i\rangle_{c}^{i/n}}{\left(\operatorname{Im}(i/n)\right)^{2}}}=\dfrac{\sqrt{\langle i,
             i\rangle_{c}^{i/n}}}{\operatorname{Im}(i/n)}=\dfrac{\vert i \vert}{\operatorname{Im}(i/n)}=\frac{1}{1/n}=n.
-            \]</li>
+            \]
+            <figure>
+              <img alt="Norma hiperbolica 2" style="width: 70%;" loading="lazy" src="imgs/cap-03/norma-hiper-vector-i.png">
+              <figcaption>
+                Norma hiperbólica del vector $i\in T_{i/2}U.$
+              </figcaption>
+            </figure>
+
+          </li>
         </ul>
 
         <p>A medida que \(n\) se acerca a \(\infty\) la norma hiperbólica del vector \(i\) también se acerca a
@@ -491,6 +515,13 @@
           \]
           <p>y lo llamaremos la <span class="red-txt"><strong>derivada de \(\gamma\) en el punto
                 \(t_{0}\)</strong></span>.</p>
+
+          <figure>
+            <img alt="Curva gamma" style="width: 100%;" loading="lazy" src="imgs/cap-03/curva-gamma.png">
+            <figcaption>
+              Curva $\gamma.$
+            </figcaption>
+          </figure>
 
           <p>Así mismo, la derivada \(\gamma'(a)\) y \(\gamma'(b)\) existe cuando el límite apropiado a un lado existe
             <em>e.g.</em>,
@@ -546,7 +577,16 @@
               \|\gamma'(t)\|_{h}=\sqrt{\langle \gamma'(t),\gamma'(t)\rangle}_{h}=\dfrac{\sqrt{\langle
               \gamma'(t),\gamma'(t)\rangle_{c}^{\gamma(t)}}}{\operatorname{Im}(\gamma(t))}=\dfrac{\vert \gamma'(t)
               \vert}{\operatorname{Im}(\gamma(t))}=\dfrac{\vert i \vert}{\operatorname{Im}(it)}=\frac{1}{t}.
-              \]</li>
+              \]
+
+              <figure>
+                <img alt="Curva gamma 2" style="width: 100%;" loading="lazy" src="imgs/cap-03/curva-igamma.png">
+                <figcaption>
+                  Curva $\gamma(t)= it.$
+                </figcaption>
+              </figure>
+
+            </li>
           </ul>
         </div>
 
@@ -556,6 +596,13 @@
           \gamma(t):=e^{it}=\cos(t)+i\operatorname{sen}(t),
           \]
           <p>satisface las siguientes propiedades.</p>
+
+          <figure>
+            <img alt="Curva gamma exp" style="width: 100%;" loading="lazy" src="imgs/cap-03/curva-eit.png">
+            <figcaption>
+              Curva $\gamma(t)= e^{it}.$
+            </figcaption>
+          </figure>
 
           <ul style="list-style-type: none; padding-left: 0;">
             <li><strong>(1)</strong> La función \(\gamma\) es una curva, porque las funciones real valuadas dadas por
@@ -1102,13 +1149,20 @@
           prolongación de la traza de estas geodésicas son las <span class="purple-text">líneas hiperbólicas</span>.</p>
 
         <div class="definition" id="def:lineas_hiperbolicas_plano_hiperbolico">
-          <p>Llamaremos <span class="red-txt"><strong>línea hiperbólica</strong></span> a las semirrectas euclidianas en
-            el plano hiperbólico \(\mathbb{H}\) ortogonales (perpendiculares) al eje real y, a las
-            semicircunferencias<sup>1</sup> en el plano hiperbólico con radio \(r&gt;0\) y centro algún punto sobre el eje
-            real.</p>
+          Llamaremos <span class="red-txt"><strong>línea hiperbólica</strong></span> a las semirrectas euclidianas en
+          el plano hiperbólico \(\mathbb{H}\) ortogonales (perpendiculares) al eje real y, a las
+          semicircunferencias<sup>1</sup> en el plano hiperbólico con radio \(r&gt;0\) y centro algún punto sobre el eje
+          real.
           <p class="footnote"><sup>1</sup> A estos objetos también se les conoce como circunferencias ortogonales al eje
             real.</p>
         </div>
+
+        <figure>
+          <img alt="Lineas hiperbolicas" style="width: 60%;" loading="lazy" src="imgs/cap-03/linea-hiper.png">
+          <figcaption>
+            Líneas hiperbólicas.
+          </figcaption>
+        </figure>
 
         <p>
           <span class="red-txt"><strong>¡Importante!</strong></span> Las líneas hiperbólicas son trozos (segmentos)
@@ -1153,7 +1207,16 @@
           de línea euclidiana es la línea euclidiana \(l\) perpendicular a dicho segmento, cruzando por su punto medio.
         </p>
 
+
+
         <p>Tomemos el segmento de línea euclidiano con extremos \(z\) y \(w.\) Luego, trazamos la mediatriz <span class="orange-txt">\(l\)</span> de dicho segmento de línea euclidiano.</p>
+
+        <figure>
+          <img alt="Mediatriz del segmento euclidiano con extremos" style="width: 60%;" loading="lazy" src="imgs/cap-03/mediatriz.png">
+          <figcaption>
+            Mediatriz del segmento euclidiano con extremos $z$ y $w.$
+          </figcaption>
+        </figure>
 
         <p>Dado que \(\operatorname{Re}(z)\neq \operatorname{Re}(w),\) entonces la mediatriz <span class="orange-txt">\(l\)</span> intersecta al eje real en un punto <span class="red-txt">\(\alpha\)</span>.
           El Teorema de la mediatriz nos garantiza que todo punto que se encuentre sobre la mediatriz <span class="orange-txt">\(l\)</span> equidista de los puntos \(z\) y \(w.\) Esto implica que \(\alpha\) equidista
@@ -1178,6 +1241,13 @@
           \(l'\) que no intersecta a \(l.\) En el plano hiperbólico \(\mathbb{H},\) al considerar \(C\) una línea
           hiperbólica y un punto \(z\in\mathbb{H}\) exterior a ella, podemos trazar con regla y compás más de una línea
           hiperbólica pasando por el complejo \(z\) y que no se encuentran con \(C.\)</p>
+
+        <figure>
+          <img alt="Líneas hiperbólicas atravezando por z." style="width: 90%;" loading="lazy" src="imgs/cap-03/lineas-hiper-euclidiano.png">
+          <figcaption>
+          Líneas hiperbólicas atravezando por $z.$
+          </figcaption>
+        </figure>
 
         <p><em>Nota:</em> Las figuras y referencias a ellas han sido omitidas según lo solicitado.</p>
 
