@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>  Disco de Poincaré
+</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Notas de Geometría Hiperbólica" />
+  <meta name="author" content="Juan Carlos Ponce Campuzano, Camilo Ramírez Maluendas">
+  <meta name="keywords" content="geometría,hiperbólica,funciones,complejo" />
+
+  <!--
+    https://www.everywheremarketer.com/blog/ultimate-guide-to-social-meta-tags-open-graph-and-twitter-cards
+  -->
+  <!--Facebook-->
+  <meta property="og:title" content="Geometría Hiperbólica" />
+  <meta property="og:url" content="https://geometria-hiperbolica.github.io/" />
+  <meta property="og:description" content="Notas de Geometría Hiperbólica" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Geometría Hiperbólica">
+
+  <!--Twitter/X-->
+  <meta name="twitter:title" content="Geometría Hiperbólica" />
+  <meta name="twitter:site" content="https://geometria-hiperbolica.github.io/" />
+  <meta name="twitter:description" content="Notas de Geometría Hiperbólica" />
+  <meta name="twitter:type" content="website" />
+  <meta name="twitter:creator" content="@jcponcemath" />
+
+  <link rel="icon" type="image/png" href="imgs/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="imgs/infinity16.png" sizes="16x16">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-16JHH28EVY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-16JHH28EVY');
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body data-type="book" id="top">
+
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="plano-hiperbolico.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="tabla-de-contenidos.html" class="link" id="center-link">
+            <span class="content-hover-previous">Plano Hiperbólico</span>
+            <span class="content-hover">Tabla de Contenidos</span>
+            <span class="content-original">Geometría Hiperbólica</span>
+            <span class="content-hover-next">Bibliografía</span>
+        </a>
+    </div>
+    <a href="bibliografia.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="disco-de-poincare">
+
+  <p class="callout hide-large hide-medium"><strong>⚠️ ¡Advertencia!</strong>
+
+    Si puedes ver este mensaje es porque tu pantalla es demasiado pequeña.
+    Por lo tanto, algunos applets no se mostrarán correctamente.
+    Puedes girar tu dispositivo a horizontal.
+    O cambia el tamaño de tu ventana para que sea más ancha que alta.
+  </p>
+
+  <div class="toc-chapter" id="toc-chapter">
+    <p><i class="fa-solid fa-list"></i>Contenido</p>
+    <ul>
+      <li><a href="#section1">Disco de Poincaré</a></li>
+      <li><a href="#section2">Área hiperbólica</a></li>
+      <li><a href="#section3">Problemas</a></li>
+      <!-- Add more sections as needed -->
+    </ul>
+  </div>
+
+  <div class="hide-large hide-medium hide-small">
+    <h1>Disco de Poincaré</h1>
+  </div>
+
+  <!-- Starts main content -->
+
+  <br><br><br>
+
+  <main>
+    <article>
+
+      <div id="section1">
+       
+        <div class="head-4">Disco de Poincaré</div>
+
+        <p>
+          Exploraremos el <span class="purple-text">disco de Poincaré</span>
+          \(\Delta,\) que consiste del disco unitario
+          (véase Figura \ref{dib:disco_unitario})
+          \[
+          {\rm D}=\{z\in\mathbb{C}: |z|\lt 1\}. \] dotado de
+          cierta métrica Riemanniana \(\mu_{\Delta}.\) En este espacio
+          geométrico \(\Delta,\) al igual que el espacio
+          hiperbólico \(\mathbb{H},\) también se cumple la negación del
+          <span class="blue-text">Postulado V</span> de Euclides.
+        </p>
+
+        <p>
+          No obstante, el disco de Poincaré \(\Delta\)
+          está estrechamente conectado con el plano hiperbólico
+          \(\mathbb{H}.\) Más precisamente, estos dos
+          espacios son <span class="purple-text">isométricos</span>, es
+          decir, existe una función diferenciable, este
+          caso una transformación de (<span class="purple-text">Cayley</span>) Möbius
+          \(\psi,\) relacionando las métricas Riemannianas \(\mu_{\Delta}\)
+          y \(\mu_{h}.\) La función \(\psi\) es el puente
+          para expresar las geodésicas, función distancia, grupos de
+          isometrías del disco de Poincaré \(\Delta\) a
+          partir del catálogo de propiedades, discutidas previamente, del
+          plano hiperbólico \(\mathbb{H}.\)
+        </p>
+
+        <div class="theorem">
+          La asignación \(\mu_{\Delta}\) sobre el
+          <span class="purple-text">disco unitario</span>
+          \[
+          {\rm D}=\left\{z\in\mathbb{C}:|z|\lt 1\right\},
+          \]
+          la cual corresponde a cada complejo \(z\in {\rm D}\) el
+          producto interno
+          \begin{equation}
+          \mu_{\Delta}(z):=\langle \,\, , \, \rangle_{\Delta}^{z}:=\frac{4\langle
+          \,\, , \, \rangle_{c}}{(1-|z|^{2})^{2}}.
+          \end{equation}
+          sobre el espacio tangente \(T_{z}{\rm D},\) es una
+          métrica Riemanniana, conocida como la métrica
+          Riemanniana del <span class="red-txt">disco de
+            Poincaré</span>.
+        </div>
+
+        <div class="proof">
+          Para completar la prueba debemos probar que
+          satisfacen dos condiciones:
+          <ul>
+            <li><strong>(1)</strong> Para cada \(z\in U\)
+              la función \(\mu_{\Delta}\) es un producto interno sobre el
+              espacio tangente \(T_{z}{\rm D}.\)</li>
+            <li><strong>(2)</strong> La función \(g_{i,j}\)
+              es diferenciable, para cada \(i,j\in\{1,2\}.\)</li>
+          </ul>
+
+          <span class="red-txt">(1) <em>La función \(\mu_{\Delta}(z)\) es un producto interno</em></span>. Recordemos
+          que el espacio tangente \(T_{z}{\rm D}\) es isomorfo al \(\mathbb{R}\) espacio vectorial \(\mathbb{C}\) y, la
+          función \(\langle \,\, , \, \rangle^{z}_{e}\) es un producto interno sobre \(T_{z}{\rm D}.\) Del Problema
+          \ref{ejer:producto_interno_cociente} se sigue que la función \(\langle \,\, ,\,\rangle_{\Delta}^{z}: T_{z}{\rm
+          D}\times T_{z}{\rm D}\to\mathbb{R}\) dado por
+          \[
+          \langle z_{1},z_{2}\rangle_{\Delta}^{z}:=\frac{4\langle z_{1} , z_{2} \rangle_{c}}{(1-|z|^{2})^{2}},
+          \]
+          es también un producto interno.
+
+          <span class="red-txt">(2) <em>Diferenciabilidad de la función \(g_{i,j}\)</em></span>. Si consideramos la base
+          canónica \(\{e_1,e_2\}\) para \(\mathbb{C},\) tenemos que para cualesquiera \(i,j\in\{1,2\},\) la función
+          \(g_{i,j}: {\rm D} \to \mathbb{R}\) dada por
+          \[
+          g_{i,j}(z)=\dfrac{4\langle e_i , e_j
+          \rangle_{e}}{(1-|z|^{2})^2}=\dfrac{4\delta_{i,j}}{(1-|z|^{2})^2}=\frac{4\delta_{i,j}}{(1-({\rm
+          Re}(z))^{2}-({\rm Im}(z))^{2})^2},
+          \]
+          es diferenciable. Esta afirmación es cierta, porque las entradas de la matrix Jacobiana
+          \[
+          D_{z} g_{i,j}=\left(\frac{16{\rm Re}(z)\delta_{i,j}}{(1-({\rm Re}(z))^{2}-({\rm Im}(z))^{2})^{3}},
+          \frac{16{\rm Im}(z)\delta_{i,j}}{(1-({\rm Re}(z))^{2}-({\rm Im}(z))^{2})^{3}}\right),
+          \]
+          son continuas en \(U,\) entonces el Teorema de la condición suficiente de diferenciabilidad de una función
+          vectorial nos garantiza que \(g_{i,j}\) es diferenciable.
+        </div>
+
+        <div class="definition">
+          El disco unitario \({\rm D}\) provisto de la métrica Riemanniana \(\mu_{\Delta}\) es llamado el <span class="red-txt">disco de Poincaré</span> y, es denotado mediante \(\Delta.\) El plano tangente asociado a
+          cada \(z\) sobre el disco de Poincaré será denotado mediante \(T_{z}\Delta.\)
+        </div>
+
+        <p>
+          Siguiendo las ideas descritas para la construcción de la distancia hiperbólica \(d_{h}\) a partir de la
+          métrica Riemanniana hiperbólica \(\mu_{h},\) también podemos obtener una función distancia
+          \begin{equation}\label{ec:funcion_distancia_disco_poincare}
+          \rho_{\Delta}
+          \end{equation}
+          sobre el disco de Poincaré \(\Delta\) a partir de la métrica Riemanniana \(\mu_{\Delta}.\)
+        </p>
+
+        <h3>Transformación de Cayley</h3>
+
+        <p>
+          Diremos que los espacios \(\mathbb{H}\) y \(\Delta\) son <span class="purple-text">isométricos</span>, si
+          existe un difeomorfismo \(\psi: \mathbb{H}\to \Delta\) tal que
+          \[
+          \langle z_{1},z_{2}\rangle_{h}^{z}=\langle D_{z}\psi z_{1}, D\psi_{z} z_{2}\rangle_{\Delta}^{\psi(z)},
+          \]
+          para todo \(z\in \mathbb{H}\) y cualesquiera vectores \(z_{1},z_{2}\in T_{z}\mathbb{H}.\) La función \(\psi\)
+          es llamada <span class="purple-text">isometría</span>. Este concepto se extiende a las variedades
+          Riemannianas. Vamos a construir una isometría conocida como la <span class="purple-text">transformación de
+            Cayley</span>.
+        </p>
+
+        <p>
+          La transformación de Cayley (isometría) \(\psi,\) juega un rol imporante sobre el disco de Poincaré
+          \(\Delta,\) porque tiene las siguientes propiedades:
+        </p>
+
+        <ul>
+          <li><strong>(1)</strong> La función \(\psi\) envía geodésicas del plano hiperbólico \(\mathbb{H}\) sobre
+            geodésicas del disco de Poincaré \(\Delta.\)</li>
+          <li><strong>(2)</strong> La función de Cayle \(\psi\) y su inversa \(\psi^{-1}\) son una isometrías (preservan
+            distancias), entonces tenemos la igualdad
+            \[
+            \rho_{\Delta}(z,w)=\rho(\psi^{-1}(z),\psi^{-1}(w)),
+            \]
+            para todo \(z,w\in\Delta.\) A partir de esta relación es fácil contruir una fórmula para calcular la
+            distancia entre dos complejos \(z\) y \(w\) que se encuentran sobre el disco de Poincaré \(\Delta.\)</li>
+          <li><strong>(3)</strong> El grupo de isometría \({\rm Isom}(\Delta)\) del disco de Poincaré es
+            \[
+            \psi {\rm Isom}(\mathbb{H})\psi^{-1}.
+            \]</li>
+        </ul>
+
+        <p>
+          ¡Vamos a construir la transformación de Cayley!
+          Concretamente, vamos a entontrar una transformación de Möbius
+          \(\psi\in{\rm PSL}(2,\mathbb{C}),\) la cual envía el semi plano superio
+          \[
+          U=\{z\in\mathbb{C}: {\rm Im}(z)&gt;0\},
+          \]
+          sobre el disco unitario
+          \[
+          {\rm D}=\{z\in\mathbb{C}. |z|\lt 1\}, \] tal que
+          los complejos \(-1,\textbf{0},1\) son mapeados sobre los puntos
+          \(i,-1,-i,\) respectivamente. </p>
+
+        <p>
+          La transformación \(\psi\) está dada por
+          \[
+          \psi(z)=\dfrac{az+b}{cz+d}.
+          \]
+          ¡Encontremos los coeficientes \(a,b,c,d\in\mathbb{C}\)!
+        </p>
+
+        <p>
+          <strong>(1)</strong> Como <span class="blue-text">\(\psi(\textbf{0})=-1\)</span>, entonces
+          \begin{align*}
+          \psi(\textbf{0})=\dfrac{b}{d}=-1.
+          \end{align*}
+          Equivalentemente,
+          \begin{equation}
+          b=-d.
+          \end{equation}
+          Reemplazamos en la regla de asignación y obtenemos
+          \[
+          \psi(z)=\dfrac{az-d}{cz+d}.
+          \]
+        </p>
+
+        <p>
+          <strong>(2)</strong> Evaluamos \(\phi\) en los complejos \(\rm 1\) y obtenemos
+          \[
+          \begin{array}{ccc}
+          \psi(-1)=i &amp; \text{ y } &amp; \psi(1)=-1,\\
+          &amp;&amp;\\
+          \dfrac{-a-d}{-c+d}=i &amp; \text{ y } &amp; \dfrac{a-d}{c+d}=-i,\\
+          &amp;&amp;\\
+          -a-d=i(-c+d)&amp; \text{ y } &amp; a-d=-i(c+d)\\
+          \end{array}
+          \]
+          Sumamos y restamos las anteriores igualdades, así obtenemos
+          \[
+          \begin{array}{ccc}
+          {\color{red}\cancel{-a}}-d+{\color{red}\cancel{a}}-d=-ic+{\color{blue}\cancel{id}}-ic{\color{blue}\cancel{-id}}
+          &amp; \text{ y } &amp;
+          -a{\color{red}\cancel{-d}}-a+{\color{red}\cancel{d}}={\color{blue}\cancel{-ic}}+id+{\color{blue}\cancel{ic}}+id,\\
+          &amp;&amp;\\
+          -2d=-2ic &amp; \text{ y } &amp; -2a=2id,\\
+          &amp;&amp;\\
+          d=ic &amp; \text{ y } &amp; -a=id.\\
+          \end{array}
+          \]
+          Estas últimas dos igualdades las reemplazamos en la regla de asignación de \(\psi\) para que sus
+          coeficientes queden en términos de \(d.\) Luego, computamos y obtenemos
+          \begin{align*}
+          \psi(z)&amp;=\dfrac{-idz-d}{\dfrac{d}{i}z+d}
+          =\dfrac{\cancel{\color{red}d}\left(-iz-1\right)}{\cancel{\color{red}d}\left(\dfrac{1}{i}z+1\right)}=\dfrac{i(-iz-1)}{z+i},\\
+          &amp;=\dfrac{z-i}{z+i}.
+          \end{align*}
+        </p>
+
+        <div class="definition">
+          La transformación de Möbius \(\psi\) definida mediante
+          \[
+          \psi(z)=\dfrac{z-i}{z+i},
+          \]
+          es llamada <span class="red-txt">transformación de Cayley</span>.
+        </div>
+
+        <p>
+          Describimos algunas de las propiedades de la transformación de Cayley:
+        </p>
+
+        <ul>
+          <li><strong>(1)</strong> Su inversa \(\psi^{-1}\) está dada por
+            \[
+            \psi^{-1}(z)=\frac{iz+i}{-z+1}
+            \]</li>
+          <li><strong>(2)</strong> El determinante de \(\psi\) es
+            \[
+            {\rm det}(\psi)=i+i=2i.
+            \]
+            Entonces el elemento \(\psi\in{\rm PSL}(2,\mathbb{C})\) está dada por la regla de asignación
+            \begin{equation}\label{ec:regla_transformacion_de_cayley}
+            \psi(z)=\dfrac{\dfrac{1}{\sqrt{2i}}z-\dfrac{1}{\sqrt{2i}}i}{\dfrac{1}{\sqrt{2i}}z+\dfrac{1}{\sqrt{2i}}i}.
+            \end{equation}</li>
+          <li><strong>(3)</strong> La transformación \(\psi\) se identifica con la clase de matrices
+            \[
+            \left\{\left(\begin{matrix}
+            \dfrac{1}{\sqrt{2i}} &amp; -\dfrac{1}{\sqrt{2i}}i \\
+            \dfrac{1}{\sqrt{2i}} &amp; \dfrac{1}{\sqrt{2i}}i
+            \end{matrix}\right), \left(\begin{matrix}
+            -\dfrac{1}{\sqrt{2i}} &amp; \dfrac{1}{\sqrt{2i}}i \\
+            -\dfrac{1}{\sqrt{2i}} &amp; -\dfrac{1}{\sqrt{2i}}i
+            \end{matrix}\right)
+            \right\}\in {\rm PSL}(2,\mathbb{C})
+            \]</li>
+          <li><strong>(4)</strong> La transformación de Cayley \(\psi\) envía circunferencias generalizadas sobre
+            circunferencias generalizadas, entonces el eje real \({\rm Re}\) es envíado vía \(\psi\) sobre la
+            frontera \(\partial \Delta=\{z\in\mathbb{C}. |z|=1\}\) del disco unitario \(\Delta.\) La imagen del
+            infinito \(\infty\) bajo \(\psi\) es
+            \[
+            \psi(\infty)=1.
+            \]</li>
+          <li><strong>(5)</strong> La transformación de Cayly \(\psi\) envía el complejo \(i\) sobre
+            \[
+            \psi(i)=\textbf{0},
+            \]
+            como \(\psi\) es un mapeo continuo y, las funciones continuas envían conexos en conexos, entonces
+            \(\psi\) debe de enviar el semi plano superior \(U\) sobre el disco de unitario \(\Delta\) (véase Figura
+            \ref{fig:transformacion_Cayley}).</li>
+        </ul>
+
+        <div class="theorem">
+          La función de Cayley \(\psi\) es una isometría.
+        </div>
+
+        <div class="proof">
+          Debemos probar la igualdad
+          \[
+          \langle z_{1},z_{2}\rangle_{h}^{z}=\langle D_{z}\psi z_{1}, D\psi_{z} z_{2}\rangle_{\Delta}^{\psi(z)},
+          \]
+          para todo \(z\in \mathbb{H}\) y cualesquiera vectores \(z_{1},z_{2}\in T_{z}\mathbb{H}.\)
+
+          Del Teorema de las condiciones de Cauchy-Riemann, tenemos que el producto matricial \(D_{z}\psi z_{i}\) es
+          igual a la derivada compleja \(\psi'(z)\) producto \(z_{i},\) es decir,
+          \[
+          D_{z}\psi z_{i}= \psi'(z)z_{i}
+          \]
+          para \(i\in\{1,2\}.\) Así, de las reglas básicas de la derivada compleja obtenemos que
+          \begin{align*}
+          \psi'(z)&amp;=\dfrac{d}{dz}\left(\dfrac{z-i}{z+i}\right)=\dfrac{(z+i)-(z-i)}{(z+i)^{2}}=\dfrac{\cancel{\color{red}z}+i\cancel{\color{red}{-z}}+i}{(z+i)^{2}},\\
+          &amp;\\
+          &amp;=\dfrac{2i}{(z+i)^{2}}.
+          \end{align*}
+          Entonces reemplazamos el valor de la derivada compleja en \(\langle D_{z}\psi z_{1}, D\psi_{z}
+          z_{2}\rangle_{\Delta}^{\psi(z)}\) y realizamos las operaciones respectivas para obtener
+          \begin{align*}
+          \langle D_{z}\psi z_{1}, D\psi_{z} z_{2}\rangle_{\Delta}^{\psi(z)}&amp;=\frac{4\langle D_{z}\psi z_{1} ,
+          D_{z}\psi z_{2} \rangle_{c}}{(1-|\psi(z)|^{2})^{2}}, \\
+          \\
+          &amp;=\frac{4\left\langle \dfrac{2i}{(z+i)^{2}} z_{1} , \dfrac{2i}{(z+i)^{2}} z_{2}
+          \right\rangle_{c}}{\left(1-\left|\dfrac{z-i}{z+i}\right|^{2}\right)^{2}},\\
+          \\
+          &amp;=\frac{4 \dfrac{2i}{(z+i)^{2}} \dfrac{\overline{2i}}{\overline{(z+i)^{2}}}\left\langle z_{1} , z_{2}
+          \right\rangle_{c}}{\dfrac{(|z+i|^{2}-|z-i|^{2})^{2}}{|z+i|^{4}}},\\
+          \\
+          &amp;=\frac{16 \dfrac{\cancelto{1}{|i|^{2}}}{\cancel{|z+i|^{4}}} \left\langle z_{1} , z_{2}
+          \right\rangle_{c}}{\dfrac{\left(|z+i|^{2}-|z-i|^{2}\right)^{2}}{\cancel{|z+i|^{4}}}},\\
+          \\
+          &amp;=\frac{16 \left\langle z_{1} , z_{2} \right\rangle_{c}}{\left(|z+i|^{2}-|z-i|^{2}\right)^{2}},\\
+          \\
+          &amp;=\frac{16 \left\langle z_{1} , z_{2} \right\rangle_{c}}{\left([{\rm Re}(z)]^{2}+[{\rm
+          Im}(z)+1]^{2}-([{\rm Re}(z)]^{2}+[{\rm Im }(z)-1]^{2})\right)^{2}},\\
+          \\
+          &amp;=\frac{16 \left\langle z_{1} , z_{2} \right\rangle_{c}}{\left([{\rm Re}(z)]^{2}+[{\rm Im}(z)]^{2}+2{\rm
+          Im}(z)+1-([{\rm Re}(z)]^{2}+[{\rm Im }(z)]^{2}-2{\rm Im}(z)+1)\right)^{2}},\\
+          \\
+          &amp;=\frac{16 \left\langle z_{1} , z_{2} \right\rangle_{c}}{\left(\cancel{[{\rm
+          Re}(z)]^{2}}+\cancel{[{\rm Im}(z)]^{2}}+2{\rm
+          Im}(z)+\cancel{1}\cancel{-[{\rm Re}(z)]^{2}}\cancel{-[{\rm Im
+          }(z)]^{2}}+2{\rm Im}(z)\cancel{-1}\right)^{2}},\\
+          \\
+          &amp;=\frac{16 \left\langle z_{1} , z_{2} \right\rangle_{c}}{\left(4{\rm
+          Im}(z)\right)^{2}}=\frac{\cancel{16} \left\langle z_{1} , z_{2}
+          \right\rangle_{c}}{\cancel{16}\left({\rm Im}(z)\right)^{2}}=\frac{ \left\langle z_{1} , z_{2}
+          \right\rangle_{c}}{\left({\rm Im}(z)\right)^{2}},\\
+          \\
+          &amp;=\langle z_{1},z_{2}\rangle_{h}^{z}.
+          \end{align*}
+        </div>
+
+        <h3>Geodésicas sobre el disco de Poincaré</h3>
+
+        <p>
+          Como consecuencia, la transformación de Cayley \(\psi\) envía la geodésica \([z,w]\) del plano hiperbólico
+          \(\mathbb{H}\) sobre la geodésica \([\psi(z),\psi(w)]\) del disco de Poincaré \(\Delta\) y, su respectiva
+          inversa \(\psi^{-1}\) envía la geodésica \([u,v]\) del disco de Poincaré \(\Delta\) sobre la geodésica
+          \([\psi^{-1}(u),\psi^{-1}(v)]\) del plano hiberbólico \(\mathbb{H}.\)
+        </p>
+
+        <p>
+          Sabemos que las geodésicas del plano hiperbólico \(\mathbb{H}\) corresponden a segmentos de líneas
+          hiperbólica. Recordemos que las líneas hiperbólicas provienen de circunferenias generalizadas ortogonales
+          al eje real (véase Definición \ref{def:lineas_hiperbolicas_plano_hiperbolico}).
+        </p>
+
+        <p>
+          ¿A qué objetos geométricos corresponden la imagen directa bajo la transformación de Cayley \(\psi\) de
+          estas líneas hiperbólicas?
+        </p>
+
+        <p>
+          Recordemos que la transformación de Cayley \(\psi\) tiene las siguientes propiedades:
+        </p>
+        <ul>
+          <li><strong>(1)</strong> Es una función holomorfa, por lo tanto preserva ángulos.</li>
+          <li><strong>(2)</strong> La transformación \(\psi\) es una Móbius, por lo tanto actúa sobre el conjunto de
+            circunferencias geranalizadas. Véase Figura \ref{fig:linea_disco_Poincare}</li>
+        </ul>
+
+        <p>
+          De las anteriores dos características de posee la transformación \(\psi,\) concluimos que la imagen
+          directa bajo la transformación de Cayle \(\psi\) una línea hiperbólica es un trozo de circunferencia
+          generalizada tal que dicha circunferencia es ortgonal a la frontera \(\partial \Delta\) del disco de
+          Poincaré \(\Delta.\) Véase Figura \ref{fig:linea_disco_Poincare_II}
+        </p>
+
+        <div class="theorem">
+          Las geodésicas del disco de Poincaré \(\Delta\) corresponden a (trozos) segmentos de líneas del disco de
+          Poincaré, en otras palabras, las geodésicas son segmentos de circunferencas generalizadas en \(\Delta\)
+          ortogonales a la frontera \(\partial \Delta\) del disco de Poincaré \(\Delta.\)
+        </div>
+
+        <h3>Distancia</h3>
+
+        <p>
+          La función de Cayley \(\psi\) y su inversan \(\psi^{-1}\) son funciones que preservan la distancias sobre
+          el disco de Poincaré y el plano hiperbólico, respectivamente. Es decir,
+        </p>
+        <ul>
+          <li><strong>(1)</strong> Para cualesquiera complejos \(z,w\in\mathbb{H},\) se cumple
+            \(\rho(z,w)=\rho_{\Delta}(\psi(z),\psi(w)).\)</li>
+          <li><strong>(2)</strong> Para cualesquiera complejos \(z,w\in\Delta,\) se cumple
+            \(\rho_{\Delta}(z,w)=\rho(\psi^{-1}(z),\psi^{-1}(w)).\)</li>
+        </ul>
+
+        <p>
+          La igualdad descrita en el inciso <strong>(2)</strong> junto con la expresión descrita en el Teorema
+          \ref{th:formula_distancia_hiperbolica_entre_dos_puntos}, nos permiten hallar una fórmula para la distancia
+          entre dos complejos \(z\) y \(w\) sobre el disco de Poincaré.
+        </p>
+
+        <div class="theorem">
+          La distancia \(\rho_{\Delta}\) entre los complejos \(z,w\in \Delta\) está dada por
+          \[
+          \rho_{\Delta}(z,w)=\ln\left( \frac{|1-z\overline{w}|+|z-w|}{|1-z\overline{w}|-|z-w|} \right).
+          \]
+        </div>
+
+        <div class="proof">
+          Dado que la función inversa \(\psi^{-1}\) es una transformación que preserva la distancia, entonces
+          \begin{equation}
+          \rho_{\Delta}(z,w)=\rho(\psi^{-1}(z),\psi^{-1}(w)).
+          \end{equation}
+          Del Teorema \ref{th:formula_distancia_hiperbolica_entre_dos_puntos}, reescribimos la igual anterior como
+          \begin{equation}\label{ec:distancia_disco_Poincare_prueba_the}
+          \rho_{\Delta}(z,w)=\ln\left(\dfrac{\left|\psi^{-1}(z)-\overline{\psi^{-1}(w)}\right|+\left|\psi^{-1}(z)-\psi^{-1}(w)\right|}{\left|\psi^{-1}(z)-\overline{\psi^{-1}(w)}\right|-\left|\psi^{-1}(z)-\psi^{-1}(w)\right|}\right).
+          \end{equation}
+
+          Vamos a computar las normas de las diferencias que aparecen en el logaritmo natural anterior y, luego las
+          reemplazamos para obtener la fórmula descrita en el teorema.
+
+          Para la norma <span class="red-txt">\(\left|\psi^{-1}(z)-\overline{\psi^{-1}(w)}\right|\)</span>, tenemos:
+          \begin{align}
+          \left|\psi^{-1}(z)-\overline{\psi^{-1}(w)}\right|&amp;=\left|\dfrac{iz+i}{-z+1}-\overline{\left(\dfrac{iw+i}{-w+1}\right)}\right|,\notag\\
+          \notag\\
+          &amp;=\left|\dfrac{i(z+1)}{-z+1}-\dfrac{\overline{i}\overline{w+1}}{\overline{-w+1}}\right|,\notag\\
+          \notag\\
+          &amp;=\left|\dfrac{i(z+1)}{-z+1}+\dfrac{i(\overline{w}+1)}{-\overline{w}+1}\right|,\notag\\
+          \notag\\
+          &amp;=\left|\dfrac{i[(z+1)(-\overline{w}+1)+(\overline{w}+1)(-z+1)]}{(-z+1)(-\overline{w}+1)}\right|,\notag\\
+          \notag\\
+          &amp;=|i|\,
+          \dfrac{|{\color{red}\cancel{-z\overline{w}}}+{\color{blue}\cancel{z}}{\color{green}\cancel{-\overline{w}}}+{\color{orange}\cancel{1}}{\color{red}\cancel{-z\overline{w}}}+{\color{green}\cancel{\overline{w}}}{\color{blue}\cancel{-z}}+{\color{orange}\cancel{1}}|}{|-z+1||-\overline{w}+1|},\notag\\
+          \notag\\
+          &amp;=\dfrac{|-2z\overline{w}+2|}{|-z+1||-\overline{w}+1|},\notag\\
+          \notag\\
+          &amp;=\dfrac{|2|\,
+          |1-z\overline{w}|}{|-z+1|\,|-\overline{w}+1|}.\label{ec:norma_1_diferencias_en_el_logaritmo_natural}
+          \end{align}
+
+          Para la noma <span class="red-txt">\(|\psi^{-1}(z)-\psi^{-1}(w)|\)</span>, tenemos
+
+          \begin{align}
+          |\psi^{-1}(z)-\psi^{-1}(w)|&amp;=\left|\dfrac{iz+i}{-z+1}-\dfrac{iw+i}{-w+1}\right|,\notag\\
+          \notag\\
+          &amp;=\left|\dfrac{i(z+1)}{-z+1}-\dfrac{i(w+1)}{-w+1}\right|,\notag\\
+          \notag\\
+          &amp;=\left|\dfrac{i[(z+1)(-w+1)-(w+1)(-z+1)]}{(-z+1)(-w+1)}\right|,\notag\\
+          \notag\\
+          &amp;=|i|\,
+          \dfrac{|{\color{red}\cancel{-zw}}+{\color{blue}\cancel{z}}{\color{green}\cancel{-w}}+{\color{orange}\cancel{1}}{\color{red}+\cancel{zw}}{\color{green}\cancel{-w}}{\color{blue}\cancel{+z}}{\color{orange}\cancel{-1}}|}{|-z+1||-w+1|},\notag\\
+          \notag\\
+          &amp;=\dfrac{|2z-2w|}{|-z+1||-\overline{w}+1|},\notag\\
+          \notag\\
+          &amp;=\dfrac{|2|\, |z-w|}{|-z+1|\,|-\overline{w}+1|}.\label{ec:norma_2_diferencias_en_el_logaritmo_natural}
+          \end{align}
+
+          Ahora, sustituimos las normas descritas en las ecuaciones
+          \eqref{ec:norma_1_diferencias_en_el_logaritmo_natural} y
+          \eqref{ec:norma_2_diferencias_en_el_logaritmo_natural},
+          en el logaritmos (véase ecuación \eqref{ec:distancia_disco_Poincare_prueba_the})
+          y, computamos para obtener
+          \begin{align*}
+          \rho_{\Delta}(z,w)&amp;= \ln \left(\dfrac{\dfrac{|2|\, |1-z\overline{w}|}{|-z+1|\,|-\overline{w}+1|}+\dfrac{|2|\,
+          |z-w|}{|-z+1|\,|-\overline{w}+1|}}{\dfrac{|2|\, |1-z\overline{w}|}{|-z+1|\,|-\overline{w}+1|}-\dfrac{|2|\,
+          |z-w|}{|-z+1|\,|-\overline{w}+1|}}\right),\\
+          \\
+          &amp;=\ln\left(\dfrac{\cancel{\dfrac{|2|}{|-z+1|\,|-\overline{w}+1|}}\left[|1-z\overline{w}|+|z-w|\right]}{\cancel{\dfrac{|2|}{|-z+1|\,|-\overline{w}+1|}}\left[|1-z\overline{w}|-|z-w|\right]}\right).\\
+          \\
+          &amp;=\ln\left(\dfrac{|1-z\overline{w}|+|z-w|}{|1-z\overline{w}|-|z-w|}\right).
+          \end{align*}
+        </div>
+
+        <p>
+          <span class="red-txt">¡Curiosidad!</span> La distancia en el disco de Poincaré desde cualquier complejo
+          \(z\in\Delta\) hasta el cero \(\textbf{0}\) es
+          \[
+          \rho_{\Delta}(0,z)=\ln\left(\displaystyle\frac{1+|z|}{1-|z|}\right).
+          \]
+        </p>
+
+        <p>
+          Usando las relaciones descritas en el Lema \ref{l:cosh}, el lector puede verifacar fácilmente las
+          siguientes relaciones sobre el disco de Poincaré.
+        </p>
+
+        <div class="theorem">
+          Para cualesquiera dos elementos \(z,w\) sobre el disco de Poincaré \(\Delta\) se satisfacen las siguientes
+          igualdades:
+          <ul>
+            <li><strong>(1)</strong>
+              \(\senh^{2}\left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-w|^2}{(1-|z|^2)(1-|w|^2)}.\)</li>
+            <li><strong>(2)</strong>
+              \(\cosh^{2}\left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|1-z\overline{w}|^2}{(1-|z|^2)(1-|w|^2)}.\)</li>
+            <li><strong>(3)</strong> \(\tanh^2\left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-w|}{|1-z\overline{w}|}.\)
+            </li>
+          </ul>
+        </div>
+
+        <h3>Grupo de Isometrías</h3>
+
+        <p>
+          El siguiente razonamiento nos permite entender el grupo completo de isometrías del disco de Poincaré
+          \(\Delta.\) Si \(T:\mathbb{H}\to\mathbb{H}\) es una isometría, entonces la composición
+          \[
+          \psi\circ T\circ \psi^{-1}: \Delta\to \Delta,
+          \]
+          es una isometría del disco de Poincaré \(\Delta.\) En otras palabras, existe un elemento
+          \(\widetilde{T}\in{\rm Isom}(\Delta)\) tal que el siguiente diagrama commuta
+          \begin{equation}\label{ec:elementos_grupos_isom_disco_Poincare}
+          \begin{diagram}
+          \node{\Delta} \arrow{e,t}{\widetilde{T}} \arrow{s,l}{\psi^{-1}} \node{\Delta} \arrow{s,r}{\psi^{-1}}\\
+          \node{\mathbb{H}} \arrow{e,b}{T} \node{\mathbb{H}}
+          \end{diagram}
+          \end{equation}
+          es decir, \(\psi^{-1}\circ \widetilde{T}=T\circ \psi^{-1}.\) Conversamente, si \(g:\Delta\to\Delta\) es
+          una isometría, entonces la composición
+          \[
+          \psi^{-1}\circ g\circ \psi: \mathbb{H}\to \mathbb{H},
+          \]
+          es una isometría del plano hiperbólico. En otras palabras, existe un elemento \(\widetilde{g}\in{\rm
+          Isom}(\mathbb{H})\) tal que el siguiente diagrama commuta
+          \begin{equation}
+          \begin{diagram}
+          \node{\mathbb{H}} \arrow{s,l}{\psi} \arrow{e,t}{\widetilde{g}} \node{\mathbb{H}} \arrow{s,r}{\psi}\\
+          \node{\Delta} \arrow{e,b}{g} \node{\Delta}
+          \end{diagram}
+          \end{equation}
+          es decir, \(\psi\circ \widetilde{g}=g\circ \psi.\) Consecuentemente, concluimos que el grupo de isometrías
+          del disco de Poincaré es conjugado al grupo de isometrías del plano hiperbólico. Más precisamente,
+          \[
+          {\rm Isom}(\Delta)=\psi {\rm Isom}(\mathbb{H})\psi^{-1}.
+          \]
+          Vamos a dar una precisa descripción de los elementos de \({\rm Isom}(\Delta).\) Tenemos dos posibles
+          formas de escribir la isometría \(\widetilde{T}=\psi \circ T \circ \psi^{-1}\) descrita en
+          \eqref{ec:elementos_grupos_isom_disco_Poincare}, siendo
+          \[
+          T(z)=\dfrac{az+b}{cz+d} \quad \text{ o } \quad T(z)=\dfrac{a(-\overline{z})+b}{c(-\overline{z})+d},
+          \]
+          tal que \(a,b,c,d\in\mathbb{R}\) y \(ad-bc=1.\)
+        </p>
+
+        <p>
+          Para el caso \(T\in {\rm PSL}(2,\mathbb{R}),\) la composición \(\widetilde{T}=\psi\circ T \circ
+          \psi^{-1}\) está dada por el siguiente producto de clases de matrices
+          \begin{align*}
+          \widetilde{T}&amp;= \left[\begin{matrix}
+          \dfrac{1}{\sqrt{2i}} &amp; -\dfrac{1}{\sqrt{2i}}i \\
+          \dfrac{1}{\sqrt{2i}} &amp; \dfrac{1}{\sqrt{2i}}i
+          \end{matrix}\right],\left[\begin{matrix}
+          a &amp; b \\
+          c &amp; d
+          \end{matrix}\right]\left[\begin{matrix}
+          \dfrac{1}{\sqrt{2i}}i &amp; \dfrac{1}{\sqrt{2i}}i \\
+          -\dfrac{1}{\sqrt{2i}} &amp; \dfrac{1}{\sqrt{2i}}
+          \end{matrix}\right],\\
+          \\
+          &amp;=\dfrac{1}{\sqrt{2i}}\dfrac{1}{\sqrt{2i}}\left[\begin{matrix}1&amp;-i\\
+          1&amp;i
+          \end{matrix}\right]\left[\begin{matrix}a&amp;b\\
+          c&amp;d
+          \end{matrix}\right]\left[\begin{matrix}i&amp;i\\
+          -1&amp;1
+          \end{matrix}\right],\\
+          \\
+          &amp;=\dfrac{-i}{2}\left[\begin{matrix}a-ic&amp;b-id\\
+          a+ic&amp;b+id
+          \end{matrix}\right]\left[\begin{matrix}i&amp;i\\
+          -1&amp;1
+          \end{matrix}\right],\\
+          \\
+          &amp;=\dfrac{-i}{2}\left[\begin{matrix}i(a-ic)-1(b-id)&amp;i(a-ic)+1(b-id)\\
+          i(a+ic)-1(b+id)&amp;i(a+ic)+1(b+id)
+          \end{matrix}\right],\\
+          \\
+          &amp;=\dfrac{-i}{2}\left[\begin{matrix}ia+c-b+id&amp;ia+c+b-id\\
+          ia-c-b-id&amp;ia-c+b+id
+          \end{matrix}\right],\\
+          \\
+          &amp;=\dfrac{-i}{2}\left[\begin{matrix}-(b-c)+i(a+d)&amp;(b+c)+i(a-d)\\
+          -(b+c)+i(a-d)&amp;(b-c)+i(a+d)
+          \end{matrix}\right],\\
+          \\
+          &amp;=\left[\begin{matrix}\dfrac{(a+d)+i(b-c)}{2}&amp;\dfrac{(a-d)-i(b+c)}{2}\\
+          \dfrac{(a-d)+i(b+c)}{2}&amp;\dfrac{(a+d)-i(b-c)}{2}
+          \end{matrix}\right].
+          \end{align*}
+          Los complejos que se encuentran sobre la primera fila de la anterior clases de matrices los denotamos como
+          sigue:
+          \[
+          u:=(a+d)+i(b-c) \quad \text{ y } \quad v:=(a-d)-i(b+c).
+          \]
+          Entonces los términos sobre la segunda fila satisfacen:
+          \[
+          \overline{v}=(a-d)+i(b+c) \quad \text{ y } \quad \overline{u}=(a+d)-i(b-c).
+          \]
+          Así, reescribimos la transformación de Möbius \(\widetilde{T}\) como sigue
+          \[
+          \widetilde{T}=\left[\begin{matrix}
+          u&amp;v\\
+          \overline{v}&amp;\overline{u}
+          \end{matrix}\right].
+          \]
+          Como \(\widetilde{T}\) es un elemento de \({\rm PSL}(2,\mathbb{C}),\) entonces su determinante
+          \[
+          {\rm det}(\widetilde{T})=u\overline{u}-v\overline{v}=|u|^{2}-|v|^{2}=1.
+          \]
+          Entonces la transformación de Möbius \(\widetilde{T}\in{\rm PSL}(2,\mathbb{C})\) está dada por
+          \[
+          \widetilde{T}(z)=\dfrac{uz+v}{\overline{v}z+\overline{u}},
+          \]
+          tal que los complejos \(u,v\in\mathbb{C}\) satisfacen \(|u|^{2}-|v|^{2}=1.\) Las anteriores cuentas,
+          implican el siguiente resutaldo.
+        </p>
+
+        <div class="theorem">
+          Las isometrías del disco de Poincaré \(\Delta\) en \({\rm PSL}(2,\mathbb{C})\) son de la forma
+          \[
+          \widetilde{T}(z)=\dfrac{uz+v}{\overline{v}z+\overline{u}},
+          \]
+          para algunos complejos \(u,v\in\mathbb{C}\) satisfacen \(|u|^{2}-|v|^{2}=1.\)
+        </div>
+
+        <p>
+          Denotemos mediante \({\rm Isom}_{+}(\Delta)\) al conjunto de todas las isometrías del disco de Poincaré
+          que son transformaciones de Möbius en \({\rm PSL}(2,\mathbb{C}).\)
+        </p>
+
+        <p>
+          Vamos a reescribir la regla de asignación de los elementos en \({\rm Isom}_{+}(\Delta).\) Tomemos las
+          transformación de Möbius \(\widetilde{T}\) tal que
+          \[
+          \widetilde{T}(z)=\dfrac{uz+v}{\overline{v}z+\overline{u}},
+          \]
+          tal que los complejos \(u,v\in\mathbb{C}\) satisfacen \(|u|^{2}-|v|^{2}=1.\)
+          Computando adecuadamente, obtenemos
+          \begin{align*}
+          \widetilde{T}(z)&amp;=\dfrac{uz+v}{\overline{v}z+\overline{u}}=\dfrac{u\left(z+\dfrac{v}{u}\right)}{\overline{v}z+\overline{u}}=\dfrac{\dfrac{u}{|u|}\left(z+\dfrac{v}{u}\right)}{\dfrac{\overline{v}}{|u|}z+\dfrac{\overline{u}}{|u|}},\\
+          \\
+          &amp;=\dfrac{\dfrac{u}{|u|}\dfrac{u}{|u|}\left(z+\dfrac{v}{u}\right)}{\dfrac{\overline{v}}{|u|}\dfrac{u}{|u|}z+\dfrac{\overline{u}}{|u|}\dfrac{u}{|u|}}=\dfrac{\left(\dfrac{u}{|u|}\right)^{2}\left(z-\left[-\dfrac{v}{u}\right]\right)}{\dfrac{\overline{v}u}{|u|^{2}}z+\dfrac{\overline{u}u}{|u|^{2}}},\\
+          \\
+          &amp;=\dfrac{\left(\dfrac{u}{|u|}\right)^{2}\left(z-\left[-\dfrac{v}{u}\right]\right)}{\dfrac{\overline{v}{\color{red}\cancel{u}}}{\overline{u}{\color{red}\cancel{u}}}z+{\color{blue}\cancelto{1}{\dfrac{|u|^{2}}{|u|^{2}}}}}=\dfrac{\left(\dfrac{u}{|u|}\right)^{2}\left(z-\left[-\dfrac{v}{u}\right]\right)}{\overline{\left[\dfrac{v}{u}\right]}z+1}.\\
+          \end{align*}
+          Ahora, para ciertos términos de la transformación Möbius \(\widetilde{T}\) usamos la siguiente notación:
+          \begin{equation}\label{ec:termino_z_en_isometrias_disco}
+          z_{0}=-\dfrac{v}{u},
+          \end{equation}
+          entonces
+          \begin{equation}\label{ec:termino_z_conjugado_en_isometrias_disco}
+          \overline{z_{0}}=-\overline{\left[ \dfrac{v}{u}\right]}.
+          \end{equation}
+          El complejo \(\left(\dfrac{u}{|u|}\right)^{2}\) se encuentra sobre la circunferencia unitaria
+          \(S^{1}=\{z\in\mathbb{C}: |z|=1\},\) entonces lo podemos reescribir de la forma
+          \begin{equation}\label{ec:termino_circunferencia_en_isometrias_disco}
+          \left(\dfrac{u}{|u|}\right)^{2}=e^{i\theta},
+          \end{equation}
+          para algún \(\theta\in [0,2\pi).\) Finalmente, reemplazamos los términos descrito en las ecuaciones
+          \eqref{ec:termino_z_en_isometrias_disco}, \eqref{ec:termino_z_conjugado_en_isometrias_disco} y
+          \eqref{ec:termino_circunferencia_en_isometrias_disco} en la regla de asignación de la transformación de
+          Möbius y, obtenemos
+          \begin{equation}\label{ec:isom_plus_del_disco_de_Poincare}
+          \widetilde{T}(z)=e^{i\theta}\dfrac{z-z_{0}}{1-\overline{z_{0}}z},
+          \end{equation}
+          para algún \(z_{0}\in\Delta\) y algún \(\theta\in[0,2\pi).\) El hecho que \(z_{0}\in\Delta,\) se dedice de
+          la igualdad
+          \(|u|^{2}-|v|^{2}=1.\) Debido a que esta última relación implica
+          \begin{align*}
+          |u|^{2}&amp;=1+ |v|^{2},\\
+          |u|^{2}&amp;\lt |v|^{2},\\ \left|\dfrac{u}{v}\right|^{2}&amp;\lt 1,\\ \left|\dfrac{u}{v}\right|&amp;\lt 1,\\ |z_{0}|&amp;\lt
+          1.
+          \end{align*} Vamos a probar que efectivamente, los elementos que conforman \({\rm Isom}_{+}(\Delta)\) tiene
+          la forma de la ecuación \eqref{ec:isom_plus_del_disco_de_Poincare}. </p>
+
+        <div class="theorem">
+          Toda transformación de Möbius de la forma
+          \[
+          T(z)=e^{i\theta}\dfrac{z-z_{0}}{1-\overline{z_{0}}z},
+          \]
+          con \(\theta\in[0,2\pi)\) y \(z_{0}\in \Delta,\)
+          está en \({\rm Isom}_{+}(\Delta).\)
+        </div>
+
+        <div class="proof">
+          Debemos probar que la transformación de Möbius \(T,\) dada por
+          \[
+          T(z)=e^{i\theta}\dfrac{z-z_{0}}{1-\overline{z_{0}}z},
+          \]
+          con \(\theta\in[0,2\pi)\) y \(z_{0}\in \Delta,\) deja
+          invariante el Disco de Poincaré. Es decir,
+          \(T(\Delta)=\Delta.\) Notemos que
+          \(T(\textbf{0})=\textbf{0},\) entonces solo debemos probar que
+          \[
+          |T(z)|=1, \text{ para todo } z\in\partial \Delta.
+          \]
+          Entonces,
+          \begin{align*}
+          |T(z)|&amp;={\color{red}\cancelto{1}{|e^{i\theta}|}}\dfrac{|z-z_{0}|}{|1-\overline{z_{0}}z|}=\dfrac{|\overline{z}||z-z_{0}|}{|1-\overline{z_{0}}z|},\\
+          &amp;=\dfrac{|{\color{blue}\cancelto{1}{\overline{z}z}}-
+          \overline{z}z_{0}|}{|1-\overline{z_{0}}z|}=\dfrac{|1-\overline{z}z_{0}|}{|1-\overline{z_{0}}z|},\\
+          &amp;=1.
+          \end{align*}
+        </div>
+
+        <p>
+          Ahora, la composición
+          \[
+          R_{\rm Im }=\psi\circ R_{\rm Im }\circ \psi^{-1},
+          \]
+          también es un elemento del grupo de las isometrías del disco de Poincaré \(\Delta.\) Del Teorema
+          \ref{t:grupo_isometrias_completo_plano_hiperbolico} junto con el resultado anterior, sigue el grupo de
+          isometrías del disco de Poincaré está generado por \(R_{\rm Im}\) junto con los elementos de \({\rm
+          Isom}_{+}(\Delta).\) Dicho en otras palabras.
+        </p>
+
+        <div class="theorem">
+          Cualquier isometría del disco de Poincaré es un elemento de \({\rm Isom}_{+}(\Delta)\) o es de la
+          forma
+          \[
+          T(z)=e^{i\theta}\dfrac{\overline{z}-z_{0}}{1-\overline{z_{0}}\overline{z}},
+          \]
+          con \(\theta\in[0,2\pi)\) y \(z_{0}\in \Delta.\)
+        </div>
+
+        <br>
+      </div>
+
+      <hr>
+
+      <div id="section2">
+        <div style="color: rgba(255, 255, 255, 0);" id="area-hiperbolica">
+          <p>Área hiperbólica</p>
+        </div>
+        <div class="head-4 head-4-level2">Área hiperbólica</div>
+
+        <p>
+          En el plano complejo \(\mathbb{C}\) el valor del área del paralelogramo \(P\) formado por la base canónica
+          \(e_{1}\) y \(e_{2}\) es
+          \[
+          A(P)=\vert e_{1} \vert \, \vert e_{2} \vert \, {\rm sen} \left(\frac{\pi}{2}\right)=\vert e_{1} \vert \, \vert
+          e_{2} \vert,
+          \]
+          siendo \(\dfrac{\pi}{2}\) el valor del ángulo formado por los vectores de la base canónica. Dado el complejo
+          \(z\in\mathbb{C},\) sobre el plano tangente \(T_{z}\mathbb{C}\) (isomorfo a \(\mathbb{C}\)) esta área se
+          denota mediante
+          \[
+          A(P)=dA= dx \, dy=dy\, dx.
+          \]
+          Usando la definición de la integral y el área del paralelogramos \(P,\) podemos definir el área (euclidiana)
+          de la región \(K\subset \mathbb{C}\) como el valor
+          \[
+          A(K)=\iint\limits_{K}dA,
+          \]
+          si existe. Vamos a extender estas ideas para definir el área hiperbólica de una región \(K\subset\mathbb{H}.\)
+        </p>
+
+        <div class="definition">
+          Dado el punto \(z=x+iy\in\mathbb{H},\) entonces sobre el es espacio tangente \(T_{z}\mathbb{H}\) el <span class="red-txt">área hiperbólica</span> del paralelogramo \(P\) formado por la base canónica \(e_{1}\) y
+          \(e_{2}\) es
+          \begin{equation}
+          A_h(P):=\Vert e_1 \Vert_{h} \, \Vert e_{2} \Vert_{h} \, {\rm sen} \left(\frac{\pi}{2}\right)=\frac{\vert e_{1}
+          \vert \, \vert e_{2} \vert }{\left({\rm Im}(z)\right)^{2}}=\frac{\vert e_1 \vert \, \vert e_{2}
+          \vert}{y^2}=\dfrac{dA}{y^{2}},
+          \end{equation}
+          siendo \(\dfrac{\pi}{2}\) el valor del ángulo formado por los vectores \(e_{1}\) y \(e_{2}.\)
+
+          Así, definimos el <span class="red-txt">área hiperbólica</span> de la región \(K\subset \mathbb{H}\) como el
+          valor
+          \[
+          A_{h}(K)=\iint\limits_{K}\frac{dA}{\left({\rm Im}(z)\right)^{2}},
+          \]
+          si existe, con \(z\in K.\)
+        </div>
+
+        <div class="example">
+          Tomemos el cuadrado \(K=[0,1]\times [1,2]\) en el plano hiperbólico \(\mathbb{H}.\) Del Teorema de Fubini se
+          sigue que el área hiperbólica de \(K\) es
+          \begin{equation*}
+          \begin{split}
+          A_h(K)&amp;=\iint\limits_{K}\frac{dA}{\left({\rm Im}(z)\right)^{2}}=\int_{0}^{1}\int_{1}^2
+          \frac{dydx}{y^2}=\int_{0}^{1} \frac{-1}{y}\biggl|_{y=1}^{y=2}dx,\\
+          &amp;=\int_{0}^{1}\frac{1}{2}dx=\frac{1}{2}.\\
+          \end{split}
+          \end{equation*}
+        </div>
+
+        <div class="example">
+          Tomemos la región \(K=[0,1]\times (0,1]\) en el plano hiperbólico \(\mathbb{H}.\) Del Teorema de Fubini se
+          sigue que el área hiperbólica de \(K\) es
+          \begin{equation*}
+          \begin{split}
+          A_h(K)&amp;=\iint\limits_{K}\frac{dA}{\left({\rm Im}(z)\right)^{2}}=\lim\limits_{t\to 0}\int_{t}^{1}\int_{0}^{1}
+          \frac{dxdy}{y^2}=\lim\limits_{t\to 0}\int_{t}^{1} \frac{x}{y}\biggl|_{x=0}^{x=1}dy,\\
+          &amp;=\lim\limits_{t\to 0}\int_{t}^{1}\frac{1}{y}dx=\lim\limits_{t\to 0}\left(\ln
+          y\biggl|_{y=t}^{y=1}\right)=\lim\limits_{t\to 0} -\ln t,\\
+          &amp;=\infty.
+          \end{split}
+          \end{equation*}
+        </div>
+
+        <p>
+          Los elementos de \({\rm PSL}(2,\mathbb{R})\) dejan invariante el árae hiperbólica de cualquier paralelogramos
+          \(P\) del plano tangente \(T_{z}\mathbb{H}.\) Más precisamente.
+        </p>
+
+        <div class="theorem">
+          Dado el complejo \(z\in\mathbb{C}\) y el paralelogramos \(P\) sobre \(T_{z}\mathbb{H}\) formado por los
+          vectores \(v,w\in T_{z}\mathbb{H}.\) Entonces para cualquier \(T\in {\rm PSL}(2,\mathbb{R}),\) el área
+          hiperbólica de \(P\) coincide con el área hiperbólica del paralelogramo \(P'\) sobre \(T_{T(z)}\mathbb{H},\)
+          el cual está formado por los vectores \(T'(z)\cdot v\) y \(T'(z)\cdot w\) (véase Figura
+          \ref{fig:Area_hiperbolica_invariante}).
+        </div>
+
+        <div class="proof">
+          Dada la transformación de Möbius \(T\in{\rm PSL}(2,\mathbb{R})\) tal que
+          \[
+          T(z)=\frac{az+b}{cz+d},
+          \]
+          tenemos que el área hiperbólica del paralelogramo \(P'\subset T_{T(z)}\mathbb{H}\) es
+          \begin{align*}
+          A_{h}(P')&amp;=\Vert T'(z)\cdot v \Vert_{h} \, \Vert T'(z)\cdot w \Vert_{h}=\dfrac{\vert T'(z)\cdot v \vert \,
+          \vert T'(z)\cdot w \vert}{\left( {\rm Im}(T(z))\right)^{2}},\\
+          &amp;\\
+          &amp;=\dfrac{\vert T'(z)\vert \, \vert v \vert \, \vert T'(z) \vert \, \vert w \vert}{\left( {\rm
+          Im}(T(z))\right)^{2}}= \dfrac{\vert T'(z)\vert \, \vert T'(z) \vert \, \vert v \vert \, \vert w \vert}{\left(
+          {\rm Im}(T(z))\right)^{2}}.
+          \end{align*}
+          Dado que la parte imaginaria de \(T\) y su respectiva derivada compleja están dadas por
+          Equation-----
+          entonces el área hiperbólica del paralelogramo \(P'\) es
+          Equation------
+        </div>
+
+        <p>
+          Vamos a verificar que el área hiperbólica de cualquier región en \(\mathbb{H}\) es invariante bajo elementos
+          de \({\rm PSL}(2,\mathbb{R}).\) Antes, recordemos el <span class="purple-text">Teorema de Cambio de
+            Variable</span> para integrales dobles.
+        </p>
+
+        <div class="theorem">
+          [Teorema de Cambio de Variable] Consideremos las regiones \(D\) y \(D^{\ast}\) en \(\mathbb{R}^2\) y una
+          aplicación biyectiva \(T:D^{\ast}\to D\) de clase \(C^{1},\) definida mediante
+          \[
+          T(u,v)=(x(u,v),y(u,v)).
+          \]
+          Entonces para cualquier función integrable \(f:D\to \mathbb{R}\) se satisface
+          \[
+          \iint\limits_{D} f(x,y)dxdy=\iint\limits_{D^{\ast}} f(x(u,v),y(u,v))
+          \left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|dudv,
+          \]
+          donde \(\left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|\) es el determinante de la matriz Jacobiana asociada
+          a la transformación \(T.\)
+        </div>
+
+        <div class="theorem">
+          El área hiperbólica es invariante bajo elementos de \({\rm PSL}(2,\mathbb{R}).\) En otras palabras, si el área
+          hiperbólica de la región \(K\subset \mathbb{H}\) existe, entonces \(A(K)=A(T(K)),\) para cada \(T\in {\rm
+          PSL}(2,\mathbb{R}).\)
+        </div>
+
+        <div class="proof">
+          Tomemos las transformación de Möbius \(T\in {\rm PSL}(2,\mathbb{R})\) dada por
+          \[
+          T(z)=\dfrac{az+b}{cz+d},
+          \]
+          y la región \(K\) en el plano hiperbólico \(\mathbb{H}.\) Veamos que se satisface la igualdad
+          \[
+          A_h(K)=A_h(T(K)).
+          \]
+
+          Dado el número complejo \(z=u+vi \in K,\) entonces la regla de asignación de transformación de Möbius \(T\) la
+          reescribir mediante
+          \[
+          T(u,v)=(x(u,v),y(u,v)),
+          \]
+          para algunas funciones \(x,y:K\to\mathbb{R}.\) Como la función \(T\) satisface las condiciones de
+          Cauchy-Riemann, pues es holomorfa, entonces el determinante de la matriz Jacobiana asociada a \(T\) en el
+          punto \(z=(u,v)\) está dada mediante
+          \begin{align*}\label{eq:determinante_jacobiano}
+          \left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|&amp;= \left |\begin{matrix}
+          \dfrac{\partial x}{\partial u}(u,v) &amp; \dfrac{\partial x}{\partial v}(u,v) \\
+          &amp;\\
+          \dfrac{\partial y}{\partial u}(u,v) &amp; \dfrac{\partial y}{\partial v} (u,v)
+          \end{matrix}\right|,\\
+          &amp;\\
+          &amp;= \left |\begin{matrix}
+          \dfrac{\partial x}{\partial u}(u,v) &amp; -\dfrac{\partial y}{\partial u}(u,v) \\
+          &amp;\\
+          \dfrac{\partial y}{\partial u}(u,v) &amp; \dfrac{\partial x}{\partial u} (u,v)
+          \end{matrix}\right| = \left( \dfrac{\partial x}{\partial u}(u,v) \right)^2 +\left(\dfrac{\partial y}{\partial
+          u}(u,v)\right)^2,\\
+          &amp;\\
+          &amp;=\left|\dfrac{\partial x}{\partial u}(u,v) +i \dfrac{\partial y}{\partial
+          u}(u,v)\right|^2=\left|\frac{dT}{dz}(z)\right|^2=\frac{1}{|cz+d|^4}.
+          \end{align*}
+
+          Ahora, consideremos la función integrable \(f:T(K)\to \mathbb{R},\) definida mediante
+          \[
+          T(w=x+iy)= \frac{1}{\left({\rm Im}(w)\right)^{2}}=\frac{1}{y^{2}}.
+          \]
+          Entonces del Teorema de Cambio de Variables para integrales se sigue que
+          Equation-----
+        </div>
+
+        <h3>Teorema de Gauss-Bonnet</h3>
+
+        <p>
+          El Terorema de Gauss-Bonnet es un resultado interesante sobre superficies, el cual relaciona una cualidad
+          geométrica (la curvatura) con una cualidad topólogica (la característica de Euler-Poincaré). Sin embargo,
+          desde el punto de vista de la geometría hiperbólica, el teorema de Gauss-Bonnet está enunciado sobre los
+          triángulos hiperbólicos y relaciona su área con la suma de la medida de sus respectivos ángulos.
+        </p>
+
+        <p>
+          Iniciaremos definiendo la noción de <span class="purple-text"><em>ángulo entre circunferencias
+              ortogonales</em></span>.
+        </p>
+
+        <div class="definition">
+          Tomemos las parametrizaciones \(\gamma_{1},\gamma_{2}:[a,b]\to \mathbb{H}\) de dos líneas hiperbólicas que se
+          intersectan en el punto \(z\in\mathbb{H},\) es decir, existe un valor real \(t\in[a,b]\) tal que
+          \(\gamma_{1}(t)=\gamma_{2}(t)=z.\) Los vectores tangentes \(\gamma_{1}'(t)\) y \(\gamma_{2}'(t)\) en el
+          espacio tangente \(T_z\mathbb{H}\) definen un ángulo (véase Figura \ref{dib:angulo_curvas}), el cual
+          llamaremos el
+          <div class="center">
+            <span class="red-txt"><strong>ángulo de las líneas hiperbólicas \(\gamma_{1}\) y \(\gamma_{2}\) en el punto
+                \(z\)</strong></span>.
+          </div>
+
+          La medida del ángulo formado por los vectores \(\gamma'_{1}(t)\) y \(\gamma'_{2}(t)\) es el valor
+          \(\pi-\theta\) donde \(\theta\in [0,\pi]\) tal que
+          Equation-----
+        </div>
+
+        <p>
+          Al removerle al plano hiperbólico \(\mathbb{H}\) una línea hiperbólica \(C,\) resultan dos subconjuntos
+          conexos disjuntos \(H_{1}\) y \(H_{2}\) (véase Figura \ref{Fig:Semi_espacios_del_plano_hiperbolico}), los
+          cuales son llamados <span class="red-txt"><em>semi espacios del plano hiperbólico \(\mathbb{H}\)</em></span>.
+        </p>
+
+        <p>
+          Diremos que tres puntos distintos \(z_1,\) \(z_2\) y \(z_3\) del plano hiperbólico son <span class="purple-text"><em>colineales</em></span>, si existe una línea hiperbólica que los atraviece.
+          Denotaremos mediante
+          \[
+          \hat{\mathbb{R}}=\mathbb{R}\cup \{\infty\},
+          \]
+          a los <span class="purple-text"><em>reales extendidos</em></span>, es decir, la recta real \(\mathbb{R}\)
+          junto con el punto \(\infty.\)
+        </p>
+
+        <div class="definition">
+          Tomemos tres puntos distinitos \(z_{1},\) \(z_{2}\) y \(z_{3}\) en el plano hiperbólico junto con la recta
+          real extendida \(\mathbb{H}\cup \hat{\mathbb{R}}.\) Denotamos mediante \(H_{i}\) al semi espacio que define la
+          línea hiperbólica que pasa por los puntos \(z_{j}\) y \(z_{k}\) que contiene al punto \(z_{i},\) con \(i\neq
+          j\neq k\in\{1,2,3\}.\) El <span class="red-txt"><strong>triángulo hipérbolico con vértices \(z_{1},z_{2}\) y
+              \(z_{2}\)</strong></span>
+          \[
+          \Delta(z_{1},z_{2},z_{3}),
+          \]
+          es el conjunto \( H_{1} \cap H_{2} \cap H_{3}.\) Los <span class="red-txt"><strong>lados</strong></span> del
+          triángulo hiperbólico \(\triangle(z_{1},z_{2},z_{3})\) son las geodésicas \([z_1,z_2],\) \([z_2,z_3]\) y
+          \([z_3,z_1].\) Los <span class="red-txt"><strong>ángulos</strong></span> \(\alpha,\) \(\beta\) y \(\zeta\) del
+          triángulo hiperbólico \(\Delta(z_{1},z_{2},z_{3})\) son aquellos que definen los lados del triángulo en los
+          vértices (complejos) \(z_1,\) \(z_2\) y \(z_3,\) respectivamente.
+        </div>
+
+        <p>
+          Los triángulos hiperbólicos puede ser que tenga tres, dos, uno o ningún vérrtice sobre el los reales
+          extenditos \(\hat{\mathbb{R}}\) (vease Figura \ref{dib:Triangulos}).
+        </p>
+
+        <div class="theorem">
+          [Gauss-Bonnet] Dado el triángulo hiperbólico \(\triangle(z_{1},z_{2},z_{3})\) cuyos ángulos miden \(\alpha,\)
+          \(\beta\) y \(\zeta,\) entonces el área hiperbólica de dicho triángulo hiperbólico está dada por la fórmula.
+          \[
+          A(\triangle(z_{1},z_{2},z_{3}))=\pi- (\alpha+\beta+\zeta).
+          \]
+        </div>
+
+        <div class="proof">
+          Sobre el triángulo hiperbólico \(\Delta(z_{1},z_{2},z_{3})\) debemos estudiar los siguientes casos.
+
+          <span class="blue-text">Caso <strong>(1)</strong></span> Uno de sus vértices está sobre los reales extendidos
+          \(\hat{\mathbb{R}}.\) Entonces la medida de uno de los ángulos del triángulo hiperbólico
+          \(\Delta(z_{1},z_{2},z_{3})\) es \(0\) (véase Ejercicio \ref{ejercio:angulo_cero_triangulo}). Supongamos sin
+          pérdida que dicho ángulo es \(\zeta.\) Mediante una transformación de Möbius \(T\in {\rm PSL}(2,\mathbb{R})\)
+          enviamos:
+          <ul>
+            <li><strong>(1)</strong> Los vértices del triángulo hiperbólico \(\triangle(z_{1},z_{2},z_{3})\) que están
+              en \(\mathbb{H}\) sobre la circunferencia unitaria.</li>
+            <li><strong>(2)</strong> Si es necesario usamos la transformación de Möbiuos \(T(z)=\frac{-1}{z}\) tal que
+              \(T\) envíe el tercer vértice del triángulo hiperbólico \(\triangle(z_{1},z_{2},z_{3})\) sobre \(\infty\)
+              (véase Figura \ref{dib:gauss_bonnet}).</li>
+          </ul>
+
+          Recordemos que la transformación de Möbius \(T\in {\rm PSL}(2,\mathbb{R})\) deja invariante el área
+          hiperbólica del triángulo hiperbólico \(\triangle(z_{1},z_{2},z_{3})\) (véase Teorema
+          \ref{t:invarianza_area_hiberbolica}), es decir,
+          \[
+          A_{h}(\triangle(z_{1},z_{2},z_{3}))=A_{h}(T(\triangle(z_{1},z_{2},z_{3}))).
+          \]
+          Usando la integral, se tiene que el área hiperbólica del triángulo hiperbólico
+          \(T(\triangle(z_{1},z_{2},z_{3}))\) es
+          \begin{equation*}
+          \begin{split}
+          A_{h}(T(\triangle(z_{1},z_{2},z_{3})))&amp;=\int_{a}^{b}\int_{\sqrt{1-x^2}}^{\infty}\frac{dydx}{y^2}=\int_{a}^{b}\left(\frac{-1}{y}\Big|_{y=\sqrt{1-x^2}}^{y=\infty}\right)dx,\\
+          &amp;\\
+          &amp;=\int_{a}^{b} \left(\lim_{y\to\infty} \frac{1}{y}
+          +\frac{1}{\sqrt{1-x^2}}\right)dx=\int_{a}^{b}\frac{1}{\sqrt{1-x^2}}dx.
+          \end{split}
+          \end{equation*}
+          Nótese que los ángulos \(\angle A\textbf{0}a\) y \(\angle B\textbf{0}b\) son congruentes a los ángulos
+          \(\alpha\) y \(\beta.\) Entonces realizamos la sustitución trigonométrica en la anterior igualdad dada por
+          \[
+          \cos \theta=\frac{1}{\sqrt{1-x^2}}, \quad \sin \theta=x \quad \text{y} \quad dx=\cos \theta d\theta.
+          \]
+          Computamos y obtenemos
+          \begin{equation*}
+          A_{h}(T(\triangle(z_{1},z_{2},z_{3})))=\int_{\alpha}^{\pi-\beta}\frac{\cos \theta}{\cos
+          \theta}d\theta=\pi-\beta-\alpha.
+          \end{equation*}
+
+          <span class="blue-text">Caso <strong>(2)</strong></span> El triángulo hiperbólico \(\triangle\) no tiene
+          vértices sobre los reales extendidos \(\hat{\mathbb{R}}.\) Por comodidad denotemos sus vértices mediante
+          \(A,\) \(B\) y \(C.\) Trazamos la circunferencia que pasa por los puntos \(A\) y \(C\); y denotamos mediante
+          \(x\) el extremo de dicha circunferencia ortogonal tal que \(x&lt;{\rm Re}(A)\) y \(x&lt;{\rm Re}(C)\) (véase Figura
+            \ref{dib:gauss_bonnet_2}). Del trazo de la circunferencia ortogonal obtenemos los tríangulos hiperbólicos
+            \(\triangle(x,B,C)\) y \(\triangle(x,A,B)\) que tienen en común el vértice \(x,\) el cual se encuentra sobre
+            los reales extendidos \(\hat{\mathbb{R}}.\) Adicionalmente, se tiene la siguiente relación de áreas
+            hiperbólicas \[ A_{h}(\triangle(A,B,C))=A_{h}(\triangle(x,B,C))-A_{h}(\triangle(x,B,A)). \] Como el vértice
+            \(x\) se encuentra sobre los reales extendidos \(\hat{\mathbb{R}},\) del <span class="blue-text">Caso
+            <strong>(1)</strong></span> se sigue que (en este caso, vamos a usar el símbolo \({\rm m}\) para denotar la
+            medida un ángulo \(\angle\))
+            \begin{equation}\label{ec:gauss_bonnet_caso_2}
+            \begin{split}
+            A_{h}(\triangle(A,B,C))&amp;=A_{h}(\triangle(x,B,C))-A_{h}(\triangle(x,A,B)),\\
+            &amp;\\
+            &amp;=\pi- [{\rm m}(\angle xCB)+{\rm m}(\angle xBC)]-(\pi-[{\rm m}(\angle xAB)+{\rm m}(\angle xBA)]),\\
+            &amp;\\
+            &amp;={\color{blue}-{\rm m}(\angle xBC)+{\rm m}(\angle xBA)}-{\color{red}{\rm m}(\angle
+            xCB)}+{\color{orange}{\rm m}(\angle xAB)}.
+            \end{split}
+            \end{equation}
+
+            De nuestra construcción se siguen las siguientes relaciones
+            <ul>
+              <li><strong>(1)</strong> \({\rm m}(\angle xCB)={\rm m}(ACB).\)</li>
+              <li><strong>(2)</strong> \({\rm m}(\angle ABC)={\rm m}(\angle xBC)-{\rm m}(\angle xBA).\)</li>
+              <li><strong>(3)</strong> \({\rm m}(\angle xAB)=\pi-{\rm m}(\angle CAB).\)</li>
+            </ul>
+            Sustituimos las anteriores realaciones en la ecuación \eqref{ec:gauss_bonnet_caso_2} y obtebemos:
+            \begin{equation*}
+            \begin{split}
+            A_{h}(\triangle(A,B,C))&amp;=-{\rm m}(\angle ABC)-{\rm m}(\angle ACB)+\pi-{\rm m}(\angle BAC),\\
+            &amp;\\
+            &amp;=\pi-{\rm m}(\angle ABC)-{\rm m}(\angle ACB)-{\rm m}(\angle BAC).
+            \end{split}
+            \end{equation*}
+
+            Los casos restantes son consecuencias de los casos anteriores:
+
+            <span class="blue-text">Caso <strong>(3)</strong></span> Dos de sus vértices se encuentran sobre los reales
+            extendidos.
+
+            <span class="blue-text">Caso <strong>(4)</strong></span> Los tres vértices se encuentran sobre los reales
+            extendidos.
+        </div>
+
+        <div class="example">
+          El área hiperbólica del triángulo hiperbólico con vértices \(-1,\) \(1\) y \(\infty\) es \(\pi.\) Así mismo el
+          área hiperbólica del triángulo hiperbólico con vértices \(-15,\) \(15\) y \(100\) es \(\pi.\)
+        </div>
+
+        <p>
+          Podemos extender la definición de triángulo hiperbólico a <span class="purple-text">polígono
+            hiperbólico</span> y el Teorema de Gauss-Bonnet para estos objetos.
+        </p>
+
+        <div class="definition">
+          Consideremos \(n\) puntos diferentes \(z_1,\ldots,z_n\) sobre el plano hiperbólico junto con los reales
+          extendidos \(\mathbb{H}\cup \hat{\mathbb{R}},\) tal que \(z_{i},z_{i+1}, z_{i+2}\) son no colineales para cada
+          \(i\in\{1,\ldots, n-2\}.\) El <span class="red-txt"><strong>polígono hipérbolico con \(n\) lados
+              \(P(z_{1},\ldots,z_{n})\)</strong></span> asociado a los puntos \(z_1,\ldots,z_n\) en \(\mathbb{H}\cup
+          \hat{\mathbb{R}}\) ese el interior de las siguienes uniones de las geodésicas
+          \[
+          [z_1,z_2]\cup [z_2,z_3]\cup\ldots\cup [z_n,z_1],
+          \]
+          junto con su respectiva frontera. Los <span class="red-txt"><strong>vértices</strong></span> del polígono
+          hiperbólico \(P(z_{1},\ldots,z_{n})\) son los puntos \(z_{1},\ldots,z_{n}.\) Los <span class="red-txt"><strong>lados</strong></span> del polígono hiperbólico \(P(z_{1},\ldots,z_{n})\) son las
+          geodésicas
+          \[
+          [z_1,z_2],\ldots, [z_{n-1},z_n],[z_n,z_1],
+          \]
+          las cuales sin sus extremos son disjuntas por pares. Los <span class="red-txt"><strong>ángulos</strong></span>
+          \(\alpha_1,\ldots,\alpha_n\) del polígnono hiperbólico \(P(z_{1},\ldots,z_{n})\) son aquellos que definen sus
+          lados en los vértices \(z_1,\ldots, z_n,\) respectivamente.
+        </div>
+
+        <div class="theorem">
+          [Gauss-Bonnet para polígonos hiperbólicos] Dado un polígono hiperbólico \(P(z_{1},\ldots,z_{n})\) de
+          \(n\in\mathbb{N}\) lados cuyos ángulos miden \(\theta_{1},\ldots,\theta_{n},\) entonces el área hiperbólica de
+          dicho polígono hiperbólico está dada por la fórmula
+          \[
+          A_{h}(P(z_{1},\ldots,z_{n}))=(n-2)\pi-\left(\sum_{i_1}^{n}\theta_{i} \right).
+          \]
+        </div>
+
+        <div class="proof">
+          El vértice \(z_{i}\) define el ángulo con medida \(\theta_{i},\) para \(i\in\{1,\ldots,n\}.\) Fijemos el
+          vértice \(z_{1}\) del polígono hiperbólico \(P(z_{1},\ldots,z_{n})\) y trazamos las geodésicas \([z_1,z_i]\)
+          con \(i\in\{3,\ldots,n-1\}\) y así, descomponemos al polígono hiperbólico \(P(z_{1},\ldots,z_{n})\) en \(n-2\)
+          triángulos hiperbólicos, los cuales denotamos mediante \(\triangle_{1},\ldots \triangle_{n-2}.\)
+
+          Cada triángulo hiperbólico \(\triangle_{i},\) con \(i\in\{1,\ldots,n-2\}\) tiene las siguientes propiedades:
+          <ul>
+            <li><strong>(1)</strong> Sus vértices del triángulo son los puntos \(z_{1},z_{i+1},z_{i+2}.\)</li>
+            <li><strong>(2)</strong> La medida del ángulo que define el vértice \(z_{1}\) (respectivamente, los vértices
+              \(z_{i+1}\) y \(z_{i+2}\) ) es \(\alpha_{i}\) (respectivamente, \(\beta_{i}\) y \(\zeta_{i}\)).</li>
+            <li><strong>(3)</strong> Del Teorema de Gauss-Bonnet para triángulos hiperbólico se tiene que
+              \[
+              A_{h}(\triangle_{i})=\pi-(\alpha_{i}+\beta_{i}+\zeta_{i}).
+              \]</li>
+          </ul>
+
+          Observemos que el área hiperbólica del polígono \(P(z_{1},\ldots,z_{n})\) es la suma de las áreas hiperbólicas
+          de los \(n-2\) triángulos hiperbólicos
+          \begin{align}\label{ec:gauss_bonnet_poligonos}
+          A_{h}(P(z_{1},\ldots,z_{n}))&amp;=\sum_{i=1}^{n-2}A_{h}(\triangle_i)=\sum_{i=1}^{n-2}(\pi-[\alpha_{i}+\beta_{i}+\zeta_{i}]),\notag\\
+          &amp;\notag \\
+          &amp;=(n-2)\pi-\sum_{i=1}^{n-2}(\alpha_{i}+\beta_{i}+\zeta_{i}).
+          \end{align}
+
+          Por otro lado, tenemos las siguientes relaciones sobre los ángulos de los triángulos hiperbólicos construidos
+          previamente
+          <ul>
+            <li><strong>(1)</strong> Todos ellos tienen en común el vértice \(z_{1},\) entonces
+              \[
+              \theta_{1}=\sum_{i=1}^{n-2}\alpha_{i}.
+              \]</li>
+            <li><strong>(2)</strong> Los triángulos hiperbólico \(\triangle_{i}\) y \(\triangle_{i+1}\) tienen en común
+              el vértice \(z_{i+2},\) con \(i\in\{1,\ldots,n-2\}.\) Entonces
+              \[
+              \alpha_{i+2}=\zeta_{i}+\beta_{i+1}.
+              \]</li>
+            <li><strong>(3)</strong> En el triángulo hiperbólico \(\triangle_{1}\) (respectivamente,
+              \(\triangle_{n-2}\)) se tiene la relación \(\beta_{1}=\theta_{2}\) (respectivamente,
+              \(\zeta_{n-2}=\theta_{n}\)).</li>
+          </ul>
+
+          Reemplazando las anteriores relaciones en la ecuación \eqref{ec:gauss_bonnet_poligonos} obtenemos la igualdad
+          esperada
+          \[
+          A_{h}(P(z_{1},\ldots,z_{n}))=(n-2)\pi-\left(\sum_{i_1}^{n}\alpha_i \right).
+          \]
+        </div>
+
+        <p>
+          Sobre el plano euclidiano llamamos <span class="purple-text">rectángulo euclidiano</span> a un polígono de
+          cuatro lados cuyos ángulos miden \(\dfrac{\pi}{2}.\) Sin embargo, en el plano hiperbólico no existen este tipo
+          de objetos. Este hecho es consecuencia del Teorema de Gauss-Bonnet para polígonos hiperbólicos.
+        </p>
+
+        <div class="theorem">
+          No existen polígonos hiperbólicos de cuantro lados cuyos ángulos miden \(\dfrac{\pi}{2}.\)
+        </div>
+
+        <div class="proof">
+          Supongamos que existe dicho polígono hiperbólico \(P.\) Del Teorema de Gauss-Bonnet se sigue el área
+          hiperbólica de dicho polígono es
+          \[
+          A_{h}(P)=(4-2)\pi-4\frac{\pi}{2}=0.
+          \]
+          Esta igualdad implica que los vértices de \(P\) son colineales.
+        </div>
+
+
+        <div style="color: rgba(255, 255, 255, 0);" id="trigonometria-hiperbolica">
+          <p>Trigonometría hiperbólica</p>
+        </div>
+
+        <p style="font-size: 120%;">
+          <b>4.1.1. Trigonometría hiperbólica</b>
+        </p>
+
+
+        <p>
+          El término clásico <span class="purple-text">ángulo del paralelismo</span> es usado para las relaciones
+          trigonométricas aplicadas sobre los ángulos un triángulo hiperbólico \(\triangle\) con ángulos de medida
+          \(\alpha, 0, \dfrac{\pi}{2}.\) Usando las transformaciones de Möbius en \({\rm PSL}(2,\mathbb{R}),\) podemos
+          pensar que los vértices del triángulo hiperbólico \(\triangle\) son \(\infty, i\) y un complejo sobre la
+          circunferencia unitaria (véase Figura \ref{dib:angulo_paralelo}). Notemos que el dicho triángulo hiperbólico
+          \(\triangle\) tiene un lado de medida hiperbólica finita.
+        </p>
+
+        <div class="theorem">
+          [Ángulo de paralelismo] Consideremos el triángulo hiperbólico \(\triangle\) con ángulos de medida
+          \(0,\dfrac{\pi}{2}, \alpha\neq 0.\) Denotemos mediante \(b\) la medida del lado de \(\triangle\) con extremos
+          los vértices cuyos ángulos son \(\alpha\) y \(\dfrac{\pi}{2}.\) Entonces
+          <ul>
+            <li><strong>(1)</strong> \(\senh (b) \tan (\alpha)=1.\)</li>
+            <li><strong>(2)</strong> \(\cosh(b)\sin(\alpha)=1.\)</li>
+            <li><strong>(3)</strong> \(\tanh(b)\sec(\alpha)=1.\)</li>
+          </ul>
+        </div>
+
+        <div class="proof">
+          Iniciaremos probando el inciso <span class="blue-text"><strong>(2)</strong></span>. Existe un elemento \(T\)
+          de \({\rm PSL}(2,\mathbb{R})\) que envía el lado de longitud finita del triángulo \(\triangle\) sobre la curva
+          \(x^2+y^2=1\) y los vértices de \(\triangle\) son enviados sobre el conjunto \(\{i, x_0+y_0i,\infty\}\) (véase
+          Figura \ref{dib:angulo_paralelo}).
+
+          Por construcción tenemos que la siguiente relación trigonométricas
+          \begin{equation}\label{eq:caso1_teo_paralelismo}
+          y_{0}={\rm sen} (\alpha).
+          \end{equation}
+          Dado que \(b=\rho(i,x_{0}+y_{0}i),\) entonces del Lema \ref{l:cosh} se sigue que
+          \begin{equation}
+          \begin{split}
+          \cosh(b)&amp;=\cosh(\rho(i,x_0+y_0i)) =1+\frac{|i-(x_0+y_0i)|}{2 {\rm Im}(i){\rm Im}(x_0+y_0i)},\\
+          &amp;\\
+          &amp;=1+\dfrac{|-x_{0}+(1-y_{0})i|}{2y_{0}}=1+\dfrac{x_{0}^{2}+(1-y_{0})^{2}}{2y_{0}},\\
+          &amp;\\
+          &amp;=\frac{2y_0+x_0^2+(1-y_0)^2}{2y_0}=\dfrac{2y_{0}+x_{0}^{2}+1-2y_{0}+y_{0}^{2}}{2y_{0}},\\
+          &amp;\\
+          &amp;=\frac{\cancelto{1}{x_0^2+y_0^2}+1}{2y_0}=\dfrac{\cancel{2}}{\cancel{2}y_{0}}=\dfrac{1}{y_{0}},\\
+          y_{0}\cosh(b)&amp;=1.\\
+          \end{split}
+          \end{equation}
+          Al sustituir la igualdad \eqref{eq:caso1_teo_paralelismo} en la igualdad anterior, obtenemos la relación
+          esperada
+          \[
+          {\rm sen}(\alpha)\cosh(b)=1.
+          \]
+
+          Ahora, probaremos el inciso <span class="blue-text"><strong>(1)</strong></span>. Recordemos la identidad
+          trigonométrica
+          \begin{equation*}
+          \senh (b)=2\senh\left(\frac{b}{2}\right)\cosh\left(\frac{b}{2}\right).
+          \end{equation*}
+          Dado que \(b=\rho(i,x_{0}+y_{0}i),\) entonces la anterior expresión la reescribimos de la forma
+          \begin{equation}
+          \senh(b)=2 \senh\left( \dfrac{1}{2}\rho(i,x_{0}+y_{0}i)\right) \cosh\left(
+          \dfrac{1}{2}\rho(i,x_{0}+y_{0}i)\right).
+          \end{equation}
+          Del teorema \ref{l:cosh} se sigue que la igualdad anterior es equivalente a
+          \begin{equation*}
+          \begin{split}
+          \senh(b) &amp;=2\dfrac{|i-(x_{0}+y_{0}i)|}{2\left({\rm Im}(i){\rm
+          Im}(x_{0}+y_{0})\right)^{1/2}}\dfrac{|i-\overline{x_{0}+y_{0}i}|}{2\left({\rm Im}(i){\rm
+          Im}(x_{0}+y_{0})\right)^{1/2}},\\
+          &amp;\\
+          &amp;=\cancel{2}\frac{|-x_0+(1-y_{0})i)|}{\cancel{2}\cancel{\sqrt{y_0}}}\frac{|-x_0+(1+y_{0})i|}{2\cancel{\sqrt{y_0}}},\\
+          &amp;\\
+          &amp;=\frac{\sqrt{x_0^2+(1-y_0)^2}\sqrt{x_0^2+(1+y_0)^2}}{2y_0},\\
+          &amp;\\
+          &amp;=\dfrac{\sqrt{\cancelto{1}{x_{0}^{2}+y_{0}^{2}}-2y_{0}+1}\sqrt{\cancelto{1}{x_{0}^{2}+y_{0}^{2}}+2y_{0}+1}}{2y_{0}},\\
+          &amp;\\
+          &amp;=\frac{\sqrt{2-2y_0}\sqrt{2+2y_0}}{2y_0}=\frac{\sqrt{4-4y^2_0}}{2y_0},\\
+          &amp;\\
+          &amp;=\dfrac{\sqrt{4\cancelto{x_{0}^{2}}{(1-y_{0}^{2})}}}{2y_{0}}=\frac{\sqrt{4x_0^2}}{2y_0}=\dfrac{\cancel{2}x_{0}}{\cancel{2}y_{0}},\\
+          &amp;\\
+          \senh(b)&amp;=\dfrac{x_{0}}{y_{0}},\\
+          &amp;\\
+          \senh(b)\frac{y_0}{x_0}&amp;=1,\\
+          &amp;\\
+          \senh(b)\tan(\alpha)&amp;=1.\\
+          \end{split}
+          \end{equation*}
+
+          La igualdad del inciso <span class="blue-text"><strong>(3)</strong></span> se sigue de tomar el cociente entre
+          las igualdades descritas en los incisos <span class="blue-text"><strong>(1)</strong></span> y <span class="blue-text"><strong>(2)</strong></span>.
+        </div>
+
+        <p>
+          Al igual que en los triángulos euclidianos, en los triángulos hiperbólicos también se tienen la <span class="purple-text">regla del seno</span> y <span class="purple-text">la regla del coseno</span>. Recordemos
+          que dado un triángulo euclidiano con vértices \(A,\) \(B\) y \(C\) cuyos ángulos miden \(\alpha,\) \(\beta\) y
+          \(\zeta\) y, lados opuestos con medidas \(a,\) \(b\) y \(c\) respectivamente, entonces se tienen las
+          relaciones
+        </p>
+        <ul>
+          <li><strong>(1)</strong> (Regla del seno)
+            \(\dfrac{\sen(\alpha)}{a}=\dfrac{\sen(\beta)}{b}=\dfrac{\sen(\zeta)}{c}.\)</li>
+          <li><strong>(2)</strong> (Regla del coseno) \(a^{2}=b^{2}+c^{2}-2ab\cos(\alpha).\)</li>
+        </ul>
+
+        <div class="theorem">
+          Consideremos el triángulo hiperbólico \(\triangle(A,B,C)\) con vértices \(A,B\) y \(C\) cuyos ángulos miden
+          \(\alpha,\) \(\beta\) y \(\zeta\) (respectivamente) y, lados opuestos con medidas \(a,\) \(b\) y \(c\)
+          (respectivamente). Entonces se tienen las siguientes relaciones
+          <ol>
+            <li><strong>(1)</strong> (Regla del seno)
+              \(\dfrac{\senh(a)}{\sen(\alpha)}=\dfrac{\senh(b)}{\sen(\beta)}=\dfrac{\senh(c)}{\sen(\gamma)}.\)</li>
+            <li><strong>(2)</strong> (Regla del coseno I) \(\cosh(c)=\cosh(a)\cosh(b)-\senh(a)\senh(b)\cos(\zeta).\)
+            </li>
+            <li><strong>(3)</strong> (Regla del coseno II)
+              \(\cosh(c)=\dfrac{\cos(\alpha)\cos(\beta)+\cos(\zeta)}{\sen(\alpha)\sen(\beta)}.\)</li>
+          </ol>
+        </div>
+
+        <div class="remark">
+          La regla del coseno II no tiene un análogo en la geometría euclidiana. En la geometría hiperbólica este caso
+          implica que si dos triángulos hiperbólicos tienen los mismos ángulos, entonces existe una isometría que envía
+          uno en el otro.
+        </div>
+
+        <div class="corollary">
+          (Pitágoras) Si \(\gamma=\frac{\pi}{2},\) entonces \(\cosh(c)=\cosh(a)\cosh(b).\)
+        </div>
+
+        <div class="proof">
+          Usaremos el modelo del disco de Poincaré \(\Delta\) para probar el Teorema. Supongamos que \(C=0\) y el
+          vértice \(A\) está sobre el eje real positivo.
+
+          Del teorema \ref{t:relaciones_trigonometricas_disco} se sigue que
+          \begin{equation}\label{eq:relacion_hiperbolica_tcos_1}
+          \tanh\left(\frac{1}{2}\rho(0,A)\right)=\tanh\left(\frac{b}{2}\right)=\frac{|0-A|}{|1-0|}=|A|=A.
+          \end{equation}
+          Por otro lado, tenemos que
+          \begin{equation}\label{eq:relacion_hiperbolica_tcos_2}
+          \tanh\left(\frac{1}{2}\rho(0,B)\right)=\tanh\left(\frac{a}{2}\right)=|0-B|=|B|.
+          \end{equation}
+          Además, \(c=\rho(A,B),\) entonces
+          \begin{equation}\label{eq:relacion_hiperbolica_tcos_3}
+          \senh^2\left(\frac{1}{2}\rho(A,B)\right)=\frac{|A-B|^2}{(1-|A|^2)(1-|B|^2)}.
+          \end{equation}
+          De la identidad \(\cosh(2x)=2\senh^2(x)+1\) la igualdad \ref{eq:relacion_hiperbolica_tcos_3} se reescribe como
+          sigue
+          \begin{equation}
+          \begin{split}
+          \cosh(c)&amp;=2\senh^2\left(\frac{c}{2}\right)+1\\
+          &amp;=2\frac{|A-B|^2}{(1-|A|^2)(1-|B|^2)}+1\\
+          \end{split}
+          \end{equation}
+          De esta última expresión se sigue que
+          \begin{equation}\label{eq:relacion_hiperbolica_tcos_4}
+          |A-B|^2=\frac{(\cosh(c)-1)(1-|A|^2)(1-|B|^2)}{2}.
+          \end{equation}
+
+          En el triángulo euclidiano con vértices \(A,\) \(B\) y \(C\) se cumple la ley coseno
+          \begin{equation}
+          |B-A|^2=|A|^2+|B|^2-2|A||B|\cos(\gamma).
+          \end{equation}
+          Sustituimos la igualdad \ref{eq:relacion_hiperbolica_tcos_4} en la expresión anterior y obtenemos
+          \begin{equation}
+          \begin{split}
+          \frac{(\cosh(c)-1)(1-|A|^2)(1-|B|^2)}{2}&amp;=|A|^2+|B|^2-2|A||B|\cos(\gamma),\\
+          \cosh(c)(1-|A|^2)(1-|B|^2)&amp;=2|A|^2+2|B|^2-4|A||B|\cos(\gamma)+(1-|A|^2)(1-|B|^2),\\
+          \cosh(c)(1-|A|^2)(1-|B|^2)&amp;=|A|^2+|B|^2+|A|^2|B|^2+1-4|A||B|\cos(\gamma),\\
+          \cosh(c)(1-|A|^2)(1-|B|^2)&amp;=(1+|A|^2)(1+|B|^2)-4|A||B|\cos(\gamma).\\
+          \end{split}
+          \end{equation}
+          Finalmente, sustituimos las relaciones \ref{eq:relacion_hiperbolica_tcos_1} y
+          \ref{eq:relacion_hiperbolica_tcos_2} en la igualdad anterior y obtenemos
+          \begin{equation}
+          \begin{split}
+          \cosh(c)\left(1-\tanh^2\left(\frac{a}{2}\right)\right)\left(1-\tanh^2\left(\frac{b}{2}\right)\right)=&amp;\left(1+\tanh^2\left(\frac{a}{2}\right)\right)\left(1+\tanh^2\left(\frac{b}{2}\right)\right)\\
+          &amp;-4\tanh\left(\frac{a}{2}\right)\tanh\left(\frac{b}{2}\right)\cos(\gamma),\\
+          \frac{\cosh(c)}{\cosh^2\left(\frac{a}{2}\right)\cosh^2\left(\frac{b}{2}\right)}=&amp;\frac{\left(\senh^2\left(\frac{a}{2}\right)+\cosh^{2}\left(\frac{a}{2}\right)\right)
+          \left(\senh^2\left(\frac{b}{2}\right)+\cosh^{2}\left(\frac{b}{2}\right)\right)}{\cosh^2\left(\frac{a}{2}\right)
+          \cosh^2\left(\frac{b}{2}\right)}\\
+          &amp;-4\frac{\senh\left(\frac{a}{2}\right)\cosh\left(\frac{b}{2}\right)}{\cosh\left(\frac{a}{2}\right)\cosh\left(\frac{b}{2}\right)}\cos(\gamma),\\
+          \cosh(c)=&amp;\cosh(a)\cosh(b)-\senh(a)\senh(b)\cos(\gamma).
+          \end{split}
+          \end{equation}
+
+          <strong>Ley del seno.</strong> De la ley del coseno I tenemos que
+          \begin{equation}
+          \cos(\gamma)=\frac{\cosh(a)\cosh(b)-\cosh(c)}{\senh(a)\senh(b)}.
+          \end{equation}
+          Elevamos al cuadrado ambos lados de la igualdad y obtenemos
+          \begin{equation}
+          \cos^2(\gamma)= \frac{\cosh^2(a) \cosh^2(b)-2\cosh(a)\cosh(b)\cosh(c)+\cosh^2(c)}{\senh^2(a)\senh^2(b)}\\
+          \end{equation}
+          De la identidad pitagórica \(\sin^2(\gamma)+\cos^2(\gamma)=1\) se sigue que
+          \begin{equation}
+          \begin{split}
+          1-\sin^2(\gamma)&amp;= \frac{\cosh^2(a) \cosh^2(b)-2\cosh(a)\cosh(b)\cosh(c)+\cosh^2(c)}{\senh^2(a)\senh^2(b)}\\
+          \sin^2(\gamma)&amp;=1-\frac{\cosh^2(a) \cosh^2(b)-2\cosh(a)\cosh(b)\cosh(c)+\cosh^2(c)}{\senh^2(a)\senh^2(b)}\\
+          \sin^2(\gamma)&amp;=\frac{\senh^2(a)\senh^2(b)-\cosh^2(a)
+          \cosh^2(b)+2\cosh(a)\cosh(b)\cosh(c)-\cosh^2(c)}{\senh^2(a)\senh^2(b)}\\
+          \sin^2(\gamma)&amp;=\frac{1-\cosh^2(a) -\cosh^2(b)
+          -\cosh^{2}(c)+2\cosh(a)\cosh(b)\cosh(c)}{\senh^2(a)\senh^2(b)}\\
+          \end{split}
+          \end{equation}
+          De esta última expresión se sigue
+          \begin{equation}
+          \frac{\senh^2(c)}{\sin^2(\gamma)}=\frac{\senh^2(a)\senh^2(b)\senh^2(c)}{1-\cosh^2(a) -\cosh^2(b)
+          -\cosh^{2}(c)+2\cosh(a)\cosh(b)\cosh(c)}
+          \end{equation}
+          De la simetría de la ley del coseno se sigue que
+          \begin{equation}
+          \frac{\senh^2(a)}{\sin^2(\alpha)}=\frac{\senh^2(a)\senh^2(b)\senh^2(c)}{1-\cosh^2(a) -\cosh^2(b)
+          -\cosh^{2}(c)+2\cosh(a)\cosh(b)\cosh(c)}
+          \end{equation}
+          y
+          \begin{equation}
+          \frac{\senh^2(b)}{\sin^2(\beta)}=\frac{\senh^2(a)\senh^2(b)\senh^2(c)}{1-\cosh^2(a) -\cosh^2(b)
+          -\cosh^{2}(c)+2\cosh(a)\cosh(b)\cosh(c)}
+          \end{equation}
+          De estas últimas tres expresiones se sigue
+          \begin{equation}
+          \frac{\senh(a)}{\sin(\alpha)}=\frac{\senh(b)}{\sin(\beta)}=\frac{\senh(c)}{\sin(\gamma)}.
+          \end{equation}
+        </div>
+
+
+
+
+
+      </div>
+
+      <hr>
+
+      <div id="section3">
+
+        <div style="color: rgba(255, 255, 255, 0);" id="problemas">
+          <p>Problemas</p>
+        </div>
+
+        <div class="head-4 head-4-level2">Problemas</div>
+
+        <ol>
+          <li>Probar que el producto interno canónico (usual) \(\langle \,\, ,\, \rangle_{e}\) en \(\mathbb{R}^2\) es
+            efectivamente un producto interno (véase ecuación \eqref{eq:producto_canonico}).</li>
+
+          <li id="ejer:producto_interno_cociente">Consideramos el espacio vectorial normado \((V, \langle \,\, ,\,
+            \rangle)\) y el valor real positivo no nulo \(r.\) Probar que
+            \[
+            \langle \, \, ,\, \rangle_{r}:=\dfrac{\langle \,\, ,\, \rangle}{r^2}
+            \]
+            es un producto interno sobre \(V.\)</li>
+
+          <li>Consideramos el espacio vectorial normado \((V, \langle \,\, ,\, \rangle),\) prueba que el conjunto
+            definido en la ecuación \eqref{eq:base_topologia_para_espacio_vectorial} es una base para una topología para
+            \(V.\)</li>
+
+          <li>Dado el suconjunto abierto \(u\subset\mathbb{C}\) y la función \(\gamma:[a,b]\to U\) definida mediante
+            \[
+            \gamma(t)=x(t)+iy(t),
+            \]
+            siendo \(x\) y \(y\) funciones real valuadas. Prueba que \(\gamma\) es continua en \(t_0\in[a,b],\) si y
+            solo si, las funciones \(x\) y \(y\) son continuas en \(t_{0}.\)</li>
+
+          <li>Dado el subconjunto abierto \(U\subset\mathbb{C}\) y la curva \(\gamma:[a,b]\to U.\) Probar que
+            \(\gamma^{\ast}\) la imagen o traza de \(\gamma\) es un subconjunto cerrado, conexo y compacto de
+            \(\mathbb{C}.\)</li>
+
+          <li>Consideremos el abierto \(U\subset \mathbb{C}\) y la curva derivable a trozos \(\gamma:[a,b]\to U.\)
+            Prueba que si la derivada \(\gamma'(t)=\textbf{0}\) para todo \(t\in(a,b),\) entonces \(\gamma\) es una
+            curva constante.</li>
+
+          <li>Describe una función \(\gamma:[a,b]\to\mathbb{C}\) cuya traza sea la circuferencia con centro
+            \(z\in\mathbb{C}\) y radio \(r&gt;0.\)</li>
+
+          <li>Prueba que la longitud hiperbólica de la curva \(\gamma:[a,b]\to\mathbb{H}\) es invariante bajo
+            parametrizaciones.</li>
+
+          <li>Dada la curva derivable a trozos \(\gamma: [a,b]\to \mathbb{C},\) tal que
+            \[
+            \gamma(t)=x(t)+iy(t),
+            \]
+            para cada \(t\in[a,b].\) La <span class="purple-text">longitud euclidiana de \(\gamma\)</span> está dada
+            mediante
+            \[
+            \ell_{e}(\gamma):=\int\limits_{a}^{b} \Vert \gamma'(t) \Vert_{e} dt=\int\limits_{a}^{b}
+            \sqrt{(x'(t))^2+(y'(t))^2}dt.
+            \]
+            La <span class="purple-text">distancia euclidiana</span> entre dos puntos \(z\) y \(w\) de \(\mathbb{C},\)
+            la cual denotaremos
+            \begin{equation}
+            \rho_e(z,w)=\inf\limits_{\gamma} \left\{\ell_{e}(\gamma)\right\}
+            \end{equation}
+            es el ínfimo de las longitudes euclidianas de las curvas derivables a trozos en \(\mathbb{C}\) con puntos
+            finales \(z\) y \(w.\) Prueba que la función \(\rho_{e}: \mathbb{C}\times \mathbb{C}\to\mathbb{R},\)
+            definida mediante
+            \[
+            \rho_{e}(z,w)=\inf\limits_{\gamma}\left\{\ell_e (\gamma)\right\},
+            \]
+            es una función distancia.</li>
+
+          <li>Consideremos el punto \(z\) en el plano hiperbólico \(\mathbb{H}\) y un valor real \(\varepsilon&gt;0\) tal
+            que la cerradura de la bola euclidiana \(B_{\varepsilon}(z)\) está contenida en \(\mathbb{H}\)
+            <em>i.e.</em>, \(\overline{B_{\varepsilon}(z)} \subset \mathbb{H}.\) Prueba que la función
+            \(f:\overline{B_{\varepsilon}(z)}\to\mathbb{R},\) definida mediante
+            \[
+            f(w)=\dfrac{1}{\text{Im}(w)},
+            \]
+            es continua y diferenciable.</li>
+
+          <li>¿Cuál es el mínimo y máximo de la función \(f\) definida en el Problema anterior?</li>
+
+          <li>Consideremos el plano complejo \(\mathbb{C}\) con la topología que define la norma compleja (topología
+            usual) y el semiplano superior \(U=\left\{z\in\mathbb{C}: {\rm Im}(z)&gt;0\right\}\) con la topología del
+            subespacio. Responde las siguientes preguntas y argumenta tu respuesta.
+            <ol type="a">
+              <li>¿\(U\) es convexo?</li>
+              <li>¿\(U\) es conexo?</li>
+              <li>¿\(U\) es localmente conexo?</li>
+              <li>¿\(U\) es abierto?</li>
+              <li>¿\(U\) es compacto?</li>
+              <li>¿\(U\) es localmente compacto?</li>
+              <li>¿\(U\) es cerrado?</li>
+              <li>¿\(U\) es completo con la métrica inducida por la norma compleja?</li>
+              <li>¿Cuál es la cerradura de \(U\) en \(\mathbb{C}\)?</li>
+              <li>¿Cuál es la frontera de \(U\) en \(\mathbb{C}\)?</li>
+            </ol>
+          </li>
+
+          <li>Para todo \(z_0\in\mathbb{H},\) prueba que la función \(f_{z_0}:\mathbb{H}\to \mathbb{R},\) definida
+            mediante
+            \[
+            f_{z_0}(w)=\rho(z_0,w),
+            \]
+            es continua.</li>
+
+          <li>Prueba que \(\mathbb{H}\) con la función distancia hiperbólica \( \rho\) es un espacio métrico completo.
+          </li>
+
+          <li>Prueba que \({\rm Isom}(\mathbb{H})\) el conjunto de todas las isometrías del plano hiperbólico
+            \(\mathbb{H}\) bajo la operación composición forman un grupo.</li>
+
+          <li>Prueba que \({\rm PSL}(2,\mathbb{R})\) es un subgrupo de \({\rm PSL}(2,\mathbb{C}).\)</li>
+
+          <li>El <em><span class="purple-text">estabilizador</span></em> del complejo \(z\in\mathbb{H}\) en el grupo
+            \({\rm PSL}(2,\mathbb{R})\) es el conjunto
+            \[
+            G_{z}:=\left\{T\in {\rm PSL}(2,\mathbb{R}): T(z)=z\right\}.
+            \]
+            Prueba:
+            <ul>
+              <li><strong>(1)</strong> El estabilizador \(G_{z}\) es un subgrupo de \({\rm PSL}(2,\mathbb{R}),\) para
+                todo \(z\in\mathbb{H}.\)</li>
+              <li><strong>(2)</strong> El estabilizador \(G_{i}\) es isomorfo a \(S^{1}=\{w\in\mathbb{C}:|w|=1\}\) la
+                circunferencia unitaria compleja con el producto complejo.</li>
+            </ul>
+          </li>
+
+          <li>Considere dos complejos diferentes \(z\neq w\) sobre el plano hiperbólico \(\mathbb{H}.\) Describir una
+            función \(\gamma\) cuya traza sea la circuferencia ortogonal al eje real y que pasa por los puntos \(z\) y
+            \(w.\)</li>
+
+          <li>Consideremos la reflexión con respecto al eje imaginario
+            \[
+            R_{\rm Im}(z)=-\overline{z}.
+            \]
+            Prueba:
+            <ul>
+              <li><strong>(1)</strong> La función \(R_{\rm Im}\) deja invariante el plano hiperbólico \(\mathbb{H}.\)
+              </li>
+              <li><strong>(2)</strong> La función \(R_{\rm Im}\) envía líneas hiperbólicas sobre líneas hiperbólicas.
+              </li>
+            </ul>
+          </li>
+
+          <li>Para cualesquiera elementos \(z,w\in\mathbb{H},\) verificar que las siguientes expresiones son invariantes
+            bajo elementos de \({\rm PSL}(2,\mathbb{R})\):
+            <ul>
+              <li><strong>(1)</strong> \(\dfrac{|z-w|}{2({\rm Im}(z){\rm Im}(w))^{1/2}}.\)</li>
+              <li><strong>(2)</strong> \(\dfrac{|z-\overline{w}|}{2({\rm Im}(z){\rm Im}(w))^{1/2}}.\)</li>
+            </ul>
+          </li>
+
+          <li>Para cualesquiera dos puntos \(z,w\) sobre el plano hiperbólico \(\mathbb{H},\) verificar que se
+            satisfacen las siguientes igualdades:
+            <ul>
+              <li><strong>(1)</strong> \(\sinh \left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-w|}{2\, ({\rm Im} (z) \,
+                {\rm Im}(w))^{1/2}}.\)</li>
+              <li><strong>(2)</strong> \(\cosh \left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-\overline{w}|}{2\,({\rm
+                Im}(z) \, {\rm Im}(w))^{1/2}}.\)</li>
+            </ul>
+          </li>
+
+          <li id="Problema:mapeo_linea_hiper_sobre_eje_ima">Consideremos la línea hiperbólica \(C.\) Probar que existe
+            un elemento \(T\in{\rm PSL}(2,\mathbb{R})\) tal que
+            \[
+            T(z)=-\frac{1}{z-\alpha}+\beta
+            \]
+            para algunos \(\alpha,\beta\in\mathbb{R},\) que envía \(C\) sobre el eje imaginario.</li>
+
+          <li>Consideremos \(\phi\) una isometría del plano hiperbólico \(\mathbb{C},\) prueba que existe un elemento
+            \(T\in {\rm PSL}(2,\mathbb{R})\) tal que la composición \(T\circ\phi\) fija el eje imaginario real.</li>
+
+          <li>Calcule el área hiperbólica del círculo euclidiano con centro en \(2i\) y radio \(1.\)</li>
+
+          <li>Calcule el área hiperbólica de la región \(\left\{z\in\mathbb{H}: |{\rm Re}(z)|&lt;\frac{1}{2} \text{ y }
+              |z|&gt;1\right\}.\) Esta región es conocida como la <span class="purple-text">curva modular</span>.</li>
+
+          <li>Probar el Teorema \ref{t:relaciones_trigonometricas_disco}. Más precisamente, verificar que para
+            cualesquiera dos elementos \(z,w\) sobre el disco de Poincaré \(\Delta\) se satisfacen las siguientes
+            igualdades:
+            <ul>
+              <li><strong>(1)</strong>
+                \(\sinh^{2}\left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-w|^2}{(1-|z|^2)(1-|w|^2)}.\)</li>
+              <li><strong>(2)</strong>
+                \(\cosh^{2}\left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|1-z\overline{w}|^2}{(1-|z|^2)(1-|w|^2)}.\)</li>
+              <li><strong>(3)</strong> \(\tanh^2\left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-w|}{|1-z\overline{w}|}.\)
+              </li>
+            </ul>
+          </li>
+
+          <li>¿La reflexión con respecto al eje imaginario \({\rm R}_{\rm Im}\) preserva el área hiperbólica? Si tu
+            respuesta es afirmativa, demuéstrala.</li>
+
+          <li id="ejercio:angulo_cero_triangulo">Supongamos que el triángulo hiperbólico \(\triangle\) tiene uno de sus
+            vértices sobre el eje real extendido \(\hat{\mathbb{R}},\) entonces su ángulo mide cero grados.</li>
+
+          <li>Probar el teorema de Gauss-Bonnet para un triángulo hiperbólico \(\triangle(A,B,C)\) para los siguientes
+            dos casos:
+            <ul>
+              <li><span class="blue-text">Caso <strong>(1)</strong></span> Dos de sus vértices se encuentran sobre los
+                reales extendidos.</li>
+              <li><span class="blue-text">Caso <strong>(2)</strong></span> Los tres vértices se encuentran sobre los
+                reales extendidos.</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+
+
+    </article>
+  </main>
+
+  <a href="bibliografia.html" style="text-decoration: none;">
+    <p class="nextPage">Bibliografía <i class="fa-solid fa-angles-right"></i></p>
+  </a>
+  <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 ¡Hola!</strong>
+      </div>
+      <div class="modal-body">
+  
+        <div w3-include-html="message-modal.html"></div>
+        <br />
+      </div>
+  
+      <div class="modal-footer">
+        ¡Gracias! 🙏 !Realmente aprecio tu apoyo! 🤗
+      </div>
+    </div>
+  
+  </div>
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span class="hide-small" id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Inicio</a>,
+    <a href="https://github.com/geometria-hiperbolica"><i class="fa-solid fa-code"></i> Código</a>,
+    <a href="https://github.com/geometria-hiperbolica/geometria-hiperbolica.github.io/issues"><i
+        class="fa-solid fa-lightbulb"></i> Reporta</a>,
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-regular fa-heart"></i> Apoyar</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  <span class="hide-medium hide-large" style="font-size: 0.85em;">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Inico</a> -
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-regular fa-heart"></i> Apoyar</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+
+  <br />
+
+  <a id="licence-link" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+    target="_blank">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong>
+    <span class="hide-small" style="font-size: 18px">&copy; J.C. Ponce Campuzano, C. Ramírez Maluendas
+      <script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 15px">&copy; J.C. Ponce Campuzano <br /> C. Ramírez
+      Maluendas,
+      <script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>
