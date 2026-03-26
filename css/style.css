@@ -189,7 +189,7 @@ body {
   overflow-x: hidden;
   margin: 0 auto;
   padding: 2rem 1.25rem;
-  counter-reset: theorem corollary definition example sidenote-counter figure-counter section-1 subsection-1 subsubsection-1 section-2 subsection-2 subsubsection-2 section-3 subsection-3 subsubsection-3;
+  counter-reset: theorem corollary definition example sidenote-counter figure-counter section-1 subsection-1 subsubsection-1 section-2 subsection-2 subsubsection-2 section-3 subsection-3 subsubsection-3 section-4 subsection-4 subsubsection-4;
   color: var(--body-color);
   background-color: var(--body-bg-color);
   text-rendering: optimizeLegibility;
@@ -1112,6 +1112,35 @@ iframe {
 
 .head-3.head-3-level3::before {
   content: counter(section-3) "." counter(subsection-3) "." counter(subsubsection-3) ". ";
+}
+
+/* Numbered headers. Starts at 4 */
+.head-4 {
+  counter-increment: section-4 4;
+  font-weight: bold;
+  font-size: 2.125rem;
+}
+
+.head-4::before {
+  content: counter(section-4) ". ";
+}
+
+.head-4.head-4-level2 {
+  counter-increment: subsection-4;
+  font-size: 1.875rem;
+}
+
+.head-4.head-4-level2::before {
+  content: counter(section-4) "." counter(subsection-4) ". ";
+}
+
+.head-4.head-4-level3 {
+  counter-increment: subsubsection-3;
+  font-size: 1.5rem;
+}
+
+.head-4.head-4-level3::before {
+  content: counter(section-4) "." counter(subsection-4) "." counter(subsubsection-4) ". ";
 }
 
 :lang(es) .theorem::before {
