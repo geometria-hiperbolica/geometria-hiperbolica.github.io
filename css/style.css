@@ -506,6 +506,7 @@ overflow-x: auto;
   border-left: 5px solid #16b190 !important;
   display: block;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .theorem::before {
