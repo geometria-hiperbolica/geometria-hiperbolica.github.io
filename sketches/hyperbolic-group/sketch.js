@@ -55,9 +55,6 @@ function draw() {
   theShader.setUniform("iTime", millis() / 1000.0);
   theShader.setUniform("iMouse", [viewX, viewY]);
 
-
-
-
   // rect gives us some geometry on the screen to draw the shader on
   shaderBg.rect(0, 0, width, height);
   image(shaderBg, 0, 0, width, height);
