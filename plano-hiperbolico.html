@@ -91,7 +91,7 @@
     <p><i class="fa-solid fa-list"></i>Contenido</p>
     <ul>
       <li><a href="#section1">Plano Hiperbólico</a></li>
-      <li><a href="#section2">Métrica Riemanniana hiperbólica</a></li>
+      <li><a href="#section2">Métrica Riemanniana...</a></li>
       <li><a href="#section3">Isometrías y geodésicas</a></li>
       <li><a href="#section4">Postulados</a></li>
       <li><a href="#section5">Propiedades de las iso...</a></li>
@@ -307,7 +307,7 @@
         </p>
 
         <figure>
-          <img alt="Espacio tangente" style="width: 70%;" loading="lazy" src="imgs/cap-03/espacio-tangente.png">
+          <img alt="Espacio tangente" style="width: 60%;" loading="lazy" src="imgs/cap-03/espacio-tangente.png">
           <figcaption>
             Espacio tangente $T_zU.$
           </figcaption>
@@ -318,9 +318,9 @@
           Una <span class="red-txt"><strong>métrica Riemanniana</strong></span> \(\mu\) para el abierto
           \(U\subset\mathbb{C}\) es una correspondencia, la cual asocia a cada complejo \(z\in U\) un producto interno
           \(\langle\,\, , \,\rangle_{z}\) sobre el espacio tangente \(T_{z} U,\)
-          \[
+          \begin{equation}
           \mu(z):=\langle \, \, , \, \rangle^{z} : T_{z}U \times T_{z}U \to \mathbb{C}.
-          \]
+          \end{equation}
           Además, esta asociación varía continua y diferenciablemente sobre los puntos de \(U.\) Más precisamente, la
           función \(g_{i,j} : U \to \mathbb{C},\) definida mediante
           \[
@@ -328,17 +328,16 @@
           \]
           es diferenciable, para cada \(i,j\in\{1,2\},\) donde el conjunto \(\{ e_{1},e_{2}\}\) es la base usual
           (canónica) para \(\mathbb{C}.\) El abierto \(U\) dotado con esta métrica Riemanniana es llamado
-          <div class="centered">
-            <span class="red-txt"><strong>variedad Riemanniana</strong></span>.
-          </div>
+          <span class="red-txt"><strong>variedad Riemanniana</strong></span>.
+
         </div>
 
         <p>Uno de los ejemplos clásicos, es la <span class="purple-text">métrica Riemanniana euclidiana</span>
           \(\mu_{e}\) para el plano complejo \(\mathbb{C},\) la cual asigna a cada complejo \(z\) el producto punto
           usual sobre el plano tangente \(T_{z}\mathbb{C},\)</p>
-        \[
+        \begin{equation}
         \mu(z):=\langle \,\, , \, \rangle^{z}_{c} : T_{z}\mathbb{C}\times T_{z}\mathbb{C} \to \mathbb{C}.
-        \]
+        \end{equation}
         <p>Nótese que la función \(g_{i,j} : \mathbb{C} \to \mathbb{C},\) dada por</p>
         \[
         g_{i,j}(z)=\langle e_{i} , e_{j} \rangle^{z}_{c}=\delta_{i,j},
@@ -348,17 +347,22 @@
         <p>Vamos a introducir la <span class="purple-text">métrica Riemanniana hiperbólica</span>.</p>
 
         <div class="theorem" id="theorem:metrica_riemanniana_hiperbolica">
-          La asignación \(\mu_{h}\) sobre el <span class="purple-text">semiplano superior</span>
+          La asignación \(\mu_{h}\) sobre el
+          <span class="purple-text">semiplano superior</span>
           \[
           U=\{z\in\mathbb{C} : \operatorname{Im}(z)&gt;0\},
           \]
-          la cual corresponde a cada complejo \(z\in U\) el producto interno
-          \[
-          \mu_{h}(z):= \langle \, \, , \, \rangle_{h}^{z}= \dfrac{\langle \,\, , \,
-          \rangle^{z}_{e}}{\left(\operatorname{Im}(z)\right)^2},
-          \]
-          sobre el espacio tangente \(T_{z}U,\) es una métrica Riemanniana. A dicha métrica Riemanniana se le conoce
-          como <span class="red-txt"><strong>hiperbólica</strong></span>.
+          <p>
+            la cual corresponde a cada complejo \(z\in U\)
+            el producto interno
+            \begin{equation}\label{ecuacion:metrica_riemanniana_hiperbolica}
+            \mu_{h}(z):= \langle \, \, , \, \rangle_{h}^{z}= \dfrac{\langle \,\, , \,
+            \rangle^{z}_{e}}{\left(\operatorname{Im}(z)\right)^2},
+            \end{equation}
+            sobre el espacio tangente \(T_{z}U,\) es una métrica Riemanniana.
+            A dicha métrica Riemanniana se le conoce
+            como <span class="red-txt"><strong>hiperbólica</strong></span>.
+          </p>
         </div>
 
         <div class="proof">
@@ -409,11 +413,11 @@
         <div class="definition" id="definicion:norma_hiperbolica">
           La <span class="red-txt"><strong>norma hiperbólica</strong></span> del vector \(w\) en el espacio tangente
           \(T_{z}\mathbb{H}\) está dada mediante
-          \[
+          \begin{equation}\label{eq:norma_hiperbolica}
           \Vert w \Vert_{h}:=\sqrt{\langle w,w \rangle_{h}}=\sqrt{\dfrac{\langle w,
           w\rangle_{c}^{z}}{\left(\operatorname{Im}(z)\right)^{2}}}=\dfrac{\sqrt{\langle w,
           w\rangle_{c}^{z}}}{\operatorname{Im}(z)}=\dfrac{\vert w \vert}{\operatorname{Im}(z)}.
-          \]
+          \end{equation}
         </div>
 
 
@@ -446,7 +450,7 @@
             \]
 
             <figure>
-              <img alt="Norma hiperbolica" style="width: 70%;" loading="lazy" src="imgs/cap-03/norma-hiperbolica.png">
+              <img alt="Norma hiperbolica" style="width: 60%;" loading="lazy" src="imgs/cap-03/norma-hiperbolica.png">
               <figcaption>
                 Norma hiperbólica del vector $i\in T_{i}U.$
               </figcaption>
@@ -463,7 +467,7 @@
             i\rangle_{c}^{i/n}}}{\operatorname{Im}(i/n)}=\dfrac{\vert i \vert}{\operatorname{Im}(i/n)}=\frac{1}{1/n}=n.
             \]
             <figure>
-              <img alt="Norma hiperbolica 2" style="width: 70%;" loading="lazy" src="imgs/cap-03/norma-hiper-vector-i.png">
+              <img alt="Norma hiperbolica 2" style="width: 60%;" loading="lazy" src="imgs/cap-03/norma-hiper-vector-i.png">
               <figcaption>
                 Norma hiperbólica del vector $i\in T_{i/2}U.$
               </figcaption>
@@ -491,7 +495,7 @@
           <b>3.1.1. Curva y norma hiperbólica</b>
         </p>
 
-       
+
 
         <p>A partir de la norma vamos a definir la <span class="purple-text">longitud hiperbólica</span> de una curva
           derivable a trozos en \(\mathbb{H}.\) Vamos a dar un corto paseo por el concepto de <span class="purple-text">curva</span>.</p>
@@ -637,8 +641,8 @@
 
         <p><em>Nota:</em> Las figuras y referencias a ellas han sido omitidas según lo solicitado.</p>
 
-        
-         <div style="color: rgba(255, 255, 255, 0);" id="longitud-curva-distancia-hiperbolica">
+
+        <div style="color: rgba(255, 255, 255, 0);" id="longitud-curva-distancia-hiperbolica">
           <p>Longitud de curva y distancia hiperbólica</p>
         </div>
 
@@ -663,9 +667,9 @@
           \]
           <p>La <span class="red-txt"><strong>distancia hiperbólica</strong></span> entre dos puntos \(z\) y \(w\) del
             plano hiperbólico \(\mathbb{H},\) la cual denotaremos mediante</p>
-          \[
+          \begin{equation}\label{ec:longitud_hiperbolica_entre_z_w}
           \rho(z,w)=\inf_{\gamma} \left\{\ell_h(\gamma)\right\},
-          \]
+          \end{equation}
           <p>es el ínfimo de las longitudes hiperbólicas de las curvas derivables a trozos en \(\mathbb{H}\) con puntos
             finales \(z\) y \(w.\)</p>
         </div>
@@ -747,9 +751,9 @@
         <div class="theorem">
           La función \(\rho: \mathbb{H}\times \mathbb{H}\to\mathbb{R},\)
           definida mediante
-          \[
+          \begin{equation}\label{eq:distancia_hiperbolica_teorema}
           \rho(z,w)=\inf_{\gamma}\left\{\ell_h (\gamma)\right\}
-          \]
+          \end{equation}
           <p>es una métrica (función distancia), es decir,
             la función \(\rho\) satisface las siguientes propiedades:</p>
           <ol style="list-style-type: none; padding-left: 0;">
@@ -778,156 +782,158 @@
           <p>para algunas funciones continuas real valuadas \(x\) y \(y.\)
             De las propiedades de la norma
             hiperbólica se sigue que</p>
-          \[
-          0\leq \Vert \gamma'(t)\Vert_h=\frac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}\lt \infty, \] <p>
+
+          \begin{equation}\label{eq:desigualdad_propiedad_1_funcion_distancia_hiperbolica}
+          0\leq \Vert \gamma'(t)\Vert_h=\frac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}&lt;\infty,
+            \end{equation} <p>
             para cada \(t\in [a,b].\) Aplicando las propiedades de la integral a la expresión anterior se sigue que
-          </p>
-          \[
-          0\leq \int_{a}^{b} \Vert \gamma'(t)\Vert_h
-          dt=\int_{a}^{b}\frac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}dt \lt \infty. \] <p><span class="blue-txt"><strong>Propiedad (2).</strong></span> Verifiquemos la <span class="blue-txt">condición
-              suficiente</span>. Tomemos los complejos \(z,w\in\mathbb{H}\) tal que
-            \(z=w\) y veamos que</p>
-          \[
-          \rho(z,w)=0.
-          \]
-          <p>Así, definimos la curva constante \(\gamma:[0,1]\to \mathbb{H},\) dada por</p>
-          \[
-          \gamma(t)=z,
-          \]
-          <p>la cual tiene las siguientes propiedades:</p>
-          <ul style="list-style-type: none; padding-left: 0;">
-            <li><strong>(a)</strong> Sus extremos son los complejos \(z\) y \(w.\)</li>
-            <li><strong>(b)</strong> Es derivable.</li>
-            <li><strong>(c)</strong> Su longitud hiperbólica es \(\ell_{h}(\gamma)=0.\)</li>
-          </ul>
-          <p>De la propiedad anterior se sigue que \(\rho(z,w)=0.\)</p>
+            </p>
+            \[
+            0\leq \int_{a}^{b} \Vert \gamma'(t)\Vert_h
+            dt=\int_{a}^{b}\frac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}dt \lt \infty. \] <p><span class="blue-txt"><strong>Propiedad (2).</strong></span> Verifiquemos la <span class="blue-txt">condición
+                suficiente</span>. Tomemos los complejos \(z,w\in\mathbb{H}\) tal que
+              \(z=w\) y veamos que</p>
+            \[
+            \rho(z,w)=0.
+            \]
+            <p>Así, definimos la curva constante \(\gamma:[0,1]\to \mathbb{H},\) dada por</p>
+            \[
+            \gamma(t)=z,
+            \]
+            <p>la cual tiene las siguientes propiedades:</p>
+            <ul style="list-style-type: none; padding-left: 0;">
+              <li><strong>(a)</strong> Sus extremos son los complejos \(z\) y \(w.\)</li>
+              <li><strong>(b)</strong> Es derivable.</li>
+              <li><strong>(c)</strong> Su longitud hiperbólica es \(\ell_{h}(\gamma)=0.\)</li>
+            </ul>
+            <p>De la propiedad anterior se sigue que \(\rho(z,w)=0.\)</p>
 
-          <p>Probemos la <span class="blue-txt">condición necesaria</span>. Procederemos por contradicción.
-            Supongamos que existen dos complejos distintos \(z\neq w\) en \(\mathbb{H}\) tal que
-            \(\rho(z,w)=0.\) Como \(\mathbb{H}\) es un espacio Hausdorff con la topología del subespacio
-            inducida por \(\mathbb{C},\) entonces existe un real \(\varepsilon&gt;0\) tal que la cerradura de la
-            bola euclidiana \(B_{\varepsilon}(z)\) está contenida en \(\mathbb{H}\) y no contiene al punto
-            \(w.\) La función \(f:\overline{B_{\varepsilon}(z)}\to \mathbb{R},\) definida mediante</p>
-          \[
-          f(z)=\frac{1}{\operatorname{Im}(z)},
-          \]
-          <p>es continua. Dado que \(f\) es una función continua definida desde un subespacio compacto de
-            \(\mathbb{H},\) entonces existe un valor real positivo no nulo \(m\) tal que</p>
-          \[
-          0\neq m\leq f(z),
-          \]
-          <p>para todo \(z\in \overline{B_{\varepsilon}(z)}.\)</p>
+            <p>Probemos la <span class="blue-txt">condición necesaria</span>. Procederemos por contradicción.
+              Supongamos que existen dos complejos distintos \(z\neq w\) en \(\mathbb{H}\) tal que
+              \(\rho(z,w)=0.\) Como \(\mathbb{H}\) es un espacio Hausdorff con la topología del subespacio
+              inducida por \(\mathbb{C},\) entonces existe un real \(\varepsilon&gt;0\) tal que la cerradura de la
+              bola euclidiana \(B_{\varepsilon}(z)\) está contenida en \(\mathbb{H}\) y no contiene al punto
+              \(w.\) La función \(f:\overline{B_{\varepsilon}(z)}\to \mathbb{R},\) definida mediante</p>
+            \[
+            f(z)=\frac{1}{\operatorname{Im}(z)},
+            \]
+            <p>es continua. Dado que \(f\) es una función continua definida desde un subespacio compacto de
+              \(\mathbb{H},\) entonces existe un valor real positivo no nulo \(m\) tal que</p>
+            \[
+            0\neq m\leq f(z),
+            \]
+            <p>para todo \(z\in \overline{B_{\varepsilon}(z)}.\)</p>
 
-          <p>Por otro lado, consideremos \(\gamma:[a,b]\to \mathbb{H}\) una curva derivable a trozos con las
-            siguientes propiedades:</p>
-          <ul style="list-style-type: none; padding-left: 0;">
-            <li><strong>(a)</strong> Sus puntos finales son \(z\) y \(w.\)</li>
-            <li><strong>(b)</strong> Existe un punto \(t_0\in(a,b)\) tal que \(\gamma(t_0)\) está en la frontera
-              de la bola \(B_{\varepsilon}(z).\)</li>
-            <li><strong>(c)</strong> La imagen \(\gamma([a,t_0))\) está contenida en la bola
-              \(B_{\varepsilon}(z).\)</li>
-          </ul>
-          <p>Al evaluar la función \(f\) en los puntos de la imagen \(\gamma([a,t_0)),\) se sigue que</p>
-          \[
-          \begin{aligned}
-          m &amp;\leq \frac{1}{\operatorname{Im}(\gamma(t))},\\
-          m \vert \gamma'(t)\vert &amp;\leq \frac{\vert \gamma'(t)\vert}{\operatorname{Im}(\gamma(t))}=\Vert
-          \gamma'(t)\Vert_{h},
-          \end{aligned}
-          \]
-          <p>para todo \(t\in[a,t_0].\) Usando las propiedades de la integral y el hecho que la distancia
-            euclidiana entre los puntos \(z\) y \(v\) es \(\Vert z-v\Vert_{e},\) entonces obtenemos
-          </p>
+            <p>Por otro lado, consideremos \(\gamma:[a,b]\to \mathbb{H}\) una curva derivable a trozos con las
+              siguientes propiedades:</p>
+            <ul style="list-style-type: none; padding-left: 0;">
+              <li><strong>(a)</strong> Sus puntos finales son \(z\) y \(w.\)</li>
+              <li><strong>(b)</strong> Existe un punto \(t_0\in(a,b)\) tal que \(\gamma(t_0)\) está en la frontera
+                de la bola \(B_{\varepsilon}(z).\)</li>
+              <li><strong>(c)</strong> La imagen \(\gamma([a,t_0))\) está contenida en la bola
+                \(B_{\varepsilon}(z).\)</li>
+            </ul>
+            <p>Al evaluar la función \(f\) en los puntos de la imagen \(\gamma([a,t_0)),\) se sigue que</p>
+            \[
+            \begin{aligned}
+            m &amp;\leq \frac{1}{\operatorname{Im}(\gamma(t))},\\
+            m \vert \gamma'(t)\vert &amp;\leq \frac{\vert \gamma'(t)\vert}{\operatorname{Im}(\gamma(t))}=\Vert
+            \gamma'(t)\Vert_{h},
+            \end{aligned}
+            \]
+            <p>para todo \(t\in[a,t_0].\) Usando las propiedades de la integral y el hecho que la distancia
+              euclidiana entre los puntos \(z\) y \(v\) es \(\Vert z-v\Vert_{e},\) entonces obtenemos
+            </p>
 
-          \begin{equation}
-          \begin{split}
-          m\int\limits_{a}^{t_{0}} \vert \gamma'(t)\vert dt &amp;\leq \int\limits_{a}^{t_{0}} \frac{\vert
-          \gamma'(t)\vert}{Im(\gamma(t))}dt,\\
-          0 \lt m\varepsilon=m \vert z-\gamma(t_0)\vert \leq m\int\limits_{a}^{t_{0}} \vert \gamma'(t)\vert dt&amp;\leq
-          \int\limits_{a}^{t_{0}} \frac{\vert \gamma'(t)\vert}{Im(\gamma(t))}dt\leq \int\limits_{a}^{b}\Vert
-          \gamma'(t)\Vert_{h}dt=\ell_{h}(\gamma), \end{split} \end{equation}
+            \begin{equation}
+            \begin{split}
+            m\int\limits_{a}^{t_{0}} \vert \gamma'(t)\vert dt &amp;\leq \int\limits_{a}^{t_{0}} \frac{\vert
+            \gamma'(t)\vert}{Im(\gamma(t))}dt,\\
+            0 \lt m\varepsilon=m \vert z-\gamma(t_0)\vert \leq m\int\limits_{a}^{t_{0}} \vert \gamma'(t)\vert dt&amp;\leq
+            \int\limits_{a}^{t_{0}} \frac{\vert \gamma'(t)\vert}{Im(\gamma(t))}dt\leq \int\limits_{a}^{b}\Vert
+            \gamma'(t)\Vert_{h}dt=\ell_{h}(\gamma), \end{split} \end{equation}
 
-          <p>Dado que la curva \(\gamma\) la
-            tomamos
-            arbitrariamente, entonces
-          </p>
-          \[
-          0 \lt m\varepsilon \lt \rho(z,w)=\inf_{\gamma}\{\ell_h(\gamma)\}.
-          \]
-          <p>Sin embargo, este hecho es una
-            contradicción, pues asumimos que \(\rho(z,w)=0.\)
-          </p>
+            <p>Dado que la curva \(\gamma\) la
+              tomamos
+              arbitrariamente, entonces
+            </p>
+            \[
+            0 \lt m\varepsilon \lt \rho(z,w)=\inf_{\gamma}\{\ell_h(\gamma)\}.
+            \]
+            <p>Sin embargo, este hecho es una
+              contradicción, pues asumimos que \(\rho(z,w)=0.\)
+            </p>
 
-          <p><span class="blue-txt"><strong>Simetría.</strong></span> Consideramos la curva derivable a
-            trozos \(\gamma:[a,b]\to \mathbb{H}\) con puntos extremos \(z\) y \(w,\) tal que</p>
-          \[
-          \gamma(t)=x(t)+iy(t).
-          \]
-          <p>Entonces definimos la <span class="purple-text">curva opuesta de \(\gamma\)</span> como
-            \(-\gamma: [a,b]\to \mathbb{H},\) tal que</p>
-          \[
-          -\gamma(t):=\gamma(b+a-s)=x(b+a-s)+iy(b+a-s).
-          \]
-          <p>Notemos que la curva opuesta \(-\gamma\) tiene puntos finales \(w\) y \(z.\) Ahora, tomamos la
-            igualdad \(t=b+a-s\) y aplicamos el Teorema Fundamental del Cálculo y la regla de la cadena para
-            obtener</p>
-          \[
-          \begin{aligned}
-          \ell_h(-\gamma)&amp;=\int_{a}^{b}\dfrac{\sqrt{\left(x'(b+a-s)\right)^2+\left(y'(a+b-s)\right)^2}}{y(a+b-s)}ds,\\
-          &amp;=\int_{s(b)=a}^{s(a)=b}\dfrac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}(-1)dt,\\
-          &amp;=\int_{b}^{a}\dfrac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}dt,\\
-          &amp;=\ell_h(\gamma).
-          \end{aligned}
-          \]
-          <p>De esta última igualdad se sigue</p>
-          \[
-          \rho(w,z)\leq \inf_{\gamma}\left\{\ell_h(-\gamma)\right\}=\rho(z,w).
-          \]
-          <p>Análogamente, si \(\sigma\) es una curva derivable a trozos en \(\mathbb{H}\) con puntos
-            finales \(w\) y \(z,\) entonces</p>
-          \[
-          \rho(z,w)\leq \inf_{\sigma}\{\ell_h(-\sigma)\}=\rho(w,z).
-          \]
-          <p>De las ecuaciones anteriores se sigue que \(\rho(z,w)=\rho(w,z).\)</p>
+            <p><span class="blue-txt"><strong>Simetría.</strong></span> Consideramos la curva derivable a
+              trozos \(\gamma:[a,b]\to \mathbb{H}\) con puntos extremos \(z\) y \(w,\) tal que</p>
+            \[
+            \gamma(t)=x(t)+iy(t).
+            \]
+            <p>Entonces definimos la <span class="purple-text">curva opuesta de \(\gamma\)</span> como
+              \(-\gamma: [a,b]\to \mathbb{H},\) tal que</p>
+            \[
+            -\gamma(t):=\gamma(b+a-s)=x(b+a-s)+iy(b+a-s).
+            \]
+            <p>Notemos que la curva opuesta \(-\gamma\) tiene puntos finales \(w\) y \(z.\) Ahora, tomamos la
+              igualdad \(t=b+a-s\) y aplicamos el Teorema Fundamental del Cálculo y la regla de la cadena para
+              obtener</p>
+            \[
+            \begin{aligned}
+            \ell_h(-\gamma)&amp;=\int_{a}^{b}\dfrac{\sqrt{\left(x'(b+a-s)\right)^2+\left(y'(a+b-s)\right)^2}}{y(a+b-s)}ds,\\
+            &amp;=\int_{s(b)=a}^{s(a)=b}\dfrac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}(-1)dt,\\
+            &amp;=\int_{b}^{a}\dfrac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}dt,\\
+            &amp;=\ell_h(\gamma).
+            \end{aligned}
+            \]
+            <p>De esta última igualdad se sigue</p>
+            \[
+            \rho(w,z)\leq \inf_{\gamma}\left\{\ell_h(-\gamma)\right\}=\rho(z,w).
+            \]
+            <p>Análogamente, si \(\sigma\) es una curva derivable a trozos en \(\mathbb{H}\) con puntos
+              finales \(w\) y \(z,\) entonces</p>
+            \[
+            \rho(z,w)\leq \inf_{\sigma}\{\ell_h(-\sigma)\}=\rho(w,z).
+            \]
+            <p>De las ecuaciones anteriores se sigue que \(\rho(z,w)=\rho(w,z).\)</p>
 
-          <p><span class="blue-txt"><strong>Desigualdad triangular.</strong></span> Consideremos los
-            complejos \(z,w,v\in\mathbb{H}\) y veamos que se satisface la desigualdad</p>
-          \[
-          \rho(z,w)\leq \rho(z,v)+\rho(v,w).
-          \]
-          <p>De la definición de ínfimo se sigue el siguiente hecho: dado cualquier real positivo
-            \(\varepsilon&gt;0,\) existen las curvas derivables a trozos \(\gamma:[a,b]\to \mathbb{H}\) y
-            \(\sigma:[c,d] \to\mathbb{H},\) con puntos finales \(z\) y \(v\); y \(v\) y \(w,\)
-            respectivamente, tal que</p>
-          \[
-          \begin{array}{ccc}
-          \ell_h(\gamma)-\rho(z,v)\leq \dfrac{\varepsilon}{2} &amp; \text{ y }&amp; \ell_h(\sigma) -\rho (v,w)\leq
-          \dfrac{\varepsilon}{2},\\
-          &amp; &amp;\\
-          \ell_h(\gamma)\leq \rho(z,v)+\dfrac{\varepsilon}{2} &amp;\text{ y } &amp;\ell_h(\sigma) \leq \rho
-          (v,w)+\dfrac{\varepsilon}{2}.
-          \end{array}
-          \]
-          <p>Tomemos la curva <span class="purple-text">suma</span> \(\gamma+\sigma:[a,b+d-c]\to
-            \mathbb{H},\) definida mediante</p>
-          \[
-          (\gamma+\sigma)(t)=
-          \begin{cases}
-          \gamma(t), &amp; \text{si } a\leq t\leq b,\\
-          \sigma(c-d+t),&amp; \text{si } b\leq t\leq b+d-c,
-          \end{cases}
-          \]
-          <p>la cual es derivable a trozos y tiene puntos finales \(z\) y \(w.\) De la definición de la
-            función \(\rho\) se sigue que</p>
-          \[
-          \rho(z,w)\leq \ell_{h}(\gamma +\sigma)=\ell_h(\gamma)+\ell_h(\sigma)\leq
-          \rho(z,v)+\rho(v,w)+\varepsilon.
-          \]
-          <p>Como la anterior ecuación es válida para cualquier \(\varepsilon&gt;0,\)
-            entonces se sigue que</p>
-          \[
-          \rho(z,w)\leq \rho(z,v)+\rho(v,w).
-          \]
+            <p><span class="blue-txt"><strong>Desigualdad triangular.</strong></span> Consideremos los
+              complejos \(z,w,v\in\mathbb{H}\) y veamos que se satisface la desigualdad</p>
+            \[
+            \rho(z,w)\leq \rho(z,v)+\rho(v,w).
+            \]
+            <p>De la definición de ínfimo se sigue el siguiente hecho: dado cualquier real positivo
+              \(\varepsilon&gt;0,\) existen las curvas derivables a trozos \(\gamma:[a,b]\to \mathbb{H}\) y
+              \(\sigma:[c,d] \to\mathbb{H},\) con puntos finales \(z\) y \(v\); y \(v\) y \(w,\)
+              respectivamente, tal que</p>
+            \[
+            \begin{array}{ccc}
+            \ell_h(\gamma)-\rho(z,v)\leq \dfrac{\varepsilon}{2} &amp; \text{ y }&amp; \ell_h(\sigma) -\rho (v,w)\leq
+            \dfrac{\varepsilon}{2},\\
+            &amp; &amp;\\
+            \ell_h(\gamma)\leq \rho(z,v)+\dfrac{\varepsilon}{2} &amp;\text{ y } &amp;\ell_h(\sigma) \leq \rho
+            (v,w)+\dfrac{\varepsilon}{2}.
+            \end{array}
+            \]
+            <p>Tomemos la curva <span class="purple-text">suma</span> \(\gamma+\sigma:[a,b+d-c]\to
+              \mathbb{H},\) definida mediante</p>
+            \[
+            (\gamma+\sigma)(t)=
+            \begin{cases}
+            \gamma(t), &amp; \text{si } a\leq t\leq b,\\
+            \sigma(c-d+t),&amp; \text{si } b\leq t\leq b+d-c,
+            \end{cases}
+            \]
+            <p>la cual es derivable a trozos y tiene puntos finales \(z\) y \(w.\) De la definición de la
+              función \(\rho\) se sigue que</p>
+            \[
+            \rho(z,w)\leq \ell_{h}(\gamma +\sigma)=\ell_h(\gamma)+\ell_h(\sigma)\leq
+            \rho(z,v)+\rho(v,w)+\varepsilon.
+            \]
+            <p>Como la anterior ecuación es válida para cualquier \(\varepsilon&gt;0,\)
+              entonces se sigue que</p>
+            \[
+            \rho(z,w)\leq \rho(z,v)+\rho(v,w).
+            \]
         </div>
 
         <p>La función distancia \(\rho\) induce una topología para el plano
@@ -987,7 +993,7 @@
           \(\mathbb{H}.\)</p>
 
         <div class="theorem">
-          &gt;El grupo \(\operatorname{PSL}(2,\mathbb{R})\) actúa sobre el plano hiperbólico \(\mathbb{H}\) mediante
+          El grupo \(\operatorname{PSL}(2,\mathbb{R})\) actúa sobre el plano hiperbólico \(\mathbb{H}\) mediante
           homeomorfismos <em>i.e.</em>, todo elemento \(T\in \operatorname{PSL}(2,\mathbb{R})\) es un homeomorfismo de
           \(\mathbb{H}\) en sí mismo.
         </div>
@@ -1601,12 +1607,12 @@
           Probaremos los incisos <strong>(1)</strong> y <strong>(4)</strong>, el lector probará los dos restantes.
 
           <p>Tomemos los complejos \(z\) y \(w\) sobre el plano hiperbólico \(\mathbb{H}.\) Las pruebas de cada fórmula
-          siguen la siguiente estrategia. Primero, verificamos cada una de las igualdades para el caso (particular)
-          \(z=i\) y \(w=it,\) siendo \(t\gt 0.\) Luego, suponemos el caso (general) en que los complejos \(z\) y \(w\)
-          son arbitrarios, entonces usamos resultados previos para garantizar la existencia de una transformación de
-          Möbius \(T\in\operatorname{PSL}(2,\mathbb{R})\) tal que \(T(z)=i\) y \(T(w)=it,\) para algún \(t\gt 0.\)
-          Así, la fórmula es escrita para complejos del caso particular. Como \(T\) es una isometría del plano
-          hiperbólico \(\mathbb{H},\) entonces cada fórmula debe ser válida para el caso general.</p>
+            siguen la siguiente estrategia. Primero, verificamos cada una de las igualdades para el caso (particular)
+            \(z=i\) y \(w=it,\) siendo \(t\gt 0.\) Luego, suponemos el caso (general) en que los complejos \(z\) y \(w\)
+            son arbitrarios, entonces usamos resultados previos para garantizar la existencia de una transformación de
+            Möbius \(T\in\operatorname{PSL}(2,\mathbb{R})\) tal que \(T(z)=i\) y \(T(w)=it,\) para algún \(t\gt 0.\)
+            Así, la fórmula es escrita para complejos del caso particular. Como \(T\) es una isometría del plano
+            hiperbólico \(\mathbb{H},\) entonces cada fórmula debe ser válida para el caso general.</p>
 
           <p><span class="blue-txt"><strong>Inciso (1).</strong></span> <span class="purple-txt">Caso particular.</span>
             Si \(z=i\) y \(w=it\) tal que \(t\gt 1.\) Usando resultados previos y computando, tenemos que</p>
@@ -1725,9 +1731,9 @@
 
         <div class="theorem" id="t:grupo_isometrias_completo_plano_hiperbolico">
           El grupo \(\operatorname{Isom}(\mathbb{H})\) está generado por los elementos de
-            \(\operatorname{PSL}(2,\mathbb{R})\) y la reflexión con respecto al eje imaginario
-            \(R_{\operatorname{Im}}(z)= -\overline{z}.\) En otras palabras, cualquier isometría del plano hiperbólico es
-            un elemento de \(\operatorname{PSL}(2,\mathbb{R})\) o es de la forma
+          \(\operatorname{PSL}(2,\mathbb{R})\) y la reflexión con respecto al eje imaginario
+          \(R_{\operatorname{Im}}(z)= -\overline{z}.\) En otras palabras, cualquier isometría del plano hiperbólico es
+          un elemento de \(\operatorname{PSL}(2,\mathbb{R})\) o es de la forma
           \[
           \phi(z)=\dfrac{a(-\overline{z})+b}{c(-\overline{z})+d},
           \]
