@@ -155,7 +155,11 @@
 
         <p>
           El quinto postulado de Euclides llama la atención, pues a simple vista no parece intuitivo a la intuición
-          geométrica; así que durante el siglo XIX se trató de demostrarlo a partir de los cuatro restantes.
+          geométrica; así que durante el siglo XIX se trató de demostrarlo a partir de los cuatro 
+          restantes<label for="sn-1" class="sidenote-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="sidenote-toggle"><span class="sidenote left">Si el lector está interesado en conocer el 
+            desarrollo histórico de las geometrías no euclidianas 
+            le sugerimos consultar 
+            <a href="bibliografia.html#Santalo">Santaló, 1976</a>.</span>.
           No hubo éxito, sin embargo, aparecieron afirmaciones equivalentes al postulado V. Enunciaremos algunas de
           ellas.
         </p>
@@ -639,9 +643,7 @@
           </ul>
         </div>
 
-        <p><em>Nota:</em> Las figuras y referencias a ellas han sido omitidas según lo solicitado.</p>
-
-
+       
         <div style="color: rgba(255, 255, 255, 0);" id="longitud-curva-distancia-hiperbolica">
           <p>Longitud de curva y distancia hiperbólica</p>
         </div>
@@ -814,9 +816,10 @@
               inducida por \(\mathbb{C},\) entonces existe un real \(\varepsilon&gt;0\) tal que la cerradura de la
               bola euclidiana \(B_{\varepsilon}(z)\) está contenida en \(\mathbb{H}\) y no contiene al punto
               \(w.\) La función \(f:\overline{B_{\varepsilon}(z)}\to \mathbb{R},\) definida mediante</p>
-            \[
+            \begin{equation}\label{eq:propiedad_simetria_funcion_distancia_hiperbolica}
             f(z)=\frac{1}{\operatorname{Im}(z)},
-            \]
+            \end{equation}
+
             <p>es continua. Dado que \(f\) es una función continua definida desde un subespacio compacto de
               \(\mathbb{H},\) entonces existe un valor real positivo no nulo \(m\) tal que</p>
             \[
@@ -886,14 +889,14 @@
             \end{aligned}
             \]
             <p>De esta última igualdad se sigue</p>
-            \[
+            \begin{equation}\label{eq:sigma1}
             \rho(w,z)\leq \inf_{\gamma}\left\{\ell_h(-\gamma)\right\}=\rho(z,w).
-            \]
+            \end{equation}
             <p>Análogamente, si \(\sigma\) es una curva derivable a trozos en \(\mathbb{H}\) con puntos
               finales \(w\) y \(z,\) entonces</p>
-            \[
+            \begin{equation}\label{eq:sigma2}
             \rho(z,w)\leq \inf_{\sigma}\{\ell_h(-\sigma)\}=\rho(w,z).
-            \]
+            \end{equation}
             <p>De las ecuaciones anteriores se sigue que \(\rho(z,w)=\rho(w,z).\)</p>
 
             <p><span class="blue-txt"><strong>Desigualdad triangular.</strong></span> Consideremos los
@@ -905,15 +908,15 @@
               \(\varepsilon&gt;0,\) existen las curvas derivables a trozos \(\gamma:[a,b]\to \mathbb{H}\) y
               \(\sigma:[c,d] \to\mathbb{H},\) con puntos finales \(z\) y \(v\); y \(v\) y \(w,\)
               respectivamente, tal que</p>
-            \[
+            \begin{equation}\label{eq:desigualdad_triangular}
             \begin{array}{ccc}
             \ell_h(\gamma)-\rho(z,v)\leq \dfrac{\varepsilon}{2} &amp; \text{ y }&amp; \ell_h(\sigma) -\rho (v,w)\leq
             \dfrac{\varepsilon}{2},\\
-            &amp; &amp;\\
+            &amp;&amp;\\
             \ell_h(\gamma)\leq \rho(z,v)+\dfrac{\varepsilon}{2} &amp;\text{ y } &amp;\ell_h(\sigma) \leq \rho
-            (v,w)+\dfrac{\varepsilon}{2}.
+            (v,w)+\dfrac{\varepsilon}{2}.\\
             \end{array}
-            \]
+            \end{equation}
             <p>Tomemos la curva <span class="purple-text">suma</span> \(\gamma+\sigma:[a,b+d-c]\to
               \mathbb{H},\) definida mediante</p>
             \[
@@ -1005,28 +1008,30 @@
           \]
           <p>Basta verificar que \(T(\mathbb{H})=\mathbb{H},\) es decir, \(\operatorname{Im}(T(z))&gt;0,\) para
             \(z\in\mathbb{H}.\) De las propiedades de los números complejos se sigue que</p>
-          \[
-          \begin{aligned}
-          T(z)&amp;=\dfrac{(az+b)(c\overline{z}+d)}{(cz+d)(c\overline{z}+d)}=\dfrac{ac
-          z\overline{z}+bc\overline{z}+adz+bd}{|cz+d|^2},\\
+          \begin{equation}\label{eq:T(z)_mobiuos_sobre_plano_hiperbolico}
+          \begin{split}
+          T(z)&amp;=\dfrac{(az+b)(c\overline{z}+d)}{(cz+d)(c\overline{z}+d)}=\dfrac{acz\overline{z}+bc\overline{z}+adz+bd}{|cz+d|^2},\\
           &amp;=\dfrac{ac|z|^2+bc\overline{z}+adz+bd}{|cz+d|^2}.
-          \end{aligned}
-          \]
+          \end{split}
+          \end{equation}
           <p>La parte imaginaria del complejo \(w\in\mathbb{C}\) satisface</p>
           \[
           \operatorname{Im}(w)=\dfrac{w-\overline{w}}{2i}.
           \]
           <p>Sustituyendo la expresión anterior en esta igualdad obtenemos</p>
-          \[
-          \begin{aligned}
+          $$
+          \begin{equation*}
+          \begin{split}
           \operatorname{Im}\left(T(z)\right)&amp; =\frac{T(z)-\overline{T(z)}}{2i},\\
           &amp;=\dfrac{\dfrac{ac|z|^2+bc\overline{z}+adz+bd}{|cz+d|^2}-\dfrac{ac|z|^2+bcz+ad\overline{z}+bd}{|cz+d|^2}}{2i},\\
-          &amp;=\dfrac{ac|z|^2+bc\overline{z}+adz+bd - ac|z|^2 - bcz - ad\overline{z} - bd}{2i|cz+d|^2},\\
-          &amp;=\dfrac{adz - bcz + bc\overline{z} -
-          ad\overline{z}}{2i|cz+d|^2}=\dfrac{z(ad-bc)-\overline{z}(ad-bc)}{2i|cz+d|^2},\\
-          &amp;=\dfrac{z-\overline{z}}{2i|cz+d|^2}= \dfrac{\operatorname{Im}(z)}{|cz+d|^2}&gt;0.
-          \end{aligned}
-          \]
+          &amp;=\dfrac{\cancel{ac|z|^2}+bc\overline{z}+adz+\cancel{bd}
+          \cancel{-ac|z|^2}-bcz-ad\overline{z}\cancel{-bd}}{2i|cz+d|^2},\\
+          &amp;=\dfrac{adz-bcz
+          +bc\overline{z}-ad\overline{z}}{2i|cz+d|^2}=\dfrac{z(\cancelto{1}{ad-bc})-\overline{z}(\cancelto{1}{ad-bc})}{2i|cz+d|^2},\\
+          &amp;=\dfrac{z-\overline{z}}{2i|cz+d|^2}= \dfrac{\operatorname{Im}(z)}{|cz+d|^2}&gt;0.\\
+          \end{split}
+          \end{equation*}
+          $$
         </div>
 
         <p>El lector puede verificar fácilmente que la reflexión con respecto al eje imaginario</p>
@@ -1050,11 +1055,12 @@
           \[
           \ell_{h}(\gamma)=\ell_{h}(T\circ\gamma).
           \]
-          <p>Usando la Definición \ref{def:longitud_hiperbolica}, la longitud hiperbólica de la curva \(T\circ\gamma\)
+          <p>Usando la <a href="#def:longitud_hiperbolica">Definición 5</a>, la longitud hiperbólica de la curva
+            \(T\circ\gamma\)
             es</p>
-          \[
-          \ell_{h}(T\circ\gamma)=\int_{a}^{b} \left\Vert \dfrac{d}{dt}T(\gamma(t)) \right\Vert_{h}dt. \tag{1}
-          \]
+          \begin{equation}\label{eq:tgamma}
+          \ell_{h}(T\circ\gamma)=\int\limits_{a}^{b} \left\Vert \dfrac{d}{dt}T(\gamma(t)) \right\Vert_{h}dt.
+          \end{equation}
           <p>Por otro lado, tenemos que la derivada compleja de la transformación de Möbius \(T\) es</p>
           \[
           \begin{aligned}
@@ -1172,9 +1178,9 @@
         <div class="definition" id="def:lineas_hiperbolicas_plano_hiperbolico">
           Llamaremos <span class="red-txt"><strong>línea hiperbólica</strong></span> a las semirrectas euclidianas en
           el plano hiperbólico \(\mathbb{H}\) ortogonales (perpendiculares) al eje real y, a las
-          semicircunferencias<sup>1</sup> en el plano hiperbólico con radio \(r&gt;0\) y centro algún punto sobre el eje
+          semicircunferencias<sup>*</sup> en el plano hiperbólico con radio \(r&gt;0\) y centro algún punto sobre el eje
           real.
-          <p class="footnote"><sup>1</sup> A estos objetos también se les conoce como circunferencias ortogonales al eje
+          <p class="footnote"><sup>*</sup> A estos objetos también se les conoce como circunferencias ortogonales al eje
             real.</p>
         </div>
 
@@ -1195,8 +1201,7 @@
             hiperbólicas</span> sobre el plano hiperbólico \(\mathbb{H}\) son las homólogas a las <span class="blue-txt">líneas euclidianas</span> sobre el plano (complejo \(\mathbb{C}\)) euclidiano.
         </p>
 
-        <p><em>Nota:</em> Las figuras y referencias a ellas han sido omitidas según lo solicitado.</p>
-
+        
 
 
 
@@ -1270,8 +1275,7 @@
           </figcaption>
         </figure>
 
-        <p><em>Nota:</em> Las figuras y referencias a ellas han sido omitidas según lo solicitado.</p>
-
+      
 
       </div>
 
@@ -1332,9 +1336,9 @@
 
           <li><strong>(4)</strong> Usando un resultado de transformaciones de Möbius podemos obtener la transformación
             de Möbius \(T\in \operatorname{PSL}(2,\mathbb{R})\) dada por
-            \[
+            \begin{equation}\label{ej:imaginario_circulo}
             T(z)=\dfrac{z-1}{z+1},
-            \]
+            \end{equation}
             la cual envía el eje imaginario sobre la línea hiperbólica (semicircunferencia con centro \(\mathbf{0}\) y
             radio \(1\))
             \[
@@ -1409,19 +1413,19 @@
           <p>están sobre el eje imaginario (positivo). Podemos suponer sin pérdida de generalidad que \(T(z)=ai\) y
             \(T(w)=bi,\) para algunos reales positivos \(0\lt a\lt b.\) Dado que los elementos de
             \(\operatorname{PSL}(2,\mathbb{R})\) son isometrías de \(\mathbb{H},\) entonces</p>
-          \[
-          \rho(z,w)=\rho(T(z),T(w)). \tag{1}
-          \]
+          \begin{equation}\label{eq:caso2}
+          \rho(z,w)=\rho(T(z),T(w)).
+          \end{equation}
           <p>Del <span class="blue-txt">Caso 1</span>, se sigue que la curva \(\gamma\) con extremos \(T(z)\) y
             \(T(w)\) es una <span class="purple-text">geodésica</span>, es decir, \(\gamma\) realiza la distancia
             hiperbólica entre dichos puntos</p>
-          \[
-          \rho(T(z),T(w))=\ell_h(\gamma). \tag{2}
-          \]
+          \begin{equation}\label{eq:caso3}
+          \rho(T(z),T(w))=\ell_h(\gamma).
+          \end{equation}
           <p>Dado que la transformación de Möbius \(T\) preserva la norma hiperbólica, entonces</p>
-          \[
-          \ell_h(\gamma)=\ell_h(T^{-1}\circ \gamma). \tag{3}
-          \]
+          \begin{equation}\label{eq:caso4}
+          \ell_h(\gamma)=\ell_h(T^{-1}\circ \gamma).
+          \end{equation}
           <p>Ahora, comparando las ecuaciones (1), (2) y (3) obtenemos</p>
           \[
           \rho(z,w)=\ell_h(T^{-1}\circ \gamma).
@@ -1436,9 +1440,9 @@
           \(\mathbb{H},\) existe una única geodésica que realiza la distancia hiperbólica entre \(z\) y \(w.\) Para este
           caso diremos que el plano hiperbólico es <span class="purple-text">geodésicamente completo</span>.
           Adicionalmente, denotaremos mediante</p>
-        \[
+        \begin{equation}\label{eq:notacion_geodesicas_hiperbolica}
         [z,w]
-        \]
+        \end{equation}
         <p>a la única geodésica con extremos \(z\) y \(w.\)</p>
 
         <div class="theorem" id="t:punto_entre_z_w">
@@ -1450,21 +1454,21 @@
           <span class="blue-txt"><strong>Condición suficiente.</strong></span> Procederemos por contradicción.
           Asumamos que \(v\notin [z,w].\) Entonces las longitudes hiperbólicas de las geodésicas \([z,v]\) y \([v,w]\)
           satisfacen la desigualdad:
-          \[
-          \begin{aligned}
-          \rho(z,w)=\ell_{h}([z,w])&amp;\lt \ell_{h}([z,v])+\ell_{h}([v,w]),\\ &amp;\lt \rho(z,v)+\rho(v,w). \end{aligned} \]
-          <p>
+          \begin{equation}
+          \begin{split}
+          \rho(z,w)=\ell_{h}([z,w])&amp;\lt \ell_{h}([z,v])+\ell_{h}([v,w]),\\ &amp;\lt \rho(z,v)+\rho(v,w).\\ \end{split}
+          \end{equation} <p>
             <span class="blue-txt"><strong>Condición necesaria.</strong></span>
             Supongamos que \(v\in[z,w],\) usando las
             propiedades de la integral se sigue que
           </p>
-          \[
-          \begin{aligned}
-          \rho(z,w)&amp;=\ell_{h}([z,w]),\\
-          &amp;=\ell_{h}([z,v])+\ell_{h}([v,w]),\\
-          &amp;=\rho(z,v)+\rho(v,w).
-          \end{aligned}
-          \]
+          \begin{equation}
+          \begin{split}
+          \rho(z,w)=&amp;\ell_{h}([z,w]),\\
+          =&amp;\ell_{h}([z,v])+\ell_{h}([v,w]),\\
+          =&amp;\rho(z,v)+\rho(v,w).\\
+          \end{split}
+          \end{equation}
         </div>
 
         <div class="theorem" id="t:preservando_geodesicas">
@@ -1616,8 +1620,9 @@
 
           <p><span class="blue-txt"><strong>Inciso (1).</strong></span> <span class="purple-txt">Caso particular.</span>
             Si \(z=i\) y \(w=it\) tal que \(t\gt 1.\) Usando resultados previos y computando, tenemos que</p>
-          \[
-          \begin{aligned}
+          $$
+          \begin{equation}
+          \begin{split}
           \cosh\rho(z,w) &amp;= \cosh \rho(i,it) = \cosh (\ln t)=\dfrac{e^{\ln t}+e^{-\ln t}}{2},\\
           &amp;\\
           &amp;=\dfrac{t+\dfrac{1}{t}}{2}=\dfrac{t^2+1}{2t}= \dfrac{t^2-2t+1 +2t}{2t}=\dfrac{(t-1)^2+2t}{2t},\\
@@ -1625,11 +1630,12 @@
           &amp;=\dfrac{(t-1)^2}{2t}+1=\dfrac{|i|^2|1-t|^2}{2t}+1=\dfrac{|i(1-t)|^2}{2t}+1,\\
           &amp;\\
           &amp;=\dfrac{|i-it|^2}{2\,\operatorname{Im}(i)\,\operatorname{Im}(it)}+1=1+\dfrac{|z-w|^2}{2\,\operatorname{Im}(z)\,
-          \operatorname{Im}(w)}.
-          \end{aligned}
-          \]
+          \operatorname{Im}(w)}.\\
+          \end{split}
+          \end{equation}
+          $$
 
-          <p><span class="purple-txt">Caso general.</span> Contrariamente, si los complejos \(z\) y \(w\) son
+          <p><span class="purple-text">Caso general.</span> Contrariamente, si los complejos \(z\) y \(w\) son
             arbitrarios sobre el plano hiperbólico \(\mathbb{H},\) entonces resultados previos nos garantizan la
             existencia de una transformación de Möbius \(T\in\operatorname{PSL}(2,\mathbb{R})\) que envía \(z\) y \(w\)
             en \(i\) y \(it\) (respectivamente) para algún \(t\gt 0.\) Usando el hecho que \(T\) es una isometría del
@@ -1710,11 +1716,11 @@
         \end{aligned}
         \]
 
-        <div class="theorem" id="th:formula_distancia_hiperbolica_entre_dos_puntos">
+        <div class="theorem" id="th:formula_distancia_hiperbolica_entre_dos_puntos" style="overflow-y: hidden;">
           La distancia hiperbólica \(\rho\) entre dos complejos \(z,w\in\mathbb{H}\) está dada por
-          \[
+          \begin{equation}
           \rho(z,w)=\ln\left(\dfrac{|z-\overline{w}|+|z-w|}{|z-\overline{w}|-|z-w|}\right).
-          \]
+          \end{equation}
         </div>
 
 
@@ -1764,16 +1770,16 @@
           M(z)=\dfrac{-1}{z},
           \]
           <p>tal que la composición</p>
-          \[
+          \begin{equation}\label{eq:notacion_composicion_adecuada_isom_hiper}
           T:=M\circ H
-          \]
+          \end{equation}
           <p>fije al complejo \(i\) y envíe los rayos \((i,\infty)\) y \((\mathbf{0},i)\) sobre ellos mismos y así,
             concluir que \(T\circ \phi\) fija cada punto del eje imaginario \(\operatorname{Im}.\)</p>
 
           <p>Tomemos el complejo \(z=x+iy\in\mathbb{H}\) y denotemos al complejo \(T\circ \phi (z)\) mediante</p>
-          \[
-          T\circ \phi (z)=u+iv\in\mathbb{H}. \tag{1}
-          \]
+          \begin{equation}\label{eq:regla_asignacion_mobius_isometria_adecuada}
+          T\circ \phi (z)=u+iv\in\mathbb{H}.
+          \end{equation}
 
           <p>Como la composición \(T\circ \phi\) es una isometría, entonces para cada \(t\gt 0\) tenemos que</p>
           \[
@@ -1788,9 +1794,9 @@
           \]
 
           <p>Calculando normas y tomando la parte imaginaria obtenemos</p>
-          \[
-          \dfrac{x^{2}+(t-y)^{2}}{2ty}=\dfrac{u^2+(t-v)^{2}}{2tv}. \tag{2}
-          \]
+          \begin{equation}\label{eq:hacer_tender_t_infinito}
+          \dfrac{x^{2}+(t-y)^{2}}{2ty}=\dfrac{u^2+(t-v)^{2}}{2tv}.
+          \end{equation}
 
           <p>Equivalentemente,</p>
           \[
@@ -1857,9 +1863,10 @@
         <p>Del curso básico de Topología, sabemos que el
           conjunto de todas las bolas
         </p>
-        \[
+        \begin{equation}
         \mathcal{B}=\left\{B_{d}(z,r): \text{ para cada } z\in \mathbb{H} \text{ y cada } r&gt; 0\right\},
-        \]
+        \end{equation}
+
         <p>es base para la topología \(\tau_{\rho}\) para \(\mathbb{H}\) inducida por la función distancia \(\rho.\)
         </p>
 
@@ -1875,7 +1882,7 @@
         <p>es el conjunto de los puntos sobre el plano hiperbólico \(\mathbb{H}\) que equidistan \(r&gt;0\) a otro punto
           \(z_{0}\in\mathbb{H}\) llamado <span class="purple-text">centro</span>.</p>
 
-        <div class="theorem" id="t:bolas">
+        <div class="theorem" id="teorema-bolas">
           El conjunto de los puntos \(z = x + iy\) en \(\mathbb{H},\) que equidistan hiperbólicamente una distancia
           \(r&gt;0\) de un punto \(z_0 = x_0 + i y_0\in\mathbb{H},\) están determinados por la siguiente ecuación
           \[
@@ -1883,12 +1890,13 @@
           \]
           es decir, la circunferencia hiperbólica \(C_{h}(z_{0},r)\) con centro \(z_{0}\) y radio \(r\) es la
           circunferencia euclidiana con centro \(x_{0}+iy_{0}\cosh r\) y radio \(y_{0}\sinh r\)<p></p>
-          \[
-          \begin{aligned}
+          \begin{equation}\label{eq:bola_hiperbolica_igual_bola_euclidiana}
+          \begin{split}
           C_{h}(z_{0},r)&amp;=\{z=x+iy\in\mathbb{H}:\rho(z,z_{0})=r\},\\
-          &amp;=\left\{z=x+iy\in\mathbb{H}: (x-x_0)^2 + (y- y_0 \cosh r)^2 = y^2_0 \sinh^2 r\right\}.
-          \end{aligned}
-          \]
+          &amp;=\left\{z=x+iy\in\mathbb{H}: (x-x_0)^2 + (y- y_0 cosh r)^2 = y^2_0senh^2
+          r\right\}.
+          \end{split}
+          \end{equation}
         </div>
 
         <div class="proof">
@@ -1930,17 +1938,19 @@
             \(C_{h}(z_{0},r).\)</p>
         </div>
 
-        <p>El Teorema \ref{t:bolas} nos implica que la bola <span class="purple-text">hiperbólica</span> \(B_{h}(z,r)\)
+        <p>El <a href="#teorema-bolas">Teorema 14</a> nos implica que la bola <span class="purple-text">hiperbólica</span>
+          \(B_{h}(z,r)\)
           con centro \(z\in \mathbb{H}\) y radio \(r&gt;0,\)</p>
         \[
-        B_{h}(z,r)=\left\{x+iy\in\mathbb{H}: (x-x_0)^2 + (y- y_0 \cosh r)^2 &lt; y^2_0 \sinh^2 r\right\}, \] <p>el cual
+        B_{h}(z,r)=\left\{x+iy\in\mathbb{H}: (x-x_0)^2 + (y- y_0 \cosh r)^2 \lt y^2_0 \sinh^2 r\right\},
+        \] <p>el cual
           coincide con la bola euclidiana con centro \((x_0,y_0\cosh r)\) y radio \(y_{0}^2\sinh^2 r.\) Más
           precisamente,</p>
 
-          <div class="corollary">
-            La topología en \(\mathbb{H}\) inducida por la métrica hiperbólica \(\rho\) es equivalente a la
-            topología del subespacio de \(\mathbb{H}\subset \mathbb{C}.\)
-          </div>
+        <div class="corollary">
+          La topología en \(\mathbb{H}\) inducida por la métrica hiperbólica \(\rho\) es equivalente a la
+          topología del subespacio de \(\mathbb{H}\subset \mathbb{C}.\)
+        </div>
 
 
       </div>
