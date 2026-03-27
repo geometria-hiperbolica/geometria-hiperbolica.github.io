@@ -108,13 +108,13 @@
     <article>
 
       <div id="section1">
-       
+
         <div class="head-4">Disco de Poincaré</div>
 
         <p>
           Exploraremos el <span class="purple-text">disco de Poincaré</span>
           \(\Delta,\) que consiste del disco unitario
-          (véase Figura \ref{dib:disco_unitario})
+          (véase Figura 1)
           \[
           {\rm D}=\{z\in\mathbb{C}: |z|\lt 1\}. \] dotado de
           cierta métrica Riemanniana \(\mu_{\Delta}.\) En este espacio
@@ -122,6 +122,13 @@
           hiperbólico \(\mathbb{H},\) también se cumple la negación del
           <span class="blue-text">Postulado V</span> de Euclides.
         </p>
+
+        <figure>
+          <img alt="Disco unitario." style="width: 50%;" loading="lazy" src="imgs/cap-04/disco-unitario.png">
+          <figcaption>
+            Disco unitario.
+          </figcaption>
+        </figure>
 
         <p>
           No obstante, el disco de Poincaré \(\Delta\)
@@ -360,8 +367,15 @@
             \]
             como \(\psi\) es un mapeo continuo y, las funciones continuas envían conexos en conexos, entonces
             \(\psi\) debe de enviar el semi plano superior \(U\) sobre el disco de unitario \(\Delta\) (véase Figura
-            \ref{fig:transformacion_Cayley}).</li>
+            2).</li>
         </ul>
+
+        <figure>
+          <img alt="Geometría transformación de Cayley" style="width: 100%;" loading="lazy" src="imgs/cap-04/geometria-transformacion-cayley.png">
+          <figcaption>
+            Geometría transformación de Cayley.
+          </figcaption>
+        </figure>
 
         <div class="theorem">
           La función de Cayley \(\psi\) es una isometría.
@@ -448,15 +462,29 @@
         <ul>
           <li><strong>(1)</strong> Es una función holomorfa, por lo tanto preserva ángulos.</li>
           <li><strong>(2)</strong> La transformación \(\psi\) es una Móbius, por lo tanto actúa sobre el conjunto de
-            circunferencias geranalizadas. Véase Figura \ref{fig:linea_disco_Poincare}</li>
+            circunferencias geranalizadas. Véase Figura 3.</li>
         </ul>
+
+        <figure>
+          <img alt="Líneas del disco de Poincaré" style="width: 100%;" loading="lazy" src="imgs/cap-04/lineas-disco-poincare.png">
+          <figcaption>
+            Líneas del disco de Poincaré.
+          </figcaption>
+        </figure>
 
         <p>
           De las anteriores dos características de posee la transformación \(\psi,\) concluimos que la imagen
           directa bajo la transformación de Cayle \(\psi\) una línea hiperbólica es un trozo de circunferencia
           generalizada tal que dicha circunferencia es ortgonal a la frontera \(\partial \Delta\) del disco de
-          Poincaré \(\Delta.\) Véase Figura \ref{fig:linea_disco_Poincare_II}
+          Poincaré \(\Delta.\) Véase Figura 4.
         </p>
+
+        <figure>
+          <img alt=" Líneas hiperbólicas del disco de Poincaré" style="width: 50%;" loading="lazy" src="imgs/cap-04/lineas-hyper-disco-poincare.png">
+          <figcaption>
+            Líneas hiperbólicas del disco de Poincaré.
+          </figcaption>
+        </figure>
 
         <div class="theorem">
           Las geodésicas del disco de Poincaré \(\Delta\) corresponden a (trozos) segmentos de líneas del disco de
@@ -591,12 +619,11 @@
           \]
           es una isometría del disco de Poincaré \(\Delta.\) En otras palabras, existe un elemento
           \(\widetilde{T}\in{\rm Isom}(\Delta)\) tal que el siguiente diagrama commuta
-          \begin{equation}\label{ec:elementos_grupos_isom_disco_Poincare}
-          \begin{diagram}
-          \node{\Delta} \arrow{e,t}{\widetilde{T}} \arrow{s,l}{\psi^{-1}} \node{\Delta} \arrow{s,r}{\psi^{-1}}\\
-          \node{\mathbb{H}} \arrow{e,b}{T} \node{\mathbb{H}}
-          \end{diagram}
-          \end{equation}
+        </p>
+        <div style="text-align: center !important;">
+          <img alt="Diagrama 1" style="width: 25%;" loading="lazy" src="imgs/cap-04/diagrama-01.png">
+        </div>
+        <p>
           es decir, \(\psi^{-1}\circ \widetilde{T}=T\circ \psi^{-1}.\) Conversamente, si \(g:\Delta\to\Delta\) es
           una isometría, entonces la composición
           \[
@@ -604,12 +631,11 @@
           \]
           es una isometría del plano hiperbólico. En otras palabras, existe un elemento \(\widetilde{g}\in{\rm
           Isom}(\mathbb{H})\) tal que el siguiente diagrama commuta
-          \begin{equation}
-          \begin{diagram}
-          \node{\mathbb{H}} \arrow{s,l}{\psi} \arrow{e,t}{\widetilde{g}} \node{\mathbb{H}} \arrow{s,r}{\psi}\\
-          \node{\Delta} \arrow{e,b}{g} \node{\Delta}
-          \end{diagram}
-          \end{equation}
+        </p>
+        <div style="text-align: center;">
+          <img alt="Diagrama 2" style="width: 25%;" loading="lazy" src="imgs/cap-04/diagrama-02.png">
+        </div>
+        <p>
           es decir, \(\psi\circ \widetilde{g}=g\circ \psi.\) Consecuentemente, concluimos que el grupo de isometrías
           del disco de Poincaré es conjugado al grupo de isometrías del plano hiperbólico. Más precisamente,
           \[
@@ -890,9 +916,15 @@
           Dado el complejo \(z\in\mathbb{C}\) y el paralelogramos \(P\) sobre \(T_{z}\mathbb{H}\) formado por los
           vectores \(v,w\in T_{z}\mathbb{H}.\) Entonces para cualquier \(T\in {\rm PSL}(2,\mathbb{R}),\) el área
           hiperbólica de \(P\) coincide con el área hiperbólica del paralelogramo \(P'\) sobre \(T_{T(z)}\mathbb{H},\)
-          el cual está formado por los vectores \(T'(z)\cdot v\) y \(T'(z)\cdot w\) (véase Figura
-          \ref{fig:Area_hiperbolica_invariante}).
+          el cual está formado por los vectores \(T'(z)\cdot v\) y \(T'(z)\cdot w\) (véase Figura 5).
         </div>
+
+        <figure>
+          <img alt="Área hiperbólica invariante" style="width: 100%;" loading="lazy" src="imgs/cap-04/area-hyper-invariante.png">
+          <figcaption>
+            Área hiperbólica invariante.
+          </figcaption>
+        </figure>
 
         <div class="proof">
           Dada la transformación de Möbius \(T\in{\rm PSL}(2,\mathbb{R})\) tal que
@@ -909,9 +941,20 @@
           {\rm Im}(T(z))\right)^{2}}.
           \end{align*}
           Dado que la parte imaginaria de \(T\) y su respectiva derivada compleja están dadas por
-          Equation-----
+          $$
+          \operatorname{Im}(T(z))=\dfrac{\operatorname{Im}(z)}{|cz+d|^2}\quad \text{ y }\quad
+          T'(z)=\dfrac{1}{(cz+d)^{2}},
+          $$
           entonces el área hiperbólica del paralelogramo \(P'\) es
-          Equation------
+          $$
+          \begin{align*}
+          A_{h}(P')&amp;=\dfrac{\dfrac{1}{|cz+d|^{2}}\, \dfrac{1}{|cz+d|^{2}}\, |v|\,
+          |w|}{\left(\dfrac{\operatorname{Im}(z)}{|cz+d|^2}\right)^{2}}=\dfrac{|v|\,
+          |w|}{\left(\operatorname{Im}(z)\right)^{2}},\\
+          &amp;\\
+          &amp;=A_{h}(P).
+          \end{align*}
+          $$
         </div>
 
         <p>
@@ -982,7 +1025,17 @@
           T(w=x+iy)= \frac{1}{\left({\rm Im}(w)\right)^{2}}=\frac{1}{y^{2}}.
           \]
           Entonces del Teorema de Cambio de Variables para integrales se sigue que
-          Equation-----
+          $$
+          \begin{align*}
+          A_h(T(K))&amp;=\int_{T(K)}\frac{dxdy}{y^2}=\int_{K}
+          \frac{1}{\left(\operatorname{Im}(T(z))\right)^{2}}\frac{1}{|cz+d|^4}dudv,\\
+          &amp;\\
+          &amp; =\int_{K}\frac{1}{\left(\dfrac{\operatorname{Im}(z)}{|cz+d|^2}\right)^{2}}\frac{1}{|cz+d|^4}dudv=\int_K
+          \frac{1}{v^2}dudv,\\
+          &amp;\\
+          &amp;=A_h(K).
+          \end{align*}
+          $$
         </div>
 
         <h3>Teorema de Gauss-Bonnet</h3>
@@ -1003,23 +1056,47 @@
           Tomemos las parametrizaciones \(\gamma_{1},\gamma_{2}:[a,b]\to \mathbb{H}\) de dos líneas hiperbólicas que se
           intersectan en el punto \(z\in\mathbb{H},\) es decir, existe un valor real \(t\in[a,b]\) tal que
           \(\gamma_{1}(t)=\gamma_{2}(t)=z.\) Los vectores tangentes \(\gamma_{1}'(t)\) y \(\gamma_{2}'(t)\) en el
-          espacio tangente \(T_z\mathbb{H}\) definen un ángulo (véase Figura \ref{dib:angulo_curvas}), el cual
+          espacio tangente \(T_z\mathbb{H}\) definen un ángulo (véase Figura 6), el cual
           llamaremos el
-          <div class="center">
-            <span class="red-txt"><strong>ángulo de las líneas hiperbólicas \(\gamma_{1}\) y \(\gamma_{2}\) en el punto
-                \(z\)</strong></span>.
-          </div>
+          <span class="red-txt"><strong>ángulo de las líneas hiperbólicas \(\gamma_{1}\) y \(\gamma_{2}\) en el punto
+              \(z\)</strong></span>.
 
-          La medida del ángulo formado por los vectores \(\gamma'_{1}(t)\) y \(\gamma'_{2}(t)\) es el valor
-          \(\pi-\theta\) donde \(\theta\in [0,\pi]\) tal que
-          Equation-----
         </div>
+
+        <figure>
+          <img alt="Ángulo entre dos líneas hiperbólicas" style="width: 50%;" loading="lazy" src="imgs/cap-04/angulo-dos-lineas-hyper.png">
+          <figcaption>
+            Ángulo entre dos líneas hiperbólicas.
+          </figcaption>
+        </figure>
+
+        La medida del ángulo formado por los
+        vectores \(\gamma'_{1}(t)\) y \(\gamma'_{2}(t)\) es el valor
+        \(\pi-\theta\) donde \(\theta\in [0,\pi]\) tal que
+        $$
+        \begin{align*}
+        \langle \gamma'_{1}(t),\gamma'_{2}(t)\rangle_{h}^{\gamma(t)}&amp;=\Vert \gamma'_{1}\Vert_{h}\, \Vert
+        \gamma'_{2}(t)\Vert_{h}\, \cos\theta,\\
+        &amp;\\
+        \dfrac{\gamma'_{1}\overline{\gamma'_{2}(t)}}{(\operatorname{Im}(\gamma(t)))^{2}}&amp;=\dfrac{|\gamma'_{1}(t)|}{\operatorname{Im}(\gamma(t))}\dfrac{|\gamma'_{2}(t)|}{\operatorname{Im}(\gamma(t))}\cos
+        \theta,\\
+        &amp;\\
+        \langle \gamma'_{1}(t),\gamma'_{2}(t)\rangle_{c}&amp;=|\gamma'_{1}(t)|\, |\gamma'_{2}(t)|\, \cos \theta.
+        \end{align*}
+        $$
 
         <p>
           Al removerle al plano hiperbólico \(\mathbb{H}\) una línea hiperbólica \(C,\) resultan dos subconjuntos
-          conexos disjuntos \(H_{1}\) y \(H_{2}\) (véase Figura \ref{Fig:Semi_espacios_del_plano_hiperbolico}), los
+          conexos disjuntos \(H_{1}\) y \(H_{2}\) (véase Figura 7), los
           cuales son llamados <span class="red-txt"><em>semi espacios del plano hiperbólico \(\mathbb{H}\)</em></span>.
         </p>
+
+        <figure>
+          <img alt="Semi espacios del plano hiperólico" style="width: 80%;" loading="lazy" src="imgs/cap-04/semi-espacios.png">
+          <figcaption>
+            Semi espacios del plano hiperólico.
+          </figcaption>
+        </figure>
 
         <p>
           Diremos que tres puntos distintos \(z_1,\) \(z_2\) y \(z_3\) del plano hiperbólico son <span class="purple-text"><em>colineales</em></span>, si existe una línea hiperbólica que los atraviece.
@@ -1049,8 +1126,16 @@
 
         <p>
           Los triángulos hiperbólicos puede ser que tenga tres, dos, uno o ningún vérrtice sobre el los reales
-          extenditos \(\hat{\mathbb{R}}\) (vease Figura \ref{dib:Triangulos}).
+          extenditos \(\hat{\mathbb{R}}\) (vease Figura 8).
         </p>
+
+
+        <figure>
+          <img alt="Triángulos hiperbólicos" style="width: 80%;" loading="lazy" src="imgs/cap-04/triangulos-hyper.png">
+          <figcaption>
+            Triángulos hiperbólicos.
+          </figcaption>
+        </figure>
 
         <div class="theorem">
           [Gauss-Bonnet] Dado el triángulo hiperbólico \(\triangle(z_{1},z_{2},z_{3})\) cuyos ángulos miden \(\alpha,\)
@@ -1073,8 +1158,16 @@
               en \(\mathbb{H}\) sobre la circunferencia unitaria.</li>
             <li><strong>(2)</strong> Si es necesario usamos la transformación de Möbiuos \(T(z)=\frac{-1}{z}\) tal que
               \(T\) envíe el tercer vértice del triángulo hiperbólico \(\triangle(z_{1},z_{2},z_{3})\) sobre \(\infty\)
-              (véase Figura \ref{dib:gauss_bonnet}).</li>
+              (véase Figura 9).</li>
+
           </ul>
+
+          <figure>
+            <img alt="Triángulo hiperbólico con vértice  infty" style="width: 45%;" loading="lazy" src="imgs/cap-04/triangulo-hyper-vertice-infty.png">
+            <figcaption>
+              Triángulo hiperbólico con vértice $\infty.$
+            </figcaption>
+          </figure>
 
           Recordemos que la transformación de Möbius \(T\in {\rm PSL}(2,\mathbb{R})\) deja invariante el área
           hiperbólica del triángulo hiperbólico \(\triangle(z_{1},z_{2},z_{3})\) (véase Teorema
@@ -1106,47 +1199,56 @@
           <span class="blue-text">Caso <strong>(2)</strong></span> El triángulo hiperbólico \(\triangle\) no tiene
           vértices sobre los reales extendidos \(\hat{\mathbb{R}}.\) Por comodidad denotemos sus vértices mediante
           \(A,\) \(B\) y \(C.\) Trazamos la circunferencia que pasa por los puntos \(A\) y \(C\); y denotamos mediante
-          \(x\) el extremo de dicha circunferencia ortogonal tal que \(x&lt;{\rm Re}(A)\) y \(x&lt;{\rm Re}(C)\) (véase Figura
-            \ref{dib:gauss_bonnet_2}). Del trazo de la circunferencia ortogonal obtenemos los tríangulos hiperbólicos
-            \(\triangle(x,B,C)\) y \(\triangle(x,A,B)\) que tienen en común el vértice \(x,\) el cual se encuentra sobre
-            los reales extendidos \(\hat{\mathbb{R}}.\) Adicionalmente, se tiene la siguiente relación de áreas
-            hiperbólicas \[ A_{h}(\triangle(A,B,C))=A_{h}(\triangle(x,B,C))-A_{h}(\triangle(x,B,A)). \] Como el vértice
-            \(x\) se encuentra sobre los reales extendidos \(\hat{\mathbb{R}},\) del <span class="blue-text">Caso
+          \(x\) el extremo de dicha circunferencia ortogonal tal que \(x\lt {\rm Re}(A)\) y \(x\lt {\rm Re}(C)\) (véase
+          Figura 10).
+
+          <figure>
+            <img alt="Triángulo hiperbólico con vértice sobre H" style="width: 50%;" loading="lazy" src="imgs/cap-04/triangulo-hyper-vertice-sobre-h.png">
+            <figcaption>
+              Triángulo hiperbólico con vértice sobre $\mathbb{H}.$
+            </figcaption>
+          </figure>
+
+          Del trazo de la circunferencia ortogonal obtenemos los tríangulos hiperbólicos
+          \(\triangle(x,B,C)\) y \(\triangle(x,A,B)\) que tienen en común el vértice \(x,\) el cual se encuentra sobre
+          los reales extendidos \(\hat{\mathbb{R}}.\) Adicionalmente, se tiene la siguiente relación de áreas
+          hiperbólicas \[ A_{h}(\triangle(A,B,C))=A_{h}(\triangle(x,B,C))-A_{h}(\triangle(x,B,A)). \] Como el vértice
+          \(x\) se encuentra sobre los reales extendidos \(\hat{\mathbb{R}},\) del <span class="blue-text">Caso
             <strong>(1)</strong></span> se sigue que (en este caso, vamos a usar el símbolo \({\rm m}\) para denotar la
-            medida un ángulo \(\angle\))
-            \begin{equation}\label{ec:gauss_bonnet_caso_2}
-            \begin{split}
-            A_{h}(\triangle(A,B,C))&amp;=A_{h}(\triangle(x,B,C))-A_{h}(\triangle(x,A,B)),\\
-            &amp;\\
-            &amp;=\pi- [{\rm m}(\angle xCB)+{\rm m}(\angle xBC)]-(\pi-[{\rm m}(\angle xAB)+{\rm m}(\angle xBA)]),\\
-            &amp;\\
-            &amp;={\color{blue}-{\rm m}(\angle xBC)+{\rm m}(\angle xBA)}-{\color{red}{\rm m}(\angle
-            xCB)}+{\color{orange}{\rm m}(\angle xAB)}.
-            \end{split}
-            \end{equation}
+          medida un ángulo \(\angle\))
+          \begin{equation}\label{ec:gauss_bonnet_caso_2}
+          \begin{split}
+          A_{h}(\triangle(A,B,C))&amp;=A_{h}(\triangle(x,B,C))-A_{h}(\triangle(x,A,B)),\\
+          &amp;\\
+          &amp;=\pi- [{\rm m}(\angle xCB)+{\rm m}(\angle xBC)]-(\pi-[{\rm m}(\angle xAB)+{\rm m}(\angle xBA)]),\\
+          &amp;\\
+          &amp;={\color{blue}-{\rm m}(\angle xBC)+{\rm m}(\angle xBA)}-{\color{red}{\rm m}(\angle
+          xCB)}+{\color{orange}{\rm m}(\angle xAB)}.
+          \end{split}
+          \end{equation}
 
-            De nuestra construcción se siguen las siguientes relaciones
-            <ul>
-              <li><strong>(1)</strong> \({\rm m}(\angle xCB)={\rm m}(ACB).\)</li>
-              <li><strong>(2)</strong> \({\rm m}(\angle ABC)={\rm m}(\angle xBC)-{\rm m}(\angle xBA).\)</li>
-              <li><strong>(3)</strong> \({\rm m}(\angle xAB)=\pi-{\rm m}(\angle CAB).\)</li>
-            </ul>
-            Sustituimos las anteriores realaciones en la ecuación \eqref{ec:gauss_bonnet_caso_2} y obtebemos:
-            \begin{equation*}
-            \begin{split}
-            A_{h}(\triangle(A,B,C))&amp;=-{\rm m}(\angle ABC)-{\rm m}(\angle ACB)+\pi-{\rm m}(\angle BAC),\\
-            &amp;\\
-            &amp;=\pi-{\rm m}(\angle ABC)-{\rm m}(\angle ACB)-{\rm m}(\angle BAC).
-            \end{split}
-            \end{equation*}
+          De nuestra construcción se siguen las siguientes relaciones
+          <ul>
+            <li><strong>(1)</strong> \({\rm m}(\angle xCB)={\rm m}(ACB).\)</li>
+            <li><strong>(2)</strong> \({\rm m}(\angle ABC)={\rm m}(\angle xBC)-{\rm m}(\angle xBA).\)</li>
+            <li><strong>(3)</strong> \({\rm m}(\angle xAB)=\pi-{\rm m}(\angle CAB).\)</li>
+          </ul>
+          Sustituimos las anteriores realaciones en la ecuación \eqref{ec:gauss_bonnet_caso_2} y obtebemos:
+          \begin{equation*}
+          \begin{split}
+          A_{h}(\triangle(A,B,C))&amp;=-{\rm m}(\angle ABC)-{\rm m}(\angle ACB)+\pi-{\rm m}(\angle BAC),\\
+          &amp;\\
+          &amp;=\pi-{\rm m}(\angle ABC)-{\rm m}(\angle ACB)-{\rm m}(\angle BAC).
+          \end{split}
+          \end{equation*}
 
-            Los casos restantes son consecuencias de los casos anteriores:
+          Los casos restantes son consecuencias de los casos anteriores:
 
-            <span class="blue-text">Caso <strong>(3)</strong></span> Dos de sus vértices se encuentran sobre los reales
-            extendidos.
+          <span class="blue-text">Caso <strong>(3)</strong></span> Dos de sus vértices se encuentran sobre los reales
+          extendidos.
 
-            <span class="blue-text">Caso <strong>(4)</strong></span> Los tres vértices se encuentran sobre los reales
-            extendidos.
+          <span class="blue-text">Caso <strong>(4)</strong></span> Los tres vértices se encuentran sobre los reales
+          extendidos.
         </div>
 
         <div class="example">
@@ -1291,6 +1393,14 @@
           de \({\rm PSL}(2,\mathbb{R})\) que envía el lado de longitud finita del triángulo \(\triangle\) sobre la curva
           \(x^2+y^2=1\) y los vértices de \(\triangle\) son enviados sobre el conjunto \(\{i, x_0+y_0i,\infty\}\) (véase
           Figura \ref{dib:angulo_paralelo}).
+
+          <figure>
+            <img alt="Ángulo de paralelismo" style="width: 45%;" loading="lazy" src="imgs/cap-04/angulo-de-paralelismo.png">
+            <figcaption>
+              Ángulo de paralelismo.
+            </figcaption>
+          </figure>
+
 
           Por construcción tenemos que la siguiente relación trigonométricas
           \begin{equation}\label{eq:caso1_teo_paralelismo}
@@ -1484,6 +1594,7 @@
           \begin{equation}
           \frac{\senh(a)}{\sin(\alpha)}=\frac{\senh(b)}{\sin(\beta)}=\frac{\senh(c)}{\sin(\gamma)}.
           \end{equation}
+          <br>
         </div>
 
 
@@ -1568,7 +1679,8 @@
             \[
             f(w)=\dfrac{1}{\text{Im}(w)},
             \]
-            es continua y diferenciable.</li>
+            es continua y diferenciable.
+          </li>
 
           <li>¿Cuál es el mínimo y máximo de la función \(f\) definida en el Problema anterior?</li>
 
