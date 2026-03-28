@@ -656,7 +656,7 @@
           siguientes relaciones sobre el disco de Poincaré.
         </p>
 
-        <div class="theorem">
+        <div class="theorem" id="t_relaciones_trigonometricas_disco">
           Para cualesquiera dos elementos \(z,w\) sobre el disco de Poincaré \(\Delta\) se satisfacen las siguientes
           igualdades:
           <ul style="list-style-type: none; padding-left: 0;">
@@ -1087,7 +1087,7 @@
           a la transformación \(T.\)
         </div>
 
-        <div class="theorem">
+        <div class="theorem" id="t_invarianza_area_hiberbolica">
           El área hiperbólica es invariante bajo elementos de \({\rm PSL}(2,\mathbb{R}).\) En otras palabras, si el área
           hiperbólica de la región \(K\subset \mathbb{H}\) existe, entonces \(A(K)=A(T(K)),\) para cada \(T\in {\rm
           PSL}(2,\mathbb{R}).\)
@@ -1272,7 +1272,8 @@
 
           <span class="blue-text">Caso <strong>(1)</strong></span> Uno de sus vértices está sobre los reales extendidos
           \(\hat{\mathbb{R}}.\) Entonces la medida de uno de los ángulos del triángulo hiperbólico
-          \(\Delta(z_{1},z_{2},z_{3})\) es \(0\) (véase Ejercicio \ref{ejercio:angulo_cero_triangulo}). Supongamos sin
+          \(\Delta(z_{1},z_{2},z_{3})\) es \(0\) 
+          (véase <a href="#ejercio_angulo_cero_triangulo">Problema 28</a>. Supongamos sin
           pérdida que dicho ángulo es \(\zeta.\) Mediante una transformación de Möbius \(T\in {\rm PSL}(2,\mathbb{R})\)
           enviamos:
           <ul style="list-style-type: none; padding-left: 0;">
@@ -1292,8 +1293,9 @@
           </figure>
 
           Recordemos que la transformación de Möbius \(T\in {\rm PSL}(2,\mathbb{R})\) deja invariante el área
-          hiperbólica del triángulo hiperbólico \(\triangle(z_{1},z_{2},z_{3})\) (véase Teorema
-          \ref{t:invarianza_area_hiberbolica}), es decir,
+          hiperbólica del triángulo hiperbólico \(\triangle(z_{1},z_{2},z_{3})\) 
+          (véase <a href="#t_invarianza_area_hiberbolica">Teorema 11</a>), 
+          es decir,
           \[
           A_{h}(\triangle(z_{1},z_{2},z_{3}))=A_{h}(T(\triangle(z_{1},z_{2},z_{3}))).
           \]
@@ -1567,7 +1569,7 @@
           \begin{equation}\label{eq:caso1_teo_paralelismo}
           y_{0}={\rm sen} (\alpha).
           \end{equation}
-          Dado que \(b=\rho(i,x_{0}+y_{0}i),\) entonces del Lema \ref{l:cosh} se sigue que
+          Dado que \(b=\rho(i,x_{0}+y_{0}i),\) entonces del <a href="plano-hiperbolico.html#l-cosh">Lema 11 (Capítulo 3)</a>  se sigue que
           <div class="scroll-wrapper">
             \begin{equation}
             \begin{split}
@@ -1602,7 +1604,7 @@
             \end{equation}
           </div>
 
-          Del teorema \ref{l:cosh} se sigue que la igualdad anterior es equivalente a
+          Del <a href="plano-hiperbolico.html#l-cosh">Lema 11</a> se sigue que la igualdad anterior es equivalente a
           <div class="scroll-wrapper">
             \begin{equation*}
             \begin{split}
@@ -1671,10 +1673,10 @@
         </div>
 
         <div class="proof">
-          Usaremos el modelo del disco de Poincaré \(\Delta\) para probar el Teorema. Supongamos que \(C=0\) y el
+          Usaremos el modelo del disco de Poincaré \(\Delta\) para probar el Teorema. 
+          Supongamos que \(C=0\) y el
           vértice \(A\) está sobre el eje real positivo.
-
-          Del teorema \ref{t:relaciones_trigonometricas_disco} se sigue que
+          Del <a href="#relaciones_trigonometricas_disco">Teorema 5</a> se sigue que
           <div class="scroll-wrapper">
             \begin{equation}\label{eq:relacion_hiperbolica_tcos_1}
             \tanh\left(\frac{1}{2}\rho(0,A)\right)=\tanh\left(\frac{b}{2}\right)=\frac{|0-A|}{|1-0|}=|A|=A.
@@ -1718,7 +1720,7 @@
           </div>
 
           Sustituimos la igualdad
-          \ref{eq:relacion_hiperbolica_tcos_4} en la expresión anterior y obtenemos
+          (\ref{eq:relacion_hiperbolica_tcos_4}) en la expresión anterior obtenemos
           <div class="scroll-wrapper">
             \begin{equation*}
             \begin{split}
@@ -1726,7 +1728,7 @@
             \end{split}
             \end{equation*}
           </div>
-          Al simplificar tenemos
+          Al simplificar, observamos que
           <div class="scroll-wrapper">
             \begin{equation*}
             \begin{split}
@@ -1990,7 +1992,7 @@
             </ul>
           </li>
 
-          <li id="Problema:mapeo_linea_hiper_sobre_eje_ima">Consideremos la línea hiperbólica \(C.\) Probar que existe
+          <li id="Problema_mapeo_linea_hiper_sobre_eje_ima">Consideremos la línea hiperbólica \(C.\) Probar que existe
             un elemento \(T\in{\rm PSL}(2,\mathbb{R})\) tal que
             \[
             T(z)=-\frac{1}{z-\alpha}+\beta
@@ -2002,10 +2004,10 @@
 
           <li>Calcule el área hiperbólica del círculo euclidiano con centro en \(2i\) y radio \(1.\)</li>
 
-          <li>Calcule el área hiperbólica de la región \(\left\{z\in\mathbb{H}: |{\rm Re}(z)|&lt;\frac{1}{2} \text{ y }
+          <li>Calcule el área hiperbólica de la región \(\left\{z\in\mathbb{H}: |{\rm Re}(z)|\lt \frac{1}{2} \text{ y }
               |z|&gt;1\right\}.\) Esta región es conocida como la <span class="purple-text">curva modular</span>.</li>
 
-          <li>Probar el Teorema \ref{t:relaciones_trigonometricas_disco}. Más precisamente, verificar que para
+          <li>Probar el <a href="#relaciones_trigonometricas_disco">Teorema 5</a>. Más precisamente, verificar que para
             cualesquiera dos elementos \(z,w\) sobre el disco de Poincaré \(\Delta\) se satisfacen las siguientes
             igualdades:
             <ul style="list-style-type: none; padding-left: 0;">
@@ -2021,7 +2023,7 @@
           <li>¿La reflexión con respecto al eje imaginario \({\rm R}_{\rm Im}\) preserva el área hiperbólica? Si tu
             respuesta es afirmativa, demuéstrala.</li>
 
-          <li id="ejercio:angulo_cero_triangulo">Supongamos que el triángulo hiperbólico \(\triangle\) tiene uno de sus
+          <li id="ejercio_angulo_cero_triangulo">Supongamos que el triángulo hiperbólico \(\triangle\) tiene uno de sus
             vértices sobre el eje real extendido \(\hat{\mathbb{R}},\) entonces su ángulo mide cero grados.</li>
 
           <li>Probar el teorema de Gauss-Bonnet para un triángulo hiperbólico \(\triangle(A,B,C)\) para los siguientes
