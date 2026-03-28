@@ -177,8 +177,9 @@
 
           <span class="red-txt">(1) <em>La función \(\mu_{\Delta}(z)\) es un producto interno</em></span>. Recordemos
           que el espacio tangente \(T_{z}{\rm D}\) es isomorfo al \(\mathbb{R}\) espacio vectorial \(\mathbb{C}\) y, la
-          función \(\langle \,\, , \, \rangle^{z}_{e}\) es un producto interno sobre \(T_{z}{\rm D}.\) Del Problema
-          \ref{ejer:producto_interno_cociente} se sigue que la función \(\langle \,\, ,\,\rangle_{\Delta}^{z}: T_{z}{\rm
+          función \(\langle \,\, , \, \rangle^{z}_{e}\) es un producto interno sobre \(T_{z}{\rm D}.\)
+          Del <a href="#ejer_producto_interno_cociente">Problema 2</a> se sigue que la función \(\langle \,\,
+          ,\,\rangle_{\Delta}^{z}: T_{z}{\rm
           D}\times T_{z}{\rm D}\to\mathbb{R}\) dado por
           \[
           \langle z_{1},z_{2}\rangle_{\Delta}^{z}:=\frac{4\langle z_{1} , z_{2} \rangle_{c}}{(1-|z|^{2})^{2}},
@@ -243,7 +244,8 @@
         <ul style="list-style-type: none; padding-left: 0;">
           <li><strong>(1)</strong> La función \(\psi\) envía geodésicas del plano hiperbólico \(\mathbb{H}\) sobre
             geodésicas del disco de Poincaré \(\Delta.\)</li>
-          <li><strong>(2)</strong> La función de Cayle \(\psi\) y su inversa \(\psi^{-1}\) son una isometrías (preservan
+          <li><strong>(2)</strong> La función de Cayley \(\psi\) y su inversa \(\psi^{-1}\) son una isometrías
+            (preservan
             distancias), entonces tenemos la igualdad
             \[
             \rho_{\Delta}(z,w)=\rho(\psi^{-1}(z),\psi^{-1}(w)),
@@ -384,7 +386,7 @@
             \[
             \psi(\infty)=1.
             \]</li>
-          <li><strong>(5)</strong> La transformación de Cayly \(\psi\) envía el complejo \(i\) sobre
+          <li><strong>(5)</strong> La transformación de Cayley \(\psi\) envía el complejo \(i\) sobre
             \[
             \psi(i)=\textbf{0},
             \]
@@ -483,7 +485,8 @@
         <p>
           Sabemos que las geodésicas del plano hiperbólico \(\mathbb{H}\) corresponden a segmentos de líneas
           hiperbólica. Recordemos que las líneas hiperbólicas provienen de circunferenias generalizadas ortogonales
-          al eje real (véase Definición \ref{def:lineas_hiperbolicas_plano_hiperbolico}).
+          al eje real (véase
+          <a href="plano-hiperbolico.html#lineas_hiperbolicas_plano_hiperbolico">Definición 7, Capítulo 3</a>).
         </p>
 
         <p>
@@ -509,7 +512,7 @@
 
         <p>
           De las anteriores dos características de posee la transformación \(\psi,\) concluimos que la imagen
-          directa bajo la transformación de Cayle \(\psi\) una línea hiperbólica es un trozo de circunferencia
+          directa bajo la transformación de Cayley \(\psi\) una línea hiperbólica es un trozo de circunferencia
           generalizada tal que dicha circunferencia es ortgonal a la frontera \(\partial \Delta\) del disco de
           Poincaré \(\Delta.\) Véase Figura 4.
         </p>
@@ -541,8 +544,11 @@
         </ul>
 
         <p>
-          La igualdad descrita en el inciso <strong>(2)</strong> junto con la expresión descrita en el Teorema
-          \ref{th:formula_distancia_hiperbolica_entre_dos_puntos}, nos permiten hallar una fórmula para la distancia
+          La igualdad descrita en el inciso <strong>(2)</strong>
+          junto con la expresión descrita en el
+          <a href="plano-complejo-extendido.html#th_formula_distancia_hiperbolica_entre_dos_puntos">Teorema 12 (Capítulo
+            3)</a>,
+          nos permiten hallar una fórmula para la distancia
           entre dos complejos \(z\) y \(w\) sobre el disco de Poincaré.
         </p>
 
@@ -561,7 +567,8 @@
           \begin{equation}
           \rho_{\Delta}(z,w)=\rho(\psi^{-1}(z),\psi^{-1}(w)).
           \end{equation}
-          Del Teorema \ref{th:formula_distancia_hiperbolica_entre_dos_puntos},
+          Del <a href="plano-complejo-extendido.html#th_formula_distancia_hiperbolica_entre_dos_puntos">Teorema 12
+            (Capítulo 3)</a>,
           reescribimos la igual anterior como
           <div class="scroll-wrapper">
             \begin{equation}\label{ec:distancia_disco_Poincare_prueba_the}
@@ -644,7 +651,8 @@
         </p>
 
         <p>
-          Usando las relaciones descritas en el Lema \ref{l:cosh}, el lector puede verifacar fácilmente las
+          Usando las relaciones descritas en el <a href="plano-hiperbolico.html#l-cosh">Lema 11 (Capítulo 3)</a>, el
+          lector puede verifacar fácilmente las
           siguientes relaciones sobre el disco de Poincaré.
         </p>
 
@@ -672,9 +680,16 @@
           es una isometría del disco de Poincaré \(\Delta.\) En otras palabras, existe un elemento
           \(\widetilde{T}\in{\rm Isom}(\Delta)\) tal que el siguiente diagrama commuta
         </p>
-        <div>
-          <img src="imgs/cap-04/diagrama-01.png" alt="Diagrama 1" style="display: block; margin: 0 auto; width: 25%;" loading="lazy">
-        </div>
+        $$
+        \begin{equation}\label{ec:elementos_grupos_isom_disco_Poincare}
+        \begin{array}{c}
+        \Delta \xrightarrow{\widetilde{T}} \Delta \\
+        \psi^{-1}\Big\downarrow \qquad \Big\downarrow \psi^{-1} \\
+        \mathbb{H} \xrightarrow{T} \mathbb{H}
+        \end{array}
+        \end{equation}
+        $$
+
         <p>
           es decir, \(\psi^{-1}\circ \widetilde{T}=T\circ \psi^{-1}.\) Conversamente, si \(g:\Delta\to\Delta\) es
           una isometría, entonces la composición
@@ -684,9 +699,15 @@
           es una isometría del plano hiperbólico. En otras palabras, existe un elemento \(\widetilde{g}\in{\rm
           Isom}(\mathbb{H})\) tal que el siguiente diagrama commuta
         </p>
-        <div style="text-align: center;">
-          <img alt="Diagrama 2" style="display: block; margin: 0 auto; width: 25%;" loading="lazy" src="imgs/cap-04/diagrama-02.png">
-        </div>
+        $$
+        \begin{equation}
+        \begin{array}{c}
+        \mathbb{H} \xrightarrow{\widetilde{g}} \mathbb{H} \\
+        \psi\Big\downarrow \qquad \Big\downarrow \psi \\
+        \Delta \xrightarrow{g} \Delta
+        \end{array}
+        \end{equation}
+        $$
         <p>
           es decir, \(\psi\circ \widetilde{g}=g\circ \psi.\) Consecuentemente, concluimos que el grupo de isometrías
           del disco de Poincaré es conjugado al grupo de isometrías del plano hiperbólico. Más precisamente,
@@ -885,8 +906,10 @@
           \[
           R_{\rm Im }=\psi\circ R_{\rm Im }\circ \psi^{-1},
           \]
-          también es un elemento del grupo de las isometrías del disco de Poincaré \(\Delta.\) Del Teorema
-          \ref{t:grupo_isometrias_completo_plano_hiperbolico} junto con el resultado anterior, sigue el grupo de
+          también es un elemento del grupo de las isometrías del
+          disco de Poincaré \(\Delta.\) Del
+          <a href="plano-hiperbolico.html#t_grupo_isometrias_completo_plano_hiperbolico">Teorema 13 (Capítulo 3)</a>
+          junto con el resultado anterior, sigue el grupo de
           isometrías del disco de Poincaré está generado por \(R_{\rm Im}\) junto con los elementos de \({\rm
           Isom}_{+}(\Delta).\) Dicho en otras palabras.
         </p>
@@ -1427,11 +1450,18 @@
           Observemos que el área hiperbólica del polígono \(P(z_{1},\ldots,z_{n})\) es la suma de las áreas hiperbólicas
           de los \(n-2\) triángulos hiperbólicos
           <div class="scroll-wrapper">
-            \begin{align}\label{ec:gauss_bonnet_poligonos}
-            A_{h}(P(z_{1},\ldots,z_{n}))&amp;=\sum_{i=1}^{n-2}A_{h}(\triangle_i)=\sum_{i=1}^{n-2}(\pi-[\alpha_{i}+\beta_{i}+\zeta_{i}]),\notag\\
-            &amp;\notag \\
-            &amp;=(n-2)\pi-\sum_{i=1}^{n-2}(\alpha_{i}+\beta_{i}+\zeta_{i}).
-            \end{align}
+            $$
+            \begin{equation*}
+            A_{h}(P(z_{1},\ldots,z_{n}))=\sum_{i=1}^{n-2}A_{h}(\triangle_i)=\sum_{i=1}^{n-2}(\pi-[\alpha_{i}+\beta_{i}+\zeta_{i}]),\\
+            \end{equation*}
+            $$
+          </div>
+          <div class="scroll-wrapper">
+            $$
+            \begin{equation}\label{ec_gauss_bonnet_poligonos}
+            =(n-2)\pi-\sum_{i=1}^{n-2}(\alpha_{i}+\beta_{i}+\zeta_{i}).
+            \end{equation}
+            $$
           </div>
 
 
@@ -1452,7 +1482,8 @@
               \(\zeta_{n-2}=\theta_{n}\)).</li>
           </ul>
 
-          Reemplazando las anteriores relaciones en la ecuación \eqref{ec:gauss_bonnet_poligonos} obtenemos la igualdad
+          Reemplazando las anteriores relaciones en la
+          ecuación (\ref{ec_gauss_bonnet_poligonos}) obtenemos la igualdad
           esperada
           <div class="scroll-wrapper">
             \[
@@ -1499,9 +1530,19 @@
           trigonométricas aplicadas sobre los ángulos un triángulo hiperbólico \(\triangle\) con ángulos de medida
           \(\alpha, 0, \dfrac{\pi}{2}.\) Usando las transformaciones de Möbius en \({\rm PSL}(2,\mathbb{R}),\) podemos
           pensar que los vértices del triángulo hiperbólico \(\triangle\) son \(\infty, i\) y un complejo sobre la
-          circunferencia unitaria (véase Figura \ref{dib:angulo_paralelo}). Notemos que el dicho triángulo hiperbólico
+          circunferencia unitaria (véase Figura 11). Notemos que el dicho triángulo hiperbólico
           \(\triangle\) tiene un lado de medida hiperbólica finita.
         </p>
+
+        <figure>
+          <img alt="Ángulo de paralelismo" style="width: 45%;" loading="lazy" src="imgs/cap-04/angulo-de-paralelismo.png">
+          <figcaption>
+            Ángulo de paralelismo.
+          </figcaption>
+        </figure>
+
+
+
 
         <div class="theorem">
           [Ángulo de paralelismo] Consideremos el triángulo hiperbólico \(\triangle\) con ángulos de medida
@@ -1518,14 +1559,8 @@
           Iniciaremos probando el inciso <span class="blue-text"><strong>(2)</strong></span>. Existe un elemento \(T\)
           de \({\rm PSL}(2,\mathbb{R})\) que envía el lado de longitud finita del triángulo \(\triangle\) sobre la curva
           \(x^2+y^2=1\) y los vértices de \(\triangle\) son enviados sobre el conjunto \(\{i, x_0+y_0i,\infty\}\) (véase
-          Figura \ref{dib:angulo_paralelo}).
+          Figura 11).
 
-          <figure>
-            <img alt="Ángulo de paralelismo" style="width: 45%;" loading="lazy" src="imgs/cap-04/angulo-de-paralelismo.png">
-            <figcaption>
-              Ángulo de paralelismo.
-            </figcaption>
-          </figure>
 
 
           Por construcción tenemos que la siguiente relación trigonométricas
@@ -1801,9 +1836,9 @@
 
         <ol>
           <li>Probar que el producto interno canónico (usual) \(\langle \,\, ,\, \rangle_{e}\) en \(\mathbb{R}^2\) es
-            efectivamente un producto interno (véase ecuación \eqref{eq:producto_canonico}).</li>
+            efectivamente un producto interno.</li>
 
-          <li id="ejer:producto_interno_cociente">Consideramos el espacio vectorial normado \((V, \langle \,\, ,\,
+          <li id="ejer_producto_interno_cociente">Consideramos el espacio vectorial normado \((V, \langle \,\, ,\,
             \rangle)\) y el valor real positivo no nulo \(r.\) Probar que
             \[
             \langle \, \, ,\, \rangle_{r}:=\dfrac{\langle \,\, ,\, \rangle}{r^2}
@@ -1929,7 +1964,7 @@
             R_{\rm Im}(z)=-\overline{z}.
             \]
             Prueba:
-            <ul>
+            <ul style="list-style-type: none; padding-left: 0;">
               <li><strong>(1)</strong> La función \(R_{\rm Im}\) deja invariante el plano hiperbólico \(\mathbb{H}.\)
               </li>
               <li><strong>(2)</strong> La función \(R_{\rm Im}\) envía líneas hiperbólicas sobre líneas hiperbólicas.
@@ -1939,7 +1974,7 @@
 
           <li>Para cualesquiera elementos \(z,w\in\mathbb{H},\) verificar que las siguientes expresiones son invariantes
             bajo elementos de \({\rm PSL}(2,\mathbb{R})\):
-            <ul>
+            <ul style="list-style-type: none; padding-left: 0;">
               <li><strong>(1)</strong> \(\dfrac{|z-w|}{2({\rm Im}(z){\rm Im}(w))^{1/2}}.\)</li>
               <li><strong>(2)</strong> \(\dfrac{|z-\overline{w}|}{2({\rm Im}(z){\rm Im}(w))^{1/2}}.\)</li>
             </ul>
@@ -1947,7 +1982,7 @@
 
           <li>Para cualesquiera dos puntos \(z,w\) sobre el plano hiperbólico \(\mathbb{H},\) verificar que se
             satisfacen las siguientes igualdades:
-            <ul>
+            <ul style="list-style-type: none; padding-left: 0;">
               <li><strong>(1)</strong> \(\sinh \left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-w|}{2\, ({\rm Im} (z) \,
                 {\rm Im}(w))^{1/2}}.\)</li>
               <li><strong>(2)</strong> \(\cosh \left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-\overline{w}|}{2\,({\rm
@@ -1973,7 +2008,7 @@
           <li>Probar el Teorema \ref{t:relaciones_trigonometricas_disco}. Más precisamente, verificar que para
             cualesquiera dos elementos \(z,w\) sobre el disco de Poincaré \(\Delta\) se satisfacen las siguientes
             igualdades:
-            <ul>
+            <ul style="list-style-type: none; padding-left: 0;">
               <li><strong>(1)</strong>
                 \(\sinh^{2}\left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-w|^2}{(1-|z|^2)(1-|w|^2)}.\)</li>
               <li><strong>(2)</strong>
@@ -1991,7 +2026,7 @@
 
           <li>Probar el teorema de Gauss-Bonnet para un triángulo hiperbólico \(\triangle(A,B,C)\) para los siguientes
             dos casos:
-            <ul>
+            <ul style="list-style-type: none; padding-left: 0;">
               <li><span class="blue-text">Caso <strong>(1)</strong></span> Dos de sus vértices se encuentran sobre los
                 reales extendidos.</li>
               <li><span class="blue-text">Caso <strong>(2)</strong></span> Los tres vértices se encuentran sobre los
