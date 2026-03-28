@@ -114,17 +114,18 @@
         <p>
           Exploraremos el <span class="purple-text">disco de Poincaré</span>
           \(\Delta,\) que consiste del disco unitario
-          (véase Figura 1)
           \[
           {\rm D}=\{z\in\mathbb{C}: |z|\lt 1\}. \] dotado de
-          cierta métrica Riemanniana \(\mu_{\Delta}.\) En este espacio
+          cierta métrica Riemanniana \(\mu_{\Delta}\)
+          (véase Figura 1).
+          En este espacio
           geométrico \(\Delta,\) al igual que el espacio
           hiperbólico \(\mathbb{H},\) también se cumple la negación del
           <span class="blue-text">Postulado V</span> de Euclides.
         </p>
 
         <figure>
-          <img alt="Disco unitario." style="width: 45%;" loading="lazy" src="imgs/cap-04/disco-unitario.png">
+          <img alt="Disco unitario" style="width: 45%;" loading="lazy" src="imgs/cap-04/disco-unitario.png">
           <figcaption>
             Disco unitario.
           </figcaption>
@@ -187,16 +188,21 @@
           <span class="red-txt">(2) <em>Diferenciabilidad de la función \(g_{i,j}\)</em></span>. Si consideramos la base
           canónica \(\{e_1,e_2\}\) para \(\mathbb{C},\) tenemos que para cualesquiera \(i,j\in\{1,2\},\) la función
           \(g_{i,j}: {\rm D} \to \mathbb{R}\) dada por
-          \[
-          g_{i,j}(z)=\dfrac{4\langle e_i , e_j
-          \rangle_{e}}{(1-|z|^{2})^2}=\dfrac{4\delta_{i,j}}{(1-|z|^{2})^2}=\frac{4\delta_{i,j}}{(1-({\rm
-          Re}(z))^{2}-({\rm Im}(z))^{2})^2},
-          \]
+          <div class="scroll-wrapper">
+            \[
+            g_{i,j}(z)=\dfrac{4\langle e_i , e_j
+            \rangle_{e}}{(1-|z|^{2})^2}=\dfrac{4\delta_{i,j}}{(1-|z|^{2})^2}=\frac{4\delta_{i,j}}{(1-({\rm
+            Re}(z))^{2}-({\rm Im}(z))^{2})^2},
+            \]
+          </div>
           es diferenciable. Esta afirmación es cierta, porque las entradas de la matrix Jacobiana
-          \[
-          D_{z} g_{i,j}=\left(\frac{16{\rm Re}(z)\delta_{i,j}}{(1-({\rm Re}(z))^{2}-({\rm Im}(z))^{2})^{3}},
-          \frac{16{\rm Im}(z)\delta_{i,j}}{(1-({\rm Re}(z))^{2}-({\rm Im}(z))^{2})^{3}}\right),
-          \]
+          <div class="scroll-wrapper">
+            \[
+            D_{z} g_{i,j}=\left(\frac{16{\rm Re}(z)\delta_{i,j}}{(1-({\rm Re}(z))^{2}-({\rm Im}(z))^{2})^{3}},
+            \frac{16{\rm Im}(z)\delta_{i,j}}{(1-({\rm Re}(z))^{2}-({\rm Im}(z))^{2})^{3}}\right),
+            \]
+          </div>
+
           son continuas en \(U,\) entonces el Teorema de la condición suficiente de diferenciabilidad de una función
           vectorial nos garantiza que \(g_{i,j}\) es diferenciable.
         </div>
@@ -287,7 +293,9 @@
         </p>
 
         <p>
-          <strong>(2)</strong> Evaluamos \(\phi\) en los complejos \(\rm 1\) y obtenemos
+          <strong>(2)</strong> Evaluamos \(\phi\)
+          en los complejos \(\rm 1\) y obtenemos
+        </p><div class="scroll-wrapper">
           \[
           \begin{array}{ccc}
           \psi(-1)=i &amp; \text{ y } &amp; \psi(1)=-1,\\
@@ -297,7 +305,10 @@
           -a-d=i(-c+d)&amp; \text{ y } &amp; a-d=-i(c+d)\\
           \end{array}
           \]
-          Sumamos y restamos las anteriores igualdades, así obtenemos
+        </div>
+
+        Sumamos y restamos las anteriores igualdades, así obtenemos
+        <div class="scroll-wrapper">
           \[
           \begin{array}{ccc}
           {\color{red}\cancel{-a}}-d+{\color{red}\cancel{a}}-d=-ic+{\color{blue}\cancel{id}}-ic{\color{blue}\cancel{-id}}
@@ -309,14 +320,17 @@
           d=ic &amp; \text{ y } &amp; -a=id.\\
           \end{array}
           \]
-          Estas últimas dos igualdades las reemplazamos en la regla de asignación de \(\psi\) para que sus
-          coeficientes queden en términos de \(d.\) Luego, computamos y obtenemos
-          \begin{align*}
+        </div>
+
+        Estas últimas dos igualdades las reemplazamos en la regla de asignación de \(\psi\) para que sus
+        coeficientes queden en términos de \(d.\) Luego, computamos y obtenemos
+        <div class="scroll-wrapper">\begin{align*}
           \psi(z)&amp;=\dfrac{-idz-d}{\dfrac{d}{i}z+d}
           =\dfrac{\cancel{\color{red}d}\left(-iz-1\right)}{\cancel{\color{red}d}\left(\dfrac{1}{i}z+1\right)}=\dfrac{i(-iz-1)}{z+i},\\
           &amp;=\dfrac{z-i}{z+i}.
-          \end{align*}
-        </p>
+          \end{align*}</div>
+
+        <p></p>
 
         <div class="definition">
           La transformación de Möbius \(\psi\) definida mediante
@@ -339,21 +353,30 @@
             \[
             {\rm det}(\psi)=i+i=2i.
             \]
-            Entonces el elemento \(\psi\in{\rm PSL}(2,\mathbb{C})\) está dada por la regla de asignación
-            \begin{equation}\label{ec:regla_transformacion_de_cayley}
-            \psi(z)=\dfrac{\dfrac{1}{\sqrt{2i}}z-\dfrac{1}{\sqrt{2i}}i}{\dfrac{1}{\sqrt{2i}}z+\dfrac{1}{\sqrt{2i}}i}.
-            \end{equation}</li>
+            Entonces el elemento \(\psi\in{\rm PSL}(2,\mathbb{C})\)
+            está dada por la regla de asignación
+            <div class="scroll-wrapper">
+              \begin{equation}\label{ec:regla_transformacion_de_cayley}
+              \psi(z)=\dfrac{\dfrac{1}{\sqrt{2i}}z-\dfrac{1}{\sqrt{2i}}i}{\dfrac{1}{\sqrt{2i}}z+\dfrac{1}{\sqrt{2i}}i}.
+              \end{equation}
+            </div>
+
+          </li>
           <li><strong>(3)</strong> La transformación \(\psi\) se identifica con la clase de matrices
-            \[
-            \left\{\left(\begin{matrix}
-            \dfrac{1}{\sqrt{2i}} &amp; -\dfrac{1}{\sqrt{2i}}i \\
-            \dfrac{1}{\sqrt{2i}} &amp; \dfrac{1}{\sqrt{2i}}i
-            \end{matrix}\right), \left(\begin{matrix}
-            -\dfrac{1}{\sqrt{2i}} &amp; \dfrac{1}{\sqrt{2i}}i \\
-            -\dfrac{1}{\sqrt{2i}} &amp; -\dfrac{1}{\sqrt{2i}}i
-            \end{matrix}\right)
-            \right\}\in {\rm PSL}(2,\mathbb{C})
-            \]</li>
+            <div class="scroll-wrapper">
+              \[
+              \left\{\left(\begin{matrix}
+              \dfrac{1}{\sqrt{2i}} &amp; -\dfrac{1}{\sqrt{2i}}i \\
+              \dfrac{1}{\sqrt{2i}} &amp; \dfrac{1}{\sqrt{2i}}i
+              \end{matrix}\right), \left(\begin{matrix}
+              -\dfrac{1}{\sqrt{2i}} &amp; \dfrac{1}{\sqrt{2i}}i \\
+              -\dfrac{1}{\sqrt{2i}} &amp; -\dfrac{1}{\sqrt{2i}}i
+              \end{matrix}\right)
+              \right\}\in {\rm PSL}(2,\mathbb{C})
+              \]
+            </div>
+
+          </li>
           <li><strong>(4)</strong> La transformación de Cayley \(\psi\) envía circunferencias generalizadas sobre
             circunferencias generalizadas, entonces el eje real \({\rm Re}\) es envíado vía \(\psi\) sobre la
             frontera \(\partial \Delta=\{z\in\mathbb{C}. |z|=1\}\) del disco unitario \(\Delta.\) La imagen del
@@ -387,53 +410,65 @@
           \langle z_{1},z_{2}\rangle_{h}^{z}=\langle D_{z}\psi z_{1}, D\psi_{z} z_{2}\rangle_{\Delta}^{\psi(z)},
           \]
           para todo \(z\in \mathbb{H}\) y cualesquiera vectores \(z_{1},z_{2}\in T_{z}\mathbb{H}.\)
-
           Del Teorema de las condiciones de Cauchy-Riemann, tenemos que el producto matricial \(D_{z}\psi z_{i}\) es
           igual a la derivada compleja \(\psi'(z)\) producto \(z_{i},\) es decir,
           \[
           D_{z}\psi z_{i}= \psi'(z)z_{i}
           \]
-          para \(i\in\{1,2\}.\) Así, de las reglas básicas de la derivada compleja obtenemos que
-          \begin{align*}
-          \psi'(z)&amp;=\dfrac{d}{dz}\left(\dfrac{z-i}{z+i}\right)=\dfrac{(z+i)-(z-i)}{(z+i)^{2}}=\dfrac{\cancel{\color{red}z}+i\cancel{\color{red}{-z}}+i}{(z+i)^{2}},\\
-          &amp;\\
-          &amp;=\dfrac{2i}{(z+i)^{2}}.
-          \end{align*}
+          para \(i\in\{1,2\}.\)
+          Así, de las reglas básicas de la derivada compleja obtenemos que
+          <div class="scroll-wrapper">
+            \begin{align*}
+            \psi'(z)&amp;=\dfrac{d}{dz}\left(\dfrac{z-i}{z+i}\right)=\dfrac{(z+i)-(z-i)}{(z+i)^{2}}=\dfrac{\cancel{\color{red}z}+i\cancel{\color{red}{-z}}+i}{(z+i)^{2}},\\
+            &amp;\\
+            &amp;=\dfrac{2i}{(z+i)^{2}}.
+            \end{align*}
+          </div>
+
           Entonces reemplazamos el valor de la derivada compleja en \(\langle D_{z}\psi z_{1}, D\psi_{z}
           z_{2}\rangle_{\Delta}^{\psi(z)}\) y realizamos las operaciones respectivas para obtener
-          \begin{align*}
-          \langle D_{z}\psi z_{1}, D\psi_{z} z_{2}\rangle_{\Delta}^{\psi(z)}&amp;=\frac{4\langle D_{z}\psi z_{1} ,
-          D_{z}\psi z_{2} \rangle_{c}}{(1-|\psi(z)|^{2})^{2}}, \\
-          \\
-          &amp;=\frac{4\left\langle \dfrac{2i}{(z+i)^{2}} z_{1} , \dfrac{2i}{(z+i)^{2}} z_{2}
-          \right\rangle_{c}}{\left(1-\left|\dfrac{z-i}{z+i}\right|^{2}\right)^{2}},\\
-          \\
-          &amp;=\frac{4 \dfrac{2i}{(z+i)^{2}} \dfrac{\overline{2i}}{\overline{(z+i)^{2}}}\left\langle z_{1} , z_{2}
-          \right\rangle_{c}}{\dfrac{(|z+i|^{2}-|z-i|^{2})^{2}}{|z+i|^{4}}},\\
-          \\
-          &amp;=\frac{16 \dfrac{\cancelto{1}{|i|^{2}}}{\cancel{|z+i|^{4}}} \left\langle z_{1} , z_{2}
-          \right\rangle_{c}}{\dfrac{\left(|z+i|^{2}-|z-i|^{2}\right)^{2}}{\cancel{|z+i|^{4}}}},\\
-          \\
-          &amp;=\frac{16 \left\langle z_{1} , z_{2} \right\rangle_{c}}{\left(|z+i|^{2}-|z-i|^{2}\right)^{2}},\\
-          \\
-          &amp;=\frac{16 \left\langle z_{1} , z_{2} \right\rangle_{c}}{\left([{\rm Re}(z)]^{2}+[{\rm
-          Im}(z)+1]^{2}-([{\rm Re}(z)]^{2}+[{\rm Im }(z)-1]^{2})\right)^{2}},\\
-          \\
-          &amp;=\frac{16 \left\langle z_{1} , z_{2} \right\rangle_{c}}{\left([{\rm Re}(z)]^{2}+[{\rm Im}(z)]^{2}+2{\rm
-          Im}(z)+1-([{\rm Re}(z)]^{2}+[{\rm Im }(z)]^{2}-2{\rm Im}(z)+1)\right)^{2}},\\
-          \\
-          &amp;=\frac{16 \left\langle z_{1} , z_{2} \right\rangle_{c}}{\left(\cancel{[{\rm
-          Re}(z)]^{2}}+\cancel{[{\rm Im}(z)]^{2}}+2{\rm
-          Im}(z)+\cancel{1}\cancel{-[{\rm Re}(z)]^{2}}\cancel{-[{\rm Im
-          }(z)]^{2}}+2{\rm Im}(z)\cancel{-1}\right)^{2}},\\
-          \\
-          &amp;=\frac{16 \left\langle z_{1} , z_{2} \right\rangle_{c}}{\left(4{\rm
-          Im}(z)\right)^{2}}=\frac{\cancel{16} \left\langle z_{1} , z_{2}
-          \right\rangle_{c}}{\cancel{16}\left({\rm Im}(z)\right)^{2}}=\frac{ \left\langle z_{1} , z_{2}
-          \right\rangle_{c}}{\left({\rm Im}(z)\right)^{2}},\\
-          \\
-          &amp;=\langle z_{1},z_{2}\rangle_{h}^{z}.
-          \end{align*}
+          <div class="scroll-wrapper">
+            \begin{align*}
+            \langle D_{z}\psi z_{1}, D\psi_{z} z_{2}\rangle_{\Delta}^{\psi(z)}&amp;=\frac{4\langle D_{z}\psi z_{1} ,
+            D_{z}\psi z_{2} \rangle_{c}}{(1-|\psi(z)|^{2})^{2}}, \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad
+            \qquad \qquad \\
+            \\
+            &amp;=\frac{4\left\langle \dfrac{2i}{(z+i)^{2}} z_{1} , \dfrac{2i}{(z+i)^{2}} z_{2}
+            \right\rangle_{c}}{\left(1-\left|\dfrac{z-i}{z+i}\right|^{2}\right)^{2}},\\
+            \\
+            &amp;=\frac{4 \dfrac{2i}{(z+i)^{2}} \dfrac{\overline{2i}}{\overline{(z+i)^{2}}}\left\langle z_{1} , z_{2}
+            \right\rangle_{c}}{\dfrac{(|z+i|^{2}-|z-i|^{2})^{2}}{|z+i|^{4}}},\\
+            \\
+            &amp;=\frac{16 \dfrac{\cancelto{1}{|i|^{2}}}{\cancel{|z+i|^{4}}} \left\langle z_{1} , z_{2}
+            \right\rangle_{c}}{\dfrac{\left(|z+i|^{2}-|z-i|^{2}\right)^{2}}{\cancel{|z+i|^{4}}}},\\
+            \\
+            &amp;=\frac{16 \left\langle z_{1} , z_{2} \right\rangle_{c}}{\left(|z+i|^{2}-|z-i|^{2}\right)^{2}},\\
+            \end{align*}
+
+          </div>
+          <div class="scroll-wrapper">
+            \begin{align*}
+            &amp;=\frac{16 \left\langle z_{1} , z_{2} \right\rangle_{c}}{\left([{\rm Re}(z)]^{2}+[{\rm
+            Im}(z)+1]^{2}-([{\rm Re}(z)]^{2}+[{\rm Im }(z)-1]^{2})\right)^{2}},\\
+            \\
+            &amp;=\frac{16 \left\langle z_{1} , z_{2} \right\rangle_{c}}{\left([{\rm Re}(z)]^{2}+[{\rm Im}(z)]^{2}+2{\rm
+            Im}(z)+1-([{\rm Re}(z)]^{2}+[{\rm Im }(z)]^{2}-2{\rm Im}(z)+1)\right)^{2}},\\
+            \\
+            &amp;=\frac{16 \left\langle z_{1} , z_{2} \right\rangle_{c}}{\left(\cancel{[{\rm
+            Re}(z)]^{2}}+\cancel{[{\rm Im}(z)]^{2}}+2{\rm
+            Im}(z)+\cancel{1}\cancel{-[{\rm Re}(z)]^{2}}\cancel{-[{\rm Im
+            }(z)]^{2}}+2{\rm Im}(z)\cancel{-1}\right)^{2}},\\
+            \\
+            &amp;=\frac{16 \left\langle z_{1} , z_{2} \right\rangle_{c}}{\left(4{\rm
+            Im}(z)\right)^{2}}=\frac{\cancel{16} \left\langle z_{1} , z_{2}
+            \right\rangle_{c}}{\cancel{16}\left({\rm Im}(z)\right)^{2}}=\frac{ \left\langle z_{1} , z_{2}
+            \right\rangle_{c}}{\left({\rm Im}(z)\right)^{2}},\\
+            \\
+            &amp;=\langle z_{1},z_{2}\rangle_{h}^{z}.
+            \end{align*}
+
+          </div>
+
         </div>
 
         <h3>Geodésicas sobre el disco de Poincaré</h3>
@@ -513,9 +548,12 @@
 
         <div class="theorem">
           La distancia \(\rho_{\Delta}\) entre los complejos \(z,w\in \Delta\) está dada por
-          \[
-          \rho_{\Delta}(z,w)=\ln\left( \frac{|1-z\overline{w}|+|z-w|}{|1-z\overline{w}|-|z-w|} \right).
-          \]
+          <div class="scroll-wrapper">
+            \[
+            \rho_{\Delta}(z,w)=\ln\left( \frac{|1-z\overline{w}|+|z-w|}{|1-z\overline{w}|-|z-w|} \right).
+            \]
+          </div>
+
         </div>
 
         <div class="proof">
@@ -523,64 +561,78 @@
           \begin{equation}
           \rho_{\Delta}(z,w)=\rho(\psi^{-1}(z),\psi^{-1}(w)).
           \end{equation}
-          Del Teorema \ref{th:formula_distancia_hiperbolica_entre_dos_puntos}, reescribimos la igual anterior como
-          \begin{equation}\label{ec:distancia_disco_Poincare_prueba_the}
-          \rho_{\Delta}(z,w)=\ln\left(\dfrac{\left|\psi^{-1}(z)-\overline{\psi^{-1}(w)}\right|+\left|\psi^{-1}(z)-\psi^{-1}(w)\right|}{\left|\psi^{-1}(z)-\overline{\psi^{-1}(w)}\right|-\left|\psi^{-1}(z)-\psi^{-1}(w)\right|}\right).
-          \end{equation}
+          Del Teorema \ref{th:formula_distancia_hiperbolica_entre_dos_puntos},
+          reescribimos la igual anterior como
+          <div class="scroll-wrapper">
+            \begin{equation}\label{ec:distancia_disco_Poincare_prueba_the}
+            \rho_{\Delta}(z,w)=\ln\left(\dfrac{\left|\psi^{-1}(z)-\overline{\psi^{-1}(w)}\right|+\left|\psi^{-1}(z)-\psi^{-1}(w)\right|}{\left|\psi^{-1}(z)-\overline{\psi^{-1}(w)}\right|-\left|\psi^{-1}(z)-\psi^{-1}(w)\right|}\right).
+            \end{equation}
+          </div>
+
 
           Vamos a computar las normas de las diferencias que aparecen en el logaritmo natural anterior y, luego las
           reemplazamos para obtener la fórmula descrita en el teorema.
 
-          Para la norma <span class="red-txt">\(\left|\psi^{-1}(z)-\overline{\psi^{-1}(w)}\right|\)</span>, tenemos:
-          \begin{align}
-          \left|\psi^{-1}(z)-\overline{\psi^{-1}(w)}\right|&amp;=\left|\dfrac{iz+i}{-z+1}-\overline{\left(\dfrac{iw+i}{-w+1}\right)}\right|,\notag\\
-          \notag\\
-          &amp;=\left|\dfrac{i(z+1)}{-z+1}-\dfrac{\overline{i}\overline{w+1}}{\overline{-w+1}}\right|,\notag\\
-          \notag\\
-          &amp;=\left|\dfrac{i(z+1)}{-z+1}+\dfrac{i(\overline{w}+1)}{-\overline{w}+1}\right|,\notag\\
-          \notag\\
-          &amp;=\left|\dfrac{i[(z+1)(-\overline{w}+1)+(\overline{w}+1)(-z+1)]}{(-z+1)(-\overline{w}+1)}\right|,\notag\\
-          \notag\\
-          &amp;=|i|\,
-          \dfrac{|{\color{red}\cancel{-z\overline{w}}}+{\color{blue}\cancel{z}}{\color{green}\cancel{-\overline{w}}}+{\color{orange}\cancel{1}}{\color{red}\cancel{-z\overline{w}}}+{\color{green}\cancel{\overline{w}}}{\color{blue}\cancel{-z}}+{\color{orange}\cancel{1}}|}{|-z+1||-\overline{w}+1|},\notag\\
-          \notag\\
-          &amp;=\dfrac{|-2z\overline{w}+2|}{|-z+1||-\overline{w}+1|},\notag\\
-          \notag\\
-          &amp;=\dfrac{|2|\,
-          |1-z\overline{w}|}{|-z+1|\,|-\overline{w}+1|}.\label{ec:norma_1_diferencias_en_el_logaritmo_natural}
-          \end{align}
+          Para la norma <span class="red-txt">\(\left|\psi^{-1}(z)-\overline{\psi^{-1}(w)}\right|\)</span>,
+          tenemos:
+          <div class="scroll-wrapper">
+            \begin{align}
+            \left|\psi^{-1}(z)-\overline{\psi^{-1}(w)}\right|&amp;=\left|\dfrac{iz+i}{-z+1}-\overline{\left(\dfrac{iw+i}{-w+1}\right)}\right|,\notag\\
+            \notag\\
+            &amp;=\left|\dfrac{i(z+1)}{-z+1}-\dfrac{\overline{i}\overline{w+1}}{\overline{-w+1}}\right|,\notag\\
+            \notag\\
+            &amp;=\left|\dfrac{i(z+1)}{-z+1}+\dfrac{i(\overline{w}+1)}{-\overline{w}+1}\right|,\notag\\
+            \notag\\
+            &amp;=\left|\dfrac{i[(z+1)(-\overline{w}+1)+(\overline{w}+1)(-z+1)]}{(-z+1)(-\overline{w}+1)}\right|,\notag\\
+            \notag\\
+            &amp;=|i|\,
+            \dfrac{|{\color{red}\cancel{-z\overline{w}}}+{\color{blue}\cancel{z}}{\color{green}\cancel{-\overline{w}}}+{\color{orange}\cancel{1}}{\color{red}\cancel{-z\overline{w}}}+{\color{green}\cancel{\overline{w}}}{\color{blue}\cancel{-z}}+{\color{orange}\cancel{1}}|}{|-z+1||-\overline{w}+1|},\notag\\
+            \notag\\
+            &amp;=\dfrac{|-2z\overline{w}+2|}{|-z+1||-\overline{w}+1|},\notag\\
+            \notag\\
+            &amp;=\dfrac{|2|\,
+            |1-z\overline{w}|}{|-z+1|\,|-\overline{w}+1|}.\label{ec:norma_1_diferencias_en_el_logaritmo_natural}
+            \end{align}
+          </div>
 
-          Para la noma <span class="red-txt">\(|\psi^{-1}(z)-\psi^{-1}(w)|\)</span>, tenemos
 
-          \begin{align}
-          |\psi^{-1}(z)-\psi^{-1}(w)|&amp;=\left|\dfrac{iz+i}{-z+1}-\dfrac{iw+i}{-w+1}\right|,\notag\\
-          \notag\\
-          &amp;=\left|\dfrac{i(z+1)}{-z+1}-\dfrac{i(w+1)}{-w+1}\right|,\notag\\
-          \notag\\
-          &amp;=\left|\dfrac{i[(z+1)(-w+1)-(w+1)(-z+1)]}{(-z+1)(-w+1)}\right|,\notag\\
-          \notag\\
-          &amp;=|i|\,
-          \dfrac{|{\color{red}\cancel{-zw}}+{\color{blue}\cancel{z}}{\color{green}\cancel{-w}}+{\color{orange}\cancel{1}}{\color{red}+\cancel{zw}}{\color{green}\cancel{-w}}{\color{blue}\cancel{+z}}{\color{orange}\cancel{-1}}|}{|-z+1||-w+1|},\notag\\
-          \notag\\
-          &amp;=\dfrac{|2z-2w|}{|-z+1||-\overline{w}+1|},\notag\\
-          \notag\\
-          &amp;=\dfrac{|2|\, |z-w|}{|-z+1|\,|-\overline{w}+1|}.\label{ec:norma_2_diferencias_en_el_logaritmo_natural}
-          \end{align}
+          Para la norma <span class="red-txt">\(|\psi^{-1}(z)-\psi^{-1}(w)|\)</span>, tenemos
+          <div class="scroll-wrapper">
+            \begin{align}
+            |\psi^{-1}(z)-\psi^{-1}(w)|&amp;=\left|\dfrac{iz+i}{-z+1}-\dfrac{iw+i}{-w+1}\right|,\notag\\
+            \notag\\
+            &amp;=\left|\dfrac{i(z+1)}{-z+1}-\dfrac{i(w+1)}{-w+1}\right|,\notag\\
+            \notag\\
+            &amp;=\left|\dfrac{i[(z+1)(-w+1)-(w+1)(-z+1)]}{(-z+1)(-w+1)}\right|,\notag\\
+            \notag\\
+            &amp;=|i|\,
+            \dfrac{|{\color{red}\cancel{-zw}}+{\color{blue}\cancel{z}}{\color{green}\cancel{-w}}+{\color{orange}\cancel{1}}{\color{red}+\cancel{zw}}{\color{green}\cancel{-w}}{\color{blue}\cancel{+z}}{\color{orange}\cancel{-1}}|}{|-z+1||-w+1|},\notag\\
+            \notag\\
+            &amp;=\dfrac{|2z-2w|}{|-z+1||-\overline{w}+1|},\notag\\
+            \notag\\
+            &amp;=\dfrac{|2|\, |z-w|}{|-z+1|\,|-\overline{w}+1|}.\label{ec:norma_2_diferencias_en_el_logaritmo_natural}
+            \end{align}
+          </div>
+
 
           Ahora, sustituimos las normas descritas en las ecuaciones
           \eqref{ec:norma_1_diferencias_en_el_logaritmo_natural} y
           \eqref{ec:norma_2_diferencias_en_el_logaritmo_natural},
           en el logaritmos (véase ecuación \eqref{ec:distancia_disco_Poincare_prueba_the})
           y, computamos para obtener
-          \begin{align*}
-          \rho_{\Delta}(z,w)&amp;= \ln \left(\dfrac{\dfrac{|2|\, |1-z\overline{w}|}{|-z+1|\,|-\overline{w}+1|}+\dfrac{|2|\,
-          |z-w|}{|-z+1|\,|-\overline{w}+1|}}{\dfrac{|2|\, |1-z\overline{w}|}{|-z+1|\,|-\overline{w}+1|}-\dfrac{|2|\,
-          |z-w|}{|-z+1|\,|-\overline{w}+1|}}\right),\\
-          \\
-          &amp;=\ln\left(\dfrac{\cancel{\dfrac{|2|}{|-z+1|\,|-\overline{w}+1|}}\left[|1-z\overline{w}|+|z-w|\right]}{\cancel{\dfrac{|2|}{|-z+1|\,|-\overline{w}+1|}}\left[|1-z\overline{w}|-|z-w|\right]}\right).\\
-          \\
-          &amp;=\ln\left(\dfrac{|1-z\overline{w}|+|z-w|}{|1-z\overline{w}|-|z-w|}\right).
-          \end{align*}
+          <div class="scroll-wrapper">
+            \begin{align*}
+            \rho_{\Delta}(z,w)&amp;= \ln \left(\dfrac{\dfrac{|2|\,
+            |1-z\overline{w}|}{|-z+1|\,|-\overline{w}+1|}+\dfrac{|2|\,
+            |z-w|}{|-z+1|\,|-\overline{w}+1|}}{\dfrac{|2|\, |1-z\overline{w}|}{|-z+1|\,|-\overline{w}+1|}-\dfrac{|2|\,
+            |z-w|}{|-z+1|\,|-\overline{w}+1|}}\right),\\
+            \\
+            &amp;=\ln\left(\dfrac{\cancel{\dfrac{|2|}{|-z+1|\,|-\overline{w}+1|}}\left[|1-z\overline{w}|+|z-w|\right]}{\cancel{\dfrac{|2|}{|-z+1|\,|-\overline{w}+1|}}\left[|1-z\overline{w}|-|z-w|\right]}\right).\\
+            \\
+            &amp;=\ln\left(\dfrac{|1-z\overline{w}|+|z-w|}{|1-z\overline{w}|-|z-w|}\right).
+            \end{align*}
+          </div>
+
         </div>
 
         <p>
@@ -653,6 +705,7 @@
         <p>
           Para el caso \(T\in {\rm PSL}(2,\mathbb{R}),\) la composición \(\widetilde{T}=\psi\circ T \circ
           \psi^{-1}\) está dada por el siguiente producto de clases de matrices
+        </p><div class="scroll-wrapper">
           \begin{align*}
           \widetilde{T}&amp;= \left[\begin{matrix}
           \dfrac{1}{\sqrt{2i}} &amp; -\dfrac{1}{\sqrt{2i}}i \\
@@ -695,33 +748,44 @@
           \dfrac{(a-d)+i(b+c)}{2}&amp;\dfrac{(a+d)-i(b-c)}{2}
           \end{matrix}\right].
           \end{align*}
-          Los complejos que se encuentran sobre la primera fila de la anterior clases de matrices los denotamos como
-          sigue:
+        </div>
+
+        Los complejos que se encuentran sobre la primera fila de la anterior clases de matrices los denotamos como
+        sigue:
+        <div class="scroll-wrapper">
           \[
           u:=(a+d)+i(b-c) \quad \text{ y } \quad v:=(a-d)-i(b+c).
           \]
-          Entonces los términos sobre la segunda fila satisfacen:
+        </div>
+
+        Entonces los términos sobre la segunda fila satisfacen:
+        <div class="scroll-wrapper">
           \[
           \overline{v}=(a-d)+i(b+c) \quad \text{ y } \quad \overline{u}=(a+d)-i(b-c).
           \]
-          Así, reescribimos la transformación de Möbius \(\widetilde{T}\) como sigue
+        </div>
+
+        Así, reescribimos la transformación de Möbius \(\widetilde{T}\) como sigue
+        <div class="scroll-wrapper">
           \[
           \widetilde{T}=\left[\begin{matrix}
           u&amp;v\\
           \overline{v}&amp;\overline{u}
           \end{matrix}\right].
           \]
-          Como \(\widetilde{T}\) es un elemento de \({\rm PSL}(2,\mathbb{C}),\) entonces su determinante
-          \[
-          {\rm det}(\widetilde{T})=u\overline{u}-v\overline{v}=|u|^{2}-|v|^{2}=1.
-          \]
-          Entonces la transformación de Möbius \(\widetilde{T}\in{\rm PSL}(2,\mathbb{C})\) está dada por
-          \[
-          \widetilde{T}(z)=\dfrac{uz+v}{\overline{v}z+\overline{u}},
-          \]
-          tal que los complejos \(u,v\in\mathbb{C}\) satisfacen \(|u|^{2}-|v|^{2}=1.\) Las anteriores cuentas,
-          implican el siguiente resutaldo.
-        </p>
+        </div>
+
+        Como \(\widetilde{T}\) es un elemento de \({\rm PSL}(2,\mathbb{C}),\) entonces su determinante
+        \[
+        {\rm det}(\widetilde{T})=u\overline{u}-v\overline{v}=|u|^{2}-|v|^{2}=1.
+        \]
+        Entonces la transformación de Möbius \(\widetilde{T}\in{\rm PSL}(2,\mathbb{C})\) está dada por
+        \[
+        \widetilde{T}(z)=\dfrac{uz+v}{\overline{v}z+\overline{u}},
+        \]
+        tal que los complejos \(u,v\in\mathbb{C}\) satisfacen \(|u|^{2}-|v|^{2}=1.\) Las anteriores cuentas,
+        implican el siguiente resutaldo.
+        <p></p>
 
         <div class="theorem">
           Las isometrías del disco de Poincaré \(\Delta\) en \({\rm PSL}(2,\mathbb{C})\) son de la forma
@@ -744,6 +808,7 @@
           \]
           tal que los complejos \(u,v\in\mathbb{C}\) satisfacen \(|u|^{2}-|v|^{2}=1.\)
           Computando adecuadamente, obtenemos
+        </p><div class="scroll-wrapper">
           \begin{align*}
           \widetilde{T}(z)&amp;=\dfrac{uz+v}{\overline{v}z+\overline{u}}=\dfrac{u\left(z+\dfrac{v}{u}\right)}{\overline{v}z+\overline{u}}=\dfrac{\dfrac{u}{|u|}\left(z+\dfrac{v}{u}\right)}{\dfrac{\overline{v}}{|u|}z+\dfrac{\overline{u}}{|u|}},\\
           \\
@@ -755,31 +820,32 @@
           \begin{equation}\label{ec:termino_z_en_isometrias_disco}
           z_{0}=-\dfrac{v}{u},
           \end{equation}
-          entonces
-          \begin{equation}\label{ec:termino_z_conjugado_en_isometrias_disco}
-          \overline{z_{0}}=-\overline{\left[ \dfrac{v}{u}\right]}.
-          \end{equation}
-          El complejo \(\left(\dfrac{u}{|u|}\right)^{2}\) se encuentra sobre la circunferencia unitaria
-          \(S^{1}=\{z\in\mathbb{C}: |z|=1\},\) entonces lo podemos reescribir de la forma
-          \begin{equation}\label{ec:termino_circunferencia_en_isometrias_disco}
-          \left(\dfrac{u}{|u|}\right)^{2}=e^{i\theta},
-          \end{equation}
-          para algún \(\theta\in [0,2\pi).\) Finalmente, reemplazamos los términos descrito en las ecuaciones
-          \eqref{ec:termino_z_en_isometrias_disco}, \eqref{ec:termino_z_conjugado_en_isometrias_disco} y
-          \eqref{ec:termino_circunferencia_en_isometrias_disco} en la regla de asignación de la transformación de
-          Möbius y, obtenemos
-          \begin{equation}\label{ec:isom_plus_del_disco_de_Poincare}
-          \widetilde{T}(z)=e^{i\theta}\dfrac{z-z_{0}}{1-\overline{z_{0}}z},
-          \end{equation}
-          para algún \(z_{0}\in\Delta\) y algún \(\theta\in[0,2\pi).\) El hecho que \(z_{0}\in\Delta,\) se dedice de
-          la igualdad
-          \(|u|^{2}-|v|^{2}=1.\) Debido a que esta última relación implica
-          \begin{align*}
-          |u|^{2}&amp;=1+ |v|^{2},\\
-          |u|^{2}&amp;\lt |v|^{2},\\ \left|\dfrac{u}{v}\right|^{2}&amp;\lt 1,\\ \left|\dfrac{u}{v}\right|&amp;\lt 1,\\ |z_{0}|&amp;\lt
-          1.
-          \end{align*} Vamos a probar que efectivamente, los elementos que conforman \({\rm Isom}_{+}(\Delta)\) tiene
-          la forma de la ecuación \eqref{ec:isom_plus_del_disco_de_Poincare}. </p>
+        </div>
+        entonces
+        \begin{equation}\label{ec:termino_z_conjugado_en_isometrias_disco}
+        \overline{z_{0}}=-\overline{\left[ \dfrac{v}{u}\right]}.
+        \end{equation}
+        El complejo \(\left(\dfrac{u}{|u|}\right)^{2}\) se encuentra sobre la circunferencia unitaria
+        \(S^{1}=\{z\in\mathbb{C}: |z|=1\},\) entonces lo podemos reescribir de la forma
+        \begin{equation}\label{ec:termino_circunferencia_en_isometrias_disco}
+        \left(\dfrac{u}{|u|}\right)^{2}=e^{i\theta},
+        \end{equation}
+        para algún \(\theta\in [0,2\pi).\) Finalmente, reemplazamos los términos descrito en las ecuaciones
+        \eqref{ec:termino_z_en_isometrias_disco}, \eqref{ec:termino_z_conjugado_en_isometrias_disco} y
+        \eqref{ec:termino_circunferencia_en_isometrias_disco} en la regla de asignación de la transformación de
+        Möbius y, obtenemos
+        \begin{equation}\label{ec:isom_plus_del_disco_de_Poincare}
+        \widetilde{T}(z)=e^{i\theta}\dfrac{z-z_{0}}{1-\overline{z_{0}}z},
+        \end{equation}
+        para algún \(z_{0}\in\Delta\) y algún \(\theta\in[0,2\pi).\) El hecho que \(z_{0}\in\Delta,\) se dedice de
+        la igualdad
+        \(|u|^{2}-|v|^{2}=1.\) Debido a que esta última relación implica
+        \begin{align*}
+        |u|^{2}&amp;=1+ |v|^{2},\\
+        |u|^{2}&amp;\lt |v|^{2},\\ \left|\dfrac{u}{v}\right|^{2}&amp;\lt 1,\\ \left|\dfrac{u}{v}\right|&amp;\lt 1,\\ |z_{0}|&amp;\lt
+        1.
+        \end{align*} Vamos a probar que efectivamente, los elementos que conforman \({\rm Isom}_{+}(\Delta)\) tiene
+        la forma de la ecuación \eqref{ec:isom_plus_del_disco_de_Poincare}. <p></p>
 
         <div class="theorem">
           Toda transformación de Möbius de la forma
@@ -803,12 +869,15 @@
           |T(z)|=1, \text{ para todo } z\in\partial \Delta.
           \]
           Entonces,
-          \begin{align*}
-          |T(z)|&amp;={\color{red}\cancelto{1}{|e^{i\theta}|}}\dfrac{|z-z_{0}|}{|1-\overline{z_{0}}z|}=\dfrac{|\overline{z}||z-z_{0}|}{|1-\overline{z_{0}}z|},\\
-          &amp;=\dfrac{|{\color{blue}\cancelto{1}{\overline{z}z}}-
-          \overline{z}z_{0}|}{|1-\overline{z_{0}}z|}=\dfrac{|1-\overline{z}z_{0}|}{|1-\overline{z_{0}}z|},\\
-          &amp;=1.
-          \end{align*}
+          <div class="scroll-wrapper">
+            \begin{align*}
+            |T(z)|&amp;={\color{red}\cancelto{1}{|e^{i\theta}|}}\dfrac{|z-z_{0}|}{|1-\overline{z_{0}}z|}=\dfrac{|\overline{z}||z-z_{0}|}{|1-\overline{z_{0}}z|},\\
+            &amp;=\dfrac{|{\color{blue}\cancelto{1}{\overline{z}z}}-
+            \overline{z}z_{0}|}{|1-\overline{z_{0}}z|}=\dfrac{|1-\overline{z}z_{0}|}{|1-\overline{z_{0}}z|},\\
+            &amp;=1.
+            \end{align*}
+          </div>
+
         </div>
 
         <p>
@@ -884,27 +953,33 @@
         <div class="example">
           Tomemos el cuadrado \(K=[0,1]\times [1,2]\) en el plano hiperbólico \(\mathbb{H}.\) Del Teorema de Fubini se
           sigue que el área hiperbólica de \(K\) es
-          \begin{equation*}
-          \begin{split}
-          A_h(K)&amp;=\iint\limits_{K}\frac{dA}{\left({\rm Im}(z)\right)^{2}}=\int_{0}^{1}\int_{1}^2
-          \frac{dydx}{y^2}=\int_{0}^{1} \frac{-1}{y}\biggl|_{y=1}^{y=2}dx,\\
-          &amp;=\int_{0}^{1}\frac{1}{2}dx=\frac{1}{2}.\\
-          \end{split}
-          \end{equation*}
+          <div class="scroll-wrapper">
+            \begin{equation*}
+            \begin{split}
+            A_h(K)&amp;=\iint\limits_{K}\frac{dA}{\left({\rm Im}(z)\right)^{2}}=\int_{0}^{1}\int_{1}^2
+            \frac{dydx}{y^2}=\int_{0}^{1} \frac{-1}{y}\biggl|_{y=1}^{y=2}dx,\\
+            &amp;=\int_{0}^{1}\frac{1}{2}dx=\frac{1}{2}.\\
+            \end{split}
+            \end{equation*}
+          </div>
+
         </div>
 
         <div class="example">
           Tomemos la región \(K=[0,1]\times (0,1]\) en el plano hiperbólico \(\mathbb{H}.\) Del Teorema de Fubini se
           sigue que el área hiperbólica de \(K\) es
-          \begin{equation*}
-          \begin{split}
-          A_h(K)&amp;=\iint\limits_{K}\frac{dA}{\left({\rm Im}(z)\right)^{2}}=\lim\limits_{t\to 0}\int_{t}^{1}\int_{0}^{1}
-          \frac{dxdy}{y^2}=\lim\limits_{t\to 0}\int_{t}^{1} \frac{x}{y}\biggl|_{x=0}^{x=1}dy,\\
-          &amp;=\lim\limits_{t\to 0}\int_{t}^{1}\frac{1}{y}dx=\lim\limits_{t\to 0}\left(\ln
-          y\biggl|_{y=t}^{y=1}\right)=\lim\limits_{t\to 0} -\ln t,\\
-          &amp;=\infty.
-          \end{split}
-          \end{equation*}
+          <div class="scroll-wrapper">
+            \begin{equation*}
+            \begin{split}
+            A_h(K)&amp;=\iint\limits_{K}\frac{dA}{\left({\rm Im}(z)\right)^{2}}=\lim\limits_{t\to 0}\int_{t}^{1}\int_{0}^{1}
+            \frac{dxdy}{y^2}=\lim\limits_{t\to 0}\int_{t}^{1} \frac{x}{y}\biggl|_{x=0}^{x=1}dy,\\
+            &amp;=\lim\limits_{t\to 0}\int_{t}^{1}\frac{1}{y}dx=\lim\limits_{t\to 0}\left(\ln
+            y\biggl|_{y=t}^{y=1}\right)=\lim\limits_{t\to 0} -\ln t,\\
+            &amp;=\infty.
+            \end{split}
+            \end{equation*}
+          </div>
+
         </div>
 
         <p>
@@ -932,29 +1007,38 @@
           T(z)=\frac{az+b}{cz+d},
           \]
           tenemos que el área hiperbólica del paralelogramo \(P'\subset T_{T(z)}\mathbb{H}\) es
-          \begin{align*}
-          A_{h}(P')&amp;=\Vert T'(z)\cdot v \Vert_{h} \, \Vert T'(z)\cdot w \Vert_{h}=\dfrac{\vert T'(z)\cdot v \vert \,
-          \vert T'(z)\cdot w \vert}{\left( {\rm Im}(T(z))\right)^{2}},\\
-          &amp;\\
-          &amp;=\dfrac{\vert T'(z)\vert \, \vert v \vert \, \vert T'(z) \vert \, \vert w \vert}{\left( {\rm
-          Im}(T(z))\right)^{2}}= \dfrac{\vert T'(z)\vert \, \vert T'(z) \vert \, \vert v \vert \, \vert w \vert}{\left(
-          {\rm Im}(T(z))\right)^{2}}.
-          \end{align*}
+          <div class="scroll-wrapper">
+            \begin{align*}
+            A_{h}(P')&amp;=\Vert T'(z)\cdot v \Vert_{h} \, \Vert T'(z)\cdot w \Vert_{h}=\dfrac{\vert T'(z)\cdot v \vert \,
+            \vert T'(z)\cdot w \vert}{\left( {\rm Im}(T(z))\right)^{2}},\\
+            &amp;\\
+            &amp;=\dfrac{\vert T'(z)\vert \, \vert v \vert \, \vert T'(z) \vert \, \vert w \vert}{\left( {\rm
+            Im}(T(z))\right)^{2}}= \dfrac{\vert T'(z)\vert \, \vert T'(z) \vert \, \vert v \vert \, \vert w
+            \vert}{\left(
+            {\rm Im}(T(z))\right)^{2}}.
+            \end{align*}
+          </div>
+
           Dado que la parte imaginaria de \(T\) y su respectiva derivada compleja están dadas por
-          $$
-          \operatorname{Im}(T(z))=\dfrac{\operatorname{Im}(z)}{|cz+d|^2}\quad \text{ y }\quad
-          T'(z)=\dfrac{1}{(cz+d)^{2}},
-          $$
+          <div class="scroll-wrapper">
+            $$
+            \operatorname{Im}(T(z))=\dfrac{\operatorname{Im}(z)}{|cz+d|^2}\quad \text{ y }\quad
+            T'(z)=\dfrac{1}{(cz+d)^{2}},
+            $$
+          </div>
           entonces el área hiperbólica del paralelogramo \(P'\) es
-          $$
-          \begin{align*}
-          A_{h}(P')&amp;=\dfrac{\dfrac{1}{|cz+d|^{2}}\, \dfrac{1}{|cz+d|^{2}}\, |v|\,
-          |w|}{\left(\dfrac{\operatorname{Im}(z)}{|cz+d|^2}\right)^{2}}=\dfrac{|v|\,
-          |w|}{\left(\operatorname{Im}(z)\right)^{2}},\\
-          &amp;\\
-          &amp;=A_{h}(P).
-          \end{align*}
-          $$
+          <div class="scroll-wrapper">
+            $$
+            \begin{align*}
+            A_{h}(P')&amp;=\dfrac{\dfrac{1}{|cz+d|^{2}}\, \dfrac{1}{|cz+d|^{2}}\, |v|\,
+            |w|}{\left(\dfrac{\operatorname{Im}(z)}{|cz+d|^2}\right)^{2}}=\dfrac{|v|\,
+            |w|}{\left(\operatorname{Im}(z)\right)^{2}},\\
+            &amp;\\
+            &amp;=A_{h}(P).
+            \end{align*}
+            $$
+          </div>
+
         </div>
 
         <p>
@@ -970,10 +1054,12 @@
           T(u,v)=(x(u,v),y(u,v)).
           \]
           Entonces para cualquier función integrable \(f:D\to \mathbb{R}\) se satisface
-          \[
-          \iint\limits_{D} f(x,y)dxdy=\iint\limits_{D^{\ast}} f(x(u,v),y(u,v))
-          \left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|dudv,
-          \]
+          <div class="scroll-wrapper">
+            \[
+            \iint\limits_{D} f(x,y)dxdy=\iint\limits_{D^{\ast}} f(x(u,v),y(u,v))
+            \left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|dudv,
+            \]
+          </div>
           donde \(\left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|\) es el determinante de la matriz Jacobiana asociada
           a la transformación \(T.\)
         </div>
@@ -1002,40 +1088,50 @@
           para algunas funciones \(x,y:K\to\mathbb{R}.\) Como la función \(T\) satisface las condiciones de
           Cauchy-Riemann, pues es holomorfa, entonces el determinante de la matriz Jacobiana asociada a \(T\) en el
           punto \(z=(u,v)\) está dada mediante
-          \begin{align*}\label{eq:determinante_jacobiano}
-          \left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|&amp;= \left |\begin{matrix}
-          \dfrac{\partial x}{\partial u}(u,v) &amp; \dfrac{\partial x}{\partial v}(u,v) \\
-          &amp;\\
-          \dfrac{\partial y}{\partial u}(u,v) &amp; \dfrac{\partial y}{\partial v} (u,v)
-          \end{matrix}\right|,\\
-          &amp;\\
-          &amp;= \left |\begin{matrix}
-          \dfrac{\partial x}{\partial u}(u,v) &amp; -\dfrac{\partial y}{\partial u}(u,v) \\
-          &amp;\\
-          \dfrac{\partial y}{\partial u}(u,v) &amp; \dfrac{\partial x}{\partial u} (u,v)
-          \end{matrix}\right| = \left( \dfrac{\partial x}{\partial u}(u,v) \right)^2 +\left(\dfrac{\partial y}{\partial
-          u}(u,v)\right)^2,\\
-          &amp;\\
-          &amp;=\left|\dfrac{\partial x}{\partial u}(u,v) +i \dfrac{\partial y}{\partial
-          u}(u,v)\right|^2=\left|\frac{dT}{dz}(z)\right|^2=\frac{1}{|cz+d|^4}.
-          \end{align*}
+          <div class="scroll-wrapper">
+            \begin{align*}\label{eq:determinante_jacobiano}
+            \left|\dfrac{\partial(x,y)}{\partial(u,v)}\right|&amp;= \left |\begin{matrix}
+            \dfrac{\partial x}{\partial u}(u,v) &amp; \dfrac{\partial x}{\partial v}(u,v) \\
+            &amp;\\
+            \dfrac{\partial y}{\partial u}(u,v) &amp; \dfrac{\partial y}{\partial v} (u,v)
+            \end{matrix}\right|,\\
+            &amp;\\
+            &amp;= \left |\begin{matrix}
+            \dfrac{\partial x}{\partial u}(u,v) &amp; -\dfrac{\partial y}{\partial u}(u,v) \\
+            &amp;\\
+            \dfrac{\partial y}{\partial u}(u,v) &amp; \dfrac{\partial x}{\partial u} (u,v)
+            \end{matrix}\right| = \left( \dfrac{\partial x}{\partial u}(u,v) \right)^2 +\left(\dfrac{\partial
+            y}{\partial
+            u}(u,v)\right)^2,\\
+            &amp;\\
+            &amp;=\left|\dfrac{\partial x}{\partial u}(u,v) +i \dfrac{\partial y}{\partial
+            u}(u,v)\right|^2=\left|\frac{dT}{dz}(z)\right|^2=\frac{1}{|cz+d|^4}.
+            \end{align*}
+          </div>
+
 
           Ahora, consideremos la función integrable \(f:T(K)\to \mathbb{R},\) definida mediante
-          \[
-          T(w=x+iy)= \frac{1}{\left({\rm Im}(w)\right)^{2}}=\frac{1}{y^{2}}.
-          \]
+          <div class="scroll-wrapper">
+            \[
+            T(w=x+iy)= \frac{1}{\left({\rm Im}(w)\right)^{2}}=\frac{1}{y^{2}}.
+            \]
+          </div>
+
           Entonces del Teorema de Cambio de Variables para integrales se sigue que
-          $$
-          \begin{align*}
-          A_h(T(K))&amp;=\int_{T(K)}\frac{dxdy}{y^2}=\int_{K}
-          \frac{1}{\left(\operatorname{Im}(T(z))\right)^{2}}\frac{1}{|cz+d|^4}dudv,\\
-          &amp;\\
-          &amp; =\int_{K}\frac{1}{\left(\dfrac{\operatorname{Im}(z)}{|cz+d|^2}\right)^{2}}\frac{1}{|cz+d|^4}dudv=\int_K
-          \frac{1}{v^2}dudv,\\
-          &amp;\\
-          &amp;=A_h(K).
-          \end{align*}
-          $$
+          <div class="scroll-wrapper">
+            $$
+            \begin{align*}
+            A_h(T(K))&amp;=\int_{T(K)}\frac{dxdy}{y^2}=\int_{K}
+            \frac{1}{\left(\operatorname{Im}(T(z))\right)^{2}}\frac{1}{|cz+d|^4}dudv,\\
+            &amp;\\
+            &amp; =\int_{K}\frac{1}{\left(\dfrac{\operatorname{Im}(z)}{|cz+d|^2}\right)^{2}}\frac{1}{|cz+d|^4}dudv=\int_K
+            \frac{1}{v^2}dudv,\\
+            &amp;\\
+            &amp;=A_h(K).
+            \end{align*}
+            $$
+          </div>
+
         </div>
 
         <h3>Teorema de Gauss-Bonnet</h3>
@@ -1073,17 +1169,20 @@
         La medida del ángulo formado por los
         vectores \(\gamma'_{1}(t)\) y \(\gamma'_{2}(t)\) es el valor
         \(\pi-\theta\) donde \(\theta\in [0,\pi]\) tal que
-        $$
-        \begin{align*}
-        \langle \gamma'_{1}(t),\gamma'_{2}(t)\rangle_{h}^{\gamma(t)}&amp;=\Vert \gamma'_{1}\Vert_{h}\, \Vert
-        \gamma'_{2}(t)\Vert_{h}\, \cos\theta,\\
-        &amp;\\
-        \dfrac{\gamma'_{1}\overline{\gamma'_{2}(t)}}{(\operatorname{Im}(\gamma(t)))^{2}}&amp;=\dfrac{|\gamma'_{1}(t)|}{\operatorname{Im}(\gamma(t))}\dfrac{|\gamma'_{2}(t)|}{\operatorname{Im}(\gamma(t))}\cos
-        \theta,\\
-        &amp;\\
-        \langle \gamma'_{1}(t),\gamma'_{2}(t)\rangle_{c}&amp;=|\gamma'_{1}(t)|\, |\gamma'_{2}(t)|\, \cos \theta.
-        \end{align*}
-        $$
+        <div class="scroll-wrapper">
+          $$
+          \begin{align*}
+          \langle \gamma'_{1}(t),\gamma'_{2}(t)\rangle_{h}^{\gamma(t)}&amp;=\Vert \gamma'_{1}\Vert_{h}\, \Vert
+          \gamma'_{2}(t)\Vert_{h}\, \cos\theta,\\
+          &amp;\\
+          \dfrac{\gamma'_{1}\overline{\gamma'_{2}(t)}}{(\operatorname{Im}(\gamma(t)))^{2}}&amp;=\dfrac{|\gamma'_{1}(t)|}{\operatorname{Im}(\gamma(t))}\dfrac{|\gamma'_{2}(t)|}{\operatorname{Im}(\gamma(t))}\cos
+          \theta,\\
+          &amp;\\
+          \langle \gamma'_{1}(t),\gamma'_{2}(t)\rangle_{c}&amp;=|\gamma'_{1}(t)|\, |\gamma'_{2}(t)|\, \cos \theta.
+          \end{align*}
+          $$
+        </div>
+
 
         <p>
           Al removerle al plano hiperbólico \(\mathbb{H}\) una línea hiperbólica \(C,\) resultan dos subconjuntos
@@ -1177,24 +1276,30 @@
           \]
           Usando la integral, se tiene que el área hiperbólica del triángulo hiperbólico
           \(T(\triangle(z_{1},z_{2},z_{3}))\) es
-          \begin{equation*}
-          \begin{split}
-          A_{h}(T(\triangle(z_{1},z_{2},z_{3})))&amp;=\int_{a}^{b}\int_{\sqrt{1-x^2}}^{\infty}\frac{dydx}{y^2}=\int_{a}^{b}\left(\frac{-1}{y}\Big|_{y=\sqrt{1-x^2}}^{y=\infty}\right)dx,\\
-          &amp;\\
-          &amp;=\int_{a}^{b} \left(\lim_{y\to\infty} \frac{1}{y}
-          +\frac{1}{\sqrt{1-x^2}}\right)dx=\int_{a}^{b}\frac{1}{\sqrt{1-x^2}}dx.
-          \end{split}
-          \end{equation*}
+          <div class="scroll-wrapper">
+            \begin{equation*}
+            \begin{split}
+            A_{h}(T(\triangle(z_{1},z_{2},z_{3})))&amp;=\int_{a}^{b}\int_{\sqrt{1-x^2}}^{\infty}\frac{dydx}{y^2}=\int_{a}^{b}\left(\frac{-1}{y}\Big|_{y=\sqrt{1-x^2}}^{y=\infty}\right)dx,\\
+            &amp;\\
+            &amp;=\int_{a}^{b} \left(\lim_{y\to\infty} \frac{1}{y}
+            +\frac{1}{\sqrt{1-x^2}}\right)dx=\int_{a}^{b}\frac{1}{\sqrt{1-x^2}}dx.
+            \end{split}
+            \end{equation*}
+          </div>
+
           Nótese que los ángulos \(\angle A\textbf{0}a\) y \(\angle B\textbf{0}b\) son congruentes a los ángulos
           \(\alpha\) y \(\beta.\) Entonces realizamos la sustitución trigonométrica en la anterior igualdad dada por
           \[
           \cos \theta=\frac{1}{\sqrt{1-x^2}}, \quad \sin \theta=x \quad \text{y} \quad dx=\cos \theta d\theta.
           \]
           Computamos y obtenemos
-          \begin{equation*}
-          A_{h}(T(\triangle(z_{1},z_{2},z_{3})))=\int_{\alpha}^{\pi-\beta}\frac{\cos \theta}{\cos
-          \theta}d\theta=\pi-\beta-\alpha.
-          \end{equation*}
+          <div class="scroll-wrapper">
+            \begin{equation*}
+            A_{h}(T(\triangle(z_{1},z_{2},z_{3})))=\int_{\alpha}^{\pi-\beta}\frac{\cos \theta}{\cos
+            \theta}d\theta=\pi-\beta-\alpha.
+            \end{equation*}
+          </div>
+
 
           <span class="blue-text">Caso <strong>(2)</strong></span> El triángulo hiperbólico \(\triangle\) no tiene
           vértices sobre los reales extendidos \(\hat{\mathbb{R}}.\) Por comodidad denotemos sus vértices mediante
@@ -1211,21 +1316,30 @@
 
           Del trazo de la circunferencia ortogonal obtenemos los tríangulos hiperbólicos
           \(\triangle(x,B,C)\) y \(\triangle(x,A,B)\) que tienen en común el vértice \(x,\) el cual se encuentra sobre
-          los reales extendidos \(\hat{\mathbb{R}}.\) Adicionalmente, se tiene la siguiente relación de áreas
-          hiperbólicas \[ A_{h}(\triangle(A,B,C))=A_{h}(\triangle(x,B,C))-A_{h}(\triangle(x,B,A)). \] Como el vértice
+          los reales extendidos \(\hat{\mathbb{R}}.\)
+          Adicionalmente, se tiene la siguiente relación de áreas
+          hiperbólicas
+          <div class="scroll-wrapper">
+            \[ A_{h}(\triangle(A,B,C))=A_{h}(\triangle(x,B,C))-A_{h}(\triangle(x,B,A)). \]
+          </div>
+
+          Como el vértice
           \(x\) se encuentra sobre los reales extendidos \(\hat{\mathbb{R}},\) del <span class="blue-text">Caso
             <strong>(1)</strong></span> se sigue que (en este caso, vamos a usar el símbolo \({\rm m}\) para denotar la
           medida un ángulo \(\angle\))
-          \begin{equation}\label{ec:gauss_bonnet_caso_2}
-          \begin{split}
-          A_{h}(\triangle(A,B,C))&amp;=A_{h}(\triangle(x,B,C))-A_{h}(\triangle(x,A,B)),\\
-          &amp;\\
-          &amp;=\pi- [{\rm m}(\angle xCB)+{\rm m}(\angle xBC)]-(\pi-[{\rm m}(\angle xAB)+{\rm m}(\angle xBA)]),\\
-          &amp;\\
-          &amp;={\color{blue}-{\rm m}(\angle xBC)+{\rm m}(\angle xBA)}-{\color{red}{\rm m}(\angle
-          xCB)}+{\color{orange}{\rm m}(\angle xAB)}.
-          \end{split}
-          \end{equation}
+          <div class="scroll-wrapper">
+            \begin{equation}\label{ec:gauss_bonnet_caso_2}
+            \begin{split}
+            A_{h}(\triangle(A,B,C))&amp;=A_{h}(\triangle(x,B,C))-A_{h}(\triangle(x,A,B)),\\
+            &amp;\\
+            &amp;=\pi- [{\rm m}(\angle xCB)+{\rm m}(\angle xBC)]-(\pi-[{\rm m}(\angle xAB)+{\rm m}(\angle xBA)]),\\
+            &amp;\\
+            &amp;={\color{blue}-{\rm m}(\angle xBC)+{\rm m}(\angle xBA)}-{\color{red}{\rm m}(\angle
+            xCB)}+{\color{orange}{\rm m}(\angle xAB)}.
+            \end{split}
+            \end{equation}
+          </div>
+
 
           De nuestra construcción se siguen las siguientes relaciones
           <ul style="list-style-type: none; padding-left: 0;">
@@ -1234,13 +1348,16 @@
             <li><strong>(3)</strong> \({\rm m}(\angle xAB)=\pi-{\rm m}(\angle CAB).\)</li>
           </ul>
           Sustituimos las anteriores realaciones en la ecuación \eqref{ec:gauss_bonnet_caso_2} y obtebemos:
-          \begin{equation*}
-          \begin{split}
-          A_{h}(\triangle(A,B,C))&amp;=-{\rm m}(\angle ABC)-{\rm m}(\angle ACB)+\pi-{\rm m}(\angle BAC),\\
-          &amp;\\
-          &amp;=\pi-{\rm m}(\angle ABC)-{\rm m}(\angle ACB)-{\rm m}(\angle BAC).
-          \end{split}
-          \end{equation*}
+          <div class="scroll-wrapper">
+            \begin{equation*}
+            \begin{split}
+            A_{h}(\triangle(A,B,C))&amp;=-{\rm m}(\angle ABC)-{\rm m}(\angle ACB)+\pi-{\rm m}(\angle BAC),\\
+            &amp;\\
+            &amp;=\pi-{\rm m}(\angle ABC)-{\rm m}(\angle ACB)-{\rm m}(\angle BAC).
+            \end{split}
+            \end{equation*}
+          </div>
+
 
           Los casos restantes son consecuencias de los casos anteriores:
 
@@ -1309,11 +1426,14 @@
 
           Observemos que el área hiperbólica del polígono \(P(z_{1},\ldots,z_{n})\) es la suma de las áreas hiperbólicas
           de los \(n-2\) triángulos hiperbólicos
-          \begin{align}\label{ec:gauss_bonnet_poligonos}
-          A_{h}(P(z_{1},\ldots,z_{n}))&amp;=\sum_{i=1}^{n-2}A_{h}(\triangle_i)=\sum_{i=1}^{n-2}(\pi-[\alpha_{i}+\beta_{i}+\zeta_{i}]),\notag\\
-          &amp;\notag \\
-          &amp;=(n-2)\pi-\sum_{i=1}^{n-2}(\alpha_{i}+\beta_{i}+\zeta_{i}).
-          \end{align}
+          <div class="scroll-wrapper">
+            \begin{align}\label{ec:gauss_bonnet_poligonos}
+            A_{h}(P(z_{1},\ldots,z_{n}))&amp;=\sum_{i=1}^{n-2}A_{h}(\triangle_i)=\sum_{i=1}^{n-2}(\pi-[\alpha_{i}+\beta_{i}+\zeta_{i}]),\notag\\
+            &amp;\notag \\
+            &amp;=(n-2)\pi-\sum_{i=1}^{n-2}(\alpha_{i}+\beta_{i}+\zeta_{i}).
+            \end{align}
+          </div>
+
 
           Por otro lado, tenemos las siguientes relaciones sobre los ángulos de los triángulos hiperbólicos construidos
           previamente
@@ -1334,9 +1454,12 @@
 
           Reemplazando las anteriores relaciones en la ecuación \eqref{ec:gauss_bonnet_poligonos} obtenemos la igualdad
           esperada
-          \[
-          A_{h}(P(z_{1},\ldots,z_{n}))=(n-2)\pi-\left(\sum_{i_1}^{n}\alpha_i \right).
-          \]
+          <div class="scroll-wrapper">
+            \[
+            A_{h}(P(z_{1},\ldots,z_{n}))=(n-2)\pi-\left(\sum_{i_1}^{n}\alpha_i \right).
+            \]
+          </div>
+
         </div>
 
         <p>
@@ -1352,9 +1475,12 @@
         <div class="proof">
           Supongamos que existe dicho polígono hiperbólico \(P.\) Del Teorema de Gauss-Bonnet se sigue el área
           hiperbólica de dicho polígono es
-          \[
-          A_{h}(P)=(4-2)\pi-4\frac{\pi}{2}=0.
-          \]
+          <div class="scroll-wrapper">
+            \[
+            A_{h}(P)=(4-2)\pi-4\frac{\pi}{2}=0.
+            \]
+          </div>
+
           Esta igualdad implica que los vértices de \(P\) son colineales.
         </div>
 
@@ -1407,18 +1533,21 @@
           y_{0}={\rm sen} (\alpha).
           \end{equation}
           Dado que \(b=\rho(i,x_{0}+y_{0}i),\) entonces del Lema \ref{l:cosh} se sigue que
-          \begin{equation}
-          \begin{split}
-          \cosh(b)&amp;=\cosh(\rho(i,x_0+y_0i)) =1+\frac{|i-(x_0+y_0i)|}{2 {\rm Im}(i){\rm Im}(x_0+y_0i)},\\
-          &amp;\\
-          &amp;=1+\dfrac{|-x_{0}+(1-y_{0})i|}{2y_{0}}=1+\dfrac{x_{0}^{2}+(1-y_{0})^{2}}{2y_{0}},\\
-          &amp;\\
-          &amp;=\frac{2y_0+x_0^2+(1-y_0)^2}{2y_0}=\dfrac{2y_{0}+x_{0}^{2}+1-2y_{0}+y_{0}^{2}}{2y_{0}},\\
-          &amp;\\
-          &amp;=\frac{\cancelto{1}{x_0^2+y_0^2}+1}{2y_0}=\dfrac{\cancel{2}}{\cancel{2}y_{0}}=\dfrac{1}{y_{0}},\\
-          y_{0}\cosh(b)&amp;=1.\\
-          \end{split}
-          \end{equation}
+          <div class="scroll-wrapper">
+            \begin{equation}
+            \begin{split}
+            \cosh(b)&amp;=\cosh(\rho(i,x_0+y_0i)) =1+\frac{|i-(x_0+y_0i)|}{2 {\rm Im}(i){\rm Im}(x_0+y_0i)},\\
+            &amp;\\
+            &amp;=1+\dfrac{|-x_{0}+(1-y_{0})i|}{2y_{0}}=1+\dfrac{x_{0}^{2}+(1-y_{0})^{2}}{2y_{0}},\\
+            &amp;\\
+            &amp;=\frac{2y_0+x_0^2+(1-y_0)^2}{2y_0}=\dfrac{2y_{0}+x_{0}^{2}+1-2y_{0}+y_{0}^{2}}{2y_{0}},\\
+            &amp;\\
+            &amp;=\frac{\cancelto{1}{x_0^2+y_0^2}+1}{2y_0}=\dfrac{\cancel{2}}{\cancel{2}y_{0}}=\dfrac{1}{y_{0}},\\
+            y_{0}\cosh(b)&amp;=1.\\
+            \end{split}
+            \end{equation}
+          </div>
+
           Al sustituir la igualdad \eqref{eq:caso1_teo_paralelismo} en la igualdad anterior, obtenemos la relación
           esperada
           \[
@@ -1427,38 +1556,44 @@
 
           Ahora, probaremos el inciso <span class="blue-text"><strong>(1)</strong></span>. Recordemos la identidad
           trigonométrica
-          \begin{equation*}
-          \senh (b)=2\senh\left(\frac{b}{2}\right)\cosh\left(\frac{b}{2}\right).
-          \end{equation*}
-          Dado que \(b=\rho(i,x_{0}+y_{0}i),\) entonces la anterior expresión la reescribimos de la forma
-          \begin{equation}
-          \senh(b)=2 \senh\left( \dfrac{1}{2}\rho(i,x_{0}+y_{0}i)\right) \cosh\left(
-          \dfrac{1}{2}\rho(i,x_{0}+y_{0}i)\right).
-          \end{equation}
+          <div class="scroll-wrapper">
+            \begin{equation*}
+            \senh (b)=2\senh\left(\frac{b}{2}\right)\cosh\left(\frac{b}{2}\right).
+            \end{equation*}
+            Dado que \(b=\rho(i,x_{0}+y_{0}i),\) entonces la anterior expresión la reescribimos de la forma
+            \begin{equation}
+            \senh(b)=2 \senh\left( \dfrac{1}{2}\rho(i,x_{0}+y_{0}i)\right) \cosh\left(
+            \dfrac{1}{2}\rho(i,x_{0}+y_{0}i)\right).
+            \end{equation}
+          </div>
+
           Del teorema \ref{l:cosh} se sigue que la igualdad anterior es equivalente a
-          \begin{equation*}
-          \begin{split}
-          \senh(b) &amp;=2\dfrac{|i-(x_{0}+y_{0}i)|}{2\left({\rm Im}(i){\rm
-          Im}(x_{0}+y_{0})\right)^{1/2}}\dfrac{|i-\overline{x_{0}+y_{0}i}|}{2\left({\rm Im}(i){\rm
-          Im}(x_{0}+y_{0})\right)^{1/2}},\\
-          &amp;\\
-          &amp;=\cancel{2}\frac{|-x_0+(1-y_{0})i)|}{\cancel{2}\cancel{\sqrt{y_0}}}\frac{|-x_0+(1+y_{0})i|}{2\cancel{\sqrt{y_0}}},\\
-          &amp;\\
-          &amp;=\frac{\sqrt{x_0^2+(1-y_0)^2}\sqrt{x_0^2+(1+y_0)^2}}{2y_0},\\
-          &amp;\\
-          &amp;=\dfrac{\sqrt{\cancelto{1}{x_{0}^{2}+y_{0}^{2}}-2y_{0}+1}\sqrt{\cancelto{1}{x_{0}^{2}+y_{0}^{2}}+2y_{0}+1}}{2y_{0}},\\
-          &amp;\\
-          &amp;=\frac{\sqrt{2-2y_0}\sqrt{2+2y_0}}{2y_0}=\frac{\sqrt{4-4y^2_0}}{2y_0},\\
-          &amp;\\
-          &amp;=\dfrac{\sqrt{4\cancelto{x_{0}^{2}}{(1-y_{0}^{2})}}}{2y_{0}}=\frac{\sqrt{4x_0^2}}{2y_0}=\dfrac{\cancel{2}x_{0}}{\cancel{2}y_{0}},\\
-          &amp;\\
-          \senh(b)&amp;=\dfrac{x_{0}}{y_{0}},\\
-          &amp;\\
-          \senh(b)\frac{y_0}{x_0}&amp;=1,\\
-          &amp;\\
-          \senh(b)\tan(\alpha)&amp;=1.\\
-          \end{split}
-          \end{equation*}
+          <div class="scroll-wrapper">
+            \begin{equation*}
+            \begin{split}
+            \senh(b) &amp;=2\dfrac{|i-(x_{0}+y_{0}i)|}{2\left({\rm Im}(i){\rm
+            Im}(x_{0}+y_{0})\right)^{1/2}}\dfrac{|i-\overline{x_{0}+y_{0}i}|}{2\left({\rm Im}(i){\rm
+            Im}(x_{0}+y_{0})\right)^{1/2}},\\
+            &amp;\\
+            &amp;=\cancel{2}\frac{|-x_0+(1-y_{0})i)|}{\cancel{2}\cancel{\sqrt{y_0}}}\frac{|-x_0+(1+y_{0})i|}{2\cancel{\sqrt{y_0}}},\\
+            &amp;\\
+            &amp;=\frac{\sqrt{x_0^2+(1-y_0)^2}\sqrt{x_0^2+(1+y_0)^2}}{2y_0},\\
+            &amp;\\
+            &amp;=\dfrac{\sqrt{\cancelto{1}{x_{0}^{2}+y_{0}^{2}}-2y_{0}+1}\sqrt{\cancelto{1}{x_{0}^{2}+y_{0}^{2}}+2y_{0}+1}}{2y_{0}},\\
+            &amp;\\
+            &amp;=\frac{\sqrt{2-2y_0}\sqrt{2+2y_0}}{2y_0}=\frac{\sqrt{4-4y^2_0}}{2y_0},\\
+            &amp;\\
+            &amp;=\dfrac{\sqrt{4\cancelto{x_{0}^{2}}{(1-y_{0}^{2})}}}{2y_{0}}=\frac{\sqrt{4x_0^2}}{2y_0}=\dfrac{\cancel{2}x_{0}}{\cancel{2}y_{0}},\\
+            &amp;\\
+            \senh(b)&amp;=\dfrac{x_{0}}{y_{0}},\\
+            &amp;\\
+            \senh(b)\frac{y_0}{x_0}&amp;=1,\\
+            &amp;\\
+            \senh(b)\tan(\alpha)&amp;=1.\\
+            \end{split}
+            \end{equation*}
+          </div>
+
 
           La igualdad del inciso <span class="blue-text"><strong>(3)</strong></span> se sigue de tomar el cociente entre
           las igualdades descritas en los incisos <span class="blue-text"><strong>(1)</strong></span> y <span class="blue-text"><strong>(2)</strong></span>.
@@ -1505,95 +1640,146 @@
           vértice \(A\) está sobre el eje real positivo.
 
           Del teorema \ref{t:relaciones_trigonometricas_disco} se sigue que
-          \begin{equation}\label{eq:relacion_hiperbolica_tcos_1}
-          \tanh\left(\frac{1}{2}\rho(0,A)\right)=\tanh\left(\frac{b}{2}\right)=\frac{|0-A|}{|1-0|}=|A|=A.
-          \end{equation}
+          <div class="scroll-wrapper">
+            \begin{equation}\label{eq:relacion_hiperbolica_tcos_1}
+            \tanh\left(\frac{1}{2}\rho(0,A)\right)=\tanh\left(\frac{b}{2}\right)=\frac{|0-A|}{|1-0|}=|A|=A.
+            \end{equation}
+          </div>
           Por otro lado, tenemos que
-          \begin{equation}\label{eq:relacion_hiperbolica_tcos_2}
-          \tanh\left(\frac{1}{2}\rho(0,B)\right)=\tanh\left(\frac{a}{2}\right)=|0-B|=|B|.
-          \end{equation}
+          <div class="scroll-wrapper">
+            \begin{equation}\label{eq:relacion_hiperbolica_tcos_2}
+            \tanh\left(\frac{1}{2}\rho(0,B)\right)=\tanh\left(\frac{a}{2}\right)=|0-B|=|B|.
+            \end{equation}
+          </div>
+
           Además, \(c=\rho(A,B),\) entonces
-          \begin{equation}\label{eq:relacion_hiperbolica_tcos_3}
-          \senh^2\left(\frac{1}{2}\rho(A,B)\right)=\frac{|A-B|^2}{(1-|A|^2)(1-|B|^2)}.
-          \end{equation}
+          <div class="scroll-wrapper">
+            \begin{equation}\label{eq:relacion_hiperbolica_tcos_3}
+            \senh^2\left(\frac{1}{2}\rho(A,B)\right)=\frac{|A-B|^2}{(1-|A|^2)(1-|B|^2)}.
+            \end{equation}
+          </div>
+
           De la identidad \(\cosh(2x)=2\senh^2(x)+1\) la igualdad \ref{eq:relacion_hiperbolica_tcos_3} se reescribe como
           sigue
-          \begin{equation}
-          \begin{split}
-          \cosh(c)&amp;=2\senh^2\left(\frac{c}{2}\right)+1\\
-          &amp;=2\frac{|A-B|^2}{(1-|A|^2)(1-|B|^2)}+1\\
-          \end{split}
-          \end{equation}
-          De esta última expresión se sigue que
-          \begin{equation}\label{eq:relacion_hiperbolica_tcos_4}
-          |A-B|^2=\frac{(\cosh(c)-1)(1-|A|^2)(1-|B|^2)}{2}.
-          \end{equation}
+          <div class="scroll-wrapper">
+            \begin{equation}
+            \begin{split}
+            \cosh(c)&amp;=2\senh^2\left(\frac{c}{2}\right)+1\\
+            &amp;=2\frac{|A-B|^2}{(1-|A|^2)(1-|B|^2)}+1\\
+            \end{split}
+            \end{equation}
+            De esta última expresión se sigue que
+            \begin{equation}\label{eq:relacion_hiperbolica_tcos_4}
+            |A-B|^2=\frac{(\cosh(c)-1)(1-|A|^2)(1-|B|^2)}{2}.
+            \end{equation}
+          </div>
+
 
           En el triángulo euclidiano con vértices \(A,\) \(B\) y \(C\) se cumple la ley coseno
-          \begin{equation}
-          |B-A|^2=|A|^2+|B|^2-2|A||B|\cos(\gamma).
-          \end{equation}
-          Sustituimos la igualdad \ref{eq:relacion_hiperbolica_tcos_4} en la expresión anterior y obtenemos
-          \begin{equation}
-          \begin{split}
-          \frac{(\cosh(c)-1)(1-|A|^2)(1-|B|^2)}{2}&amp;=|A|^2+|B|^2-2|A||B|\cos(\gamma),\\
-          \cosh(c)(1-|A|^2)(1-|B|^2)&amp;=2|A|^2+2|B|^2-4|A||B|\cos(\gamma)+(1-|A|^2)(1-|B|^2),\\
-          \cosh(c)(1-|A|^2)(1-|B|^2)&amp;=|A|^2+|B|^2+|A|^2|B|^2+1-4|A||B|\cos(\gamma),\\
-          \cosh(c)(1-|A|^2)(1-|B|^2)&amp;=(1+|A|^2)(1+|B|^2)-4|A||B|\cos(\gamma).\\
-          \end{split}
-          \end{equation}
+          <div class="scroll-wrapper">
+            \begin{equation}
+            |B-A|^2=|A|^2+|B|^2-2|A||B|\cos(\gamma).
+            \end{equation}
+          </div>
+
+          Sustituimos la igualdad
+          \ref{eq:relacion_hiperbolica_tcos_4} en la expresión anterior y obtenemos
+          <div class="scroll-wrapper">
+            \begin{equation*}
+            \begin{split}
+            \frac{(\cosh(c)-1)(1-|A|^2)(1-|B|^2)}{2}&amp;=|A|^2+|B|^2-2|A||B|\cos(\gamma).
+            \end{split}
+            \end{equation*}
+          </div>
+          Al simplificar tenemos
+          <div class="scroll-wrapper">
+            \begin{equation*}
+            \begin{split}
+            \cosh(c)(1-|A|^2)(1-|B|^2)&amp;=2|A|^2+2|B|^2-4|A||B|\cos(\gamma)+(1-|A|^2)(1-|B|^2),\\
+            &amp;=|A|^2+|B|^2+|A|^2|B|^2+1-4|A||B|\cos(\gamma),\\
+            &amp;=(1+|A|^2)(1+|B|^2)-4|A||B|\cos(\gamma).\\
+            \end{split}
+            \end{equation*}
+          </div>
+
           Finalmente, sustituimos las relaciones \ref{eq:relacion_hiperbolica_tcos_1} y
           \ref{eq:relacion_hiperbolica_tcos_2} en la igualdad anterior y obtenemos
-          \begin{equation}
-          \begin{split}
-          \cosh(c)\left(1-\tanh^2\left(\frac{a}{2}\right)\right)\left(1-\tanh^2\left(\frac{b}{2}\right)\right)=&amp;\left(1+\tanh^2\left(\frac{a}{2}\right)\right)\left(1+\tanh^2\left(\frac{b}{2}\right)\right)\\
-          &amp;-4\tanh\left(\frac{a}{2}\right)\tanh\left(\frac{b}{2}\right)\cos(\gamma),\\
-          \frac{\cosh(c)}{\cosh^2\left(\frac{a}{2}\right)\cosh^2\left(\frac{b}{2}\right)}=&amp;\frac{\left(\senh^2\left(\frac{a}{2}\right)+\cosh^{2}\left(\frac{a}{2}\right)\right)
-          \left(\senh^2\left(\frac{b}{2}\right)+\cosh^{2}\left(\frac{b}{2}\right)\right)}{\cosh^2\left(\frac{a}{2}\right)
-          \cosh^2\left(\frac{b}{2}\right)}\\
-          &amp;-4\frac{\senh\left(\frac{a}{2}\right)\cosh\left(\frac{b}{2}\right)}{\cosh\left(\frac{a}{2}\right)\cosh\left(\frac{b}{2}\right)}\cos(\gamma),\\
-          \cosh(c)=&amp;\cosh(a)\cosh(b)-\senh(a)\senh(b)\cos(\gamma).
-          \end{split}
-          \end{equation}
+          <div class="scroll-wrapper">
+            \begin{equation*}
+            \begin{split}
+            \small\cosh(c)\left(1-\tanh^2\left(\frac{a}{2}\right)\right)\left(1-\tanh^2\left(\frac{b}{2}\right)\right)=&amp;\left(1+\tanh^2\left(\frac{a}{2}\right)\right)\left(1+\tanh^2\left(\frac{b}{2}\right)\right)\\
+            &amp;-4\tanh\left(\frac{a}{2}\right)\tanh\left(\frac{b}{2}\right)\cos(\gamma),\\
+            \end{split}
+            \end{equation*}
+          </div>
+          <div class="scroll-wrapper">
+            \begin{equation}
+            \begin{split}
+            \frac{\cosh(c)}{\cosh^2\left(\frac{a}{2}\right)\cosh^2\left(\frac{b}{2}\right)}=&amp;\frac{\left(\senh^2\left(\frac{a}{2}\right)+\cosh^{2}\left(\frac{a}{2}\right)\right)
+            \left(\senh^2\left(\frac{b}{2}\right)+\cosh^{2}\left(\frac{b}{2}\right)\right)}{\cosh^2\left(\frac{a}{2}\right)
+            \cosh^2\left(\frac{b}{2}\right)}\\
+            &amp;-4\frac{\senh\left(\frac{a}{2}\right)\cosh\left(\frac{b}{2}\right)}{\cosh\left(\frac{a}{2}\right)\cosh\left(\frac{b}{2}\right)}\cos(\gamma),\\
+            \cosh(c)=&amp;\cosh(a)\cosh(b)-\senh(a)\senh(b)\cos(\gamma).
+            \end{split}
+            \end{equation}
+          </div>
+
 
           <strong>Ley del seno.</strong> De la ley del coseno I tenemos que
           \begin{equation}
           \cos(\gamma)=\frac{\cosh(a)\cosh(b)-\cosh(c)}{\senh(a)\senh(b)}.
           \end{equation}
           Elevamos al cuadrado ambos lados de la igualdad y obtenemos
-          \begin{equation}
-          \cos^2(\gamma)= \frac{\cosh^2(a) \cosh^2(b)-2\cosh(a)\cosh(b)\cosh(c)+\cosh^2(c)}{\senh^2(a)\senh^2(b)}\\
-          \end{equation}
+          <div class="scroll-wrapper">
+            \begin{equation}
+            \cos^2(\gamma)= \frac{\cosh^2(a) \cosh^2(b)-2\cosh(a)\cosh(b)\cosh(c)+\cosh^2(c)}{\senh^2(a)\senh^2(b)}\\
+            \end{equation}
+          </div>
+
           De la identidad pitagórica \(\sin^2(\gamma)+\cos^2(\gamma)=1\) se sigue que
-          \begin{equation}
-          \begin{split}
-          1-\sin^2(\gamma)&amp;= \frac{\cosh^2(a) \cosh^2(b)-2\cosh(a)\cosh(b)\cosh(c)+\cosh^2(c)}{\senh^2(a)\senh^2(b)}\\
-          \sin^2(\gamma)&amp;=1-\frac{\cosh^2(a) \cosh^2(b)-2\cosh(a)\cosh(b)\cosh(c)+\cosh^2(c)}{\senh^2(a)\senh^2(b)}\\
-          \sin^2(\gamma)&amp;=\frac{\senh^2(a)\senh^2(b)-\cosh^2(a)
-          \cosh^2(b)+2\cosh(a)\cosh(b)\cosh(c)-\cosh^2(c)}{\senh^2(a)\senh^2(b)}\\
-          \sin^2(\gamma)&amp;=\frac{1-\cosh^2(a) -\cosh^2(b)
-          -\cosh^{2}(c)+2\cosh(a)\cosh(b)\cosh(c)}{\senh^2(a)\senh^2(b)}\\
-          \end{split}
-          \end{equation}
+          <div class="scroll-wrapper">
+            \begin{equation}
+            \begin{split}
+            1-\sin^2(\gamma)&amp;= \frac{\cosh^2(a) \cosh^2(b)-2\cosh(a)\cosh(b)\cosh(c)+\cosh^2(c)}{\senh^2(a)\senh^2(b)}\\
+            \sin^2(\gamma)&amp;=1-\frac{\cosh^2(a) \cosh^2(b)-2\cosh(a)\cosh(b)\cosh(c)+\cosh^2(c)}{\senh^2(a)\senh^2(b)}\\
+            {\small \sin^2(\gamma)}&amp;={\small \frac{\senh^2(a)\senh^2(b)-\cosh^2(a)
+            \cosh^2(b)+2\cosh(a)\cosh(b)\cosh(c)-\cosh^2(c)}{\senh^2(a)\senh^2(b)} }\\
+            \sin^2(\gamma)&amp;=\frac{1-\cosh^2(a) -\cosh^2(b)
+            -\cosh^{2}(c)+2\cosh(a)\cosh(b)\cosh(c)}{\senh^2(a)\senh^2(b)}\\
+            \end{split}
+            \end{equation}
+          </div>
+
           De esta última expresión se sigue
-          \begin{equation}
-          \frac{\senh^2(c)}{\sin^2(\gamma)}=\frac{\senh^2(a)\senh^2(b)\senh^2(c)}{1-\cosh^2(a) -\cosh^2(b)
-          -\cosh^{2}(c)+2\cosh(a)\cosh(b)\cosh(c)}
-          \end{equation}
+          <div class="scroll-wrapper">
+            \begin{equation}
+            \frac{\senh^2(c)}{\sin^2(\gamma)}=\frac{\senh^2(a)\senh^2(b)\senh^2(c)}{1-\cosh^2(a) -\cosh^2(b)
+            -\cosh^{2}(c)+2\cosh(a)\cosh(b)\cosh(c)}
+            \end{equation}
+          </div>
+
           De la simetría de la ley del coseno se sigue que
-          \begin{equation}
-          \frac{\senh^2(a)}{\sin^2(\alpha)}=\frac{\senh^2(a)\senh^2(b)\senh^2(c)}{1-\cosh^2(a) -\cosh^2(b)
-          -\cosh^{2}(c)+2\cosh(a)\cosh(b)\cosh(c)}
-          \end{equation}
+          <div class="scroll-wrapper">
+            \begin{equation}
+            \frac{\senh^2(a)}{\sin^2(\alpha)}=\frac{\senh^2(a)\senh^2(b)\senh^2(c)}{1-\cosh^2(a) -\cosh^2(b)
+            -\cosh^{2}(c)+2\cosh(a)\cosh(b)\cosh(c)}
+            \end{equation}
+          </div>
           y
-          \begin{equation}
-          \frac{\senh^2(b)}{\sin^2(\beta)}=\frac{\senh^2(a)\senh^2(b)\senh^2(c)}{1-\cosh^2(a) -\cosh^2(b)
-          -\cosh^{2}(c)+2\cosh(a)\cosh(b)\cosh(c)}
-          \end{equation}
+          <div class="scroll-wrapper">
+            \begin{equation}
+            \frac{\senh^2(b)}{\sin^2(\beta)}=\frac{\senh^2(a)\senh^2(b)\senh^2(c)}{1-\cosh^2(a) -\cosh^2(b)
+            -\cosh^{2}(c)+2\cosh(a)\cosh(b)\cosh(c)}
+            \end{equation}
+          </div>
+
           De estas últimas tres expresiones se sigue
-          \begin{equation}
-          \frac{\senh(a)}{\sin(\alpha)}=\frac{\senh(b)}{\sin(\beta)}=\frac{\senh(c)}{\sin(\gamma)}.
-          \end{equation}
+          <div class="scroll-wrapper">
+            \begin{equation}
+            \frac{\senh(a)}{\sin(\alpha)}=\frac{\senh(b)}{\sin(\beta)}=\frac{\senh(c)}{\sin(\gamma)}.
+            \end{equation}
+          </div>
+
           <br>
         </div>
 
@@ -1655,10 +1841,13 @@
             \]
             para cada \(t\in[a,b].\) La <span class="purple-text">longitud euclidiana de \(\gamma\)</span> está dada
             mediante
-            \[
-            \ell_{e}(\gamma):=\int\limits_{a}^{b} \Vert \gamma'(t) \Vert_{e} dt=\int\limits_{a}^{b}
-            \sqrt{(x'(t))^2+(y'(t))^2}dt.
-            \]
+            <div class="scroll-wrapper">
+              \[
+              \ell_{e}(\gamma):=\int\limits_{a}^{b} \Vert \gamma'(t) \Vert_{e} dt=\int\limits_{a}^{b}
+              \sqrt{(x'(t))^2+(y'(t))^2}dt.
+              \]
+            </div>
+
             La <span class="purple-text">distancia euclidiana</span> entre dos puntos \(z\) y \(w\) de \(\mathbb{C},\)
             la cual denotaremos
             \begin{equation}
@@ -1670,7 +1859,8 @@
             \[
             \rho_{e}(z,w)=\inf\limits_{\gamma}\left\{\ell_e (\gamma)\right\},
             \]
-            es una función distancia.</li>
+            es una función distancia.
+          </li>
 
           <li>Consideremos el punto \(z\) en el plano hiperbólico \(\mathbb{H}\) y un valor real \(\varepsilon&gt;0\) tal
             que la cerradura de la bola euclidiana \(B_{\varepsilon}(z)\) está contenida en \(\mathbb{H}\)
