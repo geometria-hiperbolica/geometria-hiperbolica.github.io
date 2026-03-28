@@ -382,7 +382,9 @@
           <div class="red-txt"><strong>(1) <em>La función \(\mu_{h}(z)\) es un producto interno</em></strong></div>
           <p>Recordemos que el espacio tangente \(T_{z}U\) es isomorfo al \(\mathbb{R}\) espacio vectorial
             \(\mathbb{C}\) y, la función \(\langle \,\, , \, \rangle^{z}_{e}\) es un producto interno sobre \(T_{z}U.\)
-            Del Problema \ref{ejer:producto_interno_cociente} se sigue que la función \(\langle \,\, ,\,\rangle_{h}^{z}:
+            Del 
+            <a href="disco-de-poincare.html#ejer_producto_interno_cociente">Problema 2</a>
+             se sigue que la función \(\langle \,\, ,\,\rangle_{h}^{z}:
             T_{z}U\times T_{z}U\to\mathbb{C}\) dado por</p>
           \[
           \langle z_{1},z_{2}\rangle_{h}^{z}:=\dfrac{\langle z_{1} , z_{2} \rangle_{c}^{z}}{(\operatorname{Im}(z))^2},
@@ -574,10 +576,10 @@
           curvas en el plano hiperbólico $\mathbb{H}$.
         </p>
 
-        <div class="example" id="ej:curva_gamma_segmento_eje_imaginario">
-          <p>Dados los reales positivos \(a,b\in \mathbb{R}\) tal que
+        <div class="example" id="ej_curva_gamma_segmento_eje_imaginario">
+          Dados los reales positivos \(a,b\in \mathbb{R}\) tal que
             \(0\lt a\lt b,\) entonces la función \(\gamma: [a,b]\to
-            \mathbb{H},\) definida mediante</p>
+            \mathbb{H},\) definida mediante
           \[
           \gamma(t):=it,
           \]
@@ -620,7 +622,7 @@
         </div>
 
         <div class="example">
-          <p>La función \(\gamma: (0,\pi)\to \mathbb{H},\) definida mediante</p>
+          La función \(\gamma: (0,\pi)\to \mathbb{H},\) definida mediante
           \[
           \gamma(t):=e^{it}=\cos(t)+i\operatorname{sen}(t),
           \]
@@ -691,7 +693,8 @@
 
         <div class="example" id="eje:calculo_longitud_hiperbolica_segmento_linea_recta">
           La <span class="purple-text">longitud hiperbólica</span> de la curva \(\gamma: [a,b]\to \mathbb{H},\) véase
-          Ejemplo \ref{ej:curva_gamma_segmento_eje_imaginario}, definida mediante
+          <a href="#ej_curva_gamma_segmento_eje_imaginario">Ejemplo 1</a>, 
+          definida mediante
           \[
           \gamma(t):=it,
           \]
@@ -715,8 +718,8 @@
           \rho(ai,bi)=\ln\left(\frac{b}{a}\right).
           \]
           <p>El lector puede verificar que este logaritmo a la derecha en la igualdad anterior, corresponde a la
-            longitud hiperbólica de la curva \(\gamma\) dada en el Ejemplo
-            \ref{eje:calculo_longitud_hiperbolica_segmento_linea_recta}.</p>
+            longitud hiperbólica de la curva \(\gamma\) dada en el 
+            Ejemplo 3.</p>
 
           <p>Ahora, consideremos una curva diferenciable a trozos \(\beta:[a_{1},b_{1}]\to \mathbb{H},\) definida
             mediante</p>
@@ -1101,7 +1104,7 @@
           \[
           \operatorname{Im}(T(z))=\dfrac{\operatorname{Im}(z)}{|cz+d|^2}. \tag{2}
           \]
-          <p>De la ecuación de la norma hiperbólica y la regla de la cadena se obtiene que la norma hiperbólica del
+          <p>De la ecuación \eqref{eq:norma_hiperbolica} de la norma hiperbólica y la regla de la cadena se obtiene que la norma hiperbólica del
             vector \(\dfrac{d}{dt}T(\gamma(t))\) es igual a</p>
           <div class="scroll-wrapper">
             \[
@@ -1229,7 +1232,9 @@
 
         <p>
           <span class="red-txt"><strong>¡Importante!</strong></span> Las líneas hiperbólicas son trozos (segmentos)
-          de círculos generalizados del plano complejo extendido \(\widehat{\mathbb{C}}.\)
+          de círculos generalizados
+          (véase <a href="plano-complejo-extendido.html#def_circulo_generalizado">Definición 3</a>)
+           del plano complejo extendido \(\widehat{\mathbb{C}}.\)
         </p>
 
         <p>
@@ -1295,7 +1300,9 @@
 
         <p>El <span class="blue-txt">Postulado II</span> es evidente, pues cada geodésica es un segmento de una línea
           hiperbólica, la cual siempre es posible prolongarla en el plano hiperbólico \(\mathbb{H}\) con ayuda de la
-          regla y el compás. Trataremos los Postulados <span class="blue-txt">III</span> y <span class="blue-txt">IV</span> cuando estudiemos las bolas inducidas por la distancia hiperbólica y los ángulos
+          regla y el compás. Trataremos los Postulados 
+          <span class="blue-txt">III</span> y <span class="blue-txt">IV</span> cuando estudiemos las 
+            bolas inducidas por la distancia hiperbólica (<a href="#teorema-bolas">Teorema 14</a>) y los ángulos
           formados por curvas derivables a trozos, respectivamente.</p>
 
         <p>Ahora bien, tratemos la negación del <span class="blue-txt">Postulado V</span> de la geometría euclidiana, el
@@ -1390,7 +1397,7 @@
           cuatro transformaciones de Möbius descritas anteriormente podemos obtener un elemento \(T\in
           \operatorname{PSL}(2,\mathbb{R})\) que envíe \(C_{1}\) sobre \(C_{2}.\)</p>
 
-        <div class="theorem" id="the:invariancia">
+        <div class="theorem" id="t_invariancia">
           El grupo \(\operatorname{PSL}(2, \mathbb{R})\) actúa transitivamente en la familia de todas las líneas
           hiperbólicas. Más precisamente, si \(C_1\) y \(C_2\) son líneas hiperbólicas, entonces existe un elemento
           \(T\in \operatorname{PSL}(2,\mathbb{R})\) que envía \(C_{1}\) sobre \(C_{2},\) <em>i.e.</em>,
@@ -1440,7 +1447,7 @@
           <p><span class="blue-txt"><strong>Caso 2.</strong></span> Supongamos que los elementos \(z\) y \(w\) son
             puntos arbitrarios sobre el plano hiperbólico \(\mathbb{H}\) tal que alguno de ellos no está sobre el
             eje imaginario. Denotemos mediante \(C\) a la circunferencia ortogonal al eje real que pasa por los
-            puntos \(z\) y \(w.\) El Teorema \ref{the:invariancia} garantiza la existencia de una transformación de
+            puntos \(z\) y \(w.\) El <a href="#t_invariancia">Teorema 6</a> garantiza la existencia de una transformación de
             Möbius \(T\) en \(\operatorname{PSL}(2,\mathbb{R})\) que envía la línea hiperbólica \(C\) sobre el eje
             imaginario (positivo). Así, las imágenes</p>
           \[
@@ -1481,9 +1488,9 @@
         \end{equation}
         <p>a la única geodésica con extremos \(z\) y \(w.\)</p>
 
-        <div class="theorem" id="t:punto_entre_z_w">
-          <p>Dados los complejos distintos \(z, w, v\in \mathbb{H},\) entonces \(\rho(z,w)=\rho(z,v)+\rho(v,w),\) si y
-            solo si, \(v\in[z,w].\)</p>
+        <div class="theorem" id="t_punto_entre_z_w">
+          Dados los complejos distintos \(z, w, v\in \mathbb{H},\) entonces \(\rho(z,w)=\rho(z,v)+\rho(v,w),\) si y
+            solo si, \(v\in[z,w].\)
         </div>
 
         <div class="proof">
@@ -1507,7 +1514,7 @@
           \end{equation}
         </div>
 
-        <div class="theorem" id="t:preservando_geodesicas">
+        <div class="theorem" id="t_preservando_geodesicas">
           Las isometrías del plano hiperbólico envían geodésicas (líneas hiperbólicas) en geodésicas (líneas
           hiperbólicas).
         </div>
@@ -1518,7 +1525,7 @@
           \[
           \phi([z,w])=[\phi(z),\phi(w)].
           \]
-          <p>Del Teorema \ref{t:punto_entre_z_w} se sigue que \(\rho(z,w)=\rho(z,v)+\rho(v,w),\) si y solo si,
+          <p>Del <a href="t_punto_entre_z_w">Teorema 8</a> se sigue que \(\rho(z,w)=\rho(z,v)+\rho(v,w),\) si y solo si,
             \(v\in[z,w].\) Dado que \(\phi\) es una isometría, entonces
             \(\rho(\phi(z),\phi(w))=\rho(\phi(z),\phi(v))+\rho(\phi(v),\phi(w)),\) si y solo si, \(\phi(v)\in
             [\phi(z),\phi(w)].\)</p>
@@ -1637,7 +1644,7 @@
 
         <p>donde \(x\) es cualquier real positivo.</p>
 
-        <div class="lemma" id="l:cosh">
+        <div class="lemma" id="l-cosh">
           Para cualesquiera dos puntos \(z,w\) sobre el plano hiperbólico \(\mathbb{H}\) se satisfacen las siguientes
           igualdades
           <ul style="list-style-type: none; padding-left: 0;">
@@ -1759,9 +1766,13 @@
           \]
         </div>
 
-        <p>Ahora, vamos a describir una fórmula para calcular la distancia hiperbólica entre dos complejos
-          \(z,w\in\mathbb{H}.\) Para ello, evaluamos el valor de la ecuación descrita en el inciso <strong>(4)</strong>
-          del Lema \ref{l:cosh} en la función tangente hiperbólica inversa \(\tanh^{-1},\) la cual está dada por</p>
+        <p>Ahora, vamos a describir una fórmula para calcular la distancia 
+          hiperbólica entre dos complejos
+          \(z,w\in\mathbb{H}.\) Para ello, evaluamos el 
+          valor de la ecuación descrita en el inciso 
+          <strong>(4)</strong>
+          del <a href="l-cosh">Lema 11</a> en la función tangente 
+          hiperbólica inversa \(\tanh^{-1},\) la cual está dada por</p>
         \[
         \tanh^{-1} (x)=\dfrac{1}{2}\ln \left(\dfrac{1+x}{1-x}\right)
         \]
@@ -1814,7 +1825,7 @@
           \]
           <p>tal que \(a,b,c,d\in\mathbb{R}\) y \(ad-bc=1.\)</p>
 
-          <p>El Teorema \ref{t:preservando_geodesicas} nos garantiza que la isometría \(\phi\) preserva líneas
+          <p>El <a href="#t_preservando_geodesicas">Teorema 9</a> nos garantiza que la isometría \(\phi\) preserva líneas
             hiperbólicas, entonces la imagen del eje imaginario \(\operatorname{Im}\) bajo \(\phi\) es también una línea
             hiperbólica. Dado que \(\operatorname{PSL}(2, \mathbb{R})\) actúa transitivamente sobre las líneas
             hiperbólicas, entonces existe un elemento \(T\in \operatorname{PSL}(2,\mathbb{R})\) tal que</p>
@@ -1847,7 +1858,7 @@
           \rho(z,it)=\rho(T\circ\phi(z), T\circ\phi(it))=\rho(u+vi,it).
           \]
 
-          <p>Del Lema \ref{l:cosh} inciso <strong>(2)</strong>, se sigue que</p>
+          <p>Del <a href="#l-cosh">Lema 11</a> inciso <strong>(2)</strong>, se sigue que</p>
           \[
           \dfrac{\left|it-(u+vi)\right|^{2}}{2\,
           \operatorname{Im}(it)\,\operatorname{Im}(u+vi)}=\dfrac{\left|it-z\right|^{2}}{2\, \operatorname{Im}(it)\,
