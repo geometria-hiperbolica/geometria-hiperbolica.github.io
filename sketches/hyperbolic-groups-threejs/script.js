@@ -376,3 +376,30 @@ function animate() {
     requestAnimationFrame(animate);
 }
 animate();
+
+// --- SHOW/HIDE UI LOGIC ---
+const uiToggle = document.getElementById('uiToggle');
+const controls = document.getElementById('controls');
+
+// Initially hide the controls by adding the 'hidden' class
+controls.classList.add('hidden');
+
+// Set initial button text
+uiToggle.innerText = '⚙️ Show Menu';
+
+uiToggle.addEventListener('click', (e) => {
+    // Stop propagation so the click doesn't trigger shader drag logic
+    e.stopPropagation(); 
+    
+    controls.classList.toggle('hidden');
+    
+    // Change button text/icon based on state
+    if (controls.classList.contains('hidden')) {
+        uiToggle.innerText = '⚙️ Show Menu';
+    } else {
+        uiToggle.innerText = '✖ Close';
+    }
+});
+
+// Prevent shader rotation when interacting with the UI
+controls.addEventListener('mousedown', (e) => e.stopPropagation());

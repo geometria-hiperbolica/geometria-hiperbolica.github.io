@@ -13,14 +13,35 @@
  }
 
  .webgl {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    outline: none;
-    z-index: 0; /* Ensure it stays behind the UI */
-}
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     outline: none;
+     z-index: 0;
+     /* Ensure it stays behind the UI */
+ }
+
+ a {
+     color: rgb(0, 255, 229);
+ }
+
+ a:link {
+     text-decoration: none;
+ }
+
+ a:visited {
+     text-decoration: none;
+ }
+
+ a:hover {
+     text-decoration: underline;
+ }
+
+ a:active {
+     text-decoration: underline;
+ }
 
  #info {
      position: absolute;
@@ -34,14 +55,14 @@
      font-size: 14px;
      pointer-events: none;
      z-index: 10;
-     border-left: 3px solid #ffaa44;
+     border-left: 3px solid #5550da;
      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
      font-family: monospace;
  }
 
  #controls {
      position: absolute;
-     bottom: 20px;
+     bottom: 60px;
      right: 20px;
      background: rgba(20, 20, 30, 0.85);
      backdrop-filter: blur(12px);
@@ -156,6 +177,37 @@
      font-size: 14px;
      text-align: center;
      color: #7c95f9;
+ }
+
+ /* Style for the Toggle Button */
+ #uiToggle {
+     position: absolute;
+     bottom: 20px;
+     right: 20px;
+     z-index: 30;
+     /* Higher than controls */
+     background: rgba(20, 20, 30, 0.85);
+     border: 1px solid rgba(255, 255, 255, 0.2);
+     padding: 8px 16px;
+     border-radius: 20px;
+     backdrop-filter: blur(12px);
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+ }
+
+ /* Base state for controls (added transition) */
+ #controls {
+     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+     transform: translateX(0);
+     opacity: 1;
+ }
+
+ /* The Hidden State */
+ #controls.hidden {
+     transform: translateX(250px);
+     /* Slides it out to the right */
+     opacity: 0;
+     pointer-events: none;
+     /* Prevents clicking invisible buttons */
  }
 
  @media (max-width: 600px) {
