@@ -62,7 +62,7 @@
 
  #controls {
      position: absolute;
-     bottom: 60px;
+     bottom: 55px;
      right: 20px;
      background: rgba(20, 20, 30, 0.85);
      backdrop-filter: blur(12px);
@@ -158,6 +158,11 @@
      text-align: center;
      margin-top: 5px;
  }
+ .subnote {
+     font-size: 10px;
+     color: #aaa;
+     margin-top: 5px;
+ }
 
  input[type="range"] {
      width: 100%;
@@ -176,7 +181,7 @@
      margin: 0 0 5px 0;
      font-size: 14px;
      text-align: center;
-     color: #7c95f9;
+     color: #8ba1f7;
  }
 
  /* Style for the Toggle Button */

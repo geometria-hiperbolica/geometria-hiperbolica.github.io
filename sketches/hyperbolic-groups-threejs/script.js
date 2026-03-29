@@ -16,7 +16,8 @@ const uniforms = {
     uMaxReflections: { value: 500.0 },
     uLighteningFactor: { value: 8.0 },
     uCamDistance: { value: 10 },
-    uMouse: { value: new THREE.Vector2(0.5, 0.3) } 
+    uMouse: { value: new THREE.Vector2(0.5, 0.3) },
+    uAutoRotate: { value: 1.0 } // 1.0 = auto-rotation on, 0.0 = off (mouse control only)
 };
 
 const fragmentShader = `
@@ -33,6 +34,7 @@ uniform float uMaxReflections;
 uniform float uLighteningFactor;
 uniform float uCamDistance;
 uniform vec2 uMouse;
+uniform float uAutoRotate;
 
 #define inf -1.0
 #define MAX_TRACE_STEPS 100
@@ -206,9 +208,18 @@ void main() {
     vec2 fragCoord = gl_FragCoord.xy;
     vec2 uv = (fragCoord - iResolution.xy * 0.5) / iResolution.y;
     
-    vec3 camera = vec3(3.0, 3.2, -5.0);
-    camera.xz = rot2d(camera.xz, iTime * 0.02);
-    camera = normalize(camera) * uCamDistance;
+     // Camera rotation based on auto-rotate flag
+    vec3 camera;
+    if (uAutoRotate > 0.5) {
+        // Auto-rotation mode: camera rotates automatically
+        camera = vec3(3.0, 3.2, -5.0);
+        camera.xz = rot2d(camera.xz, iTime * 0.02);
+        camera = normalize(camera) * uCamDistance;
+    } else {
+        // Mouse control mode: fixed camera position with mouse influence on sphere rotation
+        camera = vec3(3.0, 3.2, -5.0);
+        camera = normalize(camera) * uCamDistance;
+    }
 
     vec3 lookat = vec3(0.0, -0.5, 0.0);
     vec3 lp = vec3(0.5, 3.0, -0.8);
@@ -219,6 +230,14 @@ void main() {
     float rx = uMouse.y * PI;
     float ry = -uMouse.x * 2.0 * PI;
     mat3 mouRot = sphMat(rx, ry);
+
+    // If auto-rotate is on, add a slow rotation to the sphere transformation
+    if (uAutoRotate > 0.5) {
+        //float autoRx = iTime * 0.15;
+        float autoRy = iTime * 0.02;
+        mouRot = sphMat(0.0, autoRy);
+    }
+
 
     vec3 finalcol = vec3(0.0);
     for(int ii=0; ii<AA; ii++) {
@@ -329,6 +348,8 @@ const lightVal = document.getElementById('lightVal');
 const camZoomSlider = document.getElementById('camZoom');
 const zoomVal = document.getElementById('zoomVal');
 const currentTripleSpan = document.getElementById('currentTriple');
+const autoRotateCheckbox = document.getElementById('autoRotate');
+
 
 function updateParams(p, q, r) {
     uniforms.uP.value = parseFloat(p);
@@ -346,11 +367,39 @@ function updateParams(p, q, r) {
 
 // applyBtn.addEventListener('click', () => updateParams(paramP.value, paramQ.value, paramR.value));
 
-presetBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        updateParams(parseInt(btn.dataset.p), parseInt(btn.dataset.q), parseInt(btn.dataset.r));
+if (presetBtns) {
+    presetBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            updateParams(parseInt(btn.dataset.p), parseInt(btn.dataset.q), parseInt(btn.dataset.r));
+        });
     });
-});
+}
+
+if (camZoomSlider) {
+    camZoomSlider.addEventListener('input', (e) => {
+        const val = parseFloat(e.target.value);
+        uniforms.uCamDistance.value = val;
+        if (zoomVal) zoomVal.innerText = val.toFixed(1);
+    });
+}
+
+// Auto-rotate checkbox event
+if (autoRotateCheckbox) {
+    autoRotateCheckbox.addEventListener('change', (e) => {
+        uniforms.uAutoRotate.value = e.target.checked ? 1.0 : 0.0;
+    });
+}
+
+
+// presetBtns.forEach(btn => {
+//     btn.addEventListener('click', () => {
+//         updateParams(parseInt(btn.dataset.p), parseInt(btn.dataset.q), parseInt(btn.dataset.r));
+//     });
+// });
+
+// camZoomSlider.addEventListener('input', (e) => {
+//     uniforms.uCamDistance.value = zoomVal.innerText = parseFloat(e.target.value).toFixed(1);
+// });
 
 // maxReflSlider.addEventListener('input', (e) => {
 //     uniforms.uMaxReflections.value = reflectionsVal.innerText = parseInt(e.target.value);
@@ -361,9 +410,7 @@ presetBtns.forEach(btn => {
 //     lightVal.innerText = parseFloat(e.target.value).toFixed(1);
 // });
 
-camZoomSlider.addEventListener('input', (e) => {
-    uniforms.uCamDistance.value = zoomVal.innerText = parseFloat(e.target.value).toFixed(1);
-});
+
 
 window.addEventListener('resize', () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -381,25 +428,31 @@ animate();
 const uiToggle = document.getElementById('uiToggle');
 const controls = document.getElementById('controls');
 
-// Initially hide the controls by adding the 'hidden' class
-controls.classList.add('hidden');
+if (controls) {
+    // Initially hide the controls by adding the 'hidden' class
+    controls.classList.add('hidden');
+}
 
-// Set initial button text
-uiToggle.innerText = '⚙️ Show Menu';
+if (uiToggle) {
+    // Set initial button text
+    uiToggle.innerText = '⚙️ Show Menu';
 
-uiToggle.addEventListener('click', (e) => {
-    // Stop propagation so the click doesn't trigger shader drag logic
-    e.stopPropagation(); 
-    
-    controls.classList.toggle('hidden');
-    
-    // Change button text/icon based on state
-    if (controls.classList.contains('hidden')) {
-        uiToggle.innerText = '⚙️ Show Menu';
-    } else {
-        uiToggle.innerText = '✖ Close';
-    }
-});
+    uiToggle.addEventListener('click', (e) => {
+        // Stop propagation so the click doesn't trigger shader drag logic
+        e.stopPropagation(); 
+        
+        controls.classList.toggle('hidden');
+        
+        // Change button text/icon based on state
+        if (controls.classList.contains('hidden')) {
+            uiToggle.innerText = '⚙️ Show Menu';
+        } else {
+            uiToggle.innerText = '✖ Close';
+        }
+    });
+}
 
 // Prevent shader rotation when interacting with the UI
-controls.addEventListener('mousedown', (e) => e.stopPropagation());
+if (controls) {
+    controls.addEventListener('mousedown', (e) => e.stopPropagation());
+}
