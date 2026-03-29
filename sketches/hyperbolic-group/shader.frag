@@ -63,12 +63,10 @@ For large PQRs the limit set will become too small to be visible, you need to ad
 MAX_REFLECTIONS and tweak with the function chooseColor to get appealling results.
 */
 
-
 // These are necessary definitions that let you graphics card know how to render the shader
 #ifdef GL_ES
 precision highp float;
 #endif
-
 
 // These are our passed in information from the sketch.js
 uniform vec2 iResolution;
@@ -445,12 +443,6 @@ void main() {
     finalcol /= (float(AA) * float(AA));
   
   finalcol = mix(finalcol, 1. - exp(-finalcol), .35);
-  
-  
-  
-   //vec3 col = vec3(0.0);
-  
-    
       
   // gl_FragColor is a built in shader variable, and your .frag file must contain it
   // We are setting the vec3 color into a new vec4, with a transparency of 1 (no opacity)
