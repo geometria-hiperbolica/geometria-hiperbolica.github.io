@@ -91,6 +91,14 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
+function mousePressed() {
+  cursor('grabbing');
+}
+
+function mouseReleased() {
+  cursor('grab');
+}
+
 function mouseMove() {
 	if (!mouseIsPressed) return;
 	moves[0] += mouseX - pmouseX;
