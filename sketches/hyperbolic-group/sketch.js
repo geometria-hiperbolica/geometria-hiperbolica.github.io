@@ -1,10 +1,12 @@
 /*
  
-Learning Shaders: RayMarching starting point
+Limit set of rank 4 hyperbolic Coxeter groups
+
+by Zhao Liang 
 
 Author: Juan Carlos Ponce Campuzano
 Website: https://jcponce.github.io
-Date: 08/Jun/2024
+Date: 29/Mar/2026
 
 */
 
@@ -15,6 +17,7 @@ let shaderBg;
 let img;
 let time_;
 let framerate;
+let moves = [0,0];
 
 function preload() {
   // load the shader
@@ -41,37 +44,29 @@ function draw() {
   // shader() sets the active shader with our shader
   shaderBg.shader(theShader);
 
-  // get the mouse coordinates, map them to values between 0-1 space
-  let yMouse = (map(mouseY, 0, height, height, 0) / height) * 2 - 1;
-  let xMouse = (mouseX / width) * 2 - 1;
-
-  // Make sure pixels are square
-  xMouse = (xMouse * width) / height;
-  yMouse = (yMouse ) ;
-  
-
+  mouseMove();
   // pass the interactive information to the shader
   theShader.setUniform("iResolution", [width, height]);
   theShader.setUniform("iTime", millis() / 1000.0);
-  theShader.setUniform("iMouse", [viewX, viewY]);
+  theShader.setUniform("iMouse", moves);
 
   // rect gives us some geometry on the screen to draw the shader on
   shaderBg.rect(0, 0, width, height);
   image(shaderBg, 0, 0, width, height);
   
-  let increment = 20 / ((frameRate() || 60) * 140); // timestep based on framerate, will rotate same speed on all regardless of framerate
-  time_ += increment;
-  if(time_ > TWO_PI) time_ -= TWO_PI; // prevent time from getting to big and maybe causing errors?
+  // let increment = 20 / ((frameRate() || 60) * 140); // timestep based on framerate, will rotate same speed on all regardless of framerate
+  // time_ += increment;
+  // if(time_ > TWO_PI) time_ -= TWO_PI; // prevent time from getting to big and maybe causing errors?
 
   // flip coordinate information box
-  let flipX = 0;
-  let flipY = 0;
-  if (width - mouseX < 200) {
-    flipX = -130;
-  }
-  if (height - mouseY < 100) {
-    flipY = -35;
-  }
+  // let flipX = 0;
+  // let flipY = 0;
+  // if (width - mouseX < 200) {
+  //   flipX = -130;
+  // }
+  // if (height - mouseY < 100) {
+  //   flipY = -35;
+  // }
 
   // draw coordinate information box if you want
 
@@ -90,41 +85,14 @@ function draw() {
 
 */
 
-  //console.log(imView);
 }
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-let imView = false;
- 
-function mousePressed() {
-  if (imView === false) {
-    imView = true;
-  }
-  cursor('grabbing');
-}
-
-function mouseReleased() {
-  if (imView === true) {
-    imView = false;
-  }
-  cursor('grab');
-}
-
-// Change 3D view 
-let viewX = 189;
-let viewY = 224;
-function mouseDragged() {
-  viewX = mouseX;
-  viewY = map(mouseY, 0, height, height, 0);
-  //console.log(viewX,viewY);
-}
-
-function mouseReleased() {
-  if (imView === true) {
-    imView = false;
-  }
-  cursor('grab');
+function mouseMove() {
+	if (!mouseIsPressed) return;
+	moves[0] += mouseX - pmouseX;
+	moves[1] += pmouseY - mouseY;
 }
