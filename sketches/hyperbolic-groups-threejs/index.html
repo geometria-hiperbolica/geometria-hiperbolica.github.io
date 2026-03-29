@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Hyperbolic Coxeter Groups - Limit Set (Rank 4)</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <canvas class="webgl"></canvas>
+    <div id="info">
+        🧬 LIMIT SET: Rank 4 Hyperbolic Coxeter Groups <br>
+        <span style="font-size:12px;">Reflection method | Brass metal patina | <span
+                id="currentTriple">(5,4,4)</span></span>
+    </div>
+
+    <div id="controls">
+        <h4>⚡ COXETER PARAMETERS (p,q,r)</h4>
+        <!-- <div class="triple-row">
+            <div style="flex:1"><label>p</label><input type="number" id="paramP" value="5" step="1" min="2"></div>
+            <div style="flex:1"><label>q</label><input type="number" id="paramQ" value="4" step="1" min="2"></div>
+            <div style="flex:1"><label>r</label><input type="number" id="paramR" value="4" step="1" min="2"></div>
+            <button id="applyCustom" style="background:#555;">✓ Apply</button>
+        </div> -->
+        <div class="ctrl-group">
+            <label>🎨 PRESET PATTERNS</label>
+            <div class="preset-buttons" id="presetContainer">
+                <button data-p="3" data-q="7" data-r="3">(3,7,3)</button>
+                <button data-p="4" data-q="6" data-r="3">(4,6,3)</button>
+                <button data-p="4" data-q="4" data-r="5">(4,4,5)</button>
+                <button data-p="5" data-q="4" data-r="4" class="active">(5,4,4) ⭐</button>
+                <button data-p="7" data-q="3" data-r="4">(7,3,4)</button>
+                <button data-p="5" data-q="4" data-r="4">fav (5,4,4)</button>
+            </div>
+        </div>
+        <hr>
+        <!-- <div class="ctrl-group">
+            <label>🪞 MAX REFLECTIONS (detail)</label>
+            <input type="range" id="maxReflections" min="150" max="1200" step="10" value="500">
+            <div class="value-display" id="reflectionsVal">500</div>
+            <div class="note">higher = more limit set precision, slower</div>
+        </div> -->
+        <!-- <div class="ctrl-group">
+            <label>✨ BRIGHTNESS / METAL</label>
+            <input type="range" id="lightFactor" min="2.0" max="20.0" step="0.5" value="8.0">
+            <div class="value-display" id="lightVal">8.0</div>
+        </div> -->
+        <div class="ctrl-group">
+            <label>🔍 CAMERA ZOOM (distance)</label>
+            <input type="range" id="camZoom" min="2.5" max="15.0" step="0.1" value="5.2">
+            <div class="value-display" id="zoomVal">10</div>
+        </div>
+        <div class="note">💡 Inspired by Zhao Liang / mla | Mouse moves camera slightly | Auto-rotation</div>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@v0.128.0/build/three.module.js"
+            }
+        }
+    </script>
+
+   <script type="module" src="./script.js"></script>
+</body>
+
+</html>
