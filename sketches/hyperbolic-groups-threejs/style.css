@@ -158,10 +158,9 @@
      text-align: center;
      margin-top: 5px;
  }
+
  .subnote {
-     font-size: 10px;
      color: #aaa;
-     margin-top: 5px;
  }
 
  input[type="range"] {

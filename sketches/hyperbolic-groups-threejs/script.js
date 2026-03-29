@@ -347,7 +347,7 @@ const reflectionsVal = document.getElementById('reflectionsVal');
 const lightVal = document.getElementById('lightVal');
 const camZoomSlider = document.getElementById('camZoom');
 const zoomVal = document.getElementById('zoomVal');
-const currentTripleSpan = document.getElementById('currentTriple');
+//const currentTripleSpan = document.getElementById('currentTriple');
 const autoRotateCheckbox = document.getElementById('autoRotate');
 
 
@@ -355,14 +355,14 @@ function updateParams(p, q, r) {
     uniforms.uP.value = parseFloat(p);
     uniforms.uQ.value = parseFloat(q);
     uniforms.uR.value = parseFloat(r);
-    currentTripleSpan.innerText = `(${p}, ${q}, ${r})`;
-    paramP.value = p; paramQ.value = q; paramR.value = r;
-    presetBtns.forEach(btn => {
-        const bp = parseInt(btn.getAttribute('data-p'));
-        const bq = parseInt(btn.getAttribute('data-q'));
-        const br = parseInt(btn.getAttribute('data-r'));
-        btn.classList.toggle('active', bp === p && bq === q && br === r);
-    });
+    //currentTripleSpan.innerText = `(${p}, ${q}, ${r})`;
+    // paramP.value = p; paramQ.value = q; paramR.value = r;
+    // presetBtns.forEach(btn => {
+    //     const bp = parseInt(btn.getAttribute('data-p'));
+    //     const bq = parseInt(btn.getAttribute('data-q'));
+    //     const br = parseInt(btn.getAttribute('data-r'));
+    //     btn.classList.toggle('active', bp === p && bq === q && br === r);
+    // });
 }
 
 // applyBtn.addEventListener('click', () => updateParams(paramP.value, paramQ.value, paramR.value));
