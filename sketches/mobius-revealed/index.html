@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Möbius Transformations | Sphere Rigid Motions</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #000;
+      font-family: 'Segoe UI', 'Monaco', monospace;
+    }
+
+    canvas.webgl {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* UI Panel - sleek glassmorphism */
+    .ui {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(12, 12, 20, 0.92);
+      backdrop-filter: blur(12px);
+      padding: 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 255, 255, 0.35);
+      color: #fff;
+      width: 280px;
+      z-index: 10;
+      transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1), opacity 0.25s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      font-family: monospace;
+    }
+
+    .ui.hidden {
+      transform: translateX(-320px);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .control {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #8df;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 500;
+    }
+
+    input[type=range] {
+      width: 100%;
+      cursor: pointer;
+      background: #1e2a2f;
+      height: 3px;
+      border-radius: 3px;
+      accent-color: #0ff;
+    }
+
+    span {
+      font-family: 'Fira Code', monospace;
+      color: #0ff;
+      background: rgba(0, 255, 255, 0.12);
+      padding: 2px 6px;
+      border-radius: 8px;
+      font-size: 11px;
+    }
+
+    h2 {
+      margin: 0 0 14px 0;
+      font-size: 15px;
+      color: #0ff;
+      text-align: center;
+      border-bottom: 1px solid #2c4c5c;
+      padding-bottom: 8px;
+      letter-spacing: 2px;
+      font-weight: 400;
+    }
+
+    .toggle-ui-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 20;
+      background: rgba(12, 12, 20, 0.9);
+      backdrop-filter: blur(8px);
+      border: 1px solid #0ff;
+      color: #0ff;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
+      font-family: monospace;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .toggle-ui-btn:hover {
+      background: rgba(0, 255, 255, 0.25);
+      transform: scale(1.03);
+    }
+
+    .info-hint {
+      position: absolute;
+      bottom: 18px;
+      left: 20px;
+      font-size: 0.75rem;
+      color: rgba(220, 230, 255, 0.95);
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(5px);
+      padding: 8px 14px;
+      border-radius: 16px;
+      pointer-events: none;
+      z-index: 15;
+      font-family: monospace;
+      line-height: 1.4;
+      border-left: 3px solid #0ff;
+    }
+
+    hr {
+      margin: 5px 0;
+      border-color: #2a4a5a;
+    }
+
+    @media (max-width: 600px) {
+      .ui { width: 250px; padding: 14px; }
+      .info-hint { font-size: 8px; bottom: 12px; left: 12px; }
+      .toggle-ui-btn { width: 36px; height: 36px; font-size: 18px; }
+    }
+  </style>
+</head>
+
+<body>
+  <button id="toggleUI" class="toggle-ui-btn" aria-label="Toggle UI">✕</button>
+
+  <div class="ui" id="uiPanel">
+    <h2>MÖBIUS <br/>SPHERE RIGID MOTION</h2>
+    <div class="control">
+      <label>🏔️ Dilation / Height (Z) <span id="sz_val">1.00</span></label>
+      <input type="range" id="sz" min="1.0" max="4.0" step="0.01" value="1.0">
+    </div>
+    <div class="control">
+      <label>↔️ Translate X <span id="tx_val">0.00</span></label>
+      <input type="range" id="tx" min="-3.0" max="3.0" step="0.01" value="0.0">
+    </div>
+    <div class="control">
+      <label>↕️ Translate Y <span id="ty_val">0.00</span></label>
+      <input type="range" id="ty" min="-3.0" max="3.0" step="0.01" value="0.0">
+    </div>
+    <div class="control">
+      <label>🔄 Rotation (Z-axis) <span id="rot_val">0.00</span></label>
+      <input type="range" id="rot" min="0" max="6.28318" step="0.01" value="0.0">
+    </div>
+    <div class="control">
+      <label>🌀 Inversion / Tilt (Y) <span id="inv_val">0.00</span></label>
+      <input type="range" id="inv" min="0" max="3.14159" step="0.01" value="0.0">
+    </div>
+  </div>
+
+  <div class="info-hint">
+    🧬 <span style="color: #ffaa44;">Real axis</span> &nbsp;|&nbsp; <span style="color: #2ce8ff;">Imaginary axis</span><br>
+    Reference points:<br>
+    <span style="color:#ff6666">🔴 1 - i</span>&nbsp; <span style="color:#66ff66">🟢 -1 - i</span>&nbsp; 
+    <span style="color:#ffcc44">🟡 1 + i</span>&nbsp; <span style="color:#3399ff">🔵 -1 + i</span>
+    <hr>
+    🎛️ UI toggle: ◀ button
+  </div>
+
+  <!-- our canvas with class 'webgl' -->
+  <canvas class="webgl"></canvas>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@v0.183.2/build/three.module.min.js"
+      }
+    }
+  </script>
+
+  <script type="module">
+    import * as THREE from 'three';
+
+    // ---------- UI elements & params ----------
+    const uiPanel = document.getElementById('uiPanel');
+    const toggleBtn = document.getElementById('toggleUI');
+    let uiVisible = true;
+    toggleBtn.addEventListener('click', () => {
+      uiVisible = !uiVisible;
+      uiPanel.classList.toggle('hidden', !uiVisible);
+      toggleBtn.textContent = uiVisible ? '✕' : '☰';
+    });
+
+    const params = { tx: 0, ty: 0, sz: 1.0, rot: 0, inv: 0 };
+    const sliders = ['tx', 'ty', 'sz', 'rot', 'inv'];
+    sliders.forEach(id => {
+      const el = document.getElementById(id);
+      el.addEventListener('input', (e) => {
+        params[id] = parseFloat(e.target.value);
+        const span = document.getElementById(id + '_val');
+        if (span) span.innerText = params[id].toFixed(2);
+      });
+    });
+
+    // ---------- Setup canvas with explicit selector ----------
+    const canvas = document.querySelector('canvas.webgl');
+    if (!canvas) throw new Error('Canvas with class "webgl" not found');
+    
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+    // Pixel ratio and size handling exactly like the reference style
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    const pixelRatio = Math.min(window.devicePixelRatio, 2);
+    renderer.setPixelRatio(pixelRatio);
+    
+    const scene = new THREE.Scene();
+    // Orthographic camera for fullscreen quad
+    const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+    
+    // Uniforms: mimic iResolution handling with pixel ratio scaling
+    const uniforms = {
+      iTime: { value: 0 },
+      iResolution: { value: new THREE.Vector3() },
+      uSphPos: { value: new THREE.Vector3(0, 0, 0.5) },
+      uSphRot: { value: new THREE.Vector2(0, 0) }
+    };
+    
+    // Compute initial resolution with pixel ratio
+    const initWidth = window.innerWidth * renderer.getPixelRatio();
+    const initHeight = window.innerHeight * renderer.getPixelRatio();
+    uniforms.iResolution.value.set(initWidth, initHeight, 1);
+    
+    // ----- Fullscreen shader material (complex raymarching + Mobius sphere mapping) -----
+    const fragmentShader = `
+    uniform float iTime;
+    uniform vec3 iResolution;
+    uniform vec3 uSphPos;
+    uniform vec2 uSphRot;
+    
+    #define ROT(a) mat2(cos(a), sin(a), -sin(a), cos(a))
+    
+    // Ray-sphere intersection
+    vec2 raySphere(vec3 ro, vec3 rd, vec4 sph) {
+        vec3 oc = ro - sph.xyz;
+        float b = dot(oc, rd);
+        float c = dot(oc, oc) - sph.w * sph.w;
+        float h = b * b - c;
+        if (h < 0.0) return vec2(-1.0);
+        float sqrtH = sqrt(h);
+        return vec2(-b - sqrtH, -b + sqrtH);
+    }
+    
+    float rayPlane(vec3 ro, vec3 rd) {
+        return -ro.z / rd.z;
+    }
+    
+    // Rigid motion on sphere: apply inverse rotation (so the texture/grid moves with sphere)
+    void applyInverseRigid(inout vec3 p, vec3 center, vec2 r) {
+        p -= center;
+        p.xz *= ROT(-r.y);
+        p.xy *= ROT(-r.x);
+        p += center;
+    }
+    
+    // Map from plane point to sphere surface via stereographic projection from north pole
+    vec3 planeToSphere(vec3 p, vec4 sph) {
+        vec3 N = sph.xyz + vec3(0.0, 0.0, sph.w);
+        vec3 rd = normalize(N - p);
+        float t = raySphere(p, rd, sph).x;
+        return p + rd * t;
+    }
+    
+    // Map from sphere point back to plane (inverse stereographic)
+    vec3 sphereToPlane(vec3 p, vec4 sph) {
+        vec3 N = sph.xyz + vec3(0.0, 0.0, sph.w);
+        vec3 rd = normalize(p - N);
+        float t = rayPlane(p, rd);
+        return p + rd * t;
+    }
+    
+    // Helper: draw glowing reference dots
+    vec3 drawDot(vec2 p, vec2 target, vec3 col) {
+        float d = length(p - target);
+        float m = smoothstep(0.045, 0.0, d);
+        float glow = exp(-22.0 * d);
+        return col * (m + glow * 8.0);
+    }
+    
+    // Grid + bright axes (Real = Y direction? but we use standard complex plane: X = Real, Y = Imag)
+    vec3 getGridColor(vec2 uv) {
+        // fine grid
+        vec2 gridUV = uv * 2.2;
+        vec2 g = abs(fract(gridUV + 0.5) - 0.5);
+        float lineX = smoothstep(0.045, 0.0, g.x);
+        float lineY = smoothstep(0.045, 0.0, g.y);
+        
+        vec3 gridCol = vec3(0.02, 0.02, 0.06);
+        vec3 cyanSub = vec3(0.0, 0.55, 0.65);
+        vec3 magentaSub = vec3(0.55, 0.2, 0.5);
+        gridCol = mix(gridCol, cyanSub, lineX);
+        gridCol = mix(gridCol, magentaSub, lineY);
+        
+        // main axes: X axis (Imaginary? Actually complex: horizontal real, vertical imag)
+        // but we match classical: u.x = Re, u.y = Im
+        float axisReal = smoothstep(0.045, 0.0, abs(uv.y));  // horizontal line? Real axis is horizontal line y=0
+        float axisImag = smoothstep(0.045, 0.0, abs(uv.x));  // Imag axis vertical line x=0
+        
+        vec3 realColor = vec3(1.0, 0.55, 0.1);   // orange
+        vec3 imagColor = vec3(0.0, 0.85, 1.0);   // bright cyan
+        
+        gridCol = mix(gridCol, realColor, axisReal);
+        gridCol = mix(gridCol, imagColor, axisImag);
+        
+        // extra glow
+        gridCol += realColor * exp(-40.0 * abs(uv.y)) * 0.4;
+        gridCol += imagColor * exp(-40.0 * abs(uv.x)) * 0.45;
+        
+        return gridCol;
+    }
+    
+    void main() {
+        vec2 fragCoord = gl_FragCoord.xy;
+        vec2 uv = (fragCoord - 0.5 * iResolution.xy) / iResolution.y;
+        
+        // Camera view: Fixed isometric but engaging
+        vec3 ro = vec3(2.9, -4.8, 5.2);
+        vec3 lookat = vec3(0.5, 0.5, 0.5);
+        vec3 fwd = normalize(lookat - ro);
+        vec3 right = normalize(cross(fwd, vec3(0.0, 0.0, 1.0)));
+        vec3 up = cross(right, fwd);
+        float zoom = 1.3;
+        vec3 rd = normalize(fwd * zoom + uv.x * right + uv.y * up);
+        
+        // Sphere center + translation offset: make sphere more visible with artistic shift
+        vec3 translateObjects = vec3(0.8, 1.0, 0.0);
+        vec4 sph = vec4(uSphPos + translateObjects, 0.52);
+        
+        float tPlane = rayPlane(ro, rd);
+        vec2 tSph = raySphere(ro, rd, sph);
+        
+        float t = 1e10;
+        bool hitSph = false;
+        if (tSph.x > 0.0) { t = tSph.x; hitSph = true; }
+        if (tPlane > 0.0 && tPlane < t) { t = tPlane; hitSph = false; }
+        
+        vec3 col = vec3(0.01, 0.008, 0.02);
+        
+        if (t < 45.0) {
+            vec3 pos = ro + rd * t;
+            
+            // 1. get point on sphere (if hit plane, lift to sphere via stereographic)
+            vec3 pOnSph = hitSph ? pos : planeToSphere(pos, sph);
+            
+            // 2. apply rigid motions (rotation & inversion) on sphere
+            applyInverseRigid(pOnSph, sph.xyz, uSphRot);
+            
+            // 3. project back to complex plane
+            vec3 gridP = sphereToPlane(pOnSph, sph);
+            
+            // --- scaling (dilation) logic: uSphPos.z acts as uniform scaling factor ---
+            // shift by sphere center offset before scaling
+            vec2 localUV = (gridP.xy - uSphPos.xy - translateObjects.xy) / (max(0.35, uSphPos.z) * 1.8);
+            
+            col = getGridColor(localUV);
+            
+            // --- reference points : ±1 ± i  (matching points in the plane)
+            col += drawDot(localUV, vec2( 1.0,  1.0), vec3(1.0, 0.9, 0.2)); // gold (1+i)
+            col += drawDot(localUV, vec2(-1.0, -1.0), vec3(0.3, 1.0, 0.3)); // green (-1-i)
+            col += drawDot(localUV, vec2( 1.0, -1.0), vec3(1.0, 0.3, 0.3)); // red (1-i)
+            col += drawDot(localUV, vec2(-1.0,  1.0), vec3(0.3, 0.6, 1.0)); // blue (-1+i)
+            
+            // Shading & atmospheric
+            if (hitSph) {
+                vec3 n = normalize(pos - sph.xyz);
+                vec3 lightDir = normalize(vec3(3.5, 5.0, 4.0));
+                float diff = max(0.35, dot(n, lightDir));
+                col *= diff;
+                float fresnel = pow(1.0 - max(0.0, dot(n, -rd)), 2.2);
+                col += vec3(0.5, 0.5, 0.7) * fresnel * 0.45;
+                // subtle specular
+                vec3 refl = reflect(rd, n);
+                float spec = pow(max(0.0, dot(refl, lightDir)), 48.0);
+                col += vec3(0.9, 0.85, 0.7) * spec * 0.5;
+            } else {
+                // ground plane fog for depth
+                col *= exp(-0.055 * t);
+                col += vec3(0.02, 0.01, 0.04) * (1.0 - exp(-0.12 * t));
+            }
+            
+            // slight vignette
+            float vign = 1.0 - 0.2 * length(uv);
+            col *= vign;
+        } else {
+            col = vec3(0.02, 0.01, 0.05);
+        }
+        
+        // gamma correction
+        gl_FragColor = vec4(pow(col, vec3(0.4545)), 1.0);
+    }
+    `;
+    
+    const material = new THREE.ShaderMaterial({
+      uniforms,
+      fragmentShader,
+      vertexShader: `void main() { gl_Position = vec4(position, 1.0); }`
+    });
+    
+    const geometry = new THREE.PlaneGeometry(2, 2);
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+    
+    // Animation loop with time uniform
+    let clock = new THREE.Clock();
+    
+    function animate() {
+      const elapsedTime = performance.now() / 1000; // seconds
+      uniforms.iTime.value = elapsedTime;
+      
+      // Update uniforms from UI params
+      uniforms.uSphPos.value.set(params.tx, params.ty, params.sz);
+      uniforms.uSphRot.value.set(params.rot, params.inv);
+      
+      renderer.render(scene, camera);
+      requestAnimationFrame(animate);
+    }
+    animate();
+    
+    // ---------- RESIZE HANDLER (exactly as requested: using pixel ratio and iResolution) ----------
+    window.addEventListener('resize', () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      
+      // Update renderer size and pixel ratio (high DPI friendly)
+      renderer.setSize(width, height);
+      const newPixelRatio = Math.min(window.devicePixelRatio, 2);
+      renderer.setPixelRatio(newPixelRatio);
+      
+      // Update iResolution uniform with actual pixel dimensions (accounting for pixel ratio)
+      const canvasWidth = width * renderer.getPixelRatio();
+      const canvasHeight = height * renderer.getPixelRatio();
+      uniforms.iResolution.value.set(canvasWidth, canvasHeight, 1);
+    });
+    
+    // Optional: initial trigger to ensure resolution uniform matches after any potential race
+    // Manually trigger once to be safe:
+    setTimeout(() => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      const curPixelRatio = renderer.getPixelRatio();
+      uniforms.iResolution.value.set(width * curPixelRatio, height * curPixelRatio, 1);
+    }, 100);
+    
+    // small console feedback
+    console.log('Möbius sphere visualization ready | canvas.webgl active | pixel ratio managed');
+  </script>
+</body>
+
+</html>
