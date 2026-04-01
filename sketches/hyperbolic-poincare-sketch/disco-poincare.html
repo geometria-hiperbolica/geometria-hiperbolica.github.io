@@ -297,7 +297,7 @@
                 p = hyperTrans(p, ms);
                 
                 // slow rotation disabled (optional static)
-                p = rot2(0.0) * p;
+                p = rot2(u_time/70.0) * p;
                 
                 if(dot(p, p) > 1.0){
                     p /= dot(p, p);
