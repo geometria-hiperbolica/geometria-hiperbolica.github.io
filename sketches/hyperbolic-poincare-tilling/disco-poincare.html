@@ -24,8 +24,9 @@
             pointer-events: none;
             font-size: 0.75rem;
             z-index: 10;
-            border-left: 3px solid #ff8844;
+            border-left: 3px solid #44f3ff;
             font-family: monospace;
+            text-align: center;
         }
 
         #controls {
@@ -40,6 +41,26 @@
             font-family: monospace;
             pointer-events: none;
             backdrop-filter: blur(4px);
+        }
+
+        a {
+            color: rgb(0, 255, 229);
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:active {
+            text-decoration: underline;
         }
 
         @media (max-width: 600px) {
@@ -62,9 +83,11 @@
     <canvas class="webgl"></canvas>
     <div id="info">
         🌀 Disco de Poincaré<br>
-       &nbsp; {3,8} Teselación
+        {3,8} Teselación<br />
+        Créditos: <a href="https://www.shadertoy.com/view/WlBczG" target="_blank">Shane</a>
+
     </div>
-    
+
 
     <script type="importmap">
         {
@@ -89,12 +112,12 @@
 
         // Mouse state for drag interaction
         let isDragging = false;
-        
+
         // Store the current mouse position that will persist after drag
         // Start with center position (0.5, 0.5) which gives no transformation
         let currentMouseX = 0.5;
         let currentMouseY = 0.5;
-        
+
         // Store the accumulated mouse position that will be used for inversion
         // This value only updates while dragging and stays constant after release
         let activeMouseX = 0.5;
