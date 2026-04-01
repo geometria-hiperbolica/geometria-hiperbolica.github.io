@@ -37,7 +37,7 @@ const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
 
 // Uniforms: mimic iResolution handling with pixel ratio scaling
 const uniforms = {
-    iTime: { value: 0 },
+    //iTime: { value: 0 },
     iResolution: { value: new THREE.Vector3() },
     uSphPos: { value: new THREE.Vector3(0, 0, 0.5) },
     uSphRot: { value: new THREE.Vector2(0, 0) }
@@ -50,7 +50,7 @@ uniforms.iResolution.value.set(initWidth, initHeight, 1);
 
 // ----- Fullscreen shader material (complex raymarching + Mobius sphere mapping) -----
 const fragmentShader = `
-    uniform float iTime;
+    //uniform float iTime;
     uniform vec3 iResolution;
     uniform vec3 uSphPos;
     uniform vec2 uSphRot;
@@ -228,11 +228,11 @@ const mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
 // Animation loop with time uniform
-let clock = new THREE.Clock();
+//let clock = new THREE.Clock();
 
 function animate() {
-    const elapsedTime = performance.now() / 1000; // seconds
-    uniforms.iTime.value = elapsedTime;
+    //const elapsedTime = performance.now() / 1000; // seconds
+    //uniforms.iTime.value = elapsedTime;
 
     // Update uniforms from UI params
     uniforms.uSphPos.value.set(params.tx, params.ty, params.sz);
