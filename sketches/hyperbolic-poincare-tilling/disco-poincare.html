@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Three.js - Disco de Poincaré</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', monospace;
+        }
+
+        #info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 18px;
+            border-radius: 8px;
+            backdrop-filter: blur(8px);
+            pointer-events: none;
+            font-size: 0.75rem;
+            z-index: 10;
+            border-left: 3px solid #ff8844;
+            font-family: monospace;
+        }
+
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-family: monospace;
+            pointer-events: none;
+            backdrop-filter: blur(4px);
+        }
+
+        @media (max-width: 600px) {
+            #info {
+                font-size: 10px;
+                bottom: 10px;
+                left: 10px;
+            }
+
+            #controls {
+                font-size: 10px;
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas class="webgl"></canvas>
+    <div id="info">
+        🌀 Disco de Poincaré<br>
+       &nbsp; {3,8} Teselación
+    </div>
+    <div id="controls">
+        🖱️ Mouse → Inversión hiperbólica<br>
+        ✨ Doble clic para reiniciar
+    </div>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@v0.183.2/build/three.module.min.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.183.2/examples/jsm/"
+          }
+        }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+
+        // Setup renderer
+        const canvas = document.querySelector('.webgl');
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: false, antialias: true });
+
+        // Scene and orthographic camera for fullscreen quad
+        const scene = new THREE.Scene();
+        const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
+        camera.position.z = 1;
+
+        // Mouse state for drag interaction
+        let isDragging = false;
+        
+        // Store the current mouse position that will persist after drag
+        // Start with center position (0.5, 0.5) which gives no transformation
+        let currentMouseX = 0.5;
+        let currentMouseY = 0.5;
+        
+        // Store the accumulated mouse position that will be used for inversion
+        // This value only updates while dragging and stays constant after release
+        let activeMouseX = 0.5;
+        let activeMouseY = 0.5;
+
+        // Shader uniforms
+        const uniforms = {
+            u_time: { value: 0 },
+            u_resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
+            u_mouse: { value: new THREE.Vector2(0.5, 0.5) },
+            u_drag: { value: 0.0 }
+        };
+
+        // Full shader implementation - carefully ported from Shadertoy
+        const vertexShader = `
+            varying vec2 vUv;
+            void main() {
+                vUv = uv;
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            }
+        `;
+
+        // Shader by Shane
+        // https://www.shadertoy.com/view/WlBczG
+        const fragmentShader = `
+            uniform vec2 u_resolution;
+            uniform float u_time;
+            uniform vec2 u_mouse;
+            uniform float u_drag;
+            varying vec2 vUv;
+            
+            #define PI 3.14159265359
+            #define TAU 6.28318530718
+            
+            const int N = 3;
+            const int Q = 8;
+            
+            mat2 rot2(float a) {
+                float c = cos(a), s = sin(a);
+                return mat2(c, -s, s, c);
+            }
+            
+            float floorSm(float x, float c) {
+                float ix = floor(x);
+                x -= ix;
+                return (pow(x, c) - pow(1.0 - x, c)) / 2.0 + ix;
+            }
+            
+            float sBox(vec2 p, vec2 b) {
+                vec2 d = abs(p) - b;
+                return min(max(d.x, d.y), 0.0) + length(max(d, 0.0));
+            }
+            
+            float lBox(vec2 p, vec2 a, vec2 b, float ew) {
+                float ang = atan(b.y - a.y, b.x - a.x);
+                p = rot2(ang) * (p - mix(a, b, 0.5));
+                vec2 l = vec2(length(b - a), ew);
+                return sBox(p, (l + ew) / 2.0);
+            }
+            
+            vec3 initDomain() {
+                float a = sin(PI / float(N));
+                float b = cos(PI / float(Q));
+                float d2 = cos(PI / float(N) + PI / float(Q)) / a;
+                float r2 = 1.0 / (b * b / a / a - 1.0);
+                return sqrt(max(vec3(1.0 + r2, r2, d2 * d2 * r2), 0.0));
+            }
+            
+            float gCount;
+            
+            vec2 transform(vec2 p, vec3 circ) {
+                float ia = (floor(atan(p.x, p.y) / TAU * float(N)) + 0.5) / float(N);
+                vec2 vert = rot2(ia * TAU) * vec2(0.0, circ.x);
+                float rSq = circ.y * circ.y;
+                vec2 pc = p - vert;
+                float lSq = dot(pc, pc);
+                if (lSq < rSq) {
+                    p = pc * rSq / lSq + vert;
+                    gCount++;
+                }
+                return p;
+            }
+            
+            vec2 applyMouseInversion(vec2 p, vec2 mousePos, float dragActive) {
+                // Always apply inversion using the current mousePos (which now persists)
+                vec2 res = u_resolution;
+                vec2 mousePx = mousePos * res;
+                vec2 m = vec2((2.0 * mousePx.x - res.x) / res.y, (2.0 * mousePx.y - res.y) / res.y);
+                
+                if (length(m) < 0.001) m += 0.001;
+                if (abs(m.x) > 0.692) m.x *= 0.98;
+                if (abs(m.y) > 0.692) m.y *= 0.98;
+                
+                float k = 1.0 / dot(m, m);
+                vec2 invCtr = k * m;
+                float t = (k - 1.0) / dot(p - invCtr, p - invCtr);
+                p = t * p + (1.0 - t) * invCtr;
+                p.x = -p.x;
+                return p;
+            }
+            
+            void main() {
+                vec2 fragCoord = vUv * u_resolution;
+                vec2 uv = (2.0 * fragCoord - u_resolution.xy) / u_resolution.y;
+                // view
+                uv *= 1.4;
+                
+                vec2 p = uv;
+                float dfF = abs(1.0 - dot(p, p));
+                
+                // Always apply mouse inversion using the stored u_mouse value
+                p = applyMouseInversion(p, u_mouse, 1.0);
+                
+                // Auto-rotation disabled
+                p = rot2(0.0 * u_time / 56.0) * p;
+                
+                gCount = 0.0;
+                vec3 domInfo = initDomain();
+                
+                if (length(p) > 1.0) p /= dot(p, p);
+                
+                for (int i = 0; i < 24; i++) {
+                    p = transform(p, domInfo);
+                }
+                
+                // Draw lines and colors
+                float ln = 1e5, ln2 = 1e5, pnt = 1e5;
+                vec2 v0 = vec2(0.0, domInfo.z);
+                vec2 m0;
+                
+                for (int i = 0; i < N; i++) {
+                    m0 = (rot2(PI / float(N)) * v0) * (domInfo.x - domInfo.y) / domInfo.z;
+                    ln = min(ln, lBox(p, vec2(0.0), v0, 0.007));
+                    ln2 = min(ln2, lBox(p, vec2(0.0), m0, 0.007));
+                    pnt = min(pnt, length(p - v0));
+                    v0 = rot2(TAU / float(N)) * v0;
+                }
+                
+                float ssf = 2.0 - smoothstep(0.0, 0.25, abs(length(uv) - 1.0) - 0.25);
+                float sf = 2.0 / u_resolution.y * ssf;
+                
+                float angl = mod(atan(p.x, p.y), TAU) * float(N) / TAU;
+                float triSeg = floorSm(angl, 0.15);
+                triSeg = (triSeg + 0.5) / float(N);
+                
+                // Color Tilling
+                vec3 col = 0.55 + 0.45 * cos(triSeg * TAU + vec3(0.9, 0.0, 10.9)).yxz;
+                
+                float pat = smoothstep(0.0, 0.25, abs(fract(ln2 * 50.0 - 0.2) - 0.5) * 2.0 - 0.2);
+                pat *= dfF;
+                ln *= dfF;
+                
+                float sh = clamp(0.65 + ln / domInfo.z * 4.0, 0.0, 1.0);
+                col = min(col * (pat * 0.2 + 0.9) * sh, 1.0);
+                
+                // Color inner shapes
+                col = mix(col, vec3(0.0), 1.0 - smoothstep(0.0, sf, ln));
+                col = mix(col, vec3(0.0), 1.0 - smoothstep(0.0, sf, -(ln - 0.085 * dfF)));
+                
+                pnt -= 0.032;
+                pnt = min(pnt, length(p) - 0.032);
+                pnt *= dfF;
+                col = mix(col, vec3(0.0), 1.0 - smoothstep(0.0, sf, pnt));
+                col = mix(col, vec3(1.0, 0.8, 0.3), 1.0 - smoothstep(0.0, sf, pnt + 0.02 * dfF));
+                
+                // Background color
+                vec3 bg = vec3(0.0, 0.8, 2.0);
+                bg *= 0.3 * (mix(col, vec3(1.0) * dot(col, vec3(0.299, 1.587, 0.114)), 0.5) * 0.5 + 0.5);
+                float pat2 = smoothstep(0.0, 0.25, abs(fract((uv.x - uv.y) * 43.0 - 0.25) - 0.5) * 2.0 - 0.5);
+                bg *= max(1.0 - length(uv) * 0.2, 0.0) * (pat2 * 0.2 + 0.9);
+                
+                float cir = length(uv);
+                col = mix(col, vec3(0.0), (1.0 - smoothstep(0.0, sf * 10.0, abs(cir - 1.0) - 0.05)) * 0.7);
+                col = mix(col, vec3(0.0), (1.0 - smoothstep(0.0, sf * 2.0, abs(cir - 1.0) - 0.05)));
+                col = mix(col, vec3(0.9) + bg, (1.0 - smoothstep(0.0, sf, abs(cir - 1.0) - 0.03)));
+                col = mix(col, col * max(1.0 - length(uv) * 0.5, 0.0), (1.0 - smoothstep(0.0, sf, -cir + 1.05)));
+                col = mix(col, bg, (1.0 - smoothstep(0.0, sf, -cir + 1.05)));
+                col = mix(col, vec3(0.0), (1.0 - smoothstep(0.0, sf, abs(cir - 1.035) - 0.03)) * 0.8);
+                
+                col = mix(col, 1.0 - exp(-col), 0.35);
+                
+                gl_FragColor = vec4(sqrt(max(col, 0.0)), 1.0);
+            }
+        `;
+
+        // Create fullscreen quad
+        const geometry = new THREE.PlaneGeometry(2, 2);
+        const material = new THREE.ShaderMaterial({
+            uniforms: uniforms,
+            vertexShader: vertexShader,
+            fragmentShader: fragmentShader,
+            depthTest: false,
+            depthWrite: false
+        });
+
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        // Helper function to update the shader uniform with the current active mouse position
+        const updateActiveMousePosition = () => {
+            uniforms.u_mouse.value.set(activeMouseX, activeMouseY);
+        };
+
+        // Get normalized mouse coordinates within canvas
+        const getNormalizedMouse = (clientX, clientY) => {
+            const rect = renderer.domElement.getBoundingClientRect();
+            const nx = (clientX - rect.left) / rect.width;
+            const ny = 1.0 - ((clientY - rect.top) / rect.height);
+            return {
+                x: Math.min(1.0, Math.max(0.0, nx)),
+                y: Math.min(1.0, Math.max(0.0, ny))
+            };
+        };
+
+        // Mouse down: start dragging, but don't update active position yet
+        const onMouseDown = (e) => {
+            isDragging = true;
+            const coords = getNormalizedMouse(e.clientX, e.clientY);
+            currentMouseX = coords.x;
+            currentMouseY = coords.y;
+            e.preventDefault();
+        };
+
+        // Mouse move: update active position while dragging
+        const onMouseMove = (e) => {
+            if (isDragging) {
+                const coords = getNormalizedMouse(e.clientX, e.clientY);
+                currentMouseX = coords.x;
+                currentMouseY = coords.y;
+                // Store the current position as the active position
+                activeMouseX = currentMouseX;
+                activeMouseY = currentMouseY;
+                updateActiveMousePosition();
+            }
+        };
+
+        // Mouse up: stop dragging, but keep the last active position
+        const onMouseUp = () => {
+            isDragging = false;
+            // The active position remains stored, no reset
+        };
+
+        // Touch events for mobile with persistent position
+        const onTouchStart = (e) => {
+            if (e.touches.length) {
+                isDragging = true;
+                const coords = getNormalizedMouse(e.touches[0].clientX, e.touches[0].clientY);
+                currentMouseX = coords.x;
+                currentMouseY = coords.y;
+                e.preventDefault();
+            }
+        };
+
+        const onTouchMove = (e) => {
+            if (isDragging && e.touches.length) {
+                const coords = getNormalizedMouse(e.touches[0].clientX, e.touches[0].clientY);
+                currentMouseX = coords.x;
+                currentMouseY = coords.y;
+                activeMouseX = currentMouseX;
+                activeMouseY = currentMouseY;
+                updateActiveMousePosition();
+                e.preventDefault();
+            }
+        };
+
+        const onTouchEnd = () => {
+            isDragging = false;
+            // Keep the last active position
+        };
+
+        // Double-click to reset to center (default view)
+        const onDoubleClick = () => {
+            activeMouseX = 0.5;
+            activeMouseY = 0.5;
+            updateActiveMousePosition();
+        };
+
+        // Add event listeners
+        renderer.domElement.addEventListener('mousedown', onMouseDown);
+        window.addEventListener('mousemove', onMouseMove);
+        window.addEventListener('mouseup', onMouseUp);
+        renderer.domElement.addEventListener('touchstart', onTouchStart);
+        window.addEventListener('touchmove', onTouchMove);
+        window.addEventListener('touchend', onTouchEnd);
+        renderer.domElement.addEventListener('contextmenu', (e) => e.preventDefault());
+        renderer.domElement.addEventListener('dblclick', onDoubleClick);
+
+        // Initialize with center position (no transformation)
+        updateActiveMousePosition();
+
+        // Handle window resize
+        const handleResize = () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            renderer.setSize(width, height);
+            uniforms.u_resolution.value.set(width, height);
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        // Animation loop - FIXED: now correctly calls animate function
+        const animate = () => {
+            uniforms.u_time.value = performance.now() / 1000;
+            renderer.render(scene, camera);
+            requestAnimationFrame(animate);
+        };
+
+        animate();
+
+        console.log('Hyperbolic Poincaré Tiling | Drag to interact - position persists after release | Double-click to reset');
+    </script>
+</body>
+
+</html>
