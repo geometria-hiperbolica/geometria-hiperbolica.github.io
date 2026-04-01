@@ -27,6 +27,7 @@
      transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1), opacity 0.25s ease;
      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
      font-family: monospace;
+     font-size: 0.9rem;
  }
 
  .ui.hidden {
@@ -111,7 +112,7 @@
      position: absolute;
      bottom: 18px;
      left: 20px;
-     font-size: 0.8rem;
+     font-size: 0.9rem;
      color: rgba(220, 230, 255, 0.95);
      background: rgba(0, 0, 0, 0.65);
      backdrop-filter: blur(5px);

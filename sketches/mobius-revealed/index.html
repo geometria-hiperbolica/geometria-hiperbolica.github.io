@@ -12,10 +12,18 @@
   <button id="toggleUI" class="toggle-ui-btn" aria-label="Toggle UI">✕</button>
 
   <div class="ui" id="uiPanel">
-    <h2>Möbius <br/>Sphere Rigid Motion</h2>
+    <h2>Möbius <br />Sphere Rigid Motion</h2>
     <div class="control">
-      <label>🏔️ Dilation / Height (Z) <span id="sz_val">1.00</span></label>
+      <label>🏔️ Dilation <span id="sz_val">1.00</span></label>
       <input type="range" id="sz" min="1.0" max="4.0" step="0.01" value="1.0">
+    </div>
+    <div class="control">
+      <label>🔄 Rotation <span id="rot_val">0.00</span></label>
+      <input type="range" id="rot" min="0" max="6.28318" step="0.01" value="0.0">
+    </div>
+    <div class="control">
+      <label>🌀 Inversion <span id="inv_val">0.00</span></label>
+      <input type="range" id="inv" min="0" max="3.14159" step="0.01" value="0.0">
     </div>
     <div class="control">
       <label>↔️ Translate X <span id="tx_val">0.00</span></label>
@@ -25,23 +33,16 @@
       <label>↕️ Translate Y <span id="ty_val">0.00</span></label>
       <input type="range" id="ty" min="-3.0" max="3.0" step="0.01" value="0.0">
     </div>
-    <div class="control">
-      <label>🔄 Rotation (Z-axis) <span id="rot_val">0.00</span></label>
-      <input type="range" id="rot" min="0" max="6.28318" step="0.01" value="0.0">
-    </div>
-    <div class="control">
-      <label>🌀 Inversion / Tilt (Y) <span id="inv_val">0.00</span></label>
-      <input type="range" id="inv" min="0" max="3.14159" step="0.01" value="0.0">
-    </div>
   </div>
 
   <div class="info-hint">
-    🧬 <span style="color: #ffaa44;">Real axis</span> &nbsp;|&nbsp; <span style="color: #2ce8ff;">Imaginary axis</span><br>
-    <hr/>
-    <div>Reference points:</div>
-    <span style="color:#ff6666">🔴 1 - i</span>&nbsp; <span style="color:#66ff66">🟢 -1 - i</span>&nbsp; 
-    <span style="color:#ffcc44">🟡 1 + i</span>&nbsp; <span style="color:#3399ff">🔵 -1 + i</span>
-   
+    🧬 <span style="color: #ffaa44;">Real axis</span> &nbsp;|&nbsp; <span style="color: #2ce8ff;">Imaginary
+      axis</span><br>
+    <hr />
+    <div>Initial reference points:</div>
+    <span style="color:#ff6666">🔴 1-i</span>&nbsp; <span style="color:#66ff66">🟢 -1-i</span>&nbsp;
+    <span style="color:#ffcc44">🟡 1+i</span>&nbsp; <span style="color:#3399ff">🔵 -1+i</span>
+
   </div>
 
   <!-- our canvas with class 'webgl' -->
