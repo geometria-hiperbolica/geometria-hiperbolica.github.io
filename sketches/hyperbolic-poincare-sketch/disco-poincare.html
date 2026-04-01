@@ -67,26 +67,13 @@
             #info { font-size: 9px; bottom: 10px; left: 10px; }
             #controls { font-size: 9px; bottom: 10px; right: 10px; }
         }
-        .status-dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: #66f2ff;
-            box-shadow: 0 0 4px #66f2ff;
-            margin-right: 6px;
-            animation: pulse 1.2s infinite;
-        }
-        @keyframes pulse {
-            0% { opacity: 0.5; transform: scale(0.9);}
-            100% { opacity: 1; transform: scale(1.2);}
-        }
+        
     </style>
 </head>
 <body>
     <canvas class="webgl"></canvas>
     <div id="info">
-        <span class="status-dot"></span> Disco de Poincaré<br>
+        Disco de Poincaré<br>
         {3,8} Teselación<br />
         Créditos: <a href="https://www.shadertoy.com/view/tsffDl" target="_blank">Shane</a>
        
