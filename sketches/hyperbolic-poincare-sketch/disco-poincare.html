@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Three.js - Hyperbolic Weave Tiling | Hand-drawn & Bump Mapped</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', 'Courier New', monospace;
+        }
+        #info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 10px 18px;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            pointer-events: none;
+            font-size: 0.75rem;
+            z-index: 10;
+            border-left: 4px solid #66e6ff;
+            font-family: monospace;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-align: center;
+            line-height: 16px;
+        }
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: rgba(255,255,240,0.95);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 8px 16px;
+            border-radius: 28px;
+            font-size: 0.7rem;
+            font-family: monospace;
+            pointer-events: none;
+            backdrop-filter: blur(4px);
+            font-weight: 500;
+            border: 1px solid rgba(255,200,100,0.3);
+        }
+        a {
+            color: rgb(0, 255, 229);
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        a:visited {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        a:active {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            #info { font-size: 9px; bottom: 10px; left: 10px; }
+            #controls { font-size: 9px; bottom: 10px; right: 10px; }
+        }
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #66f2ff;
+            box-shadow: 0 0 4px #66f2ff;
+            margin-right: 6px;
+            animation: pulse 1.2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.5; transform: scale(0.9);}
+            100% { opacity: 1; transform: scale(1.2);}
+        }
+    </style>
+</head>
+<body>
+    <canvas class="webgl"></canvas>
+    <div id="info">
+        <span class="status-dot"></span> Disco de Poincaré<br>
+        {3,8} Teselación<br />
+        Créditos: <a href="https://www.shadertoy.com/view/tsffDl" target="_blank">Shane</a>
+       
+    </div>
+   
+
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@v0.183.2/build/three.module.min.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.183.2/examples/jsm/"
+          }
+        }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+
+        // Setup renderer
+        const canvas = document.querySelector('.webgl');
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: false, antialias: true, powerPreference: "high-performance" });
+        
+        // Scene and orthographic camera for fullscreen quad
+        const scene = new THREE.Scene();
+        const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
+        camera.position.z = 1;
+
+        // Mouse state for drag interaction (persistent inversion)
+        let isDragging = false;
+        let currentMouseX = 0.5;
+        let currentMouseY = 0.5;
+        let activeMouseX = 0.5;
+        let activeMouseY = 0.5;
+
+        // Shader uniforms
+        const uniforms = {
+            u_time: { value: 0 },
+            u_resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
+            u_mouse: { value: new THREE.Vector2(0.5, 0.5) }
+        };
+
+        // ============================================================
+        // ADAPTED SHADER: original weave + bump + pencil + hyperbolic tiling
+        // Preserves all defines: WEAVE_TYPE 2 (outer weave), BUMP, PENCIL, 
+        // Schlafli {P=3, Q=7} -> adjusted to {3,8} for better symmetry & performance.
+        // ============================================================
+        const vertexShader = `
+            varying vec2 vUv;
+            void main() {
+                vUv = uv;
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            }
+        `;
+
+        const fragmentShader = `
+            uniform vec2 u_resolution;
+            uniform float u_time;
+            uniform vec2 u_mouse;
+            varying vec2 vUv;
+            
+            // ---------- CONFIGURATION (ported from original) ----------
+            #define WEAVE_TYPE 2      // 2 = outer weave (only outside disc gets weave pattern)
+            #define BUMP              // bump mapping enabled
+            #define PENCIL            // hand-drawn pencil effect
+            // #define ANIMATE_COLOR   // optional animated color (commented to keep clean but can be toggled)
+            
+            // Schlafli symbols (P=3 triangles, Q=8 for balanced hyperbolic tiling)
+            #define P 3
+            #define Q 8
+            
+            #define PI 3.14159265358979
+            #define TAU 6.283185307179
+            #define R vec2(1, 0)
+            #define I vec2(0, 1)
+            
+            // ---------- Complex & Hyperbolic Utilities ----------
+            vec2 conj(vec2 a){ return vec2(a.x, -a.y); }
+            vec2 cmul(vec2 a, vec2 b){ return mat2(a, -a.y, a.x)*b; }
+            vec2 cdiv(vec2 a, vec2 b){ return cmul(a, conj(b))/dot(b,b); }
+            vec2 cInvert(vec2 p, vec2 o, float r) {
+                p -= o;
+                return (p)*r*r/dot(p, p) + o;
+            }
+            vec2 hyperTrans(vec2 p, vec2 o){
+                return cdiv(p - o, cmul(-conj(o), p) + vec2(1, 0));
+            }
+            
+            mat2 rot2(float a){
+                float c = cos(a), s = sin(a);
+                return mat2(c, -s, s, c);
+            }
+            
+            // line intersection for hyperbolic boundaries
+            vec2 lnIntersect(vec2 p0, vec2 p1, vec2 p2, vec2 p3){
+                float detD = determinant(mat2(p1, p3));
+                if(detD == 0.) return vec2(0);
+                float detN = determinant(mat2(p2 - p0, p3));
+                float l1 = detN/detD;
+                return p0 + l1*p1;
+            }
+            
+            vec2 hyperLine(vec2 a, vec2 b){
+                vec2 a1 = a/dot(a, a);
+                vec2 b1 = b/dot(b, b);
+                vec2 p1 = (a + a1)/2.;
+                vec2 p2 = (b + b1)/2.;
+                return lnIntersect(p1, vec2(-a1.y, a1.x), p2, vec2(-b1.y, b1.x));
+            }
+            
+            // Simple pseudo-random for pencil / color variation
+            float hash21(vec2 n){
+                return fract(sin(dot(n, vec2(12.9898, 78.233))) * 43758.5453);
+            }
+            
+            // Pencil noise function (simple fractal for subtle grain)
+            float pencilNoise(vec2 p){
+                return fract(sin(p.x*127.1 + p.y*311.7 + cos(p.y*42.3)) * 43758.5453);
+            }
+            
+            // 2D Simplex-like for hand-drawn perturbation
+            float fbm(vec2 p){
+                float sum = 0.0;
+                float amp = 0.5;
+                for(int i = 0; i < 3; i++){
+                    sum += sin(p.x*3.2 + p.y*2.7) * amp;
+                    p *= 2.1;
+                    amp *= 0.5;
+                }
+                return sum * 0.5 + 0.5;
+            }
+            
+            // ----- Hyperbolic domain init (returns radii & distances) -----
+            vec3 initDomain(){
+                float a = sin(PI/float(P)), b = cos(PI/float(Q));
+                float d2 = cos(PI/float(P) + PI/float(Q))/a;
+                float r2 = 1./(b*b/a/a - 1.);
+                return sqrt(max(vec3(1. + r2, r2, d2*d2*r2), 0.));
+            }
+            
+            // Polygon arrays (dynamic per fragment, but defined per frame in loop)
+            vec2 v[P];
+            vec2 e[P];
+            vec2 cir[P];
+            vec2 mCir[P];
+            float cR;
+            float mCR;
+            vec2 id;
+            vec2 cntr;
+            
+            // Hyperbolic tessellation core
+            vec2 hyperbolic(vec2 p){
+                int hit;
+                int iter = 0;
+                id = vec2(0, -1);
+                cntr = vec2(0);
+                
+                for(int j = 0; j < 22; j++){
+                    hit = 1;
+                    for(int i = 0; i < P; i++){
+                        float circ = length(p - cir[i].xy) - cR;
+                        if(circ < 0.){
+                            hit = 0;
+                            p = cInvert(p, cir[i], cR);
+                            cntr = cInvert(cntr, cir[i], cR);
+                            id = vec2(float(i), float(j)) + 1.;
+                            iter++;
+                        }
+                    }
+                    if(hit == 1) break;
+                }
+                if(iter%2 == 0){
+                    p.y = -p.y;
+                    p = rot2(float(P/2)*TAU/float(P)) * p;
+                }
+                return p;
+            }
+            
+            void main() {
+                vec2 fragCoord = vUv * u_resolution;
+                vec2 uv = (fragCoord - u_resolution.xy*0.5) / u_resolution.y;
+                
+                // ----- PENCIL: hand-drawn distortion (from original) -----
+                #ifdef PENCIL
+                vec2 offs = vec2(fbm(uv*16.), fbm(uv*16. + 0.35));
+                const float oFct = 0.0025;
+                uv -= (offs - 0.5)*oFct;
+                #endif
+                
+                // Schlafli sanity check (blue screen guard - disabled but safe)
+                if(1./float(P) + 1./float(Q) >= 0.5 || (Q==1 && P>=3)){
+                    gl_FragColor = vec4(0.0, 0.2, 0.6, 1.0);
+                    return;
+                }
+                
+                float sc = 2.5;
+                float sf = sc / u_resolution.y;
+                vec2 p = uv * sc;
+                
+                float disc = length(p) - 1.0;
+                float dfF = abs(1.0 - dot(p, p));
+                
+                // ----- MOUSE HYPERBOLIC INVERSION (persistent, matches original hyperTrans) -----
+                vec2 ms = u_mouse;
+                ms = (ms * 2.0 - 1.0) * vec2(u_resolution.x/u_resolution.y, 1.0);
+                ms = ms * sc;
+                if(abs(length(ms) - 1.) < 0.07) ms = vec2(1., ms.y);
+                p = hyperTrans(p, ms);
+                
+                // slow rotation disabled (optional static)
+                p = rot2(0.0) * p;
+                
+                if(dot(p, p) > 1.0){
+                    p /= dot(p, p);
+                }
+                
+                vec2 oP = p;
+                vec3 info = initDomain();
+                float r = info.z;
+                float eR = info.x - info.y;
+                float aR = info.x + info.y;
+                
+                // Build polygon vertices, edge points, boundary circles & mid-edge circles
+                for(int i = 0; i < P; i++){
+                    float angV = float(i)*TAU/float(P);
+                    float angE = (float(i) + 0.5)*TAU/float(P);
+                    v[i] = vec2(cos(angV), sin(angV)) * r;
+                    e[i] = vec2(cos(angE), sin(angE)) * eR;
+                }
+                for(int i = 0; i < P; i++){
+                    cir[i] = hyperLine(v[i], v[(i+1)%P]);
+                    mCir[i] = hyperLine(e[i], e[(i+1)%P]);
+                }
+                cR = length(v[0] - cir[0]);
+                mCR = length(e[0] - mCir[0]);
+                
+                // bump mapping sample offset
+                #ifdef BUMP
+                vec2 pHi = hyperbolic(p - vec2(1., -1.)*0.001);
+                #endif
+                vec2 pCur = hyperbolic(p);
+                p = pCur;
+                
+                float poly = -1e5;
+                float polyHi = -1e5;
+                float vert = 1e5, edge = 1e5;
+                float vertHi = 1e5, edgeHi = 1e5;
+                float arc[P];
+                float arc2[P];
+                
+                for(int i = 0; i < P; i++){
+                    float polyBorder = length(p - cir[i]) - cR;
+                    poly = max(poly, -polyBorder);
+                    
+                    #ifdef BUMP
+                    polyBorder = length(pHi - cir[i]) - cR;
+                    polyHi = max(polyHi, -polyBorder);
+                    #endif
+                    
+                    vert = min(vert, length(p - v[i]));
+                    edge = min(edge, length(p - e[i]));
+                    
+                    arc[i] = length(p - mCir[i].xy) - mCR;
+                    
+                    #ifdef BUMP
+                    arc2[i] = length(pHi - mCir[i].xy) - mCR;
+                    vertHi = min(vertHi, length(pHi - v[i]));
+                    edgeHi = min(edgeHi, length(pHi - e[i]));
+                    #endif
+                }
+                
+                // apply curvature scaling
+                vert *= dfF;
+                edge *= dfF;
+                poly *= dfF;
+                polyHi *= dfF;
+                vert -= 0.04*sqrt(dfF);
+                edge -= 0.04*sqrt(dfF);
+                vertHi -= 0.04*sqrt(dfF);
+                edgeHi -= 0.04*sqrt(dfF);
+                
+                float ew = clamp(450./u_resolution.y*0.01, 0.007, 0.013);
+                ew *= smoothstep(0., 0.05, dfF);
+                
+                float shd = clamp(-poly*8., 0., 1.);
+                float ic = hash21(id);
+                float ia = floor(fract(atan(p.x, p.y)/TAU - 0.25)*float(P))/float(P);
+                
+                // COLOR: rich palette with subtle variation (no full animation but vibrant)
+                vec4 pCol = 0.55 + 0.45*cos(TAU*(ic*0.7 + ia*0.12) + vec4(0, 1, 2, 0)*1.8);
+                
+                #ifdef BUMP
+                float bump = max(polyHi - poly, 0.)/0.001*0.65;
+                pCol.rgb *= 0.92 + bump/dfF*0.12;
+                #endif
+                
+                vec4 col = vec4(0.0);
+                col = mix(col, pCol, 1.0 - smoothstep(0., sf, poly + ew));
+                
+                float shF = u_resolution.y/450.;
+                float eT = (smoothstep(0., 0.5, abs(disc))*0.8 + 0.2);
+                vec4 lCol = min(pCol*2.2 + 0.2, 1.0);
+                
+                // ----- WEAVE PATTERN (outer weave: WEAVE_TYPE == 2) -----
+                #if WEAVE_TYPE == 2
+                if(disc > 0.) {
+                    float arcW = 0.035 * pow(3./float(P), 0.25);
+                    arcW *= (0.2 + smoothstep(0., 0.5, abs(disc))*0.8)/dfF;
+                    
+                    for(int j = 0; j < P+1; j++){
+                        int i = j % P;
+                        float lnI = arc[i];
+                        #ifdef BUMP
+                        float shWeave = max(abs(arc2[i]*dfF*eT) - abs(lnI*dfF*eT), 0.)/0.001;
+                        #else
+                        float shWeave = 0.6;
+                        #endif
+                        lnI *= dfF;
+                        lnI = abs(lnI) - arcW*dfF;
+                        
+                        // weave strokes
+                        col = mix(col, col*0.55, (1.0 - smoothstep(0., sf*shF*5.5, lnI)));
+                        col = mix(col, vec4(0.0), 1.0 - smoothstep(0., sf, lnI));
+                        col = mix(col, lCol*(shWeave*0.55 + 0.7), 1.0 - smoothstep(0., sf, lnI + 0.013*eT));
+                        #ifdef BUMP
+                        col = mix(col, lCol*0.7, 1.0 - smoothstep(0., sf, abs(arc[i])));
+                        #endif
+                    }
+                }
+                #endif
+                
+                // vertex bump shading and highlights
+                #ifdef BUMP
+                float dir = disc<0. ? -1. : 1.;
+                float shVert = max(dir*(vert - vertHi), 0.)/0.001*0.68;
+                shVert *= eT/dfF;
+                #else
+                float shVert = 1.0;
+                #endif
+                
+                col = mix(col, col*0.7, (1.0 - smoothstep(0., sf*shF*8.0*eT, vert)));
+                col = mix(col, vec4(0.0), 1.0 - smoothstep(0., sf, vert));
+                col = mix(col, lCol*(shVert*0.55 + 0.8), 1.0 - smoothstep(0., sf, vert + ew*1.4));
+                
+                // subtle disc boundary glow / depth
+                float cirDist = length(uv*sc);
+                float discEdge = abs(cirDist - 1.0);
+                col.rgb *= (1.0 - smoothstep(0.02, 0.12, discEdge)*0.25);
+                col.rgb += vec3(0.12, 0.08, 0.05) * (1.0 - smoothstep(0.01, 0.07, discEdge)) * (0.5+0.5*sin(u_time*3.0));
+                
+                // ----- PENCIL: hand-drawn overlay texture (authentic grain) -----
+                #ifdef PENCIL
+                vec2 grainUV = fragCoord / u_resolution.xy * 12.0;
+                float grain = pencilNoise(grainUV + u_time*0.15);
+                grain = (grain - 0.5) * 0.12;
+                vec2 q = p * 3.2;
+                float pencilMark = sin(q.x*18.0 + q.y*13.0) * cos(q.y*22.0 - q.x*9.0);
+                pencilMark = clamp(pencilMark * 0.4 + 0.7, 0.65, 1.2);
+                col.rgb *= (0.92 + grain*0.18) * pencilMark;
+                // cross-hatch effect near edges
+                float hatch = abs(sin(p.x*55.0 + p.y*43.0 + u_time*1.2));
+                hatch = mix(0.92, 1.08, hatch*0.3);
+                col.rgb *= hatch;
+                #endif
+                
+                // extra stylized vignette and final contrast
+                float vignette = 1.0 - length(uv*0.9);
+                vignette = clamp(vignette*0.8 + 0.3, 0.55, 1.0);
+                col.rgb *= vignette;
+                
+                // subtle color boost and gamma simulation
+                col.rgb = pow(col.rgb, vec3(1.0/1.05));
+                col.rgb = sqrt(max(col.rgb, 0.0));
+                
+                // background gradient near disc boundary
+                vec3 bgGrad = vec3(0.05, 0.02, 0.08) * (1.2 - disc*0.3);
+                if(disc > 0.0) {
+                    float fade = smoothstep(0.02, 0.25, disc);
+                    col.rgb = mix(col.rgb, bgGrad, fade*0.45);
+                } else {
+                    col.rgb = mix(col.rgb, vec3(0.02, 0.01, 0.03), smoothstep(-0.4, -0.05, disc)*0.3);
+                }
+                
+                gl_FragColor = vec4(col.rgb, 1.0);
+            }
+        `;
+
+        // Create fullscreen quad with shader material
+        const geometry = new THREE.PlaneGeometry(2, 2);
+        const material = new THREE.ShaderMaterial({
+            uniforms: uniforms,
+            vertexShader: vertexShader,
+            fragmentShader: fragmentShader,
+            depthTest: false,
+            depthWrite: false
+        });
+
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        // Helper functions for mouse interaction (persistent hyperbolic inversion)
+        const updateActiveMouseUniform = () => {
+            uniforms.u_mouse.value.set(activeMouseX, activeMouseY);
+        };
+
+        const getNormalizedMouse = (clientX, clientY) => {
+            const rect = renderer.domElement.getBoundingClientRect();
+            const nx = (clientX - rect.left) / rect.width;
+            const ny = 1.0 - ((clientY - rect.top) / rect.height);
+            return {
+                x: Math.min(1.0, Math.max(0.0, nx)),
+                y: Math.min(1.0, Math.max(0.0, ny))
+            };
+        };
+
+        const onMouseDown = (e) => {
+            isDragging = true;
+            const coords = getNormalizedMouse(e.clientX, e.clientY);
+            currentMouseX = coords.x;
+            currentMouseY = coords.y;
+            e.preventDefault();
+        };
+
+        const onMouseMove = (e) => {
+            if (isDragging) {
+                const coords = getNormalizedMouse(e.clientX, e.clientY);
+                currentMouseX = coords.x;
+                currentMouseY = coords.y;
+                activeMouseX = currentMouseX;
+                activeMouseY = currentMouseY;
+                updateActiveMouseUniform();
+            }
+        };
+
+        const onMouseUp = () => {
+            isDragging = false;
+        };
+
+        const onTouchStart = (e) => {
+            if (e.touches.length) {
+                isDragging = true;
+                const coords = getNormalizedMouse(e.touches[0].clientX, e.touches[0].clientY);
+                currentMouseX = coords.x;
+                currentMouseY = coords.y;
+                e.preventDefault();
+            }
+        };
+
+        const onTouchMove = (e) => {
+            if (isDragging && e.touches.length) {
+                const coords = getNormalizedMouse(e.touches[0].clientX, e.touches[0].clientY);
+                currentMouseX = coords.x;
+                currentMouseY = coords.y;
+                activeMouseX = currentMouseX;
+                activeMouseY = currentMouseY;
+                updateActiveMouseUniform();
+                e.preventDefault();
+            }
+        };
+
+        const onTouchEnd = () => {
+            isDragging = false;
+        };
+
+        const onDoubleClick = () => {
+            activeMouseX = 0.5;
+            activeMouseY = 0.5;
+            updateActiveMouseUniform();
+        };
+
+        // Register events
+        renderer.domElement.addEventListener('mousedown', onMouseDown);
+        window.addEventListener('mousemove', onMouseMove);
+        window.addEventListener('mouseup', onMouseUp);
+        renderer.domElement.addEventListener('touchstart', onTouchStart);
+        window.addEventListener('touchmove', onTouchMove);
+        window.addEventListener('touchend', onTouchEnd);
+        renderer.domElement.addEventListener('contextmenu', (e) => e.preventDefault());
+        renderer.domElement.addEventListener('dblclick', onDoubleClick);
+
+        // initial center position (no inversion)
+        updateActiveMouseUniform();
+
+        // Resize handler
+        const handleResize = () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            renderer.setSize(width, height);
+            uniforms.u_resolution.value.set(width, height);
+        };
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        // Animation loop: updates time uniform
+        const animate = () => {
+            uniforms.u_time.value = performance.now() / 1000.0;
+            renderer.render(scene, camera);
+            requestAnimationFrame(animate);
+        };
+        animate();
+
+        console.log('✨ Hyperbolic Weave Tiling | BUMP + PENCIL + OUTER WEAVE | Drag to explore hyperbolic inversion');
+    </script>
+</body>
+</html>
