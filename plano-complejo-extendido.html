@@ -127,7 +127,8 @@
         </p>
 
         <div class="theorem" id="plano-complejo-extendido">
-          Consideremos el plano complejo $\mathbb{C}$ con su topologia usual $\tau_{\mu}$ y el infinito
+          Consideremos el plano complejo $\mathbb{C}$ con su 
+          topología usual $\tau_{\mu}$ y el infinito
           $\infty\notin
           \mathbb{C}.$ Definimos el conjunto $\widehat{\mathbb{C}}:=\mathbb{C}\cup\{\infty\}$ y la familia
           \[
@@ -174,24 +175,13 @@
           </p>
 
           <p>
-            <strong>Caso 1.</strong> Si $\infty\in U_{1}\cap U_{2},$ entonces las diferencias
-            $\widehat{\mathbb{C}}\setminus U_{1}$ y $\widehat{\mathbb{C}}\setminus U_{2}$ son subconjuntos compactos
-            de
-            $\mathbb{C}.$ Dado que la unión finita de compactos es un compacto, entonces
-            $(\widehat{\mathbb{C}}\setminus
-            U_{1})\cup (\widehat{\mathbb{C}}\setminus U_{2})$ es un subconjunto compacto de $\mathbb{C}.$ Aplicando
-            las
-            leyes de Morgan al anterior conjunto, tenemos que
+            <strong>Caso 1.</strong> 
+            Si los elementos $U_{1}$ y $U_{2}$ pertenecen a 
+            $\tau_{\mu}$, entonces $U_{1}\cap U_{2}\in \tau_{\infty}$ porque
+             $\tau_{\mu}$ es un topología. Consecuentemente, 
+             $U_{1}\cap U_{2}\in \tau_{\mu}\subset \tau_{\infty}.$
           </p>
-          <div class="scroll-wrapper">
-            \[
-            (\widehat{\mathbb{C}}\setminus U_{1})\cup (\widehat{\mathbb{C}}\setminus
-            U_{2})=\widehat{\mathbb{C}}\setminus
-            (U_{1}\cap U_{2}).
-            \]
-          </div>
-          De esta última igualdad, concluimos que $U_{1}\cap U_{2}\in \tau_{\infty}.$
-          <p></p>
+          
 
           <p>
             <strong>Caso 2.</strong> Si $\infty\in U_{1}\cap U_{2},$ entonces las diferencias
@@ -294,7 +284,7 @@
             están en $\mathbb{C},$ entonces existen abiertos $U,V\in \tau_{\mu}\subset \tau_{\infty},$
             tal que $z\in U,$ $w\in V$ y $U\cap V=\emptyset.$ Por otro lado, si $w=\infty,$
             entonces consideramos los reales positivos $0\lt r_{1}\lt r_{2}.$ Luego,
-            constuirmos las bolas abiertas $B_{r_{1}}(z)$ y $B_{r_{2}}(z)$ las cuales
+            construimos las bolas abiertas $B_{r_{1}}(z)$ y $B_{r_{2}}(z)$ las cuales
             están en $\tau_{\mu}.$ Nótese que la cerradura $\overline{B_{r_{2}}(z)}$
             de la bola $B_{r_{2}}(z)$ es un compacto de $\mathbb{C}$ y su complemento
             $V=\widehat{\mathbb{C}}\setminus
@@ -430,9 +420,10 @@
           (<em>proyección estereográfica</em>)
           desde la esfera celestial hasta el plano euclidiano,
           la cual envía la parte
-          celestial del polo norte (cuya frontera es el gran cíarculo invisible)
+          celestial del polo norte (cuya frontera es el gran círculo invisible)
           sobre el interior de una circunferencia
-          del plano euclidiano (véase <a href="bibliografia.html#Berggren">Berggren</a>). ¡Vamos a introducir esta
+          del plano euclidiano 
+          (véase <a href="bibliografia.html#Berggren">Berggren</a>). ¡Vamos a introducir esta
           proyección!
         </p>
 
@@ -472,7 +463,7 @@
         <div class="definition">
           La función $\Pi: \mathbb{S}^{2}\to \widehat{\mathbb{C}},$ tal que
           <div class="scroll-wrapper">
-            \begin{equation}\label{eq:proyeccion_esterografica}
+            \begin{equation}\label{eq:proyeccion_estereografica}
             \Pi(\textbf{x})= \left\{
             \begin{array}{ ll }
             \ell_{\textbf{x}}\cap P; &amp; \text{ si } \textbf{x}\neq {\rm N}; \\
@@ -492,8 +483,7 @@
           Si fijamos la tripleta
           $\textbf{x}=(x_1,x_2,x_3)$ sobre $\mathbb{S}^2-\{ {\rm N}\},$
           entonces queremos encontrar
-          explícitamente el complejo $z$ en l
-          a intersección $\ell_{\textbf{x}}\cap P.$ La línea recta
+          explícitamente el complejo $z$ en la intersección $\ell_{\textbf{x}}\cap P.$ La línea recta
           $\ell_{\textbf{x}}$ está conformada por las tripletas
           $(\overline{x}_1,\overline{x}_2,\overline{x}_3)\in\mathbb{R}^2$
           que satisfacen la ecuación
@@ -521,7 +511,7 @@
           recta $\ell_{\textbf{x}}$ tal que $\overline{x}_{3}=0,$ lo cual significa obtener el real $t\in\mathbb{R}$
           tal
           que $\overline{x}_3=0.$ De la tercera relación descrita en la ecuación \eqref{eq:valor_t}, deducimos
-          fácilamente que la igualdad $\overline{x}_3=0$ sucede cuando
+          fácilmente que la igualdad $\overline{x}_3=0$ sucede cuando
           $$
           t=\dfrac{1}{1-x_3}.
           $$
@@ -540,7 +530,7 @@
           $$
         </div>
 
-        Entonces la proyección estereográfica (\ref{eq:proyeccion_esterografica})
+        Entonces la proyección estereográfica (\ref{eq:proyeccion_estereografica})
         está definida mediante
         <div class="scroll-wrapper">
           \begin{equation}\label{eq:proyeccion_esteregrafica_2}
@@ -639,7 +629,7 @@
           del plano complejo extendido. Este hecho es
           conocidos desde hace tiempo, en la obra <em>De plana spera</em>
           escrita por Jordanus Nemorarius, el autor trató
-          los principios de la proyección esterográfica y probó que
+          los principios de la proyección estereográfica y probó que
           la proyección envía círculos de la esfera
           $\mathbb{S}^2$ en círculos del plano complejo extendido
           <a href="bibliografia.html#Folkerts-Lorch" target="_blank">
@@ -669,7 +659,7 @@
 
 
         <div class="theorem" id="circunferencias-circunferencias">
-          La proyección esterográfica envía círculos de la esfera unitaria $\mathbb{S}^2$ sobre círculos
+          La proyección estereográfica envía círculos de la esfera unitaria $\mathbb{S}^2$ sobre círculos
           generalizados del plano complejo extendido $\widehat{\mathbb{C}}.$ Además, la imagen inversa de cualquier
           círculo generalizado bajo la proyección estereográfica es un círculo en la esfera unitaria.
         </div>
@@ -857,7 +847,7 @@
 
 
         <div class="theorem">
-          La proyección esterográfica $\Pi$ es un homeomorfismo.
+          La proyección estereográfica $\Pi$ es un homeomorfismo.
         </div>
   
         <div class="proof">
@@ -897,7 +887,7 @@
             Por construcción, la esfera $\mathbb{S}$
             menos la circunferencia $C$ es la unión disjunta de dos abiertos conexos, tal que uno de ellos contiene el
             polo norte ${\rm N}.$
-            Denotemos mediante $W$ a dicha componente conexa que contine a ${\rm N}.$
+            Denotemos mediante $W$ a dicha componente conexa que continue a ${\rm N}.$
             Dado que $\Pi$
             es continua en $\mathbb{S}^{2}-\{\rm N\},$ entonces debe suceder que $\Pi(W)\subset V.$ Esto prueba que la
             proyección estereográfica $\Pi$ es continua en ${\rm N}.$ Por lo tanto, la proyección estereográfica es
@@ -929,7 +919,7 @@
         <p>
           para cualesquiera elementos $(x_1,x_2,x_3),(y_1,y_2,y_3)\in \mathbb{R}^3$ la podemos restringir a la esfera
           de
-          Riemann $\mathbb{S}^2.$ Mediante la proyección estereogr'afica $\Pi$ podemos definir en el plano complejo
+          Riemann $\mathbb{S}^2.$ Mediante la proyección estereográfica $\Pi$ podemos definir en el plano complejo
           extendido $\hat{\mathbb{C}}$ la función distancia $d_c : \hat{\mathbb{C}}\times \hat{\mathbb{C}} \to
           \mathbb{R}$ tal que
         </p>
@@ -1015,7 +1005,7 @@
           donde $\sim$ es la relación de equivalencia: $(z_1,w_1)\sim (z_2,w_2)$ si y solo si existe $\lambda
           \in\mathbb{C}^{\ast}$ tal que $(z_1,w_1)=(\lambda \cdot z_2,\lambda \cdot w_2).$ El espacio
           $\mathbb{C}P^{1}$
-          está dotado con la la topología identificación, es decir, la topología que hace a la función
+          está dotado con la topología identificación, es decir, la topología que hace a la función
           proyección $p:\mathbb{C}^{2}-\{(0,0)\}\to \mathbb{C}P^{1},$ tal que
           \[
           (z,w)\mapsto [z,w],
@@ -1080,9 +1070,12 @@
             \end{equation}
           </div>
           <p>
-            Ahora, tomemos dos puntos diferentes $[z_1,w_1]\neq [z_2,w_2]\in\mathbb{C}P^{1}.$ Podemos suponer sin
-            pérdida de generalidad que $(z_1,w_1),$$(z_2,w_2)\in \mathbb{S}^{3}.$ Dado que $\mathbb{S}^{3}$ es un
-            espacio Hausdorff, entonces existen abiertos $U$ y $V$ en $\mathbb{S}^{3}$ tal que se satisfacen las
+            Ahora, tomemos dos puntos diferentes $[z_1,w_1]\neq [z_2,w_2]\in\mathbb{C}P^{1}.$ 
+            Podemos suponer, sin pérdida de generalidad, 
+            que $(z_1,w_1),$$(z_2,w_2)\in \mathbb{S}^{3}.$ 
+            Dado que $\mathbb{S}^{3}$ es un
+            espacio Hausdorff, entonces existen abiertos 
+            $U$ y $V$ en $\mathbb{S}^{3}$ tal que se satisfacen las
             siguientes propiedades
           </p>
           <ol class="roman-list">
