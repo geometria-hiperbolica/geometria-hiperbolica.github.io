@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Three.js - Silver Ratio Hyperbolic Tiling | Octant Inversion</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Segoe UI', 'Courier New', monospace;
+        }
+
+        #info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 12px 20px;
+            border-radius: 12px;
+            backdrop-filter: blur(8px);
+            pointer-events: none;
+            font-size: 0.8rem;
+            z-index: 10;
+            border-left: 4px solid #44d7ff;
+            font-family: monospace;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: rgba(255, 255, 240, 0.95);
+            background: rgba(0, 0, 0, 0.6);
+            padding: 8px 16px;
+            border-radius: 28px;
+            font-size: 0.7rem;
+            font-family: monospace;
+            pointer-events: none;
+            backdrop-filter: blur(4px);
+            font-weight: 500;
+            border: 1px solid rgba(255, 200, 100, 0.3);
+        }
+
+        @media (max-width: 600px) {
+            #info {
+                font-size: 10px;
+                bottom: 10px;
+                left: 10px;
+                padding: 8px 14px;
+            }
+
+            #controls {
+                font-size: 9px;
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <canvas class="webgl"></canvas>
+    <div id="info">
+        SILVER RATIO · HYPERBOLIC TILING<br>
+        Octant Inversion · Animated Rotation
+    </div>
+
+
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@v0.183.2/build/three.module.min.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.183.2/examples/jsm/"
+          }
+        }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+
+        // Setup renderer
+        const canvas = document.querySelector('.webgl');
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: false, antialias: true, powerPreference: "high-performance" });
+
+        // Scene and orthographic camera for fullscreen quad
+        const scene = new THREE.Scene();
+        const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
+        camera.position.z = 1;
+
+        // Shader uniforms
+        const uniforms = {
+            u_time: { value: 0 },
+            u_resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) }
+        };
+
+        // ============================================================
+        // COMPLETE PORT: "Silver Ratio Hyperbolic Tiling" 
+        // Original author: William Cadegan-Schlieper (Google)
+        // Adapted to Three.js with full GLSL preservation.
+        // Implements octant1 symmetry, circle inversion, and animated rotation.
+        // ============================================================
+        const vertexShader = `
+            varying vec2 vUv;
+            void main() {
+                vUv = uv;
+                gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+            }
+        `;
+
+        const fragmentShader = `
+            uniform vec2 u_resolution;
+            uniform float u_time;
+            varying vec2 vUv;
+            
+            // Silver ratio constant (sqrt(2)-1? Actually s = √2 - 1 ≈ 0.41421356)
+            // Used for the fundamental domain translations
+            const float s = 0.4142135623730951;
+            
+            // Octant1 function: reflects coordinates across axes and performs circle inversion
+            // when point lies outside unit circle. Also toggles color channels.
+            void octant1(inout vec2 z, inout float ds, inout vec3[3] colors) {
+                // Reflect across Y-axis if x < 0
+                if (z.x < 0.0) {
+                    z.x = -z.x;
+                    colors[2] = 1.0 - colors[2];
+                }
+                // Reflect across X-axis if y < 0
+                if (z.y < 0.0) {
+                    z.y = -z.y;
+                    colors[1] = 1.0 - colors[1];
+                }
+                float r2 = dot(z, z);
+                // Circle inversion: if outside unit circle, invert and flip primary color
+                if (r2 > 1.0) {
+                    z /= r2;
+                    ds /= r2;
+                    colors[0] = 1.0 - colors[0];
+                }
+            }
+            
+            // Main coloring function based on the algorithm from the original shader
+            vec3 colorFunc(vec2 z, float ds, bool fl) {
+                // Initialize color channels for the three regions
+                vec3[3] colors;
+                colors[0] = vec3(1.0, 0.5, 0.0);  // Orange/Gold region
+                colors[1] = vec3(0.0, 1.0, 0.5);  // Cyan/Teal region
+                colors[2] = vec3(0.5, 0.0, 1.0);  // Purple region
+                
+                // Flip all colors if flag is set
+                if (fl) {
+                    colors[0] = 1.0 - colors[0];
+                    colors[1] = 1.0 - colors[1];
+                    colors[2] = 1.0 - colors[2];
+                }
+                
+                float r2;
+                int n = 60;          // Max iterations
+                int i;
+                bool localFl = fl;
+                
+                // Iterative process: apply octant1 transformations and translate by (s,s)
+                for(i = 0; i < n; i++) {
+                    octant1(z, ds, colors);
+                    z -= vec2(s, s);
+                    r2 = dot(z, z);
+                    
+                    // Check if inside the silver-ratio circle: if so, perform inversion
+                    if (r2 < s * s) {
+                        z *= s * s / r2;
+                        ds *= s * s / r2;
+                        localFl = !localFl;
+                        z += vec2(s, s);
+                    } else {
+                        z += vec2(s, s);
+                        break;
+                    }
+                }
+                
+                // Final octant1 pass to ensure proper symmetry
+                octant1(z, ds, colors);
+                r2 = dot(z, z);
+                
+                // Compute distance-based shading value (original formula)
+                float v = (r2 - 2.0 * (z.x + z.y) * s + s * s) / (2.0 * ds * s * s);
+                v = min(v, 1.0);
+                v = 0.75 + 0.25 * float(n - i) / float(n) * v;
+                if (localFl) v = 1.5 - v;
+                
+                // Determine which region of the triangle we're in using barycentric-like tests
+                float zz = 0.5 * (1.0 - r2);
+                
+                // Region 0: near the hypotenuse of the fundamental triangle
+                if (zz > z.x && zz > z.y) {
+                    float edge1 = (zz - z.x) / ds;
+                    float edge2 = (zz - z.y) / ds;
+                    return colors[0] * v * min(1.0, min(edge1, edge2));
+                }
+                // Region 1: y > x side
+                if (z.y > z.x) {
+                    float edge1 = (z.y - zz) / ds;
+                    float edge2 = (z.y - z.x) / ds;
+                    return colors[1] * v * min(1.0, min(edge1, edge2));
+                }
+                // Region 2: x >= y side
+                float edge1 = (z.x - zz) / ds;
+                float edge2 = (z.x - z.y) / ds;
+                return colors[2] * v * min(1.0, min(edge1, edge2));
+            }
+            
+            void main() {
+                vec2 fragCoord = vUv * u_resolution;
+                vec2 uv = 2.0 * (fragCoord - u_resolution.xy * 0.5) / u_resolution.y;
+                float ds = 4.0 / u_resolution.y;   // Pixel size for anti-aliasing/edge detection
+                
+                // Animation parameters from original: periodic rotation
+                // period = 2π / rotation angle? Actually derived from original magic constant
+                float period = 4.2549485065150545;
+                float t = u_time * 0.2;
+                bool r = false;
+                
+                // Rotate by 45° increments based on time to create mesmerizing pattern
+                // This replicates the original's while loop rotation effect
+                while (t > period * 0.5) {
+                    t -= period;
+                    float c = 0.766311365;   // cos(40°?) Actually cos(π/4?) let's preserve original constants
+                    float s_rot = -0.64246936; // sin rotation value
+                    uv = vec2(uv.x * c - uv.y * s_rot, uv.x * s_rot + uv.y * c);
+                    r = !r;
+                }
+                
+                // Exponential scaling based on remaining time - creates zoom/flow effect
+                uv *= exp(-t);
+                ds *= exp(-t);
+                
+                // Apply initial Mobius transformation to center the tiling
+                uv += vec2(0.25262046414724887, -1.0187347727326157);
+                uv /= dot(uv, uv);
+                ds *= dot(uv, uv);
+                uv += vec2(0.22732631827540598, 0.4228686518338363);
+                
+                // Generate the final color using the hyperbolic tiling algorithm
+                vec3 col = colorFunc(uv, ds, r);
+                
+                // Gamma correction (sRGB-like)
+                col = pow(col, vec3(1.0 / 2.2));
+                
+                gl_FragColor = vec4(col, 1.0);
+            }
+        `;
+
+        // Create fullscreen quad with shader material
+        const geometry = new THREE.PlaneGeometry(2, 2);
+        const material = new THREE.ShaderMaterial({
+            uniforms: uniforms,
+            vertexShader: vertexShader,
+            fragmentShader: fragmentShader,
+            depthTest: false,
+            depthWrite: false
+        });
+
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        // Handle window resize
+        const handleResize = () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            renderer.setSize(width, height);
+            uniforms.u_resolution.value.set(width, height);
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+
+        // Optional: Add subtle mouse interaction to influence rotation speed? 
+        // Not in original, but adds a touch of interactivity while preserving core algorithm.
+        // We'll keep it minimal to respect original shader spirit.
+
+        // Animation loop
+        const animate = () => {
+            uniforms.u_time.value = performance.now() / 1000.0;
+            renderer.render(scene, camera);
+            requestAnimationFrame(animate);
+        };
+
+        animate();
+
+        console.log('✨ Silver Ratio Hyperbolic Tiling | Octant Inversion Shader | Animated Rotation Active');
+
+        // Add a small interactive easter egg: mouse position influences time offset subtly
+        // This doesn't alter the core math but adds a dynamic feel without breaking original intent
+        const mouseMoveHandler = (event) => {
+            // Optional micro-interaction: mouse X influences time warp slightly
+            // This is a non-intrusive addition for modern web feel.
+            // We'll store normalized mouse coords but not modify the shader unless desired.
+            // Uncomment below to allow mouse influence on period, but preserving original formula is priority.
+            // For purity, we keep the original algorithm untouched, but adding slight time modulation
+            // could be interesting. Decided to keep pure original behavior for authenticity.
+        };
+        // window.addEventListener('mousemove', mouseMoveHandler);
+
+        // Display FPS or status in console occasionally
+        let frameCount = 0;
+        let lastTime = performance.now();
+        const updateStats = () => {
+            frameCount++;
+            const now = performance.now();
+            if (now - lastTime >= 1000) {
+                // console.log(`FPS: ${frameCount}`);
+                frameCount = 0;
+                lastTime = now;
+            }
+            requestAnimationFrame(updateStats);
+        };
+        // updateStats(); // uncomment for debug
+    </script>
+</body>
+
+</html>
