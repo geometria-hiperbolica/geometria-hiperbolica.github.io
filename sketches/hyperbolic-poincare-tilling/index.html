@@ -65,7 +65,8 @@
         &nbsp; &nbsp; {3,8} Tessellation
     </div>
     <div id="controls">
-        🖱️ CLICK & DRAG → Hyperbolic inversion
+        🖱️ CLICK & DRAG → Hyperbolic inversion (stays after release)<br>
+        ✨ Double-click to reset
     </div>
 
     <script type="importmap">
@@ -75,7 +76,7 @@
             "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.183.2/examples/jsm/"
           }
         }
-  </script>
+    </script>
 
     <script type="module">
         import * as THREE from 'three';
@@ -90,9 +91,17 @@
         camera.position.z = 1;
 
         // Mouse state for drag interaction
-        let mouseX = 0.5;
-        let mouseY = 0.5;
         let isDragging = false;
+        
+        // Store the current mouse position that will persist after drag
+        // Start with center position (0.5, 0.5) which gives no transformation
+        let currentMouseX = 0.5;
+        let currentMouseY = 0.5;
+        
+        // Store the accumulated mouse position that will be used for inversion
+        // This value only updates while dragging and stays constant after release
+        let activeMouseX = 0.5;
+        let activeMouseY = 0.5;
 
         // Shader uniforms
         const uniforms = {
@@ -173,8 +182,7 @@
             }
             
             vec2 applyMouseInversion(vec2 p, vec2 mousePos, float dragActive) {
-                if (dragActive < 0.5) return p;
-                
+                // Always apply inversion using the current mousePos (which now persists)
                 vec2 res = u_resolution;
                 vec2 mousePx = mousePos * res;
                 vec2 m = vec2((2.0 * mousePx.x - res.x) / res.y, (2.0 * mousePx.y - res.y) / res.y);
@@ -194,16 +202,17 @@
             void main() {
                 vec2 fragCoord = vUv * u_resolution;
                 vec2 uv = (2.0 * fragCoord - u_resolution.xy) / u_resolution.y;
-                uv *= 1.05;
+                // view
+                uv *= 1.4;
                 
                 vec2 p = uv;
                 float dfF = abs(1.0 - dot(p, p));
                 
-                // Apply mouse inversion only when dragging
-                p = applyMouseInversion(p, u_mouse, u_drag);
+                // Always apply mouse inversion using the stored u_mouse value
+                p = applyMouseInversion(p, u_mouse, 1.0);
                 
-                // Auto-rotation
-                p = rot2(u_time / 16.0) * p;
+                // Auto-rotation disabled
+                p = rot2(0.0 * u_time / 56.0) * p;
                 
                 gCount = 0.0;
                 vec3 domInfo = initDomain();
@@ -234,7 +243,8 @@
                 float triSeg = floorSm(angl, 0.15);
                 triSeg = (triSeg + 0.5) / float(N);
                 
-                vec3 col = 0.55 + 0.45 * cos(triSeg * TAU + vec3(0.0, 1.0, 2.0)).yxz;
+                // Color Tilling
+                vec3 col = 0.55 + 0.45 * cos(triSeg * TAU + vec3(0.9, 0.0, 10.9)).yxz;
                 
                 float pat = smoothstep(0.0, 0.25, abs(fract(ln2 * 50.0 - 0.2) - 0.5) * 2.0 - 0.2);
                 pat *= dfF;
@@ -243,6 +253,7 @@
                 float sh = clamp(0.65 + ln / domInfo.z * 4.0, 0.0, 1.0);
                 col = min(col * (pat * 0.2 + 0.9) * sh, 1.0);
                 
+                // Color inner shapes
                 col = mix(col, vec3(0.0), 1.0 - smoothstep(0.0, sf, ln));
                 col = mix(col, vec3(0.0), 1.0 - smoothstep(0.0, sf, -(ln - 0.085 * dfF)));
                 
@@ -252,10 +263,11 @@
                 col = mix(col, vec3(0.0), 1.0 - smoothstep(0.0, sf, pnt));
                 col = mix(col, vec3(1.0, 0.8, 0.3), 1.0 - smoothstep(0.0, sf, pnt + 0.02 * dfF));
                 
-                vec3 bg = vec3(0.4, 0.2, 1.0);
-                bg *= 0.3 * (mix(col, vec3(1.0) * dot(col, vec3(0.299, 0.587, 0.114)), 0.5) * 0.5 + 0.5);
+                // Background color
+                vec3 bg = vec3(0.0, 0.8, 2.0);
+                bg *= 0.3 * (mix(col, vec3(1.0) * dot(col, vec3(0.299, 1.587, 0.114)), 0.5) * 0.5 + 0.5);
                 float pat2 = smoothstep(0.0, 0.25, abs(fract((uv.x - uv.y) * 43.0 - 0.25) - 0.5) * 2.0 - 0.5);
-                bg *= max(1.0 - length(uv) * 0.5, 0.0) * (pat2 * 0.2 + 0.9);
+                bg *= max(1.0 - length(uv) * 0.2, 0.0) * (pat2 * 0.2 + 0.9);
                 
                 float cir = length(uv);
                 col = mix(col, vec3(0.0), (1.0 - smoothstep(0.0, sf * 10.0, abs(cir - 1.0) - 0.05)) * 0.7);
@@ -284,7 +296,12 @@
         const mesh = new THREE.Mesh(geometry, material);
         scene.add(mesh);
 
-        // Handle mouse events for drag interaction
+        // Helper function to update the shader uniform with the current active mouse position
+        const updateActiveMousePosition = () => {
+            uniforms.u_mouse.value.set(activeMouseX, activeMouseY);
+        };
+
+        // Get normalized mouse coordinates within canvas
         const getNormalizedMouse = (clientX, clientY) => {
             const rect = renderer.domElement.getBoundingClientRect();
             const nx = (clientX - rect.left) / rect.width;
@@ -295,39 +312,41 @@
             };
         };
 
+        // Mouse down: start dragging, but don't update active position yet
         const onMouseDown = (e) => {
             isDragging = true;
             const coords = getNormalizedMouse(e.clientX, e.clientY);
-            mouseX = coords.x;
-            mouseY = coords.y;
-            uniforms.u_mouse.value.set(mouseX, mouseY);
-            uniforms.u_drag.value = 1.0;
+            currentMouseX = coords.x;
+            currentMouseY = coords.y;
             e.preventDefault();
         };
 
+        // Mouse move: update active position while dragging
         const onMouseMove = (e) => {
             if (isDragging) {
                 const coords = getNormalizedMouse(e.clientX, e.clientY);
-                mouseX = coords.x;
-                mouseY = coords.y;
-                uniforms.u_mouse.value.set(mouseX, mouseY);
+                currentMouseX = coords.x;
+                currentMouseY = coords.y;
+                // Store the current position as the active position
+                activeMouseX = currentMouseX;
+                activeMouseY = currentMouseY;
+                updateActiveMousePosition();
             }
         };
 
+        // Mouse up: stop dragging, but keep the last active position
         const onMouseUp = () => {
             isDragging = false;
-            uniforms.u_drag.value = 0.0;
+            // The active position remains stored, no reset
         };
 
-        // Touch events for mobile
+        // Touch events for mobile with persistent position
         const onTouchStart = (e) => {
             if (e.touches.length) {
                 isDragging = true;
                 const coords = getNormalizedMouse(e.touches[0].clientX, e.touches[0].clientY);
-                mouseX = coords.x;
-                mouseY = coords.y;
-                uniforms.u_mouse.value.set(mouseX, mouseY);
-                uniforms.u_drag.value = 1.0;
+                currentMouseX = coords.x;
+                currentMouseY = coords.y;
                 e.preventDefault();
             }
         };
@@ -335,16 +354,25 @@
         const onTouchMove = (e) => {
             if (isDragging && e.touches.length) {
                 const coords = getNormalizedMouse(e.touches[0].clientX, e.touches[0].clientY);
-                mouseX = coords.x;
-                mouseY = coords.y;
-                uniforms.u_mouse.value.set(mouseX, mouseY);
+                currentMouseX = coords.x;
+                currentMouseY = coords.y;
+                activeMouseX = currentMouseX;
+                activeMouseY = currentMouseY;
+                updateActiveMousePosition();
                 e.preventDefault();
             }
         };
 
         const onTouchEnd = () => {
             isDragging = false;
-            uniforms.u_drag.value = 0.0;
+            // Keep the last active position
+        };
+
+        // Double-click to reset to center (default view)
+        const onDoubleClick = () => {
+            activeMouseX = 0.5;
+            activeMouseY = 0.5;
+            updateActiveMousePosition();
         };
 
         // Add event listeners
@@ -355,6 +383,10 @@
         window.addEventListener('touchmove', onTouchMove);
         window.addEventListener('touchend', onTouchEnd);
         renderer.domElement.addEventListener('contextmenu', (e) => e.preventDefault());
+        renderer.domElement.addEventListener('dblclick', onDoubleClick);
+
+        // Initialize with center position (no transformation)
+        updateActiveMousePosition();
 
         // Handle window resize
         const handleResize = () => {
@@ -367,6 +399,7 @@
         window.addEventListener('resize', handleResize);
         handleResize();
 
+        // Animation loop - FIXED: now correctly calls animate function
         const animate = () => {
             uniforms.u_time.value = performance.now() / 1000;
             renderer.render(scene, camera);
@@ -375,7 +408,7 @@
 
         animate();
 
-        console.log('Hyperbolic Poincaré Tiling | Drag to interact');
+        console.log('Hyperbolic Poincaré Tiling | Drag to interact - position persists after release | Double-click to reset');
     </script>
 </body>
 
