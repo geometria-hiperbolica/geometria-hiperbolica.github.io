@@ -168,9 +168,33 @@
             vec3 colorFunc(vec2 z, float ds, bool fl) {
                 // Initialize color channels for the three regions
                 vec3[3] colors;
-                colors[0] = vec3(1.0, 0.5, 0.0);  // Orange/Gold region
-                colors[1] = vec3(0.0, 1.0, 0.5);  // Cyan/Teal region
-                colors[2] = vec3(0.5, 0.0, 1.0);  // Purple region
+                // colors[0] = vec3(1.0, 0.5, 0.0);  // Orange/Gold region
+                // colors[1] = vec3(0.0, 1.0, 0.5);  // Cyan/Teal region
+                // colors[2] = vec3(0.5, 0.0, 1.0);  // Purple region
+
+                colors[0] = vec3(0.8, 0.9, 1.0);   // pale blue
+                colors[1] = vec3(0.5, 0.7, 0.9);   // soft blue
+                colors[2] = vec3(0.2, 0.4, 0.6);   // steel blue
+
+                // colors[0] = vec3(1.0, 0.2, 0.0);   // red
+                // colors[1] = vec3(1.0, 0.6, 0.0);   // orange
+                // colors[2] = vec3(1.0, 0.9, 0.2);   // yellow
+
+                // colors[0] = vec3(0.0, 1.0, 0.8);   // neon teal
+                // colors[1] = vec3(1.0, 0.0, 0.6);   // hot magenta
+                // colors[2] = vec3(0.6, 0.0, 1.0);   // electric purple
+
+                // colors[0] = vec3(1.0, 0.6, 0.4);   // soft coral
+                // colors[1] = vec3(0.9, 0.3, 0.5);   // pink
+                // colors[2] = vec3(0.4, 0.2, 0.6);   // deep violet
+
+                // colors[0] = vec3(0.0, 0.4, 0.7);   // deep blue
+                // colors[1] = vec3(0.0, 0.7, 0.6);   // teal
+                // colors[2] = vec3(0.6, 0.9, 1.0);   // light cyan
+
+                // colors[0] = vec3(0.4, 0.6, 0.3);   // olive green
+                // colors[1] = vec3(0.7, 0.5, 0.3);   // warm brown
+                // colors[2] = vec3(0.9, 0.8, 0.6);   // sand
                 
                 // Flip all colors if flag is set
                 if (fl) {
