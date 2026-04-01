@@ -1634,11 +1634,11 @@
         <p>Ahora, enunciaremos varias fórmulas relacionadas con la distancia hiperbólica \(\rho\) y las funciones
           trigonométricas hiperbólicas. Recordemos que las funciones <span class="purple-txt">seno hiperbólico</span>,
           <span class="purple-text">coseno hiperbólico</span> y <span class="purple-txt">tangente hiperbólico</span>,
-          denotadas mediante \(\sinh, \cosh, \tanh,\) respectivamente, están definidas mediante
+          denotadas mediante \(\senh, \cosh, \tanh,\) respectivamente, están definidas mediante
         </p>
         <div class="scroll-wrapper">
           \[
-          \sinh (x)=\frac{e^x-e^{-x}}{2}, \quad \cosh (x)=\frac{e^{x}+e^{-x}}{2}, \quad \tanh (x)=\frac{\sinh x}{\cosh
+          \senh (x)=\frac{e^x-e^{-x}}{2}, \quad \cosh (x)=\frac{e^{x}+e^{-x}}{2}, \quad \tanh (x)=\frac{\senh x}{\cosh
           x}=\frac{e^x-e^{-x}}{e^x+e^{-x}},
           \]</div>
 
@@ -1650,7 +1650,7 @@
           <ul style="list-style-type: none; padding-left: 0;">
             <li><strong>(1)</strong> \(\cosh\rho(z,w)=1+\dfrac{|z-w|^2}{2\, \operatorname{Im}(z)\,
               \operatorname{Im}(w)}.\)</li>
-            <li><strong>(2)</strong> \(\sinh \left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-w|}{2\, (\operatorname{Im} (z)
+            <li><strong>(2)</strong> \(\senh \left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-w|}{2\, (\operatorname{Im} (z)
               \, \operatorname{Im}(w))^{1/2}}.\)</li>
             <li><strong>(3)</strong> \(\cosh
               \left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-\overline{w}|}{2\,(\operatorname{Im}(z) \,
@@ -1958,10 +1958,10 @@
           El conjunto de los puntos \(z = x + iy\) en \(\mathbb{H},\) que equidistan hiperbólicamente una distancia
           \(r&gt;0\) de un punto \(z_0 = x_0 + i y_0\in\mathbb{H},\) están determinados por la siguiente ecuación
           \[
-          (x-x_0)^2 + (y- y_0 \cosh r)^2 = y^2_0 \sinh^2 r,
+          (x-x_0)^2 + (y- y_0 \cosh r)^2 = y^2_0 \senh^2 r,
           \]
           es decir, la circunferencia hiperbólica \(C_{h}(z_{0},r)\) con centro \(z_{0}\) y radio \(r\) es la
-          circunferencia euclidiana con centro \(x_{0}+iy_{0}\cosh r\) y radio \(y_{0}\sinh r\)<p></p>
+          circunferencia euclidiana con centro \(x_{0}+iy_{0}\cosh r\) y radio \(y_{0}\senh r\)<p></p>
           \begin{equation}\label{eq:bola_hiperbolica_igual_bola_euclidiana}
           \begin{split}
           C_{h}(z_{0},r)&amp;=\{z=x+iy\in\mathbb{H}:\rho(z,z_{0})=r\},\\
@@ -1996,17 +1996,17 @@
           </div>
 
 
-          <p>Ahora, sustituimos la relación \(\cosh^2 r -\sinh^2 r=1,\)
+          <p>Ahora, sustituimos la relación \(\cosh^2 r -\senh^2 r=1,\)
             en la ecuación (*), computamos y obtenemos</p>
           \[
           \begin{aligned}
-          2yy_0\cosh r&amp;= (x-x_0)^2+y^2+y_0^2(\cosh^2 r -\sinh^2 r),\\
+          2yy_0\cosh r&amp;= (x-x_0)^2+y^2+y_0^2(\cosh^2 r -\senh^2 r),\\
           &amp;\\
-          2yy_0\cosh r&amp;= (x-x_0)^2+y^2+y_0^2\cosh^2 r - y_0^2\sinh^2 r,\\
+          2yy_0\cosh r&amp;= (x-x_0)^2+y^2+y_0^2\cosh^2 r - y_0^2\senh^2 r,\\
           &amp;\\
-          y_0^2\sinh^2 r&amp;= (x-x_0)^2+y^2 - 2yy_0\cosh r + y_0^2\cosh^2 r,\\
+          y_0^2\senh^2 r&amp;= (x-x_0)^2+y^2 - 2yy_0\cosh r + y_0^2\cosh^2 r,\\
           &amp;\\
-          y_0^2\sinh^2 r&amp;= (x-x_0)^2+(y-y_0\cosh r)^2.
+          y_0^2\senh^2 r&amp;= (x-x_0)^2+(y-y_0\cosh r)^2.
           \end{aligned}
           \]
           <p>La anterior igualdad garantiza la descripción de los elementos que están en la circunferencia hiperbólica
@@ -2018,11 +2018,11 @@
           con centro \(z\in \mathbb{H}\) y radio \(r&gt;0,\)</p>
         <div class="scroll-wrapper">
           \[
-          B_{h}(z,r)=\left\{x+iy\in\mathbb{H}: (x-x_0)^2 + (y- y_0 \cosh r)^2 \lt y^2_0 \sinh^2 r\right\},
+          B_{h}(z,r)=\left\{x+iy\in\mathbb{H}: (x-x_0)^2 + (y- y_0 \cosh r)^2 \lt y^2_0 \senh^2 r\right\},
           \]
         </div>
         <p>el cual
-          coincide con la bola euclidiana con centro \((x_0,y_0\cosh r)\) y radio \(y_{0}^2\sinh^2 r.\) Más
+          coincide con la bola euclidiana con centro \((x_0,y_0\cosh r)\) y radio \(y_{0}^2\senh^2 r.\) Más
           precisamente,</p>
 
         <div class="corollary">
