@@ -1637,6 +1637,10 @@ footer {
   margin-top: 4px;
 }
 
+.hidden-title {
+  color: rgba(255, 255, 255, 0);
+}
+
 /*
  https://benfrain.com/create-print-styles-using-css3-media-queries/
 */
@@ -1652,6 +1656,7 @@ footer {
   #dark-mode-toggle,
   #donate,
   #footer-elements,
+  .hidden-title,
   .nextPage {
     display: none;
   }
@@ -1661,7 +1666,8 @@ footer {
   body {
     width: 95%;
     margin: 0px;
-    padding: 10px 10px 20px 50px;
+    padding: 10px 10px 20px 80px;
+    font-size: 0.75rem;
   }
   label.sidenote-toggle:not(.sidenote-number) {
     display: inline;
