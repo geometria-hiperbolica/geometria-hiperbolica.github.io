@@ -201,7 +201,7 @@ let mouseY = 0;
 let targetRotationX = 0.3;     // Initial vertical tilt (radians)
 let targetRotationY = -0.5;     // Initial horizontal rotation (radians)
 let currentRotationX = 0.3;    // Match the target
-let currentRotationY = 0.5;    // Match the target
+let currentRotationY = -0.5;    // Match the target
 let isMouseDown = false;
 let lastMouseX = 0;
 let lastMouseY = 0;
@@ -270,7 +270,8 @@ function updateCamera() {
     uniforms.uCameraRight.value = right;
     uniforms.uCameraUp.value = up;
 
-    //console.log(cameraPos)
+    //console.log(cameraTarget)
+    console.log(cameraPos)
 }
 
 // Keyboard controls for mode switching
