@@ -56,6 +56,16 @@
             }
         }
     </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-16JHH28EVY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-16JHH28EVY');
+    </script>
 </head>
 
 <body>
@@ -92,12 +102,12 @@
 
         // Mouse state for drag interaction
         let isDragging = false;
-        
+
         // Store the current mouse position that will persist after drag
         // Start with center position (0.5, 0.5) which gives no transformation
         let currentMouseX = 0.5;
         let currentMouseY = 0.5;
-        
+
         // Store the accumulated mouse position that will be used for inversion
         // This value only updates while dragging and stays constant after release
         let activeMouseX = 0.5;

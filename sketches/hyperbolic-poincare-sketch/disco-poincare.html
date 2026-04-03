@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -10,6 +11,7 @@
             overflow: hidden;
             font-family: 'Segoe UI', 'Courier New', monospace;
         }
+
         #info {
             position: absolute;
             bottom: 20px;
@@ -24,15 +26,16 @@
             border-left: 4px solid #66e6ff;
             font-family: monospace;
             letter-spacing: 0.5px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             text-align: center;
             line-height: 16px;
         }
+
         #controls {
             position: absolute;
             bottom: 20px;
             right: 20px;
-            color: rgba(255,255,240,0.95);
+            color: rgba(255, 255, 240, 0.95);
             background: rgba(0, 0, 0, 0.6);
             padding: 8px 16px;
             border-radius: 28px;
@@ -41,8 +44,9 @@
             pointer-events: none;
             backdrop-filter: blur(4px);
             font-weight: 500;
-            border: 1px solid rgba(255,200,100,0.3);
+            border: 1px solid rgba(255, 200, 100, 0.3);
         }
+
         a {
             color: rgb(0, 255, 229);
         }
@@ -62,22 +66,42 @@
         a:active {
             text-decoration: underline;
         }
+
         @media (max-width: 600px) {
-            #info { font-size: 9px; bottom: 10px; left: 10px; }
-            #controls { font-size: 9px; bottom: 10px; right: 10px; }
+            #info {
+                font-size: 9px;
+                bottom: 10px;
+                left: 10px;
+            }
+
+            #controls {
+                font-size: 9px;
+                bottom: 10px;
+                right: 10px;
+            }
         }
-        
     </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-16JHH28EVY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-16JHH28EVY');
+    </script>
 </head>
+
 <body>
     <canvas class="webgl"></canvas>
     <div id="info">
         Disco de Poincaré<br>
         {3,8} Teselación<br />
         Créditos: <a href="https://www.shadertoy.com/view/tsffDl" target="_blank">Shane</a>
-       
+
     </div>
-   
+
 
     <script type="importmap">
         {
@@ -94,7 +118,7 @@
         // Setup renderer
         const canvas = document.querySelector('.webgl');
         const renderer = new THREE.WebGLRenderer({ canvas, alpha: false, antialias: true, powerPreference: "high-performance" });
-        
+
         // Scene and orthographic camera for fullscreen quad
         const scene = new THREE.Scene();
         const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
@@ -577,4 +601,5 @@
         console.log('✨ Hyperbolic Weave Tiling | BUMP + PENCIL + OUTER WEAVE | Drag to explore hyperbolic inversion');
     </script>
 </body>
+
 </html>
