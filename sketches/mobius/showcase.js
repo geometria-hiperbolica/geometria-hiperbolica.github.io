@@ -271,7 +271,7 @@ function updateCamera() {
     uniforms.uCameraUp.value = up;
 
     //console.log(cameraTarget)
-    console.log(cameraPos)
+    //console.log(cameraPos)
 }
 
 // Keyboard controls for mode switching
