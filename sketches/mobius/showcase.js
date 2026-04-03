@@ -187,7 +187,7 @@ const mouseSensitivityY = 0.007;  // Vertical sensitivity
 // 5. CHANGE ROTATION LIMITS
 // Modify these to allow more/less vertical tilt
 const maxVerticalTilt = 1.5;   // Max up/down angle (radians)
-const minVerticalTilt = 0.2;  // Min up/down angle (radians)
+const minVerticalTilt = 0.3;  // Min up/down angle (radians)
 
 // 6. CHANGE SMOOTHING SPEED
 // Modify this for faster/slower camera following (0-1, lower = smoother)
