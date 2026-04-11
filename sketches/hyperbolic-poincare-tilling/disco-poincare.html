@@ -274,7 +274,7 @@
                 triSeg = (triSeg + 0.5) / float(N);
                 
                 // Color Tilling
-                vec3 col = 0.55 + 0.45 * cos(triSeg * TAU + vec3(0.9, 0.0, 10.9)).yxz;
+                vec3 col = 0.55 + 0.45 * cos(triSeg * TAU + vec3(1.9, 1.5, 5.9)).yxz;
                 
                 float pat = smoothstep(0.0, 0.25, abs(fract(ln2 * 50.0 - 0.2) - 0.5) * 2.0 - 0.2);
                 pat *= dfF;
