@@ -1153,26 +1153,34 @@
           <strong>Condición suficiente.</strong> Si el grupo \(\Gamma\) es discreto, entonces cada subgrupo de
           \(\Gamma\) también es discreto.
 
-          <strong>Condición necesaria.</strong> Suponga que \(\Gamma\) no es discreto y que para cualesquiera dos
-          elementos \(S,T\) de \(\Gamma\) el subgrupo generado \(\langle T, S \rangle\) de \(\Gamma\) es discreto.
-          Entonces existe una sucesión \((T_n)_{n\in\mathbb{N}}\) de transformaciones distintas en
-          \(\Gamma-\{\operatorname{Id}\}\) tal que dicha sucesión converge a \(\operatorname{Id}.\) Como
-          \(T^2=\operatorname{Id}\) implica que \(\operatorname{Tr}(T) = 0\) y \(\operatorname{Tr}(T)\) es una función
-          continua en \(PSL(2, \mathbb{R}),\) podemos escoger una subsucesión que no contenga elementos de orden 2.
-          Entonces para algún \(S \in \Gamma\) tenemos que la sucesión
-          \[
-          \left(|\operatorname{Tr}^{2}(T_n)-4| + |\operatorname{Tr}(T_n S T_n^{-1} S^{-1})-2|\right) \text{ converge a }
-          0.
-          \]
-          Usando el teorema de la desigualdad de Jørgensen, existe un número natural \(N(S)\) tal que para \(n \geq
-          N(S),\) el grupo \(\langle T_n, S \rangle\) es elemental. Usando un ejercicio previo concluimos que \(\Gamma\)
-          contiene dos elementos hiperbólicos \(S_1\) y \(S_2\) sin puntos fijos en común. Para \(n\geq \max(N(S_1),
-          N(S_2)),\) los grupos \(\langle T_n, S_1 \rangle\) y \(\langle T_n, S_2 \rangle\) son elementales y discretos.
-          El teorema de clasificación de grupos elementales nos garantiza que la transformación \(T_n\) debe dejar
-          invariantes el par de puntos fijos de \(S_1\) y de \(S_2.\) Como \(T_n\) no es elíptica de orden 2, esta no
-          puede intercambiar un par de puntos, así \(T_n\) debe fijar cada punto fijo individual de \(S_1\) y de
-          \(S_2.\) Y como sus puntos fijos no coinciden, \(T_n\) debe fijar cuatro puntos distintos, lo cual implica que
-          \(T_n = \operatorname{Id},\) una contradicción.
+          <p>
+            <strong>Condición necesaria.</strong> Suponga que \(\Gamma\) no es discreto y que para cualesquiera dos
+            elementos \(S,T\) de \(\Gamma\) el subgrupo generado \(\langle T, S \rangle\) de \(\Gamma\) es discreto.
+            Entonces existe una sucesión \((T_n)_{n\in\mathbb{N}}\) de transformaciones distintas en
+            \(\Gamma-\{\operatorname{Id}\}\) tal que dicha sucesión converge a \(\operatorname{Id}.\) Como
+            \(T^2=\operatorname{Id}\) implica que \(\operatorname{Tr}(T) = 0\) y \(\operatorname{Tr}(T)\) es una función
+            continua en \(PSL(2, \mathbb{R}),\) podemos escoger una subsucesión que no contenga elementos de orden 2.
+            Entonces para algún \(S \in \Gamma\) tenemos que la sucesión
+            \[
+            \left(|\operatorname{Tr}^{2}(T_n)-4| + |\operatorname{Tr}(T_n S T_n^{-1} S^{-1})-2|\right)
+            \]
+            converge a \(0.\)
+          </p>
+          <p>
+            Usando el teorema de la desigualdad de Jørgensen, existe un número natural \(N(S)\) tal que para \(n \geq
+            N(S),\) el grupo \(\langle T_n, S \rangle\) es elemental. 
+            Usando un ejercicio previo concluimos que
+            \(\Gamma\)
+            contiene dos elementos hiperbólicos \(S_1\) y \(S_2\) sin puntos fijos en común. Para \(n\geq \max(N(S_1),
+            N(S_2)),\) los grupos \(\langle T_n, S_1 \rangle\) y \(\langle T_n, S_2 \rangle\) son elementales y
+            discretos.
+            El teorema de clasificación de grupos elementales nos garantiza que la transformación \(T_n\) debe dejar
+            invariantes el par de puntos fijos de \(S_1\) y de \(S_2.\) Como \(T_n\) no es elíptica de orden 2, esta no
+            puede intercambiar un par de puntos, así \(T_n\) debe fijar cada punto fijo individual de \(S_1\) y de
+            \(S_2.\) Y como sus puntos fijos no coinciden, \(T_n\) debe fijar cuatro puntos distintos, lo cual implica
+            que
+            \(T_n = \operatorname{Id},\) una contradicción.
+          </p>
         </div>
 
 
