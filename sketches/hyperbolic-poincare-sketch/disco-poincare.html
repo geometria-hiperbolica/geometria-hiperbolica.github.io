@@ -386,7 +386,7 @@
                 float ia = floor(fract(atan(p.x, p.y)/TAU - 0.25)*float(P))/float(P);
                 
                 // COLOR: rich palette with subtle variation (no full animation but vibrant)
-                vec4 pCol = 0.55 + 0.45*cos(TAU*(ic*2.9 + ia*0.22) + vec4(1, 0, 3, 0)*1.9);
+                vec4 pCol = 0.75 + 0.55*cos(TAU*(ic*2.9 + ia*0.22) + vec4(1, 0, 3, 0)*1.9);
                 
                 #ifdef BUMP
                 float bump = max(polyHi - poly, 0.)/0.001*0.65;
