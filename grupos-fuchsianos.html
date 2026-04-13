@@ -112,7 +112,8 @@
       <div id="section1">
         <div class="head-5">Grupos fuchsianos</div>
 
-        <p>Los grupos fuchsianos son ciertos subgrupos \(\Gamma\) discretos del grupo isometrías del
+        <p>Los grupos fuchsianos son ciertos subgrupos \(\Gamma\)
+          discretos del grupo de isometrías del
           plano hiperbólico \(\mathbb{H}\) que aparecen en el estudio del espacio cociente \(\mathbb{H}/\Gamma.\) Dicho
           espacio cociente resulta ser una superficie de Riemann, la teoría de Variedades Riemanniana garantiza que la
           métrica Riemanniana hiperbólica desciende al espacio cociente. Además, la teoría de espacio cubrientes nos
@@ -186,7 +187,7 @@
           sobre \(X\) bajo homeomorfismo, es decir \[ (f,x)\mapsto
           f(x), \] diremos que la acción es <span class="red-txt">propia discontinua</span>
           (o \(\Gamma\) actúa <span class="red-txt">propiamente discontinuamente</span> sobre \(X\)) si para cada punto
-          \(x\in X\) existe una vecindad \(V_{x}\) el
+          \(x\in X\) existe una vecindad \(U_{x}\) el
           conjunto
           \[
           \Gamma(x,U_{x}):=\left\{f\in \Gamma: f(U_{x})\cap U_{x}\neq \emptyset\right\}
@@ -245,7 +246,8 @@
             de elementos diferentes de la órbita \(\mathcal{O}(x)\) que converge a \(y.\) Para el punto \(x_{n}\)
             existe un elemento \(f_{n}\in \Gamma\) tal que \(f_{n}(x)=x_{n}.\) Así, obtenemos la sucesión
             \((f_{n})_{n\in\mathbb{N}}\) de elementos diferentes de \(\Gamma,\) los cuales safisfacen \[
-            B_{\varepsilon}f(y)\cap B_{\varepsilon}(y)\neq\emptyset. \] Hemos encontrados al menos una cantidad
+            B_{\varepsilon}f(y)\cap B_{\varepsilon}(y)\neq\emptyset. \]
+            Hemos encontrado al menos una cantidad
             infinito numero de elementos pertenecientes al conjunto anterior.</p>
           <p>La propiedad <strong>(2)</strong> es evidente.</p>
         </div>
@@ -418,8 +420,9 @@
         </div>
 
         <div class="theorem">
-          Dos transformaciones \(T_{1}\) y \(T_{2}\) en \(PSL(2,\mathbb{R})\) conmutan (\(T_{1}\circ T_{2}=T_{2}\circ
-          T_{1}\)) si y solo si tienen los mismos puntos fijos \(\operatorname{Fij}(T_{1})=\operatorname{Fij}(T_{2}).\)
+          Dos transformaciones \(T_{1}\) y \(T_{2}\) en \(PSL(2,\mathbb{R})\) conmutan 
+          \((T_{1}\circ T_{2}=T_{2}\circ
+          T_{1})\) si y solo si tienen los mismos puntos fijos \(\operatorname{Fij}(T_{1})=\operatorname{Fij}(T_{2}).\)
         </div>
 
         <div class="proof">
@@ -955,9 +958,18 @@
               conformada por todos los elementos elípticos de \(\Gamma.\) Consideremos un elemento elíptico \(T_{b}\) de
               \(\Gamma,\) entonces tomamos la transformación de Möbius \(S\) dada por \(z\mapsto \sqrt{b}z.\) Ahora,
               consideramos el grupo conjugado \(S\circ \Gamma_{0}\circ S^{-1},\) el cual satisface \(S\circ
-              \Gamma_{0}\circ S^{-1}=\Gamma_{0}.\) Entonces \(S\circ \overline{T}_{b}\circ
-              S^{-1}=\overline{T}_{1}=\psi.\) Entonces \(S\circ \Gamma \circ S^{-1}=\Gamma_{0}\cup \left(\psi \circ
-              \Gamma_{0}\right).\) Dado que \(\Gamma_{0}\) es discreto, entonces \(\Gamma_{0}=\langle T_{k} \rangle,\)
+              \Gamma_{0}\circ S^{-1}=\Gamma_{0}.\) 
+              Esto es, 
+              \[
+              S\circ \overline{T}_{b}\circ
+              S^{-1}=\overline{T}_{1}=\psi.
+              \] 
+              Entonces 
+              \[
+              S\circ \Gamma \circ S^{-1}=\Gamma_{0}\cup \left(\psi \circ
+              \Gamma_{0}\right).
+              \]
+              Dado que \(\Gamma_{0}\) es discreto, entonces \(\Gamma_{0}=\langle T_{k} \rangle,\)
               para algún \(k&gt;0\) y \(k\neq 1.\) Así, \(S\circ \Gamma \circ S^{-1}=H_{k}.\)</li>
           </ul>
 
@@ -1137,8 +1149,12 @@
           <p>
             Ahora mostremos que la cota inferior propuesta en la desigualdad es la mejor posible. Considere el grupo
             generado por \(T(z) = z+1\) y \(S(z) = \frac{-1}{z}.\) Sabemos que \(\langle T, S \rangle = PSL(2,
-            \mathbb{Z})\) el cual es discreto y no elemental. Tenemos que \(T\circ S \circ T^{-1} \circ S^{-1}(z) =
-            \frac{2z+1}{z+1},\) cuya traza es \(3,\) con lo cual la igualdad se tiene en la desigualdad.
+            \mathbb{Z})\) el cual es discreto y no elemental. 
+            Tenemos que 
+            \[
+            T\circ S \circ T^{-1} \circ S^{-1}(z) = \frac{2z+1}{z+1},
+            \]
+            cuya traza es \(3,\) con lo cual la igualdad se tiene en la desigualdad.
           </p>
         </div>
 
