@@ -141,7 +141,7 @@
             siendo los <span class="red-txt">coeficientes de la transformación</span>
             $a,b,c$ y $d$ números complejos, tal que el
             <span class="red-txt">determinante de la transformación</span> satisface la relación ${\rm
-            det}(T)=ad-cd\neq 0.$
+            det}(T)=ad-cb\neq 0.$
           <p></p>
         </div>
 
@@ -205,8 +205,7 @@
           \text{ es una transformación de Möbius}\right\},
           \end{equation}
         </div>
-
-        es un grupo de los homeomorfismo de la esfera de Riemann ${\rm Homeo}(\widehat{\mathbb{C}}).$
+        es un subgrupo de los homeomorfismo de la esfera de Riemann ${\rm Homeo}(\widehat{\mathbb{C}}).$
         <p></p>
 
         <p>
@@ -244,8 +243,8 @@
             \[
             T(z)=\frac{1}{z},
             \]
-            es llamada <span class="red-txt">involución</span>.
-            Notemos que la inmersión es una involución, es decir, $g\circ g=Id.$ Además, la inmersión $T$ deja
+            es llamada <span class="red-txt">inmersión</span>.
+            Notemos que la inmersión es una involución, es decir, $T\circ T=Id.$ Además, la inmersión $T$ deja
             invariante el círculo unitario $\mathbb{S}^{1}:=\{z\in\mathbb{C}: |z|=1\}.$ También, envía el conjunto
             $\{z\in\mathbb{C}:|z|\lt 1\}$ en el conjunto $\{z\in\mathbb{C}:|z|&gt;1\}\cup\{\infty\}.$ Conversamente, la
             inversión $T$ mapea el conjunto $\{z\in\mathbb{C}:|z|&gt;1\}\cup\{\infty\}$ sobre el conjunto
@@ -286,27 +285,31 @@
         <figure>
           <div id="ggb-element-projection"></div>
           <figcaption>
-            Proyección estereográfica: Transformaciones de Möbius
+            Proyección estereográfica. Transformaciones de Möbius.
           </figcaption>
         </figure>
 
         <h3>Transformaciones idénticas</h3>
 
         <p>
-          Del curso de Cálculo en una Variable sabemos que las funciones real valuadas $f$ y $g$ dadas por
+          Del curso de Cálculo en una variable sabemos 
+          que las funciones real valuadas $f$ y $g$ dadas por
           \[
           f(x)=2x^2 \quad \text{ y } \quad g(x)=\frac{4x^{2}}{2},
           \]
           son la "misma función", salvo que sus reglas de asignación son
-          diferentes. Para el caso de la transformaciones de Möbius tenemos el mismo fenómeno. Vamos a introducir
+          diferentes. Para el caso de la transformaciones de 
+          Möbius tenemos el mismo fenómeno. Vamos a introducir
           una definición sencilla que nos permita identificar
-          <span class="red-txt"><em>idénticas</em></span> entre dos o más
+          cuando son 
+          <span class="red-txt"><em>idénticas</em></span> dos o más
           transformaciones de Möbius.
         </p>
 
         <div class="definition">
           Las transformaciones de Möbius $T_1$ y $T_2$ son
-          <span>idénticas</span>, si y solo si, $T_1(z)=T_2(z),$ para cada $z\in\hat{\mathbb{C}}.$
+          <span class="red-txt">idénticas</span>, si y solo si, 
+          $T_1(z)=T_2(z),$ para cada $z\in\widehat{\mathbb{C}}.$
         </div>
 
         <p>
@@ -319,7 +322,7 @@
           \[
           T_1(z)=\dfrac{a_1z+b_1}{c_1z+d_1} \quad \text{y} \quad T_2(z)=\dfrac{a_2z+b_2}{c_2z+d_2},
           \]
-          son idénticas, si y solo si, existe un número complejo no nulo $\lambda\in\mathbb{C}^{\ast}$ tal que
+          son idénticas si y solo si existe un número complejo no nulo $\lambda\in\mathbb{C}^{\ast}$ tal que
           $a_1=\lambda a_2,$ $b_1=\lambda b_2,$ $c_1=\lambda c_2$ y $d_1=\lambda d_2.$
         </div>
 
@@ -481,8 +484,9 @@
         </p>
 
         <div class="theorem" id="t_escriturafinita">
-          Toda transformación de Möbius se puede escribir como la composición finita de translaciones, rotaciones,
-          homotecias y la involución.
+          Toda transformación de Möbius se puede escribir como 
+          la composición finita de translaciones, rotaciones,
+          homotecias y la inmersión.
         </div>
 
         <div class="proof">
@@ -541,8 +545,9 @@
         </p>
 
         <div class="theorem" id="t:circulos_fundamentales">
-          Las translaciones, rotaciones, dilataciones y la involución preservan los círculos generalizados sobre el
-          plano complejo extendido $\hat{\mathbb{C}}.$
+          Las translaciones, rotaciones, dilataciones y la inmersión 
+          preservan los círculos generalizados sobre el
+          plano complejo extendido $\widehat{\mathbb{C}}.$
         </div>
 
         <div class="proof">
@@ -599,7 +604,7 @@
             \begin{equation}\label{eq:circunferencia_euclidiana_prueba_teorema}
             |z-w_{0}|=r,
             \end{equation}
-            para algún complejo $w_{0}\in\mathbb{R}$ y un real $r&gt;0.$ Veamos que el complejo
+            para algún complejo $w_{0}\in\mathbb{C}$ y un real $r&gt;0.$ Veamos que el complejo
             \[
             w=T(z)=z+z_{0},
             \]
@@ -623,7 +628,7 @@
             \[
             T(z)=\frac{1}{z},
             \]
-            y un círculo generalizado $\mathcal{C}$ sobre el plano complejo extendido $\hat{\mathbb{C}}.$ Veamos que
+            y un círculo generalizado $\mathcal{C}$ sobre el plano complejo extendido $\widehat{\mathbb{C}}.$ Veamos que
             la imagen $T(\mathcal{C})$ es también un círculo generalizado. Recordemos que $\mathcal{C}$ puede ser
             representado mediante la ecuación general
           </p><div class="scroll-wrapper">
@@ -750,9 +755,12 @@
         </p>
 
         <p>
-          El primer interrogante a abordar es: ¿cuántos y cuáles son los puntos fijos de una transformación de
-          Möbius diferente de la indentidad? La siguiente exploración nos conducirá a la conlusión de que cada
-          transformación de Möbius diferente de la identidad tiene a lo más dos puntos fijos.
+          El primer interrogante a abordar es: ¿cuántos y cuáles son 
+          los puntos fijos de una transformación de
+          Möbius diferente de la indentidad? La siguiente exploración 
+          nos conducirá a la conclusión de que cada
+          transformación de Möbius diferente de la identidad 
+          tiene a lo más dos puntos fijos.
         </p>
 
         <p>
@@ -771,7 +779,7 @@
             \[
             \dfrac{az+b}{d}=z.
             \]
-            Así, concluimos que otro punto de la transformación de Möbius es número complejo
+            Así, concluimos que otro punto de la transformación de Möbius es el número complejo
             \[
             z=\dfrac{b}{a-d}.
             \]
@@ -842,9 +850,12 @@
         </p>
 
         <div class="theorem" id="theo_mobius_envia_tres_puntos_en_tres_puntos">
-          Consideremos dos tripletas $(z_1,z_2,z_3)$ y $(w_1,w_2,w_3)$ conformado por puntos del plano complejo
-          extendido $\hat{\mathbb{C}}$ y además, los puntos que conforman cada tripleta son diferentes, entonces
-          existe una única transformación de Möbius $T$ tal que $T(z_i)=w_i,$ para cada $i\in\{1,2,3\}.$
+          Consideremos dos tripletas $(z_1,z_2,z_3)$ y $(w_1,w_2,w_3)$ 
+          conformado por puntos del plano complejo
+          extendido $\widehat{\mathbb{C}}$ y además, los puntos que conforman 
+          cada tripleta son diferentes, entonces
+          existe una única transformación de Möbius $T$ tal que 
+          $T(z_i)=w_i,$ para cada $i\in\{1,2,3\}.$
         </div>
 
         <div class="proof">
@@ -934,11 +945,11 @@
 
         <p>
           De la geometría euclidiana sabemos que tres puntos distintos $z_{1},z_{2},z_{3}$ del plano Complejo
-          $\mathbb{C}$ define una circunferencia euclidiana. Incluso más, dados cualesquiera tres puntos distintos
+          $\mathbb{C}$ definen una circunferencia euclidiana. Incluso más, dados cualesquiera tres puntos distintos
           $z_{1},z_{2},z_{2}$ en el plano Complejo Extendido $\widehat{\mathbb{C}}$ podemos trazar un círculo
           extendido que pasa por los mencionados tres puntos. Ahora, si consideramos dos círculos generalizados
           $\mathcal{C}_{1}$ y $\mathcal{C}_{2}$ del plano Complejo Extendido $\widehat{\mathbb{C}},$ entonces el Teorema
-          anterior y el Teorema \ref{t:accion_mobius_sobre_circulos_generalizados}, nos garantiza la existencia de una
+          anterior y el Teorema 4, nos garantiza la existencia de una
           transformación de Möbius $T$ que envía al círculo generalizado $\mathcal{C}_{1}$ sobre el círculo
           generalizado $\mathcal{C}_{2}.$ El siguiente teorema, enuncia esta afirmación.
         </p>
@@ -963,7 +974,7 @@
             $T$ tal que $T(z_i)=w_i$ para cada
             $i\in\{1,2,3\}.$ Dado que las transformaciones Möbius envían círculo generalizados sobre círculos
             generalizados
-            (véase Teorema
+            (véase 
             <a href="#t_accion_mobius_sobre_circulos_generalizados">Teorema 4</a>) y, como $\mathcal{C}_1$ y
             $\mathcal{C}_2$ están determinados por las tripletas $(z_1,z_2,z_3)$ y $(w_1,w_2,w_3),$ respectivamente,
             entonces $T(\mathcal{C}_1)=\mathcal{C}_2.$
@@ -1004,7 +1015,7 @@
         </div>
 
         <p>
-          Al fijar los trez puntos $z_2,$ $z_3$ y $z_4$ de la razón cruzada podemos definir la transformación de
+          Al fijar los tres puntos $z_2,$ $z_3$ y $z_4$ de la razón cruzada podemos definir la transformación de
           Mobius
           \[
           T(z)=(z,z_2;z_3,z_4)=\frac{(z-z_3)(z_2-z_4)}{(z-z_2)(z_3-z_4)},
@@ -1082,7 +1093,7 @@
         </div>
 
         <p>
-          En algunos casos es dificil tratar los grupos de 
+          En algunos casos es difícil tratar los grupos de 
           funciones y, para sortear las incomodidades que el álgebra
           nos indica que tal vez podamos entender este 
           grupo desde otra perspectiva o, una mejor representación. Vamos
@@ -1104,7 +1115,7 @@
           a &amp; b \\
           c &amp; d
           \end{matrix}\right)
-          $ le correspondemos la $4$-upla $(a,b,c,d).$ Asi, $\mathfrak{M}$ está dotado con la topologia inducida
+          $ le correspondemos la $4$-upla $(a,b,c,d).$ Así, $\mathfrak{M}$ está dotado con la topología inducida
           por la norma
           \[
           |A|:=\sqrt{|a|^2+|b|^2+|c|^2+|d|^2}.
@@ -1214,8 +1225,8 @@
         </p>
 
         <p>
-          Ya estamos preparados para identificar el grupo de transformaciones de Möbius $\mathcal{M}$ como un Grupo
-          Proyectivo Lineal Especial ${\rm PSL}(2,\mathbb{C}).$ Naturalemente, dada la clase $[A]\in{\rm
+          Ya estamos preparados para identificar el grupo de transformaciones de Möbius $\mathcal{M}$ 
+          como el Grupo Proyectivo Lineal Especial ${\rm PSL}(2,\mathbb{C}).$ Naturalemente, dada la clase $[A]\in{\rm
           PSL}(2,\mathbb{C}),$ los coeficientes de una matriz $A$ pueden ser pensados como los coeficientes una
           transformación de Möbius $T_{A}.$ Más precisamente, la matriz
           \[
@@ -1245,7 +1256,7 @@
 
           Sin embargo, ambas matrices $A,-A$ pertenecientes a la clase $[A]$ definen transformaciones de Möbius
           $T_{A}$ y $T_{-A},$ respectivamente, que son idénticas y, a esta clase la denotamos mediante $T_{[A]}.$ Por
-          lo tanto, la clase $[A]\in{\rm PSL}(2,\mathbb{C})$ define la transformación de Möbius $T_{[A]}.$ Asi,
+          lo tanto, la clase $[A]\in{\rm PSL}(2,\mathbb{C})$ define la transformación de Möbius $T_{[A]}.$ Así,
           tenemos la función $\psi: {\rm PSL}(2,\mathbb{C})\to \mathcal{M},$ dada por
           \[
           \psi([A])=T_{[A]}.
@@ -1258,7 +1269,7 @@
 
         <div class="proof">
           Primero verificaremos que $\psi$ es un
-          <span class="blue-txt">homeomofismo de grupos</span>. Consideremos las clases de matrices
+          <span class="blue-txt">homomofismo de grupos</span>. Consideremos las clases de matrices
           \[
           [A_{1}]=\left[\begin{matrix}
           a_1 &amp; b_1 \\
@@ -1281,7 +1292,7 @@
             c_1a_2+d_1c_2&amp; c_1b_2+d_1d_2
             \end{matrix}\right],
             \]
-            entonces $\psi$ asigna a la clase $[A_{1} A_{2}]$ la clase de la transformación de Möbius $\psi([A_{1}
+            entonces $\psi$ asigna a la clase $[A_{1} A_{2}]$ la transformación de Möbius $\psi([A_{1}
             A_{2}])=T_{[A_{1} A_{2}]},$ la cual está definida mediante
           </p><div class="scroll-wrapper">
             \begin{equation}\label{eq:psi_1}
@@ -1347,7 +1358,7 @@
             \end{matrix}\right]\in {\rm Ker}(\psi),
             \]
             entonces $\psi([A])=T_{[A]}$ es la clase conformada por la transformación identidad y menos identidad, es
-            decir
+            decir,
             \[
             T_{A}(z)={\rm Id}(z)=\dfrac{az +b}{ cz+d}=\dfrac{\pm 1z+0}{0z+\pm 1}.
             \]
@@ -1378,7 +1389,7 @@
         </div>
 
         <p>
-          En adelante abusaremos del lenguaje y nos referiremos la clase de equivalencia $[T]\in \mathcal{M}$ como la
+          En adelante abusaremos del lenguaje y nos referiremos a la clase de equivalencia $[T]\in \mathcal{M}$ como la
           transformación de Möbius $T.$
         </p>
 
@@ -1387,7 +1398,7 @@
           <span class="red-txt">traza</span>.
           Desde alguno de estos puntos de vista, cada transformación se sitúa como
           <span class="red-txt">parabólica</span>,
-          <span class="red-txt">eliptica</span>,
+          <span class="red-txt">elíptica</span>,
           <span class="red-txt">hiperbólica</span> o
           <span class="red-txt">loxodrómica</span>. Esta asignación
           viene motivada por la clasificación de la cónicas.
@@ -1434,7 +1445,7 @@
 
         <p>
           Recordemos que cualquier transformación de Möbius $T$ diferente de la identidad tiene a lo más dos
-          puntos fijo. Vamos a conjugar a $T$ para entenderla como una translación o una homotecia. Más
+          puntos fijos. Vamos a conjugar a $T$ para entenderla como una translación o una homotecia. Más
           precisamente, vamos a construir adecuandamente otra transformación de Möbius $M$ tal que $M^{-1} \circ
           T\circ M$ es una translación o una homotecia.
         </p>
@@ -1525,7 +1536,7 @@
             \[
             \varphi(z)= \frac{z-z_0}{z-z_1},
             \]
-            la cual envía a $z_0$ en $\textbf{0}$ y, a $z_1$ en $\infty,$ respectivamente. Dada que
+            la cual envía a $z_0$ en $\textbf{0}$ y, a $z_1$ en $\infty,$ respectivamente. Dado que
             $\varphi^{-1}(\textbf{0})=z_{1}$ y $\varphi^{-1}(\infty)=z_{1}$ son puntos fijos de $T,$ del
             <a href="#l_puntos_fijos">Lema 4</a> se sigue que la transformación de Möbius $\varphi^{-1} \circ T \circ
             \varphi$
@@ -1736,7 +1747,7 @@
           \left (\begin{matrix}
           1 &amp; b \\
           0 &amp; 1
-          \end{matrix}\right).
+          \end{matrix}\right)
           \end{equation}
           en ${\rm PSL}(2,\mathbb{C}).$
           Contrariamente, si la transformación de Möbius $T$ tiene dos puntos fijos, entonces es conjugada a una
@@ -1987,12 +1998,12 @@
               Supongamos que ${\color{blue}\rm Tr}(T)\lt 4,$ entonces los multiplicadores de la transformación de
               Möbius $T$ deben de satisfacer la desigualdad \[ \alpha +2 +\dfrac{1}{\alpha}\lt4. \] De los incisos
               $\textbf{1.}$ y $\textbf{2.}$ ya demostrados se sigue que $\alpha=r{\rm e}^{i\theta},$ para alún $r&gt;0$
-              y algún $\theta\in (0,2\pi).$ Si $r\neq1,$ es decir $T$ es loxodrómica, entonces de la condició
+              y algún $\theta\in (0,2\pi).$ Si $r\neq1,$ es decir $T$ es loxodrómica, entonces de la condición
               suficiente del inciso $\textbf{4.},$ se sigue que $\alpha +2 +\dfrac{1}{\alpha}$ es un complejo que no
               pertene al intervalo $[0,\infty].$ Este hecho es una contradicción, por lo tanto, $T$ es elíptica.
             </li>
             <li>
-              Asumamos que ${\color{blue}\rm Tr}(T)\notin [0,\infty].$ Como consecuencia de la prueba de los tres
+              Asumamos que ${\color{blue}\rm Tr}(T)\notin [0,\infty).$ Como consecuencia de la prueba de los tres
               incisos anteriores ya demostrados, se concluye que $T$ no es ningua de las siguientes: parabólica,
               hiperbólica y elíptica. Por lo tanto, $T$ debe ser loxodrómica.
             </li>
@@ -2037,7 +2048,7 @@
           <li>
             Prueba que el conjunto ${\rm Homeo}(\widehat{\mathbb{C}})$
             de todos los homeomorfismos desde el plano Complejo Extendido
-            hasta simismo con la operación composición de funciones es un grupo.
+            hasta si mismo con la operación composición de funciones es un grupo.
           </li>
           <li>
             Probar las transformaciones de Möbius son homeomorfismos del plano complejo extendido
@@ -2052,7 +2063,7 @@
             Probar que las homotecias y las rotaciones envían círculos generalizados en círculos generalizados.
           </li>
           <li>
-            Dados los reales $A,B,C,D\in\mathbb{R}$ tal que $B^{2}+C^{2}-AD&gt;0,$ probar la desigualdad $B^{2}+C^{2}+AD.$
+            Dados los reales $A,B,C,D\in\mathbb{R}$ tal que $B^{2}+C^{2}-AD&gt;0,$ probar la desigualdad $B^{2}+C^{2}+AD\gt 0.$
           </li>
           <li>
             Recordemos que el grupo $G$
@@ -2081,7 +2092,8 @@
           <li>
             Recordemos que <span class="red-txt">Grupo Lineal Especial</span>
             (también llamado <span class="red-txt">Grupo Unimodular</span>),
-            denotado mediante ${\rm SL}(2,\mathbb{C}),$ es el conjunto conformado por las matrices de $2\times 2$
+            denotado mediante ${\rm SL}(2,\mathbb{C}),$ es el conjunto conformado 
+            por las matrices de $2\times 2$
             \[
             A= \left (\begin{matrix}
             a &amp; b \\
@@ -2105,7 +2117,8 @@
             Probar que el
             <span class="red-txt">Grupo Proyectivo Lineal Especial</span>
             ${\rm PSL}(2,\mathbb{C})$ es un grupo
-            (véase <a href="#definicion_PSL">Definición 6</a>). Verifiquese primero que la operación definida en la
+            (véase <a href="#definicion_PSL">Definición 6</a>). 
+            Verifique primero que la operación definida en la
             ecuación \eqref{eq:proyectivo_lineal_especial} no depende del representante de la clase de equivalencia.
             Adicionalmente, verifica que ${\rm PSL}(2,\mathbb{C})$ y ${\rm PGL}(2,\mathbb{C})/\mathbb{C}^{\ast}$ son
             isomorfos.
