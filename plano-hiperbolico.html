@@ -277,8 +277,7 @@
           <li>
             Los complejos que viven en \(\mathbb{H}\) son los <span class="red-text">puntos</span>
             y, a partir de la métrica Riemanniana \(\mu_{h}\) descubriremos, para este caso, que las "líneas rectas"
-            (serán llamadas <span class="red-text">líneas hiperbólicas</span>) son las <span class="purple-text">circunferencias ortogonales al eje real</span>. <span class="red-text">Los postulados
-              acá</span>:
+            (serán llamadas <span class="red-text">líneas hiperbólicas</span>) son las <span class="purple-text">circunferencias ortogonales al eje real</span>. 
           </li>
 
           <li>
@@ -295,11 +294,11 @@
 
       <div id="section2">
 
-        <div style="color: rgba(255, 255, 255, 0);" id="metrica-riemanniana-hiperbolica">
-          <p>Métrica Riemanniana hiperbolica</p>
+        <div class="hidden-title" id="metrica-riemanniana-hiperbolica">
+          <p>Métrica Riemanniana hiperbólica</p>
         </div>
 
-        <div class="head-3 head-3-level2">Métrica Riemanniana hiperbolica</div>
+        <div class="head-3 head-3-level2">Métrica Riemanniana hiperbólica</div>
 
         <p>
           Dado el subconjunto abierto $U\subset \mathbb{C}$, el <span class="purple-text">plano tangente</span>
@@ -327,15 +326,16 @@
 
         <div class="definition" id="def:metrica_riemanniana_mu">
           Una <span class="red-txt"><strong>métrica Riemanniana</strong></span> \(\mu\) para el abierto
-          \(U\subset\mathbb{C}\) es una correspondencia, la cual asocia a cada complejo \(z\in U\) un producto interno
-          \(\langle\,\, , \,\rangle_{z}\) sobre el espacio tangente \(T_{z} U,\)
+          \(U\subset\mathbb{C}\) es una correspondencia, 
+          la cual asocia a cada complejo \(z\in U\) un producto interno
+          \(\langle\,\, , \,\rangle^{z}\) sobre el espacio tangente \(T_{z} U,\)
           \begin{equation}
           \mu(z):=\langle \, \, , \, \rangle^{z} : T_{z}U \times T_{z}U \to \mathbb{C}.
           \end{equation}
           Además, esta asociación varía continua y diferenciablemente sobre los puntos de \(U.\) Más precisamente, la
           función \(g_{i,j} : U \to \mathbb{C},\) definida mediante
           \[
-          g_{i,j}(z):=\langle e_i , e_j \rangle_{z},
+          g_{i,j}(z):=\langle e_i , e_j \rangle^{z},
           \]
           es diferenciable, para cada \(i,j\in\{1,2\},\) donde el conjunto \(\{ e_{1},e_{2}\}\) es la base usual
           (canónica) para \(\mathbb{C}.\) El abierto \(U\) dotado con esta métrica Riemanniana es llamado
@@ -368,7 +368,7 @@
             el producto interno
             \begin{equation}\label{ecuacion:metrica_riemanniana_hiperbolica}
             \mu_{h}(z):= \langle \, \, , \, \rangle_{h}^{z}= \dfrac{\langle \,\, , \,
-            \rangle^{z}_{e}}{\left(\operatorname{Im}(z)\right)^2},
+            \rangle^{z}_{c}}{\left(\operatorname{Im}(z)\right)^2},
             \end{equation}
             sobre el espacio tangente \(T_{z}U,\) es una métrica Riemanniana.
             A dicha métrica Riemanniana se le conoce
@@ -377,7 +377,7 @@
         </div>
 
         <div class="proof">
-          Para completar la prueba debemos probar que satisfacen dos condiciones:
+          Para completar la prueba debemos probar que se satisfacen dos condiciones:
 
           <ol style="list-style-type: none; padding-left: 0;">
             <li><strong>(1)</strong> Para cada \(z\in U\) la función \(\mu_{h}(z)\) es un producto interno sobre el
@@ -420,7 +420,7 @@
         </div>
 
         <p>Recordemos que un producto interno proporciona una manera de medir vectores (norma), esto implica que, el
-          producto interno \(\mu_{z}\) nos proporciona una norma del vector \(w\)
+          producto interno \(\mu_{h}\) nos proporciona una norma del vector \(w\)
           en el espacio tangente
           \(T_z\mathbb{H},\) para cada \(z\in \mathbb{H}.\)</p>
 
@@ -652,7 +652,7 @@
             <li><strong>(2)</strong> La traza de \(\gamma\) es el segmento de curva (superior) de la circunferencia con
               centro el origen y radio \(1,\)
               \[
-              \gamma^{\ast}=\left\{z\in\mathbb{H}: z=e^{it} \text{ y } 0 \leq t\leq \pi \right\}.
+              \gamma^{\ast}=\left\{z\in\mathbb{H}: z=e^{it} \text{ y } 0 \lt t \lt \pi \right\}.
               \]</li>
 
             <li><strong>(3)</strong> Para todo \(t\in (0,\pi),\) el vector tangente a la curva \(\gamma\) en el punto
@@ -1313,8 +1313,10 @@
         \[
         C_{r}(\alpha)=\{v\in\mathbb{H}: |v-\alpha|=r\},
         \]
-        <p>atraviesa los puntos \(z\) y \(w.\) Siendo \(C_{r}\) la única línea hiperbólica que pasa por los puntos \(z\)
-          y \(w.\)</p>
+        <p>atraviesa los puntos \(z\) y \(w.\) 
+          Siendo \(C_{r}(\alpha)\) la única línea hiperbólica que pasa por los puntos \(z\)
+          y \(w.\)
+        </p>
 
         <p>El <span class="blue-txt">Postulado II</span> es evidente, pues cada geodésica es un segmento de una línea
           hiperbólica, la cual siempre es posible prolongarla en el plano hiperbólico \(\mathbb{H}\) con ayuda de la
@@ -2086,7 +2088,7 @@
         <div class="head-3 head-3-level2">Problemas</div>
 
         <ol>
-          <li>Probar que el producto interno canónico (usual) \(\langle \,\, ,\, \rangle_{e}\) en \(\mathbb{R}^2\) es
+          <li>Probar que el producto interno canónico (usual) \(\langle \,\, ,\, \rangle_{c}\) en \(\mathbb{R}^2\) es
             efectivamente un producto interno.</li>
 
           <li id="ejer_producto_interno_cociente">Consideramos el espacio vectorial normado \((V, \langle \,\, ,\,
