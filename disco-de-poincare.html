@@ -121,7 +121,7 @@
           Exploraremos el <span class="purple-text">disco de Poincaré</span>
           \(\Delta,\) que consiste del disco unitario
           \[
-          {\rm D}=\{z\in\mathbb{C}: |z|\lt 1\}. \] dotado de
+          {\rm D}=\{z\in\mathbb{C}: |z|\lt 1\} \] dotado de
           cierta métrica Riemanniana \(\mu_{\Delta}\)
           (véase Figura 1).
           En este espacio
@@ -142,7 +142,7 @@
           está estrechamente conectado con el plano hiperbólico
           \(\mathbb{H}.\) Más precisamente, estos dos
           espacios son <span class="purple-text">isométricos</span>, es
-          decir, existe una función diferenciable, este
+          decir, existe una función diferenciable, en este
           caso una transformación de (<span class="purple-text">Cayley</span>) Möbius
           \(\psi,\) relacionando las métricas Riemannianas \(\mu_{\Delta}\)
           y \(\mu_{h}.\) La función \(\psi\) es el puente
@@ -171,7 +171,7 @@
         </div>
 
         <div class="proof">
-          Para completar la prueba debemos probar que
+          Para completar la prueba debemos probar que se
           satisfacen dos condiciones:
           <ul style="list-style-type: none; padding-left: 0;">
             <li><strong>(1)</strong> Para cada \(z\in U\)
@@ -183,7 +183,7 @@
 
           <span class="red-txt">(1) <em>La función \(\mu_{\Delta}(z)\) es un producto interno</em></span>. Recordemos
           que el espacio tangente \(T_{z}{\rm D}\) es isomorfo al \(\mathbb{R}\) espacio vectorial \(\mathbb{C}\) y, la
-          función \(\langle \,\, , \, \rangle^{z}_{e}\) es un producto interno sobre \(T_{z}{\rm D}.\)
+          función \(\langle \,\, , \, \rangle^{z}_{c}\) es un producto interno sobre \(T_{z}{\rm D}.\)
           Del <a href="#ejer_producto_interno_cociente">Problema 2</a> se sigue que la función \(\langle \,\,
           ,\,\rangle_{\Delta}^{z}: T_{z}{\rm
           D}\times T_{z}{\rm D}\to\mathbb{R}\) dado por
@@ -191,14 +191,14 @@
           \langle z_{1},z_{2}\rangle_{\Delta}^{z}:=\frac{4\langle z_{1} , z_{2} \rangle_{c}}{(1-|z|^{2})^{2}},
           \]
           es también un producto interno.
-
+          <br>
           <span class="red-txt">(2) <em>Diferenciabilidad de la función \(g_{i,j}\)</em></span>. Si consideramos la base
           canónica \(\{e_1,e_2\}\) para \(\mathbb{C},\) tenemos que para cualesquiera \(i,j\in\{1,2\},\) la función
           \(g_{i,j}: {\rm D} \to \mathbb{R}\) dada por
           <div class="scroll-wrapper">
             \[
             g_{i,j}(z)=\dfrac{4\langle e_i , e_j
-            \rangle_{e}}{(1-|z|^{2})^2}=\dfrac{4\delta_{i,j}}{(1-|z|^{2})^2}=\frac{4\delta_{i,j}}{(1-({\rm
+            \rangle_{c}}{(1-|z|^{2})^2}=\dfrac{4\delta_{i,j}}{(1-|z|^{2})^2}=\frac{4\delta_{i,j}}{(1-({\rm
             Re}(z))^{2}-({\rm Im}(z))^{2})^2},
             \]
           </div>
@@ -263,7 +263,7 @@
         <ul style="list-style-type: none; padding-left: 0;">
           <li><strong>(1)</strong> La función \(\psi\) envía geodésicas del plano hiperbólico \(\mathbb{H}\) sobre
             geodésicas del disco de Poincaré \(\Delta.\)</li>
-          <li><strong>(2)</strong> La función de Cayley \(\psi\) y su inversa \(\psi^{-1}\) son una isometrías
+          <li><strong>(2)</strong> La función de Cayley \(\psi\) y su inversa \(\psi^{-1}\) son isometrías
             (preservan
             distancias), entonces tenemos la igualdad
             \[
@@ -280,13 +280,13 @@
         <p>
           ¡Vamos a construir la transformación de Cayley!
           Concretamente, vamos a entontrar una transformación de Möbius
-          \(\psi\in{\rm PSL}(2,\mathbb{C}),\) la cual envía el semi plano superio
+          \(\psi\in{\rm PSL}(2,\mathbb{C}),\) la cual envía el semi plano superior
           \[
           U=\{z\in\mathbb{C}: {\rm Im}(z)&gt;0\},
           \]
           sobre el disco unitario
           \[
-          {\rm D}=\{z\in\mathbb{C}. |z|\lt 1\}, \] tal que
+          {\rm D}=\{z\in\mathbb{C} : |z|\lt 1\}, \] tal que
           los complejos \(-1,\textbf{0},1\) son mapeados sobre los puntos
           \(i,-1,-i,\) respectivamente. </p>
 
@@ -315,11 +315,11 @@
 
         <p>
           <strong>(2)</strong> Evaluamos \(\phi\)
-          en los complejos \(\rm 1\) y obtenemos
+          en los complejos \(\pm 1\) y obtenemos
         </p><div class="scroll-wrapper">
           \[
           \begin{array}{ccc}
-          \psi(-1)=i &amp; \text{ y } &amp; \psi(1)=-1,\\
+          \psi(-1)=i &amp; \text{ y } &amp; \psi(1)=-i,\\
           &amp;&amp;\\
           \dfrac{-a-d}{-c+d}=i &amp; \text{ y } &amp; \dfrac{a-d}{c+d}=-i,\\
           &amp;&amp;\\
@@ -400,7 +400,7 @@
           </li>
           <li><strong>(4)</strong> La transformación de Cayley \(\psi\) envía circunferencias generalizadas sobre
             circunferencias generalizadas, entonces el eje real \({\rm Re}\) es envíado vía \(\psi\) sobre la
-            frontera \(\partial \Delta=\{z\in\mathbb{C}. |z|=1\}\) del disco unitario \(\Delta.\) La imagen del
+            frontera \(\partial \Delta=\{z\in\mathbb{C}: |z|=1\}\) del disco unitario \(\Delta.\) La imagen del
             infinito \(\infty\) bajo \(\psi\) es
             \[
             \psi(\infty)=1.
@@ -533,7 +533,7 @@
         </p>
         <ul style="list-style-type: none; padding-left: 0;">
           <li><strong>(1)</strong> Es una función holomorfa, por lo tanto preserva ángulos.</li>
-          <li><strong>(2)</strong> La transformación \(\psi\) es una Móbius, por lo tanto actúa sobre el conjunto de
+          <li><strong>(2)</strong> La transformación \(\psi\) es una Möbius, por lo tanto actúa sobre el conjunto de
             circunferencias geranalizadas. Véase Figura 3.</li>
         </ul>
 
@@ -545,7 +545,7 @@
         </figure>
 
         <p>
-          De las anteriores dos características de posee la transformación \(\psi,\) concluimos que la imagen
+          De las anteriores dos características que posee la transformación \(\psi,\) concluimos que la imagen
           directa bajo la transformación de Cayley \(\psi\) una línea hiperbólica es un trozo de circunferencia
           generalizada tal que dicha circunferencia es ortgonal a la frontera \(\partial \Delta\) del disco de
           Poincaré \(\Delta.\) Véase Figura 4.
@@ -701,7 +701,7 @@
 
         <p>
           Usando las relaciones descritas en el <a href="plano-hiperbolico.html#l-cosh">Lema 11 (Capítulo 3)</a>, el
-          lector puede verifacar fácilmente las
+          lector puede verificar fácilmente las
           siguientes relaciones sobre el disco de Poincaré.
         </p>
 
@@ -923,7 +923,7 @@
         \begin{equation}\label{ec:isom_plus_del_disco_de_Poincare}
         \widetilde{T}(z)=e^{i\theta}\dfrac{z-z_{0}}{1-\overline{z_{0}}z},
         \end{equation}
-        para algún \(z_{0}\in\Delta\) y algún \(\theta\in[0,2\pi).\) El hecho que \(z_{0}\in\Delta,\) se dedice de
+        para algún \(z_{0}\in\Delta\) y algún \(\theta\in[0,2\pi).\) El hecho que \(z_{0}\in\Delta,\) se deduce de
         la igualdad
         \(|u|^{2}-|v|^{2}=1.\) Debido a que esta última relación implica
         \begin{align*}
@@ -1082,12 +1082,12 @@
         </div>
 
         <p>
-          Los elementos de \({\rm PSL}(2,\mathbb{R})\) dejan invariante el árae hiperbólica de cualquier paralelogramos
+          Los elementos de \({\rm PSL}(2,\mathbb{R})\) dejan invariante el área hiperbólica de cualquier paralelogramos
           \(P\) del plano tangente \(T_{z}\mathbb{H}.\) Más precisamente.
         </p>
 
         <div class="theorem">
-          Dado el complejo \(z\in\mathbb{C}\) y el paralelogramos \(P\) sobre \(T_{z}\mathbb{H}\) formado por los
+          Dado el complejo \(z\in\mathbb{H}\) y el paralelogramos \(P\) sobre \(T_{z}\mathbb{H}\) formado por los
           vectores \(v,w\in T_{z}\mathbb{H}.\) Entonces para cualquier \(T\in {\rm PSL}(2,\mathbb{R}),\) el área
           hiperbólica de \(P\) coincide con el área hiperbólica del paralelogramo \(P'\) sobre \(T_{T(z)}\mathbb{H},\)
           el cual está formado por los vectores \(T'(z)\cdot v\) y \(T'(z)\cdot w\) (véase Figura 5).
@@ -1343,7 +1343,7 @@
 
         <p>
           Los triángulos hiperbólicos puede ser que tenga tres, dos, uno o ningún vértice sobre  los reales
-          extenditos \(\hat{\mathbb{R}}\) (vease Figura 8).
+          extendidos \(\hat{\mathbb{R}}\) (vease Figura 8).
         </p>
 
 
@@ -1368,7 +1368,7 @@
           <span class="blue-text">Caso <strong>(1)</strong></span> Uno de sus vértices está sobre los reales extendidos
           \(\hat{\mathbb{R}}.\) Entonces la medida de uno de los ángulos del triángulo hiperbólico
           \(\Delta(z_{1},z_{2},z_{3})\) es \(0\) 
-          (véase <a href="#ejercio_angulo_cero_triangulo">Problema 28</a>. Supongamos sin
+          (véase <a href="#ejercio_angulo_cero_triangulo">Problema 28)</a>. Supongamos sin
           pérdida que dicho ángulo es \(\zeta.\) Mediante una transformación de Möbius \(T\in {\rm PSL}(2,\mathbb{R})\)
           enviamos:
           <ul style="list-style-type: none; padding-left: 0;">
@@ -1430,7 +1430,7 @@
           <figure>
             <img alt="Triángulo hiperbólico con vértice sobre H" style="width: 50%;" loading="lazy" src="imgs/cap-04/triangulo-hyper-vertice-sobre-h.png">
             <figcaption>
-              Triángulo hiperbólico con vértice sobre $\mathbb{H}.$
+              Triángulo hiperbólico con vértices sobre $\mathbb{H}.$
             </figcaption>
           </figure>
 
@@ -1585,7 +1585,7 @@
           esperada
           <div class="scroll-wrapper">
             \[
-            A_{h}(P(z_{1},\ldots,z_{n}))=(n-2)\pi-\left(\sum_{i_1}^{n}\alpha_i \right).
+            A_{h}(P(z_{1},\ldots,z_{n}))=(n-2)\pi-\left(\sum_{i_1}^{n}\theta_i \right).
             \]
           </div>
 
@@ -1691,7 +1691,7 @@
             \end{equation}
           </div>
 
-          Al sustituir la igualdad \eqref{eq:caso1_teo_paralelismo} en la igualdad anterior, obtenemos la relación
+          Al sustituir la igualdad (\eqref{eq:caso1_teo_paralelismo}) en la igualdad anterior, obtenemos la relación
           esperada
           \[
           {\rm sen}(\alpha)\cosh(b)=1.
@@ -1802,7 +1802,7 @@
             \end{equation}
           </div>
 
-          De la identidad \(\cosh(2x)=2\senh^2(x)+1\) la igualdad \ref{eq:relacion_hiperbolica_tcos_3} se reescribe como
+          De la identidad \(\cosh(2x)=2\senh^2(x)+1\) la igualdad (\ref{eq:relacion_hiperbolica_tcos_3}) se reescribe como
           sigue
           <div class="scroll-wrapper">
             \begin{equation}
