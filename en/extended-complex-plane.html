@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>  Extended Complex Plane
+</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Hyperbolic Geometry Notes" />
+  <meta name="author" content="Juan Carlos Ponce Campuzano, Camilo Ramírez Maluendas">
+  <meta name="keywords" content="geometría,hiperbólica,funciones,complejo" />
+
+  <!--
+    https://www.everywheremarketer.com/blog/ultimate-guide-to-social-meta-tags-open-graph-and-twitter-cards
+  -->
+  <!--Facebook-->
+  <meta property="og:title" content="Hyperbolic Geometry Notes" />
+  <meta property="og:url" content="https://geometria-hiperbolica.github.io/" />
+  <meta property="og:description" content="Hyperbolic Geometry Notes" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hyperbolic Geometry Notes">
+
+  <!--Twitter/X-->
+  <meta name="twitter:title" content="Hyperbolic Geometry Notes" />
+  <meta name="twitter:site" content="https://geometria-hiperbolica.github.io/" />
+  <meta name="twitter:description" content="Hyperbolic Geometry Notes" />
+  <meta name="twitter:type" content="website" />
+  <meta name="twitter:creator" content="@jcponcemath" />
+
+  <link rel="icon" type="image/png" href="imgs/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="imgs/infinity16.png" sizes="16x16">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-16JHH28EVY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-16JHH28EVY');
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body data-type="book" id="top">
+
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="license.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="table-of-contents.html" class="link" id="center-link">
+            <span class="content-hover-previous">License</span>
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Hyperbolic Geometry</span>
+            <span class="content-hover-next">Transformaciones fraccionarias
+      lineales</span>
+        </a>
+    </div>
+    <a href="linear-fractional-transformations.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="extended-complex-plane">
+
+  <p class="callout hide-large hide-medium"><strong>⚠️ Warning!</strong>
+
+    If you can see this message is because your screen is too small. 
+    Hence, some applets won't be displayed correctly. You can 
+    rotate your device to landscape. Or resize your window so it's 
+    more wide than tall.
+  </p>
+
+  <div class="toc-chapter" id="toc-chapter">
+    <p><i class="fa-solid fa-list"></i>Content</p>
+    <ul>
+      <li><a href="#section1">Extended Complex Plane</a></li>
+      <li><a href="#section2">Stereographic projection</a></li>
+      <li><a href="#section3">Projective Complex Plane</a></li>
+      <li><a href="#section4">Problems</a></li>
+      <!-- Add more sections as needed -->
+    </ul>
+  </div>
+
+  <div class="hide-large hide-medium hide-small">
+    <h1>Extended Complex Plane</h1>
+  </div>
+
+  <br><br><br>
+
+
+  <main>
+    <article>
+      <div id="section1">
+        <div class="head-1">Extended Complex Plane $\widehat{\mathbb{C}}$</div>
+        <p>
+          The study of meromorphic complex functions naturally leads us to add a new point to the complex plane
+          $\mathbb{C}.$ We call this point
+          <span class="red-txt">infinity</span>
+          and denote it by the symbol $\infty$<label for="sn-1" class="sidenote-toggle sidenote-number"></label>
+          <input type="checkbox" id="sn-1" class="sidenote-toggle">
+          <span class="sidenote left">This symbol was introduced by the English
+            mathematician <em>John Wallis</em> (1616-1703), in his work titled
+            <em>Treatise of Algebra</em> (Wallis),
+            published in 1685.</span>.
+          We can endow this new
+          set $\mathbb{C}\cup\{\infty\}$ with a topology, starting from the process known as the
+          <span class="red-txt">Alexandrov compactification</span>.
+          For a description of the general case we invite the reader to
+          consult <a href="bibliography.html#Dugundji" target="_blank">Dugundji, 8.4 Theorem, p. 246</a>.
+        </p>
+
+        <div class="theorem" id="plano-complejo-extendido">
+          Consider the complex plane $\mathbb{C}$ with its
+          usual topology $\tau_{\mu}$ and the infinity
+          $\infty\notin
+          \mathbb{C}.$ We define the set $\widehat{\mathbb{C}}:=\mathbb{C}\cup\{\infty\}$ and the family
+          \[
+          \tau_{\infty}:=\tau_{\mu}\cup\{V\subset \widehat{\mathbb{C}}: \widehat{\mathbb{C}}-V \text{ is compact in
+          }
+          \mathbb{C}\}.
+          \]
+          Then
+          <ol class="roman-list">
+            <li>
+              The pair $(\widehat{\mathbb{C}}, \tau_{\infty})$ is a compact Hausdorff topological space.
+            </li>
+            <li>
+              The pair $(\widehat{\mathbb{C}},i)$ is a compactification of $\mathbb{C},$
+              where $i:\mathbb{C}\hookrightarrow \widehat{\mathbb{C}}$ is the inclusion.
+            </li>
+          </ol>
+          <p>
+            The topological space $\widehat{\mathbb{C}}$ is called:
+          </p>
+          <p style="text-align: center;">
+            <span class="red-txt">Extended Complex Plane</span> or <span class="red-txt">Riemann Sphere.</span>
+          </p>
+
+        </div>
+
+        <div class="proof">
+          We will begin by proving that $\tau_{\infty}$ is a topology on $\widehat{\mathbb{C}}.$
+          Specifically, we must verify the fulfillment of the three
+          properties for
+          <span class="red-txt">topological spaces</span>.
+
+          <p>
+            <strong>Property 1.</strong> Evidently, $\emptyset \in \tau_{\mu}\subset \tau_{\infty}.$
+            On the other hand,
+            $\emptyset=\widehat{\mathbb{C}}\setminus \widehat{\mathbb{C}}$ is compact in $\mathbb{C},$ therefore
+            $\widehat{\mathbb{C}}\in \tau_{\infty}.$
+          </p>
+
+          <p>
+            <strong>Property 2.</strong> Take the elements $U_{1}$ and $U_{2}$ in $\tau_{\infty}.$ Let us verify
+            that the
+            intersection $U_{1}\cap U_{2}$ is in $\tau_{\infty}.$ We must study three cases.
+          </p>
+
+          <p>
+            <strong>Case 1.</strong>
+            If the elements $U_{1}$ and $U_{2}$ belong to
+            $\tau_{\mu}$, then $U_{1}\cap U_{2}\in \tau_{\infty}$ because
+            $\tau_{\mu}$ is a topology. Consequently,
+            $U_{1}\cap U_{2}\in \tau_{\mu}\subset \tau_{\infty}.$
+          </p>
+
+
+          <p>
+            <strong>Case 2.</strong> If $\infty\in U_{1}\cap U_{2},$ then the differences
+            $\widehat{\mathbb{C}}\setminus U_{1}$ and $\widehat{\mathbb{C}}\setminus U_{2}$ are compact subsets
+            of
+            $\mathbb{C}.$ Since the finite union of compact sets is compact, then
+            $(\widehat{\mathbb{C}}\setminus
+            U_{1})\cup (\widehat{\mathbb{C}}\setminus U_{2})$ is a compact subset of $\mathbb{C}.$ Applying
+            De Morgan's laws to the previous set, we have
+          </p>
+          <div class="scroll-wrapper">
+            \[
+            (\widehat{\mathbb{C}}\setminus U_{1})\cup (\widehat{\mathbb{C}}\setminus
+            U_{2})=\widehat{\mathbb{C}}\setminus
+            (U_{1}\cap U_{2}).
+            \]
+          </div>
+
+          From this last equality, we conclude that $U_{1}\cap U_{2}\in \tau_{\infty}.$
+          <p></p>
+
+          <p>
+            <strong>Case 3.</strong> If $\infty\in U_{1}$ and $U_{2}\in\tau_{\infty}.$ Then $\infty \notin
+            U_{1}\cap
+            U_{2}.$ We rewrite the previous intersection set as follows
+          </p>
+          <div class="scroll-wrapper">
+            \begin{equation}
+            \begin{split}
+            U_{1}\cap U_{2}&amp;=(U_{1}\setminus \{\infty\})\cap U_{2},\\
+            &amp;=(\mathbb{C}\cap U_{1})\cap U_{2},\\
+            &amp;=\left(\mathbb{C}\setminus \left(\widehat{\mathbb{C}}\setminus U_{1}\right)\right)\cap U_{2}.\\
+            \end{split}
+            \end{equation}
+          </div>
+          Since $\widehat{\mathbb{C}}\setminus U_{1}$ is a compact subset of $\mathbb{C},$ then
+          $\mathbb{C}\setminus \left(\widehat{\mathbb{C}}\setminus U_{1}\right)$ is an open set of $\tau_{\mu}.$
+          Therefore,
+          $U_{1}\cap U_{2}\in \tau_{\mu}\subset \tau_{\infty}.$
+
+          <p></p>
+
+          <p>
+            <strong>Property 3.</strong> Take the family $\{U_{i}\in \tau_{\infty}:i\in I\}$ and let us see that
+            $\bigcup\limits_{i\in I}U_{i}\in \tau_{\infty}.$ If $U_{i}\in \tau_{\mu}$ for all $i\in I,$ we use the
+            fact
+            that $\tau_{\mu}$ is a topology and conclude that $\bigcup\limits_{i\in I}U_{i}\in \tau_{\mu}\subset
+            \tau_{\infty}.$ On the other hand, if there exists $j'\in I,$ such that $\infty\in U_{j'},$ then we consider
+            the
+            set of indices $J=\{j\in I: \infty \in U_{j}\}.$ Then we rewrite the union set $\bigcup\limits_{i\in
+            I}U_{i}$ as follows
+          </p>
+          <div class="scroll-wrapper">
+            \[
+            \bigcup_{i\in I}U_{i}=\left(\bigcup_{j\in J}U_{i}\right)\cup \left(\bigcup\limits_{i\in I\setminus
+            J}U_{i}\right).
+            \]
+          </div>
+          <p></p>
+          <p>
+            We take complements in the previous equality and apply De Morgan's laws.
+            Thus, we obtain
+          </p>
+          <div class="scroll-wrapper">
+            \begin{equation}\label{eq:t_plano_complejo_extendido_1}
+            \begin{split}
+            \widehat{\mathbb{C}}\setminus \bigcup_{i\in I}U_{i}&amp;=\bigcap_{i\in I} (\hat{\mathbb{C}}\setminus
+            U_{i}),\\
+            &amp;=\left(\bigcap_{j\in J}(\widehat{\mathbb{C}}\setminus U_{i})\right)\cap \left(\bigcap\limits_{i\in
+            I\setminus
+            J}(\widehat{\mathbb{C}}\setminus U_{i})\right),\\
+            \end{split}
+            \end{equation}
+          </div>
+          <p></p>
+          <p>
+            Note that
+            $$\bigcap\limits_{j\in J}(\widehat{\mathbb{C}}\setminus U_{i})$$
+            is a compact and closed subset of
+            $\mathbb{C}.$ Furthermore,
+            $$\bigcap\limits_{i\in I\setminus J}(\widehat{\mathbb{C}}\setminus U_{i})$$ is a
+            closed subset of $\mathbb{C}.$ Therefore, the difference set in equation
+            \eqref{eq:t_plano_complejo_extendido_1} is a closed subset. Since every closed subset of
+            a compact set is compact, we conclude that the difference
+          </p>
+          <div class="scroll-wrapper">
+            $$
+            \widehat{\mathbb{C}}\setminus \bigcup\limits_{i\in I}U_{i}\subset \bigcap\limits_{j\in
+            J}(\widehat{\mathbb{C}}\setminus U_{i}),
+            $$
+          </div>
+          is a compact subset of $\mathbb{C}.$
+          Therefore, $\bigcup\limits_{i\in I}U_{i}\in \tau_{\infty}.$
+          <p></p>
+
+          <p>
+            Let us verify that $\widehat{\mathbb{C}}$ is a
+            <span class="red-txt">Hausdorff</span> space.
+            Take points $z\neq w\in\widehat{\mathbb{C}}.$ If both points
+            are in $\mathbb{C},$ then there exist open sets $U,V\in \tau_{\mu}\subset \tau_{\infty},$
+            such that $z\in U,$ $w\in V$ and $U\cap V=\emptyset.$ On the other hand, if $w=\infty,$
+            then we consider positive reals $0\lt r_{1}\lt r_{2}.$ Then,
+            we construct the open balls $B_{r_{1}}(z)$ and $B_{r_{2}}(z)$ which
+            are in $\tau_{\mu}.$ Note that the closure $\overline{B_{r_{2}}(z)}$
+            of the ball $B_{r_{2}}(z)$ is a compact set of $\mathbb{C}$ and its complement
+            $V=\widehat{\mathbb{C}}\setminus
+            \overline{B_{r_{2}}(z)}$ in $\widehat{\mathbb{C}}$
+            is an open set in $\tau_{\infty}$ that contains the point
+            $\infty.$ By construction,
+            we have $B_{r_{1}}(z)\cap V =\emptyset.$
+          </p>
+
+          <p>
+            <span class="red-txt">Compactness</span>.
+            Consider an open cover $\mathcal{M}:=\{U_{\alpha}:\alpha \in \mathcal{A}\}$ for
+            $\widehat{\mathbb{C}}.$ There exists an index $\beta \in \mathcal{A},$ such that the open set $U_{\beta}$
+            contains the
+            point $\infty.$ Then the difference set $B=\widehat{\mathbb{C}}\setminus U_{\beta}$ is compact
+            in
+            $\mathbb{C}.$ Since $B$ is compact, there exists a finite number of open sets $U_{1},\ldots, U_{n}$ in
+            $\mathcal{M}$ covering $B,$ for some $n\in \mathbb{N},$ i.e., $B=\bigcup\limits_{i=1}^{n}U_{i}.$
+            The family $\{U_{i},U_{\beta}: i\in\{1,\ldots,n\}\}$ is a finite open cover taken from
+            $\mathcal{M},$
+            which covers $\widehat{\mathbb{C}}.$
+          </p>
+
+          <p>
+            The statement described in item <strong>(ii)</strong> is left as an exercise for the reader.
+          </p>
+
+        </div>
+
+        <p>
+          In the course of complex analysis, the concept of convergent sequence is usually studied in order to
+          understand the continuity of complex-valued functions. The sequence of complex numbers
+          $(z_{n})_{n\in\mathbb{N}}$
+          <span class="red-txt">converges to</span>
+          $w\in\mathbb{C},$ if for every positive real
+          $ \varepsilon&gt;0$ there exists a natural number
+          $N_{\varepsilon}\in\mathbb{N}$ such that if
+          $m\geq N_{\varepsilon}$ then $\vert
+          w-z_{m}\vert \lt
+          \varepsilon.$ Equivalently, for every positive real
+          $\varepsilon&gt;0,$ there exists a natural
+          $N_\varepsilon\in\mathbb{N}$ such that for all
+          $m\geq N_{\varepsilon}$ the point $z_{m}$ is in the open Euclidean ball
+          $B_{\varepsilon}(w)=\{z\in\mathbb{C}:\vert w-z\vert\lt\varepsilon\}.$
+          Our intention
+          now is to extend this concept to the case of the extended complex plane. More precisely, to know the
+          meaning of the convergence of a sequence $(z_{n})_{n\in\mathbb{N}}$ to the point $\infty.$
+          For this
+          case, it is convenient to introduce the following open set.
+          For every real $\varepsilon&gt; 0,$ the closed Euclidean ball
+          $\overline{B_{\varepsilon}(\textbf{0})}=\{z\in\mathbb{C}: \vert z \vert \leq \varepsilon\}$ is a
+          compact subset of $\mathbb{C},$ then from the definition of the topology $\tau_{\infty}$ it follows
+          that the set
+          \begin{equation}\label{eq:bola_centro_infinito}
+          B_{\varepsilon}(\infty):=\{z\in\mathbb{C}: |z|&gt;\varepsilon\}\cup\{\infty\},
+          \end{equation}
+          is a neighborhood containing the point $\infty.$ The following definition helps to verify the continuity
+          of functions at the point infinity.
+        </p>
+
+
+
+
+        <div class="definition">
+          We say that the sequence $(z_n)_{n\in\mathbb{N}}$ consisting of complex numbers
+          <span class="red-txt">converges to the point $\infty,$</span> if for every positive real
+          $\varepsilon&gt; 0$ there exists a natural number
+          $N_{\varepsilon}\in\mathbb{N}$ such that if $m\geq
+          N_{\varepsilon},$
+          then $z_m\in B_{\varepsilon}(\infty).$
+          Equivalently, if for every positive real $\varepsilon &gt;
+          0$ there exists
+          a natural number $N_{\varepsilon}\in\mathbb{N}$
+          such that if $m\geq N_{\varepsilon},$ then
+          $|z_m|&gt;\varepsilon.$ We write
+          \[
+          \lim\limits_{n\in\mathbb{N}}z_{n}=\infty,
+          \]
+          to express that the sequence $(z_{n})_{n\in\mathbb{N}}$ converges to infinity.
+        </div>
+
+
+        <div class="example">
+          The
+          <span class="red-txt">conjugate</span>
+          function
+          $f:\widehat{\mathbb{C}}\to\widehat{\mathbb{C}}$ defined by
+          \begin{equation}\label{eq:funcion_conjugada}
+          f(z)= \left\{
+          \begin{array}{ ll }
+          \overline{z}; &amp; \text{ if } z\in \mathbb{C}; \\
+          \infty; &amp; \text{ if } z=\infty;\\
+          \end{array}
+          \right.
+          \end{equation}
+          is continuous at the point $\infty.$
+
+          <p>
+            If we consider the sequence of complex numbers $(z_{n})_{n\in\mathbb{N}}$ converging to $\infty,$ we must
+            verify that the sequence $(\overline{z}_{n})_{n\in\mathbb{N}}$ converges to $\infty.$ By hypothesis, given
+            the
+            positive real $\varepsilon&gt;0$ there exists a natural number $N_{\varepsilon}\in\mathbb{N}$ such that if
+            $m\geq
+            N_{\varepsilon},$ then $\vert z_{m}\vert &gt; \varepsilon.$ From the properties of the conjugate we know
+            that
+            $\vert
+            z \vert = \vert \overline{z}\vert,$ for all $z\in\mathbb{C},$ then for all $m\geq
+            N_{\varepsilon}$ we
+            have $\vert \overline{z}_{m}\vert=\vert z_{m}\vert &gt; \varepsilon.$
+          </p>
+        </div>
+      </div>
+
+      <hr>
+
+
+      <div id="section2">
+        <div class="hidden-title" id="proyeccion-estereografica">
+          <p>Stereographic Projection</p>
+        </div>
+
+
+        <div class="head-1 head-1-level2" id="proyeccion-estereografica">
+          Stereographic Projection
+        </div>
+
+        <p>
+          From a historical point of view, the Greeks understood the
+          extended complex plane as a geometric object,
+          more precisely as the unit sphere
+        </p>
+        <div class="scroll-wrapper">
+          \[
+          \mathbb{S}^{2}:=\left\{(x_1,x_2,x_3)\in\mathbb{R}^3: x_1^2+x_2^2+x_3^2=1\right\}.
+          \]
+        </div>
+        <p></p>
+
+        <p>
+          In the work <em>Planisphaerium</em>, its author, Claudius Ptolemy,
+          described a projection function
+          (<em>stereographic projection</em>)
+          from the celestial sphere to the Euclidean plane,
+          which sends the
+          celestial part of the north pole (whose boundary is the great invisible circle)
+          onto the interior of a circle
+          of the Euclidean plane
+          (see <a href="bibliography.html#Berggren">Berggren</a>). Let us introduce this
+          projection!
+        </p>
+
+        <p>The complex number $z=x_{1}+ix_{2}$ is identified with the triple $(x_{1},x_{2},0),$ this association
+          allows us
+          to think of the complex plane $\mathbb{C}$ as the plane
+        </p>
+        <div class="scroll-wrapper">
+          $$P=\{(x_1,x_2,x_3)\in\mathbb{R}^3: x_3=0\}.$$
+        </div>
+        <p></p>
+        <p>
+          The triple ${\rm N}=(0,0,1)$ on the sphere $\mathbb{S}^{2}$ is called the
+          <span class="red-txt">north pole</span>.
+          Then for every point
+          $\textbf{x}=(x_1,x_2,x_3)$ on
+          $\mathbb{S}^{2}-\{\rm N\},$
+          there exists a unique
+          straight line $\ell_{\textbf{x}}$ that passes through the points $\textbf{x}$ and ${\rm N}.$ The straight line
+          $\ell_{\textbf{x}}$ intersects the plane $ P$ at a unique point $z$ (see Figure
+          1).
+          Then we define the correspondence $\Pi,$ which associates to the point
+          $\textbf{x}\in \mathbb{S}^2-\{\rm N\}$ the complex $z$ that is at the intersection of the straight line
+          $\ell_{\textbf{x}}$ and the plane $ P.$ Furthermore, $\Pi$ sends the north pole ${\rm N}$ to the point
+          infinity
+          $\infty.$
+        </p>
+
+        <figure>
+          <div id="ggb-element-projection"></div>
+          <figcaption>
+            Stereographic projection: Move the point $z.$
+            With the mouse you can move the view in 2D and 3D. You can also
+            Zoom In or Out.
+          </figcaption>
+        </figure>
+
+        <div class="definition">
+          The function $\Pi: \mathbb{S}^{2}\to \widehat{\mathbb{C}},$ such that
+          <div class="scroll-wrapper">
+            \begin{equation}\label{eq:proyeccion_estereografica}
+            \Pi(\textbf{x})= \left\{
+            \begin{array}{ ll }
+            \ell_{\textbf{x}}\cap P; &amp; \text{ if } \textbf{x}\neq {\rm N}; \\
+            \infty; &amp; \text{ if } \textbf{x}={\rm N};\\
+            \end{array}
+            \right.
+            \end{equation}
+          </div>
+
+          is called
+          <span class="red-txt">the stereographic projection</span>.
+        </div>
+
+        <p>
+          Now we will give a more precise description of the assignment rule
+          $\Pi(\textbf{x}).$
+          If we fix the triple
+          $\textbf{x}=(x_1,x_2,x_3)$ on $\mathbb{S}^2-\{ {\rm N}\},$
+          then we want to find
+          explicitly the complex $z$ at the intersection $\ell_{\textbf{x}}\cap P.$ The straight line
+          $\ell_{\textbf{x}}$ consists of the triples
+          $(\overline{x}_1,\overline{x}_2,\overline{x}_3)\in\mathbb{R}^3$
+          that satisfy the equation
+        </p>
+        <div class="scroll-wrapper">
+          \[
+          (\overline{x}_1,\overline{x}_2,\overline{x}_3)=t(x_1,x_2,x_3-1)+(0,0,1), \text{ for each }
+          t\in\mathbb{R}.
+          \]
+        </div>
+        <p></p>
+
+        <p>
+
+          Equivalently, for each $t\in \mathbb{R}$ the following parametric equations hold
+        </p>
+        <div class="scroll-wrapper">
+          \begin{equation}\label{eq:valor_t}
+          \overline{x}_1=tx_1, \quad \overline{x}_2 =tx_2, \quad \overline{x}_3 =t(x_3-1)+1.
+          \end{equation}
+        </div>
+        <p></p>
+        <p>
+          Our goal is to find the triple $(\overline{x}_1,\overline{x}_2,\overline{x}_3)$ on the straight line
+          $\ell_{\textbf{x}}$ such that $\overline{x}_{3}=0,$ which means obtaining the real $t\in\mathbb{R}$
+          such
+          that $\overline{x}_3=0.$ From the third relation described in equation \eqref{eq:valor_t}, we easily
+          deduce that the equality $\overline{x}_3=0$ occurs when
+          $$
+          t=\dfrac{1}{1-x_3}.
+          $$
+          We substitute the found value of $t$ into the first two equalities of equation (\ref{eq:valor_t}) and
+          obtain
+        </p>
+        <div class="scroll-wrapper">
+          \[
+          \overline{x}_1=\frac{x_1}{1-x_3}, \quad \overline{x}_2=\frac{x_2}{1-x_3}.
+          \]
+        </div>
+        Then the intersection point between the line $\ell_{\textbf{x}}$ and the plane $P$ is the complex
+        <div class="scroll-wrapper">
+          $$
+          \dfrac{x_1}{1-x_3}+i\dfrac{x_2}{1-x_3}.
+          $$
+        </div>
+
+        Then the stereographic projection (\ref{eq:proyeccion_estereografica})
+        is defined by
+        <div class="scroll-wrapper">
+          \begin{equation}\label{eq:proyeccion_esteregrafica_2}
+          \Pi(x_1,x_2,x_3)= \left\{
+          \begin{array}{ cl }
+          \dfrac{x_1}{1-x_3}+i\dfrac{x_2}{1-x_3}; &amp; \text{ if } (x_1,x_2,x_3)\neq {\rm N}; \\
+          \infty; &amp; \text{ if } (x_1,x_2,x_3)={\rm N}.\\
+          \end{array}
+          \right.
+          \end{equation}
+        </div>
+
+        <p></p>
+
+        <p>
+          Naturally we ask ourselves: what is the inverse function $\Pi^{-1}$? Let us answer it!
+        </p>
+        <p>
+          If we take the
+          complex $z=x_1+ix_2$ identified with the triple $(x_1,x_2,0)\in\mathbb{R}^3,$ then there exists a unique
+          straight line $\ell_{z}$ that passes through $(x_1,x_2,0)$ and the north pole ${\rm N}.$ The line $\ell_z$
+          consists
+          of the triples
+          $(\overline{x}_1,\overline{x}_2,\overline{x}_3)\in\mathbb{R}^2$ that satisfy
+          the
+          equation
+        </p>
+        <div class="scroll-wrapper">
+          \begin{equation}\label{eq:linea_recta}
+          \overline{x}_1=tx_1, \quad \overline{x}_2=tx_2, \quad \overline{x}_3=1-t, \text{ for each }
+          t\in\mathbb{R}.
+          \end{equation}
+        </div>
+        <p></p>
+        <p>
+          We want to find the triples $(\overline{x}_1,\overline{x}_2,\overline{x}_3)$ that are on the straight
+          line $\ell_{z}$ such that $\overline{x}_{1}^2+\overline{x}_{2}^2+\overline{x}_{3}^2=1.$ We substitute into the
+          previous equality the relations described in (\ref{eq:linea_recta}) and obtain
+          \[
+          (tx_1)^2+(tx_2)^2+(1-t)^2 =1.
+          \]
+          We solve the quadratic equation,
+        </p>
+        <div class="scroll-wrapper">
+          \begin{equation*}
+          \begin{split}
+          (tx_1)^2+(tx_2)^2+(1-t)^2 &amp; =1,\\
+          t^2 (x_1^2+x_2^2+1)-2t &amp; =0,\\
+          t \left[ t(x_1^2+x_2^2+1)-2\right] &amp; =0.\\
+          \end{split}
+          \end{equation*}
+        </div>
+        Thus, we obtain
+        <div class="scroll-wrapper">
+          $$t=\dfrac{2}{x_1^2+x_2^2+1}\;\text{or} \;t = 0.$$
+        </div>
+        Substituting this real value into equation
+        (\ref{eq:linea_recta}) we have that the point at the intersection of the
+        line $\ell_{z}$ and the set
+        $\mathbb{S}^{2}-\{\rm N\}$ is the triple
+        <div class="scroll-wrapper">
+          \[
+          \left(\frac{2x_1}{x_2^2+x_2^2+1},\frac{2x_2}{x_2^2+x_2^2+1},\frac{x_1^2+x_2^2-1}{x_2^2+x_2^2+1}\right).
+          \]
+        </div>
+        <br>
+        The inverse function $\Pi^{-1}$ of the stereographic projection is given by
+        <div class="scroll-wrapper">
+          \begin{equation}\label{eq:proyeccion_estereografica_inversa}
+          \Pi^{-1}(z)= \left\{
+          \begin{array}{ cl }
+          \left(\dfrac{2x_1}{x_1^2+x_2^2+1},\dfrac{2x_2}{x_1^2+x_2^2+1},\dfrac{x_1^2+x_2^2-1}{x_2^2+x_2^2+1}\right);
+          &amp;
+          \text{ if } z=x_1+ix_2; \\
+          {\rm N}; &amp; \text{ if } z=\infty.\\
+          \end{array}
+          \right.
+          \end{equation}
+        </div>
+
+        <p>
+          The reader can verify that the following functional equalities are indeed satisfied:
+          $\Pi^{-1}\circ
+          \Pi={\rm Id}_{\mathbb{S}^2}$ and $\Pi\circ\Pi^{-1}={\rm Id}_{\widehat{\mathbb{C}}}.$
+          These two relations imply that
+          both functions $\Pi$ and $\Pi^{-1}$ are bijective.
+          Additionally, one can easily convince oneself that the
+          stereographic projection sends the equatorial circle
+          of $\mathbb{S}^2$ (the intersection of
+          $\mathbb{S}^2$ with the $xy$ plane) to the Euclidean circumference
+          with center at $\textbf{0}$ and radius $1$
+          (see Figure 1).
+          Even more, the projection $\Pi$ sends circles of
+          the sphere to circles
+          of the extended complex plane. This fact has been
+          known for a long time; in the work <em>De plana spera</em>
+          written by Jordanus Nemorarius, the author treated
+          the principles of stereographic projection and proved that
+          the projection sends circles of the sphere
+          $\mathbb{S}^2$ to circles of the extended complex plane
+          <a href="bibliography.html#Folkerts-Lorch" target="_blank">
+            Folkerts &amp; Lorch (2007, p. 6)</a>. Let us introduce the concept
+          of a circle in the extended complex plane and prove
+          this property of the stereographic projection.
+        </p>
+
+        <div class="definition" id="def_circulo_generalizado">
+          A
+          <span class="red-txt">circle</span> on the sphere $\mathbb{S}^2$ is the set with more
+          than one point obtained from the intersection of a plane $P'$ and the sphere $\mathbb{S}^{2}$ (see Figure
+          2-a). A
+          <span class="red-txt">generalized circle</span>
+          on the extended complex plane $\widehat{\mathbb{C}}$
+          is a Euclidean circumference in $\mathbb{C}$ or a Euclidean straight line in $\mathbb{C}$
+          together with the point $\infty$ (see Figure 2-b).
+        </div>
+
+
+        <figure>
+          <img alt="Circles" style="width: 80%;" loading="lazy" src="imgs/cap-01/circulos.png">
+          <figcaption>
+            Circles.
+          </figcaption>
+        </figure>
+
+
+        <div class="theorem" id="circunferencias-circunferencias">
+          The stereographic projection sends circles of the unit sphere $\mathbb{S}^2$ to generalized circles
+          of the extended complex plane $\widehat{\mathbb{C}}.$ Furthermore, the inverse image of any
+          generalized circle under the stereographic projection is a circle on the unit sphere.
+        </div>
+
+        <div class="proof">
+          Given the real numbers $a,b,c,d\in\mathbb{R},$ we consider the circle $C$ on the unit sphere
+          $\mathbb{S}^{2},$ where
+          <div class="scroll-wrapper">
+            \begin{equation}\label{eq:plano_circunferencia}
+            C=\left\{(\overline{x}_1,\overline{x}_2,\overline{x}_3)\in \mathbb{S}^{2}:
+            a\overline{x}_1+b\overline{x}_2+c\overline{x}_3=d\right\}.
+            \end{equation}
+          </div>
+          Let us see that the image $\Pi(C)$ is a generalized circle on the extended complex plane
+          $\widehat{\mathbb{C}},$ that is,
+          <div class="scroll-wrapper">
+            \[
+            \Pi(C)=\left\{x_{1}+ix_{2}\in\mathbb{C}:
+            \tilde{a}(x_1^2+x_2^{2})+2\tilde{b}x_1+2\tilde{c}x_2+\tilde{d}=0
+            \right\},
+            \]
+          </div>
+
+          for suitable reals $\tilde{a},\tilde{b},\tilde{c},\tilde{d}\in\mathbb{R}.$ To the previous set we add
+          the point $\infty,$ if the circle $C$ passes through the north pole ${\rm N}.$
+
+          <p>
+            Since the stereographic projection $\Pi$ is a bijection and $C$ has more than one point, then from the
+            relation \eqref{eq:proyeccion_estereografica_inversa} it follows that there exists a complex number $x_{1}+i
+            x_{2}$ such that
+          </p>
+          <div class="scroll-wrapper">
+            \[
+            (\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})=\left(\dfrac{2 x_1}{x_1^2+x_2^2+1},\dfrac{2
+            x_2}{x_1^2+x_2^2+1},\dfrac{x_1^2+x_2^2-1}{x_2^2+x_2^2+1}\right).
+            \]
+          </div>
+
+          We substitute the previous equality into equation (\ref{eq:plano_circunferencia}) and obtain
+          <div class="scroll-wrapper">
+            \[
+            a\left(\frac{2x_1}{x_2^2+x_2^2+1}\right)
+            +b\left(\frac{2x_2}{x_1^2+x_2^2+1}\right)+c\left(\frac{x_1^2+x_2^2-1}{x_1^2+x_2^2+1}\right) =d.
+            \]
+          </div>
+
+          Finally, we perform basic operations and arrive at the expression
+          <div class="scroll-wrapper">
+            \begin{equation}\label{eq:final_circunferencia_bajo_proyeccion}
+            \begin{split}
+            2ax_1 +2bx_2+c\left(x_1^2+x_2^2-1\right)&amp; =d(x_1^2+x_2^2+1),\\
+            (c-d)x_1^2+(c-d)x^2_2 +2ax_1 +2bx_2&amp;=d+c.\\
+            \end{split}
+            \end{equation}
+          </div>
+
+          Then the image $\Pi(C)$ is described in the form
+          <div class="scroll-wrapper">
+            \begin{equation}\label{eq:imagen_circulo_proyeccion_estereografica}
+            \Pi(C)=\left\{x_{1}+ix_{2}\in\mathbb{C}: (c-d)x_1^2+(c-d)x^2_2 +2ax_1 +2bx_2=d+c\right\}.
+            \end{equation}
+          </div>
+
+          We must study the following two cases.
+          <p></p>
+
+          <p>
+            <strong>Case 1.</strong>
+            If $c-d=0,$ then equation \eqref{eq:final_circunferencia_bajo_proyeccion} is rewritten as
+            \[
+            2ax_{1}+2bx_{2}=d+c.
+            \]
+            This last expression represents a Euclidean straight line. Then the image
+          </p>
+          <div class="scroll-wrapper">
+            \[
+            \Pi(C)=\left\{(x_{1},x_{2})\in\mathbb{R}^2: 2ax_1+2bx_2=d+c \right\}\cup\{\infty\},
+            \]
+          </div>
+          is a generalized circle.
+          <p></p>
+          <p>
+            <strong>Case 2.</strong>
+            Conversely, if $c-d\neq 0,$ then we divide equation
+            \eqref{eq:final_circunferencia_bajo_proyeccion} by $c-d$, then complete squares and obtain
+          </p>
+          <div class="scroll-wrapper">
+            \begin{equation}\label{eq:proyeccion_circulos_en_circulos}
+            \small{\begin{split}
+            x_1^2+\frac{2a}{(c-d)}x_1 +\frac{a^2}{(c-d)^2}
+            +x_2^2+\frac{2b}{(c-d)}x_2^2+\frac{b^2}{(c-d)^2}&amp;=\frac{d+c}{c-d}+\frac{a^2}{(c-d)^2}+\frac{b^2}{(c-d)^2}\\
+            \left(x_1^2+\frac{a}{c-d}\right)
+            +\left(x_2^2+\frac{b}{c-d}\right)&amp;=\frac{a^2+b^2+c^2-d^2}{(c-d)^2}.\\
+            \end{split}}
+            \end{equation}
+          </div>
+
+          We must verify that $a^{2}+b^{2}+c^{2}-d^{2}&gt;0.$ If the plane $P$ given by the formula
+          \[
+          a\overline{x}_1+b\overline{x}_2+c\overline{x}_3=d,
+          \]
+          passes through the origin $\textbf{0},$ then $d=0$ and thus, the right-hand side of the expression in
+          \eqref{eq:proyeccion_circulos_en_circulos} must be a positive real.
+          <p></p>
+
+          <p>
+            On the other hand, the distance $D$ from an arbitrary point $(x_{0},y_{0},z_{0})\in\mathbb{R}^{3}$ to
+            the
+            plane $P$ with equation $ax_{1}+bx_{2}+cx_{3}=d,$ is
+            \[
+            D=\dfrac{|ax_{0}+by_{0}+cz_{0}-d|}{\sqrt{a^{2}+b^{2}+c^{2}}}.
+            \]
+            If the plane $P,$ described above, does not pass through the origin $\textbf{0},$ then the distance from
+            said
+            plane $P$ to the origin $\textbf{0}$ is
+            \[
+            1&gt;D=\dfrac{|-d|}{\sqrt{a^{2}+b^{2}+c^{2}}}&gt;0.
+            \]
+            Applying basic operations to this last inequality, we obtain $a^{2}+b^{2}+c^{2}-d^{2}&gt;0.$
+          </p>
+
+          <p>
+            Now, we will prove the second statement of the theorem. Take a generalized circle $C$ on the
+            extended complex plane $\widehat{\mathbb{C}}.$ Let us prove that the inverse image $\Pi^{-1}(C)$ is a
+            circle on $\mathbb{S}^2,$ that is,
+          </p>
+          <div class="scroll-wrapper">
+            \[
+            \Pi^{-1}(C)=\left\{(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})\in\mathbb{S}^2:
+            a\overline{x}_{1}+b\overline{x}_{2}+c\overline{x}_{3}=d\right\},
+            \]
+          </div>
+
+          for some reals $a,b,c,d\in\mathbb{R}.$
+          <p></p>
+
+          <p>
+            The generalized circle $C$ in the extended complex plane $\widehat{\mathbb{C}}$ is given by
+          </p>
+          <div class="scroll-wrapper">
+            \begin{equation}\label{eq:general_circulo_1}
+            C=\left\{ x_{1}+ix_{2}\in\mathbb{C}:
+            a(x_{1}^{2}+x_{2}^{2})+2bx_{1}+2cx_{2}+d=0\right\},
+            \end{equation}
+          </div>
+          where $a,b,c,d$ are suitable reals. From relation \eqref{eq:proyeccion_esteregrafica_2} there exists a
+          triple
+          $(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})\in \Pi^{-1}(C)$ such that
+          <div class="scroll-wrapper">
+            \[
+            x_{1}=\frac{\overline{x}_{1}}{1-\overline{x}_{3}} \text{ and }
+            x_{2}=\frac{\overline{x}_{2}}{1-\overline{x}_{3}}.
+            \]
+          </div>
+          We substitute the previous relations into equality \eqref{eq:general_circulo_1} and obtain
+          <div class="scroll-wrapper">
+            \begin{equation}\label{eq:plano_esfera_unitaria}
+            \Pi^{-1}(C)=\left\{(\overline{x}_{1},\overline{x}_{2},\overline{x}_{2})\in\mathbb{S}^{2}:
+            F(\overline{x}_{1},\overline{x}_{2},\overline{x}_{2})=0\right\}.
+            \end{equation}
+          </div>
+          where
+          <div class="scroll-wrapper">
+            \[
+            F(\overline{x}_{1},\overline{x}_{2},\overline{x}_{2})=a\frac{(\overline{x}_{1}^{2}+\overline{x}_{2}^{2})}{(1-\overline{x}_{3})^2}+2b\frac{\overline{x}_{1}}{1-\overline{x}_{3}}+2c\frac{\overline{x}_{2}}{1-\overline{x}_{3}}+d.
+            \]
+          </div>
+
+
+          Recall that the triple $(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})\in\mathbb{S}^2$ satisfies
+          the
+          relation $\overline{x}_{1}^{2}+\overline{x}_{2}^{2}+\overline{x}_{3}^{2}=1.$ Equivalently, the
+          equality $\overline{x}_{1}^{2}+\overline{x}_{2}^{2}=1-\overline{x}_{3}^{2}$ holds. We substitute this last
+          equality into equation \eqref{eq:plano_esfera_unitaria}, compute and obtain
+          <div class="scroll-wrapper">
+            \[
+            \Pi^{-1}(C)=\left\{(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})\in\mathbb{S}^2:
+            a(1+\overline{x}_3)+2b\overline{x}_1+2c\overline{x}_{2}+d(1-\overline{x}_{3})=0\right\}.
+            \]
+          </div>
+
+          <p></p>
+        </div>
+
+
+        <div class="theorem">
+          The stereographic projection $\Pi$ is a homeomorphism.
+        </div>
+
+        <div class="proof">
+          Verifying that the stereographic projection is a bijection is routine, it is left as an exercise to the
+          reader.
+          We will begin by proving that the stereographic projection $\Pi$ is continuous. Recall that the $i$-th
+          projection $p_{i}:\mathbb{C}\to\mathbb{R},$ is continuous, for each $i\in\{1,2\}.$ Note that the
+          composition
+          $$
+          p_{i}\circ
+          \Pi(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})=\frac{\overline{x}_{i}}{1-\overline{x}_{3}},
+          $$
+          is continuous at each triple
+          $(\overline{x}_{1},\overline{x}_{2},\overline{x}_{3})\in\mathbb{S}^2-\{\rm N\}.$
+
+          <p>
+            Using the Proposition in
+            <a href="bibliography.html#Rosenlicht" target="_blank">Rosenlicht, (1986, p. 77)</a> we conclude that the
+            stereographic projection $\Pi$ is
+            continuous on $\mathbb{S}^2\setminus\{\rm N\}.$ Now, let us prove the continuity of $\Pi$ at the point
+            $\infty.$
+            Consider the open subset $V\subset \widehat{\mathbb{C}}$ that contains $\Pi({\rm N})=\infty.$
+            Let us see
+            that there exists an open set $W$ containing the north pole ${\rm N}$ such that $\Pi(W)\subset V.$ By the
+            way
+            the topology $\tau_{\infty}$ was defined for $\widehat{\mathbb{C}}$ (see
+            <a href="#plano-complejo-extendido">Theorem 1</a>),
+            it follows that $\widehat{\mathbb{C}}-V$ is a compact subset of
+            $\mathbb{C}.$
+            Then there exists a positive real $r&gt;0,$ the compact set $(\widehat{\mathbb{C}}-V)$ is contained
+            in the Euclidean ball $B_{r}(\textbf{0}).$ Note that the boundary $\partial B_{r}(\textbf{0})$ of the ball
+            $B_{r}(\textbf{0})$ is a generalized circle of the extended complex plane
+            $\widehat{\mathbb{C}}.$
+            From
+            <a href="#circunferencias-circunferencias">Theorem 2</a>, there exists a circle $C$ on the sphere
+            $\mathbb{S}^2$
+            whose image under $\Pi$ is the boundary $\partial B_{r}(\textbf{0}).$
+            By construction, the sphere $\mathbb{S}$
+            minus the circle $C$ is the disjoint union of two connected open sets, such that one of them contains the
+            north pole ${\rm N}.$
+            Let us denote by $W$ the connected component that contains ${\rm N}.$
+            Since $\Pi$
+            is continuous on $\mathbb{S}^{2}-\{\rm N\},$ it must happen that $\Pi(W)\subset V.$ This proves that the
+            stereographic projection $\Pi$ is continuous at ${\rm N}.$ Therefore, the stereographic projection is
+            continuous on $\mathbb{S}^{2}.$
+          </p>
+
+          <p>
+            Recall that every continuous function defined from a compact space to a Hausdorff space is
+            closed (see
+            <a href="bibliography.html#Dugundji" target="_blank">Dugundji, 2.1 Theorem, p. 226</a>). Using the
+            previous
+            fact, we conclude that the
+            stereographic projection $\Pi$ is a closed function. Since the stereographic projection $\Pi$ is
+            a bijective, continuous and closed function, we conclude that it is indeed a homeomorphism.
+          </p>
+
+
+        </div>
+
+        <p>
+          The usual metric of $\mathbb{R}^3,$ which is given by
+        </p>
+        <div class="scroll-wrapper">
+          \[
+          \left|(x_1,x_2,x_3)-(y_1,y_2,y_3)\right|:=\sqrt{\sum\limits_{i=1}^3(x_i-y_i)^2},
+          \]
+        </div>
+        <p></p>
+        <p>
+          for any elements $(x_1,x_2,x_3),(y_1,y_2,y_3)\in \mathbb{R}^3$ can be restricted to the Riemann
+          sphere
+          $\mathbb{S}^2.$ By means of the stereographic projection $\Pi$ we can define on the extended complex
+          plane $\widehat{\mathbb{C}}$ the distance function $d_c : \widehat{\mathbb{C}}\times \widehat{\mathbb{C}} \to
+          \mathbb{R}$ such that
+        </p>
+        <div class="scroll-wrapper">
+          \[
+          d_c(z,w)=\left|\Pi^{-1}(z)-\Pi^{-1}(w)\right|= \left\{
+          \begin{array}{ ll }
+          \dfrac{2|z-w|}{\sqrt{1+|z|^2}\sqrt{1+|w|^2}}; &amp; \text{ if } z,w\neq \infty; \\
+          \dfrac{2}{\sqrt{1+|z|^2}}; &amp; \text{ if } w=\infty.\\
+          \end{array}
+          \right.
+          \]
+        </div>
+
+        <p>
+          This distance function is known as the
+          <span class="red-txt">chordal metric</span>, since geometrically this distance represents the
+          length of the segment in $\mathbb{R}^3$ with endpoints $\Pi^{-1}(z)$ and $\Pi^{-1}(w).$ Additionally, the
+          topology induced by the chordal metric is
+          equivalent to the topology $\tau_{\infty}.$
+        </p>
+
+      </div>
+
+
+      <hr>
+
+
+      <div id="section3">
+
+        <div class="hidden-title" id="plano-proyectivo">
+          <p>Complex Projective Plane</p>
+        </div>
+
+        <div class="head-1 head-1-level2">
+          Complex Projective Plane $\mathbb{C}P^{1}$
+        </div>
+
+        <p>
+          The Riemann sphere can be understood as
+          $\mathbb{C}^{2}\setminus \{(0,0)\}$
+          modulo a suitable equivalence
+          relation. This quotient space is
+          known as the 1-dimensional Complex Projective Plane. This
+          object is studied from the perspective
+          of algebraic curves.
+        </p>
+
+        <p>
+          In what follows $\mathbb{C}^{\ast}$ will denote the complex numbers with $0$ removed. The set
+          $\mathbb{C}^{\ast}$ acts on $\mathbb{C}^2-\{(0,0)\}$ by multiplication,
+          that is, the function
+        </p>
+        <div class="scroll-wrapper">
+          $$
+          \alpha: \mathbb{C}^{\ast}\times \mathbb{C}^{2}\setminus\{(0,0)\}\to \mathbb{C}^{2}\setminus\{(0,0)\}
+          $$
+        </div>
+        given by
+        \begin{equation}\label{eq:accion_plano_proyectivo_complejo}
+        (\lambda, (z,w))\to (\lambda\cdot z, \lambda\cdot w),
+        \end{equation}
+        is an action, where $\cdot$ is the usual complex multiplication.
+        Then the quotient space
+        \[
+        \mathbb{C}^{2}-\{(0,0)\}/\mathbb{C}^{\ast},
+        \]
+        is called the
+        <span class="red-txt">1-dimensional complex projective space</span>. Formally,
+        we can introduce it
+        as follows.
+        <p></p>
+
+        <div class="definition">
+          The <span class="red-txt">1-dimensional complex projective space</span>
+          is the space
+          <div class="scroll-wrapper">
+            \[
+            \mathbb{C}P^{1}:=\mathbb{C}^{2}-\{(0,0)\}/\mathbb{C}^{\ast}=\left\{(z,w)\in\mathbb{C}^{2}-\{(0,0)\}\right\}/\sim,
+            \]
+          </div>
+          where $\sim$ is the equivalence relation: $(z_1,w_1)\sim (z_2,w_2)$ if and only if there exists $\lambda
+          \in\mathbb{C}^{\ast}$ such that $(z_1,w_1)=(\lambda \cdot z_2,\lambda \cdot w_2).$ The space
+          $\mathbb{C}P^{1}$
+          is endowed with the identification topology, that is, the topology that makes the projection
+          function $p:\mathbb{C}^{2}-\{(0,0)\}\to \mathbb{C}P^{1},$ such that
+          \[
+          (z,w)\mapsto [z,w],
+          \]
+          continuous.
+        </div>
+
+        <p>
+          Note that $\mathbb{C}P^{1}$ consists of all 1-dimensional complex vector subspaces
+          in $\mathbb{C}^2.$ The following result describes some
+          of the topological properties of this complex
+          projective plane.
+        </p>
+
+
+        <div class="theorem">
+          The 1-dimensional complex projective plane $\mathbb{C}P^1$ is a compact, connected and Hausdorff space.
+        </div>
+
+        <div class="proof">
+          Note that the complex sphere
+          <div class="scroll-wrapper">
+            \[
+            \mathbb{S}^{3}:=\left\{(z,w)\in\mathbb{C}^2: |z|^2+|w|^2=1\right\}\subset \mathbb{C}^2-\{(0,0)\},
+            \]
+          </div>
+          is a compact and connected space.
+
+          <p>
+            Since the inclusion function $i:\mathbb{S}^3\hookrightarrow
+            \mathbb{C}^2-\{(0,0)\}$ is continuous and the composition of continuous functions is continuous, then the
+            composition function $p\circ i:\mathbb{S}^3\to\mathbb{C}P^{1}$ is continuous. If we prove that $i\circ p$ is
+            <span class="blue-txt">surjective</span>, we can conclude that $\mathbb{C}P^{1}$ is a
+            <span class="red-txt">compact</span> and
+            <span class="red-txt">connected</span> space, since these two properties are invariant under
+            continuity. Take the class $[z,w]\in \mathbb{C}P^{1},$ since one of its entries is non-zero, then
+            we define the non-zero complex number
+            \[
+            \lambda =|z|^2+|w|^2\neq 0.
+            \]
+            Note that the pair $(z/\lambda,w/\lambda)$ belongs to the complex sphere $\mathbb{S}^3$ and is
+            equivalent to
+            the pair $(z,w)\in \mathbb{C}^{2}\setminus\{(0,0)\}.$ This implies that $p\circ i
+            (z/\lambda,w/\lambda)=[z,w].$
+          </p>
+
+
+
+          <p>
+            Finally, we will prove that $\mathbb{C}P^{1}$ is a
+            <span class="red-txt">Hausdorff</span> space. The following set is necessary for the proof.
+            Given the open subset $U\subset \mathbb{C}^{2}\setminus \{(0,0)\}$ and the non-zero complex
+            $\lambda\in\mathbb{C}^{\ast},$ we define the
+            <span class="red-txt">translate of $U$ with respect to $\lambda$</span>
+            as the open set
+          </p>
+          <div class="scroll-wrapper">
+            \begin{equation}\label{eq:transladado_abierto}
+            \lambda \cdot U=\left\{(\lambda\cdot z,\lambda \cdot w): (z,w)\in U\right\}.
+            \end{equation}
+          </div>
+          <p>
+            Now, take two different points $[z_1,w_1]\neq [z_2,w_2]\in\mathbb{C}P^{1}.$
+            We can assume, without loss of generality,
+            that $(z_1,w_1),$ $(z_2,w_2)\in \mathbb{S}^{2}.$
+            Since $\mathbb{S}^{2}$ is a
+            Hausdorff space, there exist open sets
+            $U$ and $V$ in $\S^2$ such that the
+            following properties are satisfied
+          </p>
+          <ol class="roman-list">
+            <li>
+              The point $(z_1,w_1)$ is in $U$ and the point $(z_2,w_2)$ is in $V.$
+            </li>
+            <li>
+              The intersection $U\cap V=\emptyset.$
+            </li>
+          </ol>
+          <p>
+            On the other hand, we have that the images $p\circ i(U)$ and $p\circ i(V)$ satisfy:
+          </p>
+          <ol>
+            <li>
+              The class $[z_1,w_1]$ is in $p\circ i(U)$ and the class $[z_2,w_2]$ is in $p\circ i(V).$
+            </li>
+            <li>
+              The subsets $p\circ i(U)$ and $p\circ i(V)$ are open in $\mathbb{C}P^{1},$ since
+              <div class="scroll-wrapper">
+                \[
+                p^{-1}(p(U))=\bigcup_{\lambda\in\{1,-1\}} \lambda \cdot U \text{ and }
+                p^{-1}(p(V))=\bigcup_{\lambda\in\{1,-1\}} \lambda \cdot V.
+                \]
+              </div>
+
+            </li>
+            <li>
+              The intersection $p\circ i(U)\cap p\circ i(V)\neq \emptyset.$
+            </li>
+          </ol>
+          <p>
+            This proves that the space $\mathbb{C}P^{1}$ is Hausdorff.
+          </p>
+        </div>
+
+        <p>
+          To finish this section the reader will have the task of proving that the function
+          $f:\mathbb{C}P^{1}\to\mathbb{S}^2,$ defined by
+        </p>
+        <div class="scroll-wrapper">
+          \begin{equation}\label{eq:homeo_esfera_plano_proyectivo}
+          [z,w]\mapsto
+          \left(\frac{2\Re(z\overline{w})}{|z|^2+|w|^2},\frac{2\Im(z\overline{w})}{|z|^2+|w|^2},\frac{|z|^2-|w|^2}{|z|^2+|w|^2}\right),
+          \end{equation}
+        </div>
+        <p> is a homeomorphism.</p>
+      </div>
+
+      <hr>
+
+
+      <div id="section4">
+        <div class="head-1 head-1-level2" id="problemas">
+          Problems
+        </div>
+
+        <ol>
+          <li>
+            Prove statement (ii) described in <a href="#plano-complejo-extendido">Theorem 1</a>.
+          </li>
+          <li>
+            Prove that the Riemann sphere $\widehat{\mathbb{C}}$ is a connected, second countable and
+            normal space.
+          </li>
+          <li>
+            Verify that the distance $D$ from an arbitrary point $(x_{0},y_{0},z_{0})\in\mathbb{R}^{3}$ to the
+            plane
+            $P$ with equation $ax_{1}+bx_{2}+cx_{3}=d,$ is given by the formula
+            \[
+            D=\dfrac{|ax_{0}+by_{0}+cz_{0}-d|}{\sqrt{a^{2}+b^{2}+c^{2}}}.
+            \]
+          </li>
+          <li>
+            Prove that the function defining the chordal metric is indeed a distance function. Verify that the
+            topology induced by the chordal metric is equivalent to the topology $\tau_{\infty}.$
+          </li>
+          <li>
+            For every $n\in\mathbb{N},$ prove that the space $\mathbb{R}^n\cup\{\infty\}$ with the topology
+            $\tau_{\infty}$ is homeomorphic to
+            <div class="scroll-wrapper">
+              $$\mathbb{S}^{n}:=\left\{(x_1,\ldots,x_{n+1})\in \mathbb{R}^{n+1}:
+              \sqrt{\sum\limits_{i=1}^{n+1}x_i^2}=1\right\}.$$
+            </div>
+          </li>
+          <li>
+            Verify that the function $\alpha$ defined in equation \eqref{eq:accion_plano_proyectivo_complejo} is
+            an action.
+          </li>
+          <li>
+            Prove that the translated open set $\lambda \cdot U$ defined in equation
+            \eqref{eq:transladado_abierto}
+            is an open set.
+          </li>
+          <li>
+            Prove that the function $f:\mathbb{C}P^{1}\to\mathbb{S}^2,$ defined by
+            <div class="scroll-wrapper">
+              \[
+              [z,w]\mapsto
+              \left(\frac{2\Re(z\overline{w})}{|z|^2+|w|^2},\frac{2\Im(z\overline{w})}{|z|^2+|w|^2},\frac{|z|^2-|w|^2}{|z|^2+|w|^2}\right),
+              \]
+            </div>
+            is a homeomorphism.
+
+          </li>
+        </ol>
+      </div>
+
+
+      <br>
+
+
+    </article>
+  </main>
+
+  <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+  <script>
+    let paramsProj = {
+      "width": 762,
+      "height": 445,
+      "material_id": "nhajpqpn",
+      "borderColor": "888888",
+      "playButton": false,
+      "showFullscreenButton": true,
+      "enableShiftDragZoom": true,
+      "showResetIcon": true
+    };
+    let appletProj = new GGBApplet(paramsProj, true);
+    window.addEventListener("load", function () {
+      appletProj.inject('ggb-element-projection');
+    });
+  </script>
+
+
+  <a href="linear-fractional-transformations.html" style="text-decoration: none;">
+    <p class="nextPage">Linear fractional transformations <i class="fa-solid fa-angles-right"></i></p>
+  </a>
+  <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 Hi!</strong>
+      </div>
+      <div class="modal-body">
+  
+        <div w3-include-html="message-modal.html"></div>
+        <br />
+      </div>
+  
+      <div class="modal-footer">
+        Thanks! 🙏 I really appreciate your support! 🤗
+      </div>
+    </div>
+  
+  </div>
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span class="hide-small" id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <a href="https://github.com/geometria-hiperbolica"><i class="fa-solid fa-code"></i> Source</a>,
+    <a href="https://github.com/geometria-hiperbolica/geometria-hiperbolica.github.io/issues"><i
+        class="fa-solid fa-lightbulb"></i> Issues</a>,
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-regular fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  <span class="hide-medium hide-large" style="font-size: 0.85em;">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a> -
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-regular fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+
+  <br />
+
+  <a id="licence-link" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+    target="_blank">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong style="font-size: 0.9em;">ISBN: ---</strong> <br>
+  <strong> 
+    <span class="hide-small" style="font-size: 18px">&copy; C. Ramírez Maluendas, J.C. Ponce Campuzano
+      <script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 15px">&copy; C. Ramírez Maluendas, <br /> J.C. Ponce Campuzano
+      <script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>

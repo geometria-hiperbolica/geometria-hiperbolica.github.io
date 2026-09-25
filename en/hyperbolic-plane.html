@@ -1,0 +1,2387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>  Hyperbolic Plane
+</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Hyperbolic Geometry Notes" />
+  <meta name="author" content="Juan Carlos Ponce Campuzano, Camilo Ramírez Maluendas">
+  <meta name="keywords" content="geometría,hiperbólica,funciones,complejo" />
+
+  <!--
+    https://www.everywheremarketer.com/blog/ultimate-guide-to-social-meta-tags-open-graph-and-twitter-cards
+  -->
+  <!--Facebook-->
+  <meta property="og:title" content="Hyperbolic Geometry Notes" />
+  <meta property="og:url" content="https://geometria-hiperbolica.github.io/" />
+  <meta property="og:description" content="Hyperbolic Geometry Notes" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hyperbolic Geometry Notes">
+
+  <!--Twitter/X-->
+  <meta name="twitter:title" content="Hyperbolic Geometry Notes" />
+  <meta name="twitter:site" content="https://geometria-hiperbolica.github.io/" />
+  <meta name="twitter:description" content="Hyperbolic Geometry Notes" />
+  <meta name="twitter:type" content="website" />
+  <meta name="twitter:creator" content="@jcponcemath" />
+
+  <link rel="icon" type="image/png" href="imgs/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="imgs/infinity16.png" sizes="16x16">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-16JHH28EVY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-16JHH28EVY');
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body data-type="book" id="top">
+
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="linear-fractional-transformations.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="table-of-contents.html" class="link" id="center-link">
+            <span class="content-hover-previous">Transformaciones fraccionarias
+      lineales</span>
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Hyperbolic Geometry</span>
+            <span class="content-hover-next">Poincaré Disk</span>
+        </a>
+    </div>
+    <a href="poincare-disk.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="plano-hoperbolico">
+
+  <p class="callout hide-large hide-medium"><strong>⚠️ Warning!</strong>
+
+    If you can see this message is because your screen is too small.
+    Hence, some applets won't be displayed correctly. You can
+    rotate your device to landscape. Or resize your window so it's
+    more wide than tall.
+  </p>
+
+  <div class="toc-chapter" id="toc-chapter">
+    <p><i class="fa-solid fa-list"></i>Content</p>
+    <ul>
+      <li><a href="#section1">Hyperbolic Plane</a></li>
+      <li><a href="#section2">Riemann metric</a></li>
+      <li><a href="#section3">Curve and norm...</a></li>
+      <li><a href="#section4">Length of curve...</a></li>
+      <li><a href="#section5">Isometries of the plane...</a></li>
+      <li><a href="#section6">Geodesics of the plane...</a></li>
+      <li><a href="#section7">Postulates</a></li>
+      <li><a href="#section8">Properties...</a></li>
+      <li><a href="#section9">Invariante formulas</a></li>
+      <li><a href="#section10">Complete group...</a></li>
+      <li><a href="#section11">Induced topology</a></li>
+      <li><a href="#section12">Problems</a></li>
+      <!-- Add more sections as needed -->
+    </ul>
+  </div>
+
+  <div class="hide-large hide-medium hide-small">
+    <h1>Hyperbolic Plane</h1>
+  </div>
+
+  <!-- Starts main content -->
+
+  <br><br><br>
+
+  <main>
+    <article>
+
+      <div id="section1">
+        <div class="head-3">Hyperbolic Plane</div>
+
+        <p>
+          The <span class="purple-text">Elements</span> of the Greek Euclid (325 BC - 265 BC) is the first
+          written record, available to humanity, of an axiomatic system
+          (see <a href="bibliography.html#Euclid">Euclid 1926</a>).
+          This writing has also been one of the most influential works of scientific thought of humanity.
+          Specifically, the Elements is composed of 13 books, in which the author developed the foundations
+          of elementary geometry, along with some concepts of arithmetic.
+          To build geometry, the Greek author defined the main objects of the theory: <em>point</em>,
+          <em>line</em>, <em>plane</em> among others.
+          Then, based on logic, Euclid developed some fundamental laws about these objects (postulates or
+          axioms).
+          Let us recall the first five of these postulates.
+        </p>
+
+        <div class="postulate no-indent">
+          <span class="blue-text">Postulate I</span>. From any point to any other point a straight line can be drawn.
+        </div>
+
+        <div class="postulate no-indent">
+          <span class="blue-text">Postulate II</span>. Every bounded straight line can be extended indefinitely in the
+          same
+          direction.
+        </div>
+
+        <div class="postulate no-indent">
+          <span class="blue-text">Postulate III</span>. With any center and any radius a circumference can be drawn.
+        </div>
+
+        <div class="postulate no-indent">
+          <span class="blue-text">Postulate IV</span>. All right angles are equal to each other.
+        </div>
+
+        <div class="postulate no-indent">
+          <span class="blue-text">Postulate V</span>. If a straight line cutting two other straight lines makes the
+          interior
+          angles on the same side less than two right angles, those two straight lines extended indefinitely meet on the
+          side on which
+          the angles are less than two right angles.
+        </div>
+
+
+        <p>
+          Euclid's fifth postulate draws attention, since at first glance it does not seem intuitive to geometric
+          intuition; so during the 19th century attempts were made to prove it from the four
+          remaining ones<label for="sn-1" class="sidenote-toggle sidenote-number"></label><input type="checkbox" id="sn-1" class="sidenote-toggle"><span class="sidenote left">If the reader is interested in knowing the
+            historical development of non-Euclidean geometries
+            we suggest consulting
+            <a href="bibliography.html#Santalo">Santaló, 1976</a>.</span>.
+          There was no success, however, statements equivalent to postulate V appeared. We will state some of
+          them.
+        </p>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "Two parallel lines are equidistant."
+          </div>
+          <div class="quote-author">
+            Posidonius (1st c. BC).
+          </div>
+        </div>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "Two lines parallel to a third are always parallel to each other."
+          </div>
+          <div class="quote-author">
+            Proclus (412 - 485).
+          </div>
+        </div>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "If three points are on the same side of a line and are equidistant from it, the three points belong to the
+            same
+            line."
+          </div>
+          <div class="quote-author">
+            C. Clavius (1537-1612).
+          </div>
+        </div>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "Through a point exterior to a line one and only one parallel to that line can be drawn."
+          </div>
+          <div class="quote-author">
+            John Playfair (1748-1818).
+          </div>
+        </div>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "Through any point taken inside an angle one can always draw a line that meets the sides of the angle."
+          </div>
+          <div class="quote-author">
+            L. M. Legendre (1752-1833).
+          </div>
+        </div>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "Given any triangle there always exists a similar one of arbitrary size."
+          </div>
+          <div class="quote-author">
+            J. Wallis (1616-1703).
+          </div>
+        </div>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "The sum of the interior angles of a triangle is equal to two right angles."
+          </div>
+          <div class="quote-author">
+            G. Saccheri (1667-1733), J. H. Lambert (1728-1777), A. M. Legendre (1752-1833).
+          </div>
+        </div>
+
+        <div class="myquotes">
+          <div class="quote-content">
+            "There exist triangles of areas as large as one wishes."
+          </div>
+          <div class="quote-author">
+            K. F. Gauss (1777-1855).
+          </div>
+        </div>
+
+        <p>During the 19th century the following reasoning flourished: If Euclid's postulate V is a <span class="red-text">"<em>true</em>"</span> postulate, the fact of denying it, accepting the other four, should
+          not
+          lead to contradictions. Thus it was that the Hungarian Johann Bolyai (1802-1860), the German Karl
+          Friedrich Gauss (1777-1855), the Russian Nikolai Lobachevsky (1793-1856) and others discovered non-Euclidean
+          geometries.</p>
+
+        <p>To construct the <span class="red-text">hyperbolic</span> geometry given by Lobachevsky we need
+          <span class="red-text">four</span> ingredients:
+        </p>
+
+        <ol>
+          <li>
+            An <span class="red-text">ambient space</span> (<span class="purple-text">upper half-plane</span>)
+            <div class="scroll-wrapper">
+              \[
+              U:=\left\{z\in\mathbb{C}: \operatorname{Im}(z)&gt;0\right\},
+              \]
+            </div>
+            where the geometry takes place. We will endow the upper half-plane \(U\) with a (geometric) <span class="purple-text">hyperbolic Riemannian</span> metric \(\mu_{h}\) and, from it we will induce a distance
+            function \(\rho.\) The upper half-plane \(U\) together with this hyperbolic metric \(\mu_{h}\) is known
+            as the <span class="purple-text">hyperbolic plane</span> or <span class="purple-text">Lobachevsky
+              plane</span> \(\mathbb{H}.\)
+          </li>
+
+          <li>
+            The group of <span class="red-text">isometries</span> of \(\mathbb{H},\) that group
+            consisting of all bijections from \(\mathbb{H}\) to itself that preserve the distance \(\rho.\)
+          </li>
+
+          <li>
+            The complex numbers that live in \(\mathbb{H}\) are the <span class="red-text">points</span>
+            and, from the Riemannian metric \(\mu_{h}\) we will discover, for this case, that the "straight lines"
+            (they will be called <span class="red-text">hyperbolic lines</span>) are the <span class="purple-text">circumferences orthogonal to the real axis</span>.
+          </li>
+
+          <li>
+            <span class="red-text">Postulates</span> about \(\mathbb{H}.\) We will see that the points and
+            lines are governed by the first four postulates of Euclidean geometry. Furthermore, the negation of the
+            fifth
+            postulate is valid, that is, it is valid: given a "straight line" \(\ell\) in \(\mathbb{H}\) and
+            a point \(p\in\mathbb{H}\) exterior to it, then through the point \(p\) there pass infinitely many "straight
+            lines" of
+            \(\mathbb{H}\) that do not intersect \(\ell.\)
+          </li>
+        </ol>
+      </div>
+
+      <hr>
+
+      <div id="section2">
+
+        <div class="hidden-title" id="metrica-riemanniana-hiperbolica">
+          <p>Hyperbolic Riemannian Metric</p>
+        </div>
+
+        <div class="head-3 head-3-level2">Hyperbolic Riemannian Metric</div>
+
+        <p>
+          Given the open subset $U\subset \mathbb{C}$, the <span class="purple-text">tangent plane</span>
+          associated to the complex number
+          $z\in U$ is the vector space
+          \[
+          T_{z}U:=\{z\}\times \mathbb{C}.
+          \]
+        </p>
+
+
+        <p>
+          <span class="red-txt">Important!</span> The tangent space \(T_{z}U\) is isomorphic to \(\mathbb{C}\) and can
+          be thought geometrically as a copy of the complex plane such that its zero \(\mathbf{0}\) is glued onto the
+          complex number \(z.\)
+        </p>
+
+        <figure>
+          <img alt="Tangent space" style="width: 60%;" loading="lazy" src="imgs/cap-03/espacio-tangente.png">
+          <figcaption>
+            Tangent space $T_zU.$
+          </figcaption>
+        </figure>
+
+
+        <div class="definition" id="def:metrica_riemanniana_mu">
+          A <span class="red-txt"><strong>Riemannian metric</strong></span> \(\mu\) for the open set
+          \(U\subset\mathbb{C}\) is a correspondence which associates to each complex number \(z\in U\) an inner product
+          \(\langle\,\, , \,\rangle^{z}\) on the tangent space \(T_{z} U,\)
+          \begin{equation}
+          \mu(z):=\langle \, \, , \, \rangle^{z} : T_{z}U \times T_{z}U \to \mathbb{C}.
+          \end{equation}
+          Furthermore, this association varies continuously and differentiably over the points of \(U.\) More
+          precisely, the function \(g_{i,j} : U \to \mathbb{C},\) defined by
+          \[
+          g_{i,j}(z):=\langle e_i , e_j \rangle^{z},
+          \]
+          is differentiable, for each \(i,j\in\{1,2\},\) where the set \(\{ e_{1},e_{2}\}\) is the usual
+          (canonical) basis for \(\mathbb{C}.\) The open set \(U\) endowed with this Riemannian metric is called a
+          <span class="red-txt"><strong>Riemannian manifold</strong></span>.
+
+        </div>
+
+        <p>One of the classical examples is the <span class="purple-text">Euclidean Riemannian metric</span>
+          \(\mu_{e}\) for the complex plane \(\mathbb{C},\) which assigns to each complex number \(z\) the usual dot
+          product
+          on the tangent plane \(T_{z}\mathbb{C},\)</p>
+        \begin{equation}
+        \mu(z):=\langle \,\, , \, \rangle^{z}_{c} : T_{z}\mathbb{C}\times T_{z}\mathbb{C} \to \mathbb{C}.
+        \end{equation}
+        <p>Note that the function \(g_{i,j} : \mathbb{C} \to \mathbb{C},\) given by</p>
+        \[
+        g_{i,j}(z)=\langle e_{i} , e_{j} \rangle^{z}_{c}=\delta_{i,j},
+        \]
+        <p>is differentiable, for each \(i,j\in\{1,2\},\) since it is the constant function.</p>
+
+        <p>Let us introduce the <span class="purple-text">hyperbolic Riemannian metric</span>.</p>
+
+        <div class="theorem" id="theorem:metrica_riemanniana_hiperbolica" style="overflow-y: hidden;">
+          The assignment \(\mu_{h}\) on the
+          <span class="purple-text">upper half-plane</span>
+          \[
+          U=\{z\in\mathbb{C} : \operatorname{Im}(z)&gt;0\},
+          \]
+          <p>
+            which corresponds to each complex number \(z\in U\)
+            the inner product
+            \begin{equation}\label{ecuacion:metrica_riemanniana_hiperbolica}
+            \mu_{h}(z):= \langle \, \, , \, \rangle_{h}^{z}= \dfrac{\langle \,\, , \,
+            \rangle^{z}_{c}}{\left(\operatorname{Im}(z)\right)^2},
+            \end{equation}
+            on the tangent space \(T_{z}U,\) is a Riemannian metric.
+            This Riemannian metric is known
+            as the <span class="red-txt"><strong>hyperbolic</strong></span> metric.
+          </p>
+        </div>
+
+        <div class="proof">
+          To complete the proof we must prove that two conditions are satisfied:
+
+          <ol style="list-style-type: none; padding-left: 0;">
+            <li><strong>(1)</strong> For each \(z\in U\) the function \(\mu_{h}(z)\) is an inner product on the
+              tangent space \(T_{z}U.\)</li>
+            <li><strong>(2)</strong> The function \(g_{i,j}\) is differentiable, for each \(i,j\in\{1,2\}.\)</li>
+          </ol>
+
+          <div class="red-txt"><strong>(1) <em>The function \(\mu_{h}(z)\) is an inner product</em></strong></div>
+          <p>Recall that the tangent space \(T_{z}U\) is isomorphic to the \(\mathbb{R}\) vector space
+            \(\mathbb{C}\) and the function \(\langle \,\, , \, \rangle^{z}_{e}\) is an inner product on \(T_{z}U.\)
+            From
+            <a href="#ejer_producto_interno_cociente">Problem 2</a>
+            it follows that the function \(\langle \,\, ,\,\rangle_{h}^{z}:
+            T_{z}U\times T_{z}U\to\mathbb{C}\) given by
+          </p>
+          \[
+          \langle z_{1},z_{2}\rangle_{h}^{z}:=\dfrac{\langle z_{1} , z_{2} \rangle_{c}^{z}}{(\operatorname{Im}(z))^2},
+          \]
+          <p>is also an inner product.</p>
+
+          <div class="red-txt"><strong>(2) <em>Differentiability of the function \(g_{i,j}\)</em></strong></div>
+          <p>If we consider the canonical basis \(\{e_1,e_2\}\) for \(\mathbb{C},\) we have that for any
+            \(i,j\in\{1,2\},\) the function \(g_{i,j}: U \to \mathbb{C}\) given by</p>
+          \[
+          g_{i,j}(z)=\dfrac{\langle e_i , e_j
+          \rangle_{c}^{z}}{\left(\operatorname{Im}(z)\right)^2}=\dfrac{\delta_{i,j}}{\left(\operatorname{Im}(z)\right)^2},
+          \]
+          <p>is differentiable. This statement is true because the entries of the Jacobian matrix</p>
+          \[
+          D_{z} g_{i,j}=\left(0, \frac{-2 \delta_{i,j}}{(\operatorname{Im}(z))^3}\right),
+          \]
+          <p>are continuous on \(U,\) so the Theorem of the Sufficient Condition for Differentiability of a vector
+            function
+            guarantees that \(g_{i,j}\) is differentiable.</p>
+        </div>
+
+        <div class="definition" id="def:plano_hiperbolico">
+          The <span class="red-txt"><strong>hyperbolic plane</strong></span> or <span class="red-txt"><strong>Lobachevsky
+              plane</strong></span> \(\mathbb{H},\) is the upper half-plane equipped with the hyperbolic Riemannian
+          metric \(\mu_{h}.\) The tangent plane associated to each \(z\) on the hyperbolic plane will be denoted
+          by \(T_{z}\mathbb{H}.\)
+        </div>
+
+        <p>Recall that an inner product provides a way to measure vectors (norm), this implies that the
+          inner product \(\mu_{h}\) provides us with a norm of the vector \(w\)
+          in the tangent space
+          \(T_z\mathbb{H},\) for each \(z\in \mathbb{H}.\)</p>
+
+        <div class="definition" id="definicion:norma_hiperbolica">
+          The <span class="red-txt"><strong>hyperbolic norm</strong></span> of the vector \(w\) in the tangent space
+          \(T_{z}\mathbb{H}\) is given by
+          \begin{equation}\label{eq:norma_hiperbolica}
+          \Vert w \Vert_{h}:=\sqrt{\langle w,w \rangle_{h}}=\sqrt{\dfrac{\langle w,
+          w\rangle_{c}^{z}}{\left(\operatorname{Im}(z)\right)^{2}}}=\dfrac{\sqrt{\langle w,
+          w\rangle_{c}^{z}}}{\operatorname{Im}(z)}=\dfrac{\vert w \vert}{\operatorname{Im}(z)}.
+          \end{equation}
+        </div>
+
+
+        <p><span class="red-txt">Curiosity</span> If we fix a vector \(w\) on tangent spaces of points that
+          approach the real axis, then the hyperbolic norm of that vector becomes as large as one wishes. For example,
+          consider the complex numbers in the hyperbolic plane \(\mathbb{H}\) that lie on the straight line segment</p>
+        \[
+        I=\left\{z=it: t\in (0,1]\right\}.
+        \]
+        <p>Now, consider the vector \(w=i\) in the tangent space \(T_{z}\mathbb{H},\) for each \(z\in I.\)
+          Then the hyperbolic norm of \(w\) grows as \(z\) approaches the origin \(\mathbf{0}.\) Let us study
+          this statement with the following cases:</p>
+
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li><strong>\(\ast\)</strong> For \(t=1,\) we take the complex number \(z=i\in I,\) then the hyperbolic norm
+            of the vector \(w=i\) in the tangent space \(T_{z}\mathbb{H}=T_{i}\mathbb{H}\) is
+            <div class="scroll-wrapper">
+              \[
+              \Vert i \Vert_{h}:=\sqrt{\langle i,i \rangle_{h}}=\sqrt{\dfrac{\langle i,
+              i\rangle_{c}^{i}}{\left(\operatorname{Im}(i)\right)^{2}}}=\dfrac{\sqrt{\langle i,
+              i\rangle_{c}^{i}}}{\operatorname{Im}(i)}=\dfrac{\vert i \vert}{\operatorname{Im}(i)}=\frac{1}{1}=1.
+              \]
+            </div>
+          </li>
+
+          <li><strong>\(\ast\)</strong> For \(t=1/2,\) we take the complex number \(z=i/2\in I,\) then the hyperbolic
+            norm of the vector \(w=i\) in the tangent space \(T_{z}\mathbb{H}=T_{i/2}\mathbb{H}\) is
+            <div class="scroll-wrapper">
+              \[
+              \Vert i \Vert_{h}:=\sqrt{\langle i,i \rangle_{h}}=\sqrt{\dfrac{\langle i,
+              i\rangle_{c}^{i/2}}{\left(\operatorname{Im}(i/2)\right)^{2}}}=\dfrac{\sqrt{\langle i,
+              i\rangle_{c}^{i/2}}}{\operatorname{Im}(i/2)}=\dfrac{\vert i
+              \vert}{\operatorname{Im}(i/2)}=\frac{1}{1/2}=2.
+              \]
+            </div>
+
+
+            <figure>
+              <img alt="Hyperbolic norm" style="width: 60%;" loading="lazy" src="imgs/cap-03/norma-hiperbolica.png">
+              <figcaption>
+                Hyperbolic norm of the vector $i\in T_{i}U.$
+              </figcaption>
+            </figure>
+
+          </li>
+
+          <li><strong>\(\ast\)</strong> For \(t=1/n,\) with \(n\in\mathbb{N},\) we take the complex number \(z=i/n\in
+            I,\)
+            then the hyperbolic norm of the vector \(w=i\) in the tangent space
+            \(T_{z}\mathbb{H}=T_{i/n}\mathbb{H}\) is
+            <div class="scroll-wrapper">
+              \[
+              \Vert i \Vert_{h}:=\sqrt{\langle i,i \rangle_{h}}=\sqrt{\dfrac{\langle i,
+              i\rangle_{c}^{i/n}}{\left(\operatorname{Im}(i/n)\right)^{2}}}=\dfrac{\sqrt{\langle i,
+              i\rangle_{c}^{i/n}}}{\operatorname{Im}(i/n)}=\dfrac{\vert i
+              \vert}{\operatorname{Im}(i/n)}=\frac{1}{1/n}=n.
+              \]
+            </div>
+
+            <figure>
+              <img alt="Hyperbolic norm 2" style="width: 60%;" loading="lazy" src="imgs/cap-03/norma-hiper-vector-i.png">
+              <figcaption>
+                Hyperbolic norm of the vector $i\in T_{i/2}U.$
+              </figcaption>
+            </figure>
+
+          </li>
+        </ul>
+
+        <p>As \(n\) approaches \(\infty\) the hyperbolic norm of the vector \(i\) also approaches
+          \(\infty,\) that is,</p>
+        \[
+        \lim\limits_{n\to \infty} \Vert i \Vert_{h}=\lim\limits_{n\to \infty} \sqrt{\dfrac{\langle i,
+        i\rangle_{c}^{i/n}}{\left(\operatorname{Im}(i/n)\right)^{2}}}=\lim\limits_{n\to \infty } n=\infty.
+        \]
+
+        <br>
+
+      </div>
+
+      <hr>
+
+      <div id="section3">
+
+        <div class="hidden-title" id="curva-norma-hiperbolica">
+          <p>Curve and Hyperbolic Norm</p>
+        </div>
+
+        <div class="head-3 head-3-level2">
+          Curve and Hyperbolic Norm
+        </div>
+
+        <p>From the norm we will define the <span class="purple-text">hyperbolic length</span> of a piecewise
+          differentiable curve in \(\mathbb{H}.\) Let us take a short walk through the concept of <span class="purple-text">curve</span>.</p>
+
+        <div class="definition" id="def:curva">
+          A <span class="red-txt"><strong>curve</strong></span> in the open set \(U\subset\mathbb{C}\) is a continuous
+          function \(\gamma\) from a closed interval \([a,b]\) (the interval can also be considered open)
+          to \(U.\) This curve \(\gamma\) is given by
+          \[
+          \gamma(t)=x(t)+iy(t),
+          \]
+          where \(x\) and \(y\) are real-valued functions. The points \(\gamma(a)\) and \(\gamma(b)\) in \(U\) are
+          called the <span class="red-txt"><strong>endpoints</strong></span> or <span class="red-txt"><strong>final
+              points</strong></span> of the curve \(\gamma.\) If the endpoints of the curve \(\gamma\) coincide, that is
+          \(\gamma(a)=\gamma(b)\) the curve \(\gamma\) is said to be <span class="red-txt"><strong>closed</strong></span>. The image of the closed interval \([a,b]\) under \(\gamma\)
+          is called the <span class="red-txt"><strong>image curve</strong></span> or <span class="red-txt"><strong>trace
+              of
+              \(\gamma\)</strong></span> and will be denoted by \(\gamma^{\ast}.\)
+
+          <p>Furthermore, we will say that the curve \(\gamma\) is <span class="red-txt"><strong>differentiable at the
+                point \(t_0\in
+                (a,b)\)</strong></span> if the limit exists</p>
+          \[
+          \lim_{t\to t_0} \frac{\gamma(t)-\gamma(t_0)}{t-t_0} =\lim_{t\to t_0}\frac{x(t)-x(t_0)}{t-t_0}+i
+          \left(\lim_{t\to t_0}\frac{y(t)-y(t_0)}{t-t_0}\right).
+          \]
+          <p>If this limit exists we will denote it by</p>
+          \[
+          \gamma'(t_0)=\lim_{t\to t_0}\frac{x(t)-x(t_0)}{t-t_0}+i\left( \lim_{t\to
+          t_0}\frac{y(t)-y(t_0)}{t-t_0}\right)=x'(t_0)+iy'(t_0)
+          \]
+          <p>and we will call it the <span class="red-txt"><strong>derivative of \(\gamma\) at the point
+                \(t_{0}\)</strong></span>.</p>
+
+          <figure>
+            <img alt="Curve gamma" style="width: 100%;" loading="lazy" src="imgs/cap-03/curva-gamma.png">
+            <figcaption>
+              Curve $\gamma.$
+            </figcaption>
+          </figure>
+
+          <p>Likewise, the derivative \(\gamma'(a)\) and \(\gamma'(b)\) exists when the appropriate one-sided limit
+            exists
+            <em>e.g.</em>,
+          </p>
+          \[
+          \gamma'(a)=\lim_{t\to a^{+}} \frac{\gamma(t)-\gamma(a)}{t-a} =\lim_{t\to a^{+}}\frac{x(t)-x(a)}{t-a}+i\left(
+          \lim_{t\to a^{+}}\frac{y(t)-y(a)}{t-a}\right).
+          \]
+          <p>Geometrically, the derivative \(\gamma'(t_{0})\) is the <span class="red-txt"><strong>tangent
+                vector</strong></span> of the curve \(\gamma\) at the point \(t_{0}.\) Furthermore, this tangent vector
+            \(\gamma'(t_{0})\) is in the tangent space \(T_{\gamma(t_{0})}U.\)</p>
+
+          <p>We will say that the curve \(\gamma\) is <span class="red-txt"><strong>piecewise
+                differentiable</strong></span> if
+            there exists a finite number of points \(a=t_1\lt t_2\lt \ldots\lt t_{n-1}\lt t_n=b\) in the interval
+            \([a,b]\) such that
+            \(\gamma'(t_0)\) the derivative of \(\gamma\) at each point \(t_0\in (t_i,t_{i+1})\) exists, with
+            \(i\in\{1,\ldots,n-1\}.\)
+          </p>
+        </div>
+
+        <p>
+          Let us study the following two examples of
+          curves in the hyperbolic plane $\mathbb{H}$.
+        </p>
+
+        <div class="example" id="ej_curva_gamma_segmento_eje_imaginario">
+          Given the positive real numbers \(a,b\in \mathbb{R}\) such that
+          \(0\lt a\lt b,\) then the function \(\gamma: [a,b]\to
+          \mathbb{H},\) defined by
+          \[
+          \gamma(t):=it,
+          \]
+          <p>satisfies the following properties:</p>
+
+          <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>(1)</strong> The function \(\gamma\) is a curve, because the real-valued functions given
+              by \(x(t)=0\) and \(y(t)=t\) with \(t\in[a,b]\) are continuous.</li>
+
+            <li><strong>(2)</strong> The trace of \(\gamma\) is the Euclidean straight line segment in
+              \(\mathbb{H}\) with endpoints the points \(ai\) and \(bi,\)
+              \[
+              \gamma^{\ast}=\left\{z\in\mathbb{H}: \operatorname{Re}(z)=0 \text{ and } a\leq \operatorname{Im}(z) \leq
+              b\right\}.
+              \]</li>
+
+            <li><strong>(3)</strong> For every \(t\in [a,b],\) the tangent vector to the curve \(\gamma\) at the point
+              \(t\) is
+              \[
+              \gamma'(t)=i\in T_{\gamma(t)}\mathbb{H}=T_{it}\mathbb{H}.
+              \]
+              Its hyperbolic norm is
+              <div class="scroll-wrapper">
+                \[
+                \|\gamma'(t)\|_{h}=\sqrt{\langle \gamma'(t),\gamma'(t)\rangle}_{h}=\dfrac{\sqrt{\langle
+                \gamma'(t),\gamma'(t)\rangle_{c}^{\gamma(t)}}}{\operatorname{Im}(\gamma(t))}=\dfrac{\vert \gamma'(t)
+                \vert}{\operatorname{Im}(\gamma(t))}=\dfrac{\vert i \vert}{\operatorname{Im}(it)}=\frac{1}{t}.
+                \]
+              </div>
+
+              <figure>
+                <img alt="Curve gamma 2" style="width: 100%;" loading="lazy" src="imgs/cap-03/curva-igamma.png">
+                <figcaption>
+                  Curve $\gamma(t)= it.$
+                </figcaption>
+              </figure>
+
+            </li>
+          </ul>
+        </div>
+
+        <div class="example">
+          The function \(\gamma: (0,\pi)\to \mathbb{H},\) defined by
+          \[
+          \gamma(t):=e^{it}=\cos(t)+i\operatorname{sen}(t),
+          \]
+          <p>satisfies the following properties.</p>
+
+          <figure>
+            <img alt="Curve gamma exp" style="width: 100%;" loading="lazy" src="imgs/cap-03/curva-eit.png">
+            <figcaption>
+              Curve $\gamma(t)= e^{it}.$
+            </figcaption>
+          </figure>
+
+          <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>(1)</strong> The function \(\gamma\) is a curve, because the real-valued functions given by
+              \(\cos(t)\) and \(\operatorname{sen}(t)\) with \(t\in(0,\pi)\) are continuous.</li>
+
+            <li><strong>(2)</strong> The trace of \(\gamma\) is the (upper) curve segment of the circumference with
+              center the origin and radius \(1,\)
+              \[
+              \gamma^{\ast}=\left\{z\in\mathbb{H}: z=e^{it} \text{ and } 0 \lt t \lt \pi \right\}.
+              \]</li>
+
+            <li><strong>(3)</strong> For every \(t\in (0,\pi),\) the tangent vector to the curve \(\gamma\) at the point
+              \(t\) is
+              \[
+              \gamma'(t)=i e^{it}\in T_{\gamma(t)}\mathbb{H}=T_{e^{it}}\mathbb{H}.
+              \]
+              Its hyperbolic norm is
+              \[
+              \|\gamma'(t)\|_{h}=\dfrac{\vert \gamma'(t) \vert}{\operatorname{Im}(\gamma(t))}=\dfrac{\vert i e^{it}
+              \vert}{\operatorname{Im}(e^{it})}=\frac{1}{\operatorname{sen}(t)}.
+              \]</li>
+          </ul>
+        </div>
+
+
+
+      </div>
+
+      <hr>
+
+      <div id="section4">
+
+        <div class="hidden-title" id="longitud-curva-distancia-hiperbolica">
+          <p>Curve Length and Hyperbolic Distance</p>
+        </div>
+
+        <div class="head-3 head-3-level2">
+          Curve Length and Hyperbolic Distance
+        </div>
+
+
+        <p>An advantage of this norm is that we have the possibility of defining a way to determine the <span class="purple-text">hyperbolic length</span> of a piecewise differentiable curve in the hyperbolic plane
+          \(\mathbb{H}.\) In turn, the hyperbolic length provides us with a distance function (metric) for
+          \(\mathbb{H}.\)</p>
+
+        <div class="definition" id="def:longitud_hiperbolica">
+          Given the piecewise differentiable curve \(\gamma: [a,b]\to \mathbb{H},\) such that
+          \[
+          \gamma(t)=x(t)+iy(t),
+          \]
+          <p>the <span class="red-txt"><strong>hyperbolic length</strong></span> of \(\gamma\) is given by</p>
+          \[
+          \ell_{h}(\gamma):=\int_{a}^{b} \Vert \gamma'(t) \Vert_{h} dt=\int_{a}^b
+          \dfrac{\sqrt{(x'(t))^2+(y'(t))^2}}{y(t)}dt=\int_{a}^{b} \dfrac{\vert \gamma '(t) \vert}{y(t)}dt.
+          \]
+          <p>The <span class="red-txt"><strong>hyperbolic distance</strong></span> between two points \(z\) and \(w\) of
+            the
+            hyperbolic plane \(\mathbb{H},\) which we will denote by</p>
+          \begin{equation}\label{ec:longitud_hiperbolica_entre_z_w}
+          \rho(z,w)=\inf_{\gamma} \left\{\ell_h(\gamma)\right\},
+          \end{equation}
+          <p>is the infimum of the hyperbolic lengths of the piecewise differentiable curves in \(\mathbb{H}\) with
+            final
+            points \(z\) and \(w.\)</p>
+        </div>
+
+        <div class="example" id="eje:calculo_longitud_hiperbolica_segmento_linea_recta">
+          The <span class="purple-text">hyperbolic length</span> of the curve \(\gamma: [a,b]\to \mathbb{H},\) see
+          <a href="#ej_curva_gamma_segmento_eje_imaginario">Example 1</a>,
+          defined by
+          \[
+          \gamma(t):=it,
+          \]
+          is
+          <div class="scroll-wrapper">
+            \[
+            \begin{aligned}
+            \ell_h(\gamma)&amp;=\int_{a}^{b} \|\gamma'(t)\|_h dt=\int_{a}^{b}\dfrac{\vert \gamma'(t)
+            \vert}{\operatorname{Im}(\gamma(t))}dt=\int_{a}^{b}\dfrac{\vert i \vert}{\operatorname{Im}(it)},\\
+            &amp;=\int_{a}^{b} \frac{1}{t}dt=\ln (t) \biggm|_{a}^{b}=\ln \left(\frac{b}{a}\right).
+            \end{aligned}
+            \]
+          </div>
+        </div>
+
+        <div class="example" id="ej:geodesica_eje_imaginario">
+          Consider the pure complex numbers \(ai\) and \(bi\) such that \(0\lt a\lt b,\)
+          let us verify that the
+          <span class="purple-text">hyperbolic distance</span> between these complex numbers is
+          \[
+          \rho(ai,bi)=\ln\left(\frac{b}{a}\right).
+          \]
+          <p>The reader can verify that this logarithm on the right side of the previous equality corresponds to the
+            hyperbolic length of the curve \(\gamma\) given in
+            Example 3.</p>
+
+          <p>Now, consider a piecewise differentiable curve \(\beta:[a_{1},b_{1}]\to \mathbb{H},\) defined
+            by</p>
+          \[
+          \beta(t)=x(t)+iy(t),
+          \]
+          <p>such that its endpoints satisfy \(\beta(a_{1})=ai\) and \(\beta(b_{1})=bi.\) We will prove that the
+            hyperbolic
+            length of \(\beta\) is greater than or equal to the value \(\ln\left(\dfrac{b}{a}\right)\) <em>i.e.</em>,
+          </p>
+          \[
+          \ell_{h}(\gamma) = \ln\left(\frac{b}{a}\right)\leq \ell_{h}(\beta).
+          \]
+          <p>Since \(\beta\) is an arbitrary curve, then</p>
+          \[
+          \rho(ai,bi)\leq \ell_{h}(\beta).
+          \]
+          <p>On the other hand, the hyperbolic length of the curve \(\beta\) is given by</p>
+          <div class="scroll-wrapper">
+            \[
+            \ell_{h}(\beta)=\int_{a_1}^{b_1}\Vert \beta'(t)\Vert_{h}dt=\int_{a_1}^{b_1}
+            \dfrac{\sqrt{(x'(t))^2+(y'(t))^2}}{y(t)}dt.
+            \]
+          </div>
+          <p>Recall that for any real numbers \(x,y\in \mathbb{R}\) the inequality</p>
+          \[
+          y \leq \sqrt{x^2+y^2}.
+          \]
+          <p>Since \(y(t)&gt;0\) for all \(t\in [a_{1},b_{1}],\) then</p>
+          \[
+          \dfrac{y'(t)}{y(t)}\leq \dfrac{\sqrt{(x'(t))^2+(y'(t))^2}}{y(t)},
+          \]
+          <p>for each \(t\in[a_{1},b_{1}].\) Using the properties of the integral it follows that</p>
+          \[
+          \begin{aligned}
+          \int_{a_{1}}^{b_{1}}\dfrac{y'(t)}{y(t)} &amp;\leq \int_{a_{1}}^{b_{1}}
+          \dfrac{\sqrt{(x'(t))^2+(y'(t))^2}}{y(t)}dt,\\
+          \ln(y(t))\biggm|^{b_{1}}_{a_{1}} &amp;\leq \ell_{h}(\beta),\\
+          \ln\left(\frac{y(b_{1})}{y(a_{1})}\right) &amp;\leq \ell_{h}(\beta),\\
+          \ln\left(\frac{b}{a}\right) &amp;\leq \ell_{h}(\beta).
+          \end{aligned}
+          \]
+          <p>Since the curve \(\beta\) was arbitrary, then the previous inequality implies that the hyperbolic
+            length of any piecewise differentiable curve \(\beta\) with endpoints the complex numbers \(ai\) and \(bi\)
+            is greater than or equal to the hyperbolic length of \(\gamma,\) that is</p>
+          \[
+          \rho(ai,bi)=\ln\left(\frac{b}{a}\right)=\ell_{h}(\gamma)\leq \ell_{h}(\beta),
+          \]
+          <p>where \(\gamma\) has as its trace the straight line segment in \(\mathbb{H}\) with endpoints \(ai\) and
+            \(bi.\)</p>
+
+          <br>
+        </div>
+
+        <div class="theorem">
+          The function \(\rho: \mathbb{H}\times \mathbb{H}\to\mathbb{R},\)
+          defined by
+          \begin{equation}\label{eq:distancia_hiperbolica_teorema}
+          \rho(z,w)=\inf_{\gamma}\left\{\ell_h (\gamma)\right\}
+          \end{equation}
+          <p>is a metric (distance function), that is,
+            the function \(\rho\) satisfies the following properties:</p>
+          <ol style="list-style-type: none; padding-left: 0;">
+            <li><strong>(1)</strong> For each \(z,w\in\mathbb{H}\) we
+              have \(0\leq \rho (z,w) \lt \infty\) (Positive definite).</li>
+            <li><strong>(2)</strong> Given the points \(z,w\in\mathbb{H},\) \(\rho(z,w)=0\) if and only if \(z=w.\)</li>
+            <li><strong>(3)</strong> For each \(z,w\in\mathbb{H}\) we have \(\rho(z,w)=\rho(w,z)\) (Symmetry).</li>
+            <li><strong>(4)</strong> For each \(z,w,v\) we have \(\rho(z,w)\leq \rho(z,v)+\rho(v,w)\) (Triangle
+              inequality).</li>
+          </ol>
+          <p>The function \(\rho\) is called the <span class="red-txt"><strong>hyperbolic distance</strong></span> on
+            \(\mathbb{H}.\)</p>
+        </div>
+
+        <div class="proof">
+          <span class="blue-txt"><strong>Positive definite.</strong></span> Take the complex numbers
+          \(z,w\in\mathbb{H}\) and let us see that the inequality
+          \[
+          0\leq \rho (z,w) \lt \infty. \] <p>It is enough to consider a piecewise differentiable curve \(\gamma:[a,b]\to
+            \mathbb{H}\)
+            with endpoints \(z\) and \(w\) and verify the inequality \(0\leq \ell_h(\gamma)\lt \infty.\) Assume that</p>
+          \[
+          \gamma(t)=x(t)+iy(t),
+          \]
+          <p>for some continuous real-valued functions \(x\) and \(y.\)
+            From the properties of the hyperbolic norm it follows that</p>
+
+          \begin{equation}\label{eq:desigualdad_propiedad_1_funcion_distancia_hiperbolica}
+          0\leq \Vert \gamma'(t)\Vert_h=\frac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}&lt;\infty,
+            \end{equation} <p>
+            for each \(t\in [a,b].\) Applying the properties of the integral to the previous expression it follows that
+            </p>
+            \[
+            0\leq \int_{a}^{b} \Vert \gamma'(t)\Vert_h
+            dt=\int_{a}^{b}\frac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}dt \lt \infty. \] <p><span class="blue-txt"><strong>Property (2).</strong></span> Let us verify the <span class="blue-txt">sufficient
+                condition</span>. Take the complex numbers \(z,w\in\mathbb{H}\) such that
+              \(z=w\) and let us see that</p>
+            \[
+            \rho(z,w)=0.
+            \]
+            <p>Thus, we define the constant curve \(\gamma:[0,1]\to \mathbb{H},\) given by</p>
+            \[
+            \gamma(t)=z,
+            \]
+            <p>which has the following properties:</p>
+            <ul style="list-style-type: none; padding-left: 0;">
+              <li><strong>(a)</strong> Its endpoints are the complex numbers \(z\) and \(w.\)</li>
+              <li><strong>(b)</strong> It is differentiable.</li>
+              <li><strong>(c)</strong> Its hyperbolic length is \(\ell_{h}(\gamma)=0.\)</li>
+            </ul>
+            <p>From the previous property it follows that \(\rho(z,w)=0.\)</p>
+
+            <p>Let us prove the <span class="blue-txt">necessary condition</span>. We will proceed by contradiction.
+              Suppose that there exist two distinct complex numbers \(z\neq w\) in \(\mathbb{H}\) such that
+              \(\rho(z,w)=0.\) Since \(\mathbb{H}\) is a Hausdorff space with the subspace topology
+              induced by \(\mathbb{C},\) then there exists a real \(\varepsilon&gt;0\) such that the closure of the
+              Euclidean ball \(B_{\varepsilon}(z)\) is contained in \(\mathbb{H}\) and does not contain the point
+              \(w.\) The function \(f:\overline{B_{\varepsilon}(z)}\to \mathbb{R},\) defined by</p>
+            \begin{equation}\label{eq:propiedad_simetria_funcion_distancia_hiperbolica}
+            f(z)=\frac{1}{\operatorname{Im}(z)},
+            \end{equation}
+
+            <p>is continuous. Since \(f\) is a continuous function defined from a compact subspace of
+              \(\mathbb{H},\) then there exists a nonzero positive real value \(m\) such that</p>
+            \[
+            0\neq m\leq f(z),
+            \]
+            <p>for all \(z\in \overline{B_{\varepsilon}(z)}.\)</p>
+
+            <p>On the other hand, consider \(\gamma:[a,b]\to \mathbb{H}\) a piecewise differentiable curve with the
+              following properties:</p>
+            <ul style="list-style-type: none; padding-left: 0;">
+              <li><strong>(a)</strong> Its final points are \(z\) and \(w.\)</li>
+              <li><strong>(b)</strong> There exists a point \(t_0\in(a,b)\) such that \(\gamma(t_0)\) is on the boundary
+                of the ball \(B_{\varepsilon}(z).\)</li>
+              <li><strong>(c)</strong> The image \(\gamma([a,t_0))\) is contained in the ball
+                \(B_{\varepsilon}(z).\)</li>
+            </ul>
+            <p>Evaluating the function \(f\) at the points of the image \(\gamma([a,t_0)),\) it follows that</p>
+            \[
+            \begin{aligned}
+            m &amp;\leq \frac{1}{\operatorname{Im}(\gamma(t))},\\
+            m \vert \gamma'(t)\vert &amp;\leq \frac{\vert \gamma'(t)\vert}{\operatorname{Im}(\gamma(t))}=\Vert
+            \gamma'(t)\Vert_{h},
+            \end{aligned}
+            \]
+            <p>for all \(t\in[a,t_0].\) Using the properties of the integral and the fact that the Euclidean distance
+              between the points \(z\) and \(v\) is \(\Vert z-v\Vert_{e},\) then we obtain
+            </p>
+            <div class="scroll-wrapper">
+              \begin{equation}
+              \begin{split}
+              m\int\limits_{a}^{t_{0}} \vert \gamma'(t)\vert dt &amp;\leq \int\limits_{a}^{t_{0}} \frac{\vert
+              \gamma'(t)\vert}{Im(\gamma(t))}dt,\\
+              0 \lt m\varepsilon=m \vert z-\gamma(t_0)\vert \leq m\int\limits_{a}^{t_{0}} \vert \gamma'(t)\vert dt&amp;\leq
+              \int\limits_{a}^{t_{0}} \frac{\vert \gamma'(t)\vert}{Im(\gamma(t))}dt\leq \int\limits_{a}^{b}\Vert
+              \gamma'(t)\Vert_{h}dt=\ell_{h}(\gamma), \end{split}
+              \end{equation}
+            </div>
+            <p>Since the curve \(\gamma\) is taken
+              arbitrarily, then
+            </p>
+            \[
+            0 \lt m\varepsilon \lt \rho(z,w)=\inf_{\gamma}\{\ell_h(\gamma)\}.
+            \]
+            <p>However, this fact is a
+              contradiction, since we assumed that \(\rho(z,w)=0.\)
+            </p>
+
+            <p><span class="blue-txt"><strong>Symmetry.</strong></span> Consider the piecewise differentiable curve
+              \(\gamma:[a,b]\to \mathbb{H}\) with endpoints \(z\) and \(w,\) such that</p>
+            \[
+            \gamma(t)=x(t)+iy(t).
+            \]
+            <p>Then we define the <span class="purple-text">opposite curve of \(\gamma\)</span> as
+              \(-\gamma: [a,b]\to \mathbb{H},\) such that</p>
+            \[
+            -\gamma(t):=\gamma(b+a-s)=x(b+a-s)+iy(b+a-s).
+            \]
+            <p>Note that the opposite curve \(-\gamma\) has endpoints \(w\) and \(z.\) Now, we take the
+              equality \(t=b+a-s\) and apply the Fundamental Theorem of Calculus and the chain rule to
+              obtain</p>
+            \[
+            \begin{aligned}
+            \ell_h(-\gamma)&amp;=\int_{a}^{b}\dfrac{\sqrt{\left(x'(b+a-s)\right)^2+\left(y'(a+b-s)\right)^2}}{y(a+b-s)}ds,\\
+            &amp;=\int_{s(b)=a}^{s(a)=b}\dfrac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}(-1)dt,\\
+            &amp;=\int_{b}^{a}\dfrac{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}{y(t)}dt,\\
+            &amp;=\ell_h(\gamma).
+            \end{aligned}
+            \]
+            <p>From this last equality it follows</p>
+            \begin{equation}\label{eq:sigma1}
+            \rho(w,z)\leq \inf_{\gamma}\left\{\ell_h(-\gamma)\right\}=\rho(z,w).
+            \end{equation}
+            <p>Similarly, if \(\sigma\) is a piecewise differentiable curve in \(\mathbb{H}\) with endpoints
+              \(w\) and \(z,\) then</p>
+            \begin{equation}\label{eq:sigma2}
+            \rho(z,w)\leq \inf_{\sigma}\{\ell_h(-\sigma)\}=\rho(w,z).
+            \end{equation}
+            <p>From the previous equations it follows that \(\rho(z,w)=\rho(w,z).\)</p>
+
+            <p><span class="blue-txt"><strong>Triangle inequality.</strong></span> Consider the
+              complex numbers \(z,w,v\in\mathbb{H}\) and let us see that the inequality</p>
+            \[
+            \rho(z,w)\leq \rho(z,v)+\rho(v,w).
+            \]
+            <p>From the definition of infimum the following fact follows: given any positive real
+              \(\varepsilon&gt;0,\) there exist piecewise differentiable curves \(\gamma:[a,b]\to \mathbb{H}\) and
+              \(\sigma:[c,d] \to\mathbb{H},\) with endpoints \(z\) and \(v\); and \(v\) and \(w,\)
+              respectively, such that</p>
+            <div class="scroll-wrapper">
+              \begin{equation}\label{eq:desigualdad_triangular}
+              \begin{array}{ccc}
+              \ell_h(\gamma)-\rho(z,v)\leq \dfrac{\varepsilon}{2} &amp; \text{ and }&amp; \ell_h(\sigma) -\rho (v,w)\leq
+              \dfrac{\varepsilon}{2},\\
+              &amp;&amp;\\
+              \ell_h(\gamma)\leq \rho(z,v)+\dfrac{\varepsilon}{2} &amp;\text{ and } &amp;\ell_h(\sigma) \leq \rho
+              (v,w)+\dfrac{\varepsilon}{2}.\\
+              \end{array}
+              \end{equation}
+            </div>
+
+            <p>Take the <span class="purple-text">sum</span> curve \(\gamma+\sigma:[a,b+d-c]\to
+              \mathbb{H},\) defined by</p>
+            \[
+            (\gamma+\sigma)(t)=
+            \begin{cases}
+            \gamma(t), &amp; \text{if } a\leq t\leq b,\\
+            \sigma(c-d+t),&amp; \text{if } b\leq t\leq b+d-c,
+            \end{cases}
+            \]
+            <p>which is piecewise differentiable and has endpoints \(z\) and \(w.\) From the definition of the
+              function \(\rho\) it follows that</p>
+            \[
+            \rho(z,w)\leq \ell_{h}(\gamma +\sigma)=\ell_h(\gamma)+\ell_h(\sigma)\leq
+            \rho(z,v)+\rho(v,w)+\varepsilon.
+            \]
+            <p>Since the previous equation is valid for any \(\varepsilon&gt;0,\)
+              then it follows that</p>
+            \[
+            \rho(z,w)\leq \rho(z,v)+\rho(v,w).
+            \]
+        </div>
+
+        <p>The distance function \(\rho\) induces a topology for the hyperbolic
+          plane \(\mathbb{H}.\) This topology
+          coincides with the one induced by the subspace topology
+          \(\mathbb{H}\subset \mathbb{C}.\) However, we still do not
+          have the sufficient tool to prove this
+          statement. So we will verify it later.</p>
+
+
+
+
+      </div>
+
+      <hr>
+
+      <div id="section5">
+
+        <div class="hidden-title" id="isometrias-plano-hiperbolico">
+          <p>Isometries of the Hyperbolic Plane</p>
+        </div>
+
+        <div class="head-3 head-3-level2">Isometries of the Hyperbolic Plane</div>
+
+        <p>Recall that an <span class="purple-text">isometry</span> of the hyperbolic plane \(\mathbb{H}\) is a
+          bijective function from \(\mathbb{H}\) to itself that preserves the hyperbolic distance \(\rho\)
+          <em>i.e.</em>, the bijective function \(g:\mathbb{H}\to\mathbb{H}\) is an isometry if
+          \(\rho(z,w)=\rho(g(z),g(w))\) for any \(w,z\in\mathbb{H}.\) The set
+          \(\operatorname{Isom}(\mathbb{H})\) consisting of all isometries of the hyperbolic plane \(\mathbb{H}\)
+          under the composition operation form a group.
+          In this section we will describe the elements of \(\operatorname{Isom}(\mathbb{H}).\) More precisely,
+          we will prove that the group of isometries of the hyperbolic plane is generated by the elements of
+          \(\operatorname{PSL}(2,\mathbb{R})\) and the reflection with respect to the imaginary axis
+        </p>
+        \[
+        R_{\operatorname{Im}}(z)= -\overline{z}.
+        \]
+
+        <p>Recall that \(\operatorname{PSL}(2,\mathbb{R})\) is the subgroup of \(\operatorname{PSL}(2,\mathbb{C})\)
+          consisting of the matrix classes</p>
+        \[
+        [A]=\left\{\left(\begin{matrix}
+        a &amp; b \\
+        c &amp; d
+        \end{matrix}\right), \left(\begin{matrix}
+        -a &amp; -b \\
+        -c &amp; -d
+        \end{matrix}\right)
+        \right\},
+        \]
+        <p>such that the entries \(a,b,c,d\in \mathbb{R}.\) This subgroup leaves the hyperbolic plane
+          \(\mathbb{H}\) invariant.</p>
+
+        <div class="theorem">
+          The group \(\operatorname{PSL}(2,\mathbb{R})\) acts on the hyperbolic plane \(\mathbb{H}\) by
+          homeomorphisms <em>i.e.</em>, every element \(T\in \operatorname{PSL}(2,\mathbb{R})\) is a homeomorphism of
+          \(\mathbb{H}\) to itself.
+        </div>
+
+        <div class="proof">
+          Take the Möbius transformation \(T\) in \(\operatorname{PSL}(2,\mathbb{R}),\) such that
+          \[
+          T(z)=\dfrac{az+b}{cz+d}.
+          \]
+          <p>It is enough to verify that \(T(\mathbb{H})=\mathbb{H},\) that is, \(\operatorname{Im}(T(z))&gt;0,\) for
+            \(z\in\mathbb{H}.\) From the properties of complex numbers it follows that</p>
+          <div class="scroll-wrapper">
+            \begin{equation}\label{eq:T(z)_mobiuos_sobre_plano_hiperbolico}
+            \begin{split}
+            T(z)&amp;=\dfrac{(az+b)(c\overline{z}+d)}{(cz+d)(c\overline{z}+d)}=\dfrac{acz\overline{z}+bc\overline{z}+adz+bd}{|cz+d|^2},\\
+            &amp;=\dfrac{ac|z|^2+bc\overline{z}+adz+bd}{|cz+d|^2}.
+            \end{split}
+            \end{equation}
+          </div>
+
+          <p>The imaginary part of the complex number \(w\in\mathbb{C}\) satisfies</p>
+          \[
+          \operatorname{Im}(w)=\dfrac{w-\overline{w}}{2i}.
+          \]
+          <p>Substituting the previous expression into this equality we obtain</p>
+          <div class="scroll-wrapper">
+            $$
+            \begin{equation*}
+            \begin{split}
+            \operatorname{Im}\left(T(z)\right)&amp; =\frac{T(z)-\overline{T(z)}}{2i},\\
+            &amp;=\dfrac{\dfrac{ac|z|^2+bc\overline{z}+adz+bd}{|cz+d|^2}-\dfrac{ac|z|^2+bcz+ad\overline{z}+bd}{|cz+d|^2}}{2i},\\
+            &amp;=\dfrac{\cancel{ac|z|^2}+bc\overline{z}+adz+\cancel{bd}
+            \cancel{-ac|z|^2}-bcz-ad\overline{z}\cancel{-bd}}{2i|cz+d|^2},\\
+            &amp;=\dfrac{adz-bcz
+            +bc\overline{z}-ad\overline{z}}{2i|cz+d|^2}=\dfrac{z(\cancelto{1}{ad-bc})-\overline{z}(\cancelto{1}{ad-bc})}{2i|cz+d|^2},\\
+            &amp;=\dfrac{z-\overline{z}}{2i|cz+d|^2}= \dfrac{\operatorname{Im}(z)}{|cz+d|^2}&gt;0.\\
+            \end{split}
+            \end{equation*}
+            $$
+          </div>
+
+        </div>
+
+        <p>The reader can easily verify that the reflection with respect to the imaginary axis</p>
+        \[
+        R_{\operatorname{Im}}(z)=-\overline{z},
+        \]
+        <p>also leaves the hyperbolic plane \(\mathbb{H}\) invariant.</p>
+
+        <div class="theorem" id="teo:PSL_isometria">
+          The elements of \(\operatorname{PSL}(2,\mathbb{R})\) are isometries of the hyperbolic plane.
+        </div>
+
+        <div class="proof">
+          Consider \(\gamma:[a,b]\to \mathbb{H}\) a differentiable curve and \(T\) a Möbius transformation of
+          \(\operatorname{PSL}(2,\mathbb{R})\) given by
+          \[
+          T(z)=\dfrac{az+b}{cz+d}.
+          \]
+          <p>It is enough to prove that the hyperbolic lengths of the curves \(\gamma\) and \(T\circ \gamma\) coincide,
+            that is,
+          </p>
+          \[
+          \ell_{h}(\gamma)=\ell_{h}(T\circ\gamma).
+          \]
+          <p>Using <a href="#def:longitud_hiperbolica">Definition 5</a>, the hyperbolic length of the curve
+            \(T\circ\gamma\)
+            is</p>
+          \begin{equation}\label{eq:tgamma}
+          \ell_{h}(T\circ\gamma)=\int\limits_{a}^{b} \left\Vert \dfrac{d}{dt}T(\gamma(t)) \right\Vert_{h}dt.
+          \end{equation}
+          <p>On the other hand, we have that the complex derivative of the Möbius transformation \(T\) is</p>
+          \[
+          \begin{aligned}
+          \frac{d}{dz}T(z)&amp;=\frac{a(cz+d)-c(az+b)}{(cz+d)^2}=\frac{acz+ad - acz - cb}{(cz+d)^2},\\
+          &amp;= \frac{ad-bc}{(cz+d)^2}=\frac{1}{(cz+d)^2}.
+          \end{aligned}
+          \]
+          <p>Now, recall that the imaginary part of \(T(z)\) is given by the expression</p>
+          \[
+          \operatorname{Im}(T(z))=\dfrac{\operatorname{Im}(z)}{|cz+d|^2}. \tag{2}
+          \]
+          <p>From equation \eqref{eq:norma_hiperbolica} of the hyperbolic norm and the chain rule it follows that the
+            hyperbolic norm of the
+            vector \(\dfrac{d}{dt}T(\gamma(t))\) is equal to</p>
+          <div class="scroll-wrapper">
+            \[
+            \begin{aligned}
+            \left \Vert \dfrac{d}{dt}T\left(\gamma(t)\right)\right\Vert_{h} &amp; = \dfrac{\left \vert
+            \dfrac{d}{dt}T\left(\gamma(t)\right)\right \vert}{\operatorname{Im}\left(T(\gamma(t))\right)} = \dfrac{\left
+            \vert \dfrac{d}{dz}T\left(\gamma(t)\right) \,\gamma'(t)\right
+            \vert}{\operatorname{Im}\left(T(\gamma(t))\right)},\\
+            &amp;\\
+            &amp; = \dfrac{|c\gamma(t)+d|^2}{\operatorname{Im}\left(\gamma(t)\right)}\left \vert
+            \dfrac{1}{\left(c\gamma(t)+d\right)^2} \, \gamma'(t) \right \vert =
+            \dfrac{|c\gamma(t)+d|^2}{\operatorname{Im}\left(\gamma(t)\right)}\left\vert
+            \dfrac{(c\overline{\gamma(t)}+d)^2}{|c\gamma(t)+d|^4} \gamma'(t)\right \vert,\\
+            &amp;\\
+            &amp; =\dfrac{|c\gamma(t)+d|^2}{\operatorname{Im}\left(\gamma(t)\right)\,|c\gamma(t)+d|^4}\left \vert
+            \left(c\overline{\gamma(t)}+d\right)^2 \, \gamma'(t) \right\vert = \dfrac{\left \vert
+            (c\overline{\gamma(t)}+d)^2 \, \gamma'(t) \right\vert}{\operatorname{Im}(\gamma(t))\, |c\gamma(t)+d|^2},\\
+            &amp;\\
+            &amp;=\dfrac{ \vert (c\overline{\gamma(t)}+d)^2\vert \, \vert \gamma'(t) \vert}{\operatorname{Im}(\gamma(t))\,
+            |c\gamma(t)+d|^2} = \dfrac{|(c\overline{\gamma(t)}+d)|^2 \vert
+            \gamma'(t)\vert}{\operatorname{Im}(\gamma(t))\,
+            |c\gamma(t)+d|^2},\\
+            &amp;\\
+            &amp;=\dfrac{|(c\gamma(t)+d)|^2 \vert \gamma'(t)\vert}{\operatorname{Im}(\gamma(t))\, |c\gamma(t)+d|^2} =
+            \frac{\vert \gamma'(t)\vert}{\operatorname{Im}(\gamma(t))} = \Vert \gamma'(t) \Vert_{h}.
+            \end{aligned}
+            \]
+          </div>
+
+          <p>Substituting this expression into equation (1) we have</p>
+          <div class="scroll-wrapper">
+            \[
+            \ell_{h}(T\circ\gamma)=\int_{a}^{b} \left\Vert \dfrac{d}{dt}T(\gamma(t)) \right\Vert_{h}dt = \int_{a}^{b}
+            \Vert \gamma'(t) \Vert_{h}dt = \ell_{h}(\gamma).
+            \]
+          </div>
+
+        </div>
+
+        <p>Now, we will prove that the reflection with respect to the imaginary axis is also an isometry of the
+          hyperbolic
+          plane \(\mathbb{H}.\)</p>
+
+        <div class="theorem">
+          The reflection with respect to the imaginary axis \(R_{\operatorname{Im}}(z)= -\overline{z}\) is an isometry
+          of the hyperbolic plane \(\mathbb{H}.\)
+        </div>
+
+        <div class="proof">
+          <p>Consider the piecewise differentiable curve \(\gamma:[a,b]\to \mathbb{H},\) such that</p>
+          \[
+          \gamma(t)=x(t)+iy(t).
+          \]
+          <p>It is enough to prove that the hyperbolic lengths of the curves \(\gamma\) and \(R_{\operatorname{Im}}\circ
+            \gamma\) coincide, that is,</p>
+          \[
+          \ell_{h}(R_{\operatorname{Im}}\circ \gamma)=\ell_{h}(\gamma).
+          \]
+          <p>Note that if \(z=x+iy\) then \(R_{\operatorname{Im}}(x+iy)=-x+iy,\) then the derivative of the curve
+            \(R_{\operatorname{Im}}\circ \gamma(t)=-x(t)+iy(t)\) is</p>
+          \[
+          (R_{\operatorname{Im}}\circ \gamma)'(t)=-x'(t)+iy'(t).
+          \]
+          <p>Thus,</p>
+          \[
+          \begin{aligned}
+          \ell_{h}(R_{\operatorname{Im}}\circ \gamma) &amp;= \int_{a}^{b}\dfrac{\sqrt{(-x'(t))^2+(y'(t))^2}}{y(t)}dt,\\
+          &amp;=\int_{a}^{b}\dfrac{\sqrt{(x'(t))^2+(y'(t))^2}}{y(t)}dt = \ell_{h}(\gamma).
+          \end{aligned}
+          \]
+        </div>
+
+        <p>
+          To prove that the group of isometries is generated by elements of \(\operatorname{PSL}(2,\mathbb{R})\) and
+          the reflection \(R_{\operatorname{Im}}\) we must introduce the concept of geodesics of the hyperbolic plane.
+
+        </p>
+
+
+
+      </div>
+
+
+
+      <hr>
+
+      <div id="section6">
+
+        <div class="hidden-title" id="geodesicas-plano-hiperbolico">
+          <p>Geodesics of the Hyperbolic Plane</p>
+        </div>
+
+        <div class="head-3 head-3-level2">Geodesics of the Hyperbolic Plane</div>
+
+        <p>In Euclidean geometry, the Euclidean distance between the points \(A\) and \(B\) coincides with the length
+          of the <span class="purple-text">Euclidean segment</span> \(\overline{AB}.\) The Euclidean segment
+          \(\overline{AB}\) is a geometric object that realizes (has associated with it) the distance between the points
+          \(A\) and
+          \(B.\) The extension of this segment (use of <span class="blue-txt">Postulate II</span>) constructs the
+          geometric object that we call <span class="purple-text">Euclidean line</span>. From the point of view of
+          Riemannian geometry, a piecewise differentiable curve that realizes the distance (induced by the Riemannian
+          metric \(\mu\)) between two points is called a <span class="purple-text">geodesic</span>. For the precise
+          case of the hyperbolic space \(\mathbb{H}\) we introduce the following definition.</p>
+
+        <div class="definition" id="def:geodesica">
+          The piecewise differentiable curve
+          \(\gamma:[a,b]\to\mathbb{H}\) with endpoints
+          \(z, w \in\mathbb{H}\) is a
+          <span class="red-txt"><strong>geodesic</strong></span>, if it satisfies
+          \[
+          \rho(z,w)=\ell_h(\gamma).
+          \]
+        </div>
+
+        <p>We will prove that the <span class="purple-text">geodesics</span> are segments of <span class="purple-text">Euclidean rays</span> in \(\mathbb{H}\) <em>perpendicular</em> to the real axis or
+          arcs of <span class="purple-text">semicircles</span> that intersect the real axis orthogonally. The
+          extension of the trace of these geodesics are the <span class="purple-text">hyperbolic lines</span>.</p>
+
+        <div class="definition" id="def:lineas_hiperbolicas_plano_hiperbolico">
+          We will call <span class="red-txt"><strong>hyperbolic line</strong></span> the Euclidean rays in
+          the hyperbolic plane \(\mathbb{H}\) orthogonal (perpendicular) to the real axis and the
+          semicircles<sup>*</sup> in the hyperbolic plane with radius \(r&gt;0\) and center some point on the real
+          axis.
+          <p class="footnote"><sup>*</sup> These objects are also known as circumferences orthogonal to the real
+            axis.</p>
+        </div>
+
+        <figure>
+          <img alt="Hyperbolic lines" style="width: 60%;" loading="lazy" src="imgs/cap-03/linea-hiper.png">
+          <figcaption>
+            Hyperbolic lines.
+          </figcaption>
+        </figure>
+
+        <p>
+          <span class="red-txt"><strong>Important!</strong></span> Hyperbolic lines are pieces (segments)
+          of generalized circles
+          (see <a href="plano-complejo-extendido.html#def_circulo_generalizado">Definition 3</a>)
+          of the extended complex plane \(\widehat{\mathbb{C}}.\)
+        </p>
+
+        <p>
+          <span class="red-txt"><strong>Important!</strong></span> The <span class="blue-txt">hyperbolic
+            lines</span> on the hyperbolic plane \(\mathbb{H}\) are the homologues of the <span class="blue-txt">Euclidean lines</span> on the Euclidean (complex \(\mathbb{C}\)) plane.
+        </p>
+
+        <br>
+
+      </div>
+
+      <hr>
+
+      <div id="section7">
+
+        <div class="hidden-title" id="postulados">
+          <p>Postulates</p>
+        </div>
+        <div class="head-3 head-3-level2">Postulates</div>
+
+        <p>We have described the hyperbolic space \(\mathbb{H}\) as ambient space and its respective hyperbolic
+          lines. It is natural to ask about the truth of the five postulates of hyperbolic geometry.
+          The fulfillment of <span class="blue-txt">Postulate I</span> can be understood through the posing of the
+          following question:</p>
+
+        <div class="centered">
+          <p>Given the distinct points \(z\neq w\in\mathbb{H},\) how do we draw with straightedge and compass a
+            hyperbolic line
+            that passes through the complex numbers \(z\) and \(w\)?</p>
+        </div>
+
+        <p>Let us answer, for the case \(\operatorname{Re}(z)\neq \operatorname{Re}(w).\) For the opposite case,
+          \(\operatorname{Re}(z)=\operatorname{Re}(w)\) the results of complex geometry guarantee us the
+          existence of a <span class="blue-txt">Euclidean line</span> perpendicular to the real axis, which passes
+          through
+          \(z\) and \(w.\) Before proceeding, recall that the <span class="purple-text">perpendicular bisector</span> of
+          a segment
+          of a Euclidean line is the Euclidean line \(l\) perpendicular to that segment, crossing through its midpoint.
+        </p>
+
+
+
+        <p>Take the Euclidean line segment with endpoints \(z\) and \(w.\) Then, we draw the perpendicular bisector
+          <span class="orange-txt">\(l\)</span> of that Euclidean line segment.</p>
+
+        <figure>
+          <img alt="Perpendicular bisector of the Euclidean segment with endpoints" style="width: 60%;" loading="lazy" src="imgs/cap-03/mediatriz.png">
+          <figcaption>
+            Perpendicular bisector of the Euclidean segment with endpoints $z$ and $w.$
+          </figcaption>
+        </figure>
+
+        <p>Since \(\operatorname{Re}(z)\neq \operatorname{Re}(w),\) then the perpendicular bisector <span class="orange-txt">\(l\)</span> intersects the real axis at a point <span class="red-txt">\(\alpha\)</span>.
+          The Perpendicular Bisector Theorem guarantees us that every point that lies on the perpendicular bisector
+          <span class="orange-txt">\(l\)</span> is equidistant from the points \(z\) and \(w.\) This implies that
+          \(\alpha\) is equidistant
+          from the points \(w\) and \(z,\) <em>i.e.</em>,</p>
+        \[
+        |z-\alpha|=|w-\alpha|=:r&gt;0.
+        \]
+        <p>Then the circumference orthogonal to the real axis (semicircle with center \(\alpha\) and radius \(r\))</p>
+        \[
+        C_{r}(\alpha)=\{v\in\mathbb{H}: |v-\alpha|=r\},
+        \]
+        <p>passes through the points \(z\) and \(w.\)
+          Being \(C_{r}(\alpha)\) the only hyperbolic line that passes through the points \(z\)
+          and \(w.\)
+        </p>
+
+        <p><span class="blue-txt">Postulate II</span> is evident, since each geodesic is a segment of a hyperbolic
+          line, which can always be extended in the hyperbolic plane \(\mathbb{H}\) with the help of
+          straightedge and compass. We will deal with Postulates
+          <span class="blue-txt">III</span> and <span class="blue-txt">IV</span> when we study the
+          balls induced by the hyperbolic distance (<a href="#teorema-bolas">Theorem 14</a>) and the angles
+          formed by piecewise differentiable curves, respectively.
+        </p>
+
+        <p>Now then, let us deal with the negation of <span class="blue-txt">Postulate V</span> of Euclidean geometry,
+          which
+          states that through a point \(A\) exterior to a Euclidean line \(l\) there passes a unique Euclidean line
+          \(l'\) that does not intersect \(l.\) In the hyperbolic plane \(\mathbb{H},\) when considering \(C\) a
+          hyperbolic
+          line and a point \(z\in\mathbb{H}\) exterior to it, we can draw with straightedge and compass more than one
+          hyperbolic
+          line passing through the complex number \(z\) and that do not meet \(C.\)</p>
+
+        <figure>
+          <img alt="Hyperbolic lines passing through z." style="width: 90%;" loading="lazy" src="imgs/cap-03/lineas-hiper-euclidiano.png">
+          <figcaption>
+            Hyperbolic lines passing through $z.$
+          </figcaption>
+        </figure>
+
+
+        <br>
+
+
+      </div>
+
+      <hr>
+
+      <div id="section8">
+
+
+        <div style="color: rgba(255, 255, 255, 0);" id="propiedades">
+          <p>Properties of Isometries and Geodesics</p>
+        </div>
+        <div class="head-3 head-3-level2">Properties of Isometries and Geodesics</div>
+
+        <p>Recall that Möbius transformations leave generalized circles invariant. Let us
+          introduce certain Möbius transformations acting on some hyperbolic lines.</p>
+
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li><strong>(1)</strong> The <span class="red-txt">dilation</span> given by
+            \[
+            H_{r}(z)=rz,
+            \]
+            for some \(r&gt;0,\) sends the hyperbolic line (semicircle with center \(\mathbf{0}\) and radius \(1\))
+            \[
+            C_{1}(\mathbf{0})=\left\{z\in\mathbb{H}: |z|=1\right\},
+            \]
+            to the hyperbolic line (semicircle with center \(\mathbf{0}\) and radius \(r\))
+            \[
+            C_{r}(\mathbf{0})=\left\{z\in\mathbb{H}:|z|=r\right\}.
+            \]
+            Additionally, this dilation leaves the imaginary axis invariant.</li>
+
+          <li><strong>(2)</strong> The <span class="red-txt">translation</span> given by
+            \[
+            T_{b}(z)=z+b,
+            \]
+            for some nonzero real number \(b\neq 0,\) sends the hyperbolic line (semicircle with center
+            \(\mathbf{0}\) and radius \(1\))
+            \[
+            C_{1}(\mathbf{0})=\left\{z\in\mathbb{H}: |z|=1\right\},
+            \]
+            to the hyperbolic line (semicircle with center \(b\) and radius \(1\))
+            \[
+            C_{1}(b)=\left\{z\in\mathbb{H}:|z-b|=1\right\}.
+            \]
+            Additionally, this translation sends the imaginary axis to the hyperbolic line (Euclidean ray
+            perpendicular to the real axis) that passes through the point \(b\in\mathbb{R}.\)</li>
+
+          <li><strong>(3)</strong> The Möbius transformation given by the composition
+            \[
+            T_{b}\circ H_{r}(z)=rz+b,
+            \]
+            sends the hyperbolic line (semicircle with center \(\mathbf{0}\) and radius \(1\))
+            \[
+            C_{1}(\mathbf{0})=\left\{z\in\mathbb{H}: |z|=1\right\},
+            \]
+            to the hyperbolic line (semicircle with center \(b\) and radius \(r\))
+            \[
+            C_{r}(b)=\left\{z\in\mathbb{H}:|z-b|=r\right\}.
+            \]</li>
+
+          <li><strong>(4)</strong> Using a result of Möbius transformations we can obtain the Möbius transformation
+            \(T\in \operatorname{PSL}(2,\mathbb{R})\) given by
+            \begin{equation}\label{ej:imaginario_circulo}
+            T(z)=\dfrac{z-1}{z+1},
+            \end{equation}
+            which sends the imaginary axis to the hyperbolic line (semicircle with center \(\mathbf{0}\) and
+            radius \(1\))
+            \[
+            C_{1}(\mathbf{0})=\left\{z\in\mathbb{H}:|z|=1\right\}.
+            \]
+            Note that \(T(-1)=\infty,\) \(T(i)=i\) and \(T(1)=\mathbf{0}.\) Additionally, \(T\) sends the first and
+            second quadrants of the hyperbolic plane \(\mathbb{H}\) to the connected sets \(\{z\in\mathbb{H}: |z|
+            &lt;1\}\) and \(\{z\in\mathbb{H}: |z|&gt;1\},\) respectively.
+          </li>
+        </ul>
+
+        <p>If we take any two hyperbolic lines \(C_{1}\) and \(C_{2},\) from compositions of the
+          four Möbius transformations described above we can obtain an element \(T\in
+          \operatorname{PSL}(2,\mathbb{R})\) that sends \(C_{1}\) to \(C_{2}.\)</p>
+
+        <div class="theorem" id="t_invariancia">
+          The group \(\operatorname{PSL}(2, \mathbb{R})\) acts transitively on the family of all hyperbolic
+          lines. More precisely, if \(C_1\) and \(C_2\) are hyperbolic lines, then there exists an element
+          \(T\in \operatorname{PSL}(2,\mathbb{R})\) that sends \(C_{1}\) to \(C_{2},\) <em>i.e.</em>,
+          \(T(C_{1})=C_{2}.\)
+        </div>
+
+        <p>The following result guarantees us that the segments of hyperbolic lines are the geodesics of the hyperbolic
+          plane \(\mathbb{H}.\)</p>
+
+        <div class="theorem" id="the:geodesicas">
+          The geodesics of the hyperbolic plane \(\mathbb{H}\) correspond to (pieces) segments of hyperbolic
+          lines, in other words, the geodesics are segments of Euclidean rays in \(\mathbb{H}\)
+          orthogonal to the real axis or arcs (segments) of semicircles with center on the real axis.
+        </div>
+
+        <div class="proof">
+          Consider distinct points \(z\neq w\) on the hyperbolic plane \(\mathbb{H}.\) Let us prove that there exists
+          a <span class="purple-text">geodesic</span> (piecewise differentiable curve) \(\gamma:[a,b]\to\mathbb{H}\)
+          with the following conditions:
+          <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>(1)</strong> Its endpoints are the complex numbers \(z\) and \(w.\)</li>
+            <li><strong>(2)</strong> Its hyperbolic length is such that \(\ell_{h}(\gamma)=\rho(z,w).\)</li>
+            <li><strong>(3)</strong> The trace \(\gamma^{\ast}\) of the curve \(\gamma\) is a segment of a hyperbolic
+              line.</li>
+          </ul>
+          <p>We must study the following two cases.</p>
+
+          <p><span class="blue-txt"><strong>Case 1.</strong></span> The complex numbers \(z\) and \(w\) are on the
+            imaginary
+            axis, then they are of the form</p>
+          \[
+          z=ia \quad \text{ and } \quad w=ib,
+          \]
+          <p>such that \(0\lt a\lt b.\) From previous examples it follows that the curve \(\gamma:[a,b]\to\mathbb{H},\)
+            defined
+            by</p>
+          \[
+          \gamma(t)=it,
+          \]
+          <p>has as endpoints the complex numbers \(z\) and \(w\) and realizes the hyperbolic distance between those
+            points <em>i.e.</em>,</p>
+          \[
+          \rho(z,w)=\ell(\gamma)=\ln\left( \dfrac{b}{a}\right).
+          \]
+          <p>Being \(\gamma\) a segment of a hyperbolic line (Euclidean ray perpendicular to the real axis).
+          </p>
+
+          <p><span class="blue-txt"><strong>Case 2.</strong></span> Suppose that the elements \(z\) and \(w\) are
+            arbitrary points on the hyperbolic plane \(\mathbb{H}\) such that one of them is not on the
+            imaginary axis. Denote by \(C\) the circumference orthogonal to the real axis that passes through the
+            points \(z\) and \(w.\) <a href="#t_invariancia">Theorem 6</a> guarantees the existence of a Möbius
+            transformation
+            \(T\) in \(\operatorname{PSL}(2,\mathbb{R})\) that sends the hyperbolic line \(C\) to the imaginary
+            axis (positive). Thus, the images</p>
+          \[
+          T(z) \quad \text{ and } \quad T(w)
+          \]
+          <p>are on the imaginary axis (positive). We can assume without loss of generality that \(T(z)=ai\) and
+            \(T(w)=bi,\) for some positive real numbers \(0\lt a\lt b.\) Since the elements of
+            \(\operatorname{PSL}(2,\mathbb{R})\) are isometries of \(\mathbb{H},\) then</p>
+          \begin{equation}\label{eq:caso2}
+          \rho(z,w)=\rho(T(z),T(w)).
+          \end{equation}
+          <p>From <span class="blue-txt">Case 1</span>, it follows that the curve \(\gamma\) with endpoints \(T(z)\) and
+            \(T(w)\) is a <span class="purple-text">geodesic</span>, that is, \(\gamma\) realizes the hyperbolic
+            distance
+            between those points</p>
+          \begin{equation}\label{eq:caso3}
+          \rho(T(z),T(w))=\ell_h(\gamma).
+          \end{equation}
+          <p>Since the Möbius transformation \(T\) preserves the hyperbolic norm, then</p>
+          \begin{equation}\label{eq:caso4}
+          \ell_h(\gamma)=\ell_h(T^{-1}\circ \gamma).
+          \end{equation}
+          <p>Now, comparing equations (1), (2) and (3) we obtain</p>
+          \[
+          \rho(z,w)=\ell_h(T^{-1}\circ \gamma).
+          \]
+          <p>This last equality implies that the hyperbolic distance between \(z\) and \(w\) is realized by the
+            curve \(T^{-1}\circ \gamma.\) Since the elements of \(\operatorname{PSL}(2,\mathbb{R})\) act
+            on hyperbolic lines, then the trace \((T^{-1}\circ \gamma)\) is a segment of an arc of
+            a hyperbolic line that passes through the points \(z\) and \(w.\)</p>
+        </div>
+
+        <p>The previous result guarantees us that given two distinct complex numbers \(z\neq w\) on the hyperbolic plane
+          \(\mathbb{H},\) there exists a unique geodesic that realizes the hyperbolic distance between \(z\) and \(w.\)
+          For this
+          case we will say that the hyperbolic plane is <span class="purple-text">geodesically complete</span>.
+          Additionally, we will denote by</p>
+        \begin{equation}\label{eq:notacion_geodesicas_hiperbolica}
+        [z,w]
+        \end{equation}
+        <p>the unique geodesic with endpoints \(z\) and \(w.\)</p>
+
+        <div class="theorem" id="t_punto_entre_z_w">
+          Given the distinct complex numbers \(z, w, v\in \mathbb{H},\) then \(\rho(z,w)=\rho(z,v)+\rho(v,w),\) if and
+          only if, \(v\in[z,w].\)
+        </div>
+
+        <div class="proof">
+          <span class="blue-txt"><strong>Sufficient condition.</strong></span> We will proceed by contradiction.
+          Assume that \(v\notin [z,w].\) Then the hyperbolic lengths of the geodesics \([z,v]\) and \([v,w]\)
+          satisfy the inequality:
+          \begin{equation}
+          \begin{split}
+          \rho(z,w)=\ell_{h}([z,w])&amp;\lt \ell_{h}([z,v])+\ell_{h}([v,w]),\\ &amp;\lt \rho(z,v)+\rho(v,w).\\ \end{split}
+          \end{equation} <p>
+            <span class="blue-txt"><strong>Necessary condition.</strong></span>
+            Suppose that \(v\in[z,w],\) using the
+            properties of the integral it follows that
+          </p>
+          \begin{equation}
+          \begin{split}
+          \rho(z,w)=&amp;\ell_{h}([z,w]),\\
+          =&amp;\ell_{h}([z,v])+\ell_{h}([v,w]),\\
+          =&amp;\rho(z,v)+\rho(v,w).\\
+          \end{split}
+          \end{equation}
+        </div>
+
+        <div class="theorem" id="t_preservando_geodesicas">
+          Isometries of the hyperbolic plane send geodesics (hyperbolic lines) to geodesics (hyperbolic
+          lines).
+        </div>
+
+        <div class="proof">
+          Consider the isometry \(\phi\in \operatorname{Isom}(\mathbb{H})\) and the distinct points \(z\) and \(w\)
+          on the hyperbolic plane \(\mathbb{H}.\) Let us see that
+          \[
+          \phi([z,w])=[\phi(z),\phi(w)].
+          \]
+          <p>From <a href="t_punto_entre_z_w">Theorem 8</a> it follows that \(\rho(z,w)=\rho(z,v)+\rho(v,w),\) if and
+            only if,
+            \(v\in[z,w].\) Since \(\phi\) is an isometry, then
+            \(\rho(\phi(z),\phi(w))=\rho(\phi(z),\phi(v))+\rho(\phi(v),\phi(w)),\) if and only if, \(\phi(v)\in
+            [\phi(z),\phi(w)].\)</p>
+        </div>
+
+        <p>As an exercise, the reader can verify that the reflection with respect to the imaginary axis</p>
+        \[
+        R_{\operatorname{Im}}(z)=-\overline{z},
+        \]
+        <p>also sends hyperbolic lines to hyperbolic lines.</p>
+
+        <br>
+
+
+      </div>
+
+      <hr>
+
+      <div id="section9">
+
+        <div class="hidden-title" id="formulas-invariantes">
+          <p>Invariant Formulas</p>
+        </div>
+
+        <div class="head-3 head-3-level2">
+          <b>Invariant Formulas</b>
+        </div>
+
+        <p>We will state some of the formulas invariant under the elements of the group
+          \(\operatorname{PSL}(2,\mathbb{R}).\)</p>
+
+        <div class="lemma" id="lemma_primera_invarianza">
+          For any elements \(z,w\in\mathbb{H},\) the following expressions are invariant under elements
+          of \(\operatorname{PSL}(2,\mathbb{R})\):
+          <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>(1)</strong> \(\dfrac{|z-w|}{|z-\overline{w}|}.\)</li>
+            <li><strong>(2)</strong> \(\dfrac{|z-w|^2}{2\, \operatorname{Im}(z)\, \operatorname{Im}(w)}.\)</li>
+            <li><strong>(3)</strong> \(\dfrac{|z-w|}{2\, (\operatorname{Im}(z)\,\operatorname{Im}(w))^{1/2}}.\)</li>
+            <li><strong>(4)</strong>
+              \(\dfrac{|z-\overline{w}|}{2\,(\operatorname{Im}(z)\,\operatorname{Im}(w))^{1/2}}.\)</li>
+          </ul>
+        </div>
+
+        <div class="proof">
+          We will verify the first two items. Take the Möbius transformation \(T\in
+          \operatorname{PSL}(2,\mathbb{R})\) such that
+          \[
+          T(z)=\dfrac{az+b}{cz+d}.
+          \]
+
+          <p><span class="blue-txt"><strong>Item (1).</strong></span> Let us see that the equality</p>
+          \[
+          \dfrac{|z-w|}{|z-\overline{w}|}=\dfrac{\left|T(z)-T(w)\right|}{\left|T(z)-\overline{T(w)}\right|},
+          \]
+          <p>holds for any complex numbers \(z,w\in\mathbb{H}.\) We evaluate the Möbius transformation \(T\) at the
+            complex numbers \(z\) and \(w\) and perform the appropriate operations to obtain</p>
+          <div class="scroll-wrapper">
+            \[
+            \begin{aligned}
+            \frac{|T(z)-T(w)|}{\left|T(z)-\overline{T(w)}\right|} &amp; =
+            \dfrac{\left|\dfrac{az+b}{cz+d}-\dfrac{aw+b}{cw+d}\right|}{\left|\dfrac{az+b}{cz+d}-\dfrac{a\overline{w}+b}{c\overline{w}+d}\right|},\\
+            &amp;\\
+            &amp;=\frac{\dfrac{\left|(az+b)(cw+d)-(aw+b)(cz+d)\right|}{\cancel{\color{red}|cz+d|}\,\cancel{\color{blue}|cw+d|}}}{\dfrac{\left|(az+b)(c\overline{w}+d)-(a\overline{w}+b)(cz+d)\right|}{\cancel{\color{red}|cz+d|}\,\cancel{\color{blue}|c\overline{w}+d|}}},\\
+            &amp;\\
+            &amp;= \dfrac{\left|aczw+adz+bcw+bd - aczw - adw - bcz - bd\right|}{\left|acz\overline{w}+adz+bc\overline{w}+bd
+            -
+            acz\overline{w} - ad\overline{w} - bcz - bd\right|},\\
+            &amp;\\
+            &amp;=\dfrac{\left|adz - bcz + bcw - adw \right|}{\left|adz - bcz + bc\overline{w} - ad\overline{w}
+            \right|}=\dfrac{\left|\cancelto{1}{\color{blue}(ad-bc)}z - \cancelto{1}{\color{blue}(ad-bc)}w
+            \right|}{\left|\cancelto{1}{\color{blue}(ad-bc)}z - \cancelto{1}{\color{blue}(ad-bc)}\overline{w}
+            \right|},\\
+            &amp;\\
+            &amp;=\dfrac{|z-w|}{|z-\overline{w}|}.
+            \end{aligned}
+            \]
+          </div>
+
+
+          <p><span class="blue-txt"><strong>Item (2).</strong></span> We will prove the equality</p>
+          \[
+          \frac{|z-w|^2}{2 \operatorname{Im}(z) \operatorname{Im}(w)}=\frac{|T(z)-T(w)|^2}{2 \,
+          \operatorname{Im}(T(z))\, \operatorname{Im}(T(w))},
+          \]
+          <p>for any \(z,w\in\mathbb{H}.\) We evaluate the Möbius transformation \(T\) at the complex numbers \(z\)
+            and \(w,\) and use the equation \(\operatorname{Im}(T(z))=\dfrac{\operatorname{Im}(z)}{|cz+d|^2}.\) Thus,
+            the
+            right-hand side of the previous expression is equal to</p>
+          \[
+          \frac{|T(z)-T(w)|^2}{2 \, \operatorname{Im}(T(z))\, \operatorname{Im}(T(w))} =
+          \dfrac{\left|\dfrac{az+b}{cz+d}-\dfrac{aw+b}{cw+d} \right|^2}{2\dfrac{\operatorname{Im}(z)}{|cz+d|^2
+          }\dfrac{\operatorname{Im}(w)}{|cw+d|^2 }}.
+          \]
+          <p>Now, we perform the appropriate operations and obtain</p>
+          <div class="scroll-wrapper">
+            \[
+            \begin{aligned}
+            \frac{|T(z)-T(w)|^2}{2 \, \operatorname{Im}(T(z))\, \operatorname{Im}(T(w))}&amp; =
+            \dfrac{\left|\dfrac{az+b}{cz+d}-\dfrac{aw+b}{cw+d} \right|^2}{2\dfrac{\operatorname{Im}(z)}{|cz+d|^2
+            }\dfrac{\operatorname{Im}(w)}{|cw+d|^2 }}, \\
+            &amp;\\
+            &amp;=\frac{\dfrac{\left|(az+b)(cw+d)-(aw+b)(cz+d)\right|^{2}}{|cz+d|^{2}\,|cw+d|^{2}} \cdot
+            |cz+d|^{2}\,|cw+d|^{2}}{2\, \operatorname{Im}(z) \, \operatorname{Im}(w)}, \\
+            &amp;\\
+            &amp;=\dfrac{\left|aczw+adz+bcw+bd - aczw - adw - bcz - bd\right|^2}{2\, \operatorname{Im}(z)\,
+            \operatorname{Im}(w)},\\
+            &amp;\\
+            &amp;= \frac{\left|(ad-bc)z - (ad-bc)w\right|^{2}}{2 \, \operatorname{Im}(z) \, \operatorname{Im}(w)},\\
+            &amp;\\
+            &amp;=\dfrac{\left|z-w\right|^{2}}{2\, \operatorname{Im}(z)\, \operatorname{Im}(w)}.
+            \end{aligned}
+            \]</div>
+
+        </div>
+
+        <p>Now, we will state several formulas related to the hyperbolic distance \(\rho\) and the
+          hyperbolic trigonometric functions. Recall that the <span class="purple-txt">hyperbolic sine</span>,
+          <span class="purple-text">hyperbolic cosine</span> and <span class="purple-txt">hyperbolic tangent</span>,
+          denoted by \(\senh, \cosh, \tanh,\) respectively, are defined by
+        </p>
+        <div class="scroll-wrapper">
+          \[
+          \senh (x)=\frac{e^x-e^{-x}}{2}, \quad \cosh (x)=\frac{e^{x}+e^{-x}}{2}, \quad \tanh (x)=\frac{\senh x}{\cosh
+          x}=\frac{e^x-e^{-x}}{e^x+e^{-x}},
+          \]</div>
+
+        <p>where \(x\) is any positive real number.</p>
+
+        <div class="lemma" id="l-cosh">
+          For any two points \(z,w\) on the hyperbolic plane \(\mathbb{H}\) the following
+          equalities are satisfied
+          <ul style="list-style-type: none; padding-left: 0;">
+            <li><strong>(1)</strong> \(\cosh\rho(z,w)=1+\dfrac{|z-w|^2}{2\, \operatorname{Im}(z)\,
+              \operatorname{Im}(w)}.\)</li>
+            <li><strong>(2)</strong> \(\senh \left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-w|}{2\, (\operatorname{Im} (z)
+              \, \operatorname{Im}(w))^{1/2}}.\)</li>
+            <li><strong>(3)</strong> \(\cosh
+              \left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-\overline{w}|}{2\,(\operatorname{Im}(z) \,
+              \operatorname{Im}(w))^{1/2}}.\)</li>
+            <li><strong>(4)</strong> \(\tanh \left(\dfrac{1}{2} \rho(z,w)\right)=\dfrac{|z-w|}{|z-\overline{w}|}.\)</li>
+          </ul>
+        </div>
+
+        <div class="proof">
+          We will prove items <strong>(1)</strong> and <strong>(4)</strong>, the reader will prove the two remaining
+          ones.
+
+          <p>Take the complex numbers \(z\) and \(w\) on the hyperbolic plane \(\mathbb{H}.\) The proofs of each formula
+            follow the following strategy. First, we verify each of the equalities for the (particular)
+            case \(z=i\) and \(w=it,\) with \(t\gt 0.\) Then, we assume the (general) case in which the complex numbers
+            \(z\) and \(w\)
+            are arbitrary, then we use previous results to guarantee the existence of a Möbius transformation
+            \(T\in\operatorname{PSL}(2,\mathbb{R})\) such that \(T(z)=i\) and \(T(w)=it,\) for some \(t\gt 0.\)
+            Thus, the formula is written for complex numbers of the particular case. Since \(T\) is an isometry of the
+            hyperbolic plane \(\mathbb{H},\) then each formula must be valid for the general case.</p>
+
+          <p><span class="blue-txt"><strong>Item (1).</strong></span> <span class="purple-txt">Particular case.</span>
+            If \(z=i\) and \(w=it\) such that \(t\gt 1.\) Using previous results and computing, we have</p>
+          <div class="scroll-wrapper">
+            $$
+            \begin{equation}
+            \begin{split}
+            \cosh\rho(z,w) &amp;= \cosh \rho(i,it) = \cosh (\ln t)=\dfrac{e^{\ln t}+e^{-\ln t}}{2},\\
+            &amp;\\
+            &amp;=\dfrac{t+\dfrac{1}{t}}{2}=\dfrac{t^2+1}{2t}= \dfrac{t^2-2t+1 +2t}{2t}=\dfrac{(t-1)^2+2t}{2t},\\
+            &amp;\\
+            &amp;=\dfrac{(t-1)^2}{2t}+1=\dfrac{|i|^2|1-t|^2}{2t}+1=\dfrac{|i(1-t)|^2}{2t}+1,\\
+            &amp;\\
+            &amp;=\dfrac{|i-it|^2}{2\,\operatorname{Im}(i)\,\operatorname{Im}(it)}+1=1+\dfrac{|z-w|^2}{2\,\operatorname{Im}(z)\,
+            \operatorname{Im}(w)}.\\
+            \end{split}
+            \end{equation}
+            $$
+          </div>
+
+
+          <p><span class="purple-text">General case.</span> Conversely, if the complex numbers \(z\) and \(w\) are
+            arbitrary on the hyperbolic plane \(\mathbb{H},\) then previous results guarantee us the
+            existence of a Möbius transformation \(T\in\operatorname{PSL}(2,\mathbb{R})\) that sends \(z\) and \(w\)
+            to \(i\) and \(it\) (respectively) for some \(t\gt 0.\) Using the fact that \(T\) is an isometry of the
+            hyperbolic plane \(\mathbb{H}\) and the result of the <span class="purple-text">particular case</span>,
+            we have the equality</p>
+          <div class="scroll-wrapper">
+            \[
+            \begin{aligned}
+            \cosh\rho (z,w) &amp;= \cosh\rho (T(z),T(w))=\cosh \rho (i,it),\\
+            &amp;\\
+            &amp;=1+\dfrac{|i-it|^2}{2\,\operatorname{Im}(i)\, \operatorname{Im}(it)}.
+            \end{aligned}
+            \]
+          </div>
+
+          <p>From <a href="#lemma_primera_invarianza">Lemma 11</a> item <strong>(2)</strong>, it follows that</p>
+          <div class="scroll-wrapper">
+            \[
+            \dfrac{|i-it|^2}{2\,\operatorname{Im}(i)\,
+            \operatorname{Im}(it)}=\dfrac{\left|T^{-1}(i)-T^{-1}(it)\right|^2}{2\,\operatorname{Im}(T^{-1}(i))\,
+            \operatorname{Im}(T^{-1}(it))}=\dfrac{|z-w|^2}{2\, \operatorname{Im}(z)\, \operatorname{Im}(w)}.
+            \]
+          </div>
+
+          <p>Finally, we replace this last term in the previous equality and obtain the expected result</p>
+          \[
+          \cosh\rho (z,w) = 1+\dfrac{|z-w|^2}{2\,\operatorname{Im}(z)\, \operatorname{Im}(w)}.
+          \]
+
+          <p><span class="blue-txt"><strong>Item (4).</strong></span> <span class="purple-txt">Particular case.</span>
+            If \(z=i\) and \(w=it\) such that \(t\gt 1.\) Using previous results and computing, we have</p>
+          <div class="scroll-wrapper">
+            \[
+            \begin{aligned}
+            \tanh\left(\dfrac{1}{2}\rho(z,w)\right) &amp;= \tanh\left(\dfrac{1}{2} \rho(i,it)\right) = \tanh
+            \left(\dfrac{1}{2}\ln t\right),\\
+            &amp;\\
+            &amp;=\dfrac{e^{\ln t^{1/2}}-e^{\ln t^{-1/2}}}{e^{\ln t^{1/2}}+e^{\ln
+            t^{-1/2}}}=\dfrac{t^{1/2}-t^{-1/2}}{t^{1/2}+t^{-1/2}}=\dfrac{t-1}{t+1},\\
+            &amp;\\
+            &amp;=\dfrac{|i-it|}{|i+it|}=\dfrac{|z-w|}{|z-\overline{w}|}.
+            \end{aligned}
+            \]
+          </div>
+
+
+          <p><span class="purple-txt">General case.</span> Conversely, if the complex numbers \(z\) and \(w\) are
+            arbitrary on the hyperbolic plane \(\mathbb{H},\) then previous results guarantee us the
+            existence of a Möbius transformation \(T\in\operatorname{PSL}(2,\mathbb{R})\) that sends \(z\) and \(w\)
+            to \(i\) and \(it\) (respectively) for some \(t\gt 0.\) Using the fact that \(T\) is an isometry of the
+            hyperbolic plane \(\mathbb{H}\) and the result of the <span class="purple-txt">particular case</span>, we
+            have
+            the equality:</p>
+          <div class="scroll-wrapper">
+            \[
+            \begin{aligned}
+            \tanh\left(\dfrac{1}{2}\rho (z,w)\right)&amp; = \tanh\left(\dfrac{1}{2}\rho
+            (T(z),T(w))\right)=\tanh\left(\dfrac{1}{2} \rho (i,it)\right),\\
+            &amp;\\
+            &amp;= \frac{|i-it|}{|i+it|}.
+            \end{aligned}
+            \]
+          </div>
+
+          <p>From <a href="#lemma_primera_invarianza">Lemma 11</a> item <strong>(1)</strong>, it follows that</p>
+          \[
+          \dfrac{|i-it|}{|i-\overline{it}|}=\dfrac{\left|T^{-1}(i)-T^{-1}(it)\right|}{\left|
+          T^{-1}(i)-\overline{T^{-1}(it)}\right|}=\dfrac{|z-w|}{|z-\overline{w}|}.
+          \]
+          <p>Finally, we replace this last term in the previous equality and obtain the expected result</p>
+          \[
+          \tanh\left(\dfrac{1}{2}\rho (z,w)\right) = \dfrac{|z-w|}{|z-\overline{w}|}.
+          \]
+        </div>
+
+        <p>Now, we will describe a formula to calculate the hyperbolic distance between two complex numbers
+          \(z,w\in\mathbb{H}.\) To do this, we evaluate the value of the equation described in item
+          <strong>(4)</strong>
+          of <a href="l-cosh">Lemma 11</a> in the inverse hyperbolic tangent function \(\tanh^{-1},\) which is given by
+        </p>
+        \[
+        \tanh^{-1} (x)=\dfrac{1}{2}\ln \left(\dfrac{1+x}{1-x}\right)
+        \]
+        <p>whenever \(|x|\lt 1\) and, we obtain</p>
+        \[
+        \begin{aligned}
+        \dfrac{1}{2}\rho(z,w)&amp;=\tanh^{-1}\left(\dfrac{|z-w|}{|z-\overline{w}|}\right),\\
+        &amp;\\
+        \dfrac{1}{2}\rho(z,w)&amp;=\dfrac{1}{2}\ln\left(\dfrac{1+
+        \dfrac{|z-w|}{|z-\overline{w}|}}{1-\dfrac{|z-w|}{|z-\overline{w}|}}\right),\\
+        &amp;\\
+        \rho(z,w)&amp;=\ln\left(\frac{|z-\overline{w}|+|z-w|}{|z-\overline{w}|-|z-w|}\right).
+        \end{aligned}
+        \]
+
+        <div class="theorem" id="th_formula_distancia_hiperbolica_entre_dos_puntos" style="overflow-y: hidden;">
+          The hyperbolic distance \(\rho\) between two complex numbers \(z,w\in\mathbb{H}\) is given by
+          \begin{equation}
+          \rho(z,w)=\ln\left(\dfrac{|z-\overline{w}|+|z-w|}{|z-\overline{w}|-|z-w|}\right).
+          \end{equation}
+        </div>
+
+        <br>
+
+
+
+
+
+      </div>
+
+      <hr>
+
+      <div id="section10">
+
+        <div class="hidden-title" id="grupo-completo-isometrias">
+          <p>Complete Group of Isometries</p>
+        </div>
+
+        <div class="head-3 head-3-level2">
+          Complete Group of Isometries
+        </div>
+
+        <p>We are ready to state the complete group of isometries of the hyperbolic plane \(\mathbb{H}.\)</p>
+
+        <div class="theorem" id="t_grupo_isometrias_completo_plano_hiperbolico">
+          The group \(\operatorname{Isom}(\mathbb{H})\) is generated by the elements of
+          \(\operatorname{PSL}(2,\mathbb{R})\) and the reflection with respect to the imaginary axis
+          \(R_{\operatorname{Im}}(z)= -\overline{z}.\) In other words, any isometry of the hyperbolic plane is
+          an element of \(\operatorname{PSL}(2,\mathbb{R})\) or is of the form
+          \[
+          \phi(z)=\dfrac{a(-\overline{z})+b}{c(-\overline{z})+d},
+          \]
+          such that \(a,b,c,d\in\mathbb{R}\) and \(ad-bc=1.\)
+        </div>
+
+        <div class="proof">
+          Consider \(\phi\) an isometry of the hyperbolic plane \(\mathbb{H}.\) We will prove that
+          \[
+          \phi(z)=\dfrac{az+b}{cz+d} \quad \text{ or } \quad \phi(z)=\dfrac{a(-\overline{z})+b}{c(-\overline{z})+d},
+          \]
+          <p>such that \(a,b,c,d\in\mathbb{R}\) and \(ad-bc=1.\)</p>
+
+          <p><a href="#t_preservando_geodesicas">Theorem 9</a> guarantees us that the isometry \(\phi\) preserves
+            hyperbolic
+            lines, then the image of the imaginary axis \(\operatorname{Im}\) under \(\phi\) is also a hyperbolic
+            line. Since \(\operatorname{PSL}(2, \mathbb{R})\) acts transitively on hyperbolic lines, then there exists
+            an
+            element \(T\in \operatorname{PSL}(2,\mathbb{R})\) such that</p>
+          \[
+          T\circ \phi (\operatorname{Im})=\operatorname{Im}.
+          \]
+
+          <p>Now, we can consider the dilation</p>
+          \[
+          H(z)=kz,
+          \]
+          <p>for some \(k\gt 0,\) and if necessary we also take the Möbius transformation given by</p>
+          \[
+          M(z)=\dfrac{-1}{z},
+          \]
+          <p>such that the composition</p>
+          \begin{equation}\label{eq:notacion_composicion_adecuada_isom_hiper}
+          T:=M\circ H
+          \end{equation}
+          <p>fixes the complex number \(i\) and sends the rays \((i,\infty)\) and \((\mathbf{0},i)\) to themselves and
+            thus,
+            conclude that \(T\circ \phi\) fixes every point of the imaginary axis \(\operatorname{Im}.\)</p>
+
+          <p>Take the complex number \(z=x+iy\in\mathbb{H}\) and denote the complex number \(T\circ \phi (z)\) by</p>
+          \begin{equation}\label{eq:regla_asignacion_mobius_isometria_adecuada}
+          T\circ \phi (z)=u+iv\in\mathbb{H}.
+          \end{equation}
+
+          <p>Since the composition \(T\circ \phi\) is an isometry, then for each \(t\gt 0\) we have</p>
+          \[
+          \rho(z,it)=\rho(T\circ\phi(z), T\circ\phi(it))=\rho(u+vi,it).
+          \]
+
+          <p>From <a href="#l-cosh">Lemma 11</a> item <strong>(2)</strong>, it follows that</p>
+          \[
+          \dfrac{\left|it-(u+vi)\right|^{2}}{2\,
+          \operatorname{Im}(it)\,\operatorname{Im}(u+vi)}=\dfrac{\left|it-z\right|^{2}}{2\, \operatorname{Im}(it)\,
+          \operatorname{Im}(z)}.
+          \]
+
+          <p>Computing norms and taking the imaginary part we obtain</p>
+          \begin{equation}\label{eq:hacer_tender_t_infinito}
+          \dfrac{x^{2}+(t-y)^{2}}{2ty}=\dfrac{u^2+(t-v)^{2}}{2tv}.
+          \end{equation}
+
+          <p>Equivalently,</p>
+          \[
+          y\left(u^2+(t-v)^2\right)=v\left(x^2+(t-y)^2\right).
+          \]
+
+          <p>Since \(t\gt 0,\) we divide both sides of the previous equation by \(t^{2}\) and obtain</p>
+          \[
+          y\left(\dfrac{u^2}{t^{2}}+\left(1-\dfrac{v}{t}\right)^2\right)=v\left(\dfrac{x^2}{t^{2}}+\left(1-\dfrac{y}{t}\right)^2\right).
+          \]
+
+          <p>In the previous equality we take the limit as \(t\) tends to \(\infty,\) then we obtain</p>
+          \[
+          y=v.
+          \]
+
+          <p>We substitute the previous equality into equation (2) and obtain</p>
+          \[
+          u^2=x^2.
+          \]
+
+          <p>Thus, the assignment rule of the composition \(T\circ \phi\) (see equation (1)) is given by</p>
+          \[
+          T\circ \phi(z)=z \quad \text{ or } \quad T\circ \phi(z)=-\overline{z}.
+          \]
+
+          <p>Since isometries are continuous (bijective) functions and continuous functions send connected sets to
+            connected sets, then only one of the previous assignment rules is satisfied for \(T\circ \phi.\) If
+            \(T\circ \phi(z)=z,\) then \(\phi=T^{-1}\) is an element of \(\operatorname{PSL}(2,\mathbb{R}).\)
+            Conversely, if \(T\circ \phi(z)=-\overline{z},\) then \(\phi\) is given by</p>
+          \[
+          \phi(z)=T^{-1}(-\overline{z})=\dfrac{a(-\overline{z})+b}{c(-\overline{z})+d},
+          \]
+          <p>such that \(a,b,c,d\in\mathbb{R}\) and \(ad-bc=1.\)</p>
+        </div>
+
+
+        <br>
+
+
+      </div>
+
+      <hr>
+
+      <div id="section11">
+
+        <div class="hidden-title" id="topologia-inducida">
+          <p>Induced Topology</p>
+        </div>
+
+        <div class="head-3 head-3-level2">Induced Topology</div>
+
+        <p>The hyperbolic plane \(\mathbb{H},\) being a subset of the complex plane \(\mathbb{C},\) inherits the
+          subspace topology \(\tau.\) However, the hyperbolic distance \(\rho\) induces a topology
+          \(\tau_{\rho}\) for \(\mathbb{H}.\) We will prove that these two topologies coincide. Basically,
+          we will prove that hyperbolic balls are also Euclidean balls.</p>
+
+        <p>Recall that the <span class="purple-text">hyperbolic ball</span> with center \(z\in\mathbb{H}\) and radius
+          \(r\gt 0\) is the set</p>
+        \begin{equation}
+        B_{h}(z,r)=\left\{w\in\mathbb{H}: \rho(w,z) \lt r\right\}.
+        \end{equation}
+
+        <p>From the basic Topology course, we know that the
+          set of all balls
+        </p>
+        \begin{equation}
+        \mathcal{B}=\left\{B_{d}(z,r): \text{ for each } z\in \mathbb{H} \text{ and each } r&gt; 0\right\},
+        \end{equation}
+
+        <p>is a basis for the topology \(\tau_{\rho}\) for \(\mathbb{H}\) induced by the distance function \(\rho.\)
+        </p>
+
+        <p>The following result guarantees us the validation of</p>
+        <p class="no-indent"><span class="blue-txt"><em>Postulate III</em></span>, which says: with any center and
+          any radius a hyperbolic circumference can be drawn (on the hyperbolic plane). More
+          precisely, hyperbolic circumferences are also Euclidean circumferences.</p>
+
+        <p>Recall that a <span class="purple-text">hyperbolic circumference</span></p>
+        \[
+        C_{h}(z_{0},r)=\{z\in\mathbb{H}: \rho(z,z_{0})=r\},
+        \]
+        <p>is the set of points on the hyperbolic plane \(\mathbb{H}\) that are equidistant \(r&gt;0\) from another point
+          \(z_{0}\in\mathbb{H}\) called the <span class="purple-text">center</span>.</p>
+
+        <div class="theorem" id="teorema-bolas">
+          The set of points \(z = x + iy\) in \(\mathbb{H},\) that are hyperbolically equidistant a distance
+          \(r&gt;0\) from a point \(z_0 = x_0 + i y_0\in\mathbb{H},\) are determined by the following equation
+          \[
+          (x-x_0)^2 + (y- y_0 \cosh r)^2 = y^2_0 \senh^2 r,
+          \]
+          that is, the hyperbolic circumference \(C_{h}(z_{0},r)\) with center \(z_{0}\) and radius \(r\) is the
+          Euclidean circumference with center \(x_{0}+iy_{0}\cosh r\) and radius \(y_{0}\senh r\)<p></p>
+          \begin{equation}\label{eq:bola_hiperbolica_igual_bola_euclidiana}
+          \begin{split}
+          C_{h}(z_{0},r)&amp;=\{z=x+iy\in\mathbb{H}:\rho(z,z_{0})=r\},\\
+          &amp;=\left\{z=x+iy\in\mathbb{H}: (x-x_0)^2 + (y- y_0 cosh r)^2 = y^2_0senh^2
+          r\right\}.
+          \end{split}
+          \end{equation}
+        </div>
+
+        <div class="proof">
+          Consider the hyperbolic circumference
+          \[
+          C_{h}(z_{0},r)=\{z=x+iy\in\mathbb{H}: \rho(z,z_0)=r\}
+          \]
+          for some point \(z_0=x_0+iy_0\) on the hyperbolic
+          plane \(\mathbb{H}\) and some positive real value
+          \(r&gt;0.\) For any \(z\in C_{h}(z_{0},r),\)
+          we have
+          <div class="scroll-wrapper">
+            \[
+            \begin{aligned}
+            \cosh \rho(z,z_0)&amp;=\cosh r =1+\frac{|z-z_0|^2}{2\,
+            \operatorname{Im}(z)\operatorname{Im}(z_0)}=1+\frac{(x-x_0)^2+(y-y_0)^2}{2y y_0},\\
+            &amp;\\
+            \cosh r&amp;= \frac{2yy_0 + (x-x_0)^2 +y^2 -2yy_0 + y_0^2}{2yy_0},\\
+            &amp;\\
+            \cosh r&amp;=\frac{(x-x_0)^2+y^2+y_0^2}{2yy_0}.\\
+            &amp;\\
+            2yy_0\cosh r&amp;= (x-x_0)^2+y^2+y_0^2. \qquad\qquad (*)
+            \end{aligned}
+            \]
+          </div>
+
+
+          <p>Now, we substitute the relation \(\cosh^2 r -\senh^2 r=1,\)
+            into equation (*), compute and obtain</p>
+          \[
+          \begin{aligned}
+          2yy_0\cosh r&amp;= (x-x_0)^2+y^2+y_0^2(\cosh^2 r -\senh^2 r),\\
+          &amp;\\
+          2yy_0\cosh r&amp;= (x-x_0)^2+y^2+y_0^2\cosh^2 r - y_0^2\senh^2 r,\\
+          &amp;\\
+          y_0^2\senh^2 r&amp;= (x-x_0)^2+y^2 - 2yy_0\cosh r + y_0^2\cosh^2 r,\\
+          &amp;\\
+          y_0^2\senh^2 r&amp;= (x-x_0)^2+(y-y_0\cosh r)^2.
+          \end{aligned}
+          \]
+          <p>The previous equality guarantees the description of the elements that are on the hyperbolic circumference
+            \(C_{h}(z_{0},r).\)</p>
+        </div>
+
+        <p><a href="#teorema-bolas">Theorem 14</a> implies that the <span class="purple-text">hyperbolic</span> ball
+          \(B_{h}(z,r)\)
+          with center \(z\in \mathbb{H}\) and radius \(r&gt;0,\)</p>
+        <div class="scroll-wrapper">
+          \[
+          B_{h}(z,r)=\left\{x+iy\in\mathbb{H}: (x-x_0)^2 + (y- y_0 \cosh r)^2 \lt y^2_0 \senh^2 r\right\},
+          \]
+        </div>
+        <p>which
+          coincides with the Euclidean ball with center \((x_0,y_0\cosh r)\) and radius \(y_{0}^2\senh^2 r.\) More
+          precisely,</p>
+
+        <div class="corollary">
+          The topology on \(\mathbb{H}\) induced by the hyperbolic metric \(\rho\) is equivalent to the
+          subspace topology of \(\mathbb{H}\subset \mathbb{C}.\)
+        </div>
+
+        <br>
+
+      </div>
+
+      <hr>
+
+      <div id="section12">
+
+        <div class="hidden-title" id="problemas">
+          <p>Problems</p>
+        </div>
+
+        <div class="head-3 head-3-level2">Problems</div>
+
+        <ol>
+          <li>Prove that the canonical (usual) inner product \(\langle \,\, ,\, \rangle_{c}\) on \(\mathbb{R}^2\) is
+            indeed an inner product.</li>
+
+          <li id="ejer_producto_interno_cociente">Consider the normed vector space \((V, \langle \,\, ,\,
+            \rangle)\) and the nonzero positive real value \(r.\) Prove that
+            \[
+            \langle \, \, ,\, \rangle_{r}:=\dfrac{\langle \,\, ,\, \rangle}{r^2}
+            \]
+            is an inner product on \(V.\)</li>
+
+          <li>Given the open subset \(U\subset\mathbb{C}\) and the function \(\gamma:[a,b]\to U\) defined by
+            \[
+            \gamma(t)=x(t)+iy(t),
+            \]
+            where \(x\) and \(y\) are real-valued functions. Prove that \(\gamma\) is continuous at \(t_0\in[a,b],\) if
+            and
+            only if, the functions \(x\) and \(y\) are continuous at \(t_{0}.\)</li>
+
+          <li>Given the open subset \(U\subset\mathbb{C}\) and the curve \(\gamma:[a,b]\to U.\) Prove that
+            \(\gamma^{\ast}\) the image or trace of \(\gamma\) is a closed, connected and compact subset of
+            \(\mathbb{C}.\)</li>
+
+          <li>Consider the open set \(U\subset \mathbb{C}\) and the piecewise differentiable curve \(\gamma:[a,b]\to
+            U.\)
+            Prove that if the derivative \(\gamma'(t)=\textbf{0}\) for all \(t\in(a,b),\) then \(\gamma\) is a
+            constant curve.</li>
+
+          <li>Describe a function \(\gamma:[a,b]\to\mathbb{C}\) whose trace is the circumference with center
+            \(z\in\mathbb{C}\) and radius \(r&gt;0.\)</li>
+
+          <li>Prove that the hyperbolic length of the curve \(\gamma:[a,b]\to\mathbb{H}\) is invariant under
+            parametrizations.</li>
+
+          <li>Given the piecewise differentiable curve \(\gamma: [a,b]\to \mathbb{C},\) such that
+            \[
+            \gamma(t)=x(t)+iy(t),
+            \]
+            for each \(t\in[a,b].\) The <span class="purple-text">Euclidean length of \(\gamma\)</span> is given
+            by
+            <div class="scroll-wrapper">
+              \[
+              \ell_{e}(\gamma):=\int\limits_{a}^{b} \Vert \gamma'(t) \Vert_{e} dt=\int\limits_{a}^{b}
+              \sqrt{(x'(t))^2+(y'(t))^2}dt.
+              \]
+            </div>
+
+            The <span class="purple-text">Euclidean distance</span> between two points \(z\) and \(w\) of
+            \(\mathbb{C},\)
+            which we will denote
+            \begin{equation}
+            \rho_e(z,w)=\inf\limits_{\gamma} \left\{\ell_{e}(\gamma)\right\}
+            \end{equation}
+            is the infimum of the Euclidean lengths of the piecewise differentiable curves in \(\mathbb{C}\) with final
+            points \(z\) and \(w.\) Prove that the function \(\rho_{e}: \mathbb{C}\times \mathbb{C}\to\mathbb{R},\)
+            defined by
+            \[
+            \rho_{e}(z,w)=\inf\limits_{\gamma}\left\{\ell_e (\gamma)\right\},
+            \]
+            is a distance function.
+          </li>
+
+          <li>Consider the point \(z\) on the hyperbolic plane \(\mathbb{H}\) and a real value \(\varepsilon&gt;0\) such
+            that the closure of the Euclidean ball \(B_{\varepsilon}(z)\) is contained in \(\mathbb{H}\)
+            <em>i.e.</em>, \(\overline{B_{\varepsilon}(z)} \subset \mathbb{H}.\) Prove that the function
+            \(f:\overline{B_{\varepsilon}(z)}\to\mathbb{R},\) defined by
+            \[
+            f(w)=\dfrac{1}{\text{Im}(w)},
+            \]
+            is continuous and differentiable.
+          </li>
+
+          <li>What is the minimum and maximum of the function \(f\) defined in the previous Problem?</li>
+
+          <li>Consider the complex plane \(\mathbb{C}\) with the topology defined by the complex norm (usual
+            topology) and the upper half-plane \(U=\left\{z\in\mathbb{C}: {\rm Im}(z)&gt;0\right\}\) with the subspace
+            topology. Answer the following questions and justify your answer.
+            <ol type="a">
+              <li>Is \(U\) convex?</li>
+              <li>Is \(U\) connected?</li>
+              <li>Is \(U\) locally connected?</li>
+              <li>Is \(U\) open?</li>
+              <li>Is \(U\) compact?</li>
+              <li>Is \(U\) locally compact?</li>
+              <li>Is \(U\) closed?</li>
+              <li>Is \(U\) complete with the metric induced by the complex norm?</li>
+              <li>What is the closure of \(U\) in \(\mathbb{C}\)?</li>
+              <li>What is the boundary of \(U\) in \(\mathbb{C}\)?</li>
+            </ol>
+          </li>
+
+          <li>For every \(z_0\in\mathbb{H},\) prove that the function \(f_{z_0}:\mathbb{H}\to \mathbb{R},\) defined
+            by
+            \[
+            f_{z_0}(w)=\rho(z_0,w),
+            \]
+            is continuous.</li>
+
+          <li>Prove that \(\mathbb{H}\) with the hyperbolic distance function \( \rho\) is a complete metric space.
+          </li>
+
+          <li>Prove that \({\rm Isom}(\mathbb{H})\) the set of all isometries of the hyperbolic plane
+            \(\mathbb{H}\) under the composition operation form a group.</li>
+
+          <li>Prove that \({\rm PSL}(2,\mathbb{R})\) is a subgroup of \({\rm PSL}(2,\mathbb{C}).\)</li>
+
+          <li>The <em><span class="purple-text">stabilizer</span></em> of the complex number \(z\in\mathbb{H}\) in the
+            group
+            \({\rm PSL}(2,\mathbb{R})\) is the set
+            \[
+            G_{z}:=\left\{T\in {\rm PSL}(2,\mathbb{R}): T(z)=z\right\}.
+            \]
+            Prove:
+            <ul>
+              <li><strong>(1)</strong> The stabilizer \(G_{z}\) is a subgroup of \({\rm PSL}(2,\mathbb{R}),\) for
+                every \(z\in\mathbb{H}.\)</li>
+              <li><strong>(2)</strong> The stabilizer \(G_{i}\) is isomorphic to \(S^{1}=\{w\in\mathbb{C}:|w|=1\}\) the
+                complex unit circle with complex multiplication.</li>
+            </ul>
+          </li>
+
+          <li>Consider two different complex numbers \(z\neq w\) on the hyperbolic plane \(\mathbb{H}.\) Describe a
+            function \(\gamma\) whose trace is the circumference orthogonal to the real axis and that passes through the
+            points \(z\) and
+            \(w.\)</li>
+
+          <li>Consider the reflection with respect to the imaginary axis
+            \[
+            R_{\rm Im}(z)=-\overline{z}.
+            \]
+            Prove:
+            <ul style="list-style-type: none; padding-left: 0;">
+              <li><strong>(1)</strong> The function \(R_{\rm Im}\) leaves the hyperbolic plane \(\mathbb{H}\) invariant.
+              </li>
+              <li><strong>(2)</strong> The function \(R_{\rm Im}\) sends hyperbolic lines to hyperbolic lines.
+              </li>
+            </ul>
+          </li>
+
+          <li>For any elements \(z,w\in\mathbb{H},\) verify that the following expressions are invariant
+            under elements of \({\rm PSL}(2,\mathbb{R})\):
+            <ul style="list-style-type: none; padding-left: 0;">
+              <li><strong>(1)</strong> \(\dfrac{|z-w|}{2({\rm Im}(z){\rm Im}(w))^{1/2}}.\)</li>
+              <li><strong>(2)</strong> \(\dfrac{|z-\overline{w}|}{2({\rm Im}(z){\rm Im}(w))^{1/2}}.\)</li>
+            </ul>
+          </li>
+
+          <li>For any two points \(z,w\) on the hyperbolic plane \(\mathbb{H},\) verify that the following
+            equalities are satisfied:
+            <ul style="list-style-type: none; padding-left: 0;">
+              <li><strong>(1)</strong> \(\sinh \left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-w|}{2\, ({\rm Im} (z) \,
+                {\rm Im}(w))^{1/2}}.\)</li>
+              <li><strong>(2)</strong> \(\cosh \left(\dfrac{1}{2}\rho(z,w)\right)=\dfrac{|z-\overline{w}|}{2\,({\rm
+                Im}(z) \, {\rm Im}(w))^{1/2}}.\)</li>
+            </ul>
+          </li>
+
+          <li id="Problema_mapeo_linea_hiper_sobre_eje_ima">Consider the hyperbolic line \(C.\) Prove that there exists
+            an element \(T\in{\rm PSL}(2,\mathbb{R})\) such that
+            \[
+            T(z)=-\frac{1}{z-\alpha}+\beta
+            \]
+            for some \(\alpha,\beta\in\mathbb{R},\) that sends \(C\) to the imaginary axis.</li>
+
+          <li>Consider \(\phi\) an isometry of the hyperbolic plane \(\mathbb{C},\) prove that there exists an element
+            \(T\in {\rm PSL}(2,\mathbb{R})\) such that the composition \(T\circ\phi\) fixes the real imaginary axis.
+          </li>
+
+
+        </ol>
+
+      </div>
+
+
+    </article>
+  </main>
+
+
+  <a href="poincare-disk.html" style="text-decoration: none;">
+    <p class="nextPage">Poincaré Disk <i class="fa-solid fa-angles-right"></i></p>
+  </a>
+  <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 Hi!</strong>
+      </div>
+      <div class="modal-body">
+  
+        <div w3-include-html="message-modal.html"></div>
+        <br />
+      </div>
+  
+      <div class="modal-footer">
+        Thanks! 🙏 I really appreciate your support! 🤗
+      </div>
+    </div>
+  
+  </div>
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span class="hide-small" id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <a href="https://github.com/geometria-hiperbolica"><i class="fa-solid fa-code"></i> Source</a>,
+    <a href="https://github.com/geometria-hiperbolica/geometria-hiperbolica.github.io/issues"><i
+        class="fa-solid fa-lightbulb"></i> Issues</a>,
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-regular fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  <span class="hide-medium hide-large" style="font-size: 0.85em;">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a> -
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-regular fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+
+  <br />
+
+  <a id="licence-link" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+    target="_blank">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong style="font-size: 0.9em;">ISBN: ---</strong> <br>
+  <strong> 
+    <span class="hide-small" style="font-size: 18px">&copy; C. Ramírez Maluendas, J.C. Ponce Campuzano
+      <script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 15px">&copy; C. Ramírez Maluendas, <br /> J.C. Ponce Campuzano
+      <script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>

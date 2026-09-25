@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>  Hyperbolic Geometry
+</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Hyperbolic Geometry Notes" />
+  <meta name="author" content="Juan Carlos Ponce Campuzano, Camilo Ramírez Maluendas">
+  <meta name="keywords" content="geometría,hiperbólica,funciones,complejo" />
+
+  <!--
+    https://www.everywheremarketer.com/blog/ultimate-guide-to-social-meta-tags-open-graph-and-twitter-cards
+  -->
+  <!--Facebook-->
+  <meta property="og:title" content="Hyperbolic Geometry Notes" />
+  <meta property="og:url" content="https://geometria-hiperbolica.github.io/" />
+  <meta property="og:description" content="Hyperbolic Geometry Notes" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hyperbolic Geometry Notes">
+
+  <!--Twitter/X-->
+  <meta name="twitter:title" content="Hyperbolic Geometry Notes" />
+  <meta name="twitter:site" content="https://geometria-hiperbolica.github.io/" />
+  <meta name="twitter:description" content="Hyperbolic Geometry Notes" />
+  <meta name="twitter:type" content="website" />
+  <meta name="twitter:creator" content="@jcponcemath" />
+
+  <link rel="icon" type="image/png" href="imgs/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="imgs/infinity16.png" sizes="16x16">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-16JHH28EVY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-16JHH28EVY');
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body data-type="book" id="top">
+
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="table-of-contents.html" class="link" id="center-link">
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Hyperbolic Geometry</span>
+            <span class="content-hover-next">Table of Contents</span>
+        </a>
+    </div>
+    <a href="table-of-contents.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="index">
+
+    <!-- Starts main content -->
+
+    <header>
+
+        <div class="">
+
+
+            <div class="hide-small">
+                <br><br>
+                <iframe frameborder="0" width="100%" height="400px" scrolling="no" src="https://geometria-hiperbolica.github.io/sketches/hyperbolic-poincare-sketch/disco-poincare.html" style="border: 1px solid black; overflow: hidden;">
+                </iframe>
+            </div>
+
+            <div class="hide-large hide-medium">
+                <iframe frameborder="0" width="100%" height="200px" scrolling="no" src="https://geometria-hiperbolica.github.io/sketches/hyperbolic-poincare-sketch/disco-poincare.html" style="border: 1px solid black; overflow: hidden;">
+                </iframe>
+            </div>
+            <div class="">
+
+
+                <div style="text-align: center !important;" class="hide-small">
+                    <h1>Hyperbolic Geometry</h1>
+                </div>
+
+                <p class="hide-large hide-medium" style="font-size:34px;text-align:center;"><b>Hyperbolic
+                        <br>Geometry</b></p>
+
+                <p class="hide-small author">Camilo Ramírez Maluendas<br> Juan Carlos Ponce Campuzano<br>
+                    <script>document.write(new Date().getFullYear());</script>
+                    <br>
+                    ∞
+                </p>
+
+                <p class="hide-large hide-medium author" style="font-size:16px">
+                    C. Ramírez Maluendas<br>
+                    J. C. Ponce Campuzano
+                    <br>
+                    <script>document.write(new Date().getFullYear());</script>
+                    <br>
+                    ∞
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+    </header>
+
+    <br>
+
+    <hr>
+
+    <main>
+        <article>
+            <h4 id="intro" style="font-size: 1.5em;">Introduction</h4>
+
+            <p>
+                Hyperbolic geometry is one of the deepest and most surprising realizations of non-Euclidean
+                geometry. Since Nikolai Lobachevsky, János Bolyai, and Carl Friedrich Gauss discovered in the 19th
+                century that Euclid's fifth postulate was not a necessary consequence of the first four, geometry
+                ceased to be a single theory of space and became a field rich in structures, models, and curvatures.
+                In this new landscape, hyperbolic geometry emerges as the paradigm of spaces of constant negative
+                curvature, revealing geometric and topological phenomena that have no analogue in Euclidean geometry.
+            </p>
+
+            <p>
+                A distinctive feature of hyperbolic geometry is that many intuitions inherited from Euclidean
+                geometry fail systematically: the sum of the angles of a triangle is less than $\pi$, the
+                hyperbolic area of a triangle is directly related to the sum of the measures of its interior
+                angles; this fact is known as the Gauss-Bonnet Theorem. Moreover, there are infinitely many
+                geodesics (hyperbolic lines) that pass through a point and do not intersect a given geodesic. Far
+                from being anomalies, these phenomena reflect a deep and interesting structure, awakening interest
+                in hyperbolic geometry.
+            </p>
+
+            <p>
+                These notes are devoted to the geometric, topological, and algebraic study of the hyperbolic plane and
+                have arisen from the teaching of an introductory course in hyperbolic geometry, aimed at undergraduate
+                students. Our objective is twofold: on the one hand, to develop a concrete geometric understanding of
+                hyperbolic spaces through explicit models, such as the Poincaré disk model $\Delta$ and the upper
+                half-plane or Lobachevsky plane $\mathbb{H}$. On the other hand, to present the different classical
+                elements of the study of hyperbolic geometry such as: isometry group, hyperbolic Riemannian metric,
+                geodesics, trigonometry, hyperbolic areas, Fuchsian groups, among others.
+            </p>
+
+            <p>
+                These notes assume a basic familiarity with complex geometry, analysis in $\mathbb{R}^{n}$, and
+                topology. However, their approach will be largely geometric, analytic, and constructive. The reader
+                will realize that we combine rigorous proofs with examples, figures, and explicit calculations, in
+                order to develop both intuition and technique.
+            </p>
+
+            <p>
+                We hope that these notes serve not only as an introduction to the area, but also as an invitation
+                to explore a territory where geometry and topology meet in an especially fertile way.
+            </p>
+
+            <p>
+                In some sections
+                we have included some interactive applets
+                to explore this fascinating branch of mathematics.
+                This dynamic approach will allow us to visualize abstract concepts
+                and intuitively understand the peculiarities of Hyperbolic
+                Geometry.
+            </p>
+
+            <p>
+                Get ready for an exciting exploration of
+                an alternative geometric universe where curiosity and
+                experimentation will be our guides!
+            </p>
+
+            <blockquote>
+
+                «The truth is that those were years of arduous<br>
+                learning, with moments of discouragement in which he was on the<br>
+                point of giving up. But in the end perseverance triumphed and<br>
+                Raimundo learned to bark.»
+
+                <br>
+
+                <cite>- Mario Benedetti, <br>The Man Who Learned to Bark</cite>
+            </blockquote>
+
+            <br>
+
+            <hr>
+
+            <h4 style="font-size: 1.5em;">Credits</h4>
+
+            <p>
+                The design of this site is based on the following projects:
+            </p>
+            <ul>
+                <li>
+                    <a href="https://github.com/vincentdoerig/latex-css" target="_blank">LaTeX.CSS</a> by Vincent Dörig
+                </li>
+                <li>
+                    <a href="https://github.com/davidrzs/latexcss" target="_blank">LatexCSS</a> by David Zollikofer
+                </li>
+                <li>
+                    <a href="https://complex-analysis.com/" target="_blank">Complex Analysis</a> by Juan Carlos Ponce
+                    Campuzano
+                </li>
+            </ul>
+
+            <p>
+                The site was built thanks to the
+                <a href="https://github.com/magicbookproject" target="_blank">Magic Book</a> project.
+            </p>
+
+            <hr>
+
+            <h4 style="font-size: 1.5em;">Navigation</h4>
+            <p>Well, let's begin!
+                To navigate between chapters use the arrows
+
+            </p>
+
+            <p class="smallBox">
+                <span style="margin-left: 0px;"><i class="fa-solid fa-arrow-left"></i></span>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="margin-right: 0px;"><i class="fa-solid fa-arrow-right"></i></span>
+            </p>
+
+            <p>located in the top navigation bar
+                that you will find on each page.
+
+            </p>
+
+            <p>
+                To go to the next chapter, click the button located at the end of
+                each page:
+            </p>
+
+        </article>
+    </main>
+
+    <br>
+
+
+
+
+    <a href="table-of-contents.html" style="text-decoration: none;">
+        <p class="nextPage">Table of Contents <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+
+    <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 Hi!</strong>
+      </div>
+      <div class="modal-body">
+  
+        <div w3-include-html="message-modal.html"></div>
+        <br />
+      </div>
+  
+      <div class="modal-footer">
+        Thanks! 🙏 I really appreciate your support! 🤗
+      </div>
+    </div>
+  
+  </div>
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span class="hide-small" id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <a href="https://github.com/geometria-hiperbolica"><i class="fa-solid fa-code"></i> Source</a>,
+    <a href="https://github.com/geometria-hiperbolica/geometria-hiperbolica.github.io/issues"><i
+        class="fa-solid fa-lightbulb"></i> Issues</a>,
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-regular fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  <span class="hide-medium hide-large" style="font-size: 0.85em;">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a> -
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-regular fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+
+  <br />
+
+  <a id="licence-link" rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+    target="_blank">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong style="font-size: 0.9em;">ISBN: ---</strong> <br>
+  <strong> 
+    <span class="hide-small" style="font-size: 18px">&copy; C. Ramírez Maluendas, J.C. Ponce Campuzano
+      <script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 15px">&copy; C. Ramírez Maluendas, <br /> J.C. Ponce Campuzano
+      <script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>
